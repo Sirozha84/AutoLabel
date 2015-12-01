@@ -33,6 +33,8 @@
             this.buttonsave = new System.Windows.Forms.Button();
             this.labelformname = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxFirstBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.comboBoxTPA = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxCount = new System.Windows.Forms.ComboBox();
@@ -44,8 +46,6 @@
             this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.textBoxNumber = new System.Windows.Forms.TextBox();
             this.buttonquitprogram = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxFirstBox = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +67,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel2.BackColor = System.Drawing.Color.Navy;
             this.panel2.Controls.Add(this.buttonsave);
             this.panel2.Controls.Add(this.labelformname);
             this.panel2.Controls.Add(this.buttonquit);
@@ -95,7 +95,7 @@
             this.labelformname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelformname.AutoSize = true;
-            this.labelformname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.labelformname.BackColor = System.Drawing.Color.Navy;
             this.labelformname.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelformname.ForeColor = System.Drawing.Color.White;
             this.labelformname.Location = new System.Drawing.Point(268, 15);
@@ -141,6 +141,33 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(759, 543);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
+            // textBoxFirstBox
+            // 
+            this.textBoxFirstBox.BackColor = System.Drawing.Color.Black;
+            this.textBoxFirstBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBoxFirstBox.Enabled = false;
+            this.textBoxFirstBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxFirstBox.ForeColor = System.Drawing.Color.White;
+            this.textBoxFirstBox.Location = new System.Drawing.Point(306, 63);
+            this.textBoxFirstBox.Name = "textBoxFirstBox";
+            this.textBoxFirstBox.Size = new System.Drawing.Size(450, 62);
+            this.textBoxFirstBox.TabIndex = 18;
+            this.textBoxFirstBox.Text = "1";
+            this.textBoxFirstBox.Click += new System.EventHandler(this.textBoxFirstBox_Click);
+            this.textBoxFirstBox.TextChanged += new System.EventHandler(this.textBoxFirstBox_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(3, 60);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(297, 49);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Текущий короб:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // comboBoxTPA
             // 
             this.comboBoxTPA.BackColor = System.Drawing.Color.Black;
@@ -180,6 +207,7 @@
             this.comboBoxCount.BackColor = System.Drawing.Color.Black;
             this.comboBoxCount.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboBoxCount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCount.Enabled = false;
             this.comboBoxCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxCount.ForeColor = System.Drawing.Color.White;
@@ -195,6 +223,7 @@
             this.comboBoxWeight.BackColor = System.Drawing.Color.Black;
             this.comboBoxWeight.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboBoxWeight.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxWeight.Enabled = false;
             this.comboBoxWeight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxWeight.ForeColor = System.Drawing.Color.White;
@@ -258,6 +287,7 @@
             this.comboBoxType.BackColor = System.Drawing.Color.Black;
             this.comboBoxType.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxType.Enabled = false;
             this.comboBoxType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxType.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxType.ForeColor = System.Drawing.Color.White;
@@ -272,6 +302,7 @@
             // 
             this.textBoxNumber.BackColor = System.Drawing.Color.Black;
             this.textBoxNumber.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBoxNumber.Enabled = false;
             this.textBoxNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxNumber.ForeColor = System.Drawing.Color.White;
             this.textBoxNumber.Location = new System.Drawing.Point(306, 122);
@@ -294,32 +325,6 @@
             this.buttonquitprogram.Text = "Выход";
             this.buttonquitprogram.UseVisualStyleBackColor = true;
             this.buttonquitprogram.Click += new System.EventHandler(this.buttonquitprogram_Click);
-            // 
-            // label6
-            // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 60);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(297, 49);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Первый короб:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBoxFirstBox
-            // 
-            this.textBoxFirstBox.BackColor = System.Drawing.Color.Black;
-            this.textBoxFirstBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxFirstBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxFirstBox.ForeColor = System.Drawing.Color.White;
-            this.textBoxFirstBox.Location = new System.Drawing.Point(306, 63);
-            this.textBoxFirstBox.Name = "textBoxFirstBox";
-            this.textBoxFirstBox.Size = new System.Drawing.Size(450, 62);
-            this.textBoxFirstBox.TabIndex = 18;
-            this.textBoxFirstBox.Text = "1";
-            this.textBoxFirstBox.Click += new System.EventHandler(this.textBoxFirstBox_Click);
-            this.textBoxFirstBox.TextChanged += new System.EventHandler(this.textBoxFirstBox_TextChanged);
             // 
             // FormProperties
             // 

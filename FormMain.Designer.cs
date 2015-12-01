@@ -163,12 +163,12 @@
             // 
             this.labelVersion.AutoSize = true;
             this.labelVersion.BackColor = System.Drawing.Color.Black;
-            this.labelVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelVersion.ForeColor = System.Drawing.Color.Gray;
             this.labelVersion.Location = new System.Drawing.Point(12, 121);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(158, 13);
             this.labelVersion.TabIndex = 2;
-            this.labelVersion.Text = "Версия: 0.1 Alpha (30.11.2015)";
+            this.labelVersion.Text = "Версия: 0.2 Alpha (01.12.2015)";
             // 
             // buttonProperties
             // 
@@ -188,12 +188,12 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel2.BackColor = System.Drawing.Color.Navy;
             this.panel2.Controls.Add(this.buttonProperties);
             this.panel2.Controls.Add(this.labelformname);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(982, 100);
+            this.panel2.Size = new System.Drawing.Size(838, 100);
             this.panel2.TabIndex = 9;
             // 
             // labelformname
@@ -201,7 +201,7 @@
             this.labelformname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelformname.AutoSize = true;
-            this.labelformname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.labelformname.BackColor = System.Drawing.Color.Navy;
             this.labelformname.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelformname.ForeColor = System.Drawing.Color.White;
             this.labelformname.Location = new System.Drawing.Point(24, 15);
