@@ -24,7 +24,7 @@ namespace AutoLabel
         {
             //Сами лейблы
             for (int i = 0; i < 6; i++)
-                Labels.Add(new Label());
+                Labels.Add(new Label(i));
             //Так же списки выбора
             Types.Add("Bericap");
             Types.Add("Другой");

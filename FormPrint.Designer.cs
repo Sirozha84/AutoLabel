@@ -32,7 +32,7 @@
             this.labelNum = new System.Windows.Forms.Label();
             this.LabelPacker = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxNum = new System.Windows.Forms.TextBox();
             this.buttonMax = new System.Windows.Forms.Button();
             this.buttonDec = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -88,7 +88,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textBoxNum);
             this.panel1.Controls.Add(this.buttonMax);
             this.panel1.Controls.Add(this.buttonDec);
             this.panel1.Controls.Add(this.label1);
@@ -97,18 +97,19 @@
             this.panel1.Size = new System.Drawing.Size(582, 94);
             this.panel1.TabIndex = 4;
             // 
-            // textBox1
+            // textBoxNum
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Black;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(333, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(160, 80);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.Text = "0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxNum.BackColor = System.Drawing.Color.Black;
+            this.textBoxNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxNum.ForeColor = System.Drawing.Color.White;
+            this.textBoxNum.Location = new System.Drawing.Point(333, 11);
+            this.textBoxNum.Name = "textBoxNum";
+            this.textBoxNum.ReadOnly = true;
+            this.textBoxNum.Size = new System.Drawing.Size(160, 80);
+            this.textBoxNum.TabIndex = 7;
+            this.textBoxNum.TabStop = false;
+            this.textBoxNum.Text = "0";
+            this.textBoxNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // buttonMax
             // 
@@ -121,6 +122,7 @@
             this.buttonMax.TabIndex = 6;
             this.buttonMax.Text = ">";
             this.buttonMax.UseVisualStyleBackColor = true;
+            this.buttonMax.Click += new System.EventHandler(this.buttonMax_Click);
             // 
             // buttonDec
             // 
@@ -133,6 +135,7 @@
             this.buttonDec.TabIndex = 5;
             this.buttonDec.Text = "<";
             this.buttonDec.UseVisualStyleBackColor = true;
+            this.buttonDec.Click += new System.EventHandler(this.buttonDec_Click);
             // 
             // label1
             // 
@@ -251,7 +254,7 @@
         private System.Windows.Forms.Label labelNum;
         private System.Windows.Forms.Label LabelPacker;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxNum;
         private System.Windows.Forms.Button buttonMax;
         private System.Windows.Forms.Button buttonDec;
         private System.Windows.Forms.Label label1;

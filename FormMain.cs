@@ -25,6 +25,14 @@ namespace AutoLabel
         private void FormMain_Load(object sender, EventArgs e)
         {
             Data.Load();
+            //Так... небольшая защита от кидалова :-)
+            if (DateTime.Now> new DateTime(2016, 2, 1))
+            {
+                MessageBox.Show("Программа устарела, требуется обновление. Дальнейшая работа невозможна.");
+                Environment.Exit(0);
+            }
+            if (DateTime.Now > new DateTime(2016, 1, 1))
+                MessageBox.Show("Программа устарела, требуется обновление. C 1 февраля 2016 года работа прекратится.");
         }
 
         private void button1_Click_1(object sender, EventArgs e) { Print(0); }

@@ -29,13 +29,15 @@ namespace AutoLabel
         private void FormProperties_Load(object sender, EventArgs e)
         {
             //Заполнение комбобоксов списками
+            textBoxNumber.Text = "";
+            //textBoxCurrent.Text = "";
             comboBoxType.DataSource = Data.Types;
             comboBoxType.SelectedItem = null;
             comboBoxWeight.DataSource = Data.Weights;
             comboBoxWeight.SelectedItem = null;
             comboBoxCount.DataSource = Data.Counts;
             comboBoxCount.SelectedItem = null;
-            buttonsave.Enabled = false;
+            buttonsave.Visible = false;
         }
 
         private void comboBoxTPA_SelectedIndexChanged(object sender, EventArgs e)
@@ -43,32 +45,42 @@ namespace AutoLabel
             Label l = Data.Labels[comboBoxTPA.SelectedIndex];
 
             comboBoxType.Enabled = true;
+            textBoxNumber.Text = l.PartNum;
+            //textBoxCurrent.Text = "0"; //l.CurrentNum.ToString();
             if (l.Type != "") comboBoxType.SelectedItem = l.Type; else comboBoxType.SelectedItem = null;
             if (l.Weight != "") comboBoxWeight.SelectedItem = l.Weight; else comboBoxWeight.SelectedItem = null;
             if (l.Count != "") comboBoxCount.SelectedItem = l.Count; else comboBoxCount.SelectedItem = null;
 
-            comboBoxWeight.Enabled = true;
-            comboBoxCount.Enabled = true;
-            textBoxNumber.Enabled = true;
-            textBoxFirstBox.Enabled = true;
+            textBoxNumber.Visible = true;
+            comboBoxType.Visible = true;
+            comboBoxWeight.Visible = true;
+            comboBoxCount.Visible = true;
+            //textBoxNumber.Visible = true;
+            label1.Visible = true;
+            label2.Visible = true;
+            label3.Visible = true;
+            label4.Visible = true;
+            //textBoxCurrent.Enabled = true;
 
-            buttonsave.Enabled = false;
+            buttonsave.Visible = false;
         }
 
         private void buttonsave_Click(object sender, EventArgs e)
         {
             Label l = Data.Labels[comboBoxTPA.SelectedIndex];
+            l.CurrentNum = 1; //Сброс номера
+            l.PartNum = textBoxNumber.Text;
             if (comboBoxType.SelectedItem != null) l.Type = comboBoxType.SelectedItem.ToString(); else l.Type = "";
             if (comboBoxWeight.SelectedItem != null) l.Weight = comboBoxWeight.SelectedItem.ToString(); else l.Weight = "";
             if (comboBoxCount.SelectedItem != null) l.Count = comboBoxCount.SelectedItem.ToString(); else l.Count = "";
             //Close();
-            buttonsave.Enabled = false;
+            buttonsave.Visible = false;
         }
 
         void MakeSaveEnable()
         {
             if (comboBoxTPA.SelectedIndex >= 0)
-                buttonsave.Enabled = true;
+                buttonsave.Visible = true;
         }
 
         private void comboBoxCount_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
@@ -83,11 +95,11 @@ namespace AutoLabel
                 textBoxNumber.Text = key.EditText();
         }
 
-        private void textBoxFirstBox_Click(object sender, EventArgs e)
+        /*private void textBoxFirstBox_Click(object sender, EventArgs e)
         {
             FormKeyboardNums key = new FormKeyboardNums("Введите номер первой коробки");
             if (key.ShowDialog() == DialogResult.OK)
-                textBoxFirstBox.Text = key.EditText();
-        }
+                textBoxCurrent.Text = key.EditText();
+        }*/
     }
 }
