@@ -65,6 +65,7 @@ namespace AutoLabel
                 {
                     CurrentNum++; //Увеличиваем номер, если печатался текущий
                     Save(); //Сохраняем, вдруг программа вылетет...
+                    Log();
                 }
             }
             catch
@@ -214,6 +215,21 @@ namespace AutoLabel
                 file.Dispose();
             }
             catch { } //нишмагла...
+        }
+
+        /// <summary>
+        /// Запись в журнал отчёта о напечатанной этикетке
+        /// </summary>
+        void Log()
+        {
+            try
+            {
+                //StreamWriter file = File.AppendText("Log.csv");
+                StreamWriter file = new StreamWriter("Log "+DateTime.Now.ToString("yyyy.MM.dd")+".csv", true, Encoding.Default);
+                file.WriteLine(@"""ТПА" + TPA + @"""; " + PartNum + "; " + CurrentNum);
+                file.Dispose();
+            }
+            catch { }
         }
     }
 }
