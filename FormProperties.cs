@@ -35,7 +35,7 @@ namespace AutoLabel
             comboBoxType.SelectedItem = null;
             comboBoxWeight.DataSource = Data.Weights;
             comboBoxWeight.SelectedItem = null;
-            comboBoxCount.DataSource = Data.Counts;
+            comboBoxCount.DataSource = Data.Quantitys;
             comboBoxCount.SelectedItem = null;
             buttonsave.Visible = false;
         }
@@ -49,7 +49,7 @@ namespace AutoLabel
             //textBoxCurrent.Text = "0"; //l.CurrentNum.ToString();
             if (l.Type != "") comboBoxType.SelectedItem = l.Type; else comboBoxType.SelectedItem = null;
             if (l.Weight != "") comboBoxWeight.SelectedItem = l.Weight; else comboBoxWeight.SelectedItem = null;
-            if (l.Count != "") comboBoxCount.SelectedItem = l.Count; else comboBoxCount.SelectedItem = null;
+            if (l.Quantity != "") comboBoxCount.SelectedItem = l.Quantity; else comboBoxCount.SelectedItem = null;
 
             textBoxNumber.Visible = true;
             comboBoxType.Visible = true;
@@ -72,7 +72,7 @@ namespace AutoLabel
             l.PartNum = textBoxNumber.Text;
             if (comboBoxType.SelectedItem != null) l.Type = comboBoxType.SelectedItem.ToString(); else l.Type = "";
             if (comboBoxWeight.SelectedItem != null) l.Weight = comboBoxWeight.SelectedItem.ToString(); else l.Weight = "";
-            if (comboBoxCount.SelectedItem != null) l.Count = comboBoxCount.SelectedItem.ToString(); else l.Count = "";
+            if (comboBoxCount.SelectedItem != null) l.Quantity = comboBoxCount.SelectedItem.ToString(); else l.Quantity = "";
             //Close();
             buttonsave.Visible = false;
         }

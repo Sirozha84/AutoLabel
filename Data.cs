@@ -14,7 +14,7 @@ namespace AutoLabel
 
         public static List<string> Types = new List<string>();
         public static List<string> Weights = new List<string>();
-        public static List<string> Counts = new List<string>();
+        public static List<string> Quantitys = new List<string>();
         public static List<string> Colors = new List<string>();
         public static List<string> Materials = new List<string>();
         public static List<string> Limits = new List<string>();
@@ -34,8 +34,8 @@ namespace AutoLabel
             Types.Add("Другой");
             Weights.Add("25,5");
             Weights.Add("0");
-            Counts.Add("10896");
-            Counts.Add("0");
+            Quantitys.Add("10896");
+            Quantitys.Add("0");
             Colors.Add("БЕЛЫЙ");
             Colors.Add("НЕ БЕЛЫЙ");
             Materials.Add("ПОЛИЭФ");
@@ -56,7 +56,6 @@ namespace AutoLabel
             if (diag.ShowDialog() == DialogResult.Cancel) return;
             printersettings = diag.PrinterSettings;
             printersettings.DefaultPageSettings.Landscape = true;   //Задаём альбомную ориентацию
-
 
             //Тут настройки надо сохранить в файл
         }
