@@ -44,6 +44,9 @@
             this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.textBoxNumber = new System.Windows.Forms.TextBox();
             this.buttonquitprogram = new System.Windows.Forms.Button();
+            this.buttonPrinterSelect = new System.Windows.Forms.Button();
+            this.buttonReport = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +74,7 @@
             this.panel2.Controls.Add(this.buttonquit);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1072, 100);
+            this.panel2.Size = new System.Drawing.Size(978, 100);
             this.panel2.TabIndex = 9;
             // 
             // buttonsave
@@ -80,7 +83,7 @@
             this.buttonsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonsave.ForeColor = System.Drawing.Color.White;
-            this.buttonsave.Location = new System.Drawing.Point(806, 12);
+            this.buttonsave.Location = new System.Drawing.Point(712, 12);
             this.buttonsave.Name = "buttonsave";
             this.buttonsave.Size = new System.Drawing.Size(250, 76);
             this.buttonsave.TabIndex = 8;
@@ -121,7 +124,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxType, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBoxNumber, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(145, 118);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(218, 106);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
@@ -133,7 +136,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(759, 543);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(665, 546);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
             // comboBoxTPA
@@ -152,9 +155,9 @@
             "4",
             "5",
             "6"});
-            this.comboBoxTPA.Location = new System.Drawing.Point(306, 3);
+            this.comboBoxTPA.Location = new System.Drawing.Point(269, 3);
             this.comboBoxTPA.Name = "comboBoxTPA";
-            this.comboBoxTPA.Size = new System.Drawing.Size(450, 63);
+            this.comboBoxTPA.Size = new System.Drawing.Size(393, 63);
             this.comboBoxTPA.TabIndex = 14;
             this.comboBoxTPA.SelectedIndexChanged += new System.EventHandler(this.comboBoxTPA_SelectedIndexChanged);
             // 
@@ -165,7 +168,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(297, 46);
+            this.label5.Size = new System.Drawing.Size(260, 46);
             this.label5.TabIndex = 13;
             this.label5.Text = "ТПА:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -179,9 +182,9 @@
             this.comboBoxCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxCount.ForeColor = System.Drawing.Color.White;
             this.comboBoxCount.FormattingEnabled = true;
-            this.comboBoxCount.Location = new System.Drawing.Point(306, 271);
+            this.comboBoxCount.Location = new System.Drawing.Point(269, 275);
             this.comboBoxCount.Name = "comboBoxCount";
-            this.comboBoxCount.Size = new System.Drawing.Size(450, 63);
+            this.comboBoxCount.Size = new System.Drawing.Size(393, 63);
             this.comboBoxCount.TabIndex = 12;
             this.comboBoxCount.Visible = false;
             this.comboBoxCount.SelectedIndexChanged += new System.EventHandler(this.comboBoxCount_SelectedIndexChanged);
@@ -195,9 +198,9 @@
             this.comboBoxWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxWeight.ForeColor = System.Drawing.Color.White;
             this.comboBoxWeight.FormattingEnabled = true;
-            this.comboBoxWeight.Location = new System.Drawing.Point(306, 204);
+            this.comboBoxWeight.Location = new System.Drawing.Point(269, 207);
             this.comboBoxWeight.Name = "comboBoxWeight";
-            this.comboBoxWeight.Size = new System.Drawing.Size(450, 63);
+            this.comboBoxWeight.Size = new System.Drawing.Size(393, 63);
             this.comboBoxWeight.TabIndex = 11;
             this.comboBoxWeight.Visible = false;
             this.comboBoxWeight.SelectedIndexChanged += new System.EventHandler(this.comboBoxWeight_SelectedIndexChanged);
@@ -207,9 +210,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 67);
+            this.label1.Location = new System.Drawing.Point(3, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 49);
+            this.label1.Size = new System.Drawing.Size(260, 49);
             this.label1.TabIndex = 0;
             this.label1.Text = "Номер партии:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -220,9 +223,9 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 134);
+            this.label2.Location = new System.Drawing.Point(3, 136);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(297, 49);
+            this.label2.Size = new System.Drawing.Size(260, 49);
             this.label2.TabIndex = 1;
             this.label2.Text = "Тип горловины:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -233,9 +236,9 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 201);
+            this.label3.Location = new System.Drawing.Point(3, 204);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(297, 49);
+            this.label3.Size = new System.Drawing.Size(260, 49);
             this.label3.TabIndex = 2;
             this.label3.Text = "Вес:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -246,9 +249,9 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 268);
+            this.label4.Location = new System.Drawing.Point(3, 272);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(297, 49);
+            this.label4.Size = new System.Drawing.Size(260, 49);
             this.label4.TabIndex = 3;
             this.label4.Text = "Количество:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -263,9 +266,9 @@
             this.comboBoxType.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxType.ForeColor = System.Drawing.Color.White;
             this.comboBoxType.FormattingEnabled = true;
-            this.comboBoxType.Location = new System.Drawing.Point(306, 137);
+            this.comboBoxType.Location = new System.Drawing.Point(269, 139);
             this.comboBoxType.Name = "comboBoxType";
-            this.comboBoxType.Size = new System.Drawing.Size(450, 63);
+            this.comboBoxType.Size = new System.Drawing.Size(393, 63);
             this.comboBoxType.TabIndex = 10;
             this.comboBoxType.Visible = false;
             this.comboBoxType.SelectedIndexChanged += new System.EventHandler(this.comboBoxType_SelectedIndexChanged);
@@ -276,9 +279,9 @@
             this.textBoxNumber.Dock = System.Windows.Forms.DockStyle.Top;
             this.textBoxNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxNumber.ForeColor = System.Drawing.Color.White;
-            this.textBoxNumber.Location = new System.Drawing.Point(306, 70);
+            this.textBoxNumber.Location = new System.Drawing.Point(269, 71);
             this.textBoxNumber.Name = "textBoxNumber";
-            this.textBoxNumber.Size = new System.Drawing.Size(450, 62);
+            this.textBoxNumber.Size = new System.Drawing.Size(393, 62);
             this.textBoxNumber.TabIndex = 16;
             this.textBoxNumber.Visible = false;
             this.textBoxNumber.Click += new System.EventHandler(this.textBoxNumber_Click);
@@ -286,27 +289,65 @@
             // 
             // buttonquitprogram
             // 
-            this.buttonquitprogram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonquitprogram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonquitprogram.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonquitprogram.ForeColor = System.Drawing.Color.White;
-            this.buttonquitprogram.Location = new System.Drawing.Point(991, 118);
+            this.buttonquitprogram.Location = new System.Drawing.Point(12, 193);
             this.buttonquitprogram.Name = "buttonquitprogram";
-            this.buttonquitprogram.Size = new System.Drawing.Size(65, 30);
+            this.buttonquitprogram.Size = new System.Drawing.Size(127, 30);
             this.buttonquitprogram.TabIndex = 11;
             this.buttonquitprogram.Text = "Выход";
             this.buttonquitprogram.UseVisualStyleBackColor = true;
             this.buttonquitprogram.Click += new System.EventHandler(this.buttonquitprogram_Click);
+            // 
+            // buttonPrinterSelect
+            // 
+            this.buttonPrinterSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPrinterSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonPrinterSelect.ForeColor = System.Drawing.Color.White;
+            this.buttonPrinterSelect.Location = new System.Drawing.Point(12, 157);
+            this.buttonPrinterSelect.Name = "buttonPrinterSelect";
+            this.buttonPrinterSelect.Size = new System.Drawing.Size(127, 30);
+            this.buttonPrinterSelect.TabIndex = 12;
+            this.buttonPrinterSelect.Text = "Выбор принтера";
+            this.buttonPrinterSelect.UseVisualStyleBackColor = true;
+            this.buttonPrinterSelect.Click += new System.EventHandler(this.buttonPrinterSelect_Click);
+            // 
+            // buttonReport
+            // 
+            this.buttonReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonReport.ForeColor = System.Drawing.Color.White;
+            this.buttonReport.Location = new System.Drawing.Point(12, 121);
+            this.buttonReport.Name = "buttonReport";
+            this.buttonReport.Size = new System.Drawing.Size(127, 30);
+            this.buttonReport.TabIndex = 13;
+            this.buttonReport.Text = "Отчёт";
+            this.buttonReport.UseVisualStyleBackColor = true;
+            this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Location = new System.Drawing.Point(0, 100);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(151, 577);
+            this.panel1.TabIndex = 14;
             // 
             // FormProperties
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1068, 673);
+            this.ClientSize = new System.Drawing.Size(974, 676);
+            this.Controls.Add(this.buttonReport);
+            this.Controls.Add(this.buttonPrinterSelect);
             this.Controls.Add(this.buttonquitprogram);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormProperties";
             this.Text = "FormProperties";
@@ -338,5 +379,8 @@
         private System.Windows.Forms.ComboBox comboBoxTPA;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxNumber;
+        private System.Windows.Forms.Button buttonPrinterSelect;
+        private System.Windows.Forms.Button buttonReport;
+        private System.Windows.Forms.Panel panel1;
     }
 }

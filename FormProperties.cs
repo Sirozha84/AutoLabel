@@ -95,11 +95,14 @@ namespace AutoLabel
                 textBoxNumber.Text = key.EditText();
         }
 
-        /*private void textBoxFirstBox_Click(object sender, EventArgs e)
+        private void buttonPrinterSelect_Click(object sender, EventArgs e)
         {
-            FormKeyboardNums key = new FormKeyboardNums("Введите номер первой коробки");
-            if (key.ShowDialog() == DialogResult.OK)
-                textBoxCurrent.Text = key.EditText();
-        }*/
+            Data.PrintSetup();
+        }
+
+        private void buttonReport_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Coming soon :-)");
+        }
     }
 }

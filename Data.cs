@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace AutoLabel
 {
@@ -16,6 +18,8 @@ namespace AutoLabel
         public static List<string> Colors = new List<string>();
         public static List<string> Materials = new List<string>();
         public static List<string> Limits = new List<string>();
+
+        public static PrinterSettings printersettings;// = new PrinterSettings();
 
         /// <summary>
         /// Загрузка последних данных в случае сбоя программы, или инициализация данных по умолчанию
@@ -44,6 +48,22 @@ namespace AutoLabel
         public static void Save()
         {
             //Здесь будет сохранение
+        }
+
+        public static void PrintSetup()
+        {
+            PrintDialog diag = new PrintDialog();
+            if (diag.ShowDialog() == DialogResult.Cancel) return;
+            printersettings = diag.PrinterSettings;
+            printersettings.DefaultPageSettings.Landscape = true;   //Задаём альбомную ориентацию
+
+
+            //Тут настройки надо сохранить в файл
+        }
+
+        public static bool PrintSelected()
+        {
+            return printersettings != null;
         }
     }
 }
