@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Drawing.Printing;
+using System.IO;
 
 namespace AutoLabel
 {
     class Label
     {
         string TPA;      //Номер ТПА
-        public string PartNum;  //Вручную номер партии
         public int CurrentNum;  //Автомат номер короба
+        public string PartNum;  //Вручную номер партии
         public string Type;     //Список тип горловиры
         public string Weight;   //Список вес
         public string Quantity;    //Список количество
@@ -36,22 +37,35 @@ namespace AutoLabel
         static Font Big = new Font("Arial", 40, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font Biggg = new Font("Arial", 90, FontStyle.Bold, GraphicsUnit.Pixel);
 
-        public Label(int i) { TPA = (i + 1).ToString(); }
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="i">Номер ТПА</param>
+        public Label(int i)
+        {
+            TPA = (i + 1).ToString();
+            Load();
+        }
 
+        /// <summary>
+        /// Печать
+        /// </summary>
+        /// <param name="num"></param>
         public void Print(int num)
         {
-            if (!Data.PrintSelected())
-            {
-                MessageBox.Show("Принтер не выбран, выберите принтер");
-                Data.PrintSetup();
-            }
+            if (!Data.PrintSelected()) Data.PrintSetup();
+            if (!Data.PrintSelected()) return;
             try
             {
                 PrintDocument doc = new PrintDocument();
                 doc.PrintPage += new PrintPageEventHandler(PD_PrintPage);
                 doc.PrinterSettings = Data.printersettings;
                 doc.Print();
-                if (num == CurrentNum & CurrentNum > 0) CurrentNum++; //Увеличиваем номер, если печатался текущий
+                if (num == CurrentNum & CurrentNum > 0)
+                {
+                    CurrentNum++; //Увеличиваем номер, если печатался текущий
+                    Save(); //Сохраняем, вдруг программа вылетет...
+                }
             }
             catch
             {
@@ -60,7 +74,11 @@ namespace AutoLabel
             }
         }
 
-        //Формирование листа
+        /// <summary>
+        /// Формирование листа
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void PD_PrintPage(object sender, PrintPageEventArgs e)
         {
             int Space = 30;
@@ -77,7 +95,10 @@ namespace AutoLabel
             //DrawLabel(e.Graphics, Space + Shift + 584, Space + Shift, 585 - Space * 2, 827 - Space * 2);
         }
 
-        //Формирование этикетки
+        /// <summary>
+        /// Формирование этикетки
+        /// </summary>
+        /// <param name="g"></param>
         void DrawLabel(Graphics g)
         {
             //Рамки
@@ -95,13 +116,13 @@ namespace AutoLabel
             g.DrawString("Прочие дополнения:", Small, Brushes.Black, new Point(X + 10, Y + 280));
             DrawStrings(g, 270, 300, "Количество преформ в коробе", "Preform quantity per box", Quantity);
             DrawStrings(g, 220, 340, "Номер короба", "Box number", CurrentNum.ToString());
-            DrawStrings(g, 220, 380, "Дата изготовления", "Date of manufacturnig", DateTime.Now.ToString("dd mmmm yy"));
+            DrawStrings(g, 220, 380, "Дата изготовления", "Date of manufacturnig", Date());
             DrawStrings(g, 220, 420, "Цвет преформы", "Preform colour", "Белый");
-            DrawStrings(g, 220, 460, "Машина", "Machine", "NETSTAL №"+TPA);
+            DrawStrings(g, 220, 460, "Машина", "Machine", "NETSTAL №" + TPA);
             DrawStrings(g, 220, 500, "Смена", "Shift", "");
             DrawStrings(g, 220, 540, "Марка материала", "Material", Material);
             DrawStrings(g, 220, 580, "Время", "Time", DateTime.Now.ToString("HH:MM"));
-            DrawStrings(g, 220, 620, "Номер партии", "Batch number", "");
+            DrawStrings(g, 220, 620, "Номер партии", "Batch number", PartNum);
             DrawStrings(g, 220, 660, "Укладчик", "Packer", "");
             //Нижний колонтитул
             g.DrawString("Сделано в России / Made in Russia",
@@ -112,7 +133,15 @@ namespace AutoLabel
                 Smalllll, Brushes.Black, new Point(X + 10, Y + Height - 15));
         }
 
-        //Вывод поля
+        /// <summary>
+        /// Вывод поля
+        /// </summary>
+        /// <param name="g">Куда рисовать</param>
+        /// <param name="x">Координата</param>
+        /// <param name="y">Координата</param>
+        /// <param name="s1">Строка по-русски</param>
+        /// <param name="s2">Строка по-английски</param>
+        /// <param name="s3">Значение</param>
         static void DrawStrings(Graphics g, int x, int y, string s1, string s2, string s3)
         {
             g.DrawString(s1, SmallBold, Brushes.Black, new Point(X + 10, Y + y));
@@ -120,6 +149,10 @@ namespace AutoLabel
             g.DrawString(s3, Normal, Brushes.Black, new Point(X + x + 10, Y + y));
         }
 
+        /// <summary>
+        /// Предоставление текущей даты в человечьем виде
+        /// </summary>
+        /// <returns></returns>
         static string Date()
         {
             DateTime now = DateTime.Now;
@@ -140,6 +173,47 @@ namespace AutoLabel
                 case 12: date += "дек"; break;
             }
             return date + now.ToString(" yy");
+        }
+
+        /// <summary>
+        /// Сохранение на диск
+        /// </summary>
+        public void Save()
+        {
+            try
+            {
+                StreamWriter file = File.CreateText("TPA"+TPA+".txt");
+                file.WriteLine(CurrentNum);
+                file.WriteLine(PartNum);
+                file.WriteLine(Type);
+                file.WriteLine(Weight);
+                file.WriteLine(Quantity);
+                file.Dispose();
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось сохранить параметр ТПА. Позовите админа! Пусть он в этом разберётся.",
+                    "Случилось что-то страшное");
+                //Ох, надеюсь мне не придётся увидеть этой надписи...
+            }
+        }
+
+        /// <summary>
+        /// Загрузка с диска
+        /// </summary>
+        public void Load()
+        {
+            try
+            {
+                StreamReader file = File.OpenText("TPA" + TPA + ".txt");
+                CurrentNum = Convert.ToInt32(file.ReadLine());
+                PartNum = file.ReadLine();
+                Type = file.ReadLine();
+                Weight = file.ReadLine();
+                Quantity = file.ReadLine();
+                file.Dispose();
+            }
+            catch { } //нишмагла...
         }
     }
 }

@@ -73,7 +73,7 @@ namespace AutoLabel
             if (comboBoxType.SelectedItem != null) l.Type = comboBoxType.SelectedItem.ToString(); else l.Type = "";
             if (comboBoxWeight.SelectedItem != null) l.Weight = comboBoxWeight.SelectedItem.ToString(); else l.Weight = "";
             if (comboBoxCount.SelectedItem != null) l.Quantity = comboBoxCount.SelectedItem.ToString(); else l.Quantity = "";
-            //Close();
+            l.Save();
             buttonsave.Visible = false;
         }
 
