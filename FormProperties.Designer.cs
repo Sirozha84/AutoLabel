@@ -47,8 +47,10 @@
             this.buttonPrinterSelect = new System.Windows.Forms.Button();
             this.buttonReport = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonUsers = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonquit
@@ -289,41 +291,44 @@
             // 
             // buttonquitprogram
             // 
+            this.buttonquitprogram.BackColor = System.Drawing.Color.Black;
             this.buttonquitprogram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonquitprogram.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonquitprogram.ForeColor = System.Drawing.Color.White;
-            this.buttonquitprogram.Location = new System.Drawing.Point(12, 193);
+            this.buttonquitprogram.Location = new System.Drawing.Point(12, 131);
             this.buttonquitprogram.Name = "buttonquitprogram";
             this.buttonquitprogram.Size = new System.Drawing.Size(127, 30);
             this.buttonquitprogram.TabIndex = 11;
             this.buttonquitprogram.Text = "Выход";
-            this.buttonquitprogram.UseVisualStyleBackColor = true;
+            this.buttonquitprogram.UseVisualStyleBackColor = false;
             this.buttonquitprogram.Click += new System.EventHandler(this.buttonquitprogram_Click);
             // 
             // buttonPrinterSelect
             // 
+            this.buttonPrinterSelect.BackColor = System.Drawing.Color.Black;
             this.buttonPrinterSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrinterSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPrinterSelect.ForeColor = System.Drawing.Color.White;
-            this.buttonPrinterSelect.Location = new System.Drawing.Point(12, 157);
+            this.buttonPrinterSelect.Location = new System.Drawing.Point(12, 95);
             this.buttonPrinterSelect.Name = "buttonPrinterSelect";
             this.buttonPrinterSelect.Size = new System.Drawing.Size(127, 30);
             this.buttonPrinterSelect.TabIndex = 12;
             this.buttonPrinterSelect.Text = "Выбор принтера";
-            this.buttonPrinterSelect.UseVisualStyleBackColor = true;
+            this.buttonPrinterSelect.UseVisualStyleBackColor = false;
             this.buttonPrinterSelect.Click += new System.EventHandler(this.buttonPrinterSelect_Click);
             // 
             // buttonReport
             // 
+            this.buttonReport.BackColor = System.Drawing.Color.Black;
             this.buttonReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonReport.ForeColor = System.Drawing.Color.White;
-            this.buttonReport.Location = new System.Drawing.Point(12, 121);
+            this.buttonReport.Location = new System.Drawing.Point(12, 58);
             this.buttonReport.Name = "buttonReport";
             this.buttonReport.Size = new System.Drawing.Size(127, 30);
             this.buttonReport.TabIndex = 13;
-            this.buttonReport.Text = "Отчёт";
-            this.buttonReport.UseVisualStyleBackColor = true;
+            this.buttonReport.Text = "Отчёты";
+            this.buttonReport.UseVisualStyleBackColor = false;
             this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
             // 
             // panel1
@@ -331,10 +336,27 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.buttonUsers);
+            this.panel1.Controls.Add(this.buttonPrinterSelect);
+            this.panel1.Controls.Add(this.buttonquitprogram);
+            this.panel1.Controls.Add(this.buttonReport);
             this.panel1.Location = new System.Drawing.Point(0, 100);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(151, 577);
             this.panel1.TabIndex = 14;
+            // 
+            // buttonUsers
+            // 
+            this.buttonUsers.BackColor = System.Drawing.Color.Black;
+            this.buttonUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonUsers.ForeColor = System.Drawing.Color.White;
+            this.buttonUsers.Location = new System.Drawing.Point(12, 22);
+            this.buttonUsers.Name = "buttonUsers";
+            this.buttonUsers.Size = new System.Drawing.Size(127, 30);
+            this.buttonUsers.TabIndex = 14;
+            this.buttonUsers.Text = "Пользователи";
+            this.buttonUsers.UseVisualStyleBackColor = false;
             // 
             // FormProperties
             // 
@@ -342,9 +364,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(974, 676);
-            this.Controls.Add(this.buttonReport);
-            this.Controls.Add(this.buttonPrinterSelect);
-            this.Controls.Add(this.buttonquitprogram);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -357,6 +376,7 @@
             this.panel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -382,5 +402,6 @@
         private System.Windows.Forms.Button buttonPrinterSelect;
         private System.Windows.Forms.Button buttonReport;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonUsers;
     }
 }

@@ -34,7 +34,7 @@ namespace AutoLabel
 
         private void buttonPrint_Click(object sender, EventArgs e)
         {
-            Data.Labels[NumMachine].Print(box);
+            Data.Labels[NumMachine].Print(box, "Иванов И. И.");
             Close();
         }
 

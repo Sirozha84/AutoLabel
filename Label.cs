@@ -50,8 +50,9 @@ namespace AutoLabel
         /// <summary>
         /// Печать
         /// </summary>
-        /// <param name="num"></param>
-        public void Print(int num)
+        /// <param name="num">Номер ящика</param>
+        /// /// <param name="Packer">Фамилия упаковщика</param>
+        public void Print(int num, string Packer)
         {
             if (!Data.PrintSelected()) Data.PrintSetup();
             if (!Data.PrintSelected()) return;
@@ -63,9 +64,9 @@ namespace AutoLabel
                 doc.Print();
                 if (num == CurrentNum & CurrentNum > 0)
                 {
+                    Log(Packer);
                     CurrentNum++; //Увеличиваем номер, если печатался текущий
                     Save(); //Сохраняем, вдруг программа вылетет...
-                    Log();
                 }
             }
             catch
@@ -220,13 +221,14 @@ namespace AutoLabel
         /// <summary>
         /// Запись в журнал отчёта о напечатанной этикетке
         /// </summary>
-        void Log()
+        void Log(string Packer)
         {
             try
             {
                 //StreamWriter file = File.AppendText("Log.csv");
                 StreamWriter file = new StreamWriter("Log "+DateTime.Now.ToString("yyyy.MM.dd")+".csv", true, Encoding.Default);
-                file.WriteLine(@"""ТПА" + TPA + @"""; " + PartNum + "; " + CurrentNum);
+                file.WriteLine(DateTime.Now.ToString("hh:mm:ss") + "; ТПА" + TPA + "; " + PartNum + "; " + CurrentNum + 
+                    "; " + Packer);
                 file.Dispose();
             }
             catch { }
