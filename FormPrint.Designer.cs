@@ -68,7 +68,7 @@
             this.labelNum.ForeColor = System.Drawing.Color.White;
             this.labelNum.Location = new System.Drawing.Point(12, 193);
             this.labelNum.Name = "labelNum";
-            this.labelNum.Size = new System.Drawing.Size(879, 112);
+            this.labelNum.Size = new System.Drawing.Size(839, 112);
             this.labelNum.TabIndex = 2;
             this.labelNum.Text = "ТПА: ";
             this.labelNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -81,7 +81,7 @@
             this.LabelPacker.ForeColor = System.Drawing.Color.White;
             this.LabelPacker.Location = new System.Drawing.Point(12, 268);
             this.LabelPacker.Name = "LabelPacker";
-            this.LabelPacker.Size = new System.Drawing.Size(879, 122);
+            this.LabelPacker.Size = new System.Drawing.Size(839, 122);
             this.LabelPacker.TabIndex = 3;
             this.LabelPacker.Text = "Упаковщик: ";
             this.LabelPacker.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -92,7 +92,7 @@
             this.panel1.Controls.Add(this.buttonMax);
             this.panel1.Controls.Add(this.buttonDec);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(148, 3);
+            this.panel1.Location = new System.Drawing.Point(128, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(582, 94);
             this.panel1.TabIndex = 4;
@@ -164,7 +164,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(879, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(839, 100);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // buttonPrint
@@ -172,7 +172,7 @@
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPrint.ForeColor = System.Drawing.Color.White;
-            this.buttonPrint.Location = new System.Drawing.Point(292, 3);
+            this.buttonPrint.Location = new System.Drawing.Point(272, 3);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(294, 137);
             this.buttonPrint.TabIndex = 6;
@@ -193,7 +193,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(879, 143);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(839, 143);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // labelformname
@@ -219,7 +219,7 @@
             this.panel2.Controls.Add(this.buttonquit);
             this.panel2.Location = new System.Drawing.Point(2, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(907, 100);
+            this.panel2.Size = new System.Drawing.Size(867, 100);
             this.panel2.TabIndex = 8;
             // 
             // FormPrint
@@ -227,7 +227,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(903, 684);
+            this.ClientSize = new System.Drawing.Size(863, 684);
             this.Controls.Add(this.labelNum);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);

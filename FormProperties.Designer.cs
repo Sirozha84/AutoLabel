@@ -357,6 +357,7 @@
             this.buttonUsers.TabIndex = 14;
             this.buttonUsers.Text = "Пользователи";
             this.buttonUsers.UseVisualStyleBackColor = false;
+            this.buttonUsers.Click += new System.EventHandler(this.buttonUsers_Click);
             // 
             // FormProperties
             // 

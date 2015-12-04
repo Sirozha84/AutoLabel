@@ -104,5 +104,11 @@ namespace AutoLabel
         {
             MessageBox.Show("Coming soon :-)");
         }
+
+        private void buttonUsers_Click(object sender, EventArgs e)
+        {
+            FormUsers form = new FormUsers();
+            form.Show();
+        }
     }
 }
