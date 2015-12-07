@@ -94,6 +94,7 @@
             this.buttonsave.Text = "Сохранить";
             this.buttonsave.UseVisualStyleBackColor = true;
             this.buttonsave.Visible = false;
+            this.buttonsave.Click += new System.EventHandler(this.buttonsave_Click);
             // 
             // listBox1
             // 
@@ -113,6 +114,7 @@
             this.listBox1.Size = new System.Drawing.Size(731, 279);
             this.listBox1.TabIndex = 11;
             this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // buttonPageUp
             // 

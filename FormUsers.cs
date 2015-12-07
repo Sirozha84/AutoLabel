@@ -23,8 +23,6 @@ namespace AutoLabel
 
         private void listBox1_Click(object sender, EventArgs e)
         {
-            buttonRules.Visible = true;
-            buttonDelete.Visible = true;
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -37,13 +35,19 @@ namespace AutoLabel
             DrawList();
         }
 
+        /// <summary>
+        /// Вывод списка пользователей
+        /// </summary>
         void DrawList()
         {
             listBox1.Items.Clear();
-            listBox1.Items.Add("Гордеев - администратор");
-            listBox1.Items.Add("Иванов - упаковщик");
-            listBox1.Items.Add("Петров - упаковщик");
-            listBox1.Items.Add("Сидоров - упаковщик (без ключа)");
+            foreach (User u in Data.Users)
+            {
+                string str = u.Name;
+                if (u.Rule == 255) str += "     администратор";
+                if (u.Code == "") str += "     (без ключа)";
+                listBox1.Items.Add(str);
+            }
         }
 
         private void buttonRules_Click(object sender, EventArgs e)
@@ -51,11 +55,36 @@ namespace AutoLabel
             //Доступ
         }
 
+        /// <summary>
+        /// Создание нового пользователя
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonNew_Click(object sender, EventArgs e)
         {
             FormKeyboardLetter keyboard = new FormKeyboardLetter("Введите имя пользователя");
             if (keyboard.ShowDialog() == DialogResult.Cancel) return;
-            MessageBox.Show(keyboard.Str);
+            //Добавление нового пользователя
+            string name = keyboard.Str;
+            FormKey key = new FormKey();
+            key.ShowDialog();
+            string code = key.Code;
+            Data.Users.Add(new User(keyboard.Str, code, "0"));
+            buttonsave.Visible = true;
+            DrawList();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool edbuttons = listBox1.SelectedIndex >= 0;
+            buttonRules.Visible = edbuttons;
+            buttonDelete.Visible = edbuttons;
+        }
+
+        private void buttonsave_Click(object sender, EventArgs e)
+        {
+            Data.Save();
+            Close();
         }
     }
 }

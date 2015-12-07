@@ -11,6 +11,7 @@ namespace AutoLabel
 {
     class Data
     {
+        public static List<User> Users = new List<User>();
         public static List<Label> Labels = new List<Label>();
 
         public static List<string> Types = new List<string>();
@@ -27,9 +28,23 @@ namespace AutoLabel
         /// </summary>
         public static void Load()
         {
-            //Сами лейблы
+            //Пользователи
+            Users.Clear();
+            try
+            {
+                StreamReader file = File.OpenText("Users.txt");
+                while (!file.EndOfStream)
+                {
+                    Users.Add(new User(file.ReadLine(), file.ReadLine(), file.ReadLine()));
+                }
+                file.Dispose();
+            }
+            catch { } //нишмагла...
+
+            //Лейблы
             for (int i = 0; i < 6; i++)
                 Labels.Add(new Label(i)); //Конструктор сам, либо создаст пустой, либо загрузит с диска
+
             //Так же списки выбора
             Types.Add("Bericap");
             Types.Add("Другой");
@@ -44,7 +59,6 @@ namespace AutoLabel
             Limits.Add("24 месяца");
             Limits.Add("1 день");
             //Принтер
-
             try
             {
                 StreamReader file = File.OpenText("Printer.txt");
@@ -59,10 +73,28 @@ namespace AutoLabel
             }
         }
 
-
+        /// <summary>
+        /// Сохранение данных
+        /// </summary>
         public static void Save()
         {
-            //Здесь будет сохранение
+            try
+            {
+                StreamWriter file = File.CreateText("Users.txt");
+                foreach (User u in Users)
+                {
+                    file.WriteLine(u.Name);
+                    file.WriteLine(u.Code);
+                    file.WriteLine(u.Rule);
+                }
+                file.Dispose();
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось сохранить список пользователей. Позовите админа! Пусть он в этом разберётся.",
+                    "Случилось что-то страшное");
+                //Ох, надеюсь мне не придётся увидеть этой надписи...
+            }
         }
 
         public static void PrintSetup()
