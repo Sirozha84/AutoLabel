@@ -50,5 +50,12 @@ namespace AutoLabel
         {
             //Доступ
         }
+
+        private void buttonNew_Click(object sender, EventArgs e)
+        {
+            FormKeyboardLetter keyboard = new FormKeyboardLetter("Введите имя пользователя");
+            if (keyboard.ShowDialog() == DialogResult.Cancel) return;
+            MessageBox.Show(keyboard.Str);
+        }
     }
 }

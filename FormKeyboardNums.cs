@@ -35,11 +35,6 @@ namespace AutoLabel
             Close();
         }
 
-        private void FormKeyboardNums_Load(object sender, EventArgs e)
-        {
-            //label1.Text = label;
-        }
-
         private void button10_Click(object sender, EventArgs e)
         {
             textBoxEdit.Text += "0";

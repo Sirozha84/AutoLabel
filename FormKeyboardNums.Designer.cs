@@ -52,7 +52,7 @@
             this.textBoxEdit.BackColor = System.Drawing.Color.Black;
             this.textBoxEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxEdit.ForeColor = System.Drawing.Color.White;
-            this.textBoxEdit.Location = new System.Drawing.Point(12, 86);
+            this.textBoxEdit.Location = new System.Drawing.Point(12, 56);
             this.textBoxEdit.Name = "textBoxEdit";
             this.textBoxEdit.Size = new System.Drawing.Size(537, 62);
             this.textBoxEdit.TabIndex = 19;
@@ -77,7 +77,7 @@
             this.tableLayoutPanel1.Controls.Add(this.button10, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.button11, 0, 6);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(114, 176);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(111, 140);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -246,10 +246,11 @@
             // 
             // buttonOK
             // 
+            this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonOK.BackColor = System.Drawing.Color.Black;
             this.buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonOK.Location = new System.Drawing.Point(12, 586);
+            this.buttonOK.Location = new System.Drawing.Point(12, 544);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(262, 74);
             this.buttonOK.TabIndex = 21;
@@ -259,10 +260,11 @@
             // 
             // buttonCancel
             // 
+            this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.BackColor = System.Drawing.Color.Black;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCancel.Location = new System.Drawing.Point(287, 586);
+            this.buttonCancel.Location = new System.Drawing.Point(287, 544);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(262, 74);
             this.buttonCancel.TabIndex = 22;
@@ -285,7 +287,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(561, 672);
+            this.ClientSize = new System.Drawing.Size(561, 630);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
@@ -296,7 +298,6 @@
             this.Name = "FormKeyboardNums";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormKeyboardNums";
-            this.Load += new System.EventHandler(this.FormKeyboardNums_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

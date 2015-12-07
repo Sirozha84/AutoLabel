@@ -152,6 +152,7 @@
             this.buttonNew.TabIndex = 14;
             this.buttonNew.Text = "Новый";
             this.buttonNew.UseVisualStyleBackColor = true;
+            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
             // 
             // buttonRules
             // 

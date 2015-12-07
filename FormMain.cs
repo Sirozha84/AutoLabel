@@ -15,8 +15,6 @@ namespace AutoLabel
         public FormMain()
         {
             //InitializeComponent();
-
-
             //Временно, для теста
             FormUsers form = new FormUsers();
             form.Show();
@@ -31,6 +29,7 @@ namespace AutoLabel
         {
             Data.Load();
             //Так... небольшая защита от кидалова :-)
+            //Заплатить обещали, но на всякий случай пока оставлю...
             if (DateTime.Now> new DateTime(2016, 2, 1))
             {
                 MessageBox.Show("Программа устарела, требуется обновление. Дальнейшая работа невозможна.");
