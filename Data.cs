@@ -29,18 +29,7 @@ namespace AutoLabel
         public static void Load()
         {
             //Пользователи
-            Users.Clear();
-            try
-            {
-                StreamReader file = File.OpenText("Users.txt");
-                while (!file.EndOfStream)
-                {
-                    Users.Add(new User(file.ReadLine(), file.ReadLine(), file.ReadLine()));
-                }
-                file.Dispose();
-            }
-            catch { } //нишмагла...
-
+            LoadUsers();
             //Лейблы
             for (int i = 0; i < 6; i++)
                 Labels.Add(new Label(i)); //Конструктор сам, либо создаст пустой, либо загрузит с диска
@@ -74,9 +63,27 @@ namespace AutoLabel
         }
 
         /// <summary>
-        /// Сохранение данных
+        /// Загрузка пользователей
         /// </summary>
-        public static void Save()
+        public static void LoadUsers()
+        {
+            Users.Clear();
+            try
+            {
+                StreamReader file = File.OpenText("Users.txt");
+                while (!file.EndOfStream)
+                {
+                    Users.Add(new User(file.ReadLine(), file.ReadLine(), file.ReadLine()));
+                }
+                file.Dispose();
+            }
+            catch { } //нишмагла...
+        }
+
+        /// <summary>
+        /// Сохранение пользователей
+        /// </summary>
+        public static void SaveUsers()
         {
             try
             {

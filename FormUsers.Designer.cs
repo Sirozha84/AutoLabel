@@ -36,8 +36,9 @@
             this.buttonPageUp = new System.Windows.Forms.Button();
             this.buttonPageDown = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
-            this.buttonRules = new System.Windows.Forms.Button();
+            this.buttonNewAdmin = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonKey = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,24 +153,23 @@
             this.buttonNew.Name = "buttonNew";
             this.buttonNew.Size = new System.Drawing.Size(250, 76);
             this.buttonNew.TabIndex = 14;
-            this.buttonNew.Text = "Новый";
+            this.buttonNew.Text = "Новый упаковщик";
             this.buttonNew.UseVisualStyleBackColor = true;
             this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
             // 
-            // buttonRules
+            // buttonNewAdmin
             // 
-            this.buttonRules.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRules.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonRules.ForeColor = System.Drawing.Color.White;
-            this.buttonRules.Location = new System.Drawing.Point(329, 473);
-            this.buttonRules.Name = "buttonRules";
-            this.buttonRules.Size = new System.Drawing.Size(250, 76);
-            this.buttonRules.TabIndex = 15;
-            this.buttonRules.Text = "Доступ";
-            this.buttonRules.UseVisualStyleBackColor = true;
-            this.buttonRules.Visible = false;
-            this.buttonRules.Click += new System.EventHandler(this.buttonRules_Click);
+            this.buttonNewAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonNewAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNewAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonNewAdmin.ForeColor = System.Drawing.Color.White;
+            this.buttonNewAdmin.Location = new System.Drawing.Point(329, 473);
+            this.buttonNewAdmin.Name = "buttonNewAdmin";
+            this.buttonNewAdmin.Size = new System.Drawing.Size(250, 76);
+            this.buttonNewAdmin.TabIndex = 15;
+            this.buttonNewAdmin.Text = "Новый администратор";
+            this.buttonNewAdmin.UseVisualStyleBackColor = true;
+            this.buttonNewAdmin.Click += new System.EventHandler(this.buttonRules_Click);
             // 
             // buttonDelete
             // 
@@ -177,7 +177,7 @@
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(585, 473);
+            this.buttonDelete.Location = new System.Drawing.Point(841, 473);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(250, 76);
             this.buttonDelete.TabIndex = 16;
@@ -186,14 +186,30 @@
             this.buttonDelete.Visible = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
+            // buttonKey
+            // 
+            this.buttonKey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonKey.ForeColor = System.Drawing.Color.White;
+            this.buttonKey.Location = new System.Drawing.Point(585, 473);
+            this.buttonKey.Name = "buttonKey";
+            this.buttonKey.Size = new System.Drawing.Size(250, 76);
+            this.buttonKey.TabIndex = 17;
+            this.buttonKey.Text = "Изменить ключ";
+            this.buttonKey.UseVisualStyleBackColor = true;
+            this.buttonKey.Visible = false;
+            this.buttonKey.Click += new System.EventHandler(this.buttonKey_Click);
+            // 
             // FormUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(954, 636);
+            this.Controls.Add(this.buttonKey);
             this.Controls.Add(this.buttonDelete);
-            this.Controls.Add(this.buttonRules);
+            this.Controls.Add(this.buttonNewAdmin);
             this.Controls.Add(this.buttonNew);
             this.Controls.Add(this.buttonPageDown);
             this.Controls.Add(this.buttonPageUp);
@@ -220,7 +236,8 @@
         private System.Windows.Forms.Button buttonPageUp;
         private System.Windows.Forms.Button buttonPageDown;
         private System.Windows.Forms.Button buttonNew;
-        private System.Windows.Forms.Button buttonRules;
+        private System.Windows.Forms.Button buttonNewAdmin;
         private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonKey;
     }
 }

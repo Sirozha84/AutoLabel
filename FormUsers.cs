@@ -18,6 +18,8 @@ namespace AutoLabel
 
         private void buttonquit_Click(object sender, EventArgs e)
         {
+            //Отменяем изменения путём перезагрузки старых данных
+            Data.LoadUsers();
             Close();
         }
 
@@ -27,7 +29,10 @@ namespace AutoLabel
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            //Удаление
+            Data.Users.RemoveAt(listBox1.SelectedIndex);
+            DrawList();
+            listBox1_SelectedIndexChanged(null, null);
+            buttonsave.Visible = true;
         }
 
         private void FormUsers_Load(object sender, EventArgs e)
@@ -50,17 +55,34 @@ namespace AutoLabel
             }
         }
 
+        private void buttonNew_Click(object sender, EventArgs e)
+        {
+            AddUser("0");
+        }
+
         private void buttonRules_Click(object sender, EventArgs e)
         {
-            //Доступ
+            AddUser("255");
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            buttonKey.Visible = listBox1.SelectedIndex >= 0;
+            buttonDelete.Visible = listBox1.SelectedIndex >= 0;
+        }
+
+        private void buttonsave_Click(object sender, EventArgs e)
+        {
+            Data.SaveUsers();
+            buttonsave.Visible = false;
+            //Close();
         }
 
         /// <summary>
-        /// Создание нового пользователя
+        /// Добавление нового пользователя
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonNew_Click(object sender, EventArgs e)
+        /// <param name="Rule">Права</param>
+        void AddUser(string Rule)
         {
             FormKeyboardLetter keyboard = new FormKeyboardLetter("Введите имя пользователя");
             if (keyboard.ShowDialog() == DialogResult.Cancel) return;
@@ -69,22 +91,21 @@ namespace AutoLabel
             FormKey key = new FormKey();
             key.ShowDialog();
             string code = key.Code;
-            Data.Users.Add(new User(keyboard.Str, code, "0"));
+            Data.Users.Add(new User(keyboard.Str, code, Rule));
             buttonsave.Visible = true;
             DrawList();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void buttonKey_Click(object sender, EventArgs e)
         {
-            bool edbuttons = listBox1.SelectedIndex >= 0;
-            buttonRules.Visible = edbuttons;
-            buttonDelete.Visible = edbuttons;
-        }
-
-        private void buttonsave_Click(object sender, EventArgs e)
-        {
-            Data.Save();
-            Close();
+            FormKey key = new FormKey();
+            key.ShowDialog();
+            if (key.Code != "")
+            {
+                Data.Users[listBox1.SelectedIndex].Code = key.Code;
+                buttonsave.Visible = true;
+                DrawList();
+            }
         }
     }
 }
