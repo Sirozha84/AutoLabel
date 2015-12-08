@@ -37,6 +37,10 @@ namespace AutoLabel
         static Font Big = new Font("Arial", 40, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font Biggg = new Font("Arial", 90, FontStyle.Bold, GraphicsUnit.Pixel);
 
+        //Текущие данные для печати
+        static int Num;
+        static string Packer;
+
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -52,8 +56,10 @@ namespace AutoLabel
         /// </summary>
         /// <param name="num">Номер ящика</param>
         /// /// <param name="Packer">Фамилия упаковщика</param>
-        public void Print(int num, string Packer)
+        public void Print(int num, string packer)
         {
+            Num = num;
+            Packer = packer;
             if (!Data.PrintSelected()) Data.PrintSetup();
             if (!Data.PrintSelected()) return;
             try
@@ -64,7 +70,7 @@ namespace AutoLabel
                 doc.Print();
                 if (num == CurrentNum & CurrentNum > 0)
                 {
-                    Log(Packer);
+                    Log();  //Лог пишу только когда печатается новая этикетка... может понадобится ещё что-то на счёт брака
                     CurrentNum++; //Увеличиваем номер, если печатался текущий
                     Save(); //Сохраняем, вдруг программа вылетет...
                 }
@@ -117,15 +123,15 @@ namespace AutoLabel
             //Дополнительные поля
             g.DrawString("Прочие дополнения:", Small, Brushes.Black, new Point(X + 10, Y + 280));
             DrawStrings(g, 270, 300, "Количество преформ в коробе", "Preform quantity per box", Quantity);
-            DrawStrings(g, 220, 340, "Номер короба", "Box number", CurrentNum.ToString());
+            DrawStrings(g, 220, 340, "Номер короба", "Box number", Num.ToString());
             DrawStrings(g, 220, 380, "Дата изготовления", "Date of manufacturnig", Date());
             DrawStrings(g, 220, 420, "Цвет преформы", "Preform colour", "Белый");
             DrawStrings(g, 220, 460, "Машина", "Machine", "NETSTAL №" + TPA);
             DrawStrings(g, 220, 500, "Смена", "Shift", "");
             DrawStrings(g, 220, 540, "Марка материала", "Material", Material);
-            DrawStrings(g, 220, 580, "Время", "Time", DateTime.Now.ToString("HH:MM"));
+            DrawStrings(g, 220, 580, "Время", "Time", DateTime.Now.ToString("hh:mm"));
             DrawStrings(g, 220, 620, "Номер партии", "Batch number", PartNum);
-            DrawStrings(g, 220, 660, "Укладчик", "Packer", "");
+            DrawStrings(g, 220, 660, "Укладчик", "Packer", Packer);
             //Нижний колонтитул
             g.DrawString("Сделано в России / Made in Russia",
                 SmallBold, Brushes.Black, new Point(X + 130, Y + Height - 55));
@@ -221,7 +227,7 @@ namespace AutoLabel
         /// <summary>
         /// Запись в журнал отчёта о напечатанной этикетке
         /// </summary>
-        void Log(string Packer)
+        void Log()
         {
             try
             {

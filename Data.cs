@@ -11,6 +11,11 @@ namespace AutoLabel
 {
     class Data
     {
+        /// <summary>
+        /// Использовать ли ключи в данной сборке
+        /// </summary>
+        public static bool UseKeys = true;
+
         public static List<User> Users = new List<User>();
         public static List<Label> Labels = new List<Label>();
 

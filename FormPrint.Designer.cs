@@ -41,10 +41,13 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.labelformname = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBoxUser = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonquit
@@ -66,25 +69,24 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelNum.ForeColor = System.Drawing.Color.White;
-            this.labelNum.Location = new System.Drawing.Point(12, 193);
+            this.labelNum.Location = new System.Drawing.Point(12, 145);
             this.labelNum.Name = "labelNum";
-            this.labelNum.Size = new System.Drawing.Size(839, 112);
+            this.labelNum.Size = new System.Drawing.Size(835, 112);
             this.labelNum.TabIndex = 2;
             this.labelNum.Text = "ТПА: ";
             this.labelNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LabelPacker
             // 
-            this.LabelPacker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelPacker.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelPacker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelPacker.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelPacker.ForeColor = System.Drawing.Color.White;
-            this.LabelPacker.Location = new System.Drawing.Point(12, 268);
+            this.LabelPacker.Location = new System.Drawing.Point(3, 0);
             this.LabelPacker.Name = "LabelPacker";
-            this.LabelPacker.Size = new System.Drawing.Size(839, 122);
+            this.LabelPacker.Size = new System.Drawing.Size(363, 69);
             this.LabelPacker.TabIndex = 3;
             this.LabelPacker.Text = "Упаковщик: ";
-            this.LabelPacker.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LabelPacker.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel1
             // 
@@ -92,7 +94,7 @@
             this.panel1.Controls.Add(this.buttonMax);
             this.panel1.Controls.Add(this.buttonDec);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(128, 3);
+            this.panel1.Location = new System.Drawing.Point(126, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(582, 94);
             this.panel1.TabIndex = 4;
@@ -164,7 +166,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(839, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(835, 100);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // buttonPrint
@@ -172,7 +174,7 @@
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPrint.ForeColor = System.Drawing.Color.White;
-            this.buttonPrint.Location = new System.Drawing.Point(272, 3);
+            this.buttonPrint.Location = new System.Drawing.Point(270, 3);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(294, 137);
             this.buttonPrint.TabIndex = 6;
@@ -193,7 +195,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(839, 143);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(835, 143);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // labelformname
@@ -219,19 +221,57 @@
             this.panel2.Controls.Add(this.buttonquit);
             this.panel2.Location = new System.Drawing.Point(2, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(867, 100);
+            this.panel2.Size = new System.Drawing.Size(863, 100);
             this.panel2.TabIndex = 8;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.24779F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.24779F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.50442F));
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxUser, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.LabelPacker, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(12, 273);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(835, 69);
+            this.tableLayoutPanel3.TabIndex = 9;
+            // 
+            // comboBoxUser
+            // 
+            this.comboBoxUser.BackColor = System.Drawing.Color.Black;
+            this.comboBoxUser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comboBoxUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxUser.ForeColor = System.Drawing.Color.White;
+            this.comboBoxUser.FormattingEnabled = true;
+            this.comboBoxUser.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.comboBoxUser.Location = new System.Drawing.Point(372, 3);
+            this.comboBoxUser.Name = "comboBoxUser";
+            this.comboBoxUser.Size = new System.Drawing.Size(363, 63);
+            this.comboBoxUser.TabIndex = 15;
             // 
             // FormPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(863, 684);
+            this.ClientSize = new System.Drawing.Size(859, 684);
+            this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.labelNum);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.LabelPacker);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPrint";
@@ -244,6 +284,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -263,5 +304,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label labelformname;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.ComboBox comboBoxUser;
     }
 }
