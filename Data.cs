@@ -14,7 +14,7 @@ namespace AutoLabel
         /// <summary>
         /// Использовать ли ключи в данной сборке
         /// </summary>
-        public static bool UseKeys = true;
+        public static bool UseKeys = false;
         public static string Shift;
         public static string LogName = "DefaultLog.csv";
         //Списки пользователей и лейблов
@@ -50,10 +50,10 @@ namespace AutoLabel
             Weights.Add("0");
             Quantitys.Add("10896");
             Quantitys.Add("0");
-            Colors.Add("БЕЛЫЙ");
-            Colors.Add("НЕ БЕЛЫЙ");
-            Materials.Add("ПОЛИЭФ");
-            Materials.Add("ЧУГУН");
+            Colors.Add("Белый");
+            Colors.Add("Не белый");
+            Materials.Add("Полиэф");
+            Materials.Add("Чугун");
             Limits.Add("24 месяца");
             Limits.Add("1 день");
             //Принтер

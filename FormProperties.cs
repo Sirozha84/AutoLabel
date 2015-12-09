@@ -31,10 +31,14 @@ namespace AutoLabel
             //Заполнение комбобоксов списками
             textBoxNumber.Text = "";
             //textBoxCurrent.Text = "";
-            comboBoxType.DataSource = Data.Types;
-            comboBoxType.SelectedItem = null;
             comboBoxWeight.DataSource = Data.Weights;
             comboBoxWeight.SelectedItem = null;
+            comboBoxType.DataSource = Data.Types;
+            comboBoxType.SelectedItem = null;
+            comboBoxMaterial.DataSource = Data.Materials;
+            comboBoxMaterial.SelectedItem = null;
+            comboBoxColor.DataSource = Data.Colors;
+            comboBoxColor.SelectedItem = null;
             comboBoxCount.DataSource = Data.Quantitys;
             comboBoxCount.SelectedItem = null;
             buttonsave.Visible = false;
@@ -51,15 +55,19 @@ namespace AutoLabel
             if (l.Weight != "") comboBoxWeight.SelectedItem = l.Weight; else comboBoxWeight.SelectedItem = null;
             if (l.Quantity != "") comboBoxCount.SelectedItem = l.Quantity; else comboBoxCount.SelectedItem = null;
 
-            textBoxNumber.Visible = true;
-            comboBoxType.Visible = true;
             comboBoxWeight.Visible = true;
+            comboBoxType.Visible = true;
+            comboBoxMaterial.Visible = true;
+            comboBoxColor.Visible = true;
             comboBoxCount.Visible = true;
+            textBoxNumber.Visible = true;
             //textBoxNumber.Visible = true;
             label1.Visible = true;
             label2.Visible = true;
             label3.Visible = true;
             label4.Visible = true;
+            label6.Visible = true;
+            label7.Visible = true;
             //textBoxCurrent.Enabled = true;
 
             buttonsave.Visible = false;

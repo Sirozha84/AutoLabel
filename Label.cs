@@ -21,6 +21,7 @@ namespace AutoLabel
         public string Antistatic;   //Список количество антистатика
         public string Material;   //Список сырьё
         public string Limit;    //Список срок хранения
+        public string PColor;    //Цвет
 
         //Координаты и размеры этикетки
         static int X;
@@ -120,15 +121,15 @@ namespace AutoLabel
             g.DrawString(Type, Big, Brushes.Black, new Point(X + 220, Y + 200));
             //Дополнительные поля
             g.DrawString("Прочие дополнения:", Small, Brushes.Black, new Point(X + 10, Y + 280));
-            DrawStrings(g, 270, 300, "Количество преформ в коробе", "Preform quantity per box", Quantity);
-            DrawStrings(g, 220, 340, "Номер короба", "Box number", Num.ToString());
-            DrawStrings(g, 220, 380, "Дата изготовления", "Date of manufacturnig", Date());
-            DrawStrings(g, 220, 420, "Цвет преформы", "Preform colour", "Белый");
-            DrawStrings(g, 220, 460, "Машина", "Machine", "NETSTAL №" + TPA);
-            DrawStrings(g, 220, 500, "Смена", "Shift", "");
-            DrawStrings(g, 220, 540, "Марка материала", "Material", Material);
-            DrawStrings(g, 220, 580, "Время", "Time", DateTime.Now.ToString("HH:mm"));
-            DrawStrings(g, 220, 620, "Номер партии", "Batch number", PartNum);
+            DrawStrings(g, 220, 300, "Машина", "Machine", "NETSTAL №" + TPA);
+            DrawStrings(g, 220, 340, "Марка материала", "Material", Material);
+            DrawStrings(g, 220, 380, "Цвет преформы", "Preform colour", PColor);
+            DrawStrings(g, 270, 420, "Количество преформ в коробе", "Preform quantity per box", Quantity);
+            DrawStrings(g, 220, 460, "Дата изготовления", "Date of manufacturnig", Date());
+            DrawStrings(g, 220, 500, "Время", "Time", DateTime.Now.ToString("HH:mm"));
+            DrawStrings(g, 220, 540, "Номер партии", "Batch number", PartNum);
+            DrawStrings(g, 220, 580, "Номер короба", "Box number", Num.ToString());
+            DrawStrings(g, 220, 620, "Смена", "Shift", Data.Shift);
             DrawStrings(g, 220, 660, "Укладчик", "Packer", Packer);
             //Нижний колонтитул
             g.DrawString("Сделано в России / Made in Russia",
