@@ -28,6 +28,7 @@ namespace AutoLabel
         private void FormMain_Load(object sender, EventArgs e)
         {
             Data.Load();
+            RefreshMain();
             //Так... небольшая защита от кидалова :-)
             //Заплатить обещали, но на всякий случай пока оставлю...
             if (DateTime.Now> new DateTime(2016, 2, 1))
@@ -58,10 +59,33 @@ namespace AutoLabel
             formprint.Show();
         }
 
+        //Параметры
         private void buttonProperties_Click(object sender, EventArgs e)
         {
-            FormProperties formprop = new FormProperties();
-            formprop.Show();
+            if (Data.GetKey(255) == 255)
+            {
+                FormProperties formprop = new FormProperties();
+                formprop.Show();
+            }
+        }
+
+        //Выбор новой смены
+        private void buttonShift_Click(object sender, EventArgs e)
+        {
+            if (Data.GetKey(255) == 255)
+            {
+                FormShift shift = new FormShift();
+                shift.ShowDialog();
+                RefreshMain();
+            }
+        }
+
+        /// <summary>
+        /// Обновление кнопочек на главном окне в соответствии на настройками
+        /// </summary>
+        void RefreshMain()
+        {
+            buttonShift.Text = Data.Shift;
         }
     }
 }

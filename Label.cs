@@ -99,8 +99,6 @@ namespace AutoLabel
             X = Space - 10 + 584;
             Y = Space - 14;
             DrawLabel(e.Graphics);
-            //DrawLabel(e.Graphics, Space + Shift, Space + Shift, 585 - Space * 2, 827 - Space * 2); //581*827
-            //DrawLabel(e.Graphics, Space + Shift + 584, Space + Shift, 585 - Space * 2, 827 - Space * 2);
         }
 
         /// <summary>
@@ -129,7 +127,7 @@ namespace AutoLabel
             DrawStrings(g, 220, 460, "Машина", "Machine", "NETSTAL №" + TPA);
             DrawStrings(g, 220, 500, "Смена", "Shift", "");
             DrawStrings(g, 220, 540, "Марка материала", "Material", Material);
-            DrawStrings(g, 220, 580, "Время", "Time", DateTime.Now.ToString("hh:mm"));
+            DrawStrings(g, 220, 580, "Время", "Time", DateTime.Now.ToString("HH:mm"));
             DrawStrings(g, 220, 620, "Номер партии", "Batch number", PartNum);
             DrawStrings(g, 220, 660, "Укладчик", "Packer", Packer);
             //Нижний колонтитул
@@ -231,10 +229,23 @@ namespace AutoLabel
         {
             try
             {
-                //StreamWriter file = File.AppendText("Log.csv");
-                StreamWriter file = new StreamWriter("Log "+DateTime.Now.ToString("yyyy.MM.dd")+".csv", true, Encoding.Default);
-                file.WriteLine(DateTime.Now.ToString("hh:mm:ss") + "; ТПА" + TPA + "; " + PartNum + "; " + CurrentNum + 
-                    "; " + Packer);
+                StreamWriter file = new StreamWriter(Data.LogName, true, Encoding.Default);
+                file.WriteLine(DateTime.Now.ToString("dd.MM; HH:mm") +
+                    "; ТПА" + TPA + "; " + PartNum + "; " + CurrentNum + "; " + Data.Shift + "; " + Packer);
+                file.Dispose();
+            }
+            catch { }
+        }
+
+        /// <summary>
+        /// Запись шапки для нового лога (не знаю надо ли, но на всякий случай сделаю)
+        /// </summary>
+        public static void NewLog()
+        {
+            try
+            {
+                StreamWriter file = new StreamWriter(Data.LogName, true, Encoding.Default);
+                file.WriteLine("Дата; Время; Машина; Партия; Короб; Смена; Упаковщик");
                 file.Dispose();
             }
             catch { }

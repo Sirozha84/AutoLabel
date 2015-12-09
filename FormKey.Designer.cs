@@ -40,7 +40,7 @@
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCancel.ForeColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(193, 212);
+            this.buttonCancel.Location = new System.Drawing.Point(193, 194);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(262, 74);
             this.buttonCancel.TabIndex = 28;
@@ -51,13 +51,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(108, 80);
+            this.label1.Location = new System.Drawing.Point(121, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(414, 31);
+            this.label1.Size = new System.Drawing.Size(403, 55);
             this.label1.TabIndex = 29;
-            this.label1.Text = "Поднесите ключ к считывателю";
+            this.label1.Text = "Приложите ключ";
             // 
             // textBox1
             // 

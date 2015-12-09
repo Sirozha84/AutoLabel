@@ -39,14 +39,21 @@ namespace AutoLabel
                 if (key.Code == "") Close();
                 //Далее план такой: ищем в базе ключ, если его нет - уходим
                 User user = Data.Users.Find(u => u.Code == key.Code);
-                //Если находим - выводим в комбобокс
-                if (user == null) Close();
+                if (user == null)
+                {
+                    if (key.Code != "")
+                    {
+                        FormError err = new FormError();
+                        err.ShowDialog();
+                    }
+                    Close();
+                }
                 else
                 {
-                    //Выбираем нужного в комбобоксе
                     comboBoxUser.SelectedItem = user.Name;
                     //Если это упаковщик - замораживаем комбобокс
                     if (user.Rule == 0) comboBoxUser.Enabled = false;
+                    buttonPrint.Visible = true;
                 }
             }
         }
@@ -89,6 +96,11 @@ namespace AutoLabel
                 buttonMax.Visible = false;
             }
             buttonDec.Visible = box > 1;
+        }
+
+        private void comboBoxUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            buttonPrint.Visible = true;
         }
     }
 }

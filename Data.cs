@@ -15,10 +15,12 @@ namespace AutoLabel
         /// Использовать ли ключи в данной сборке
         /// </summary>
         public static bool UseKeys = true;
-
+        public static string Shift;
+        public static string LogName = "DefaultLog.csv";
+        //Списки пользователей и лейблов
         public static List<User> Users = new List<User>();
         public static List<Label> Labels = new List<Label>();
-
+        //Списки выпадающих меню
         public static List<string> Types = new List<string>();
         public static List<string> Weights = new List<string>();
         public static List<string> Quantitys = new List<string>();
@@ -33,6 +35,8 @@ namespace AutoLabel
         /// </summary>
         public static void Load()
         {
+            //Смена
+            LoadShift();
             //Пользователи
             LoadUsers();
             //Лейблы
@@ -63,7 +67,26 @@ namespace AutoLabel
             }
             catch
             {
-                printersettings = null; //нишмагла...
+                //Применяем настройки принтера по умолчанию
+                printersettings = null;
+            }
+        }
+
+        /// <summary>
+        /// Загрузка текущей смены
+        /// </summary>
+        static void LoadShift()
+        {
+            try
+            {
+                StreamReader file = File.OpenText("Shift.txt");
+                Shift = file.ReadLine();
+                LogName = file.ReadLine();
+                file.Dispose();
+            }
+            catch
+            {
+                Shift = "Смена 1";
             }
         }
 
@@ -103,9 +126,7 @@ namespace AutoLabel
             }
             catch
             {
-                MessageBox.Show("Не удалось сохранить список пользователей. Позовите админа! Пусть он в этом разберётся.",
-                    "Случилось что-то страшное");
-                //Ох, надеюсь мне не придётся увидеть этой надписи...
+                Error("Не удалось сохранить список пользователей");
             }
         }
 
@@ -115,8 +136,7 @@ namespace AutoLabel
             if (diag.ShowDialog() == DialogResult.Cancel) return;
             printersettings = diag.PrinterSettings;
             printersettings.DefaultPageSettings.Landscape = true;   //Задаём альбомную ориентацию
-
-            //Тут настройки надо сохранить в файл
+            //Сохраняем настройку принтера в файл
             try
             {
                 StreamWriter file = File.CreateText("Printer.txt");
@@ -125,15 +145,94 @@ namespace AutoLabel
             }
             catch
             {
-                MessageBox.Show("Не удалось сохранить настройку принтера. Позовите админа! Пусть он в этом разберётся.",
-                    "Случилось что-то страшное");
-                //Ох, надеюсь мне не придётся увидеть этой надписи...
+                Error("Не удалось сохранить настройку принтера.");
             }
         }
 
+        /// <summary>
+        /// Возвращает true, если принтер выбран
+        /// </summary>
+        /// <returns></returns>
         public static bool PrintSelected()
         {
             return printersettings != null;
+        }
+
+        /// <summary>
+        /// Выбор новой смены
+        /// </summary>
+        /// <param name="shift"></param>
+        public static void ShiftChange(string shift)
+        {
+            Shift = shift;
+            //Изменяем файл журнала
+            LogName = (DateTime.Now.ToString("yyyy.MM.dd - ") + Shift + ".csv");
+            //Сохраняем текущую смену в файл
+            try
+            {
+                StreamWriter file = File.CreateText("Shift.txt");
+                file.WriteLine(Shift);
+                file.WriteLine(LogName);
+                file.Dispose();
+            }
+            catch
+            {
+                Error("Не удалось сохранить настройку смены.");
+            }
+            Label.NewLog();
+        }
+
+        /// <summary>
+        /// Сообщение об ошибке :-(
+        /// </summary>
+        /// <param name="message"></param>
+        static void Error(string message)
+        {
+            MessageBox.Show(message + "\nДля решение проблемы вызовите системного администратора",
+                "Случилось что-то плохое");
+            //Ох, надеюсь мне не придётся увидеть ни одной из этих надписей...
+        }
+
+        /// <summary>
+        /// Запрос ключа
+        /// </summary>
+        /// <param name="Minimum">Минимально необходимый уровень доступа</param>
+        /// <returns></returns>
+        public static byte GetKey(int Minimum)
+        {
+            if (UseKeys)
+            {
+                FormKey key = new FormKey();
+                key.ShowDialog();
+                //Ищем ключ в базе
+                User user = Users.Find(u => u.Code == key.Code);
+                if (user != null)
+                {
+                    if (user.Rule >= Minimum)
+                    {
+                        //Прав достаточно
+                        return user.Rule;
+                    }
+                    else
+                    {
+                        //Прав недостаточно
+                        FormError err = new FormError("Недостаточно прав");
+                        err.ShowDialog();
+                        return 0;
+                    }
+                }
+                else
+                {
+                    if (key.Code != "")
+                    {
+                        FormError err = new FormError();
+                        err.ShowDialog();
+                    }
+                    return 0; //значит, что нифига не нашли 
+                }
+            }
+            //Если ключи не используются, выдаём полные права без вопросов
+            return 255;
         }
     }
 }

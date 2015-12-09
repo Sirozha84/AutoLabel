@@ -57,7 +57,7 @@ namespace AutoLabel
 
         private void buttonNew_Click(object sender, EventArgs e)
         {
-            AddUser("0");
+            AddUser("1");
         }
 
         private void buttonRules_Click(object sender, EventArgs e)

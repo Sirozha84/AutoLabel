@@ -180,6 +180,7 @@
             this.buttonPrint.TabIndex = 6;
             this.buttonPrint.Text = "Печать";
             this.buttonPrint.UseVisualStyleBackColor = true;
+            this.buttonPrint.Visible = false;
             this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // tableLayoutPanel2
@@ -261,6 +262,7 @@
             this.comboBoxUser.Name = "comboBoxUser";
             this.comboBoxUser.Size = new System.Drawing.Size(363, 63);
             this.comboBoxUser.TabIndex = 15;
+            this.comboBoxUser.SelectedIndexChanged += new System.EventHandler(this.comboBoxUser_SelectedIndexChanged);
             // 
             // FormPrint
             // 
