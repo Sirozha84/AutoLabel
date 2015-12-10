@@ -32,11 +32,16 @@ namespace AutoLabel
         //Карандаши и ручки :-)
         static Pen Bold = new Pen(Color.Black, 3);
         static Font Smalllll = new Font("Arial", 11, FontStyle.Regular, GraphicsUnit.Pixel);
+        static Font SmallItalic = new Font("Arial", 11, FontStyle.Italic, GraphicsUnit.Pixel);
         static Font Small = new Font("Arial", 14, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font SmallBold = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font Normal = new Font("Arial", 30, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font Big = new Font("Arial", 40, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font Biggg = new Font("Arial", 90, FontStyle.Bold, GraphicsUnit.Pixel);
+
+        //Графика
+        Image logo = Image.FromFile("Graphics\\Europlast logo.jpeg");
+        Image rst = Image.FromFile("Graphics\\RST.png");
 
         //Текущие данные для печати
         static int Num;
@@ -115,7 +120,22 @@ namespace AutoLabel
             g.DrawLine(Bold, X + 220, Y + 170, X + 220, Y + 270);
             g.DrawLine(Bold, X + 410, Y + 170, X + 410, Y + 270);
             //Шапка
-            g.DrawString("Demo", Biggg, Brushes.Black, new Point(X + 110, Y + 40));
+            g.DrawImage(logo, X + 190, Y + 3, 327, 45); //654*90
+            g.DrawImage(rst, X + 440, Y + 90, 70, 70); //83*83
+            g.DrawString("КРАСНОЯРСКИЙ ЗАВОД", SmallBold, Brushes.Black, new Point(X + 330, Y + 50));
+            g.DrawString("Общество с ограниченной ответственностью \"Краснояркий завод полимерной упаковки", SmallItalic,
+                Brushes.Black, new Point(X + 20, Y + 65));
+            g.DrawString("\"ЕВРОПЛАСТ\",", SmallItalic, Brushes.Black, new Point(X + 220, Y + 80));
+            g.DrawString("662500, Красноярский край, г. Сосновоборск, ул. Заводская д. 1, а/я 104,", SmallItalic,
+                Brushes.Black, new Point(X + 10, Y + 95));
+            g.DrawString("тел (3912) 180201, e-mail: krasnoyarsk@europlast.ru", SmallItalic,
+                Brushes.Black, new Point(X + 10, Y + 107));
+            g.DrawString("ISO 9001:2008", Small,
+                Brushes.Black, new Point(X + 10, Y + 119));
+            g.DrawString("Преформа бутылки из полиэтилентерефталата", SmallBold,
+                Brushes.Black, new Point(X + 10, Y + 135));
+            g.DrawString("Технические условия / Specification - ТУ - 2297 - 001 - 30463750 - 2012 с изм. №1", Smalllll,
+                Brushes.Black, new Point(X + 10, Y + 155));
             //Главне поля
             g.DrawString(Weight, Biggg, Brushes.Black, new Point(X, Y + 170));
             g.DrawString(Type, Big, Brushes.Black, new Point(X + 220, Y + 200));
