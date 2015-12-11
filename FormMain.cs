@@ -86,6 +86,12 @@ namespace AutoLabel
         void RefreshMain()
         {
             buttonShift.Text = Data.Shift;
+            label1.Text = Data.Labels[0].LabelUnderButton();
+            label2.Text = Data.Labels[1].LabelUnderButton();
+            label3.Text = Data.Labels[2].LabelUnderButton();
+            label4.Text = Data.Labels[3].LabelUnderButton();
+            label5.Text = Data.Labels[4].LabelUnderButton();
+            label6.Text = Data.Labels[5].LabelUnderButton();
         }
     }
 }

@@ -287,5 +287,14 @@ namespace AutoLabel
             }
             catch { }
         }
+
+        /// <summary>
+        /// Подпись над кнопкой на главном экране
+        /// </summary>
+        /// <returns></returns>
+        public string LabelUnderButton()
+        {
+            return "Партия: " + PartNum + "   Выпущено коробов: " + (CurrentNum - 1).ToString();
+        }
     }
 }
