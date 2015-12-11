@@ -17,11 +17,13 @@ namespace AutoLabel
         public string PartNum;  //Вручную номер партии
         public string Type;     //Список тип горловиры
         public string Weight;   //Список вес
-        public string Quantity;    //Список количество
-        public string Antistatic;   //Список количество антистатика
-        public string Material;   //Список сырьё
+        public string Count;    //Список количество
+        public string Material; //Список материал
+        public string PColor;   //Цвет
+        public string AntistaticType;   //Список тип антистатика
+        public string AntistaticCount;  //Список количество антистатика
         public string Limit;    //Список срок хранения
-        public string PColor;    //Цвет
+        public string Other;    //Вручную Дополнительные параметры
 
         //Координаты и размеры этикетки
         static int X;
@@ -40,8 +42,8 @@ namespace AutoLabel
         static Font Biggg = new Font("Arial", 90, FontStyle.Bold, GraphicsUnit.Pixel);
 
         //Графика
-        Image logo = Image.FromFile("Graphics\\Europlast logo.jpeg");
-        Image rst = Image.FromFile("Graphics\\RST.png");
+        static Image logo = Image.FromFile("Graphics\\Europlast logo.jpeg");
+        static Image rst = Image.FromFile("Graphics\\RST.png");
 
         //Текущие данные для печати
         static int Num;
@@ -96,7 +98,7 @@ namespace AutoLabel
         void PD_PrintPage(object sender, PrintPageEventArgs e)
         {
             int Space = 30;
-            int Shift = -10;
+            //int Shift = -10;
             Width = 585 - Space * 2;
             Height = 827 - Space * 2;
             X = Space - 10;
@@ -132,19 +134,21 @@ namespace AutoLabel
                 Brushes.Black, new Point(X + 10, Y + 107));
             g.DrawString("ISO 9001:2008", Small,
                 Brushes.Black, new Point(X + 10, Y + 119));
-            g.DrawString("Преформа бутылки из полиэтилентерефталата", SmallBold,
+            g.DrawString("Преформа бутылки из полиэтилентерефталата", SmallBold, //Материал потом указать синоним
                 Brushes.Black, new Point(X + 10, Y + 135));
             g.DrawString("Технические условия / Specification - ТУ - 2297 - 001 - 30463750 - 2012 с изм. №1", Smalllll,
                 Brushes.Black, new Point(X + 10, Y + 155));
-            //Главне поля
+            //Главные поля
             g.DrawString(Weight, Biggg, Brushes.Black, new Point(X, Y + 170));
             g.DrawString(Type, Big, Brushes.Black, new Point(X + 220, Y + 200));
+            g.DrawString(AntistaticCount, Big, Brushes.Black, new Point(X + 420, Y + 175));
+            g.DrawString(AntistaticType, Big, Brushes.Black, new Point(X + 420, Y + 215));
             //Дополнительные поля
-            g.DrawString("Прочие дополнения:", Small, Brushes.Black, new Point(X + 10, Y + 280));
+            g.DrawString("Прочие дополнения: " + Other, Small, Brushes.Black, new Point(X + 10, Y + 280));
             DrawStrings(g, 220, 300, "Машина", "Machine", "NETSTAL №" + TPA);
             DrawStrings(g, 220, 340, "Марка материала", "Material", Material);
             DrawStrings(g, 220, 380, "Цвет преформы", "Preform colour", PColor);
-            DrawStrings(g, 270, 420, "Количество преформ в коробе", "Preform quantity per box", Quantity);
+            DrawStrings(g, 270, 420, "Количество преформ в коробе", "Preform quantity per box", Count);
             DrawStrings(g, 220, 460, "Дата изготовления", "Date of manufacturnig", Date());
             DrawStrings(g, 220, 500, "Время", "Time", DateTime.Now.ToString("HH:mm"));
             DrawStrings(g, 220, 540, "Номер партии", "Batch number", PartNum);
@@ -154,7 +158,7 @@ namespace AutoLabel
             //Нижний колонтитул
             g.DrawString("Сделано в России / Made in Russia",
                 SmallBold, Brushes.Black, new Point(X + 130, Y + Height - 55));
-            g.DrawString("Гарантированный срок хранения - 24 месяца со дня изготовления",
+            g.DrawString("Гарантированный срок хранения - " + Limit + " со дня изготовления",
                 SmallBold, Brushes.Black, new Point(X + 30, Y + Height - 35));
             g.DrawString("Перед выдувом бутылок рекомендуется выдержать преформы не менее 24 часов при t + 18°С",
                 Smalllll, Brushes.Black, new Point(X + 10, Y + Height - 15));
@@ -214,7 +218,13 @@ namespace AutoLabel
                 file.WriteLine(PartNum);
                 file.WriteLine(Type);
                 file.WriteLine(Weight);
-                file.WriteLine(Quantity);
+                file.WriteLine(Count);
+                file.WriteLine(Material);
+                file.WriteLine(PColor);
+                file.WriteLine(AntistaticType);
+                file.WriteLine(AntistaticCount);
+                file.WriteLine(Limit);
+                file.WriteLine(Other);
                 file.Dispose();
             }
             catch
@@ -237,7 +247,13 @@ namespace AutoLabel
                 PartNum = file.ReadLine();
                 Type = file.ReadLine();
                 Weight = file.ReadLine();
-                Quantity = file.ReadLine();
+                Count = file.ReadLine();
+                Material = file.ReadLine();
+                PColor = file.ReadLine();
+                AntistaticType = file.ReadLine();
+                AntistaticCount = file.ReadLine();
+                Limit = file.ReadLine();
+                Other = file.ReadLine();
                 file.Dispose();
             }
             catch { } //нишмагла...

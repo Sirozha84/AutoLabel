@@ -27,6 +27,8 @@ namespace AutoLabel
         public static List<string> Colors = new List<string>();
         public static List<string> Materials = new List<string>();
         public static List<string> Limits = new List<string>();
+        public static List<string> AntiTypes = new List<string>();
+        public static List<string> AntiCounts = new List<string>();
 
         public static PrinterSettings printersettings;// = new PrinterSettings();
 
@@ -56,6 +58,10 @@ namespace AutoLabel
             Materials.Add("Чугун");
             Limits.Add("24 месяца");
             Limits.Add("1 день");
+            AntiTypes.Add("");
+            AntiTypes.Add("АД");
+            AntiCounts.Add("000");
+            AntiCounts.Add("999");
             //Принтер
             try
             {

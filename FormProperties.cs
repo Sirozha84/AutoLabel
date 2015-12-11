@@ -41,46 +41,74 @@ namespace AutoLabel
             comboBoxColor.SelectedItem = null;
             comboBoxCount.DataSource = Data.Quantitys;
             comboBoxCount.SelectedItem = null;
+            comboBoxAntiType.DataSource = Data.AntiTypes;
+            comboBoxAntiType.SelectedItem = "";
+            comboBoxAntiCount.DataSource = Data.AntiCounts;
+            comboBoxAntiCount.SelectedItem = null;
+            comboBoxLimit.DataSource = Data.Limits;
+            comboBoxLimit.SelectedItem = null;
             buttonsave.Visible = false;
         }
 
+        //Выбор ТПА из списка (сбрасываем несохранённые поля и заполняим их текущими)
         private void comboBoxTPA_SelectedIndexChanged(object sender, EventArgs e)
         {
             Label l = Data.Labels[comboBoxTPA.SelectedIndex];
 
-            comboBoxType.Enabled = true;
-            textBoxNumber.Text = l.PartNum;
-            //textBoxCurrent.Text = "0"; //l.CurrentNum.ToString();
-            if (l.Type != "") comboBoxType.SelectedItem = l.Type; else comboBoxType.SelectedItem = null;
+            //comboBoxType.Enabled = true;
             if (l.Weight != "") comboBoxWeight.SelectedItem = l.Weight; else comboBoxWeight.SelectedItem = null;
-            if (l.Quantity != "") comboBoxCount.SelectedItem = l.Quantity; else comboBoxCount.SelectedItem = null;
+            if (l.Material != "") comboBoxMaterial.SelectedItem = l.Material; else comboBoxMaterial.SelectedItem = null;
+            if (l.PColor != "") comboBoxColor.SelectedItem = l.PColor; else comboBoxColor.SelectedItem = null;
+            if (l.Count != "") comboBoxCount.SelectedItem = l.Count; else comboBoxCount.SelectedItem = null;
+            if (l.Type != "") comboBoxType.SelectedItem = l.Type; else comboBoxType.SelectedItem = null;
+            textBoxNumber.Text = l.PartNum;
+            if (l.AntistaticType != "") comboBoxAntiType.SelectedItem = l.AntistaticType; else comboBoxAntiType.SelectedItem = null;
+            if (l.AntistaticCount != "") comboBoxAntiCount.SelectedItem = l.AntistaticCount; else comboBoxAntiCount.SelectedItem = null;
+            if (l.Limit != "") comboBoxLimit.SelectedItem = l.Limit; else comboBoxLimit.SelectedItem = null;
+            textBoxOther.Text = l.Other;
 
+            //if (l.Count != "") comboBoxCount
             comboBoxWeight.Visible = true;
             comboBoxType.Visible = true;
             comboBoxMaterial.Visible = true;
             comboBoxColor.Visible = true;
             comboBoxCount.Visible = true;
             textBoxNumber.Visible = true;
-            //textBoxNumber.Visible = true;
+            comboBoxLimit.Visible = true;
+            comboBoxAntiType.Visible = true;
+            comboBoxAntiCount.Visible = true;
+            textBoxOther.Visible = true;
             label1.Visible = true;
             label2.Visible = true;
             label3.Visible = true;
             label4.Visible = true;
             label6.Visible = true;
             label7.Visible = true;
-            //textBoxCurrent.Enabled = true;
-
+            label8.Visible = true;
+            label9.Visible = true;
+            label10.Visible = true;
+            label11.Visible = true;
             buttonsave.Visible = false;
         }
 
+        //Сохранение параметров
         private void buttonsave_Click(object sender, EventArgs e)
         {
             Label l = Data.Labels[comboBoxTPA.SelectedIndex];
-            l.CurrentNum = 1; //Сброс номера
-            l.PartNum = textBoxNumber.Text;
-            if (comboBoxType.SelectedItem != null) l.Type = comboBoxType.SelectedItem.ToString(); else l.Type = "";
+            //Сброс номера
+            l.CurrentNum = 1;
+            //Запоминание полей (10)
             if (comboBoxWeight.SelectedItem != null) l.Weight = comboBoxWeight.SelectedItem.ToString(); else l.Weight = "";
-            if (comboBoxCount.SelectedItem != null) l.Quantity = comboBoxCount.SelectedItem.ToString(); else l.Quantity = "";
+            if (comboBoxType.SelectedItem != null) l.Type = comboBoxType.SelectedItem.ToString(); else l.Type = "";
+            if (comboBoxMaterial.SelectedItem != null) l.Material = comboBoxMaterial.SelectedItem.ToString(); else l.Material = "";
+            if (comboBoxColor.SelectedItem != null) l.PColor = comboBoxColor.SelectedItem.ToString(); else l.PColor = "";
+            if (comboBoxCount.SelectedItem != null) l.Count = comboBoxCount.SelectedItem.ToString(); else l.Count = "";
+            l.PartNum = textBoxNumber.Text;
+            if (comboBoxAntiType.SelectedItem != null) l.AntistaticType = comboBoxAntiType.SelectedItem.ToString(); else l.AntistaticType = "";
+            if (comboBoxAntiCount.SelectedItem != null) l.AntistaticCount = comboBoxAntiCount.SelectedItem.ToString(); else l.AntistaticCount = "";
+            if (comboBoxLimit.SelectedItem != null) l.Limit = comboBoxLimit.SelectedItem.ToString(); else l.Limit = "";
+            l.Other = textBoxOther.Text;
+
             l.Save();
             buttonsave.Visible = false;
         }
@@ -98,9 +126,7 @@ namespace AutoLabel
         private void textBoxNumber_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void textBoxNumber_Click(object sender, EventArgs e)
         {
-            FormKeyboardNums key = new FormKeyboardNums("Введите номер партии");
-            if (key.ShowDialog() == DialogResult.OK)
-                textBoxNumber.Text = key.EditText();
+
         }
 
         private void buttonPrinterSelect_Click(object sender, EventArgs e)
@@ -117,6 +143,13 @@ namespace AutoLabel
         {
             FormUsers form = new FormUsers();
             form.Show();
+        }
+
+        private void textBoxOther_Click(object sender, EventArgs e)
+        {
+            FormKeyboardLetter key = new FormKeyboardLetter("Введите прочие дополнения");
+            if (key.ShowDialog() == DialogResult.OK)
+                textBoxOther .Text = key.Str;
         }
     }
 }
