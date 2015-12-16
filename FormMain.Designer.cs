@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -35,17 +36,19 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.labelVersion = new System.Windows.Forms.Label();
-            this.buttonProperties = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonShift = new System.Windows.Forms.Button();
-            this.labelformname = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.labelVersion = new System.Windows.Forms.Label();
+            this.buttonProperties = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonShift = new System.Windows.Forms.Button();
+            this.labelformname = new System.Windows.Forms.Label();
+            this.labelClock = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -80,7 +83,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(583, 395);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(669, 395);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // button1
@@ -92,7 +95,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 106);
+            this.button1.Size = new System.Drawing.Size(295, 106);
             this.button1.TabIndex = 0;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = false;
@@ -105,9 +108,9 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(323, 133);
+            this.button4.Location = new System.Drawing.Point(370, 133);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(257, 106);
+            this.button4.Size = new System.Drawing.Size(296, 106);
             this.button4.TabIndex = 4;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = false;
@@ -120,9 +123,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(323, 3);
+            this.button2.Location = new System.Drawing.Point(370, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(257, 106);
+            this.button2.Size = new System.Drawing.Size(296, 106);
             this.button2.TabIndex = 3;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = false;
@@ -137,7 +140,7 @@
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Location = new System.Drawing.Point(3, 263);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(256, 106);
+            this.button5.Size = new System.Drawing.Size(295, 106);
             this.button5.TabIndex = 5;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = false;
@@ -150,9 +153,9 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(323, 263);
+            this.button6.Location = new System.Drawing.Point(370, 263);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(257, 106);
+            this.button6.Size = new System.Drawing.Size(296, 106);
             this.button6.TabIndex = 6;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = false;
@@ -167,11 +170,71 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(3, 133);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(256, 106);
+            this.button3.Size = new System.Drawing.Size(295, 106);
             this.button3.TabIndex = 2;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(370, 112);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(3, 242);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(370, 242);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "label4";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(3, 372);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "label5";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(370, 372);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "label6";
             // 
             // labelVersion
             // 
@@ -190,7 +253,7 @@
             this.buttonProperties.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProperties.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonProperties.ForeColor = System.Drawing.Color.White;
-            this.buttonProperties.Location = new System.Drawing.Point(647, 12);
+            this.buttonProperties.Location = new System.Drawing.Point(733, 12);
             this.buttonProperties.Name = "buttonProperties";
             this.buttonProperties.Size = new System.Drawing.Size(250, 76);
             this.buttonProperties.TabIndex = 3;
@@ -203,12 +266,13 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Navy;
+            this.panel2.Controls.Add(this.labelClock);
             this.panel2.Controls.Add(this.buttonShift);
             this.panel2.Controls.Add(this.buttonProperties);
             this.panel2.Controls.Add(this.labelformname);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(912, 100);
+            this.panel2.Size = new System.Drawing.Size(998, 100);
             this.panel2.TabIndex = 9;
             // 
             // buttonShift
@@ -217,7 +281,7 @@
             this.buttonShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonShift.ForeColor = System.Drawing.Color.White;
-            this.buttonShift.Location = new System.Drawing.Point(391, 12);
+            this.buttonShift.Location = new System.Drawing.Point(477, 12);
             this.buttonShift.Name = "buttonShift";
             this.buttonShift.Size = new System.Drawing.Size(250, 76);
             this.buttonShift.TabIndex = 8;
@@ -239,72 +303,31 @@
             this.labelformname.TabIndex = 7;
             this.labelformname.Text = "Выбор ТПА";
             // 
-            // label1
+            // labelClock
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "label1";
+            this.labelClock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelClock.AutoSize = true;
+            this.labelClock.BackColor = System.Drawing.Color.Navy;
+            this.labelClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelClock.ForeColor = System.Drawing.Color.White;
+            this.labelClock.Location = new System.Drawing.Point(277, 15);
+            this.labelClock.Name = "labelClock";
+            this.labelClock.Size = new System.Drawing.Size(194, 73);
+            this.labelClock.TabIndex = 9;
+            this.labelClock.Text = "00:00";
             // 
-            // label2
+            // timer1
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(323, 112);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 242);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "label3";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(323, 242);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "label4";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 372);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "label5";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(323, 372);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "label6";
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(909, 650);
+            this.ClientSize = new System.Drawing.Size(995, 650);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel2);
@@ -341,6 +364,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelClock;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

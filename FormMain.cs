@@ -136,5 +136,10 @@ namespace AutoLabel
                     break;
             }
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labelClock.Text = DateTime.Now.ToString("h:mm");
+        }
     }
 }
