@@ -65,7 +65,8 @@ namespace AutoLabel
             if (Data.GetKey(255) == 255)
             {
                 FormProperties formprop = new FormProperties();
-                formprop.Show();
+                formprop.ShowDialog();
+                RefreshMain();
             }
         }
 
@@ -92,6 +93,48 @@ namespace AutoLabel
             label4.Text = Data.Labels[3].LabelUnderButton();
             label5.Text = Data.Labels[4].LabelUnderButton();
             label6.Text = Data.Labels[5].LabelUnderButton();
+            SetColor(button1, Data.Labels[0]);
+            SetColor(button2, Data.Labels[1]);
+            SetColor(button3, Data.Labels[2]);
+            SetColor(button4, Data.Labels[3]);
+            SetColor(button5, Data.Labels[4]);
+            SetColor(button6, Data.Labels[5]);
+        }
+
+        /// <summary>
+        /// Задание цвета для кнопки
+        /// </summary>
+        /// <param name="but">Кнопку</param>
+        /// <param name="lab">Лейбл</param>
+        void SetColor(Button but, Label lab)
+        {
+            switch (lab.PColor)
+            {
+                case "Прозрачный":
+                    but.BackColor = Color.FromArgb(0,0,32);
+                    but.ForeColor = Color.LightSkyBlue;
+                    break;
+                case "Белый":
+                    but.BackColor = Color.White;
+                    but.ForeColor = Color.Black;
+                    break;
+                case "Синий":
+                    but.BackColor = Color.Blue;
+                    but.ForeColor = Color.White;
+                    break;
+                case "Коричневый":
+                    but.BackColor = Color.FromArgb(64, 32, 0);
+                    but.ForeColor = Color.White;
+                    break;
+                case "Зелёный":
+                    but.BackColor = Color.Green;
+                    but.ForeColor = Color.White;
+                    break;
+                case "Чёрный":
+                    but.BackColor = Color.Black;
+                    but.ForeColor = Color.FromArgb(32,32,32);
+                    break;
+            }
         }
     }
 }

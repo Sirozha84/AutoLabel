@@ -52,8 +52,12 @@ namespace AutoLabel
             Weights.Add("0");
             Quantitys.Add("10896");
             Quantitys.Add("0");
+            Colors.Add("Прозрачный");
             Colors.Add("Белый");
-            Colors.Add("Не белый");
+            Colors.Add("Синий");
+            Colors.Add("Зелёный");
+            Colors.Add("Коричневый");
+            Colors.Add("Чёрный");
             Materials.Add("Полиэф");
             Materials.Add("Чугун");
             Limits.Add("24 месяца");

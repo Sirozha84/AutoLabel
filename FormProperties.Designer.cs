@@ -182,6 +182,7 @@
             this.comboBoxLimit.Size = new System.Drawing.Size(393, 63);
             this.comboBoxLimit.TabIndex = 28;
             this.comboBoxLimit.Visible = false;
+            this.comboBoxLimit.SelectedIndexChanged += new System.EventHandler(this.comboBoxLimit_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -223,6 +224,7 @@
             this.comboBoxAntiCount.Size = new System.Drawing.Size(393, 63);
             this.comboBoxAntiCount.TabIndex = 25;
             this.comboBoxAntiCount.Visible = false;
+            this.comboBoxAntiCount.SelectedIndexChanged += new System.EventHandler(this.comboBoxAntiCount_SelectedIndexChanged);
             // 
             // comboBoxAntiType
             // 
@@ -238,6 +240,7 @@
             this.comboBoxAntiType.Size = new System.Drawing.Size(393, 63);
             this.comboBoxAntiType.TabIndex = 24;
             this.comboBoxAntiType.Visible = false;
+            this.comboBoxAntiType.SelectedIndexChanged += new System.EventHandler(this.comboBoxAntiType_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -292,6 +295,7 @@
             this.comboBoxColor.Size = new System.Drawing.Size(393, 63);
             this.comboBoxColor.TabIndex = 20;
             this.comboBoxColor.Visible = false;
+            this.comboBoxColor.SelectedIndexChanged += new System.EventHandler(this.comboBoxColor_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -479,6 +483,7 @@
             this.textBoxNumber.Size = new System.Drawing.Size(393, 62);
             this.textBoxNumber.TabIndex = 16;
             this.textBoxNumber.Visible = false;
+            this.textBoxNumber.Click += new System.EventHandler(this.textBoxNumber_Click_1);
             this.textBoxNumber.TextChanged += new System.EventHandler(this.textBoxNumber_TextChanged);
             // 
             // buttonquitprogram

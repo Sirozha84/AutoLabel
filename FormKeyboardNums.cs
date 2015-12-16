@@ -11,6 +11,8 @@ namespace AutoLabel
 {
     public partial class FormKeyboardNums : Form
     {
+        public string Str = "";
+
         public FormKeyboardNums(string str)
         {
             //label = str;
@@ -31,6 +33,7 @@ namespace AutoLabel
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
+            Str = textBoxEdit.Text;
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -89,11 +92,6 @@ namespace AutoLabel
         {
             if (textBoxEdit.Text.Length < 1) return;
             textBoxEdit.Text = textBoxEdit.Text.Substring(0, textBoxEdit.Text.Length - 1);
-        }
-
-        public string EditText()
-        {
-            return textBoxEdit.Text;
         }
     }
 }
