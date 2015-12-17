@@ -45,9 +45,9 @@
             this.labelVersion = new System.Windows.Forms.Label();
             this.buttonProperties = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelClock = new System.Windows.Forms.Label();
             this.buttonShift = new System.Windows.Forms.Button();
             this.labelformname = new System.Windows.Forms.Label();
-            this.labelClock = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -245,7 +245,7 @@
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(158, 13);
             this.labelVersion.TabIndex = 2;
-            this.labelVersion.Text = "Версия: 0.7 Alpha (11.12.2015)";
+            this.labelVersion.Text = "Версия: 0.8 Alpha (17.12.2015)";
             // 
             // buttonProperties
             // 
@@ -275,6 +275,19 @@
             this.panel2.Size = new System.Drawing.Size(998, 100);
             this.panel2.TabIndex = 9;
             // 
+            // labelClock
+            // 
+            this.labelClock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelClock.AutoSize = true;
+            this.labelClock.BackColor = System.Drawing.Color.Navy;
+            this.labelClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelClock.ForeColor = System.Drawing.Color.White;
+            this.labelClock.Location = new System.Drawing.Point(277, 15);
+            this.labelClock.Name = "labelClock";
+            this.labelClock.Size = new System.Drawing.Size(194, 73);
+            this.labelClock.TabIndex = 9;
+            this.labelClock.Text = "00:00";
+            // 
             // buttonShift
             // 
             this.buttonShift.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -302,19 +315,6 @@
             this.labelformname.Size = new System.Drawing.Size(375, 73);
             this.labelformname.TabIndex = 7;
             this.labelformname.Text = "Выбор ТПА";
-            // 
-            // labelClock
-            // 
-            this.labelClock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelClock.AutoSize = true;
-            this.labelClock.BackColor = System.Drawing.Color.Navy;
-            this.labelClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelClock.ForeColor = System.Drawing.Color.White;
-            this.labelClock.Location = new System.Drawing.Point(277, 15);
-            this.labelClock.Name = "labelClock";
-            this.labelClock.Size = new System.Drawing.Size(194, 73);
-            this.labelClock.TabIndex = 9;
-            this.labelClock.Text = "00:00";
             // 
             // timer1
             // 

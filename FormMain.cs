@@ -110,24 +110,40 @@ namespace AutoLabel
         {
             switch (lab.PColor)
             {
-                case "Прозрачный":
+                case "Бесцветный":
                     but.BackColor = Color.FromArgb(0,0,32);
                     but.ForeColor = Color.LightSkyBlue;
+                    break;
+                case "Матовый":
+                    but.BackColor = Color.LightGray;
+                    but.ForeColor = Color.DarkGray;
                     break;
                 case "Белый":
                     but.BackColor = Color.White;
                     but.ForeColor = Color.Black;
                     break;
-                case "Синий":
-                    but.BackColor = Color.Blue;
-                    but.ForeColor = Color.White;
-                    break;
-                case "Коричневый":
-                    but.BackColor = Color.FromArgb(64, 32, 0);
+                case "Оранжевый":
+                    but.BackColor = Color.Orange;
                     but.ForeColor = Color.White;
                     break;
                 case "Зелёный":
                     but.BackColor = Color.Green;
+                    but.ForeColor = Color.White;
+                    break;
+                case "Синий":
+                    but.BackColor = Color.Blue;
+                    but.ForeColor = Color.White;
+                    break;
+                case "Бирюзовый":
+                    but.BackColor = Color.Teal;
+                    but.ForeColor = Color.White;
+                    break;
+                case "Красный":
+                    but.BackColor = Color.Red;
+                    but.ForeColor = Color.White;
+                    break;
+                case "Коричневый":
+                    but.BackColor = Color.FromArgb(64, 32, 0);
                     but.ForeColor = Color.White;
                     break;
                 case "Чёрный":
