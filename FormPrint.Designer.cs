@@ -112,6 +112,7 @@
             this.textBoxNum.TabStop = false;
             this.textBoxNum.Text = "0";
             this.textBoxNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxNum.Click += new System.EventHandler(this.textBoxNum_Click);
             // 
             // buttonMax
             // 

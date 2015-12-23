@@ -14,6 +14,8 @@ namespace AutoLabel
     {
         public int NumMachine;
         int box;
+        bool CostomNum = true; //Можно ли менять номер вручную?
+
         public FormPrint()
         {
             InitializeComponent();
@@ -51,8 +53,12 @@ namespace AutoLabel
                 else
                 {
                     comboBoxUser.SelectedItem = user.Name;
-                    //Если это упаковщик - замораживаем комбобокс
-                    if (user.Rule == 0) comboBoxUser.Enabled = false;
+                    //Если это упаковщик - замораживаем комбобокс и возможность выбрать номер
+                    if (user.Rule == 1)
+                    {
+                        comboBoxUser.Enabled = false;
+                        CostomNum = false;
+                    }
                     buttonPrint.Visible = true;
                 }
             }
@@ -101,6 +107,20 @@ namespace AutoLabel
         private void comboBoxUser_SelectedIndexChanged(object sender, EventArgs e)
         {
             buttonPrint.Visible = true;
+        }
+
+        private void textBoxNum_Click(object sender, EventArgs e)
+        {
+            if (!CostomNum) return;
+            //Нам разрешено поменять номер короба вручную
+            FormKeyboardNums key = new FormKeyboardNums("Введите номер короба");
+            key.ShowDialog();
+            if (key.DialogResult == DialogResult.OK)
+            {
+                Data.Labels[NumMachine].CurrentNum = Convert.ToInt32(key.Str);
+                box = Data.Labels[NumMachine].CurrentNum;
+                DrawNum();
+            }
         }
     }
 }

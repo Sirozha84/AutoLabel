@@ -182,7 +182,6 @@ namespace AutoLabel
             comboBoxAntiType.SelectedItem = "";
             comboBoxAntiCount.SelectedItem = null;
             comboBoxLimit.SelectedItem = null;
-            buttonsave.Visible = false;
             textBoxOther.Text = "";
         }
     }

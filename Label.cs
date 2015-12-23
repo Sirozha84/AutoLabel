@@ -148,7 +148,7 @@ namespace AutoLabel
             DrawStrings(g, 220, 300, "Машина", "Machine", "NETSTAL №" + TPA);
             DrawStrings(g, 220, 340, "Марка материала", "Material", Material);
             DrawStrings(g, 220, 380, "Цвет преформы", "Preform colour", PColor);
-            DrawStrings(g, 270, 420, "Количество преформ в коробе", "Preform quantity per box", Count);
+            DrawStrings(g, 220, 420, "Количество преформ в коробе", "Preform quantity per box", Count);
             DrawStrings(g, 220, 460, "Дата изготовления", "Date of manufacturnig", Date());
             DrawStrings(g, 220, 500, "Время", "Time", DateTime.Now.ToString("HH:mm"));
             DrawStrings(g, 220, 540, "Номер партии", "Batch number", PartNum);
