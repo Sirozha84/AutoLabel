@@ -32,7 +32,7 @@ namespace AutoLabel
                 Str += l.ToUpper();
             else
                 Str += l;
-            textBoxEdit.Text = Str;
+            DrawString();
         }
 
         private void button7_Click(object sender, EventArgs e) { AddLetter("й"); }
@@ -69,11 +69,21 @@ namespace AutoLabel
         private void button11_Click(object sender, EventArgs e) { AddLetter("б"); }
         private void button32_Click(object sender, EventArgs e) { AddLetter("ю"); }
         private void button34_Click(object sender, EventArgs e) { AddLetter("."); }
+        private void button1_Click_1(object sender, EventArgs e) { AddLetter("1"); }
+        private void button2_Click_1(object sender, EventArgs e) { AddLetter("2"); }
+        private void button3_Click_1(object sender, EventArgs e) { AddLetter("3"); }
+        private void button4_Click_1(object sender, EventArgs e) { AddLetter("4"); }
+        private void button5_Click_1(object sender, EventArgs e) { AddLetter("5"); }
+        private void button6_Click_1(object sender, EventArgs e) { AddLetter("6"); }
+        private void button7_Click_1(object sender, EventArgs e) { AddLetter("7"); }
+        private void button8_Click_1(object sender, EventArgs e) { AddLetter("8"); }
+        private void button9_Click_1(object sender, EventArgs e) { AddLetter("9"); }
+        private void buttonPercent_Click(object sender, EventArgs e) { AddLetter("%"); }
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
-            if (Str.Length == 0) DialogResult = DialogResult.Cancel;
+            //if (Str.Length == 0) DialogResult = DialogResult.Cancel;
             Close();
         }
 
@@ -93,7 +103,17 @@ namespace AutoLabel
         {
             if (Str.Length == 0) return;
             Str = Str.Substring(0, Str.Length - 1);
-            textBoxEdit.Text = Str;
+            DrawString();
+        }
+
+        void DrawString()
+        {
+            textBoxEdit.Text = Str + "|";
+        }
+
+        private void FormKeyboardLetter_Load(object sender, EventArgs e)
+        {
+            DrawString();
         }
     }
 }

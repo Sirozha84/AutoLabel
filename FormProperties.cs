@@ -89,6 +89,7 @@ namespace AutoLabel
             label10.Visible = true;
             label11.Visible = true;
             buttonsave.Visible = false;
+            buttonClear.Visible = true;
         }
 
         //Сохранение параметров
@@ -163,6 +164,26 @@ namespace AutoLabel
                 textBoxNumber.Text = key.Str;
                 MakeSaveEnable();
             }
+        }
+
+        /// <summary>
+        /// Очистка полей
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            comboBoxWeight.SelectedItem = null;
+            comboBoxType.SelectedItem = null;
+            comboBoxMaterial.SelectedItem = null;
+            comboBoxColor.SelectedItem = null;
+            comboBoxCount.SelectedItem = null;
+            textBoxNumber.Text = "";
+            comboBoxAntiType.SelectedItem = "";
+            comboBoxAntiCount.SelectedItem = null;
+            comboBoxLimit.SelectedItem = null;
+            buttonsave.Visible = false;
+            textBoxOther.Text = "";
         }
     }
 }
