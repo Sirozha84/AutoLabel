@@ -137,7 +137,9 @@ namespace AutoLabel
 
         private void buttonReport_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Coming soon :-)");
+            FormReports rep = new FormReports();
+            rep.ShowDialog();
+            rep.Dispose();
         }
 
         private void buttonUsers_Click(object sender, EventArgs e)

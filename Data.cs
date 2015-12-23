@@ -15,8 +15,12 @@ namespace AutoLabel
         /// Использовать ли ключи в данной сборке
         /// </summary>
         public static bool UseKeys = false;
+        /// <summary>
+        /// Количество последних запоминаемых смен
+        /// </summary>
+        static int ShiftMemory = 7;
         public static string Shift;
-        public static string LogName = "DefaultLog.csv";
+        public static string[] LogName = new string[ShiftMemory];
         //Списки пользователей и лейблов
         public static List<User> Users = new List<User>();
         public static List<Label> Labels = new List<Label>();
@@ -175,16 +179,21 @@ namespace AutoLabel
         /// </summary>
         static void LoadShift()
         {
+            //Заполняем пустотой на случай если в файле нет информации
+            for (int i = 0; i < ShiftMemory; i++)
+                LogName[i] = "Пусто";
             try
             {
                 StreamReader file = File.OpenText("Shift.txt");
                 Shift = file.ReadLine();
-                LogName = file.ReadLine();
+                for (int i = 0; i < ShiftMemory; i++)
+                    LogName[i] = file.ReadLine();
                 file.Dispose();
             }
             catch
             {
                 Shift = "Смена 1";
+                ShiftChange(Shift); //Если файла небыло, сохраним его
             }
         }
 
@@ -263,14 +272,18 @@ namespace AutoLabel
         public static void ShiftChange(string shift)
         {
             Shift = shift;
+            //Сдвигаем коллекцию последних смен
+            for (int i = ShiftMemory - 1; i > 0; i--)
+                LogName[i] = LogName[i - 1];
             //Изменяем файл журнала
-            LogName = (DateTime.Now.ToString("yyyy.MM.dd - ") + Shift + ".csv");
+            LogName[0] = (DateTime.Now.ToString("yyyy.MM.dd - ") + Shift);
             //Сохраняем текущую смену в файл
             try
             {
                 StreamWriter file = File.CreateText("Shift.txt");
                 file.WriteLine(Shift);
-                file.WriteLine(LogName);
+                for (int i = 0; i < ShiftMemory; i++)
+                    file.WriteLine(LogName[i]);
                 file.Dispose();
             }
             catch
