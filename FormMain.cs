@@ -56,7 +56,8 @@ namespace AutoLabel
         {
             FormPrint formprint = new FormPrint();
             formprint.NumMachine = num;
-            formprint.Show();
+            formprint.ShowDialog();
+            RefreshMain();
         }
 
         //Параметры
@@ -155,7 +156,7 @@ namespace AutoLabel
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            labelClock.Text = DateTime.Now.ToString("h:mm");
+            labelClock.Text = DateTime.Now.ToString("H:mm");
         }
     }
 }

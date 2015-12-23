@@ -130,6 +130,7 @@ namespace AutoLabel
             Materials.Add("Texpet");
             Materials.Add("Jade");
             Materials.Add("WNKI");
+            Limits.Add("6 месяцев");
             Limits.Add("24 месяца");
             AntiTypes.Add("");
             AntiTypes.Add("АД");

@@ -38,7 +38,7 @@ namespace AutoLabel
         static Font Small = new Font("Arial", 14, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font SmallBold = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font Normal = new Font("Arial", 30, FontStyle.Bold, GraphicsUnit.Pixel);
-        static Font Big = new Font("Arial", 40, FontStyle.Bold, GraphicsUnit.Pixel);
+        static Font Big = new Font("Arial", 37, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font Biggg = new Font("Arial", 90, FontStyle.Bold, GraphicsUnit.Pixel);
 
         //Графика
@@ -141,8 +141,8 @@ namespace AutoLabel
             //Главные поля
             g.DrawString(Weight, Biggg, Brushes.Black, new Point(X, Y + 170));
             g.DrawString(Type, Big, Brushes.Black, new Point(X + 220, Y + 200));
-            g.DrawString(AntistaticCount, Big, Brushes.Black, new Point(X + 420, Y + 175));
-            g.DrawString(AntistaticType, Big, Brushes.Black, new Point(X + 420, Y + 215));
+            g.DrawString(AntistaticCount, Big, Brushes.Black, new Point(X + 420, Y + 177));
+            g.DrawString(AntistaticType, Big, Brushes.Black, new Point(X + 420, Y + 217));
             //Дополнительные поля
             g.DrawString("Прочие дополнения: " + Other, Small, Brushes.Black, new Point(X + 10, Y + 280));
             DrawStrings(g, 220, 300, "Машина", "Machine", "NETSTAL №" + TPA);
