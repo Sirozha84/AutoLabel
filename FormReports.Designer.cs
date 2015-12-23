@@ -49,6 +49,7 @@
             this.buttonLog.TabIndex = 10;
             this.buttonLog.Text = "Журнал выпущенных этикеток";
             this.buttonLog.UseVisualStyleBackColor = false;
+            this.buttonLog.Click += new System.EventHandler(this.buttonLog_Click);
             // 
             // label1
             // 
@@ -87,6 +88,7 @@
             this.buttonMianRepotr.TabIndex = 31;
             this.buttonMianRepotr.Text = "Сводный отчёт";
             this.buttonMianRepotr.UseVisualStyleBackColor = false;
+            this.buttonMianRepotr.Click += new System.EventHandler(this.buttonMianRepotr_Click);
             // 
             // comboBoxShift
             // 

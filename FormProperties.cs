@@ -137,9 +137,16 @@ namespace AutoLabel
 
         private void buttonReport_Click(object sender, EventArgs e)
         {
-            FormReports rep = new FormReports();
-            rep.ShowDialog();
-            rep.Dispose();
+            if (!Data.PrintSelected())  //Ой, ну и бред же :-( но работать будет
+            {
+                Data.PrintSetup();
+            }
+            if (Data.PrintSelected())
+            {
+                FormReports rep = new FormReports();
+                rep.ShowDialog();
+                rep.Dispose();
+            }
         }
 
         private void buttonUsers_Click(object sender, EventArgs e)
