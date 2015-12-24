@@ -19,7 +19,7 @@ namespace AutoLabel
 
         //Шрифты
         Font Normal = new Font("Arial", 12, FontStyle.Regular, GraphicsUnit.Pixel);
-
+        Font Bold = new Font("Arial", 12, FontStyle.Bold, GraphicsUnit.Pixel);
 
         public FormReports()
         {
@@ -95,16 +95,19 @@ namespace AutoLabel
             int page = line / strings + 1;
             int pages = log.Count / strings + 1;
             //Заголовок
-            e.Graphics.DrawString("Журнал     "+comboBoxShift.SelectedItem, Normal, Brushes.Black, new Point(40, 40));
+            e.Graphics.DrawString("Журнал     " + comboBoxShift.SelectedItem, Bold, Brushes.Black, new Point(40, 40));
             e.Graphics.DrawString("Страница " + page + " из " + pages, Normal, Brushes.Black, new Point(650, 40));
             //Шапка таблицы
-            e.Graphics.DrawString("Номер", Normal, Brushes.Black, new Point(40, 80));
-            e.Graphics.DrawString("Дата", Normal, Brushes.Black, new Point(100, 80));
-            e.Graphics.DrawString("Время", Normal, Brushes.Black, new Point(160, 80));
-            e.Graphics.DrawString("Машина", Normal, Brushes.Black, new Point(220, 80));
-            e.Graphics.DrawString("Партия", Normal, Brushes.Black, new Point(280, 80));
-            e.Graphics.DrawString("Короб", Normal, Brushes.Black, new Point(340, 80));
-            e.Graphics.DrawString("Упаковщик", Normal, Brushes.Black, new Point(400, 80));
+            e.Graphics.DrawString("Номер", Bold, Brushes.Black, new Point(40, 80));
+            e.Graphics.DrawString("Дата", Bold, Brushes.Black, new Point(100, 80));
+            e.Graphics.DrawString("Время", Bold, Brushes.Black, new Point(160, 80));
+            e.Graphics.DrawString("Машина", Bold, Brushes.Black, new Point(220, 80));
+            e.Graphics.DrawString("Партия", Bold, Brushes.Black, new Point(280, 80));
+            e.Graphics.DrawString("Тип", Bold, Brushes.Black, new Point(340, 80));
+            e.Graphics.DrawString("Вес", Bold, Brushes.Black, new Point(420, 80));
+            e.Graphics.DrawString("Цвет", Bold, Brushes.Black, new Point(460, 80));
+            e.Graphics.DrawString("Короб", Bold, Brushes.Black, new Point(550, 80));
+            e.Graphics.DrawString("Упаковщик", Bold, Brushes.Black, new Point(600, 80));
 
             int y = 110;
             for (int i = 0; i < strings; i++ )
@@ -118,7 +121,10 @@ namespace AutoLabel
                     e.Graphics.DrawString(str[2], Normal, Brushes.Black, new Point(220, y + i * height));
                     e.Graphics.DrawString(str[3], Normal, Brushes.Black, new Point(280, y + i * height));
                     e.Graphics.DrawString(str[4], Normal, Brushes.Black, new Point(340, y + i * height));
-                    e.Graphics.DrawString(str[6], Normal, Brushes.Black, new Point(400, y + i * height));
+                    e.Graphics.DrawString(str[5], Normal, Brushes.Black, new Point(420, y + i * height));
+                    e.Graphics.DrawString(str[6], Normal, Brushes.Black, new Point(460, y + i * height));
+                    e.Graphics.DrawString(str[7], Normal, Brushes.Black, new Point(550, y + i * height));
+                    e.Graphics.DrawString(str[8], Normal, Brushes.Black, new Point(600, y + i * height));
                 }
                 line++;
             }
