@@ -90,34 +90,40 @@ namespace AutoLabel
         private void Doc_PrintPage(object sender, PrintPageEventArgs e)
         {
             //780*1100 - примерный предел
+            int height = 20; //Расстояние между строками
+            int strings = 1000 / height; //Количество строк на странице
+            int page = line / strings + 1;
+            int pages = log.Count / strings + 1;
             //Заголовок
-            e.Graphics.DrawString("Журнал "+comboBoxShift.SelectedItem, Normal, Brushes.Black, new Point(40, 40));
+            e.Graphics.DrawString("Журнал     "+comboBoxShift.SelectedItem, Normal, Brushes.Black, new Point(40, 40));
+            e.Graphics.DrawString("Страница " + page + " из " + pages, Normal, Brushes.Black, new Point(650, 40));
             //Шапка таблицы
-            e.Graphics.DrawString("Дата", Normal, Brushes.Black, new Point(40, 80));
-            e.Graphics.DrawString("Время", Normal, Brushes.Black, new Point(100, 80));
-            e.Graphics.DrawString("Машина", Normal, Brushes.Black, new Point(160, 80));
-            e.Graphics.DrawString("Партия", Normal, Brushes.Black, new Point(220, 80));
-            e.Graphics.DrawString("Короб", Normal, Brushes.Black, new Point(280, 80));
-            e.Graphics.DrawString("Упаковщик", Normal, Brushes.Black, new Point(340, 80));
+            e.Graphics.DrawString("Номер", Normal, Brushes.Black, new Point(40, 80));
+            e.Graphics.DrawString("Дата", Normal, Brushes.Black, new Point(100, 80));
+            e.Graphics.DrawString("Время", Normal, Brushes.Black, new Point(160, 80));
+            e.Graphics.DrawString("Машина", Normal, Brushes.Black, new Point(220, 80));
+            e.Graphics.DrawString("Партия", Normal, Brushes.Black, new Point(280, 80));
+            e.Graphics.DrawString("Короб", Normal, Brushes.Black, new Point(340, 80));
+            e.Graphics.DrawString("Упаковщик", Normal, Brushes.Black, new Point(400, 80));
 
-            for (int i = 0; i < 30; i++ )
+            int y = 110;
+            for (int i = 0; i < strings; i++ )
             {
                 if (line < log.Count)
                 {
                     string[] str = Separator(log[line]);
-                    e.Graphics.DrawString(str[0], Normal, Brushes.Black, new Point(40, 100 + i * 20));
-                    e.Graphics.DrawString(str[1], Normal, Brushes.Black, new Point(100, 100 + i * 20));
-                    e.Graphics.DrawString(str[2], Normal, Brushes.Black, new Point(160, 100 + i * 20));
-                    e.Graphics.DrawString(str[3], Normal, Brushes.Black, new Point(220, 100 + i * 20));
-                    e.Graphics.DrawString(str[4], Normal, Brushes.Black, new Point(280, 100 + i * 20));
-                    e.Graphics.DrawString(str[6], Normal, Brushes.Black, new Point(340, 100 + i * 20));
+                    e.Graphics.DrawString((line + 1).ToString(), Normal, Brushes.Black, new Point(40, y + i * height));
+                    e.Graphics.DrawString(str[0], Normal, Brushes.Black, new Point(100, y + i * height));
+                    e.Graphics.DrawString(str[1], Normal, Brushes.Black, new Point(160, y + i * height));
+                    e.Graphics.DrawString(str[2], Normal, Brushes.Black, new Point(220, y + i * height));
+                    e.Graphics.DrawString(str[3], Normal, Brushes.Black, new Point(280, y + i * height));
+                    e.Graphics.DrawString(str[4], Normal, Brushes.Black, new Point(340, y + i * height));
+                    e.Graphics.DrawString(str[6], Normal, Brushes.Black, new Point(400, y + i * height));
                 }
                 line++;
             }
 
             e.HasMorePages = line < log.Count();
-            //Дата Время   Машина Партия  Короб Смена   Упаковщик
-
         }
 
         /// <summary>
