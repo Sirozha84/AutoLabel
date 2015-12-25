@@ -47,7 +47,7 @@
             this.buttonLog.Name = "buttonLog";
             this.buttonLog.Size = new System.Drawing.Size(651, 70);
             this.buttonLog.TabIndex = 10;
-            this.buttonLog.Text = "Журнал выпущенных этикеток";
+            this.buttonLog.Text = "Журнал этикеток";
             this.buttonLog.UseVisualStyleBackColor = false;
             this.buttonLog.Click += new System.EventHandler(this.buttonLog_Click);
             // 
@@ -86,7 +86,7 @@
             this.buttonMianRepotr.Name = "buttonMianRepotr";
             this.buttonMianRepotr.Size = new System.Drawing.Size(651, 70);
             this.buttonMianRepotr.TabIndex = 31;
-            this.buttonMianRepotr.Text = "Сводный отчёт";
+            this.buttonMianRepotr.Text = "Общий отчёт о выпущенной продукции";
             this.buttonMianRepotr.UseVisualStyleBackColor = false;
             this.buttonMianRepotr.Click += new System.EventHandler(this.buttonMianRepotr_Click);
             // 

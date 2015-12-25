@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -244,9 +245,9 @@
             this.labelVersion.ForeColor = System.Drawing.Color.Gray;
             this.labelVersion.Location = new System.Drawing.Point(12, 121);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(158, 13);
+            this.labelVersion.Size = new System.Drawing.Size(162, 13);
             this.labelVersion.TabIndex = 2;
-            this.labelVersion.Text = "Версия: 0.9 Alpha (23.12.2015)";
+            this.labelVersion.Text = "Версия: 1.0 Beta 1 (24.12.2015)";
             // 
             // buttonProperties
             // 
@@ -333,6 +334,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

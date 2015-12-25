@@ -16,9 +16,16 @@ namespace AutoLabel
         /// </summary>
         public static bool UseKeys = false;
         /// <summary>
+        /// Сбрасывать ли счётчик при заступании новой
+        /// </summary>
+        static bool ResetOnChangeShift = true;
+        /// <summary>
         /// Количество последних запоминаемых смен
         /// </summary>
         static int ShiftMemory = 7;
+
+
+
         public static string Shift;
         public static string[] LogName = new string[ShiftMemory];
         //Списки пользователей и лейблов
@@ -291,6 +298,10 @@ namespace AutoLabel
                 Error("Не удалось сохранить настройку смены.");
             }
             Label.NewLog();
+            //Обнуляем счётчики коробов
+            if (ResetOnChangeShift)
+                foreach (Label l in Labels)
+                    l.CurrentNum = 1;
         }
 
         /// <summary>
