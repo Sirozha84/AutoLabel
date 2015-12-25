@@ -66,11 +66,12 @@
             // 
             // buttonCancel
             // 
+            this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonCancel.BackColor = System.Drawing.Color.Black;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCancel.ForeColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(226, 412);
+            this.buttonCancel.Location = new System.Drawing.Point(226, 427);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(222, 70);
             this.buttonCancel.TabIndex = 30;
@@ -153,13 +154,14 @@
             this.buttonByTPA.TabIndex = 36;
             this.buttonByTPA.Text = "Отчёт по ТПА";
             this.buttonByTPA.UseVisualStyleBackColor = false;
+            this.buttonByTPA.Click += new System.EventHandler(this.buttonByTPA_Click);
             // 
             // FormReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(675, 494);
+            this.ClientSize = new System.Drawing.Size(675, 509);
             this.Controls.Add(this.buttonByTPA);
             this.Controls.Add(this.buttonReportByPart);
             this.Controls.Add(this.label3);

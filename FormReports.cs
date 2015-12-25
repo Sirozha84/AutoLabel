@@ -131,7 +131,7 @@ namespace AutoLabel
             PrintDocument doc = new PrintDocument();
             doc.PrinterSettings = Data.printersettings;
             doc.PrinterSettings.DefaultPageSettings.Landscape = false;
-            doc.PrintPage += Doc_PrintPage1; ;
+            doc.PrintPage += Doc_PrintPage1;
             line = 0;
             doc.Print();
             Close();
@@ -211,7 +211,7 @@ namespace AutoLabel
             PrintDocument doc = new PrintDocument();
             doc.PrinterSettings = Data.printersettings;
             doc.PrinterSettings.DefaultPageSettings.Landscape = false;
-            doc.PrintPage += Doc_PrintPage2; ;
+            doc.PrintPage += Doc_PrintPage2;
             line = 0;
             doc.Print();
             Close();
@@ -261,6 +261,54 @@ namespace AutoLabel
                 e.Graphics.DrawString(part[i], Normal, Brushes.Black, new Point(100, y + line * height));
                 e.Graphics.DrawString(counter[i].ToString(), Normal, Brushes.Black, new Point(200, y + line * height));
                 line++;
+            }
+        }
+
+        /// <summary>
+        /// Отчёт по ТПА
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonByTPA_Click(object sender, EventArgs e)
+        {
+            LoadLog();
+            PrintDocument doc = new PrintDocument();
+            doc.PrinterSettings = Data.printersettings;
+            //doc.PrinterSettings.DefaultPageSettings.Landscape = false;
+            doc.PrintPage += Doc_PrintPage3;
+            line = 0;
+            doc.Print();
+            Close();
+        }
+        private void Doc_PrintPage3(object sender, PrintPageEventArgs e)
+        {
+            //780*1100 - примерный предел
+            int height = 20; //Расстояние между строками
+            int strings = 1000 / height; //Количество строк на странице
+            int page = line / strings + 1;
+            int pages = log.Count / strings + 1;
+            //Заголовок
+            e.Graphics.DrawString("Отчёт по ТПА     " + comboBoxShift.SelectedItem, Big, Brushes.Black, new Point(40, 40));
+            //e.Graphics.DrawString("Страница " + page + " из " + pages, Normal, Brushes.Black, new Point(650, 40));
+            //Шапка таблицы
+            for (int tpa = 0; tpa < 6; tpa++)
+            {
+                e.Graphics.DrawString("ТПА" + (tpa + 1).ToString(), Bold, Brushes.Black, new Point(tpa * 180 + 40, 80));
+                e.Graphics.DrawString("Номер", Bold, Brushes.Black, new Point(tpa * 180 + 40, 100));
+                e.Graphics.DrawString("Время", Bold, Brushes.Black, new Point(tpa * 180 + 90, 100));
+                e.Graphics.DrawString("Короб", Bold, Brushes.Black, new Point(tpa * 180 + 140, 100));
+                line = 0;
+                int y = 120;
+                foreach (string[] rec in log)
+                {
+                    if (rec[2] == "ТПА" + (tpa + 1).ToString())
+                    {
+                        e.Graphics.DrawString((line+1).ToString(), Normal, Brushes.Black, new Point(tpa * 180 + 40, y + line * height));
+                        e.Graphics.DrawString(rec[1], Normal, Brushes.Black, new Point(tpa * 180 + 90, y + line * height));
+                        e.Graphics.DrawString(rec[7], Normal, Brushes.Black, new Point(tpa * 180 + 140, y + line * height));
+                        line++;
+                    }
+                }
             }
         }
     }
