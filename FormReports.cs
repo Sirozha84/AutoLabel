@@ -20,6 +20,7 @@ namespace AutoLabel
         //Шрифты
         Font Normal = new Font("Arial", 12, FontStyle.Regular, GraphicsUnit.Pixel);
         Font Bold = new Font("Arial", 12, FontStyle.Bold, GraphicsUnit.Pixel);
+        Font Big = new Font("Arial", 16, FontStyle.Bold, GraphicsUnit.Pixel);
 
         public FormReports()
         {
@@ -75,9 +76,6 @@ namespace AutoLabel
             doc.Print();
             Close();
         }
-
-
-
         private void Doc_PrintPage(object sender, PrintPageEventArgs e)
         {
             //780*1100 - примерный предел
@@ -86,7 +84,7 @@ namespace AutoLabel
             int page = line / strings + 1;
             int pages = log.Count / strings + 1;
             //Заголовок
-            e.Graphics.DrawString("Журнал     " + comboBoxShift.SelectedItem, Bold, Brushes.Black, new Point(40, 40));
+            e.Graphics.DrawString("Журнал     " + comboBoxShift.SelectedItem, Big, Brushes.Black, new Point(40, 40));
             e.Graphics.DrawString("Страница " + page + " из " + pages, Normal, Brushes.Black, new Point(650, 40));
             //Шапка таблицы
             e.Graphics.DrawString("Номер", Bold, Brushes.Black, new Point(40, 80));
@@ -138,7 +136,6 @@ namespace AutoLabel
             doc.Print();
             Close();
         }
-
         private void Doc_PrintPage1(object sender, PrintPageEventArgs e)
         {
             //780*1100 - примерный предел
@@ -147,7 +144,7 @@ namespace AutoLabel
             int page = line / strings + 1;
             int pages = log.Count / strings + 1;
             //Заголовок
-            e.Graphics.DrawString("Отчёт     " + comboBoxShift.SelectedItem, Bold, Brushes.Black, new Point(40, 40));
+            e.Graphics.DrawString("Общий отчёт     " + comboBoxShift.SelectedItem, Big, Brushes.Black, new Point(40, 40));
             //e.Graphics.DrawString("Страница " + page + " из " + pages, Normal, Brushes.Black, new Point(650, 40));
             //Шапка таблицы
             e.Graphics.DrawString("Номер", Bold, Brushes.Black, new Point(40, 80));
@@ -200,6 +197,70 @@ namespace AutoLabel
                     e.Graphics.DrawString(counter[i].ToString(), Normal, Brushes.Black, new Point(500, y + line * height));
                     line++;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Отчёт по партиям
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonReportByPart_Click(object sender, EventArgs e)
+        {
+            LoadLog();
+            PrintDocument doc = new PrintDocument();
+            doc.PrinterSettings = Data.printersettings;
+            doc.PrinterSettings.DefaultPageSettings.Landscape = false;
+            doc.PrintPage += Doc_PrintPage2; ;
+            line = 0;
+            doc.Print();
+            Close();
+        }
+        private void Doc_PrintPage2(object sender, PrintPageEventArgs e)
+        {
+            //780*1100 - примерный предел
+            int height = 20; //Расстояние между строками
+            int strings = 1000 / height; //Количество строк на странице
+            int page = line / strings + 1;
+            int pages = log.Count / strings + 1;
+            //Заголовок
+            e.Graphics.DrawString("Отчёт по партиям     " + comboBoxShift.SelectedItem, Big, Brushes.Black, new Point(40, 40));
+            //e.Graphics.DrawString("Страница " + page + " из " + pages, Normal, Brushes.Black, new Point(650, 40));
+            //Шапка таблицы
+            e.Graphics.DrawString("Номер", Bold, Brushes.Black, new Point(40, 80));
+            e.Graphics.DrawString("Партия", Bold, Brushes.Black, new Point(100, 80));
+            e.Graphics.DrawString("Количество коробов", Bold, Brushes.Black, new Point(200, 80));
+            //Подготавливаем коллекцию партий и коллекцию счётчиков
+            List<string> part = new List<string>();
+            List<int> counter = new List<int>();
+            //Проходимся по журналу
+            foreach (string[] rec in log)
+            {
+                //Ищем текущую запись в коллекции сигнатур
+                bool found = false;
+                for (int i = 0; i < part.Count; i++)
+                {
+                    //Проверяем, совпадает ли текущая запись с сигнатурой
+                    if (rec[3] == part[i])
+                    {
+                        counter[i]++; //Запись есть, увеличиваем значение соответствующего счётчика
+                        found = true;
+                    }
+                }
+                if (!found)
+                {
+                    part.Add(rec[3]);   //Если такой партии не нашлось - добавляем новую
+                    counter.Add(1);     //И создаём ещё один счётчик
+                }
+            }
+            //Рисуем строчки в отчёт
+            int y = 110;
+            for (int i = 0; i < part.Count; i++)
+            {
+                e.Graphics.DrawString((line + 1).ToString(), Normal, Brushes.Black, new Point(40, y + line * height));
+                e.Graphics.DrawString(part[i], Normal, Brushes.Black, new Point(100, y + line * height));
+                e.Graphics.DrawString(counter[i].ToString(), Normal, Brushes.Black, new Point(200, y + line * height));
+                line++;
             }
         }
     }

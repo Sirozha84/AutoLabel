@@ -35,6 +35,8 @@
             this.comboBoxShift = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.buttonReportByPart = new System.Windows.Forms.Button();
+            this.buttonByTPA = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonLog
@@ -43,9 +45,9 @@
             this.buttonLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonLog.ForeColor = System.Drawing.Color.White;
-            this.buttonLog.Location = new System.Drawing.Point(12, 235);
+            this.buttonLog.Location = new System.Drawing.Point(12, 318);
             this.buttonLog.Name = "buttonLog";
-            this.buttonLog.Size = new System.Drawing.Size(651, 70);
+            this.buttonLog.Size = new System.Drawing.Size(318, 70);
             this.buttonLog.TabIndex = 10;
             this.buttonLog.Text = "Журнал этикеток";
             this.buttonLog.UseVisualStyleBackColor = false;
@@ -68,7 +70,7 @@
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCancel.ForeColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(226, 425);
+            this.buttonCancel.Location = new System.Drawing.Point(226, 412);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(222, 70);
             this.buttonCancel.TabIndex = 30;
@@ -82,11 +84,11 @@
             this.buttonMianRepotr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMianRepotr.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonMianRepotr.ForeColor = System.Drawing.Color.White;
-            this.buttonMianRepotr.Location = new System.Drawing.Point(12, 311);
+            this.buttonMianRepotr.Location = new System.Drawing.Point(12, 235);
             this.buttonMianRepotr.Name = "buttonMianRepotr";
-            this.buttonMianRepotr.Size = new System.Drawing.Size(651, 70);
+            this.buttonMianRepotr.Size = new System.Drawing.Size(318, 70);
             this.buttonMianRepotr.TabIndex = 31;
-            this.buttonMianRepotr.Text = "Общий отчёт о выпущенной продукции";
+            this.buttonMianRepotr.Text = "Общий отчёт";
             this.buttonMianRepotr.UseVisualStyleBackColor = false;
             this.buttonMianRepotr.Click += new System.EventHandler(this.buttonMianRepotr_Click);
             // 
@@ -125,12 +127,41 @@
             this.label3.TabIndex = 34;
             this.label3.Text = "Выберите тип отчёта:";
             // 
+            // buttonReportByPart
+            // 
+            this.buttonReportByPart.BackColor = System.Drawing.Color.Black;
+            this.buttonReportByPart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReportByPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonReportByPart.ForeColor = System.Drawing.Color.White;
+            this.buttonReportByPart.Location = new System.Drawing.Point(345, 235);
+            this.buttonReportByPart.Name = "buttonReportByPart";
+            this.buttonReportByPart.Size = new System.Drawing.Size(318, 70);
+            this.buttonReportByPart.TabIndex = 35;
+            this.buttonReportByPart.Text = "Отчёт по партиям";
+            this.buttonReportByPart.UseVisualStyleBackColor = false;
+            this.buttonReportByPart.Click += new System.EventHandler(this.buttonReportByPart_Click);
+            // 
+            // buttonByTPA
+            // 
+            this.buttonByTPA.BackColor = System.Drawing.Color.Black;
+            this.buttonByTPA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonByTPA.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonByTPA.ForeColor = System.Drawing.Color.White;
+            this.buttonByTPA.Location = new System.Drawing.Point(345, 318);
+            this.buttonByTPA.Name = "buttonByTPA";
+            this.buttonByTPA.Size = new System.Drawing.Size(318, 70);
+            this.buttonByTPA.TabIndex = 36;
+            this.buttonByTPA.Text = "Отчёт по ТПА";
+            this.buttonByTPA.UseVisualStyleBackColor = false;
+            // 
             // FormReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(675, 507);
+            this.ClientSize = new System.Drawing.Size(675, 494);
+            this.Controls.Add(this.buttonByTPA);
+            this.Controls.Add(this.buttonReportByPart);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxShift);
@@ -157,5 +188,7 @@
         private System.Windows.Forms.ComboBox comboBoxShift;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonReportByPart;
+        private System.Windows.Forms.Button buttonByTPA;
     }
 }
