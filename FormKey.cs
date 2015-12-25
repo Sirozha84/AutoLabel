@@ -24,9 +24,18 @@ namespace AutoLabel
             Close();
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        /*private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
+            {
+                Code = textBox1.Text;
+                Close();
+            }
+        }*/
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length==8)
             {
                 Code = textBox1.Text;
                 Close();

@@ -14,7 +14,7 @@ namespace AutoLabel
         /// <summary>
         /// Использовать ли ключи в данной сборке
         /// </summary>
-        public static bool UseKeys = false;
+        public static bool UseKeys = true;
         /// <summary>
         /// Сбрасывать ли счётчик при заступании новой
         /// </summary>
