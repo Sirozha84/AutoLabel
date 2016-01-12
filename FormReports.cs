@@ -274,7 +274,7 @@ namespace AutoLabel
             LoadLog();
             PrintDocument doc = new PrintDocument();
             doc.PrinterSettings = Data.printersettings;
-            //doc.PrinterSettings.DefaultPageSettings.Landscape = false;
+            doc.PrinterSettings.DefaultPageSettings.Landscape = true;
             doc.PrintPage += Doc_PrintPage3;
             line = 0;
             doc.Print();

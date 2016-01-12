@@ -43,11 +43,19 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxUser = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBoxCount = new System.Windows.Forms.TextBox();
+            this.buttonCountInc = new System.Windows.Forms.Button();
+            this.buttonCountDec = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonquit
@@ -71,7 +79,7 @@
             this.labelNum.ForeColor = System.Drawing.Color.White;
             this.labelNum.Location = new System.Drawing.Point(12, 145);
             this.labelNum.Name = "labelNum";
-            this.labelNum.Size = new System.Drawing.Size(835, 112);
+            this.labelNum.Size = new System.Drawing.Size(934, 112);
             this.labelNum.TabIndex = 2;
             this.labelNum.Text = "ТПА: ";
             this.labelNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -83,7 +91,7 @@
             this.LabelPacker.ForeColor = System.Drawing.Color.White;
             this.LabelPacker.Location = new System.Drawing.Point(3, 0);
             this.LabelPacker.Name = "LabelPacker";
-            this.LabelPacker.Size = new System.Drawing.Size(363, 69);
+            this.LabelPacker.Size = new System.Drawing.Size(407, 69);
             this.LabelPacker.TabIndex = 3;
             this.LabelPacker.Text = "Упаковщик: ";
             this.LabelPacker.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -94,7 +102,7 @@
             this.panel1.Controls.Add(this.buttonMax);
             this.panel1.Controls.Add(this.buttonDec);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(126, 3);
+            this.panel1.Location = new System.Drawing.Point(175, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(582, 94);
             this.panel1.TabIndex = 4;
@@ -167,7 +175,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(835, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(934, 100);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // buttonPrint
@@ -175,7 +183,7 @@
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPrint.ForeColor = System.Drawing.Color.White;
-            this.buttonPrint.Location = new System.Drawing.Point(270, 3);
+            this.buttonPrint.Location = new System.Drawing.Point(320, 3);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(294, 137);
             this.buttonPrint.TabIndex = 6;
@@ -193,11 +201,11 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.buttonPrint, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 503);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 620);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(835, 143);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(934, 143);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // labelformname
@@ -223,7 +231,7 @@
             this.panel2.Controls.Add(this.buttonquit);
             this.panel2.Location = new System.Drawing.Point(2, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(863, 100);
+            this.panel2.Size = new System.Drawing.Size(962, 100);
             this.panel2.TabIndex = 8;
             // 
             // tableLayoutPanel3
@@ -240,7 +248,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(835, 69);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(934, 69);
             this.tableLayoutPanel3.TabIndex = 9;
             // 
             // comboBoxUser
@@ -259,18 +267,104 @@
             "4",
             "5",
             "6"});
-            this.comboBoxUser.Location = new System.Drawing.Point(372, 3);
+            this.comboBoxUser.Location = new System.Drawing.Point(416, 3);
             this.comboBoxUser.Name = "comboBoxUser";
-            this.comboBoxUser.Size = new System.Drawing.Size(363, 63);
+            this.comboBoxUser.Size = new System.Drawing.Size(407, 63);
             this.comboBoxUser.TabIndex = 15;
             this.comboBoxUser.SelectedIndexChanged += new System.EventHandler(this.comboBoxUser_SelectedIndexChanged);
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 589F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.panel3, 1, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(12, 480);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(934, 97);
+            this.tableLayoutPanel4.TabIndex = 6;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.textBoxCount);
+            this.panel3.Controls.Add(this.buttonCountInc);
+            this.panel3.Controls.Add(this.buttonCountDec);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(175, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(582, 91);
+            this.panel3.TabIndex = 4;
+            // 
+            // textBoxCount
+            // 
+            this.textBoxCount.BackColor = System.Drawing.Color.Black;
+            this.textBoxCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxCount.ForeColor = System.Drawing.Color.White;
+            this.textBoxCount.Location = new System.Drawing.Point(333, 11);
+            this.textBoxCount.Name = "textBoxCount";
+            this.textBoxCount.ReadOnly = true;
+            this.textBoxCount.Size = new System.Drawing.Size(160, 80);
+            this.textBoxCount.TabIndex = 7;
+            this.textBoxCount.TabStop = false;
+            this.textBoxCount.Text = "0";
+            this.textBoxCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxCount.Visible = false;
+            // 
+            // buttonCountInc
+            // 
+            this.buttonCountInc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCountInc.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCountInc.ForeColor = System.Drawing.Color.White;
+            this.buttonCountInc.Location = new System.Drawing.Point(502, 11);
+            this.buttonCountInc.Name = "buttonCountInc";
+            this.buttonCountInc.Size = new System.Drawing.Size(80, 80);
+            this.buttonCountInc.TabIndex = 6;
+            this.buttonCountInc.Text = ">";
+            this.buttonCountInc.UseVisualStyleBackColor = true;
+            this.buttonCountInc.Visible = false;
+            this.buttonCountInc.Click += new System.EventHandler(this.buttonCountInc_Click);
+            // 
+            // buttonCountDec
+            // 
+            this.buttonCountDec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCountDec.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCountDec.ForeColor = System.Drawing.Color.White;
+            this.buttonCountDec.Location = new System.Drawing.Point(247, 11);
+            this.buttonCountDec.Name = "buttonCountDec";
+            this.buttonCountDec.Size = new System.Drawing.Size(80, 80);
+            this.buttonCountDec.TabIndex = 5;
+            this.buttonCountDec.Text = "<";
+            this.buttonCountDec.UseVisualStyleBackColor = true;
+            this.buttonCountDec.Visible = false;
+            this.buttonCountDec.Click += new System.EventHandler(this.buttonCountDec_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(9, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(209, 78);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Количество\r\nкоробов:\r\n";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.Visible = false;
             // 
             // FormPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(859, 684);
+            this.ClientSize = new System.Drawing.Size(958, 775);
+            this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.labelNum);
             this.Controls.Add(this.tableLayoutPanel2);
@@ -288,6 +382,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -309,5 +406,11 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.ComboBox comboBoxUser;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox textBoxCount;
+        private System.Windows.Forms.Button buttonCountInc;
+        private System.Windows.Forms.Button buttonCountDec;
+        private System.Windows.Forms.Label label2;
     }
 }

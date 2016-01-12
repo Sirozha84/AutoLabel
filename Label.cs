@@ -25,12 +25,6 @@ namespace AutoLabel
         public string Limit;    //Список срок хранения
         public string Other;    //Вручную Дополнительные параметры
 
-        //Координаты и размеры этикетки
-        static int X;
-        static int Y;
-        static int Width;
-        static int Height;
-
         //Карандаши и ручки :-)
         static Pen Bold = new Pen(Color.Black, 3);
         static Font Smalllll = new Font("Arial", 11, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -48,6 +42,7 @@ namespace AutoLabel
         //Текущие данные для печати
         static int Num;
         static string Packer;
+        static int LabelCount;
 
         /// <summary>
         /// Конструктор
@@ -63,11 +58,13 @@ namespace AutoLabel
         /// Печать
         /// </summary>
         /// <param name="num">Номер ящика</param>
-        /// /// <param name="Packer">Фамилия упаковщика</param>
-        public void Print(int num, string packer)
+        /// <param name="packer">Фамилия упаковщика</param>
+        /// <param name="count">Количество этикеток (0 - если одна двойная)</param>
+        public void Print(int num, string packer, int count)
         {
             Num = num;
             Packer = packer;
+            LabelCount = count;
             if (!Data.PrintSelected()) Data.PrintSetup();
             if (!Data.PrintSelected()) return;
             try
@@ -76,12 +73,12 @@ namespace AutoLabel
                 doc.PrintPage += new PrintPageEventHandler(PD_PrintPage);
                 doc.PrinterSettings = Data.printersettings;
                 doc.Print();
-                if (num == CurrentNum & CurrentNum > 0)
+                /*if (num == CurrentNum & CurrentNum > 0)
                 {
                     Log();  //Лог пишу только когда печатается новая этикетка... может понадобится ещё что-то на счёт брака
                     CurrentNum++; //Увеличиваем номер, если печатался текущий
                     Save(); //Сохраняем, вдруг программа вылетет...
-                }
+                }*/
             }
             catch
             {
@@ -97,24 +94,37 @@ namespace AutoLabel
         /// <param name="e"></param>
         void PD_PrintPage(object sender, PrintPageEventArgs e)
         {
-            int Space = 30;
+            //int Space = 30;
             //int Shift = -10;
-            Width = 585 - Space * 2;
-            Height = 827 - Space * 2;
-            X = Space - 10;
-            Y = Space - 14;
-            DrawLabel(e.Graphics);
-            X = Space - 10 + 584;
-            Y = Space - 14;
-            DrawLabel(e.Graphics);
+            //Width = 585 - Space * 2;
+            //Height = 827 - Space * 2;
+            //X = Space - 10;
+            //Y = Space - 14;
+            //X = Space - 10 + 584;
+            //Y = Space - 14;
+
+            if (LabelCount == 0)
+            {
+                DrawLabel(e.Graphics, 20, 16,false);
+                DrawLabel(e.Graphics, 604, 16,true);
+            }
+            else
+            {
+                DrawLabel(e.Graphics, 20, 16, true);
+                if (LabelCount > 0) DrawLabel(e.Graphics, 604, 16, true);
+            }
+            e.HasMorePages = LabelCount > 0;
         }
 
         /// <summary>
         /// Формирование этикетки
         /// </summary>
         /// <param name="g"></param>
-        void DrawLabel(Graphics g)
+        /// <param name="IncNum">Увеличить ли номер после этой этикетки и записать в журнал</param>
+        void DrawLabel(Graphics g, int X, int Y, bool IncNum)
         {
+            int Width = 525;
+            int Height = 767;
             //Рамки
             g.DrawRectangle(Bold, new Rectangle(X, Y, Width, Height));
             g.DrawLine(Bold, X, Y + 170, X + Width, Y + 170);
@@ -145,16 +155,16 @@ namespace AutoLabel
             g.DrawString(AntistaticType, Big, Brushes.Black, new Point(X + 420, Y + 217));
             //Дополнительные поля
             g.DrawString("Прочие дополнения: " + Other, Small, Brushes.Black, new Point(X + 10, Y + 280));
-            DrawStrings(g, 220, 300, "Машина", "Machine", "NETSTAL №" + TPA);
-            DrawStrings(g, 220, 340, "Марка материала", "Material", Material);
-            DrawStrings(g, 220, 380, "Цвет преформы", "Preform colour", PColor);
-            DrawStrings(g, 220, 420, "Количество преформ в коробе", "Preform quantity per box", Count);
-            DrawStrings(g, 220, 460, "Дата изготовления", "Date of manufacturnig", Date());
-            DrawStrings(g, 220, 500, "Время", "Time", DateTime.Now.ToString("HH:mm"));
-            DrawStrings(g, 220, 540, "Номер партии", "Batch number", PartNum);
-            DrawStrings(g, 220, 580, "Номер короба", "Box number", Num.ToString());
-            DrawStrings(g, 220, 620, "Смена", "Shift", Data.Shift);
-            DrawStrings(g, 220, 660, "Укладчик", "Packer", Packer);
+            DrawStrings(g, X, Y, 220, 300, "Машина", "Machine", "NETSTAL №" + TPA);
+            DrawStrings(g, X, Y, 220, 340, "Марка материала", "Material", Material);
+            DrawStrings(g, X, Y, 220, 380, "Цвет преформы", "Preform colour", PColor);
+            DrawStrings(g, X, Y, 220, 420, "Количество преформ в коробе", "Preform quantity per box", Count);
+            DrawStrings(g, X, Y, 220, 460, "Дата изготовления", "Date of manufacturnig", Date());
+            DrawStrings(g, X, Y, 220, 500, "Время", "Time", DateTime.Now.ToString("HH:mm"));
+            DrawStrings(g, X, Y, 220, 540, "Номер партии", "Batch number", PartNum);
+            DrawStrings(g, X, Y, 220, 580, "Номер короба", "Box number", Num.ToString());
+            DrawStrings(g, X, Y, 220, 620, "Смена", "Shift", Data.Shift);
+            DrawStrings(g, X, Y, 220, 660, "Укладчик", "Packer", Packer);
             //Нижний колонтитул
             g.DrawString("Сделано в России / Made in Russia",
                 SmallBold, Brushes.Black, new Point(X + 130, Y + Height - 55));
@@ -162,6 +172,18 @@ namespace AutoLabel
                 SmallBold, Brushes.Black, new Point(X + 30, Y + Height - 35));
             g.DrawString("Перед выдувом бутылок рекомендуется выдержать преформы не менее 24 часов при t + 18°С",
                 Smalllll, Brushes.Black, new Point(X + 10, Y + Height - 15));
+            //Историю с логом переносим сюда же.. так как на одном листе могут
+            if (IncNum)
+            {
+                if (Num == CurrentNum & CurrentNum > 0)
+                {
+                    Log();  //Лог пишу только когда печатается новая этикетка... может понадобится ещё что-то на счёт брака
+                    CurrentNum++; //Увеличиваем номер, если печатался текущий
+                    Save(); //Сохраняем, вдруг программа вылетет...
+                }
+                Num++;
+                LabelCount--;
+            }
         }
 
         /// <summary>
@@ -173,7 +195,7 @@ namespace AutoLabel
         /// <param name="s1">Строка по-русски</param>
         /// <param name="s2">Строка по-английски</param>
         /// <param name="s3">Значение</param>
-        static void DrawStrings(Graphics g, int x, int y, string s1, string s2, string s3)
+        static void DrawStrings(Graphics g, int X, int Y, int x, int y, string s1, string s2, string s3)
         {
             g.DrawString(s1, SmallBold, Brushes.Black, new Point(X + 10, Y + y));
             g.DrawString(s2, Small, Brushes.Black, new Point(X + 10, Y + y + 14));
@@ -295,7 +317,13 @@ namespace AutoLabel
         /// <returns></returns>
         public string LabelUnderButton()
         {
-            return "Партия: " + PartNum + "   Выпущено коробов: " + (CurrentNum - 1).ToString();
+            string str = "";
+            if (PartNum != null & PartNum != "")
+            {
+                str = "Партия: " + PartNum;
+                if (CurrentNum > 0) str += "   Выпущено коробов: " + (CurrentNum - 1).ToString();
+            }
+            return str;
         }
     }
 }

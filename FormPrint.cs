@@ -12,9 +12,11 @@ namespace AutoLabel
 {
     public partial class FormPrint : Form
     {
-        public int NumMachine;
-        int box;
-        bool CostomNum = true; //Можно ли менять номер вручную?
+        public int NumMachine;  //Номер ТПА
+        int box;                //Номер короба
+        int count = 1;          //Количество коробов
+        bool CostomNum = true;  //Можно ли менять номер вручную?
+        bool CountSelect = false;   //Выбираем ли мы количество коробов?
 
         public FormPrint()
         {
@@ -33,40 +35,60 @@ namespace AutoLabel
             comboBoxUser.Items.Clear();
             foreach (User u in Data.Users) comboBoxUser.Items.Add(u.Name);
             box = Data.Labels[NumMachine].CurrentNum;
-            DrawNum();
             if (Data.UseKeys)
             {
                 FormKey key = new FormKey();
                 key.ShowDialog();
-                if (key.Code == "") Close();
-                //Далее план такой: ищем в базе ключ, если его нет - уходим
-                User user = Data.Users.Find(u => u.Code == key.Code);
-                if (user == null)
+                if (key.Code == "")
                 {
-                    if (key.Code != "")
-                    {
-                        FormError err = new FormError();
-                        err.ShowDialog();
-                    }
-                    Close();
+                    //Маленько кривинько, но стираем сформированный список и заполняем его только гостями
+                    comboBoxUser.Items.Clear();
+                    foreach (User u in Data.Users) if (u.Code == "") comboBoxUser.Items.Add(u.Name);
                 }
                 else
                 {
-                    comboBoxUser.SelectedItem = user.Name;
-                    //Если это упаковщик - замораживаем комбобокс и возможность выбрать номер
-                    if (user.Rule == 1)
+                    //Далее план такой: ищем в базе ключ, если его нет - уходим
+                    User user = Data.Users.Find(u => u.Code == key.Code);
+                    if (user == null)
                     {
-                        comboBoxUser.Enabled = false;
-                        CostomNum = false;
+                        if (key.Code != "")
+                        {
+                            FormError err = new FormError();
+                            err.ShowDialog();
+                        }
+                        Close();
                     }
-                    buttonPrint.Visible = true;
+                    else
+                    {
+                        comboBoxUser.SelectedItem = user.Name;
+                        //Если это упаковщик - замораживаем комбобокс и возможность выбрать номер
+                        if (user.Rule == 1)
+                        {
+                            comboBoxUser.Enabled = false;
+                            CostomNum = false;
+                        }
+                        buttonPrint.Visible = true;
+                    }
                 }
             }
+            //Далее надо выяснить мелкие это коробки или крупные, и в зависимости от этого вывести второй нумератор
+            if (Convert.ToInt32(Data.Labels[NumMachine].Count) <= 1920)
+            {
+                label2.Visible = true;
+                textBoxCount.Visible = true;
+                buttonCountDec.Visible = true;
+                buttonCountInc.Visible = true;
+                CountSelect = true;
+            }
+            DrawNum();
         }
 
+        //Кнопка печати
         private void buttonPrint_Click(object sender, EventArgs e)
         {
-            Data.Labels[NumMachine].Print(box, comboBoxUser.SelectedItem.ToString());
+            int c = 0;
+            if (CountSelect) c = count;
+            Data.Labels[NumMachine].Print(box, comboBoxUser.SelectedItem.ToString(), c);
             Close();
         }
 
@@ -90,6 +112,7 @@ namespace AutoLabel
         //Рисование номера
         void DrawNum()
         {
+            //Номер короба
             textBoxNum.Text = box.ToString();
             if (box < Data.Labels[NumMachine].CurrentNum)
             {
@@ -102,6 +125,13 @@ namespace AutoLabel
                 buttonMax.Visible = false;
             }
             buttonDec.Visible = box > 1;
+            //Количество коробов
+            if (CountSelect)
+            {
+                textBoxCount.Text = count.ToString();
+                buttonCountDec.Visible = count > 1;
+                buttonCountInc.Visible = count < Data.MaxLabels;
+            }
         }
 
         private void comboBoxUser_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,6 +149,24 @@ namespace AutoLabel
             {
                 Data.Labels[NumMachine].CurrentNum = Convert.ToInt32(key.Str);
                 box = Data.Labels[NumMachine].CurrentNum;
+                DrawNum();
+            }
+        }
+
+        private void buttonCountDec_Click(object sender, EventArgs e)
+        {
+            if (count > 1)
+            {
+                count--;
+                DrawNum();
+            }
+        }
+
+        private void buttonCountInc_Click(object sender, EventArgs e)
+        {
+            if (count < Data.MaxLabels)
+            {
+                count++;
                 DrawNum();
             }
         }

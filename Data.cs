@@ -14,7 +14,11 @@ namespace AutoLabel
         /// <summary>
         /// Использовать ли ключи в данной сборке
         /// </summary>
-        public static bool UseKeys = false;
+        public static bool UseKeys = true;
+        /// <summary>
+        /// Максимальное количество этикеток за раз
+        /// </summary>
+        public static int MaxLabels = 10;
         /// <summary>
         /// Сбрасывать ли счётчик при заступании новой
         /// </summary>
@@ -23,7 +27,6 @@ namespace AutoLabel
         /// Количество последних запоминаемых смен
         /// </summary>
         static int ShiftMemory = 7;
-
 
 
         public static string Shift;

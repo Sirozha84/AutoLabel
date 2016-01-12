@@ -41,19 +41,17 @@ namespace AutoLabel
         }
 
         private void button1_Click_1(object sender, EventArgs e) { Print(0); }
-
         private void button2_Click(object sender, EventArgs e) { Print(1); }
-
         private void button3_Click(object sender, EventArgs e) { Print(2); }
-
         private void button4_Click(object sender, EventArgs e) { Print(3); }
-
         private void button5_Click(object sender, EventArgs e) { Print(4); }
-
         private void button6_Click(object sender, EventArgs e) { Print(5); }
 
         void Print(int num)
         {
+            if (Data.Labels[num].PartNum == null | 
+                Data.Labels[num].PartNum == "" |
+                Data.Labels[num].Count == "") return;
             FormPrint formprint = new FormPrint();
             formprint.NumMachine = num;
             formprint.ShowDialog();
@@ -156,7 +154,7 @@ namespace AutoLabel
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            labelClock.Text = DateTime.Now.ToString("H:mm");
+            labelClock.Text = DateTime.Now.ToString("HH:mm");
         }
     }
 }
