@@ -14,7 +14,7 @@ namespace AutoLabel
         /// <summary>
         /// Использовать ли ключи в данной сборке
         /// </summary>
-        public static bool UseKeys = true;
+        public static bool UseKeys = false;
         /// <summary>
         /// Сбрасывать ли счётчик при заступании новой
         /// </summary>
@@ -137,7 +137,7 @@ namespace AutoLabel
             Colors.Add("Коричневый");
             Colors.Add("Чёрный");
             Materials.Add("Полиэф");
-            Materials.Add("Распэт");
+            Materials.Add("Роспэт");
             Materials.Add("Texpet");
             Materials.Add("Jade");
             Materials.Add("WNKI");

@@ -105,6 +105,8 @@ namespace AutoLabel
                 Data.Users[listBox1.SelectedIndex].Code = key.Code;
                 buttonsave.Visible = true;
                 DrawList();
+                buttonKey.Visible = false;
+                buttonDelete.Visible = false;
             }
         }
     }

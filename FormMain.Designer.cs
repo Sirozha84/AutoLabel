@@ -247,7 +247,7 @@
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(162, 13);
             this.labelVersion.TabIndex = 2;
-            this.labelVersion.Text = "Версия: 1.0 Beta 1 (24.12.2015)";
+            this.labelVersion.Text = "Версия: 1.0 Beta 2 (12.01.2016)";
             // 
             // buttonProperties
             // 

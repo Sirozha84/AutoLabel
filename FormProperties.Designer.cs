@@ -452,7 +452,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(392, 49);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Количество:";
+            this.label4.Text = "Код. красителя:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label4.Visible = false;
             // 
@@ -492,9 +492,9 @@
             this.buttonquitprogram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonquitprogram.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonquitprogram.ForeColor = System.Drawing.Color.White;
-            this.buttonquitprogram.Location = new System.Drawing.Point(12, 142);
+            this.buttonquitprogram.Location = new System.Drawing.Point(12, 178);
             this.buttonquitprogram.Name = "buttonquitprogram";
-            this.buttonquitprogram.Size = new System.Drawing.Size(127, 36);
+            this.buttonquitprogram.Size = new System.Drawing.Size(127, 48);
             this.buttonquitprogram.TabIndex = 11;
             this.buttonquitprogram.Text = "Выход";
             this.buttonquitprogram.UseVisualStyleBackColor = false;
@@ -506,9 +506,9 @@
             this.buttonPrinterSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrinterSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPrinterSelect.ForeColor = System.Drawing.Color.White;
-            this.buttonPrinterSelect.Location = new System.Drawing.Point(12, 100);
+            this.buttonPrinterSelect.Location = new System.Drawing.Point(12, 124);
             this.buttonPrinterSelect.Name = "buttonPrinterSelect";
-            this.buttonPrinterSelect.Size = new System.Drawing.Size(127, 36);
+            this.buttonPrinterSelect.Size = new System.Drawing.Size(127, 48);
             this.buttonPrinterSelect.TabIndex = 12;
             this.buttonPrinterSelect.Text = "Выбор принтера";
             this.buttonPrinterSelect.UseVisualStyleBackColor = false;
@@ -520,9 +520,9 @@
             this.buttonReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonReport.ForeColor = System.Drawing.Color.White;
-            this.buttonReport.Location = new System.Drawing.Point(12, 58);
+            this.buttonReport.Location = new System.Drawing.Point(12, 70);
             this.buttonReport.Name = "buttonReport";
-            this.buttonReport.Size = new System.Drawing.Size(127, 36);
+            this.buttonReport.Size = new System.Drawing.Size(127, 48);
             this.buttonReport.TabIndex = 13;
             this.buttonReport.Text = "Отчёты";
             this.buttonReport.UseVisualStyleBackColor = false;
@@ -550,7 +550,7 @@
             this.buttonUsers.ForeColor = System.Drawing.Color.White;
             this.buttonUsers.Location = new System.Drawing.Point(12, 16);
             this.buttonUsers.Name = "buttonUsers";
-            this.buttonUsers.Size = new System.Drawing.Size(127, 36);
+            this.buttonUsers.Size = new System.Drawing.Size(127, 48);
             this.buttonUsers.TabIndex = 14;
             this.buttonUsers.Text = "Пользователи";
             this.buttonUsers.UseVisualStyleBackColor = false;
