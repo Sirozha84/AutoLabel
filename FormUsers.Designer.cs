@@ -33,8 +33,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonsave = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.buttonPageUp = new System.Windows.Forms.Button();
-            this.buttonPageDown = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonNewAdmin = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
@@ -79,7 +77,7 @@
             this.panel2.Controls.Add(this.buttonquit);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(956, 100);
+            this.panel2.Size = new System.Drawing.Size(1165, 100);
             this.panel2.TabIndex = 10;
             // 
             // buttonsave
@@ -88,7 +86,7 @@
             this.buttonsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonsave.ForeColor = System.Drawing.Color.White;
-            this.buttonsave.Location = new System.Drawing.Point(690, 12);
+            this.buttonsave.Location = new System.Drawing.Point(899, 12);
             this.buttonsave.Name = "buttonsave";
             this.buttonsave.Size = new System.Drawing.Size(250, 76);
             this.buttonsave.TabIndex = 8;
@@ -112,36 +110,10 @@
             this.listBox1.Location = new System.Drawing.Point(73, 146);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(731, 279);
+            this.listBox1.Size = new System.Drawing.Size(1018, 279);
             this.listBox1.TabIndex = 11;
             this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // buttonPageUp
-            // 
-            this.buttonPageUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonPageUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPageUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonPageUp.ForeColor = System.Drawing.Color.White;
-            this.buttonPageUp.Location = new System.Drawing.Point(810, 146);
-            this.buttonPageUp.Name = "buttonPageUp";
-            this.buttonPageUp.Size = new System.Drawing.Size(76, 76);
-            this.buttonPageUp.TabIndex = 12;
-            this.buttonPageUp.Text = "<<<";
-            this.buttonPageUp.UseVisualStyleBackColor = true;
-            // 
-            // buttonPageDown
-            // 
-            this.buttonPageDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonPageDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPageDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonPageDown.ForeColor = System.Drawing.Color.White;
-            this.buttonPageDown.Location = new System.Drawing.Point(810, 228);
-            this.buttonPageDown.Name = "buttonPageDown";
-            this.buttonPageDown.Size = new System.Drawing.Size(76, 76);
-            this.buttonPageDown.TabIndex = 13;
-            this.buttonPageDown.Text = ">>>";
-            this.buttonPageDown.UseVisualStyleBackColor = true;
             // 
             // buttonNew
             // 
@@ -206,13 +178,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(954, 636);
+            this.ClientSize = new System.Drawing.Size(1163, 636);
             this.Controls.Add(this.buttonKey);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonNewAdmin);
             this.Controls.Add(this.buttonNew);
-            this.Controls.Add(this.buttonPageDown);
-            this.Controls.Add(this.buttonPageUp);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -233,8 +203,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonsave;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button buttonPageUp;
-        private System.Windows.Forms.Button buttonPageDown;
         private System.Windows.Forms.Button buttonNew;
         private System.Windows.Forms.Button buttonNewAdmin;
         private System.Windows.Forms.Button buttonDelete;

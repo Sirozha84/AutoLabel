@@ -12,9 +12,9 @@ namespace AutoLabel
     class Data
     {
         /// <summary>
-        /// Использовать ли ключи в данной сборке
+        /// Программа запущена на машине, false - если десктопная версия
         /// </summary>
-        public static bool UseKeys = true;
+        public static bool IsMachine = true;
         /// <summary>
         /// Максимальное количество этикеток за раз
         /// </summary>
@@ -325,7 +325,7 @@ namespace AutoLabel
         /// <returns></returns>
         public static byte GetKey(int Minimum)
         {
-            if (UseKeys)
+            if (IsMachine)
             {
                 FormKey key = new FormKey();
                 key.ShowDialog();

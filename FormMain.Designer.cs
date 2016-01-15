@@ -245,9 +245,9 @@
             this.labelVersion.ForeColor = System.Drawing.Color.Gray;
             this.labelVersion.Location = new System.Drawing.Point(12, 121);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(162, 13);
+            this.labelVersion.Size = new System.Drawing.Size(44, 13);
             this.labelVersion.TabIndex = 2;
-            this.labelVersion.Text = "Версия: 1.0 Beta 2 (12.01.2016)";
+            this.labelVersion.Text = "Версия";
             // 
             // buttonProperties
             // 
@@ -336,7 +336,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
-            this.Text = "Form1";
+            this.Text = "AutoLabel";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

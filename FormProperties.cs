@@ -14,6 +14,12 @@ namespace AutoLabel
         public FormProperties()
         {
             InitializeComponent();
+            //Режим для ПК
+            if (!Data.IsMachine)
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                buttonquitprogram.Visible = false;
+            }
         }
 
         private void buttonquit_Click(object sender, EventArgs e)
@@ -152,7 +158,7 @@ namespace AutoLabel
         private void buttonUsers_Click(object sender, EventArgs e)
         {
             FormUsers form = new FormUsers();
-            form.Show();
+            form.ShowDialog();
         }
 
         private void textBoxOther_Click(object sender, EventArgs e)
@@ -192,6 +198,16 @@ namespace AutoLabel
             comboBoxAntiCount.SelectedItem = null;
             comboBoxLimit.SelectedItem = null;
             textBoxOther.Text = "";
+        }
+
+        private void buttonAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("AutoLabel\n" +
+                            "Версия: " + Program.Version + "\n" +
+                            "Автор: Сергей Гордеев\n" +
+                            "Телефон техподдержки: +7 (965) 917-31-43\n" +
+                            "Сайт автора: http://www.sg-software.ru",
+                            "О программе", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

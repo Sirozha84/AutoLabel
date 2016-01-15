@@ -372,7 +372,7 @@
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPrint";
-            this.Text = "FormPrint";
+            this.Text = "Печать этикетки";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormPrint_Load);
             this.panel1.ResumeLayout(false);

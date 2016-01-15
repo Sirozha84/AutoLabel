@@ -59,6 +59,7 @@
             this.buttonPrinterSelect = new System.Windows.Forms.Button();
             this.buttonReport = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonAbout = new System.Windows.Forms.Button();
             this.buttonUsers = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -492,7 +493,7 @@
             this.buttonquitprogram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonquitprogram.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonquitprogram.ForeColor = System.Drawing.Color.White;
-            this.buttonquitprogram.Location = new System.Drawing.Point(12, 178);
+            this.buttonquitprogram.Location = new System.Drawing.Point(12, 232);
             this.buttonquitprogram.Name = "buttonquitprogram";
             this.buttonquitprogram.Size = new System.Drawing.Size(127, 48);
             this.buttonquitprogram.TabIndex = 11;
@@ -533,6 +534,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.buttonAbout);
             this.panel1.Controls.Add(this.buttonUsers);
             this.panel1.Controls.Add(this.buttonPrinterSelect);
             this.panel1.Controls.Add(this.buttonquitprogram);
@@ -541,6 +543,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(151, 577);
             this.panel1.TabIndex = 14;
+            // 
+            // buttonAbout
+            // 
+            this.buttonAbout.BackColor = System.Drawing.Color.Black;
+            this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAbout.ForeColor = System.Drawing.Color.White;
+            this.buttonAbout.Location = new System.Drawing.Point(12, 178);
+            this.buttonAbout.Name = "buttonAbout";
+            this.buttonAbout.Size = new System.Drawing.Size(127, 48);
+            this.buttonAbout.TabIndex = 15;
+            this.buttonAbout.Text = "О программе";
+            this.buttonAbout.UseVisualStyleBackColor = false;
+            this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
             // 
             // buttonUsers
             // 
@@ -582,7 +598,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormProperties";
-            this.Text = "FormProperties";
+            this.Text = "Установка параметров";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormProperties_Load);
             this.panel2.ResumeLayout(false);
@@ -629,5 +645,6 @@
         private System.Windows.Forms.ComboBox comboBoxLimit;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonAbout;
     }
 }

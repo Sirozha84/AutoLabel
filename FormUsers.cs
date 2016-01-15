@@ -14,6 +14,13 @@ namespace AutoLabel
         public FormUsers()
         {
             InitializeComponent();
+            //Режим для ПК
+            if (!Data.IsMachine)
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                WindowState = FormWindowState.Normal;
+                StartPosition = FormStartPosition.CenterParent;
+            }
         }
 
         private void buttonquit_Click(object sender, EventArgs e)

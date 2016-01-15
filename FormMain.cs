@@ -15,9 +15,13 @@ namespace AutoLabel
         public FormMain()
         {
             InitializeComponent();
-            //Временно, для теста
-            //FormUsers form = new FormUsers();
-            //form.Show();
+            //Режим для ПК
+            labelVersion.Text = "Версия: " + Program.Version;
+            if (!Data.IsMachine)
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                labelVersion.Text += " (Режим ПК)";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

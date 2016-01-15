@@ -32,44 +32,40 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonDot = new System.Windows.Forms.Button();
-            this.buttonZh = new System.Windows.Forms.Button();
-            this.buttonYu = new System.Windows.Forms.Button();
-            this.buttonMZ = new System.Windows.Forms.Button();
-            this.buttonI = new System.Windows.Forms.Button();
-            this.buttonEe = new System.Windows.Forms.Button();
-            this.buttonS = new System.Windows.Forms.Button();
-            this.buttonD = new System.Windows.Forms.Button();
-            this.buttonO = new System.Windows.Forms.Button();
-            this.buttonL = new System.Windows.Forms.Button();
-            this.buttonH = new System.Windows.Forms.Button();
-            this.buttonP = new System.Windows.Forms.Button();
-            this.buttonZ = new System.Windows.Forms.Button();
-            this.buttonShya = new System.Windows.Forms.Button();
-            this.buttonTZ = new System.Windows.Forms.Button();
-            this.buttonA = new System.Windows.Forms.Button();
-            this.buttonR = new System.Windows.Forms.Button();
-            this.buttonN = new System.Windows.Forms.Button();
-            this.buttonE = new System.Windows.Forms.Button();
-            this.buttonT = new System.Windows.Forms.Button();
-            this.buttonM = new System.Windows.Forms.Button();
-            this.buttonG = new System.Windows.Forms.Button();
-            this.buttonK = new System.Windows.Forms.Button();
-            this.buttonJ = new System.Windows.Forms.Button();
             this.buttonSpace = new System.Windows.Forms.Button();
             this.buttonYa = new System.Windows.Forms.Button();
             this.buttonCh = new System.Windows.Forms.Button();
-            this.buttonF = new System.Windows.Forms.Button();
-            this.buttonIi = new System.Windows.Forms.Button();
+            this.buttonS = new System.Windows.Forms.Button();
+            this.buttonM = new System.Windows.Forms.Button();
+            this.buttonI = new System.Windows.Forms.Button();
+            this.buttonT = new System.Windows.Forms.Button();
+            this.buttonMZ = new System.Windows.Forms.Button();
+            this.buttonAnd = new System.Windows.Forms.Button();
+            this.buttonYu = new System.Windows.Forms.Button();
+            this.buttonEe = new System.Windows.Forms.Button();
+            this.buttonZh = new System.Windows.Forms.Button();
+            this.buttonD = new System.Windows.Forms.Button();
+            this.buttonL = new System.Windows.Forms.Button();
+            this.buttonO = new System.Windows.Forms.Button();
+            this.buttonR = new System.Windows.Forms.Button();
+            this.buttonP = new System.Windows.Forms.Button();
+            this.buttonA = new System.Windows.Forms.Button();
             this.buttonV = new System.Windows.Forms.Button();
+            this.buttonIi = new System.Windows.Forms.Button();
+            this.buttonF = new System.Windows.Forms.Button();
+            this.buttonJ = new System.Windows.Forms.Button();
             this.buttonTs = new System.Windows.Forms.Button();
             this.buttonU = new System.Windows.Forms.Button();
+            this.buttonK = new System.Windows.Forms.Button();
+            this.buttonE = new System.Windows.Forms.Button();
+            this.buttonN = new System.Windows.Forms.Button();
+            this.buttonG = new System.Windows.Forms.Button();
             this.buttonSh = new System.Windows.Forms.Button();
-            this.buttonAnd = new System.Windows.Forms.Button();
-            this.textBoxEdit = new System.Windows.Forms.TextBox();
+            this.buttonShya = new System.Windows.Forms.Button();
+            this.buttonZ = new System.Windows.Forms.Button();
+            this.buttonH = new System.Windows.Forms.Button();
+            this.buttonTZ = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -77,8 +73,12 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonZpt = new System.Windows.Forms.Button();
+            this.buttonDot = new System.Windows.Forms.Button();
             this.buttonPercent = new System.Windows.Forms.Button();
+            this.textBoxEdit = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -209,356 +209,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(979, 322);
             this.tableLayoutPanel1.TabIndex = 25;
             // 
-            // buttonDelete
-            // 
-            this.buttonDelete.BackColor = System.Drawing.Color.Black;
-            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(905, 3);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(71, 66);
-            this.buttonDelete.TabIndex = 34;
-            this.buttonDelete.Text = "<";
-            this.buttonDelete.UseVisualStyleBackColor = false;
-            this.buttonDelete.Click += new System.EventHandler(this.button35_Click);
-            // 
-            // buttonDot
-            // 
-            this.buttonDot.BackColor = System.Drawing.Color.Black;
-            this.buttonDot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDot.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDot.ForeColor = System.Drawing.Color.White;
-            this.buttonDot.Location = new System.Drawing.Point(823, 252);
-            this.buttonDot.Name = "buttonDot";
-            this.buttonDot.Size = new System.Drawing.Size(66, 66);
-            this.buttonDot.TabIndex = 33;
-            this.buttonDot.Text = ".";
-            this.buttonDot.UseVisualStyleBackColor = false;
-            this.buttonDot.Click += new System.EventHandler(this.button34_Click);
-            // 
-            // buttonZh
-            // 
-            this.buttonZh.BackColor = System.Drawing.Color.Black;
-            this.buttonZh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonZh.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonZh.ForeColor = System.Drawing.Color.White;
-            this.buttonZh.Location = new System.Drawing.Point(741, 169);
-            this.buttonZh.Name = "buttonZh";
-            this.buttonZh.Size = new System.Drawing.Size(66, 64);
-            this.buttonZh.TabIndex = 32;
-            this.buttonZh.Text = "Ж";
-            this.buttonZh.UseVisualStyleBackColor = false;
-            this.buttonZh.Click += new System.EventHandler(this.button33_Click);
-            // 
-            // buttonYu
-            // 
-            this.buttonYu.BackColor = System.Drawing.Color.Black;
-            this.buttonYu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonYu.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonYu.ForeColor = System.Drawing.Color.White;
-            this.buttonYu.Location = new System.Drawing.Point(741, 252);
-            this.buttonYu.Name = "buttonYu";
-            this.buttonYu.Size = new System.Drawing.Size(66, 66);
-            this.buttonYu.TabIndex = 31;
-            this.buttonYu.Text = "Ю";
-            this.buttonYu.UseVisualStyleBackColor = false;
-            this.buttonYu.Click += new System.EventHandler(this.button32_Click);
-            // 
-            // buttonMZ
-            // 
-            this.buttonMZ.BackColor = System.Drawing.Color.Black;
-            this.buttonMZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonMZ.ForeColor = System.Drawing.Color.White;
-            this.buttonMZ.Location = new System.Drawing.Point(577, 252);
-            this.buttonMZ.Name = "buttonMZ";
-            this.buttonMZ.Size = new System.Drawing.Size(66, 66);
-            this.buttonMZ.TabIndex = 30;
-            this.buttonMZ.Text = "Ь";
-            this.buttonMZ.UseVisualStyleBackColor = false;
-            this.buttonMZ.Click += new System.EventHandler(this.button31_Click);
-            // 
-            // buttonI
-            // 
-            this.buttonI.BackColor = System.Drawing.Color.Black;
-            this.buttonI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonI.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonI.ForeColor = System.Drawing.Color.White;
-            this.buttonI.Location = new System.Drawing.Point(413, 252);
-            this.buttonI.Name = "buttonI";
-            this.buttonI.Size = new System.Drawing.Size(66, 66);
-            this.buttonI.TabIndex = 29;
-            this.buttonI.Text = "И";
-            this.buttonI.UseVisualStyleBackColor = false;
-            this.buttonI.Click += new System.EventHandler(this.button30_Click);
-            // 
-            // buttonEe
-            // 
-            this.buttonEe.BackColor = System.Drawing.Color.Black;
-            this.buttonEe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEe.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonEe.ForeColor = System.Drawing.Color.White;
-            this.buttonEe.Location = new System.Drawing.Point(823, 169);
-            this.buttonEe.Name = "buttonEe";
-            this.buttonEe.Size = new System.Drawing.Size(66, 64);
-            this.buttonEe.TabIndex = 28;
-            this.buttonEe.Text = "Э";
-            this.buttonEe.UseVisualStyleBackColor = false;
-            this.buttonEe.Click += new System.EventHandler(this.button29_Click);
-            // 
-            // buttonS
-            // 
-            this.buttonS.BackColor = System.Drawing.Color.Black;
-            this.buttonS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonS.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonS.ForeColor = System.Drawing.Color.White;
-            this.buttonS.Location = new System.Drawing.Point(249, 252);
-            this.buttonS.Name = "buttonS";
-            this.buttonS.Size = new System.Drawing.Size(66, 66);
-            this.buttonS.TabIndex = 27;
-            this.buttonS.Text = "С";
-            this.buttonS.UseVisualStyleBackColor = false;
-            this.buttonS.Click += new System.EventHandler(this.button28_Click);
-            // 
-            // buttonD
-            // 
-            this.buttonD.BackColor = System.Drawing.Color.Black;
-            this.buttonD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonD.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonD.ForeColor = System.Drawing.Color.White;
-            this.buttonD.Location = new System.Drawing.Point(659, 169);
-            this.buttonD.Name = "buttonD";
-            this.buttonD.Size = new System.Drawing.Size(66, 64);
-            this.buttonD.TabIndex = 26;
-            this.buttonD.Text = "Д";
-            this.buttonD.UseVisualStyleBackColor = false;
-            this.buttonD.Click += new System.EventHandler(this.button27_Click);
-            // 
-            // buttonO
-            // 
-            this.buttonO.BackColor = System.Drawing.Color.Black;
-            this.buttonO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonO.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonO.ForeColor = System.Drawing.Color.White;
-            this.buttonO.Location = new System.Drawing.Point(495, 169);
-            this.buttonO.Name = "buttonO";
-            this.buttonO.Size = new System.Drawing.Size(66, 64);
-            this.buttonO.TabIndex = 25;
-            this.buttonO.Text = "О";
-            this.buttonO.UseVisualStyleBackColor = false;
-            this.buttonO.Click += new System.EventHandler(this.button26_Click);
-            // 
-            // buttonL
-            // 
-            this.buttonL.BackColor = System.Drawing.Color.Black;
-            this.buttonL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonL.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonL.ForeColor = System.Drawing.Color.White;
-            this.buttonL.Location = new System.Drawing.Point(577, 169);
-            this.buttonL.Name = "buttonL";
-            this.buttonL.Size = new System.Drawing.Size(66, 64);
-            this.buttonL.TabIndex = 24;
-            this.buttonL.Text = "Л";
-            this.buttonL.UseVisualStyleBackColor = false;
-            this.buttonL.Click += new System.EventHandler(this.button25_Click);
-            // 
-            // buttonH
-            // 
-            this.buttonH.BackColor = System.Drawing.Color.Black;
-            this.buttonH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonH.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonH.ForeColor = System.Drawing.Color.White;
-            this.buttonH.Location = new System.Drawing.Point(823, 86);
-            this.buttonH.Name = "buttonH";
-            this.buttonH.Size = new System.Drawing.Size(66, 64);
-            this.buttonH.TabIndex = 23;
-            this.buttonH.Text = "Х";
-            this.buttonH.UseVisualStyleBackColor = false;
-            this.buttonH.Click += new System.EventHandler(this.button24_Click);
-            // 
-            // buttonP
-            // 
-            this.buttonP.BackColor = System.Drawing.Color.Black;
-            this.buttonP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonP.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonP.ForeColor = System.Drawing.Color.White;
-            this.buttonP.Location = new System.Drawing.Point(331, 169);
-            this.buttonP.Name = "buttonP";
-            this.buttonP.Size = new System.Drawing.Size(66, 64);
-            this.buttonP.TabIndex = 22;
-            this.buttonP.Text = "П";
-            this.buttonP.UseVisualStyleBackColor = false;
-            this.buttonP.Click += new System.EventHandler(this.button23_Click);
-            // 
-            // buttonZ
-            // 
-            this.buttonZ.BackColor = System.Drawing.Color.Black;
-            this.buttonZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonZ.ForeColor = System.Drawing.Color.White;
-            this.buttonZ.Location = new System.Drawing.Point(741, 86);
-            this.buttonZ.Name = "buttonZ";
-            this.buttonZ.Size = new System.Drawing.Size(66, 64);
-            this.buttonZ.TabIndex = 21;
-            this.buttonZ.Text = "З";
-            this.buttonZ.UseVisualStyleBackColor = false;
-            this.buttonZ.Click += new System.EventHandler(this.button22_Click);
-            // 
-            // buttonShya
-            // 
-            this.buttonShya.BackColor = System.Drawing.Color.Black;
-            this.buttonShya.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShya.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonShya.ForeColor = System.Drawing.Color.White;
-            this.buttonShya.Location = new System.Drawing.Point(659, 86);
-            this.buttonShya.Name = "buttonShya";
-            this.buttonShya.Size = new System.Drawing.Size(66, 64);
-            this.buttonShya.TabIndex = 20;
-            this.buttonShya.Text = "Щ";
-            this.buttonShya.UseVisualStyleBackColor = false;
-            this.buttonShya.Click += new System.EventHandler(this.button21_Click);
-            // 
-            // buttonTZ
-            // 
-            this.buttonTZ.BackColor = System.Drawing.Color.Black;
-            this.buttonTZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonTZ.ForeColor = System.Drawing.Color.White;
-            this.buttonTZ.Location = new System.Drawing.Point(905, 86);
-            this.buttonTZ.Name = "buttonTZ";
-            this.buttonTZ.Size = new System.Drawing.Size(71, 64);
-            this.buttonTZ.TabIndex = 19;
-            this.buttonTZ.Text = "Ъ";
-            this.buttonTZ.UseVisualStyleBackColor = false;
-            this.buttonTZ.Click += new System.EventHandler(this.button20_Click);
-            // 
-            // buttonA
-            // 
-            this.buttonA.BackColor = System.Drawing.Color.Black;
-            this.buttonA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonA.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonA.ForeColor = System.Drawing.Color.White;
-            this.buttonA.Location = new System.Drawing.Point(249, 169);
-            this.buttonA.Name = "buttonA";
-            this.buttonA.Size = new System.Drawing.Size(66, 64);
-            this.buttonA.TabIndex = 18;
-            this.buttonA.Text = "А";
-            this.buttonA.UseVisualStyleBackColor = false;
-            this.buttonA.Click += new System.EventHandler(this.button19_Click);
-            // 
-            // buttonR
-            // 
-            this.buttonR.BackColor = System.Drawing.Color.Black;
-            this.buttonR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonR.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonR.ForeColor = System.Drawing.Color.White;
-            this.buttonR.Location = new System.Drawing.Point(413, 169);
-            this.buttonR.Name = "buttonR";
-            this.buttonR.Size = new System.Drawing.Size(66, 64);
-            this.buttonR.TabIndex = 17;
-            this.buttonR.Text = "Р";
-            this.buttonR.UseVisualStyleBackColor = false;
-            this.buttonR.Click += new System.EventHandler(this.button18_Click);
-            // 
-            // buttonN
-            // 
-            this.buttonN.BackColor = System.Drawing.Color.Black;
-            this.buttonN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonN.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonN.ForeColor = System.Drawing.Color.White;
-            this.buttonN.Location = new System.Drawing.Point(413, 86);
-            this.buttonN.Name = "buttonN";
-            this.buttonN.Size = new System.Drawing.Size(66, 64);
-            this.buttonN.TabIndex = 16;
-            this.buttonN.Text = "Н";
-            this.buttonN.UseVisualStyleBackColor = false;
-            this.buttonN.Click += new System.EventHandler(this.button17_Click);
-            // 
-            // buttonE
-            // 
-            this.buttonE.BackColor = System.Drawing.Color.Black;
-            this.buttonE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonE.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonE.ForeColor = System.Drawing.Color.White;
-            this.buttonE.Location = new System.Drawing.Point(331, 86);
-            this.buttonE.Name = "buttonE";
-            this.buttonE.Size = new System.Drawing.Size(66, 64);
-            this.buttonE.TabIndex = 15;
-            this.buttonE.Text = "Е";
-            this.buttonE.UseVisualStyleBackColor = false;
-            this.buttonE.Click += new System.EventHandler(this.button16_Click);
-            // 
-            // buttonT
-            // 
-            this.buttonT.BackColor = System.Drawing.Color.Black;
-            this.buttonT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonT.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonT.ForeColor = System.Drawing.Color.White;
-            this.buttonT.Location = new System.Drawing.Point(495, 252);
-            this.buttonT.Name = "buttonT";
-            this.buttonT.Size = new System.Drawing.Size(66, 66);
-            this.buttonT.TabIndex = 14;
-            this.buttonT.Text = "Т";
-            this.buttonT.UseVisualStyleBackColor = false;
-            this.buttonT.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // buttonM
-            // 
-            this.buttonM.BackColor = System.Drawing.Color.Black;
-            this.buttonM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonM.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonM.ForeColor = System.Drawing.Color.White;
-            this.buttonM.Location = new System.Drawing.Point(331, 252);
-            this.buttonM.Name = "buttonM";
-            this.buttonM.Size = new System.Drawing.Size(66, 66);
-            this.buttonM.TabIndex = 13;
-            this.buttonM.Text = "М";
-            this.buttonM.UseVisualStyleBackColor = false;
-            this.buttonM.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // buttonG
-            // 
-            this.buttonG.BackColor = System.Drawing.Color.Black;
-            this.buttonG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonG.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonG.ForeColor = System.Drawing.Color.White;
-            this.buttonG.Location = new System.Drawing.Point(495, 86);
-            this.buttonG.Name = "buttonG";
-            this.buttonG.Size = new System.Drawing.Size(66, 64);
-            this.buttonG.TabIndex = 12;
-            this.buttonG.Text = "Г";
-            this.buttonG.UseVisualStyleBackColor = false;
-            this.buttonG.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // buttonK
-            // 
-            this.buttonK.BackColor = System.Drawing.Color.Black;
-            this.buttonK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonK.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonK.ForeColor = System.Drawing.Color.White;
-            this.buttonK.Location = new System.Drawing.Point(249, 86);
-            this.buttonK.Name = "buttonK";
-            this.buttonK.Size = new System.Drawing.Size(66, 64);
-            this.buttonK.TabIndex = 11;
-            this.buttonK.Text = "К";
-            this.buttonK.UseVisualStyleBackColor = false;
-            this.buttonK.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // buttonJ
-            // 
-            this.buttonJ.BackColor = System.Drawing.Color.Black;
-            this.buttonJ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonJ.ForeColor = System.Drawing.Color.White;
-            this.buttonJ.Location = new System.Drawing.Point(3, 86);
-            this.buttonJ.Name = "buttonJ";
-            this.buttonJ.Size = new System.Drawing.Size(66, 64);
-            this.buttonJ.TabIndex = 6;
-            this.buttonJ.Text = "Й";
-            this.buttonJ.UseVisualStyleBackColor = false;
-            this.buttonJ.Click += new System.EventHandler(this.button7_Click);
-            // 
             // buttonSpace
             // 
             this.buttonSpace.BackColor = System.Drawing.Color.Black;
@@ -601,19 +251,229 @@
             this.buttonCh.UseVisualStyleBackColor = false;
             this.buttonCh.Click += new System.EventHandler(this.button3_Click);
             // 
-            // buttonF
+            // buttonS
             // 
-            this.buttonF.BackColor = System.Drawing.Color.Black;
-            this.buttonF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonF.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonF.ForeColor = System.Drawing.Color.White;
-            this.buttonF.Location = new System.Drawing.Point(3, 169);
-            this.buttonF.Name = "buttonF";
-            this.buttonF.Size = new System.Drawing.Size(66, 64);
-            this.buttonF.TabIndex = 3;
-            this.buttonF.Text = "Ф";
-            this.buttonF.UseVisualStyleBackColor = false;
-            this.buttonF.Click += new System.EventHandler(this.button4_Click);
+            this.buttonS.BackColor = System.Drawing.Color.Black;
+            this.buttonS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonS.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonS.ForeColor = System.Drawing.Color.White;
+            this.buttonS.Location = new System.Drawing.Point(249, 252);
+            this.buttonS.Name = "buttonS";
+            this.buttonS.Size = new System.Drawing.Size(66, 66);
+            this.buttonS.TabIndex = 27;
+            this.buttonS.Text = "С";
+            this.buttonS.UseVisualStyleBackColor = false;
+            this.buttonS.Click += new System.EventHandler(this.button28_Click);
+            // 
+            // buttonM
+            // 
+            this.buttonM.BackColor = System.Drawing.Color.Black;
+            this.buttonM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonM.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonM.ForeColor = System.Drawing.Color.White;
+            this.buttonM.Location = new System.Drawing.Point(331, 252);
+            this.buttonM.Name = "buttonM";
+            this.buttonM.Size = new System.Drawing.Size(66, 66);
+            this.buttonM.TabIndex = 13;
+            this.buttonM.Text = "М";
+            this.buttonM.UseVisualStyleBackColor = false;
+            this.buttonM.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // buttonI
+            // 
+            this.buttonI.BackColor = System.Drawing.Color.Black;
+            this.buttonI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonI.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonI.ForeColor = System.Drawing.Color.White;
+            this.buttonI.Location = new System.Drawing.Point(413, 252);
+            this.buttonI.Name = "buttonI";
+            this.buttonI.Size = new System.Drawing.Size(66, 66);
+            this.buttonI.TabIndex = 29;
+            this.buttonI.Text = "И";
+            this.buttonI.UseVisualStyleBackColor = false;
+            this.buttonI.Click += new System.EventHandler(this.button30_Click);
+            // 
+            // buttonT
+            // 
+            this.buttonT.BackColor = System.Drawing.Color.Black;
+            this.buttonT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonT.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonT.ForeColor = System.Drawing.Color.White;
+            this.buttonT.Location = new System.Drawing.Point(495, 252);
+            this.buttonT.Name = "buttonT";
+            this.buttonT.Size = new System.Drawing.Size(66, 66);
+            this.buttonT.TabIndex = 14;
+            this.buttonT.Text = "Т";
+            this.buttonT.UseVisualStyleBackColor = false;
+            this.buttonT.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // buttonMZ
+            // 
+            this.buttonMZ.BackColor = System.Drawing.Color.Black;
+            this.buttonMZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonMZ.ForeColor = System.Drawing.Color.White;
+            this.buttonMZ.Location = new System.Drawing.Point(577, 252);
+            this.buttonMZ.Name = "buttonMZ";
+            this.buttonMZ.Size = new System.Drawing.Size(66, 66);
+            this.buttonMZ.TabIndex = 30;
+            this.buttonMZ.Text = "Ь";
+            this.buttonMZ.UseVisualStyleBackColor = false;
+            this.buttonMZ.Click += new System.EventHandler(this.button31_Click);
+            // 
+            // buttonAnd
+            // 
+            this.buttonAnd.BackColor = System.Drawing.Color.Black;
+            this.buttonAnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAnd.ForeColor = System.Drawing.Color.White;
+            this.buttonAnd.Location = new System.Drawing.Point(659, 252);
+            this.buttonAnd.Name = "buttonAnd";
+            this.buttonAnd.Size = new System.Drawing.Size(66, 66);
+            this.buttonAnd.TabIndex = 10;
+            this.buttonAnd.Text = "Б";
+            this.buttonAnd.UseVisualStyleBackColor = false;
+            this.buttonAnd.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // buttonYu
+            // 
+            this.buttonYu.BackColor = System.Drawing.Color.Black;
+            this.buttonYu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonYu.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonYu.ForeColor = System.Drawing.Color.White;
+            this.buttonYu.Location = new System.Drawing.Point(741, 252);
+            this.buttonYu.Name = "buttonYu";
+            this.buttonYu.Size = new System.Drawing.Size(66, 66);
+            this.buttonYu.TabIndex = 31;
+            this.buttonYu.Text = "Ю";
+            this.buttonYu.UseVisualStyleBackColor = false;
+            this.buttonYu.Click += new System.EventHandler(this.button32_Click);
+            // 
+            // buttonEe
+            // 
+            this.buttonEe.BackColor = System.Drawing.Color.Black;
+            this.buttonEe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEe.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonEe.ForeColor = System.Drawing.Color.White;
+            this.buttonEe.Location = new System.Drawing.Point(823, 169);
+            this.buttonEe.Name = "buttonEe";
+            this.buttonEe.Size = new System.Drawing.Size(66, 64);
+            this.buttonEe.TabIndex = 28;
+            this.buttonEe.Text = "Э";
+            this.buttonEe.UseVisualStyleBackColor = false;
+            this.buttonEe.Click += new System.EventHandler(this.button29_Click);
+            // 
+            // buttonZh
+            // 
+            this.buttonZh.BackColor = System.Drawing.Color.Black;
+            this.buttonZh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonZh.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonZh.ForeColor = System.Drawing.Color.White;
+            this.buttonZh.Location = new System.Drawing.Point(741, 169);
+            this.buttonZh.Name = "buttonZh";
+            this.buttonZh.Size = new System.Drawing.Size(66, 64);
+            this.buttonZh.TabIndex = 32;
+            this.buttonZh.Text = "Ж";
+            this.buttonZh.UseVisualStyleBackColor = false;
+            this.buttonZh.Click += new System.EventHandler(this.button33_Click);
+            // 
+            // buttonD
+            // 
+            this.buttonD.BackColor = System.Drawing.Color.Black;
+            this.buttonD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonD.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonD.ForeColor = System.Drawing.Color.White;
+            this.buttonD.Location = new System.Drawing.Point(659, 169);
+            this.buttonD.Name = "buttonD";
+            this.buttonD.Size = new System.Drawing.Size(66, 64);
+            this.buttonD.TabIndex = 26;
+            this.buttonD.Text = "Д";
+            this.buttonD.UseVisualStyleBackColor = false;
+            this.buttonD.Click += new System.EventHandler(this.button27_Click);
+            // 
+            // buttonL
+            // 
+            this.buttonL.BackColor = System.Drawing.Color.Black;
+            this.buttonL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonL.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonL.ForeColor = System.Drawing.Color.White;
+            this.buttonL.Location = new System.Drawing.Point(577, 169);
+            this.buttonL.Name = "buttonL";
+            this.buttonL.Size = new System.Drawing.Size(66, 64);
+            this.buttonL.TabIndex = 24;
+            this.buttonL.Text = "Л";
+            this.buttonL.UseVisualStyleBackColor = false;
+            this.buttonL.Click += new System.EventHandler(this.button25_Click);
+            // 
+            // buttonO
+            // 
+            this.buttonO.BackColor = System.Drawing.Color.Black;
+            this.buttonO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonO.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonO.ForeColor = System.Drawing.Color.White;
+            this.buttonO.Location = new System.Drawing.Point(495, 169);
+            this.buttonO.Name = "buttonO";
+            this.buttonO.Size = new System.Drawing.Size(66, 64);
+            this.buttonO.TabIndex = 25;
+            this.buttonO.Text = "О";
+            this.buttonO.UseVisualStyleBackColor = false;
+            this.buttonO.Click += new System.EventHandler(this.button26_Click);
+            // 
+            // buttonR
+            // 
+            this.buttonR.BackColor = System.Drawing.Color.Black;
+            this.buttonR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonR.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonR.ForeColor = System.Drawing.Color.White;
+            this.buttonR.Location = new System.Drawing.Point(413, 169);
+            this.buttonR.Name = "buttonR";
+            this.buttonR.Size = new System.Drawing.Size(66, 64);
+            this.buttonR.TabIndex = 17;
+            this.buttonR.Text = "Р";
+            this.buttonR.UseVisualStyleBackColor = false;
+            this.buttonR.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // buttonP
+            // 
+            this.buttonP.BackColor = System.Drawing.Color.Black;
+            this.buttonP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonP.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonP.ForeColor = System.Drawing.Color.White;
+            this.buttonP.Location = new System.Drawing.Point(331, 169);
+            this.buttonP.Name = "buttonP";
+            this.buttonP.Size = new System.Drawing.Size(66, 64);
+            this.buttonP.TabIndex = 22;
+            this.buttonP.Text = "П";
+            this.buttonP.UseVisualStyleBackColor = false;
+            this.buttonP.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // buttonA
+            // 
+            this.buttonA.BackColor = System.Drawing.Color.Black;
+            this.buttonA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonA.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonA.ForeColor = System.Drawing.Color.White;
+            this.buttonA.Location = new System.Drawing.Point(249, 169);
+            this.buttonA.Name = "buttonA";
+            this.buttonA.Size = new System.Drawing.Size(66, 64);
+            this.buttonA.TabIndex = 18;
+            this.buttonA.Text = "А";
+            this.buttonA.UseVisualStyleBackColor = false;
+            this.buttonA.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // buttonV
+            // 
+            this.buttonV.BackColor = System.Drawing.Color.Black;
+            this.buttonV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonV.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonV.ForeColor = System.Drawing.Color.White;
+            this.buttonV.Location = new System.Drawing.Point(167, 169);
+            this.buttonV.Name = "buttonV";
+            this.buttonV.Size = new System.Drawing.Size(66, 64);
+            this.buttonV.TabIndex = 5;
+            this.buttonV.Text = "В";
+            this.buttonV.UseVisualStyleBackColor = false;
+            this.buttonV.Click += new System.EventHandler(this.button6_Click);
             // 
             // buttonIi
             // 
@@ -629,19 +489,33 @@
             this.buttonIi.UseVisualStyleBackColor = false;
             this.buttonIi.Click += new System.EventHandler(this.button5_Click);
             // 
-            // buttonV
+            // buttonF
             // 
-            this.buttonV.BackColor = System.Drawing.Color.Black;
-            this.buttonV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonV.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonV.ForeColor = System.Drawing.Color.White;
-            this.buttonV.Location = new System.Drawing.Point(167, 169);
-            this.buttonV.Name = "buttonV";
-            this.buttonV.Size = new System.Drawing.Size(66, 64);
-            this.buttonV.TabIndex = 5;
-            this.buttonV.Text = "В";
-            this.buttonV.UseVisualStyleBackColor = false;
-            this.buttonV.Click += new System.EventHandler(this.button6_Click);
+            this.buttonF.BackColor = System.Drawing.Color.Black;
+            this.buttonF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonF.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonF.ForeColor = System.Drawing.Color.White;
+            this.buttonF.Location = new System.Drawing.Point(3, 169);
+            this.buttonF.Name = "buttonF";
+            this.buttonF.Size = new System.Drawing.Size(66, 64);
+            this.buttonF.TabIndex = 3;
+            this.buttonF.Text = "Ф";
+            this.buttonF.UseVisualStyleBackColor = false;
+            this.buttonF.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // buttonJ
+            // 
+            this.buttonJ.BackColor = System.Drawing.Color.Black;
+            this.buttonJ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonJ.ForeColor = System.Drawing.Color.White;
+            this.buttonJ.Location = new System.Drawing.Point(3, 86);
+            this.buttonJ.Name = "buttonJ";
+            this.buttonJ.Size = new System.Drawing.Size(66, 64);
+            this.buttonJ.TabIndex = 6;
+            this.buttonJ.Text = "Й";
+            this.buttonJ.UseVisualStyleBackColor = false;
+            this.buttonJ.Click += new System.EventHandler(this.button7_Click);
             // 
             // buttonTs
             // 
@@ -671,6 +545,62 @@
             this.buttonU.UseVisualStyleBackColor = false;
             this.buttonU.Click += new System.EventHandler(this.button9_Click);
             // 
+            // buttonK
+            // 
+            this.buttonK.BackColor = System.Drawing.Color.Black;
+            this.buttonK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonK.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonK.ForeColor = System.Drawing.Color.White;
+            this.buttonK.Location = new System.Drawing.Point(249, 86);
+            this.buttonK.Name = "buttonK";
+            this.buttonK.Size = new System.Drawing.Size(66, 64);
+            this.buttonK.TabIndex = 11;
+            this.buttonK.Text = "К";
+            this.buttonK.UseVisualStyleBackColor = false;
+            this.buttonK.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // buttonE
+            // 
+            this.buttonE.BackColor = System.Drawing.Color.Black;
+            this.buttonE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonE.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonE.ForeColor = System.Drawing.Color.White;
+            this.buttonE.Location = new System.Drawing.Point(331, 86);
+            this.buttonE.Name = "buttonE";
+            this.buttonE.Size = new System.Drawing.Size(66, 64);
+            this.buttonE.TabIndex = 15;
+            this.buttonE.Text = "Е";
+            this.buttonE.UseVisualStyleBackColor = false;
+            this.buttonE.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // buttonN
+            // 
+            this.buttonN.BackColor = System.Drawing.Color.Black;
+            this.buttonN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonN.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonN.ForeColor = System.Drawing.Color.White;
+            this.buttonN.Location = new System.Drawing.Point(413, 86);
+            this.buttonN.Name = "buttonN";
+            this.buttonN.Size = new System.Drawing.Size(66, 64);
+            this.buttonN.TabIndex = 16;
+            this.buttonN.Text = "Н";
+            this.buttonN.UseVisualStyleBackColor = false;
+            this.buttonN.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // buttonG
+            // 
+            this.buttonG.BackColor = System.Drawing.Color.Black;
+            this.buttonG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonG.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonG.ForeColor = System.Drawing.Color.White;
+            this.buttonG.Location = new System.Drawing.Point(495, 86);
+            this.buttonG.Name = "buttonG";
+            this.buttonG.Size = new System.Drawing.Size(66, 64);
+            this.buttonG.TabIndex = 12;
+            this.buttonG.Text = "Г";
+            this.buttonG.UseVisualStyleBackColor = false;
+            this.buttonG.Click += new System.EventHandler(this.button13_Click);
+            // 
             // buttonSh
             // 
             this.buttonSh.BackColor = System.Drawing.Color.Black;
@@ -685,30 +615,61 @@
             this.buttonSh.UseVisualStyleBackColor = false;
             this.buttonSh.Click += new System.EventHandler(this.button10_Click);
             // 
-            // buttonAnd
+            // buttonShya
             // 
-            this.buttonAnd.BackColor = System.Drawing.Color.Black;
-            this.buttonAnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAnd.ForeColor = System.Drawing.Color.White;
-            this.buttonAnd.Location = new System.Drawing.Point(659, 252);
-            this.buttonAnd.Name = "buttonAnd";
-            this.buttonAnd.Size = new System.Drawing.Size(66, 66);
-            this.buttonAnd.TabIndex = 10;
-            this.buttonAnd.Text = "Б";
-            this.buttonAnd.UseVisualStyleBackColor = false;
-            this.buttonAnd.Click += new System.EventHandler(this.button11_Click);
+            this.buttonShya.BackColor = System.Drawing.Color.Black;
+            this.buttonShya.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonShya.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonShya.ForeColor = System.Drawing.Color.White;
+            this.buttonShya.Location = new System.Drawing.Point(659, 86);
+            this.buttonShya.Name = "buttonShya";
+            this.buttonShya.Size = new System.Drawing.Size(66, 64);
+            this.buttonShya.TabIndex = 20;
+            this.buttonShya.Text = "Щ";
+            this.buttonShya.UseVisualStyleBackColor = false;
+            this.buttonShya.Click += new System.EventHandler(this.button21_Click);
             // 
-            // textBoxEdit
+            // buttonZ
             // 
-            this.textBoxEdit.BackColor = System.Drawing.Color.Black;
-            this.textBoxEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEdit.ForeColor = System.Drawing.Color.White;
-            this.textBoxEdit.Location = new System.Drawing.Point(12, 56);
-            this.textBoxEdit.Name = "textBoxEdit";
-            this.textBoxEdit.Size = new System.Drawing.Size(1075, 62);
-            this.textBoxEdit.TabIndex = 24;
-            this.textBoxEdit.TabStop = false;
+            this.buttonZ.BackColor = System.Drawing.Color.Black;
+            this.buttonZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonZ.ForeColor = System.Drawing.Color.White;
+            this.buttonZ.Location = new System.Drawing.Point(741, 86);
+            this.buttonZ.Name = "buttonZ";
+            this.buttonZ.Size = new System.Drawing.Size(66, 64);
+            this.buttonZ.TabIndex = 21;
+            this.buttonZ.Text = "З";
+            this.buttonZ.UseVisualStyleBackColor = false;
+            this.buttonZ.Click += new System.EventHandler(this.button22_Click);
+            // 
+            // buttonH
+            // 
+            this.buttonH.BackColor = System.Drawing.Color.Black;
+            this.buttonH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonH.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonH.ForeColor = System.Drawing.Color.White;
+            this.buttonH.Location = new System.Drawing.Point(823, 86);
+            this.buttonH.Name = "buttonH";
+            this.buttonH.Size = new System.Drawing.Size(66, 64);
+            this.buttonH.TabIndex = 23;
+            this.buttonH.Text = "Х";
+            this.buttonH.UseVisualStyleBackColor = false;
+            this.buttonH.Click += new System.EventHandler(this.button24_Click);
+            // 
+            // buttonTZ
+            // 
+            this.buttonTZ.BackColor = System.Drawing.Color.Black;
+            this.buttonTZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonTZ.ForeColor = System.Drawing.Color.White;
+            this.buttonTZ.Location = new System.Drawing.Point(905, 86);
+            this.buttonTZ.Name = "buttonTZ";
+            this.buttonTZ.Size = new System.Drawing.Size(71, 64);
+            this.buttonTZ.TabIndex = 19;
+            this.buttonTZ.Text = "Ъ";
+            this.buttonTZ.UseVisualStyleBackColor = false;
+            this.buttonTZ.Click += new System.EventHandler(this.button20_Click);
             // 
             // button1
             // 
@@ -723,20 +684,6 @@
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(85, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(66, 64);
-            this.button2.TabIndex = 36;
-            this.button2.Text = "2";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button3
             // 
@@ -836,6 +783,34 @@
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click_1);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(85, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(66, 64);
+            this.button2.TabIndex = 36;
+            this.button2.Text = "2";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.BackColor = System.Drawing.Color.Black;
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDelete.ForeColor = System.Drawing.Color.White;
+            this.buttonDelete.Location = new System.Drawing.Point(905, 3);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(71, 66);
+            this.buttonDelete.TabIndex = 34;
+            this.buttonDelete.Text = "<";
+            this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.button35_Click);
+            // 
             // buttonZpt
             // 
             this.buttonZpt.BackColor = System.Drawing.Color.Black;
@@ -848,6 +823,20 @@
             this.buttonZpt.TabIndex = 44;
             this.buttonZpt.Text = ",";
             this.buttonZpt.UseVisualStyleBackColor = false;
+            // 
+            // buttonDot
+            // 
+            this.buttonDot.BackColor = System.Drawing.Color.Black;
+            this.buttonDot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDot.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDot.ForeColor = System.Drawing.Color.White;
+            this.buttonDot.Location = new System.Drawing.Point(823, 252);
+            this.buttonDot.Name = "buttonDot";
+            this.buttonDot.Size = new System.Drawing.Size(66, 66);
+            this.buttonDot.TabIndex = 33;
+            this.buttonDot.Text = ".";
+            this.buttonDot.UseVisualStyleBackColor = false;
+            this.buttonDot.Click += new System.EventHandler(this.button34_Click);
             // 
             // buttonPercent
             // 
@@ -863,11 +852,24 @@
             this.buttonPercent.UseVisualStyleBackColor = false;
             this.buttonPercent.Click += new System.EventHandler(this.buttonPercent_Click);
             // 
+            // textBoxEdit
+            // 
+            this.textBoxEdit.BackColor = System.Drawing.Color.Black;
+            this.textBoxEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEdit.ForeColor = System.Drawing.Color.White;
+            this.textBoxEdit.Location = new System.Drawing.Point(12, 56);
+            this.textBoxEdit.Name = "textBoxEdit";
+            this.textBoxEdit.Size = new System.Drawing.Size(1075, 62);
+            this.textBoxEdit.TabIndex = 24;
+            this.textBoxEdit.TextChanged += new System.EventHandler(this.textBoxEdit_TextChanged);
+            // 
             // FormKeyboardLetter
             // 
+            this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(1099, 651);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancel);

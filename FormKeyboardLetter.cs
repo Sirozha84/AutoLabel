@@ -108,12 +108,18 @@ namespace AutoLabel
 
         void DrawString()
         {
-            textBoxEdit.Text = Str + "|";
+            if (Data.IsMachine) textBoxEdit.Text = Str + "|";
+            else textBoxEdit.Text = Str;
         }
 
         private void FormKeyboardLetter_Load(object sender, EventArgs e)
         {
             DrawString();
+        }
+
+        private void textBoxEdit_TextChanged(object sender, EventArgs e)
+        {
+            Str = textBoxEdit.Text;
         }
     }
 }

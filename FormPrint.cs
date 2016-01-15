@@ -21,6 +21,13 @@ namespace AutoLabel
         public FormPrint()
         {
             InitializeComponent();
+            //Режим для ПК
+            if (!Data.IsMachine)
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                WindowState = FormWindowState.Normal;
+                StartPosition = FormStartPosition.CenterParent;
+            }
         }
 
         private void buttonquit_Click(object sender, EventArgs e)
@@ -30,12 +37,13 @@ namespace AutoLabel
 
         private void FormPrint_Load(object sender, EventArgs e)
         {
+
             labelNum.Text = "ТПА: " + (NumMachine + 1).ToString();
             //Заполним комбобокс пользователями
             comboBoxUser.Items.Clear();
             foreach (User u in Data.Users) comboBoxUser.Items.Add(u.Name);
             box = Data.Labels[NumMachine].CurrentNum;
-            if (Data.UseKeys)
+            if (Data.IsMachine)
             {
                 FormKey key = new FormKey();
                 key.ShowDialog();

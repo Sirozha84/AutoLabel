@@ -56,6 +56,7 @@
             this.textBoxEdit.Name = "textBoxEdit";
             this.textBoxEdit.Size = new System.Drawing.Size(537, 62);
             this.textBoxEdit.TabIndex = 19;
+            this.textBoxEdit.TextChanged += new System.EventHandler(this.textBoxEdit_TextChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -284,9 +285,11 @@
             // 
             // FormKeyboardNums
             // 
+            this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(561, 630);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancel);
