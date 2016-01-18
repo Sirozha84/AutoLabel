@@ -53,10 +53,8 @@ namespace AutoLabel
 
         public static PrinterSettings printersettings;// = new PrinterSettings();
 
-        /// <summary>
-        /// Загрузка последних данных в случае сбоя программы, или инициализация данных по умолчанию
-        /// </summary>
-        public static void Load()
+        //Инициализация первоначальных данных
+        public static void Init()
         {
             //Режим ПК
             if (!IsMachine)
@@ -66,15 +64,21 @@ namespace AutoLabel
                 Directory.CreateDirectory(folder);
                 FilePrinter = folder + "Printer.txt";
             }
-            //Смена
-            LoadShift();
-            //Пользователи
-            LoadUsers();
-            //Лейблы
-            for (int i = 0; i < 6; i++)
-                Labels.Add(new Label(i)); //Конструктор сам, либо создаст пустой, либо загрузит с диска
-
-            //Так же списки выбора
+            //Принтер
+            try
+            {
+                StreamReader file = File.OpenText(FilePrinter);
+                printersettings = new PrinterSettings();
+                printersettings.PrinterName = file.ReadLine();
+                printersettings.DefaultPageSettings.Landscape = true;
+                file.Dispose();
+            }
+            catch
+            {
+                //Применяем настройки принтера по умолчанию
+                printersettings = null;
+            }
+            //Заполняем выпадающие списки
             Types.Add("PCO");
             Types.Add("BPF");
             Types.Add("PCO 1881");
@@ -186,20 +190,21 @@ namespace AutoLabel
             AntiCounts.Add("403");
             AntiCounts.Add("501");
             AntiCounts.Add("502");
-            //Принтер
-            try
-            {
-                StreamReader file = File.OpenText(FilePrinter);
-                printersettings = new PrinterSettings();
-                printersettings.PrinterName = file.ReadLine();
-                printersettings.DefaultPageSettings.Landscape = true;
-                file.Dispose();
-            }
-            catch
-            {
-                //Применяем настройки принтера по умолчанию
-                printersettings = null;
-            }
+        }
+
+        /// <summary>
+        /// Загрузка последних данных в случае сбоя программы, или инициализация данных по умолчанию
+        /// </summary>
+        public static void Load()
+        {
+            //Смена
+            LoadShift();
+            //Пользователи
+            LoadUsers();
+            //Лейблы
+            Labels.Clear();
+            for (int i = 0; i < 6; i++)
+                Labels.Add(new Label(i)); //Конструктор сам, либо создаст пустой, либо загрузит с диска
         }
 
         /// <summary>

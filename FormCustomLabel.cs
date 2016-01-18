@@ -93,8 +93,6 @@ namespace AutoLabel
             {
                 Label l = new Label(Convert.ToInt32(comboBoxTPA.SelectedItem));
                 if (comboBoxWeight.SelectedItem != null) l.Weight = comboBoxWeight.SelectedItem.ToString();
-
-
                 if (comboBoxType.SelectedItem != null) l.Type = comboBoxType.SelectedItem.ToString(); else l.Type = "";
                 if (comboBoxMaterial.SelectedItem != null) l.Material = comboBoxMaterial.SelectedItem.ToString(); else l.Material = "";
                 if (comboBoxColor.SelectedItem != null) l.PColor = comboBoxColor.SelectedItem.ToString(); else l.PColor = "";
@@ -104,8 +102,6 @@ namespace AutoLabel
                 if (comboBoxAntiCount.SelectedItem != null) l.AntistaticCount = comboBoxAntiCount.SelectedItem.ToString(); else l.AntistaticCount = "";
                 if (comboBoxLimit.SelectedItem != null) l.Limit = comboBoxLimit.SelectedItem.ToString(); else l.Limit = "";
                 l.Other = textBoxOther.Text;
-
-
                 l.Print(Convert.ToInt32(textBoxBoxNum.Text), comboBoxUser.SelectedItem.ToString(),
                     (int)numericUpDownCount.Value, textBoxDate.Text, textBoxTime.Text,
                     comboBoxShift.SelectedItem.ToString());

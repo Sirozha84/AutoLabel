@@ -46,11 +46,12 @@
             this.labelVersion = new System.Windows.Forms.Label();
             this.buttonProperties = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonCustomLabel = new System.Windows.Forms.Button();
             this.labelClock = new System.Windows.Forms.Label();
             this.buttonShift = new System.Windows.Forms.Button();
             this.labelformname = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.buttonCustomLabel = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -279,6 +280,21 @@
             this.panel2.Size = new System.Drawing.Size(998, 100);
             this.panel2.TabIndex = 9;
             // 
+            // buttonCustomLabel
+            // 
+            this.buttonCustomLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCustomLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCustomLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCustomLabel.ForeColor = System.Drawing.Color.White;
+            this.buttonCustomLabel.Location = new System.Drawing.Point(221, 12);
+            this.buttonCustomLabel.Name = "buttonCustomLabel";
+            this.buttonCustomLabel.Size = new System.Drawing.Size(250, 76);
+            this.buttonCustomLabel.TabIndex = 10;
+            this.buttonCustomLabel.Text = "Ручная этикетка";
+            this.buttonCustomLabel.UseVisualStyleBackColor = true;
+            this.buttonCustomLabel.Visible = false;
+            this.buttonCustomLabel.Click += new System.EventHandler(this.buttonCustomLabel_Click);
+            // 
             // labelClock
             // 
             this.labelClock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -325,20 +341,11 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // buttonCustomLabel
+            // timer2
             // 
-            this.buttonCustomLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCustomLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCustomLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCustomLabel.ForeColor = System.Drawing.Color.White;
-            this.buttonCustomLabel.Location = new System.Drawing.Point(221, 12);
-            this.buttonCustomLabel.Name = "buttonCustomLabel";
-            this.buttonCustomLabel.Size = new System.Drawing.Size(250, 76);
-            this.buttonCustomLabel.TabIndex = 10;
-            this.buttonCustomLabel.Text = "Ручная этикетка";
-            this.buttonCustomLabel.UseVisualStyleBackColor = true;
-            this.buttonCustomLabel.Visible = false;
-            this.buttonCustomLabel.Click += new System.EventHandler(this.buttonCustomLabel_Click);
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 10000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // FormMain
             // 
@@ -386,6 +393,7 @@
         private System.Windows.Forms.Label labelClock;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button buttonCustomLabel;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 

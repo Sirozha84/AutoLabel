@@ -33,17 +33,17 @@ namespace AutoLabel
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            Data.Load();
+            Data.Init();
             RefreshMain();
             //Так... небольшая защита от кидалова :-)
             //Заплатить обещали, но на всякий случай пока оставлю...
-            if (DateTime.Now> new DateTime(2016, 3, 1))
+            if (DateTime.Now> new DateTime(2016, 3, 17))
             {
                 MessageBox.Show("Программа устарела, требуется обновление. Дальнейшая работа невозможна.");
                 Environment.Exit(0);
             }
-            if (DateTime.Now > new DateTime(2016, 2, 1))
-                MessageBox.Show("Программа устарела, требуется обновление. C 1 марта 2016 года работа прекратится.");
+            if (DateTime.Now > new DateTime(2016, 2, 14))
+                MessageBox.Show("Программа устарела, требуется обновление. C 17 марта 2016 года работа прекратится.");
         }
 
         private void button1_Click_1(object sender, EventArgs e) { Print(0); }
@@ -91,6 +91,7 @@ namespace AutoLabel
         /// </summary>
         void RefreshMain()
         {
+            Data.Load();
             buttonShift.Text = Data.Shift;
             label1.Text = Data.Labels[0].LabelUnderButton();
             label2.Text = Data.Labels[1].LabelUnderButton();
@@ -98,12 +99,12 @@ namespace AutoLabel
             label4.Text = Data.Labels[3].LabelUnderButton();
             label5.Text = Data.Labels[4].LabelUnderButton();
             label6.Text = Data.Labels[5].LabelUnderButton();
-            SetColor(button1, Data.Labels[0]);
-            SetColor(button2, Data.Labels[1]);
-            SetColor(button3, Data.Labels[2]);
-            SetColor(button4, Data.Labels[3]);
-            SetColor(button5, Data.Labels[4]);
-            SetColor(button6, Data.Labels[5]);
+            SetColor(button1, 0);
+            SetColor(button2, 1);
+            SetColor(button3, 2);
+            SetColor(button4, 3);
+            SetColor(button5, 4);
+            SetColor(button6, 5);
         }
 
         /// <summary>
@@ -111,9 +112,10 @@ namespace AutoLabel
         /// </summary>
         /// <param name="but">Кнопку</param>
         /// <param name="lab">Лейбл</param>
-        void SetColor(Button but, Label lab)
+        void SetColor(Button but, int tpa)
         {
-            switch (lab.PColor)
+            but.Visible = true;
+            switch (Data.Labels[tpa].PColor)
             {
                 case "Бесцветный":
                     but.BackColor = Color.FromArgb(0,0,32);
@@ -155,6 +157,9 @@ namespace AutoLabel
                     but.BackColor = Color.Black;
                     but.ForeColor = Color.FromArgb(32,32,32);
                     break;
+                default:
+                    but.Visible = false;
+                    break;
             }
         }
 
@@ -168,5 +173,11 @@ namespace AutoLabel
             FormCustomLabel form = new FormCustomLabel();
             form.ShowDialog();
         }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            //Обновлялка каждые 10 секунд, на случай, если данные были изменены удалённо
+            RefreshMain();
+        }        
     }
 }
