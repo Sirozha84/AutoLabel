@@ -27,7 +27,10 @@ namespace AutoLabel
         /// Количество последних запоминаемых смен
         /// </summary>
         static int ShiftMemory = 7;
-
+        /// <summary>
+        /// Файл принтера
+        /// </summary>
+        static string FilePrinter = "Printer.txt";
 
         public static string Shift;
         public static string[] LogName = new string[ShiftMemory];
@@ -51,6 +54,14 @@ namespace AutoLabel
         /// </summary>
         public static void Load()
         {
+            //Режим ПК
+            if (!IsMachine)
+            {
+                string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
+                      "\\SG\\Autolabel\\";
+                Directory.CreateDirectory(folder);
+                FilePrinter = folder + "Printer.txt";
+            }
             //Смена
             LoadShift();
             //Пользователи
@@ -171,7 +182,7 @@ namespace AutoLabel
             //Принтер
             try
             {
-                StreamReader file = File.OpenText("Printer.txt");
+                StreamReader file = File.OpenText(FilePrinter);
                 printersettings = new PrinterSettings();
                 printersettings.PrinterName = file.ReadLine();
                 printersettings.DefaultPageSettings.Landscape = true;
@@ -256,7 +267,7 @@ namespace AutoLabel
             //Сохраняем настройку принтера в файл
             try
             {
-                StreamWriter file = File.CreateText("Printer.txt");
+                StreamWriter file = File.CreateText(FilePrinter);
                 file.Write(printersettings.PrinterName);
                 file.Dispose();
             }
