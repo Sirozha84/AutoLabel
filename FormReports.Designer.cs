@@ -173,6 +173,7 @@
             this.Controls.Add(this.buttonLog);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormReports";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormReports";
             this.Load += new System.EventHandler(this.FormReports_Load);

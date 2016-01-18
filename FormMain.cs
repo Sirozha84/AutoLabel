@@ -21,6 +21,8 @@ namespace AutoLabel
             {
                 FormBorderStyle = FormBorderStyle.Sizable;
                 labelVersion.Text += " (Режим ПК)";
+                labelClock.Visible = false;
+                buttonCustomLabel.Visible = true;
             }
         }
 
@@ -159,6 +161,12 @@ namespace AutoLabel
         private void timer1_Tick(object sender, EventArgs e)
         {
             labelClock.Text = DateTime.Now.ToString("HH:mm");
+        }
+
+        private void buttonCustomLabel_Click(object sender, EventArgs e)
+        {
+            FormCustomLabel form = new FormCustomLabel();
+            form.ShowDialog();
         }
     }
 }

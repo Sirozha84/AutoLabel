@@ -80,7 +80,7 @@ namespace AutoLabel
                 }
             }
             //Далее надо выяснить мелкие это коробки или крупные, и в зависимости от этого вывести второй нумератор
-            if (Convert.ToInt32(Data.Labels[NumMachine].Count) <= 1920)
+            if (Data.LittleBox(NumMachine))
             {
                 label2.Visible = true;
                 textBoxCount.Visible = true;

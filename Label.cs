@@ -43,6 +43,8 @@ namespace AutoLabel
         static int Num;
         static string Packer;
         static int LabelCount;
+        static string Date;
+        static string Time;
 
         /// <summary>
         /// Конструктор
@@ -55,7 +57,7 @@ namespace AutoLabel
         }
 
         /// <summary>
-        /// Печать
+        /// Печать этикетки
         /// </summary>
         /// <param name="num">Номер ящика</param>
         /// <param name="packer">Фамилия упаковщика</param>
@@ -65,6 +67,11 @@ namespace AutoLabel
             Num = num;
             Packer = packer;
             LabelCount = count;
+            if (Date == null)
+            {
+                Date = DateToString();
+                Time = DateTime.Now.ToString("HH:mm");
+            }
             if (!Data.PrintSelected()) Data.PrintSetup();
             if (!Data.PrintSelected()) return;
             try
@@ -73,12 +80,6 @@ namespace AutoLabel
                 doc.PrintPage += new PrintPageEventHandler(PD_PrintPage);
                 doc.PrinterSettings = Data.printersettings;
                 doc.Print();
-                /*if (num == CurrentNum & CurrentNum > 0)
-                {
-                    Log();  //Лог пишу только когда печатается новая этикетка... может понадобится ещё что-то на счёт брака
-                    CurrentNum++; //Увеличиваем номер, если печатался текущий
-                    Save(); //Сохраняем, вдруг программа вылетет...
-                }*/
             }
             catch
             {
@@ -88,21 +89,27 @@ namespace AutoLabel
         }
 
         /// <summary>
+        /// Печать этикетки с заданными датой и временем
+        /// </summary>
+        /// <param name="num">Номер ящика</param>
+        /// <param name="packer">Фамилия упаковщика</param>
+        /// <param name="count">Количество этикеток (0 - если одна двойная)</param>
+        /// <param name="date">Дата</param>
+        /// <param name="time">Время</param>
+        public void Print(int num, string packer, int count, string date, string time)
+        {
+            Date = date;
+            Time = time;
+            Print(num, packer, count);
+        }
+
+        /// <summary>
         /// Формирование листа
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         void PD_PrintPage(object sender, PrintPageEventArgs e)
         {
-            //int Space = 30;
-            //int Shift = -10;
-            //Width = 585 - Space * 2;
-            //Height = 827 - Space * 2;
-            //X = Space - 10;
-            //Y = Space - 14;
-            //X = Space - 10 + 584;
-            //Y = Space - 14;
-
             if (LabelCount == 0)
             {
                 DrawLabel(e.Graphics, 20, 16,false);
@@ -159,8 +166,8 @@ namespace AutoLabel
             DrawStrings(g, X, Y, 220, 340, "Марка материала", "Material", Material);
             DrawStrings(g, X, Y, 220, 380, "Цвет преформы", "Preform colour", PColor);
             DrawStrings(g, X, Y, 220, 420, "Количество преформ в коробе", "Preform quantity per box", Count);
-            DrawStrings(g, X, Y, 220, 460, "Дата изготовления", "Date of manufacturnig", Date());
-            DrawStrings(g, X, Y, 220, 500, "Время", "Time", DateTime.Now.ToString("HH:mm"));
+            DrawStrings(g, X, Y, 220, 460, "Дата изготовления", "Date of manufacturnig", Date);
+            DrawStrings(g, X, Y, 220, 500, "Время", "Time", Time);
             DrawStrings(g, X, Y, 220, 540, "Номер партии", "Batch number", PartNum);
             DrawStrings(g, X, Y, 220, 580, "Номер короба", "Box number", Num.ToString());
             DrawStrings(g, X, Y, 220, 620, "Смена", "Shift", Data.Shift);
@@ -206,7 +213,7 @@ namespace AutoLabel
         /// Предоставление текущей даты в человечьем виде
         /// </summary>
         /// <returns></returns>
-        static string Date()
+        static string DateToString()
         {
             DateTime now = DateTime.Now;
             string date = now.ToString("dd ");

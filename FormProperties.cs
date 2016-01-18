@@ -36,7 +36,6 @@ namespace AutoLabel
         {
             //Заполнение комбобоксов списками
             textBoxNumber.Text = "";
-            //textBoxCurrent.Text = "";
             comboBoxWeight.DataSource = Data.Weights;
             comboBoxWeight.SelectedItem = null;
             comboBoxType.DataSource = Data.Types;
@@ -59,9 +58,8 @@ namespace AutoLabel
         //Выбор ТПА из списка (сбрасываем несохранённые поля и заполняим их текущими)
         private void comboBoxTPA_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Заполнение полей из ТПА
             Label l = Data.Labels[comboBoxTPA.SelectedIndex];
-
-            //comboBoxType.Enabled = true;
             if (l.Weight != "") comboBoxWeight.SelectedItem = l.Weight; else comboBoxWeight.SelectedItem = null;
             if (l.Material != "") comboBoxMaterial.SelectedItem = l.Material; else comboBoxMaterial.SelectedItem = null;
             if (l.PColor != "") comboBoxColor.SelectedItem = l.PColor; else comboBoxColor.SelectedItem = null;
@@ -72,8 +70,6 @@ namespace AutoLabel
             if (l.AntistaticCount != "") comboBoxAntiCount.SelectedItem = l.AntistaticCount; else comboBoxAntiCount.SelectedItem = null;
             if (l.Limit != "") comboBoxLimit.SelectedItem = l.Limit; else comboBoxLimit.SelectedItem = null;
             textBoxOther.Text = l.Other;
-
-            //if (l.Count != "") comboBoxCount
             comboBoxWeight.Visible = true;
             comboBoxType.Visible = true;
             comboBoxMaterial.Visible = true;

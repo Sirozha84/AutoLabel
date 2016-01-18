@@ -20,6 +20,10 @@ namespace AutoLabel
         /// </summary>
         public static int MaxLabels = 10;
         /// <summary>
+        /// Максимальное количество преформ в малом коробе
+        /// </summary>
+        static int PreformsInLittleBox = 1920;
+        /// <summary>
         /// Сбрасывать ли счётчик при заступании новой
         /// </summary>
         static bool ResetOnChangeShift = true;
@@ -369,6 +373,27 @@ namespace AutoLabel
             }
             //Если ключи не используются, выдаём полные права без вопросов
             return 255;
+        }
+
+        /// <summary>
+        /// Малая ли это коробка? (считаем по строчке)
+        /// </summary>
+        /// <param name="count">Строчка с количеством преформ</param>
+        /// <returns></returns>
+        public static bool LittleBox(string count)
+        {
+            try { return (Convert.ToInt32(count) <= PreformsInLittleBox); }
+            catch { return false; }
+        }
+
+        /// <summary>
+        /// Малая ли это коробка? (считаем по номеру ТПА)
+        /// </summary>
+        /// <param name="TPA">Номер ТПА</param>
+        /// <returns></returns>
+        public static bool LittleBox(int TPA)
+        {
+            return LittleBox(Labels[TPA].Count);
         }
     }
 }
