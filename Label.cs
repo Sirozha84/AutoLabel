@@ -45,6 +45,7 @@ namespace AutoLabel
         static int LabelCount;
         static string Date;
         static string Time;
+        static string Shift;
 
         /// <summary>
         /// Конструктор
@@ -71,6 +72,7 @@ namespace AutoLabel
             {
                 Date = DateToString();
                 Time = DateTime.Now.ToString("HH:mm");
+                Shift = Data.Shift;
             }
             if (!Data.PrintSelected()) Data.PrintSetup();
             if (!Data.PrintSelected()) return;
@@ -96,10 +98,12 @@ namespace AutoLabel
         /// <param name="count">Количество этикеток (0 - если одна двойная)</param>
         /// <param name="date">Дата</param>
         /// <param name="time">Время</param>
-        public void Print(int num, string packer, int count, string date, string time)
+        /// <param name="shift">Смена</param>
+        public void Print(int num, string packer, int count, string date, string time, string shift)
         {
             Date = date;
             Time = time;
+            Shift = shift;
             Print(num, packer, count);
         }
 
@@ -170,7 +174,7 @@ namespace AutoLabel
             DrawStrings(g, X, Y, 220, 500, "Время", "Time", Time);
             DrawStrings(g, X, Y, 220, 540, "Номер партии", "Batch number", PartNum);
             DrawStrings(g, X, Y, 220, 580, "Номер короба", "Box number", Num.ToString());
-            DrawStrings(g, X, Y, 220, 620, "Смена", "Shift", Data.Shift);
+            DrawStrings(g, X, Y, 220, 620, "Смена", "Shift", Shift);
             DrawStrings(g, X, Y, 220, 660, "Укладчик", "Packer", Packer);
             //Нижний колонтитул
             g.DrawString("Сделано в России / Made in Russia",

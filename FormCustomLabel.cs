@@ -57,6 +57,7 @@ namespace AutoLabel
             textBoxOther.Text = l.Other;
             if (Data.LittleBox(l.Count)) numericUpDownCount.Value = 1;
             else numericUpDownCount.Value = 0;
+            comboBoxShift.SelectedItem = Data.Shift;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -76,6 +77,7 @@ namespace AutoLabel
             comboBoxUser.SelectedItem = null;
             textBoxDate.Text = "";
             textBoxTime.Text = "";
+            comboBoxShift.SelectedItem = null;
             button1.Enabled = false;
         }
 
@@ -105,7 +107,8 @@ namespace AutoLabel
 
 
                 l.Print(Convert.ToInt32(textBoxBoxNum.Text), comboBoxUser.SelectedItem.ToString(),
-                    (int)numericUpDownCount.Value, textBoxDate.Text, textBoxTime.Text);
+                    (int)numericUpDownCount.Value, textBoxDate.Text, textBoxTime.Text,
+                    comboBoxShift.SelectedItem.ToString());
             }
             catch
             {

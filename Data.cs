@@ -18,7 +18,7 @@ namespace AutoLabel
         /// <summary>
         /// Максимальное количество этикеток за раз
         /// </summary>
-        public static int MaxLabels = 10;
+        public static int MaxLabels = 9;
         /// <summary>
         /// Максимальное количество преформ в малом коробе
         /// </summary>
@@ -163,6 +163,9 @@ namespace AutoLabel
             Limits.Add("24 месяца");
             AntiTypes.Add("");
             AntiTypes.Add("АД");
+            AntiTypes.Add("АД+");
+            AntiTypes.Add("АДТ");
+            AntiTypes.Add("АДТ+");
             AntiCounts.Add("000");
             AntiCounts.Add("001");
             AntiCounts.Add("106");
