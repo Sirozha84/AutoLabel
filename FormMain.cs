@@ -70,7 +70,9 @@ namespace AutoLabel
             if (Data.GetKey(255) == 255)
             {
                 FormProperties formprop = new FormProperties();
+                timer2.Enabled = false;
                 formprop.ShowDialog();
+                timer2.Enabled = true;
                 RefreshMain();
             }
         }

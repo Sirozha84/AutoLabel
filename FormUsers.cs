@@ -78,11 +78,15 @@ namespace AutoLabel
             buttonDelete.Visible = listBox1.SelectedIndex >= 0;
         }
 
+        /// <summary>
+        /// Сохранение пользователей
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonsave_Click(object sender, EventArgs e)
         {
             Data.SaveUsers();
             buttonsave.Visible = false;
-            //Close();
         }
 
         /// <summary>

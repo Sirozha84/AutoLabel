@@ -15,7 +15,7 @@ namespace AutoLabel
         public int NumMachine;  //Номер ТПА
         int box;                //Номер короба
         int count = 1;          //Количество коробов
-        bool CostomNum = true;  //Можно ли менять номер вручную?
+        bool CustomNum = true;  //Можно ли менять номер вручную?
         bool CountSelect = false;   //Выбираем ли мы количество коробов?
 
         public FormPrint()
@@ -52,6 +52,7 @@ namespace AutoLabel
                     //Маленько кривинько, но стираем сформированный список и заполняем его только гостями
                     comboBoxUser.Items.Clear();
                     foreach (User u in Data.Users) if (u.Code == "") comboBoxUser.Items.Add(u.Name);
+                    CustomNum = false;
                 }
                 else
                 {
@@ -73,7 +74,7 @@ namespace AutoLabel
                         if (user.Rule == 1)
                         {
                             comboBoxUser.Enabled = false;
-                            CostomNum = false;
+                            CustomNum = false;
                         }
                         buttonPrint.Visible = true;
                     }
@@ -149,7 +150,7 @@ namespace AutoLabel
 
         private void textBoxNum_Click(object sender, EventArgs e)
         {
-            if (!CostomNum) return;
+            if (!CustomNum) return;
             //Нам разрешено поменять номер короба вручную
             FormKeyboardNums key = new FormKeyboardNums("Введите номер короба");
             key.ShowDialog();

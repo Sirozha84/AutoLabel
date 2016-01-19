@@ -16,6 +16,7 @@ namespace AutoLabel
             InitializeComponent();
             label1.Text = Lbl;
             Str = "";
+            if (Data.IsMachine) textBoxEdit.TabStop = false;
         }
 
         public string Str;
@@ -23,6 +24,7 @@ namespace AutoLabel
         public FormKeyboardLetter()
         {
             InitializeComponent();
+            if (Data.IsMachine) textBoxEdit.TabStop = false;
         }
 
 
@@ -83,7 +85,7 @@ namespace AutoLabel
         private void buttonOK_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
-            //if (Str.Length == 0) DialogResult = DialogResult.Cancel;
+            if (!Data.IsMachine) Str = textBoxEdit.Text;
             Close();
         }
 
@@ -109,17 +111,11 @@ namespace AutoLabel
         void DrawString()
         {
             if (Data.IsMachine) textBoxEdit.Text = Str + "|";
-            else textBoxEdit.Text = Str;
         }
 
         private void FormKeyboardLetter_Load(object sender, EventArgs e)
         {
             DrawString();
-        }
-
-        private void textBoxEdit_TextChanged(object sender, EventArgs e)
-        {
-            Str = textBoxEdit.Text;
         }
     }
 }

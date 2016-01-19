@@ -862,7 +862,6 @@
             this.textBoxEdit.Name = "textBoxEdit";
             this.textBoxEdit.Size = new System.Drawing.Size(1075, 62);
             this.textBoxEdit.TabIndex = 24;
-            this.textBoxEdit.TextChanged += new System.EventHandler(this.textBoxEdit_TextChanged);
             // 
             // FormKeyboardLetter
             // 

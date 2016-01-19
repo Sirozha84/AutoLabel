@@ -23,7 +23,8 @@ namespace AutoLabel
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            Data.ShiftChange(comboBoxShift.SelectedItem.ToString());
+            if (Data.Shift != comboBoxShift.SelectedItem.ToString())
+                Data.ShiftChange(comboBoxShift.SelectedItem.ToString());
             Close();
         }
 
