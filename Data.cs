@@ -14,7 +14,7 @@ namespace AutoLabel
         /// <summary>
         /// Программа запущена на машине, false - если десктопная версия
         /// </summary>
-        public static bool IsMachine = true;
+        public static bool IsMachine = false;
         /// <summary>
         /// Максимальное количество этикеток за раз
         /// </summary>
@@ -369,8 +369,11 @@ namespace AutoLabel
                     else
                     {
                         //Прав недостаточно
-                        FormError err = new FormError("Недостаточно прав");
-                        err.ShowDialog();
+                        if (user.Code != "")
+                        {
+                            FormError err = new FormError("Недостаточно прав");
+                            err.ShowDialog();
+                        }
                         return 0;
                     }
                 }

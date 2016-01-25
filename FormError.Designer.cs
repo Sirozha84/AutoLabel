@@ -35,14 +35,16 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(91, 73);
+            this.label1.Location = new System.Drawing.Point(12, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(285, 37);
+            this.label1.Size = new System.Drawing.Size(540, 37);
             this.label1.TabIndex = 30;
-            this.label1.Text = "Ключ не распознан";
+            this.label1.Text = "Ключ не зарегистрирован";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // timer1
             // 
@@ -54,8 +56,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(477, 191);
+            this.BackColor = System.Drawing.Color.Tomato;
+            this.ClientSize = new System.Drawing.Size(564, 201);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormError";
@@ -63,7 +65,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormError";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

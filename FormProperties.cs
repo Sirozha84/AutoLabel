@@ -18,7 +18,7 @@ namespace AutoLabel
             if (!Data.IsMachine)
             {
                 FormBorderStyle = FormBorderStyle.Sizable;
-                buttonquitprogram.Visible = false;
+                WindowState = FormWindowState.Normal;
             }
         }
 
@@ -201,12 +201,7 @@ namespace AutoLabel
 
         private void buttonAbout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("AutoLabel\n" +
-                            "Версия: " + Program.Version + "\n" +
-                            "Автор: Сергей Гордеев\n" +
-                            "Телефон техподдержки: +7 (965) 917-31-43\n" +
-                            "Сайт автора: http://www.sg-software.ru",
-                            "О программе", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Program.About();
         }
     }
 }

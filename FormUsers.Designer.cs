@@ -46,7 +46,7 @@
             this.labelformname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelformname.AutoSize = true;
-            this.labelformname.BackColor = System.Drawing.Color.Navy;
+            this.labelformname.BackColor = System.Drawing.Color.SlateGray;
             this.labelformname.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelformname.ForeColor = System.Drawing.Color.White;
             this.labelformname.Location = new System.Drawing.Point(268, 15);
@@ -58,7 +58,7 @@
             // buttonquit
             // 
             this.buttonquit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonquit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonquit.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonquit.ForeColor = System.Drawing.Color.White;
             this.buttonquit.Location = new System.Drawing.Point(12, 12);
             this.buttonquit.Name = "buttonquit";
@@ -72,7 +72,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.Navy;
+            this.panel2.BackColor = System.Drawing.Color.SlateGray;
             this.panel2.Controls.Add(this.buttonsave);
             this.panel2.Controls.Add(this.labelformname);
             this.panel2.Controls.Add(this.buttonquit);
@@ -85,7 +85,7 @@
             // 
             this.buttonsave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonsave.ForeColor = System.Drawing.Color.White;
             this.buttonsave.Location = new System.Drawing.Point(899, 12);
             this.buttonsave.Name = "buttonsave";
@@ -120,11 +120,11 @@
             // 
             this.buttonNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNew.ForeColor = System.Drawing.Color.White;
             this.buttonNew.Location = new System.Drawing.Point(73, 584);
             this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(250, 76);
+            this.buttonNew.Size = new System.Drawing.Size(250, 87);
             this.buttonNew.TabIndex = 14;
             this.buttonNew.Text = "Новый упаковщик";
             this.buttonNew.UseVisualStyleBackColor = true;
@@ -134,11 +134,11 @@
             // 
             this.buttonNewAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonNewAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNewAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonNewAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNewAdmin.ForeColor = System.Drawing.Color.White;
             this.buttonNewAdmin.Location = new System.Drawing.Point(329, 584);
             this.buttonNewAdmin.Name = "buttonNewAdmin";
-            this.buttonNewAdmin.Size = new System.Drawing.Size(250, 76);
+            this.buttonNewAdmin.Size = new System.Drawing.Size(250, 87);
             this.buttonNewAdmin.TabIndex = 15;
             this.buttonNewAdmin.Text = "Новый администратор";
             this.buttonNewAdmin.UseVisualStyleBackColor = true;
@@ -148,11 +148,11 @@
             // 
             this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
             this.buttonDelete.Location = new System.Drawing.Point(841, 584);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(250, 76);
+            this.buttonDelete.Size = new System.Drawing.Size(250, 87);
             this.buttonDelete.TabIndex = 16;
             this.buttonDelete.Text = "Удалить";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -163,11 +163,11 @@
             // 
             this.buttonKey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonKey.ForeColor = System.Drawing.Color.White;
             this.buttonKey.Location = new System.Drawing.Point(585, 584);
             this.buttonKey.Name = "buttonKey";
-            this.buttonKey.Size = new System.Drawing.Size(250, 76);
+            this.buttonKey.Size = new System.Drawing.Size(250, 87);
             this.buttonKey.TabIndex = 17;
             this.buttonKey.Text = "Изменить ключ";
             this.buttonKey.UseVisualStyleBackColor = true;
@@ -178,7 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1163, 747);
             this.Controls.Add(this.buttonKey);
             this.Controls.Add(this.buttonDelete);

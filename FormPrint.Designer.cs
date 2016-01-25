@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrint));
             this.buttonquit = new System.Windows.Forms.Button();
             this.labelNum = new System.Windows.Forms.Label();
             this.LabelPacker = new System.Windows.Forms.Label();
@@ -76,6 +75,7 @@
             // 
             this.labelNum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelNum.ForeColor = System.Drawing.Color.White;
             this.labelNum.Location = new System.Drawing.Point(12, 145);
@@ -214,7 +214,7 @@
             this.labelformname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelformname.AutoSize = true;
-            this.labelformname.BackColor = System.Drawing.Color.Navy;
+            this.labelformname.BackColor = System.Drawing.Color.SlateGray;
             this.labelformname.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelformname.ForeColor = System.Drawing.Color.White;
             this.labelformname.Location = new System.Drawing.Point(266, 15);
@@ -227,7 +227,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.Navy;
+            this.panel2.BackColor = System.Drawing.Color.SlateGray;
             this.panel2.Controls.Add(this.labelformname);
             this.panel2.Controls.Add(this.buttonquit);
             this.panel2.Location = new System.Drawing.Point(2, 0);
@@ -363,7 +363,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(958, 775);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel3);
@@ -372,8 +372,8 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPrint";
+            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Печать этикетки";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -16,10 +16,20 @@ namespace AutoLabel
         [STAThread]
         static void Main(string[] param)
         {
-            if (param.Length > 0) Data.IsMachine = false;
+            if (param.Length > 0) Data.IsMachine = true;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMain());
+        }
+
+        public static void About()
+        {
+            MessageBox.Show("AutoLabel\n" +
+                            "Версия: " + Program.Version + "\n" +
+                            "Автор: Сергей Гордеев\n" +
+                            "Телефон техподдержки: +7 (965) 917-31-43\n" +
+                            "Сайт автора: http://www.sg-software.ru",
+                            "О программе", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

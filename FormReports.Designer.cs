@@ -37,11 +37,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonReportByPart = new System.Windows.Forms.Button();
             this.buttonByTPA = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonLog
             // 
-            this.buttonLog.BackColor = System.Drawing.Color.Black;
+            this.buttonLog.BackColor = System.Drawing.Color.SlateGray;
             this.buttonLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonLog.ForeColor = System.Drawing.Color.White;
@@ -56,6 +58,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.SlateGray;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(56, 42);
@@ -67,11 +70,11 @@
             // buttonCancel
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonCancel.BackColor = System.Drawing.Color.Black;
+            this.buttonCancel.BackColor = System.Drawing.Color.SlateGray;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCancel.ForeColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(268, 524);
+            this.buttonCancel.Location = new System.Drawing.Point(266, 480);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(222, 70);
             this.buttonCancel.TabIndex = 30;
@@ -81,7 +84,7 @@
             // 
             // buttonMianRepotr
             // 
-            this.buttonMianRepotr.BackColor = System.Drawing.Color.Black;
+            this.buttonMianRepotr.BackColor = System.Drawing.Color.SlateGray;
             this.buttonMianRepotr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMianRepotr.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonMianRepotr.ForeColor = System.Drawing.Color.White;
@@ -109,6 +112,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.SlateGray;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(56, 101);
@@ -120,6 +124,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.SlateGray;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(56, 233);
@@ -130,7 +135,7 @@
             // 
             // buttonReportByPart
             // 
-            this.buttonReportByPart.BackColor = System.Drawing.Color.Black;
+            this.buttonReportByPart.BackColor = System.Drawing.Color.SlateGray;
             this.buttonReportByPart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReportByPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonReportByPart.ForeColor = System.Drawing.Color.White;
@@ -144,7 +149,7 @@
             // 
             // buttonByTPA
             // 
-            this.buttonByTPA.BackColor = System.Drawing.Color.Black;
+            this.buttonByTPA.BackColor = System.Drawing.Color.SlateGray;
             this.buttonByTPA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonByTPA.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonByTPA.ForeColor = System.Drawing.Color.White;
@@ -156,27 +161,40 @@
             this.buttonByTPA.UseVisualStyleBackColor = false;
             this.buttonByTPA.Click += new System.EventHandler(this.buttonByTPA_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.SlateGray;
+            this.panel1.Controls.Add(this.buttonCancel);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(755, 560);
+            this.panel1.TabIndex = 37;
+            // 
             // FormReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(759, 606);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(759, 564);
             this.Controls.Add(this.buttonByTPA);
             this.Controls.Add(this.buttonReportByPart);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxShift);
             this.Controls.Add(this.buttonMianRepotr);
-            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonLog);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormReports";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormReports";
             this.Load += new System.EventHandler(this.FormReports_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,5 +211,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonReportByPart;
         private System.Windows.Forms.Button buttonByTPA;
+        private System.Windows.Forms.Panel panel1;
     }
 }

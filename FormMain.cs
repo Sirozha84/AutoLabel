@@ -17,12 +17,17 @@ namespace AutoLabel
             InitializeComponent();
             //Режим для ПК
             labelVersion.Text = "Версия: " + Program.Version;
-            if (!Data.IsMachine)
+            if (Data.IsMachine)
+            {
+                panel2.Location = new Point(0, 0);
+                WindowState = FormWindowState.Maximized;
+            }
+            else
             {
                 FormBorderStyle = FormBorderStyle.Sizable;
                 labelVersion.Text += " (Режим ПК)";
+                panel2.Location = new Point(0,24);
                 labelClock.Visible = false;
-                buttonCustomLabel.Visible = true;
             }
         }
 
@@ -35,15 +40,6 @@ namespace AutoLabel
         {
             Data.Init();
             RefreshMain();
-            //Так... небольшая защита от кидалова :-)
-            //Заплатить обещали, но на всякий случай пока оставлю...
-            if (DateTime.Now> new DateTime(2016, 3, 17))
-            {
-                MessageBox.Show("Программа устарела, требуется обновление. Дальнейшая работа невозможна.");
-                Environment.Exit(0);
-            }
-            if (DateTime.Now > new DateTime(2016, 2, 14))
-                MessageBox.Show("Программа устарела, требуется обновление. C 17 марта 2016 года работа прекратится.");
         }
 
         private void button1_Click_1(object sender, EventArgs e) { Print(0); }
@@ -67,14 +63,7 @@ namespace AutoLabel
         //Параметры
         private void buttonProperties_Click(object sender, EventArgs e)
         {
-            if (Data.GetKey(255) == 255)
-            {
-                FormProperties formprop = new FormProperties();
-                timer2.Enabled = false;
-                formprop.ShowDialog();
-                timer2.Enabled = true;
-                RefreshMain();
-            }
+            if (Data.GetKey(255) == 255) вводДанныхToolStripMenuItem_Click(null, null);
         }
 
         //Выбор новой смены
@@ -120,44 +109,44 @@ namespace AutoLabel
             switch (Data.Labels[tpa].PColor)
             {
                 case "Бесцветный":
-                    but.BackColor = Color.FromArgb(0,0,32);
+                    but.BackColor = Color.FromArgb(64, 64, 64);//  Color.FromArgb(0,0,32);
                     but.ForeColor = Color.LightSkyBlue;
                     break;
                 case "Матовый":
-                    but.BackColor = Color.LightGray;
-                    but.ForeColor = Color.DarkGray;
+                    but.BackColor = Color.FromArgb(128, 128, 128);
+                    but.ForeColor = Color.FromArgb(192, 192, 192);
                     break;
                 case "Белый":
-                    but.BackColor = Color.White;
-                    but.ForeColor = Color.Black;
+                    but.BackColor = Color.FromArgb(255, 255, 255);
+                    but.ForeColor = Color.FromArgb(192, 192, 192);
                     break;
                 case "Оранжевый":
-                    but.BackColor = Color.Orange;
-                    but.ForeColor = Color.White;
+                    but.BackColor = Color.FromArgb(255, 128, 0);
+                    but.ForeColor = Color.FromArgb(255, 178, 0);
                     break;
                 case "Зелёный":
-                    but.BackColor = Color.Green;
-                    but.ForeColor = Color.White;
+                    but.BackColor = Color.FromArgb(0, 128, 0);
+                    but.ForeColor = Color.FromArgb(0, 255, 0);
                     break;
                 case "Синий":
-                    but.BackColor = Color.Blue;
-                    but.ForeColor = Color.White;
+                    but.BackColor = Color.FromArgb(0, 0, 128);
+                    but.ForeColor = Color.FromArgb(0, 128, 255);
                     break;
                 case "Бирюзовый":
-                    but.BackColor = Color.Teal;
-                    but.ForeColor = Color.White;
+                    but.BackColor = Color.FromArgb(0,128,128);
+                    but.ForeColor = Color.FromArgb(0,255,255);
                     break;
                 case "Красный":
-                    but.BackColor = Color.Red;
-                    but.ForeColor = Color.White;
+                    but.BackColor = Color.FromArgb(128, 0, 0);
+                    but.ForeColor = Color.FromArgb(255, 64, 64);
                     break;
                 case "Коричневый":
                     but.BackColor = Color.FromArgb(64, 32, 0);
-                    but.ForeColor = Color.White;
+                    but.ForeColor = Color.FromArgb(128, 64, 0);
                     break;
                 case "Чёрный":
-                    but.BackColor = Color.Black;
-                    but.ForeColor = Color.FromArgb(32,32,32);
+                    but.BackColor = Color.FromArgb(0,0,0);
+                    but.ForeColor = Color.FromArgb(64,64,64);
                     break;
                 default:
                     but.Visible = false;
@@ -170,16 +159,52 @@ namespace AutoLabel
             labelClock.Text = DateTime.Now.ToString("HH:mm");
         }
 
-        private void buttonCustomLabel_Click(object sender, EventArgs e)
-        {
-            FormCustomLabel form = new FormCustomLabel();
-            form.ShowDialog();
-        }
-
         private void timer2_Tick(object sender, EventArgs e)
         {
             //Обновлялка каждые 10 секунд, на случай, если данные были изменены удалённо
             RefreshMain();
-        }        
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.About();
+        }
+
+        private void вводДанныхToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormProperties formprop = new FormProperties();
+            timer2.Enabled = false;
+            formprop.ShowDialog();
+            timer2.Enabled = true;
+            RefreshMain();
+        }
+
+        private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUsers form = new FormUsers();
+            form.ShowDialog();
+        }
+
+        private void отчётыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormReports form = new FormReports();
+            form.ShowDialog();
+        }
+
+        private void принтерToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.PrintSetup();
+        }
+
+        private void этикеткаСПроизвольнымиПолямиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCustomLabel form = new FormCustomLabel();
+            form.ShowDialog();
+        }
     }
 }
