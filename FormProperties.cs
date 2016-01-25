@@ -131,6 +131,7 @@ namespace AutoLabel
         private void comboBoxAntiType_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxAntiCount_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxColor_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
+        private void textBoxOther_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
 
         private void buttonPrinterSelect_Click(object sender, EventArgs e)
         {
@@ -159,6 +160,7 @@ namespace AutoLabel
 
         private void textBoxOther_Click(object sender, EventArgs e)
         {
+            if (!Data.IsMachine) return;
             FormKeyboardLetter key = new FormKeyboardLetter("Введите прочие дополнения");
             if (key.ShowDialog() == DialogResult.OK)
             {
@@ -169,6 +171,7 @@ namespace AutoLabel
 
         private void textBoxNumber_Click_1(object sender, EventArgs e)
         {
+            if (!Data.IsMachine) return;
             FormKeyboardNums key = new FormKeyboardNums("Введите номер партии");
             if (key.ShowDialog() == DialogResult.OK)
             {

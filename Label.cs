@@ -299,7 +299,7 @@ namespace AutoLabel
         {
             try
             {
-                StreamWriter file = new StreamWriter(Data.LogName[0]+".csv", true, Encoding.Default);
+                StreamWriter file = new StreamWriter("Logs\\" + Data.LogName[0]+".csv", true, Encoding.Default);
                 file.WriteLine(DateTime.Now.ToString("dd.MM; HH:mm") +
                     "; ТПА" + TPA + "; " + PartNum + "; " + Type +"; " + Weight + "; " +
                     PColor +"; " + CurrentNum + "; " + Packer);
@@ -315,9 +315,15 @@ namespace AutoLabel
         {
             try
             {
-                StreamWriter file = new StreamWriter(Data.LogName[0] + ".csv", true, Encoding.Default);
-                file.WriteLine("Дата; Время; Машина; Партия; Тип; Вес; Цвет; Короб; Упаковщик");
-                file.Dispose();
+                string name = "Logs\\" + Data.LogName[0] + ".csv";
+                Directory.CreateDirectory("Logs");
+                if (!File.Exists(name))
+                {
+                    //Создаём новый файл, только если его нет
+                    StreamWriter file = new StreamWriter("Logs\\" + Data.LogName[0] + ".csv", true, Encoding.Default);
+                    file.WriteLine("Дата; Время; Машина; Партия; Тип; Вес; Цвет; Короб; Упаковщик");
+                    file.Dispose();
+                }
             }
             catch { }
         }

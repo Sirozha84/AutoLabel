@@ -48,7 +48,8 @@ namespace AutoLabel
             try
             {
                 log.Clear();
-                foreach (string str in File.ReadLines(comboBoxShift.SelectedItem.ToString() + ".csv", Encoding.Default))
+                foreach (string str in File.ReadLines("Logs\\" +
+                    comboBoxShift.SelectedItem.ToString() + ".csv", Encoding.Default))
                 {
                     string[] Str = str.Split(';');
                     for (int i = 0; i < Str.Count(); i++)

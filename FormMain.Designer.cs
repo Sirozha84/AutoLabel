@@ -255,7 +255,7 @@
             // 
             this.buttonProperties.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonProperties.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProperties.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonProperties.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonProperties.ForeColor = System.Drawing.Color.White;
             this.buttonProperties.Location = new System.Drawing.Point(733, 12);
             this.buttonProperties.Name = "buttonProperties";
@@ -284,13 +284,13 @@
             // 
             this.buttonCustomLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCustomLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCustomLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCustomLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCustomLabel.ForeColor = System.Drawing.Color.White;
             this.buttonCustomLabel.Location = new System.Drawing.Point(221, 12);
             this.buttonCustomLabel.Name = "buttonCustomLabel";
             this.buttonCustomLabel.Size = new System.Drawing.Size(250, 76);
             this.buttonCustomLabel.TabIndex = 10;
-            this.buttonCustomLabel.Text = "Ручная этикетка";
+            this.buttonCustomLabel.Text = "Этикетка с выборочными полями";
             this.buttonCustomLabel.UseVisualStyleBackColor = true;
             this.buttonCustomLabel.Visible = false;
             this.buttonCustomLabel.Click += new System.EventHandler(this.buttonCustomLabel_Click);
@@ -311,7 +311,7 @@
             // 
             this.buttonShift.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonShift.ForeColor = System.Drawing.Color.White;
             this.buttonShift.Location = new System.Drawing.Point(477, 12);
             this.buttonShift.Name = "buttonShift";

@@ -23,14 +23,26 @@ namespace AutoLabel
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            if (Data.Shift != comboBoxShift.SelectedItem.ToString())
-                Data.ShiftChange(comboBoxShift.SelectedItem.ToString());
+            Data.ShiftChange(Data.Shifts[0]);
             Close();
         }
 
-        private void FormShift_Load(object sender, EventArgs e)
+        private void buttonShift2_Click(object sender, EventArgs e)
         {
-            comboBoxShift.SelectedItem = Data.Shift;
+            Data.ShiftChange(Data.Shifts[1]);
+            Close();
+        }
+
+        private void buttonShift3_Click(object sender, EventArgs e)
+        {
+            Data.ShiftChange(Data.Shifts[2]);
+            Close();
+        }
+
+        private void buttonShift4_Click(object sender, EventArgs e)
+        {
+            Data.ShiftChange(Data.Shifts[3]);
+            Close();
         }
     }
 }

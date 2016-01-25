@@ -43,9 +43,9 @@
             // 
             this.buttonLog.BackColor = System.Drawing.Color.Black;
             this.buttonLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonLog.ForeColor = System.Drawing.Color.White;
-            this.buttonLog.Location = new System.Drawing.Point(12, 318);
+            this.buttonLog.Location = new System.Drawing.Point(56, 375);
             this.buttonLog.Name = "buttonLog";
             this.buttonLog.Size = new System.Drawing.Size(318, 70);
             this.buttonLog.TabIndex = 10;
@@ -56,11 +56,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(56, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 31);
+            this.label1.Size = new System.Drawing.Size(223, 37);
             this.label1.TabIndex = 29;
             this.label1.Text = "Печать отчёта";
             // 
@@ -69,9 +69,9 @@
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonCancel.BackColor = System.Drawing.Color.Black;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCancel.ForeColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(226, 427);
+            this.buttonCancel.Location = new System.Drawing.Point(268, 524);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(222, 70);
             this.buttonCancel.TabIndex = 30;
@@ -83,9 +83,9 @@
             // 
             this.buttonMianRepotr.BackColor = System.Drawing.Color.Black;
             this.buttonMianRepotr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMianRepotr.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonMianRepotr.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonMianRepotr.ForeColor = System.Drawing.Color.White;
-            this.buttonMianRepotr.Location = new System.Drawing.Point(12, 235);
+            this.buttonMianRepotr.Location = new System.Drawing.Point(56, 292);
             this.buttonMianRepotr.Name = "buttonMianRepotr";
             this.buttonMianRepotr.Size = new System.Drawing.Size(318, 70);
             this.buttonMianRepotr.TabIndex = 31;
@@ -98,33 +98,33 @@
             this.comboBoxShift.BackColor = System.Drawing.Color.Black;
             this.comboBoxShift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxShift.ForeColor = System.Drawing.Color.White;
             this.comboBoxShift.FormattingEnabled = true;
-            this.comboBoxShift.Location = new System.Drawing.Point(12, 118);
+            this.comboBoxShift.Location = new System.Drawing.Point(56, 157);
             this.comboBoxShift.Name = "comboBoxShift";
-            this.comboBoxShift.Size = new System.Drawing.Size(651, 63);
+            this.comboBoxShift.Size = new System.Drawing.Size(651, 45);
             this.comboBoxShift.TabIndex = 32;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 84);
+            this.label2.Location = new System.Drawing.Point(56, 101);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(230, 31);
+            this.label2.Size = new System.Drawing.Size(258, 37);
             this.label2.TabIndex = 33;
             this.label2.Text = "Выберите смену:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(15, 201);
+            this.label3.Location = new System.Drawing.Point(56, 233);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(285, 31);
+            this.label3.Size = new System.Drawing.Size(323, 37);
             this.label3.TabIndex = 34;
             this.label3.Text = "Выберите тип отчёта:";
             // 
@@ -132,9 +132,9 @@
             // 
             this.buttonReportByPart.BackColor = System.Drawing.Color.Black;
             this.buttonReportByPart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReportByPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonReportByPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonReportByPart.ForeColor = System.Drawing.Color.White;
-            this.buttonReportByPart.Location = new System.Drawing.Point(345, 235);
+            this.buttonReportByPart.Location = new System.Drawing.Point(389, 292);
             this.buttonReportByPart.Name = "buttonReportByPart";
             this.buttonReportByPart.Size = new System.Drawing.Size(318, 70);
             this.buttonReportByPart.TabIndex = 35;
@@ -146,9 +146,9 @@
             // 
             this.buttonByTPA.BackColor = System.Drawing.Color.Black;
             this.buttonByTPA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonByTPA.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonByTPA.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonByTPA.ForeColor = System.Drawing.Color.White;
-            this.buttonByTPA.Location = new System.Drawing.Point(345, 318);
+            this.buttonByTPA.Location = new System.Drawing.Point(389, 375);
             this.buttonByTPA.Name = "buttonByTPA";
             this.buttonByTPA.Size = new System.Drawing.Size(318, 70);
             this.buttonByTPA.TabIndex = 36;
@@ -161,7 +161,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(675, 509);
+            this.ClientSize = new System.Drawing.Size(759, 606);
             this.Controls.Add(this.buttonByTPA);
             this.Controls.Add(this.buttonReportByPart);
             this.Controls.Add(this.label3);

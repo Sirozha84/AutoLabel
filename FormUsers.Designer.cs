@@ -102,16 +102,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox1.BackColor = System.Drawing.Color.Black;
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listBox1.ForeColor = System.Drawing.Color.White;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 55;
+            this.listBox1.ItemHeight = 37;
             this.listBox1.Items.AddRange(new object[] {
             ""});
             this.listBox1.Location = new System.Drawing.Point(73, 146);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(1018, 279);
+            this.listBox1.Size = new System.Drawing.Size(1018, 411);
             this.listBox1.TabIndex = 11;
             this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
@@ -122,7 +122,7 @@
             this.buttonNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNew.ForeColor = System.Drawing.Color.White;
-            this.buttonNew.Location = new System.Drawing.Point(73, 473);
+            this.buttonNew.Location = new System.Drawing.Point(73, 584);
             this.buttonNew.Name = "buttonNew";
             this.buttonNew.Size = new System.Drawing.Size(250, 76);
             this.buttonNew.TabIndex = 14;
@@ -136,7 +136,7 @@
             this.buttonNewAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNewAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNewAdmin.ForeColor = System.Drawing.Color.White;
-            this.buttonNewAdmin.Location = new System.Drawing.Point(329, 473);
+            this.buttonNewAdmin.Location = new System.Drawing.Point(329, 584);
             this.buttonNewAdmin.Name = "buttonNewAdmin";
             this.buttonNewAdmin.Size = new System.Drawing.Size(250, 76);
             this.buttonNewAdmin.TabIndex = 15;
@@ -150,7 +150,7 @@
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(841, 473);
+            this.buttonDelete.Location = new System.Drawing.Point(841, 584);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(250, 76);
             this.buttonDelete.TabIndex = 16;
@@ -165,7 +165,7 @@
             this.buttonKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonKey.ForeColor = System.Drawing.Color.White;
-            this.buttonKey.Location = new System.Drawing.Point(585, 473);
+            this.buttonKey.Location = new System.Drawing.Point(585, 584);
             this.buttonKey.Name = "buttonKey";
             this.buttonKey.Size = new System.Drawing.Size(250, 76);
             this.buttonKey.TabIndex = 17;
@@ -179,7 +179,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1163, 636);
+            this.ClientSize = new System.Drawing.Size(1163, 747);
             this.Controls.Add(this.buttonKey);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonNewAdmin);

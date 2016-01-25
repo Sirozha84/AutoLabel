@@ -63,6 +63,7 @@
             this.buttonAbout = new System.Windows.Forms.Button();
             this.buttonUsers = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonPegging = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -71,7 +72,7 @@
             // buttonquit
             // 
             this.buttonquit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonquit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonquit.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonquit.ForeColor = System.Drawing.Color.White;
             this.buttonquit.Location = new System.Drawing.Point(12, 12);
             this.buttonquit.Name = "buttonquit";
@@ -98,7 +99,7 @@
             // 
             this.buttonsave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonsave.ForeColor = System.Drawing.Color.White;
             this.buttonsave.Location = new System.Drawing.Point(931, 12);
             this.buttonsave.Name = "buttonsave";
@@ -117,7 +118,7 @@
             this.labelformname.BackColor = System.Drawing.Color.Navy;
             this.labelformname.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelformname.ForeColor = System.Drawing.Color.White;
-            this.labelformname.Location = new System.Drawing.Point(268, 15);
+            this.labelformname.Location = new System.Drawing.Point(268, 12);
             this.labelformname.Name = "labelformname";
             this.labelformname.Size = new System.Drawing.Size(722, 73);
             this.labelformname.TabIndex = 7;
@@ -176,12 +177,12 @@
             this.comboBoxLimit.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboBoxLimit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLimit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxLimit.ForeColor = System.Drawing.Color.White;
             this.comboBoxLimit.FormattingEnabled = true;
             this.comboBoxLimit.Location = new System.Drawing.Point(522, 444);
             this.comboBoxLimit.Name = "comboBoxLimit";
-            this.comboBoxLimit.Size = new System.Drawing.Size(420, 63);
+            this.comboBoxLimit.Size = new System.Drawing.Size(420, 45);
             this.comboBoxLimit.TabIndex = 28;
             this.comboBoxLimit.Visible = false;
             this.comboBoxLimit.SelectedIndexChanged += new System.EventHandler(this.comboBoxLimit_SelectedIndexChanged);
@@ -189,7 +190,7 @@
             // label11
             // 
             this.label11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(3, 490);
             this.label11.Name = "label11";
@@ -203,14 +204,15 @@
             // 
             this.textBoxOther.BackColor = System.Drawing.Color.Black;
             this.textBoxOther.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxOther.ForeColor = System.Drawing.Color.White;
             this.textBoxOther.Location = new System.Drawing.Point(522, 493);
             this.textBoxOther.Name = "textBoxOther";
-            this.textBoxOther.Size = new System.Drawing.Size(420, 62);
+            this.textBoxOther.Size = new System.Drawing.Size(420, 44);
             this.textBoxOther.TabIndex = 26;
             this.textBoxOther.Visible = false;
             this.textBoxOther.Click += new System.EventHandler(this.textBoxOther_Click);
+            this.textBoxOther.TextChanged += new System.EventHandler(this.textBoxOther_TextChanged);
             // 
             // comboBoxAntiCount
             // 
@@ -218,12 +220,12 @@
             this.comboBoxAntiCount.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboBoxAntiCount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAntiCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxAntiCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxAntiCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxAntiCount.ForeColor = System.Drawing.Color.White;
             this.comboBoxAntiCount.FormattingEnabled = true;
             this.comboBoxAntiCount.Location = new System.Drawing.Point(522, 395);
             this.comboBoxAntiCount.Name = "comboBoxAntiCount";
-            this.comboBoxAntiCount.Size = new System.Drawing.Size(420, 63);
+            this.comboBoxAntiCount.Size = new System.Drawing.Size(420, 45);
             this.comboBoxAntiCount.TabIndex = 25;
             this.comboBoxAntiCount.Visible = false;
             this.comboBoxAntiCount.SelectedIndexChanged += new System.EventHandler(this.comboBoxAntiCount_SelectedIndexChanged);
@@ -234,12 +236,12 @@
             this.comboBoxAntiType.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboBoxAntiType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAntiType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxAntiType.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxAntiType.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxAntiType.ForeColor = System.Drawing.Color.White;
             this.comboBoxAntiType.FormattingEnabled = true;
             this.comboBoxAntiType.Location = new System.Drawing.Point(522, 346);
             this.comboBoxAntiType.Name = "comboBoxAntiType";
-            this.comboBoxAntiType.Size = new System.Drawing.Size(420, 63);
+            this.comboBoxAntiType.Size = new System.Drawing.Size(420, 45);
             this.comboBoxAntiType.TabIndex = 24;
             this.comboBoxAntiType.Visible = false;
             this.comboBoxAntiType.SelectedIndexChanged += new System.EventHandler(this.comboBoxAntiType_SelectedIndexChanged);
@@ -247,7 +249,7 @@
             // label10
             // 
             this.label10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(3, 441);
             this.label10.Name = "label10";
@@ -260,7 +262,7 @@
             // label9
             // 
             this.label9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(3, 392);
             this.label9.Name = "label9";
@@ -273,7 +275,7 @@
             // label8
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(3, 343);
             this.label8.Name = "label8";
@@ -289,12 +291,12 @@
             this.comboBoxColor.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboBoxColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxColor.ForeColor = System.Drawing.Color.White;
             this.comboBoxColor.FormattingEnabled = true;
             this.comboBoxColor.Location = new System.Drawing.Point(522, 199);
             this.comboBoxColor.Name = "comboBoxColor";
-            this.comboBoxColor.Size = new System.Drawing.Size(420, 63);
+            this.comboBoxColor.Size = new System.Drawing.Size(420, 45);
             this.comboBoxColor.TabIndex = 20;
             this.comboBoxColor.Visible = false;
             this.comboBoxColor.SelectedIndexChanged += new System.EventHandler(this.comboBoxColor_SelectedIndexChanged);
@@ -302,7 +304,7 @@
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(3, 196);
             this.label7.Name = "label7";
@@ -318,19 +320,19 @@
             this.comboBoxMaterial.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboBoxMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxMaterial.ForeColor = System.Drawing.Color.White;
             this.comboBoxMaterial.FormattingEnabled = true;
             this.comboBoxMaterial.Location = new System.Drawing.Point(522, 150);
             this.comboBoxMaterial.Name = "comboBoxMaterial";
-            this.comboBoxMaterial.Size = new System.Drawing.Size(420, 63);
+            this.comboBoxMaterial.Size = new System.Drawing.Size(420, 45);
             this.comboBoxMaterial.TabIndex = 18;
             this.comboBoxMaterial.Visible = false;
             // 
             // label6
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(3, 147);
             this.label6.Name = "label6";
@@ -346,7 +348,7 @@
             this.comboBoxTPA.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboBoxTPA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTPA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxTPA.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxTPA.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxTPA.ForeColor = System.Drawing.Color.White;
             this.comboBoxTPA.FormattingEnabled = true;
             this.comboBoxTPA.Items.AddRange(new object[] {
@@ -358,14 +360,14 @@
             "6"});
             this.comboBoxTPA.Location = new System.Drawing.Point(522, 3);
             this.comboBoxTPA.Name = "comboBoxTPA";
-            this.comboBoxTPA.Size = new System.Drawing.Size(420, 63);
+            this.comboBoxTPA.Size = new System.Drawing.Size(420, 45);
             this.comboBoxTPA.TabIndex = 14;
             this.comboBoxTPA.SelectedIndexChanged += new System.EventHandler(this.comboBoxTPA_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
@@ -380,12 +382,12 @@
             this.comboBoxCount.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboBoxCount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxCount.ForeColor = System.Drawing.Color.White;
             this.comboBoxCount.FormattingEnabled = true;
             this.comboBoxCount.Location = new System.Drawing.Point(522, 248);
             this.comboBoxCount.Name = "comboBoxCount";
-            this.comboBoxCount.Size = new System.Drawing.Size(420, 63);
+            this.comboBoxCount.Size = new System.Drawing.Size(420, 45);
             this.comboBoxCount.TabIndex = 12;
             this.comboBoxCount.Visible = false;
             this.comboBoxCount.SelectedIndexChanged += new System.EventHandler(this.comboBoxCount_SelectedIndexChanged);
@@ -396,12 +398,12 @@
             this.comboBoxWeight.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboBoxWeight.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxWeight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxWeight.ForeColor = System.Drawing.Color.White;
             this.comboBoxWeight.FormattingEnabled = true;
             this.comboBoxWeight.Location = new System.Drawing.Point(522, 52);
             this.comboBoxWeight.Name = "comboBoxWeight";
-            this.comboBoxWeight.Size = new System.Drawing.Size(420, 63);
+            this.comboBoxWeight.Size = new System.Drawing.Size(420, 45);
             this.comboBoxWeight.TabIndex = 11;
             this.comboBoxWeight.Visible = false;
             this.comboBoxWeight.SelectedIndexChanged += new System.EventHandler(this.comboBoxWeight_SelectedIndexChanged);
@@ -409,7 +411,7 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 294);
             this.label1.Name = "label1";
@@ -422,7 +424,7 @@
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 98);
             this.label2.Name = "label2";
@@ -435,7 +437,7 @@
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 49);
             this.label3.Name = "label3";
@@ -448,7 +450,7 @@
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(3, 245);
             this.label4.Name = "label4";
@@ -464,12 +466,12 @@
             this.comboBoxType.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxType.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxType.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxType.ForeColor = System.Drawing.Color.White;
             this.comboBoxType.FormattingEnabled = true;
             this.comboBoxType.Location = new System.Drawing.Point(522, 101);
             this.comboBoxType.Name = "comboBoxType";
-            this.comboBoxType.Size = new System.Drawing.Size(420, 63);
+            this.comboBoxType.Size = new System.Drawing.Size(420, 45);
             this.comboBoxType.TabIndex = 10;
             this.comboBoxType.Visible = false;
             this.comboBoxType.SelectedIndexChanged += new System.EventHandler(this.comboBoxType_SelectedIndexChanged);
@@ -478,11 +480,11 @@
             // 
             this.textBoxNumber.BackColor = System.Drawing.Color.Black;
             this.textBoxNumber.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxNumber.ForeColor = System.Drawing.Color.White;
             this.textBoxNumber.Location = new System.Drawing.Point(522, 297);
             this.textBoxNumber.Name = "textBoxNumber";
-            this.textBoxNumber.Size = new System.Drawing.Size(420, 62);
+            this.textBoxNumber.Size = new System.Drawing.Size(420, 44);
             this.textBoxNumber.TabIndex = 16;
             this.textBoxNumber.Visible = false;
             this.textBoxNumber.Click += new System.EventHandler(this.textBoxNumber_Click_1);
@@ -494,7 +496,7 @@
             this.buttonquitprogram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonquitprogram.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonquitprogram.ForeColor = System.Drawing.Color.White;
-            this.buttonquitprogram.Location = new System.Drawing.Point(12, 232);
+            this.buttonquitprogram.Location = new System.Drawing.Point(12, 286);
             this.buttonquitprogram.Name = "buttonquitprogram";
             this.buttonquitprogram.Size = new System.Drawing.Size(127, 48);
             this.buttonquitprogram.TabIndex = 11;
@@ -508,7 +510,7 @@
             this.buttonPrinterSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrinterSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPrinterSelect.ForeColor = System.Drawing.Color.White;
-            this.buttonPrinterSelect.Location = new System.Drawing.Point(12, 124);
+            this.buttonPrinterSelect.Location = new System.Drawing.Point(12, 178);
             this.buttonPrinterSelect.Name = "buttonPrinterSelect";
             this.buttonPrinterSelect.Size = new System.Drawing.Size(127, 48);
             this.buttonPrinterSelect.TabIndex = 12;
@@ -522,7 +524,7 @@
             this.buttonReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonReport.ForeColor = System.Drawing.Color.White;
-            this.buttonReport.Location = new System.Drawing.Point(12, 70);
+            this.buttonReport.Location = new System.Drawing.Point(12, 124);
             this.buttonReport.Name = "buttonReport";
             this.buttonReport.Size = new System.Drawing.Size(127, 48);
             this.buttonReport.TabIndex = 13;
@@ -535,6 +537,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.buttonPegging);
             this.panel1.Controls.Add(this.buttonAbout);
             this.panel1.Controls.Add(this.buttonUsers);
             this.panel1.Controls.Add(this.buttonPrinterSelect);
@@ -551,7 +554,7 @@
             this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAbout.ForeColor = System.Drawing.Color.White;
-            this.buttonAbout.Location = new System.Drawing.Point(12, 178);
+            this.buttonAbout.Location = new System.Drawing.Point(12, 232);
             this.buttonAbout.Name = "buttonAbout";
             this.buttonAbout.Size = new System.Drawing.Size(127, 48);
             this.buttonAbout.TabIndex = 15;
@@ -576,7 +579,7 @@
             // buttonClear
             // 
             this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonClear.ForeColor = System.Drawing.Color.White;
             this.buttonClear.Location = new System.Drawing.Point(162, 109);
             this.buttonClear.Name = "buttonClear";
@@ -586,6 +589,19 @@
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Visible = false;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
+            // buttonPegging
+            // 
+            this.buttonPegging.BackColor = System.Drawing.Color.Black;
+            this.buttonPegging.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPegging.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonPegging.ForeColor = System.Drawing.Color.White;
+            this.buttonPegging.Location = new System.Drawing.Point(12, 70);
+            this.buttonPegging.Name = "buttonPegging";
+            this.buttonPegging.Size = new System.Drawing.Size(127, 48);
+            this.buttonPegging.TabIndex = 16;
+            this.buttonPegging.Text = "Привязки к ТПА";
+            this.buttonPegging.UseVisualStyleBackColor = false;
             // 
             // FormProperties
             // 
@@ -649,5 +665,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Button buttonAbout;
+        private System.Windows.Forms.Button buttonPegging;
     }
 }

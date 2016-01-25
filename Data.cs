@@ -32,6 +32,10 @@ namespace AutoLabel
         /// </summary>
         static int ShiftMemory = 7;
         /// <summary>
+        /// Названия смен
+        /// </summary>
+        public static string[] Shifts = { "Смена 1", "Смена 2", "Смена 3", "Смена 4" };
+        /// <summary>
         /// Файл принтера
         /// </summary>
         static string FilePrinter = "Printer.txt";
@@ -225,7 +229,7 @@ namespace AutoLabel
             }
             catch
             {
-                Shift = "Смена 1";
+                Shift = Shifts[0];
                 ShiftChange(Shift); //Если файла небыло, сохраним его
             }
         }
@@ -304,6 +308,7 @@ namespace AutoLabel
         /// <param name="shift"></param>
         public static void ShiftChange(string shift)
         {
+            if (Shift == shift) return;
             Shift = shift;
             //Сдвигаем коллекцию последних смен
             for (int i = ShiftMemory - 1; i > 0; i--)
