@@ -247,5 +247,13 @@ namespace AutoLabel
         {
             if (!смена4ToolStripMenuItem.Checked) ChangeShift(Data.Shifts[3]);
         }
+
+        private void привязкаПользователейКТПАToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAccess form = new FormAccess();
+            timer2.Enabled = false; //Останавливаем автоматическое обновление
+            form.ShowDialog();
+            timer2.Enabled = true; //Запускаем автоматическое обновление
+        }
     }
 }

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
 using System.IO;
@@ -35,6 +32,10 @@ namespace AutoLabel
         /// Названия смен
         /// </summary>
         public static string[] Shifts = { "Смена 1", "Смена 2", "Смена 3", "Смена 4" };
+        /// <summary>
+        /// Проверка привязки к ТПА
+        /// </summary>
+        public static bool AccessControl = true;
         /// <summary>
         /// Файл принтера
         /// </summary>
@@ -243,9 +244,10 @@ namespace AutoLabel
             try
             {
                 StreamReader file = File.OpenText("Users.txt");
+                AccessControl = file.ReadLine() == "AccessControl ON";
                 while (!file.EndOfStream)
                 {
-                    Users.Add(new User(file.ReadLine(), file.ReadLine(), file.ReadLine()));
+                    Users.Add(new User(file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine()));
                 }
                 file.Dispose();
             }
@@ -260,11 +262,17 @@ namespace AutoLabel
             try
             {
                 StreamWriter file = File.CreateText("Users.txt");
+                file.Write("AccessControl ");
+                if (AccessControl) file.WriteLine("ON"); else file.WriteLine("OFF");
                 foreach (User u in Users)
                 {
                     file.WriteLine(u.Name);
                     file.WriteLine(u.Code);
                     file.WriteLine(u.Rule);
+                    string a = "";
+                    foreach (byte b in u.TPAAccess)
+                        if (b == 0) a += "0"; else a += "1";
+                    file.WriteLine(a);
                 }
                 file.Dispose();
             }
@@ -422,7 +430,7 @@ namespace AutoLabel
         public static void DrawUsersList(ListBox listbox)
         {
             listbox.Items.Clear();
-            foreach (User u in Data.Users)
+            foreach (User u in Users)
             {
                 string str = u.Name;
                 if (u.Rule == 255) str += "               администратор";
@@ -457,7 +465,7 @@ namespace AutoLabel
                 if (input.ShowDialog() == DialogResult.Cancel) return;
                 name = input.Str;
             }
-            Users.Add(new User(name, code, Rule));
+            Users.Add(new User(name, code, Rule, "000000"));
             DrawUsersList(listbox);
         }
     }

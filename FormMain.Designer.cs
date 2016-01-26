@@ -106,7 +106,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(579, 395);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(556, 445);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // button1
@@ -116,9 +116,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(320, 263);
+            this.button1.Location = new System.Drawing.Point(308, 299);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 106);
+            this.button1.Size = new System.Drawing.Size(245, 121);
             this.button1.TabIndex = 0;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = false;
@@ -133,7 +133,7 @@
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(3, 3);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(254, 106);
+            this.button4.Size = new System.Drawing.Size(244, 121);
             this.button4.TabIndex = 4;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = false;
@@ -146,9 +146,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(320, 133);
+            this.button2.Location = new System.Drawing.Point(308, 151);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(256, 106);
+            this.button2.Size = new System.Drawing.Size(245, 121);
             this.button2.TabIndex = 3;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = false;
@@ -161,9 +161,9 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(3, 133);
+            this.button5.Location = new System.Drawing.Point(3, 151);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(254, 106);
+            this.button5.Size = new System.Drawing.Size(244, 121);
             this.button5.TabIndex = 5;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = false;
@@ -176,9 +176,9 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(3, 263);
+            this.button6.Location = new System.Drawing.Point(3, 299);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(254, 106);
+            this.button6.Size = new System.Drawing.Size(244, 121);
             this.button6.TabIndex = 6;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = false;
@@ -191,9 +191,9 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(320, 3);
+            this.button3.Location = new System.Drawing.Point(308, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(256, 106);
+            this.button3.Size = new System.Drawing.Size(245, 121);
             this.button3.TabIndex = 2;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = false;
@@ -203,7 +203,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(320, 372);
+            this.label1.Location = new System.Drawing.Point(308, 423);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 7;
@@ -213,7 +213,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(320, 242);
+            this.label2.Location = new System.Drawing.Point(308, 275);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 8;
@@ -223,7 +223,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(320, 112);
+            this.label3.Location = new System.Drawing.Point(308, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 9;
@@ -233,7 +233,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 112);
+            this.label4.Location = new System.Drawing.Point(3, 127);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 10;
@@ -243,7 +243,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 242);
+            this.label5.Location = new System.Drawing.Point(3, 275);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 11;
@@ -253,7 +253,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 372);
+            this.label6.Location = new System.Drawing.Point(3, 423);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 12;
@@ -277,7 +277,7 @@
             this.buttonProperties.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProperties.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonProperties.ForeColor = System.Drawing.Color.White;
-            this.buttonProperties.Location = new System.Drawing.Point(643, 12);
+            this.buttonProperties.Location = new System.Drawing.Point(620, 12);
             this.buttonProperties.Name = "buttonProperties";
             this.buttonProperties.Size = new System.Drawing.Size(250, 76);
             this.buttonProperties.TabIndex = 3;
@@ -296,7 +296,7 @@
             this.panel2.Controls.Add(this.labelformname);
             this.panel2.Location = new System.Drawing.Point(0, 24);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(908, 100);
+            this.panel2.Size = new System.Drawing.Size(885, 100);
             this.panel2.TabIndex = 9;
             // 
             // labelClock
@@ -318,7 +318,7 @@
             this.buttonShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonShift.ForeColor = System.Drawing.Color.White;
-            this.buttonShift.Location = new System.Drawing.Point(387, 12);
+            this.buttonShift.Location = new System.Drawing.Point(364, 12);
             this.buttonShift.Name = "buttonShift";
             this.buttonShift.Size = new System.Drawing.Size(250, 76);
             this.buttonShift.TabIndex = 8;
@@ -361,7 +361,7 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(905, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(882, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -379,26 +379,28 @@
             // отчётыToolStripMenuItem
             // 
             this.отчётыToolStripMenuItem.Name = "отчётыToolStripMenuItem";
-            this.отчётыToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
+            this.отчётыToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.отчётыToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
             this.отчётыToolStripMenuItem.Text = "Отчёты";
             this.отчётыToolStripMenuItem.Click += new System.EventHandler(this.отчётыToolStripMenuItem_Click);
             // 
             // этикеткаСПроизвольнымиПолямиToolStripMenuItem
             // 
             this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Name = "этикеткаСПроизвольнымиПолямиToolStripMenuItem";
-            this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
+            this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
             this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Text = "Этикетка с произвольными полями";
             this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Click += new System.EventHandler(this.этикеткаСПроизвольнымиПолямиToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(268, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(310, 6);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -417,32 +419,36 @@
             // вводДанныхToolStripMenuItem
             // 
             this.вводДанныхToolStripMenuItem.Name = "вводДанныхToolStripMenuItem";
-            this.вводДанныхToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.вводДанныхToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.вводДанныхToolStripMenuItem.Size = new System.Drawing.Size(288, 22);
             this.вводДанныхToolStripMenuItem.Text = "Установка параметров";
             this.вводДанныхToolStripMenuItem.Click += new System.EventHandler(this.вводДанныхToolStripMenuItem_Click);
             // 
             // привязкаПользователейКТПАToolStripMenuItem
             // 
             this.привязкаПользователейКТПАToolStripMenuItem.Name = "привязкаПользователейКТПАToolStripMenuItem";
-            this.привязкаПользователейКТПАToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.привязкаПользователейКТПАToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.привязкаПользователейКТПАToolStripMenuItem.Size = new System.Drawing.Size(288, 22);
             this.привязкаПользователейКТПАToolStripMenuItem.Text = "Привязка пользователей к ТПА";
+            this.привязкаПользователейКТПАToolStripMenuItem.Click += new System.EventHandler(this.привязкаПользователейКТПАToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(244, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(285, 6);
             // 
             // пользователиToolStripMenuItem
             // 
             this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
-            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.пользователиToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
+            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(288, 22);
             this.пользователиToolStripMenuItem.Text = "Пользователи";
             this.пользователиToolStripMenuItem.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
             // 
             // принтерToolStripMenuItem
             // 
             this.принтерToolStripMenuItem.Name = "принтерToolStripMenuItem";
-            this.принтерToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.принтерToolStripMenuItem.Size = new System.Drawing.Size(288, 22);
             this.принтерToolStripMenuItem.Text = "Принтер";
             this.принтерToolStripMenuItem.Click += new System.EventHandler(this.принтерToolStripMenuItem_Click);
             // 
@@ -475,28 +481,32 @@
             // смена1ToolStripMenuItem
             // 
             this.смена1ToolStripMenuItem.Name = "смена1ToolStripMenuItem";
-            this.смена1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.смена1ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
+            this.смена1ToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.смена1ToolStripMenuItem.Text = "Смена 1";
             this.смена1ToolStripMenuItem.Click += new System.EventHandler(this.смена1ToolStripMenuItem_Click);
             // 
             // смена2ToolStripMenuItem
             // 
             this.смена2ToolStripMenuItem.Name = "смена2ToolStripMenuItem";
-            this.смена2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.смена2ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
+            this.смена2ToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.смена2ToolStripMenuItem.Text = "Смена 2";
             this.смена2ToolStripMenuItem.Click += new System.EventHandler(this.смена2ToolStripMenuItem_Click);
             // 
             // смена3ToolStripMenuItem
             // 
             this.смена3ToolStripMenuItem.Name = "смена3ToolStripMenuItem";
-            this.смена3ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.смена3ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
+            this.смена3ToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.смена3ToolStripMenuItem.Text = "Смена 3";
             this.смена3ToolStripMenuItem.Click += new System.EventHandler(this.смена3ToolStripMenuItem_Click);
             // 
             // смена4ToolStripMenuItem
             // 
             this.смена4ToolStripMenuItem.Name = "смена4ToolStripMenuItem";
-            this.смена4ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.смена4ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D4)));
+            this.смена4ToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.смена4ToolStripMenuItem.Text = "Смена 4";
             this.смена4ToolStripMenuItem.Click += new System.EventHandler(this.смена4ToolStripMenuItem_Click);
             // 
@@ -505,7 +515,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(905, 650);
+            this.ClientSize = new System.Drawing.Size(882, 700);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.menuStrip1);
@@ -513,6 +523,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(600, 700);
             this.Name = "FormMain";
             this.Text = "AutoLabel";
             this.Load += new System.EventHandler(this.FormMain_Load);
