@@ -14,13 +14,6 @@ namespace AutoLabel
         public FormUsers()
         {
             InitializeComponent();
-            //Режим для ПК
-            if (!Data.IsMachine)
-            {
-                FormBorderStyle = FormBorderStyle.Sizable;
-                WindowState = FormWindowState.Normal;
-                StartPosition = FormStartPosition.CenterParent;
-            }
         }
 
         private void buttonquit_Click(object sender, EventArgs e)
@@ -37,39 +30,26 @@ namespace AutoLabel
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             Data.Users.RemoveAt(listBox1.SelectedIndex);
-            DrawList();
+            Data.DrawUsersList(listBox1);
             listBox1_SelectedIndexChanged(null, null);
             buttonsave.Visible = true;
         }
 
         private void FormUsers_Load(object sender, EventArgs e)
         {
-            DrawList();
-        }
-
-        /// <summary>
-        /// Вывод списка пользователей
-        /// </summary>
-        void DrawList()
-        {
-            listBox1.Items.Clear();
-            foreach (User u in Data.Users)
-            {
-                string str = u.Name;
-                if (u.Rule == 255) str += "     администратор";
-                if (u.Code == "") str += "     (без ключа)";
-                listBox1.Items.Add(str);
-            }
+            Data.DrawUsersList(listBox1);
         }
 
         private void buttonNew_Click(object sender, EventArgs e)
         {
-            AddUser("1");
+            Data.AddNewUser("1", listBox1);
+            buttonsave.Visible = true;
         }
 
         private void buttonRules_Click(object sender, EventArgs e)
         {
-            AddUser("255");
+            Data.AddNewUser("255", listBox1);
+            buttonsave.Visible = true;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,33 +58,10 @@ namespace AutoLabel
             buttonDelete.Visible = listBox1.SelectedIndex >= 0;
         }
 
-        /// <summary>
-        /// Сохранение пользователей
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void buttonsave_Click(object sender, EventArgs e)
         {
             Data.SaveUsers();
             buttonsave.Visible = false;
-        }
-
-        /// <summary>
-        /// Добавление нового пользователя
-        /// </summary>
-        /// <param name="Rule">Права</param>
-        void AddUser(string Rule)
-        {
-            FormKeyboardLetter keyboard = new FormKeyboardLetter("Введите имя пользователя");
-            if (keyboard.ShowDialog() == DialogResult.Cancel) return;
-            //Добавление нового пользователя
-            string name = keyboard.Str;
-            FormKey key = new FormKey();
-            key.ShowDialog();
-            string code = key.Code;
-            Data.Users.Add(new User(keyboard.Str, code, Rule));
-            buttonsave.Visible = true;
-            DrawList();
         }
 
         private void buttonKey_Click(object sender, EventArgs e)
@@ -114,8 +71,8 @@ namespace AutoLabel
             if (key.Code != "")
             {
                 Data.Users[listBox1.SelectedIndex].Code = key.Code;
+                Data.DrawUsersList(listBox1);
                 buttonsave.Visible = true;
-                DrawList();
                 buttonKey.Visible = false;
                 buttonDelete.Visible = false;
             }

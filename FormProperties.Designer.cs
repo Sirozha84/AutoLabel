@@ -70,6 +70,7 @@
             // 
             // buttonquit
             // 
+            this.buttonquit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonquit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonquit.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonquit.ForeColor = System.Drawing.Color.White;
@@ -78,7 +79,7 @@
             this.buttonquit.Size = new System.Drawing.Size(250, 76);
             this.buttonquit.TabIndex = 2;
             this.buttonquit.Text = "< Назад";
-            this.buttonquit.UseVisualStyleBackColor = true;
+            this.buttonquit.UseVisualStyleBackColor = false;
             this.buttonquit.Click += new System.EventHandler(this.buttonquit_Click);
             // 
             // panel2
@@ -97,6 +98,7 @@
             // buttonsave
             // 
             this.buttonsave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonsave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonsave.ForeColor = System.Drawing.Color.White;
@@ -105,7 +107,7 @@
             this.buttonsave.Size = new System.Drawing.Size(250, 76);
             this.buttonsave.TabIndex = 8;
             this.buttonsave.Text = "Сохранить";
-            this.buttonsave.UseVisualStyleBackColor = true;
+            this.buttonsave.UseVisualStyleBackColor = false;
             this.buttonsave.Visible = false;
             this.buttonsave.Click += new System.EventHandler(this.buttonsave_Click);
             // 
@@ -491,7 +493,7 @@
             // 
             // buttonquitprogram
             // 
-            this.buttonquitprogram.BackColor = System.Drawing.Color.Black;
+            this.buttonquitprogram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonquitprogram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonquitprogram.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonquitprogram.ForeColor = System.Drawing.Color.White;
@@ -505,7 +507,7 @@
             // 
             // buttonPrinterSelect
             // 
-            this.buttonPrinterSelect.BackColor = System.Drawing.Color.Black;
+            this.buttonPrinterSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonPrinterSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrinterSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPrinterSelect.ForeColor = System.Drawing.Color.White;
@@ -519,7 +521,7 @@
             // 
             // buttonReport
             // 
-            this.buttonReport.BackColor = System.Drawing.Color.Black;
+            this.buttonReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonReport.ForeColor = System.Drawing.Color.White;
@@ -549,7 +551,7 @@
             // 
             // buttonPegging
             // 
-            this.buttonPegging.BackColor = System.Drawing.Color.Black;
+            this.buttonPegging.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonPegging.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPegging.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPegging.ForeColor = System.Drawing.Color.White;
@@ -562,7 +564,7 @@
             // 
             // buttonAbout
             // 
-            this.buttonAbout.BackColor = System.Drawing.Color.Black;
+            this.buttonAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAbout.ForeColor = System.Drawing.Color.White;
@@ -576,7 +578,7 @@
             // 
             // buttonUsers
             // 
-            this.buttonUsers.BackColor = System.Drawing.Color.Black;
+            this.buttonUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonUsers.ForeColor = System.Drawing.Color.White;
@@ -590,7 +592,7 @@
             // 
             // buttonClear
             // 
-            this.buttonClear.BackColor = System.Drawing.Color.Black;
+            this.buttonClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonClear.ForeColor = System.Drawing.Color.White;

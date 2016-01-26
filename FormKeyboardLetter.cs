@@ -11,6 +11,8 @@ namespace AutoLabel
 {
     public partial class FormKeyboardLetter : Form
     {
+        public string Str;
+
         public FormKeyboardLetter(string Lbl)
         {
             InitializeComponent();
@@ -18,8 +20,6 @@ namespace AutoLabel
             Str = "";
             if (Data.IsMachine) textBoxEdit.TabStop = false;
         }
-
-        public string Str;
 
         public FormKeyboardLetter()
         {
@@ -110,7 +110,7 @@ namespace AutoLabel
 
         void DrawString()
         {
-            if (Data.IsMachine) textBoxEdit.Text = Str + "|";
+            textBoxEdit.Text = Str + "|";
         }
 
         private void FormKeyboardLetter_Load(object sender, EventArgs e)

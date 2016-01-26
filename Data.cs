@@ -332,7 +332,10 @@ namespace AutoLabel
             //Обнуляем счётчики коробов
             if (ResetOnChangeShift)
                 foreach (Label l in Labels)
+                {
                     l.CurrentNum = 1;
+                    l.Save();
+                }
         }
 
         /// <summary>
@@ -410,6 +413,52 @@ namespace AutoLabel
         public static bool LittleBox(int TPA)
         {
             return LittleBox(Labels[TPA].Count);
+        }
+
+        /// <summary>
+        /// Заполнение списка пользователей
+        /// </summary>
+        /// <param name="listbox">Листбокс для отображения</param>
+        public static void DrawUsersList(ListBox listbox)
+        {
+            listbox.Items.Clear();
+            foreach (User u in Data.Users)
+            {
+                string str = u.Name;
+                if (u.Rule == 255) str += "               администратор";
+                if (u.Code == "") str += "               (без ключа)";
+                listbox.Items.Add(str);
+            }
+        }
+
+        /// <summary>
+        /// Добавление нового пользователя
+        /// </summary>
+        /// <param name="Rule"></param>
+        /// <param name="listbox">Листбокс для отображения</param>
+        public static void AddNewUser(string Rule, ListBox listbox)
+        {
+            string name = "";
+            string code = "";
+            if (IsMachine)
+            {
+                FormKeyboardLetter keyboard = new FormKeyboardLetter("Введите имя пользователя");
+                if (keyboard.ShowDialog() == DialogResult.Cancel) return;
+                //Добавление нового пользователя
+                name = keyboard.Str;
+                //Добавление ключа (пока только на машине)
+                FormKey key = new FormKey();
+                key.ShowDialog();
+                code = key.Code;
+            }
+            else
+            {
+                FormInput input = new FormInput("Введите имя пользователя");
+                if (input.ShowDialog() == DialogResult.Cancel) return;
+                name = input.Str;
+            }
+            Users.Add(new User(name, code, Rule));
+            DrawUsersList(listbox);
         }
     }
 }

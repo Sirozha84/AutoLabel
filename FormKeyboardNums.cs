@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace AutoLabel
@@ -15,7 +9,6 @@ namespace AutoLabel
 
         public FormKeyboardNums(string str)
         {
-            //label = str;
             InitializeComponent();
             label1.Text = str;
         }
@@ -92,11 +85,6 @@ namespace AutoLabel
         {
             if (textBoxEdit.Text.Length < 1) return;
             textBoxEdit.Text = textBoxEdit.Text.Substring(0, textBoxEdit.Text.Length - 1);
-        }
-
-        private void textBoxEdit_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -25,9 +25,11 @@ namespace AutoLabel
             else
             {
                 FormBorderStyle = FormBorderStyle.Sizable;
-                labelVersion.Text += " (Режим ПК)";
+                //labelVersion.Text += " (Режим ПК)";
                 panel2.Location = new Point(0,24);
-                labelClock.Visible = false;
+                //labelClock.Visible = false;
+                buttonShift.Visible = false;
+                buttonProperties.Visible = false;
             }
         }
 
@@ -83,7 +85,16 @@ namespace AutoLabel
         void RefreshMain()
         {
             Data.Load();
-            buttonShift.Text = Data.Shift;
+            if (Data.IsMachine)
+                buttonShift.Text = Data.Shift;
+            else
+            {
+                labelformname.Text = Data.Shift;
+                смена1ToolStripMenuItem.Checked = Data.Shift == Data.Shifts[0];
+                смена2ToolStripMenuItem.Checked = Data.Shift == Data.Shifts[1];
+                смена3ToolStripMenuItem.Checked = Data.Shift == Data.Shifts[2];
+                смена4ToolStripMenuItem.Checked = Data.Shift == Data.Shifts[3];
+            }
             label1.Text = Data.Labels[0].LabelUnderButton();
             label2.Text = Data.Labels[1].LabelUnderButton();
             label3.Text = Data.Labels[2].LabelUnderButton();
@@ -178,16 +189,18 @@ namespace AutoLabel
         private void вводДанныхToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormProperties formprop = new FormProperties();
-            timer2.Enabled = false;
+            timer2.Enabled = false; //Останавливаем автоматическое обновление
             formprop.ShowDialog();
-            timer2.Enabled = true;
+            timer2.Enabled = true; //Запускаем автоматическое обновление
             RefreshMain();
         }
 
         private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormUsers form = new FormUsers();
+            FormUsersPC form = new FormUsersPC();
+            timer2.Enabled = false; //Останавливаем автоматическое обновление
             form.ShowDialog();
+            timer2.Enabled = true; //Запускаем автоматическое обновление
         }
 
         private void отчётыToolStripMenuItem_Click(object sender, EventArgs e)
@@ -205,6 +218,34 @@ namespace AutoLabel
         {
             FormCustomLabel form = new FormCustomLabel();
             form.ShowDialog();
+        }
+
+        void ChangeShift(string shift)
+        {
+            if (MessageBox.Show("Подтверждаете заступление новой смены?", "Новая смена", MessageBoxButtons.YesNo)
+                == DialogResult.Yes)
+                Data.ShiftChange(shift);
+            RefreshMain();
+        }
+
+        private void смена1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!смена1ToolStripMenuItem.Checked) ChangeShift(Data.Shifts[0]);
+        }
+
+        private void смена2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!смена2ToolStripMenuItem.Checked) ChangeShift(Data.Shifts[1]);
+        }
+
+        private void смена3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!смена3ToolStripMenuItem.Checked) ChangeShift(Data.Shifts[2]);
+        }
+
+        private void смена4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!смена4ToolStripMenuItem.Checked) ChangeShift(Data.Shifts[3]);
         }
     }
 }

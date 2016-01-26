@@ -43,11 +43,11 @@
             // 
             // buttonLog
             // 
-            this.buttonLog.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonLog.ForeColor = System.Drawing.Color.White;
-            this.buttonLog.Location = new System.Drawing.Point(56, 375);
+            this.buttonLog.Location = new System.Drawing.Point(54, 370);
             this.buttonLog.Name = "buttonLog";
             this.buttonLog.Size = new System.Drawing.Size(318, 70);
             this.buttonLog.TabIndex = 10;
@@ -70,7 +70,7 @@
             // buttonCancel
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonCancel.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCancel.ForeColor = System.Drawing.Color.White;
@@ -84,11 +84,11 @@
             // 
             // buttonMianRepotr
             // 
-            this.buttonMianRepotr.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonMianRepotr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonMianRepotr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMianRepotr.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonMianRepotr.ForeColor = System.Drawing.Color.White;
-            this.buttonMianRepotr.Location = new System.Drawing.Point(56, 292);
+            this.buttonMianRepotr.Location = new System.Drawing.Point(54, 287);
             this.buttonMianRepotr.Name = "buttonMianRepotr";
             this.buttonMianRepotr.Size = new System.Drawing.Size(318, 70);
             this.buttonMianRepotr.TabIndex = 31;
@@ -135,11 +135,11 @@
             // 
             // buttonReportByPart
             // 
-            this.buttonReportByPart.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonReportByPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonReportByPart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReportByPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonReportByPart.ForeColor = System.Drawing.Color.White;
-            this.buttonReportByPart.Location = new System.Drawing.Point(389, 292);
+            this.buttonReportByPart.Location = new System.Drawing.Point(387, 287);
             this.buttonReportByPart.Name = "buttonReportByPart";
             this.buttonReportByPart.Size = new System.Drawing.Size(318, 70);
             this.buttonReportByPart.TabIndex = 35;
@@ -149,11 +149,11 @@
             // 
             // buttonByTPA
             // 
-            this.buttonByTPA.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonByTPA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonByTPA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonByTPA.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonByTPA.ForeColor = System.Drawing.Color.White;
-            this.buttonByTPA.Location = new System.Drawing.Point(389, 375);
+            this.buttonByTPA.Location = new System.Drawing.Point(387, 370);
             this.buttonByTPA.Name = "buttonByTPA";
             this.buttonByTPA.Size = new System.Drawing.Size(318, 70);
             this.buttonByTPA.TabIndex = 36;
@@ -167,7 +167,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.SlateGray;
+            this.panel1.Controls.Add(this.buttonByTPA);
+            this.panel1.Controls.Add(this.buttonReportByPart);
             this.panel1.Controls.Add(this.buttonCancel);
+            this.panel1.Controls.Add(this.buttonLog);
+            this.panel1.Controls.Add(this.buttonMianRepotr);
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(755, 560);
@@ -179,14 +183,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(759, 564);
-            this.Controls.Add(this.buttonByTPA);
-            this.Controls.Add(this.buttonReportByPart);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxShift);
-            this.Controls.Add(this.buttonMianRepotr);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonLog);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormReports";

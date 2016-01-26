@@ -60,6 +60,7 @@
             // 
             // buttonquit
             // 
+            this.buttonquit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonquit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonquit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonquit.ForeColor = System.Drawing.Color.White;
@@ -68,7 +69,7 @@
             this.buttonquit.Size = new System.Drawing.Size(250, 76);
             this.buttonquit.TabIndex = 1;
             this.buttonquit.Text = "< Назад";
-            this.buttonquit.UseVisualStyleBackColor = true;
+            this.buttonquit.UseVisualStyleBackColor = false;
             this.buttonquit.Click += new System.EventHandler(this.buttonquit_Click);
             // 
             // labelNum
@@ -125,6 +126,7 @@
             // 
             // buttonMax
             // 
+            this.buttonMax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonMax.ForeColor = System.Drawing.Color.White;
@@ -133,11 +135,12 @@
             this.buttonMax.Size = new System.Drawing.Size(80, 80);
             this.buttonMax.TabIndex = 6;
             this.buttonMax.Text = ">";
-            this.buttonMax.UseVisualStyleBackColor = true;
+            this.buttonMax.UseVisualStyleBackColor = false;
             this.buttonMax.Click += new System.EventHandler(this.buttonMax_Click);
             // 
             // buttonDec
             // 
+            this.buttonDec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonDec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDec.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDec.ForeColor = System.Drawing.Color.White;
@@ -146,7 +149,7 @@
             this.buttonDec.Size = new System.Drawing.Size(80, 80);
             this.buttonDec.TabIndex = 5;
             this.buttonDec.Text = "<";
-            this.buttonDec.UseVisualStyleBackColor = true;
+            this.buttonDec.UseVisualStyleBackColor = false;
             this.buttonDec.Click += new System.EventHandler(this.buttonDec_Click);
             // 
             // label1
@@ -181,6 +184,7 @@
             // 
             // buttonPrint
             // 
+            this.buttonPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPrint.ForeColor = System.Drawing.Color.White;
@@ -189,7 +193,7 @@
             this.buttonPrint.Size = new System.Drawing.Size(294, 137);
             this.buttonPrint.TabIndex = 6;
             this.buttonPrint.Text = "Печать";
-            this.buttonPrint.UseVisualStyleBackColor = true;
+            this.buttonPrint.UseVisualStyleBackColor = false;
             this.buttonPrint.Visible = false;
             this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
@@ -318,6 +322,7 @@
             // 
             // buttonCountInc
             // 
+            this.buttonCountInc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonCountInc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCountInc.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCountInc.ForeColor = System.Drawing.Color.White;
@@ -326,12 +331,13 @@
             this.buttonCountInc.Size = new System.Drawing.Size(80, 80);
             this.buttonCountInc.TabIndex = 6;
             this.buttonCountInc.Text = ">";
-            this.buttonCountInc.UseVisualStyleBackColor = true;
+            this.buttonCountInc.UseVisualStyleBackColor = false;
             this.buttonCountInc.Visible = false;
             this.buttonCountInc.Click += new System.EventHandler(this.buttonCountInc_Click);
             // 
             // buttonCountDec
             // 
+            this.buttonCountDec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonCountDec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCountDec.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCountDec.ForeColor = System.Drawing.Color.White;
@@ -340,7 +346,7 @@
             this.buttonCountDec.Size = new System.Drawing.Size(80, 80);
             this.buttonCountDec.TabIndex = 5;
             this.buttonCountDec.Text = "<";
-            this.buttonCountDec.UseVisualStyleBackColor = true;
+            this.buttonCountDec.UseVisualStyleBackColor = false;
             this.buttonCountDec.Visible = false;
             this.buttonCountDec.Click += new System.EventHandler(this.buttonCountDec_Click);
             // 

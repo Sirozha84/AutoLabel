@@ -81,6 +81,7 @@
             this.textBoxEdit = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -98,12 +99,12 @@
             // buttonCancel
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonCancel.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCancel.ForeColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(562, 563);
+            this.buttonCancel.Location = new System.Drawing.Point(558, 561);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(262, 74);
             this.buttonCancel.TabIndex = 27;
@@ -114,11 +115,11 @@
             // buttonOK
             // 
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonOK.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonOK.ForeColor = System.Drawing.Color.White;
-            this.buttonOK.Location = new System.Drawing.Point(285, 563);
+            this.buttonOK.Location = new System.Drawing.Point(279, 561);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(262, 74);
             this.buttonOK.TabIndex = 26;
@@ -215,7 +216,7 @@
             // 
             // buttonSpace
             // 
-            this.buttonSpace.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonSpace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonSpace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSpace.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSpace.ForeColor = System.Drawing.Color.White;
@@ -229,7 +230,7 @@
             // 
             // buttonYa
             // 
-            this.buttonYa.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonYa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonYa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonYa.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonYa.ForeColor = System.Drawing.Color.White;
@@ -243,7 +244,7 @@
             // 
             // buttonCh
             // 
-            this.buttonCh.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonCh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonCh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCh.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCh.ForeColor = System.Drawing.Color.White;
@@ -257,7 +258,7 @@
             // 
             // buttonS
             // 
-            this.buttonS.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonS.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonS.ForeColor = System.Drawing.Color.White;
@@ -271,7 +272,7 @@
             // 
             // buttonM
             // 
-            this.buttonM.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonM.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonM.ForeColor = System.Drawing.Color.White;
@@ -285,7 +286,7 @@
             // 
             // buttonI
             // 
-            this.buttonI.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonI.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonI.ForeColor = System.Drawing.Color.White;
@@ -299,7 +300,7 @@
             // 
             // buttonT
             // 
-            this.buttonT.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonT.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonT.ForeColor = System.Drawing.Color.White;
@@ -313,7 +314,7 @@
             // 
             // buttonMZ
             // 
-            this.buttonMZ.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonMZ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonMZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonMZ.ForeColor = System.Drawing.Color.White;
@@ -327,7 +328,7 @@
             // 
             // buttonAnd
             // 
-            this.buttonAnd.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonAnd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonAnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAnd.ForeColor = System.Drawing.Color.White;
@@ -341,7 +342,7 @@
             // 
             // buttonYu
             // 
-            this.buttonYu.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonYu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonYu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonYu.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonYu.ForeColor = System.Drawing.Color.White;
@@ -355,7 +356,7 @@
             // 
             // buttonEe
             // 
-            this.buttonEe.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonEe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonEe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEe.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonEe.ForeColor = System.Drawing.Color.White;
@@ -369,7 +370,7 @@
             // 
             // buttonZh
             // 
-            this.buttonZh.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonZh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonZh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonZh.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonZh.ForeColor = System.Drawing.Color.White;
@@ -383,7 +384,7 @@
             // 
             // buttonD
             // 
-            this.buttonD.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonD.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonD.ForeColor = System.Drawing.Color.White;
@@ -397,7 +398,7 @@
             // 
             // buttonL
             // 
-            this.buttonL.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonL.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonL.ForeColor = System.Drawing.Color.White;
@@ -411,7 +412,7 @@
             // 
             // buttonO
             // 
-            this.buttonO.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonO.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonO.ForeColor = System.Drawing.Color.White;
@@ -425,7 +426,7 @@
             // 
             // buttonR
             // 
-            this.buttonR.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonR.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonR.ForeColor = System.Drawing.Color.White;
@@ -439,7 +440,7 @@
             // 
             // buttonP
             // 
-            this.buttonP.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonP.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonP.ForeColor = System.Drawing.Color.White;
@@ -453,7 +454,7 @@
             // 
             // buttonA
             // 
-            this.buttonA.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonA.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonA.ForeColor = System.Drawing.Color.White;
@@ -467,7 +468,7 @@
             // 
             // buttonV
             // 
-            this.buttonV.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonV.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonV.ForeColor = System.Drawing.Color.White;
@@ -481,7 +482,7 @@
             // 
             // buttonIi
             // 
-            this.buttonIi.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonIi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonIi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonIi.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonIi.ForeColor = System.Drawing.Color.White;
@@ -495,7 +496,7 @@
             // 
             // buttonF
             // 
-            this.buttonF.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonF.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonF.ForeColor = System.Drawing.Color.White;
@@ -509,7 +510,7 @@
             // 
             // buttonJ
             // 
-            this.buttonJ.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonJ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonJ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonJ.ForeColor = System.Drawing.Color.White;
@@ -523,7 +524,7 @@
             // 
             // buttonTs
             // 
-            this.buttonTs.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonTs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonTs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTs.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonTs.ForeColor = System.Drawing.Color.White;
@@ -537,7 +538,7 @@
             // 
             // buttonU
             // 
-            this.buttonU.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonU.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonU.ForeColor = System.Drawing.Color.White;
@@ -551,7 +552,7 @@
             // 
             // buttonK
             // 
-            this.buttonK.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonK.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonK.ForeColor = System.Drawing.Color.White;
@@ -565,7 +566,7 @@
             // 
             // buttonE
             // 
-            this.buttonE.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonE.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonE.ForeColor = System.Drawing.Color.White;
@@ -579,7 +580,7 @@
             // 
             // buttonN
             // 
-            this.buttonN.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonN.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonN.ForeColor = System.Drawing.Color.White;
@@ -593,7 +594,7 @@
             // 
             // buttonG
             // 
-            this.buttonG.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonG.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonG.ForeColor = System.Drawing.Color.White;
@@ -607,7 +608,7 @@
             // 
             // buttonSh
             // 
-            this.buttonSh.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonSh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonSh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSh.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSh.ForeColor = System.Drawing.Color.White;
@@ -621,7 +622,7 @@
             // 
             // buttonShya
             // 
-            this.buttonShya.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonShya.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonShya.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShya.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonShya.ForeColor = System.Drawing.Color.White;
@@ -635,7 +636,7 @@
             // 
             // buttonZ
             // 
-            this.buttonZ.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonZ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonZ.ForeColor = System.Drawing.Color.White;
@@ -649,7 +650,7 @@
             // 
             // buttonH
             // 
-            this.buttonH.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonH.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonH.ForeColor = System.Drawing.Color.White;
@@ -663,7 +664,7 @@
             // 
             // buttonTZ
             // 
-            this.buttonTZ.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonTZ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonTZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonTZ.ForeColor = System.Drawing.Color.White;
@@ -677,7 +678,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.SlateGray;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.White;
@@ -691,7 +692,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.SlateGray;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.ForeColor = System.Drawing.Color.White;
@@ -705,7 +706,7 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.SlateGray;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.ForeColor = System.Drawing.Color.White;
@@ -719,7 +720,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.SlateGray;
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button5.ForeColor = System.Drawing.Color.White;
@@ -733,7 +734,7 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.SlateGray;
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button6.ForeColor = System.Drawing.Color.White;
@@ -747,7 +748,7 @@
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.SlateGray;
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button7.ForeColor = System.Drawing.Color.White;
@@ -761,7 +762,7 @@
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.SlateGray;
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button8.ForeColor = System.Drawing.Color.White;
@@ -775,7 +776,7 @@
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.Color.SlateGray;
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button9.ForeColor = System.Drawing.Color.White;
@@ -789,7 +790,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.SlateGray;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.Color.White;
@@ -803,7 +804,7 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
@@ -817,7 +818,7 @@
             // 
             // buttonZpt
             // 
-            this.buttonZpt.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonZpt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonZpt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonZpt.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonZpt.ForeColor = System.Drawing.Color.White;
@@ -830,7 +831,7 @@
             // 
             // buttonDot
             // 
-            this.buttonDot.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonDot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonDot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDot.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDot.ForeColor = System.Drawing.Color.White;
@@ -844,7 +845,7 @@
             // 
             // buttonPercent
             // 
-            this.buttonPercent.BackColor = System.Drawing.Color.SlateGray;
+            this.buttonPercent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonPercent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPercent.ForeColor = System.Drawing.Color.White;
@@ -865,6 +866,7 @@
             this.textBoxEdit.Name = "textBoxEdit";
             this.textBoxEdit.Size = new System.Drawing.Size(987, 44);
             this.textBoxEdit.TabIndex = 24;
+            this.textBoxEdit.TabStop = false;
             // 
             // panel1
             // 
@@ -872,6 +874,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.SlateGray;
+            this.panel1.Controls.Add(this.buttonCancel);
+            this.panel1.Controls.Add(this.buttonOK);
             this.panel1.ForeColor = System.Drawing.Color.Red;
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
@@ -887,8 +891,6 @@
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(1109, 671);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.textBoxEdit);
             this.Controls.Add(this.panel1);
@@ -898,6 +900,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormKeyboardLetter_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

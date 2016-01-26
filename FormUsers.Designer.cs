@@ -57,6 +57,7 @@
             // 
             // buttonquit
             // 
+            this.buttonquit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonquit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonquit.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonquit.ForeColor = System.Drawing.Color.White;
@@ -65,7 +66,7 @@
             this.buttonquit.Size = new System.Drawing.Size(250, 76);
             this.buttonquit.TabIndex = 2;
             this.buttonquit.Text = "< Назад";
-            this.buttonquit.UseVisualStyleBackColor = true;
+            this.buttonquit.UseVisualStyleBackColor = false;
             this.buttonquit.Click += new System.EventHandler(this.buttonquit_Click);
             // 
             // panel2
@@ -84,6 +85,7 @@
             // buttonsave
             // 
             this.buttonsave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonsave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonsave.ForeColor = System.Drawing.Color.White;
@@ -92,7 +94,7 @@
             this.buttonsave.Size = new System.Drawing.Size(250, 76);
             this.buttonsave.TabIndex = 8;
             this.buttonsave.Text = "Сохранить";
-            this.buttonsave.UseVisualStyleBackColor = true;
+            this.buttonsave.UseVisualStyleBackColor = false;
             this.buttonsave.Visible = false;
             this.buttonsave.Click += new System.EventHandler(this.buttonsave_Click);
             // 
@@ -119,6 +121,7 @@
             // buttonNew
             // 
             this.buttonNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNew.ForeColor = System.Drawing.Color.White;
@@ -127,12 +130,13 @@
             this.buttonNew.Size = new System.Drawing.Size(250, 87);
             this.buttonNew.TabIndex = 14;
             this.buttonNew.Text = "Новый упаковщик";
-            this.buttonNew.UseVisualStyleBackColor = true;
+            this.buttonNew.UseVisualStyleBackColor = false;
             this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
             // 
             // buttonNewAdmin
             // 
             this.buttonNewAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonNewAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonNewAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNewAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNewAdmin.ForeColor = System.Drawing.Color.White;
@@ -141,12 +145,13 @@
             this.buttonNewAdmin.Size = new System.Drawing.Size(250, 87);
             this.buttonNewAdmin.TabIndex = 15;
             this.buttonNewAdmin.Text = "Новый администратор";
-            this.buttonNewAdmin.UseVisualStyleBackColor = true;
+            this.buttonNewAdmin.UseVisualStyleBackColor = false;
             this.buttonNewAdmin.Click += new System.EventHandler(this.buttonRules_Click);
             // 
             // buttonDelete
             // 
             this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
@@ -155,13 +160,14 @@
             this.buttonDelete.Size = new System.Drawing.Size(250, 87);
             this.buttonDelete.TabIndex = 16;
             this.buttonDelete.Text = "Удалить";
-            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Visible = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonKey
             // 
             this.buttonKey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonKey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonKey.ForeColor = System.Drawing.Color.White;
@@ -170,7 +176,7 @@
             this.buttonKey.Size = new System.Drawing.Size(250, 87);
             this.buttonKey.TabIndex = 17;
             this.buttonKey.Text = "Изменить ключ";
-            this.buttonKey.UseVisualStyleBackColor = true;
+            this.buttonKey.UseVisualStyleBackColor = false;
             this.buttonKey.Visible = false;
             this.buttonKey.Click += new System.EventHandler(this.buttonKey_Click);
             // 
