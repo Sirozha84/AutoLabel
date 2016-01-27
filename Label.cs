@@ -309,26 +309,6 @@ namespace AutoLabel
         }
 
         /// <summary>
-        /// Запись шапки для нового лога (не знаю надо ли, но на всякий случай сделаю)
-        /// </summary>
-        public static void NewLog()
-        {
-            try
-            {
-                string name = "Logs\\" + Data.LogName[0] + ".csv";
-                Directory.CreateDirectory("Logs");
-                if (!File.Exists(name))
-                {
-                    //Создаём новый файл, только если его нет
-                    StreamWriter file = new StreamWriter("Logs\\" + Data.LogName[0] + ".csv", true, Encoding.Default);
-                    file.WriteLine("Дата; Время; Машина; Партия; Тип; Вес; Цвет; Короб; Упаковщик");
-                    file.Dispose();
-                }
-            }
-            catch { }
-        }
-
-        /// <summary>
         /// Подпись над кнопкой на главном экране
         /// </summary>
         /// <returns></returns>

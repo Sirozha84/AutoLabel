@@ -20,14 +20,13 @@ namespace AutoLabel
             if (Data.IsMachine)
             {
                 panel2.Location = new Point(0, 0);
+                labelVersion.Location = new Point(12, 110);
                 WindowState = FormWindowState.Maximized;
             }
             else
             {
                 FormBorderStyle = FormBorderStyle.Sizable;
-                //labelVersion.Text += " (Режим ПК)";
-                panel2.Location = new Point(0,24);
-                //labelClock.Visible = false;
+                labelVersion.Text += "     Режим оператора";
                 buttonShift.Visible = false;
                 buttonProperties.Visible = false;
             }
@@ -251,6 +250,14 @@ namespace AutoLabel
         private void привязкаПользователейКТПАToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormAccess form = new FormAccess();
+            timer2.Enabled = false; //Останавливаем автоматическое обновление
+            form.ShowDialog();
+            timer2.Enabled = true; //Запускаем автоматическое обновление
+        }
+
+        private void правкаЖурналаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLogEditor form = new FormLogEditor();
             timer2.Enabled = false; //Останавливаем автоматическое обновление
             form.ShowDialog();
             timer2.Enabled = true; //Запускаем автоматическое обновление

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
@@ -56,7 +54,6 @@ namespace AutoLabel
                         if (Str[i][0] == ' ') Str[i] = Str[i].Trim(' ');
                     log.Add(Str);
                 }
-                log.RemoveAt(0);
             }
             catch { }
         }

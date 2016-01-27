@@ -63,13 +63,14 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.принтерToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сменаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.смена1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.смена2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.смена3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.смена4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.правкаЖурналаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -264,7 +265,7 @@
             this.labelVersion.AutoSize = true;
             this.labelVersion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelVersion.ForeColor = System.Drawing.Color.Gray;
-            this.labelVersion.Location = new System.Drawing.Point(12, 110);
+            this.labelVersion.Location = new System.Drawing.Point(12, 134);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(44, 13);
             this.labelVersion.TabIndex = 2;
@@ -294,7 +295,7 @@
             this.panel2.Controls.Add(this.buttonShift);
             this.panel2.Controls.Add(this.buttonProperties);
             this.panel2.Controls.Add(this.labelformname);
-            this.panel2.Location = new System.Drawing.Point(0, 24);
+            this.panel2.Location = new System.Drawing.Point(0, 23);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(885, 100);
             this.panel2.TabIndex = 9;
@@ -369,6 +370,7 @@
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.отчётыToolStripMenuItem,
+            this.правкаЖурналаToolStripMenuItem,
             this.этикеткаСПроизвольнымиПолямиToolStripMenuItem,
             this.toolStripMenuItem1,
             this.выходToolStripMenuItem});
@@ -452,21 +454,6 @@
             this.принтерToolStripMenuItem.Text = "Принтер";
             this.принтерToolStripMenuItem.Click += new System.EventHandler(this.принтерToolStripMenuItem_Click);
             // 
-            // справкаToolStripMenuItem
-            // 
-            this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.оПрограммеToolStripMenuItem});
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.справкаToolStripMenuItem.Text = "Справка";
-            // 
-            // оПрограммеToolStripMenuItem
-            // 
-            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.оПрограммеToolStripMenuItem.Text = "О программе";
-            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
-            // 
             // сменаToolStripMenuItem
             // 
             this.сменаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -509,6 +496,29 @@
             this.смена4ToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.смена4ToolStripMenuItem.Text = "Смена 4";
             this.смена4ToolStripMenuItem.Click += new System.EventHandler(this.смена4ToolStripMenuItem_Click);
+            // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.оПрограммеToolStripMenuItem});
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Text = "Справка";
+            // 
+            // оПрограммеToolStripMenuItem
+            // 
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
+            // 
+            // правкаЖурналаToolStripMenuItem
+            // 
+            this.правкаЖурналаToolStripMenuItem.Name = "правкаЖурналаToolStripMenuItem";
+            this.правкаЖурналаToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+            this.правкаЖурналаToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
+            this.правкаЖурналаToolStripMenuItem.Text = "Правка журнала";
+            this.правкаЖурналаToolStripMenuItem.Click += new System.EventHandler(this.правкаЖурналаToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -579,6 +589,7 @@
         private System.Windows.Forms.ToolStripMenuItem смена2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem смена3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem смена4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem правкаЖурналаToolStripMenuItem;
     }
 }
 

@@ -338,7 +338,8 @@ namespace AutoLabel
             {
                 Error("Не удалось сохранить настройку смены.");
             }
-            Label.NewLog();
+            //Label.NewLog();
+            Directory.CreateDirectory("Logs");
             //Обнуляем счётчики коробов
             if (ResetOnChangeShift)
                 foreach (Label l in Labels)
