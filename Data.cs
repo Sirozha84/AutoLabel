@@ -247,6 +247,7 @@ namespace AutoLabel
                 AccessControl = file.ReadLine() == "AccessControl ON";
                 while (!file.EndOfStream)
                 {
+                    file.ReadLine();
                     Users.Add(new User(file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine()));
                 }
                 file.Dispose();
@@ -266,12 +267,13 @@ namespace AutoLabel
                 if (AccessControl) file.WriteLine("ON"); else file.WriteLine("OFF");
                 foreach (User u in Users)
                 {
+                    file.WriteLine("--------------------");
                     file.WriteLine(u.Name);
                     file.WriteLine(u.Code);
                     file.WriteLine(u.Rule);
                     string a = "";
-                    foreach (byte b in u.TPAAccess)
-                        if (b == 0) a += "0"; else a += "1";
+                    foreach (bool b in u.TPAAccess)
+                        if (b) a += "1"; else a += "0";
                     file.WriteLine(a);
                 }
                 file.Dispose();
@@ -467,6 +469,19 @@ namespace AutoLabel
             }
             Users.Add(new User(name, code, Rule, "000000"));
             DrawUsersList(listbox);
+        }
+
+        /// <summary>
+        /// Проверка доступности ТПА данному пользователю
+        /// </summary>
+        /// <param name="name">Имя проверяемого</param>
+        /// <param name="tpa">Номер ТПА</param>
+        /// <returns></returns>
+        public static bool AccessTest(string name, int tpa)
+        {
+            if (!AccessControl) return true;
+            User u = Users.Find(us => us.Name == name);
+            return u.TPAAccess[tpa];
         }
     }
 }

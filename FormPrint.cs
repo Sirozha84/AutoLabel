@@ -125,7 +125,7 @@ namespace AutoLabel
             textBoxNum.Text = box.ToString();
             if (box < Data.Labels[NumMachine].CurrentNum)
             {
-                textBoxNum.ForeColor = Color.Red;
+                textBoxNum.ForeColor = Color.Tomato;
                 buttonMax.Visible = true;
             }
             else
@@ -145,7 +145,16 @@ namespace AutoLabel
 
         private void comboBoxUser_SelectedIndexChanged(object sender, EventArgs e)
         {
-            buttonPrint.Visible = true;
+            if (Data.AccessTest(comboBoxUser.SelectedItem.ToString(), NumMachine))
+            {
+                labelAccessDenied.Visible = false;
+                buttonPrint.Visible = true;
+            }
+            else
+            {
+                buttonPrint.Visible = false;
+                labelAccessDenied.Visible = true;
+            }
         }
 
         private void textBoxNum_Click(object sender, EventArgs e)

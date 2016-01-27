@@ -49,6 +49,7 @@
             this.buttonCountInc = new System.Windows.Forms.Button();
             this.buttonCountDec = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.labelAccessDenied = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -365,12 +366,28 @@
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label2.Visible = false;
             // 
+            // labelAccessDenied
+            // 
+            this.labelAccessDenied.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelAccessDenied.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelAccessDenied.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelAccessDenied.ForeColor = System.Drawing.Color.Tomato;
+            this.labelAccessDenied.Location = new System.Drawing.Point(12, 635);
+            this.labelAccessDenied.Name = "labelAccessDenied";
+            this.labelAccessDenied.Size = new System.Drawing.Size(934, 112);
+            this.labelAccessDenied.TabIndex = 10;
+            this.labelAccessDenied.Text = "Печать запрещена";
+            this.labelAccessDenied.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelAccessDenied.Visible = false;
+            // 
             // FormPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(958, 775);
+            this.Controls.Add(this.labelAccessDenied);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.labelNum);
@@ -421,5 +438,6 @@
         private System.Windows.Forms.Button buttonCountInc;
         private System.Windows.Forms.Button buttonCountDec;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelAccessDenied;
     }
 }
