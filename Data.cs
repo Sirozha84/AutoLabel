@@ -204,8 +204,6 @@ namespace AutoLabel
         {
             //Смена
             LoadShift();
-            //Пользователи
-            LoadUsers();
             //Лейблы
             Labels.Clear();
             for (int i = 0; i < 6; i++)
@@ -367,6 +365,7 @@ namespace AutoLabel
         /// <returns></returns>
         public static byte GetKey(int Minimum)
         {
+            LoadUsers();
             if (IsMachine)
             {
                 FormKey key = new FormKey();

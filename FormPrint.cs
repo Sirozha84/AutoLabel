@@ -21,6 +21,7 @@ namespace AutoLabel
         public FormPrint()
         {
             InitializeComponent();
+            Data.LoadUsers();
             //Режим для ПК
             if (!Data.IsMachine)
             {
@@ -166,6 +167,7 @@ namespace AutoLabel
             if (key.DialogResult == DialogResult.OK)
             {
                 Data.Labels[NumMachine].CurrentNum = Convert.ToInt32(key.Str);
+                Data.Labels[NumMachine].Save();
                 box = Data.Labels[NumMachine].CurrentNum;
                 DrawNum();
             }

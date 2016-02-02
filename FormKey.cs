@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace AutoLabel
@@ -12,6 +6,7 @@ namespace AutoLabel
     public partial class FormKey : Form
     {
         public string Code;
+        int s = 0;
 
         public FormKey()
         {
@@ -24,13 +19,12 @@ namespace AutoLabel
             Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void buttonCancel_KeyDown(object sender, KeyEventArgs e)
         {
-            if (textBox1.Text.Length==8)
-            {
-                Code = textBox1.Text;
-                Close();
-            }
+            s++;
+            Code += e.KeyValue.ToString();
+            if (s > 7) Close();
         }
+
     }
 }

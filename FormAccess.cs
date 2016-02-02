@@ -14,6 +14,7 @@ namespace AutoLabel
         public FormAccess()
         {
             InitializeComponent();
+            Data.LoadUsers();
         }
 
         private void FormAccess_Load(object sender, EventArgs e)

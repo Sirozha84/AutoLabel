@@ -14,6 +14,7 @@ namespace AutoLabel
         public FormUsers()
         {
             InitializeComponent();
+            Data.LoadUsers();
         }
 
         private void buttonquit_Click(object sender, EventArgs e)

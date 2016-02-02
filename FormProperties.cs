@@ -203,5 +203,12 @@ namespace AutoLabel
         {
             Program.About();
         }
+
+        private void buttonPegging_Click(object sender, EventArgs e)
+        {
+            FormAccess form = new FormAccess();
+            form.ShowDialog();
+
+        }
     }
 }

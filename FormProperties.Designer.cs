@@ -552,7 +552,6 @@
             // buttonPegging
             // 
             this.buttonPegging.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonPegging.Enabled = false;
             this.buttonPegging.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPegging.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPegging.ForeColor = System.Drawing.Color.White;
@@ -562,6 +561,7 @@
             this.buttonPegging.TabIndex = 16;
             this.buttonPegging.Text = "Привязки к ТПА";
             this.buttonPegging.UseVisualStyleBackColor = false;
+            this.buttonPegging.Click += new System.EventHandler(this.buttonPegging_Click);
             // 
             // buttonAbout
             // 

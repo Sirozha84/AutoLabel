@@ -14,6 +14,7 @@ namespace AutoLabel
         public FormUsersPC()
         {
             InitializeComponent();
+            Data.LoadUsers();
         }
 
         private void FormUsersPC_Load(object sender, EventArgs e)
