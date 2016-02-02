@@ -445,8 +445,7 @@ namespace AutoLabel
         /// Добавление нового пользователя
         /// </summary>
         /// <param name="Rule"></param>
-        /// <param name="listbox">Листбокс для отображения</param>
-        public static void AddNewUser(string Rule, ListBox listbox)
+        public static void AddNewUser(string Rule)
         {
             string name = "";
             string code = "";
@@ -468,7 +467,7 @@ namespace AutoLabel
                 name = input.Str;
             }
             Users.Add(new User(name, code, Rule, "000000"));
-            DrawUsersList(listbox);
+            Users.Sort((a,b) => a.Name.CompareTo(b.Name));
         }
 
         /// <summary>
@@ -482,6 +481,68 @@ namespace AutoLabel
             if (!AccessControl) return true;
             User u = Users.Find(us => us.Name == name);
             return u.TPAAccess[tpa];
+        }
+
+        /// <summary>
+        /// Рисуем красивую строчку с перечнем привязанных ТПА
+        /// </summary>
+        /// <param name="u">Пользователь</param>
+        /// <returns></returns>
+        public static string StringWidthTPA(User u)
+        {
+            string tpas = "";
+            int tc = 0;
+            foreach (bool b in u.TPAAccess) if (b) tc++; //Узнаём количество тпа
+            int tca = 0;
+            for (int i = 0; i < u.TPAAccess.Length; i++)
+            {
+                if (u.TPAAccess[i])
+                {
+                    tpas += (i + 1).ToString();
+                    tca++;
+                    if (tca < tc) tpas += ", ";
+                }
+            }
+            return tpas;
+        }
+
+        /// <summary>
+        /// Пользователь админ?
+        /// </summary>
+        /// <param name="u">Пользователь</param>
+        /// <returns></returns>
+        static string UserIsAdmin(User u)
+        {
+            if (u.Rule == 255) return "Админ";
+            return "";
+        }
+
+        /// <summary>
+        /// Пользователь с ключём?
+        /// </summary>
+        /// <param name="u"></param>
+        /// <returns></returns>
+        static string UserWidthKey(User u)
+        {
+            if (u.Code != "") return "Есть";
+            return "";
+        }
+
+        /// <summary>
+        /// Заполнение таблицы пользователей
+        /// </summary>
+        /// <param name="list">Ссылка на ListView</param>
+        public static void UserListDraw(ListView list)
+        {
+            list.Items.Clear();
+            foreach (User u in Users)
+            {
+                ListViewItem it = new ListViewItem(u.Name);
+                it.SubItems.Add(UserIsAdmin(u));
+                it.SubItems.Add(UserWidthKey(u));
+                it.SubItems.Add(StringWidthTPA(u));
+                list.Items.Add(it);
+            }
         }
     }
 }

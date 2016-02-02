@@ -71,6 +71,7 @@ namespace AutoLabel
         private void button11_Click(object sender, EventArgs e) { AddLetter("б"); }
         private void button32_Click(object sender, EventArgs e) { AddLetter("ю"); }
         private void button34_Click(object sender, EventArgs e) { AddLetter("."); }
+        private void buttonZpt_Click(object sender, EventArgs e) { AddLetter(","); }
         private void button1_Click_1(object sender, EventArgs e) { AddLetter("1"); }
         private void button2_Click_1(object sender, EventArgs e) { AddLetter("2"); }
         private void button3_Click_1(object sender, EventArgs e) { AddLetter("3"); }

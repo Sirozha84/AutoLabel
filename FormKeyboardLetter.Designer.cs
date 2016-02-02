@@ -828,6 +828,7 @@
             this.buttonZpt.TabIndex = 44;
             this.buttonZpt.Text = ",";
             this.buttonZpt.UseVisualStyleBackColor = false;
+            this.buttonZpt.Click += new System.EventHandler(this.buttonZpt_Click);
             // 
             // buttonDot
             // 

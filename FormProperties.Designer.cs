@@ -59,7 +59,6 @@
             this.buttonPrinterSelect = new System.Windows.Forms.Button();
             this.buttonReport = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonPegging = new System.Windows.Forms.Button();
             this.buttonAbout = new System.Windows.Forms.Button();
             this.buttonUsers = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
@@ -497,7 +496,7 @@
             this.buttonquitprogram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonquitprogram.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonquitprogram.ForeColor = System.Drawing.Color.White;
-            this.buttonquitprogram.Location = new System.Drawing.Point(12, 286);
+            this.buttonquitprogram.Location = new System.Drawing.Point(12, 232);
             this.buttonquitprogram.Name = "buttonquitprogram";
             this.buttonquitprogram.Size = new System.Drawing.Size(127, 48);
             this.buttonquitprogram.TabIndex = 11;
@@ -511,7 +510,7 @@
             this.buttonPrinterSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrinterSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPrinterSelect.ForeColor = System.Drawing.Color.White;
-            this.buttonPrinterSelect.Location = new System.Drawing.Point(12, 178);
+            this.buttonPrinterSelect.Location = new System.Drawing.Point(12, 124);
             this.buttonPrinterSelect.Name = "buttonPrinterSelect";
             this.buttonPrinterSelect.Size = new System.Drawing.Size(127, 48);
             this.buttonPrinterSelect.TabIndex = 12;
@@ -525,7 +524,7 @@
             this.buttonReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonReport.ForeColor = System.Drawing.Color.White;
-            this.buttonReport.Location = new System.Drawing.Point(12, 124);
+            this.buttonReport.Location = new System.Drawing.Point(12, 70);
             this.buttonReport.Name = "buttonReport";
             this.buttonReport.Size = new System.Drawing.Size(127, 48);
             this.buttonReport.TabIndex = 13;
@@ -538,7 +537,6 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.Gray;
-            this.panel1.Controls.Add(this.buttonPegging);
             this.panel1.Controls.Add(this.buttonAbout);
             this.panel1.Controls.Add(this.buttonUsers);
             this.panel1.Controls.Add(this.buttonPrinterSelect);
@@ -549,27 +547,13 @@
             this.panel1.Size = new System.Drawing.Size(151, 577);
             this.panel1.TabIndex = 14;
             // 
-            // buttonPegging
-            // 
-            this.buttonPegging.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonPegging.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPegging.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonPegging.ForeColor = System.Drawing.Color.White;
-            this.buttonPegging.Location = new System.Drawing.Point(12, 70);
-            this.buttonPegging.Name = "buttonPegging";
-            this.buttonPegging.Size = new System.Drawing.Size(127, 48);
-            this.buttonPegging.TabIndex = 16;
-            this.buttonPegging.Text = "Привязки к ТПА";
-            this.buttonPegging.UseVisualStyleBackColor = false;
-            this.buttonPegging.Click += new System.EventHandler(this.buttonPegging_Click);
-            // 
             // buttonAbout
             // 
             this.buttonAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAbout.ForeColor = System.Drawing.Color.White;
-            this.buttonAbout.Location = new System.Drawing.Point(12, 232);
+            this.buttonAbout.Location = new System.Drawing.Point(12, 178);
             this.buttonAbout.Name = "buttonAbout";
             this.buttonAbout.Size = new System.Drawing.Size(127, 48);
             this.buttonAbout.TabIndex = 15;
@@ -669,6 +653,5 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Button buttonAbout;
-        private System.Windows.Forms.Button buttonPegging;
     }
 }

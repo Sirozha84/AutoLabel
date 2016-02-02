@@ -54,12 +54,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчётыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.правкаЖурналаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.этикеткаСПроизвольнымиПолямиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.параметрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вводДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.привязкаПользователейКТПАToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.принтерToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +70,6 @@
             this.смена4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.правкаЖурналаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -386,6 +385,14 @@
             this.отчётыToolStripMenuItem.Text = "Отчёты";
             this.отчётыToolStripMenuItem.Click += new System.EventHandler(this.отчётыToolStripMenuItem_Click);
             // 
+            // правкаЖурналаToolStripMenuItem
+            // 
+            this.правкаЖурналаToolStripMenuItem.Name = "правкаЖурналаToolStripMenuItem";
+            this.правкаЖурналаToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+            this.правкаЖурналаToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
+            this.правкаЖурналаToolStripMenuItem.Text = "Правка журнала";
+            this.правкаЖурналаToolStripMenuItem.Click += new System.EventHandler(this.правкаЖурналаToolStripMenuItem_Click);
+            // 
             // этикеткаСПроизвольнымиПолямиToolStripMenuItem
             // 
             this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Name = "этикеткаСПроизвольнымиПолямиToolStripMenuItem";
@@ -410,9 +417,8 @@
             // 
             this.параметрыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.вводДанныхToolStripMenuItem,
-            this.привязкаПользователейКТПАToolStripMenuItem,
-            this.toolStripMenuItem2,
             this.пользователиToolStripMenuItem,
+            this.toolStripMenuItem2,
             this.принтерToolStripMenuItem});
             this.параметрыToolStripMenuItem.Name = "параметрыToolStripMenuItem";
             this.параметрыToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
@@ -422,35 +428,27 @@
             // 
             this.вводДанныхToolStripMenuItem.Name = "вводДанныхToolStripMenuItem";
             this.вводДанныхToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.вводДанныхToolStripMenuItem.Size = new System.Drawing.Size(288, 22);
+            this.вводДанныхToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.вводДанныхToolStripMenuItem.Text = "Установка параметров";
             this.вводДанныхToolStripMenuItem.Click += new System.EventHandler(this.вводДанныхToolStripMenuItem_Click);
-            // 
-            // привязкаПользователейКТПАToolStripMenuItem
-            // 
-            this.привязкаПользователейКТПАToolStripMenuItem.Name = "привязкаПользователейКТПАToolStripMenuItem";
-            this.привязкаПользователейКТПАToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.привязкаПользователейКТПАToolStripMenuItem.Size = new System.Drawing.Size(288, 22);
-            this.привязкаПользователейКТПАToolStripMenuItem.Text = "Привязка пользователей к ТПА";
-            this.привязкаПользователейКТПАToolStripMenuItem.Click += new System.EventHandler(this.привязкаПользователейКТПАToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(285, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(237, 6);
             // 
             // пользователиToolStripMenuItem
             // 
             this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
             this.пользователиToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
-            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(288, 22);
+            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.пользователиToolStripMenuItem.Text = "Пользователи";
             this.пользователиToolStripMenuItem.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
             // 
             // принтерToolStripMenuItem
             // 
             this.принтерToolStripMenuItem.Name = "принтерToolStripMenuItem";
-            this.принтерToolStripMenuItem.Size = new System.Drawing.Size(288, 22);
+            this.принтерToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.принтерToolStripMenuItem.Text = "Принтер";
             this.принтерToolStripMenuItem.Click += new System.EventHandler(this.принтерToolStripMenuItem_Click);
             // 
@@ -508,17 +506,9 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
-            // 
-            // правкаЖурналаToolStripMenuItem
-            // 
-            this.правкаЖурналаToolStripMenuItem.Name = "правкаЖурналаToolStripMenuItem";
-            this.правкаЖурналаToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.правкаЖурналаToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
-            this.правкаЖурналаToolStripMenuItem.Text = "Правка журнала";
-            this.правкаЖурналаToolStripMenuItem.Click += new System.EventHandler(this.правкаЖурналаToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -578,7 +568,6 @@
         private System.Windows.Forms.ToolStripMenuItem параметрыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вводДанныхToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem привязкаПользователейКТПАToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчётыToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;

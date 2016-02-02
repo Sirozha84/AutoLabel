@@ -206,7 +206,7 @@ namespace AutoLabel
 
         private void buttonPegging_Click(object sender, EventArgs e)
         {
-            FormAccess form = new FormAccess();
+            FormUsersPC form = new FormUsersPC();
             form.ShowDialog();
 
         }
