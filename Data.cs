@@ -368,6 +368,9 @@ namespace AutoLabel
             LoadUsers();
             if (IsMachine)
             {
+                //Сначала проверим, есть ли в списке хоть один админ
+                if (Users.Find(u => (u.Rule == 255 & u.Code != "")) == null) return 255;
+                //Админы есть, значит просим прислонить ключ
                 FormKey key = new FormKey();
                 key.ShowDialog();
                 //Ищем ключ в базе
@@ -423,22 +426,6 @@ namespace AutoLabel
         public static bool LittleBox(int TPA)
         {
             return LittleBox(Labels[TPA].Count);
-        }
-
-        /// <summary>
-        /// Заполнение списка пользователей
-        /// </summary>
-        /// <param name="listbox">Листбокс для отображения</param>
-        public static void DrawUsersList(ListBox listbox)
-        {
-            listbox.Items.Clear();
-            foreach (User u in Users)
-            {
-                string str = u.Name;
-                if (u.Rule == 255) str += "               администратор";
-                if (u.Code == "") str += "               (без ключа)";
-                listbox.Items.Add(str);
-            }
         }
 
         /// <summary>
@@ -542,6 +529,25 @@ namespace AutoLabel
                 it.SubItems.Add(UserWidthKey(u));
                 it.SubItems.Add(StringWidthTPA(u));
                 list.Items.Add(it);
+            }
+        }
+
+        /// <summary>
+        /// Строчка с названием машины
+        /// </summary>
+        /// <param name="num">Номер ТПА</param>
+        /// <returns></returns>
+        public static string TPAtoString(string num)
+        {
+            switch (num)
+            {
+                case "1": return "Husky №1";
+                case "2": return "Netstal №2";
+                case "3": return "Netstal №3";
+                case "4": return "Netstal №4";
+                case "5": return "Netstal №5";
+                case "6": return "Netstal №6";
+                default: return "Error";
             }
         }
     }

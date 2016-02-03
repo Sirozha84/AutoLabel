@@ -68,26 +68,15 @@ namespace AutoLabel
             Num = num;
             Packer = packer;
             LabelCount = count;
-            if (Date == null)
+            /*if (Date == null)
             {
                 Date = DateToString();
                 Time = DateTime.Now.ToString("HH:mm");
                 Shift = Data.Shift;
-            }
-            if (!Data.PrintSelected()) Data.PrintSetup();
-            if (!Data.PrintSelected()) return;
-            try
-            {
-                PrintDocument doc = new PrintDocument();
-                doc.PrintPage += new PrintPageEventHandler(PD_PrintPage);
-                doc.PrinterSettings = Data.printersettings;
-                doc.Print();
-            }
-            catch
-            {
-                MessageBox.Show("Произошла ошибка при печати.\n" +
-                    "Проверьте включен ли принтер, есть ли в нём бумага и тонер.");
-            }
+            }*/
+
+            Print(num, packer, count, DateToString(), DateTime.Now.ToString("HH:mm"), Data.Shift);
+
         }
 
         /// <summary>
@@ -104,7 +93,21 @@ namespace AutoLabel
             Date = date;
             Time = time;
             Shift = shift;
-            Print(num, packer, count);
+
+            if (!Data.PrintSelected()) Data.PrintSetup();
+            if (!Data.PrintSelected()) return;
+            try
+            {
+                PrintDocument doc = new PrintDocument();
+                doc.PrintPage += new PrintPageEventHandler(PD_PrintPage);
+                doc.PrinterSettings = Data.printersettings;
+                doc.Print();
+            }
+            catch
+            {
+                MessageBox.Show("Произошла ошибка при печати.\n" +
+                    "Проверьте включен ли принтер, есть ли в нём бумага и тонер.");
+            }
         }
 
         /// <summary>
@@ -166,7 +169,7 @@ namespace AutoLabel
             g.DrawString(AntistaticType, Big, Brushes.Black, new Point(X + 420, Y + 217));
             //Дополнительные поля
             g.DrawString("Прочие дополнения: " + Other, Small, Brushes.Black, new Point(X + 10, Y + 280));
-            DrawStrings(g, X, Y, 220, 300, "Машина", "Machine", "NETSTAL №" + TPA);
+            DrawStrings(g, X, Y, 220, 300, "Машина", "Machine", Data.TPAtoString(TPA));
             DrawStrings(g, X, Y, 220, 340, "Марка материала", "Material", Material);
             DrawStrings(g, X, Y, 220, 380, "Цвет преформы", "Preform colour", PColor);
             DrawStrings(g, X, Y, 220, 420, "Количество преформ в коробе", "Preform quantity per box", Count);
