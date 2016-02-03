@@ -119,10 +119,10 @@ namespace AutoLabel
             switch (Data.Labels[tpa].PColor)
             {
                 case "Бесцветный":
-                    but.BackColor = Color.FromArgb(64, 64, 64);//  Color.FromArgb(0,0,32);
-                    but.ForeColor = Color.LightSkyBlue;
+                    but.BackColor = Color.FromArgb(64, 64, 64);
+                    but.ForeColor = Color.FromArgb(192, 192, 192);
                     break;
-                case "Матовый":
+                case "Бесцветный (М)":
                     but.BackColor = Color.FromArgb(128, 128, 128);
                     but.ForeColor = Color.FromArgb(192, 192, 192);
                     break;

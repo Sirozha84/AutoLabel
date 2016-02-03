@@ -154,7 +154,7 @@ namespace AutoLabel
             Quantitys.Add("13104");
             Quantitys.Add("16608");
             Colors.Add("Бесцветный");
-            Colors.Add("Матовый");
+            Colors.Add("Бесцветный (М)");
             Colors.Add("Белый");
             Colors.Add("Оранжевый");
             Colors.Add("Зелёный");

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Drawing.Printing;
@@ -68,15 +65,7 @@ namespace AutoLabel
             Num = num;
             Packer = packer;
             LabelCount = count;
-            /*if (Date == null)
-            {
-                Date = DateToString();
-                Time = DateTime.Now.ToString("HH:mm");
-                Shift = Data.Shift;
-            }*/
-
             Print(num, packer, count, DateToString(), DateTime.Now.ToString("HH:mm"), Data.Shift);
-
         }
 
         /// <summary>
