@@ -93,8 +93,8 @@ namespace AutoLabel
             e.Graphics.DrawString("Тип", Bold, Brushes.Black, new Point(340, 80));
             e.Graphics.DrawString("Вес", Bold, Brushes.Black, new Point(420, 80));
             e.Graphics.DrawString("Цвет", Bold, Brushes.Black, new Point(460, 80));
-            e.Graphics.DrawString("Короб", Bold, Brushes.Black, new Point(550, 80));
-            e.Graphics.DrawString("Упаковщик", Bold, Brushes.Black, new Point(600, 80));
+            e.Graphics.DrawString("Короб", Bold, Brushes.Black, new Point(570, 80));
+            e.Graphics.DrawString("Упаковщик", Bold, Brushes.Black, new Point(620, 80));
 
             int y = 110;
             for (int i = 0; i < strings; i++ )
@@ -109,8 +109,8 @@ namespace AutoLabel
                     e.Graphics.DrawString(log[line][4], Normal, Brushes.Black, new Point(340, y + i * height));
                     e.Graphics.DrawString(log[line][5], Normal, Brushes.Black, new Point(420, y + i * height));
                     e.Graphics.DrawString(log[line][6], Normal, Brushes.Black, new Point(460, y + i * height));
-                    e.Graphics.DrawString(log[line][7], Normal, Brushes.Black, new Point(550, y + i * height));
-                    e.Graphics.DrawString(log[line][8], Normal, Brushes.Black, new Point(600, y + i * height));
+                    e.Graphics.DrawString(log[line][7], Normal, Brushes.Black, new Point(570, y + i * height));
+                    e.Graphics.DrawString(log[line][8], Normal, Brushes.Black, new Point(620, y + i * height));
                 }
                 line++;
             }

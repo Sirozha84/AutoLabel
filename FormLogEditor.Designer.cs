@@ -33,7 +33,6 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.buttonDel = new System.Windows.Forms.Button();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,6 +42,7 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonDel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -53,7 +53,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(112, 6);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(560, 21);
+            this.comboBox1.Size = new System.Drawing.Size(600, 21);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -70,7 +70,7 @@
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(597, 426);
+            this.buttonCancel.Location = new System.Drawing.Point(637, 526);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 7;
@@ -80,7 +80,7 @@
             // buttonOK
             // 
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOK.Location = new System.Drawing.Point(516, 426);
+            this.buttonOK.Location = new System.Drawing.Point(556, 526);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 6;
@@ -108,23 +108,11 @@
             this.listView1.Location = new System.Drawing.Point(12, 33);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(660, 387);
+            this.listView1.Size = new System.Drawing.Size(700, 487);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // buttonDel
-            // 
-            this.buttonDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonDel.Enabled = false;
-            this.buttonDel.Location = new System.Drawing.Point(12, 426);
-            this.buttonDel.Name = "buttonDel";
-            this.buttonDel.Size = new System.Drawing.Size(138, 23);
-            this.buttonDel.TabIndex = 9;
-            this.buttonDel.Text = "Удалить запись";
-            this.buttonDel.UseVisualStyleBackColor = true;
-            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
             // columnHeader1
             // 
@@ -147,6 +135,7 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Тип";
+            this.columnHeader5.Width = 80;
             // 
             // columnHeader6
             // 
@@ -155,7 +144,7 @@
             // columnHeader7
             // 
             this.columnHeader7.Text = "Цвет";
-            this.columnHeader7.Width = 100;
+            this.columnHeader7.Width = 120;
             // 
             // columnHeader8
             // 
@@ -166,11 +155,23 @@
             this.columnHeader9.Text = "Упаковщик";
             this.columnHeader9.Width = 120;
             // 
+            // buttonDel
+            // 
+            this.buttonDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonDel.Enabled = false;
+            this.buttonDel.Location = new System.Drawing.Point(12, 526);
+            this.buttonDel.Name = "buttonDel";
+            this.buttonDel.Size = new System.Drawing.Size(138, 23);
+            this.buttonDel.TabIndex = 9;
+            this.buttonDel.Text = "Удалить запись";
+            this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
+            // 
             // FormLogEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 461);
+            this.ClientSize = new System.Drawing.Size(724, 561);
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.buttonCancel);
@@ -179,7 +180,7 @@
             this.Controls.Add(this.comboBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(700, 200);
+            this.MinimumSize = new System.Drawing.Size(740, 200);
             this.Name = "FormLogEditor";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoLabel
 {
     static class Program
     {
-        public static string Version = "1.0.0 (03.02.2016)";
+        public static string Version = "1.0.1 (03.02.2016)";
 
         /// <summary>
         /// Главная точка входа для приложения.

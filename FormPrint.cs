@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoLabel
@@ -17,6 +11,7 @@ namespace AutoLabel
         int count = 1;          //Количество коробов
         bool CustomNum = true;  //Можно ли менять номер вручную?
         bool CountSelect = false;   //Выбираем ли мы количество коробов?
+        int timer;              //Таймер для автозакрывания окна
 
         public FormPrint()
         {
@@ -91,6 +86,7 @@ namespace AutoLabel
                 CountSelect = true;
             }
             DrawNum();
+            TimerStart();
         }
 
         //Кнопка печати
@@ -110,6 +106,7 @@ namespace AutoLabel
                 box--;
                 DrawNum();
             }
+            TimerStart();
         }
 
         //Кнопка последняя
@@ -117,6 +114,7 @@ namespace AutoLabel
         {
             box = Data.Labels[NumMachine].CurrentNum;
             DrawNum();
+            TimerStart();
         }
 
         //Рисование номера
@@ -156,12 +154,14 @@ namespace AutoLabel
                 buttonPrint.Visible = false;
                 labelAccessDenied.Visible = true;
             }
+            TimerStart();
         }
 
         private void textBoxNum_Click(object sender, EventArgs e)
         {
             if (!CustomNum) return;
             //Нам разрешено поменять номер короба вручную
+            timer1.Enabled = false;
             FormKeyboardNums key = new FormKeyboardNums("Введите номер короба");
             key.ShowDialog();
             if (key.DialogResult == DialogResult.OK)
@@ -171,6 +171,7 @@ namespace AutoLabel
                 box = Data.Labels[NumMachine].CurrentNum;
                 DrawNum();
             }
+            TimerStart();
         }
 
         private void buttonCountDec_Click(object sender, EventArgs e)
@@ -180,6 +181,7 @@ namespace AutoLabel
                 count--;
                 DrawNum();
             }
+            TimerStart();
         }
 
         private void buttonCountInc_Click(object sender, EventArgs e)
@@ -189,6 +191,23 @@ namespace AutoLabel
                 count++;
                 DrawNum();
             }
+            TimerStart();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer--;
+            if (timer > 10)
+                buttonquit.Text = "< Назад";
+            else
+                buttonquit.Text = "< Назад (" + timer.ToString() + ")";
+            if (timer == 0) Dispose();
+        }
+
+        void TimerStart()
+        {
+            timer = 20;
+            timer1.Enabled = true;
         }
     }
 }

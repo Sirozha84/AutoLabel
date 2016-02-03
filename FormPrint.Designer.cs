@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonquit = new System.Windows.Forms.Button();
             this.labelNum = new System.Windows.Forms.Label();
             this.LabelPacker = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.buttonCountDec = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.labelAccessDenied = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -381,6 +383,11 @@
             this.labelAccessDenied.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelAccessDenied.Visible = false;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -439,5 +446,6 @@
         private System.Windows.Forms.Button buttonCountDec;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelAccessDenied;
+        private System.Windows.Forms.Timer timer1;
     }
 }

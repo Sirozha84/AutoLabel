@@ -7,6 +7,7 @@ namespace AutoLabel
     {
         public string Code;
         int s = 0;
+        int timer = 15;    //Таймер для автоматического закрытия
 
         public FormKey()
         {
@@ -26,5 +27,11 @@ namespace AutoLabel
             if (s > 7) Close();
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer--;
+            if (timer <= 10) buttonCancel.Text = "Отмена (" + timer.ToString() + ")";
+            if (timer == 0) Close();
+        }
     }
 }
