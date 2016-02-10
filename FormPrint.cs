@@ -46,9 +46,25 @@ namespace AutoLabel
                 if (key.Code == "")
                 {
                     //Маленько кривинько, но стираем сформированный список и заполняем его только гостями
+                    //Причём только теми, у кого есть доступ для этой ТПА
                     comboBoxUser.Items.Clear();
-                    foreach (User u in Data.Users) if (u.Code == "") comboBoxUser.Items.Add(u.Name);
+                    foreach (User u in Data.Users)
+                        if (u.Code == "")
+                            if (Data.AccessControl)
+                            {
+                                if (u.TPAAccess[NumMachine])
+                                    comboBoxUser.Items.Add(u.Name);
+                            }
+                            else
+                                comboBoxUser.Items.Add(u.Name);
                     CustomNum = false;
+                    //Ну а если список гостей пуст, значит запрещаем печать на этой ТПА
+                    if (comboBoxUser.Items.Count == 0)
+                    {
+                        FormError er = new FormError("Печать запрещена");
+                        er.ShowDialog();
+                        Close();
+                    }
                 }
                 else
                 {

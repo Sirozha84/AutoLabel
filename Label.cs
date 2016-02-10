@@ -90,6 +90,7 @@ namespace AutoLabel
                 PrintDocument doc = new PrintDocument();
                 doc.PrintPage += new PrintPageEventHandler(PD_PrintPage);
                 doc.PrinterSettings = Data.printersettings;
+                doc.PrinterSettings.DefaultPageSettings.Landscape = true;
                 doc.Print();
             }
             catch

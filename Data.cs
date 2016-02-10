@@ -75,7 +75,6 @@ namespace AutoLabel
                 StreamReader file = File.OpenText(FilePrinter);
                 printersettings = new PrinterSettings();
                 printersettings.PrinterName = file.ReadLine();
-                printersettings.DefaultPageSettings.Landscape = true;
                 file.Dispose();
             }
             catch

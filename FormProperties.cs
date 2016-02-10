@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace AutoLabel
@@ -20,13 +14,16 @@ namespace AutoLabel
                 FormBorderStyle = FormBorderStyle.Sizable;
                 WindowState = FormWindowState.Normal;
             }
+            //В будущем, когда для этого будет отдельное окно - удалим
         }
 
+        //Кнопка назад
         private void buttonquit_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        //Кнопка выхода
         private void buttonquitprogram_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
@@ -111,17 +108,18 @@ namespace AutoLabel
             if (comboBoxAntiCount.SelectedItem != null) l.AntistaticCount = comboBoxAntiCount.SelectedItem.ToString(); else l.AntistaticCount = "";
             if (comboBoxLimit.SelectedItem != null) l.Limit = comboBoxLimit.SelectedItem.ToString(); else l.Limit = "";
             l.Other = textBoxOther.Text;
-
             l.Save();
             buttonsave.Visible = false;
         }
 
+        //Делаем кнопку сохранения видимой
         void MakeSaveEnable()
         {
             if (comboBoxTPA.SelectedIndex >= 0)
                 buttonsave.Visible = true;
         }
 
+        //При изменении любого поля делаем кнопку сохранения видимой
         private void comboBoxCount_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void textBoxFirstBox_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
@@ -133,17 +131,16 @@ namespace AutoLabel
         private void comboBoxColor_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void textBoxOther_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
 
+        //Кнопка выбора принтера
         private void buttonPrinterSelect_Click(object sender, EventArgs e)
         {
             Data.PrintSetup();
         }
 
+        //Кнопка отчётов
         private void buttonReport_Click(object sender, EventArgs e)
         {
-            if (!Data.PrintSelected())  //Ой, ну и бред же :-( но работать будет
-            {
-                Data.PrintSetup();
-            }
+            if (!Data.PrintSelected()) Data.PrintSetup();
             if (Data.PrintSelected())
             {
                 FormReports rep = new FormReports();
@@ -152,12 +149,14 @@ namespace AutoLabel
             }
         }
 
+        //Кнопка пользователей
         private void buttonUsers_Click(object sender, EventArgs e)
         {
             FormUsers form = new FormUsers();
             form.ShowDialog();
         }
 
+        //Строка прочих дополнений
         private void textBoxOther_Click(object sender, EventArgs e)
         {
             if (!Data.IsMachine) return;
@@ -169,6 +168,7 @@ namespace AutoLabel
             }
         }
 
+        //Строчка номера партии
         private void textBoxNumber_Click_1(object sender, EventArgs e)
         {
             if (!Data.IsMachine) return;
@@ -199,16 +199,10 @@ namespace AutoLabel
             textBoxOther.Text = "";
         }
 
+        //Кнопка "о программе"
         private void buttonAbout_Click(object sender, EventArgs e)
         {
             Program.About();
-        }
-
-        private void buttonPegging_Click(object sender, EventArgs e)
-        {
-            FormUsersPC form = new FormUsersPC();
-            form.ShowDialog();
-
         }
     }
 }

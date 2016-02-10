@@ -22,47 +22,41 @@ namespace AutoLabel
             buttonsave.Visible = true;
         }
 
+        //Кнопка назад
         private void buttonquit_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void listBox1_Click(object sender, EventArgs e)
-        {
-        }
-
+        //Кнопка удаления
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             Data.Users.RemoveAt(listView1.SelectedIndices[0]);
             DrawList();
         }
 
-        private void FormUsers_Load(object sender, EventArgs e)
-        {
-        }
-
+        //Кнопка нового пользователя
         private void buttonNew_Click(object sender, EventArgs e)
         {
             Data.AddNewUser("0");
             DrawList();
         }
 
+        //Кнопка нового админа
         private void buttonRules_Click(object sender, EventArgs e)
         {
             Data.AddNewUser("255");
             DrawList();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
+        //Кнопка сохранения
         private void buttonsave_Click(object sender, EventArgs e)
         {
             Data.SaveUsers();
             buttonsave.Visible = false;
         }
 
+        //Кнопка изменения ключа
         private void buttonKey_Click(object sender, EventArgs e)
         {
             FormKey key = new FormKey();
@@ -74,10 +68,10 @@ namespace AutoLabel
             }
         }
 
+        //Изменение выделения списка
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool sel = listView1.SelectedIndices.Count > 0;
-            //if (listView1.SelectedIndices.Count == 0) return;
             if (sel)
             {
                 User u = Data.Users[listView1.SelectedIndices[0]];
@@ -118,6 +112,7 @@ namespace AutoLabel
             buttonsave.Visible = true;
         }
 
+        //Изменение привязки
         private void checkBox1_CheckedChanged(object sender, EventArgs e) { ChangeTPA(0, checkBox1.Checked); }
         private void checkBox2_CheckedChanged(object sender, EventArgs e) { ChangeTPA(1, checkBox2.Checked); }
         private void checkBox3_CheckedChanged(object sender, EventArgs e) { ChangeTPA(2, checkBox3.Checked); }
@@ -125,12 +120,14 @@ namespace AutoLabel
         private void checkBox5_CheckedChanged(object sender, EventArgs e) { ChangeTPA(4, checkBox5.Checked); }
         private void checkBox6_CheckedChanged(object sender, EventArgs e) { ChangeTPA(5, checkBox6.Checked); }
 
+        //Кнопка удаление ключа
         private void buttonKeyDel_Click(object sender, EventArgs e)
         {
             Data.Users[listView1.SelectedIndices[0]].Code = "";
             DrawList();
         }
 
+        //Включение/выключение проверки привязок
         private void checkBox7_CheckedChanged(object sender, EventArgs e)
         {
             Data.AccessControl = checkBox7.Checked;

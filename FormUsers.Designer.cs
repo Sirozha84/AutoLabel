@@ -357,7 +357,6 @@
             this.ShowInTaskbar = false;
             this.Text = "Пользователи";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormUsers_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttinShift1 = new System.Windows.Forms.Button();
+            this.buttonShift1 = new System.Windows.Forms.Button();
             this.buttonShift2 = new System.Windows.Forms.Button();
             this.buttonShift3 = new System.Windows.Forms.Button();
             this.buttonShift4 = new System.Windows.Forms.Button();
@@ -65,20 +65,20 @@
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // buttinShift1
+            // buttonShift1
             // 
-            this.buttinShift1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttinShift1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttinShift1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttinShift1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttinShift1.ForeColor = System.Drawing.Color.White;
-            this.buttinShift1.Location = new System.Drawing.Point(116, 114);
-            this.buttinShift1.Name = "buttinShift1";
-            this.buttinShift1.Size = new System.Drawing.Size(262, 74);
-            this.buttinShift1.TabIndex = 24;
-            this.buttinShift1.Text = "Смена 1";
-            this.buttinShift1.UseVisualStyleBackColor = false;
-            this.buttinShift1.Click += new System.EventHandler(this.buttonOK_Click);
+            this.buttonShift1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonShift1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonShift1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonShift1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonShift1.ForeColor = System.Drawing.Color.White;
+            this.buttonShift1.Location = new System.Drawing.Point(116, 114);
+            this.buttonShift1.Name = "buttonShift1";
+            this.buttonShift1.Size = new System.Drawing.Size(262, 74);
+            this.buttonShift1.TabIndex = 24;
+            this.buttonShift1.Text = "Смена 1";
+            this.buttonShift1.UseVisualStyleBackColor = false;
+            this.buttonShift1.Click += new System.EventHandler(this.buttonShift1_Click);
             // 
             // buttonShift2
             // 
@@ -136,7 +136,7 @@
             this.panel1.Controls.Add(this.buttonShift3);
             this.panel1.Controls.Add(this.buttonShift2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.buttinShift1);
+            this.panel1.Controls.Add(this.buttonShift1);
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(758, 380);
@@ -165,7 +165,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Button buttinShift1;
+        private System.Windows.Forms.Button buttonShift1;
         private System.Windows.Forms.Button buttonShift2;
         private System.Windows.Forms.Button buttonShift3;
         private System.Windows.Forms.Button buttonShift4;

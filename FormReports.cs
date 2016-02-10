@@ -143,7 +143,6 @@ namespace AutoLabel
             int pages = log.Count / strings + 1;
             //Заголовок
             e.Graphics.DrawString("Общий отчёт     " + comboBoxShift.SelectedItem, Big, Brushes.Black, new Point(40, 40));
-            //e.Graphics.DrawString("Страница " + page + " из " + pages, Normal, Brushes.Black, new Point(650, 40));
             //Шапка таблицы
             e.Graphics.DrawString("Номер", Bold, Brushes.Black, new Point(40, 80));
             e.Graphics.DrawString("Машина", Bold, Brushes.Black, new Point(100, 80));
@@ -223,7 +222,6 @@ namespace AutoLabel
             int pages = log.Count / strings + 1;
             //Заголовок
             e.Graphics.DrawString("Отчёт по партиям     " + comboBoxShift.SelectedItem, Big, Brushes.Black, new Point(40, 40));
-            //e.Graphics.DrawString("Страница " + page + " из " + pages, Normal, Brushes.Black, new Point(650, 40));
             //Шапка таблицы
             e.Graphics.DrawString("Номер", Bold, Brushes.Black, new Point(40, 80));
             e.Graphics.DrawString("Партия", Bold, Brushes.Black, new Point(100, 80));
@@ -287,7 +285,6 @@ namespace AutoLabel
             int pages = log.Count / strings + 1;
             //Заголовок
             e.Graphics.DrawString("Отчёт по ТПА     " + comboBoxShift.SelectedItem, Big, Brushes.Black, new Point(40, 40));
-            //e.Graphics.DrawString("Страница " + page + " из " + pages, Normal, Brushes.Black, new Point(650, 40));
             //Шапка таблицы
             for (int tpa = 0; tpa < 6; tpa++)
             {
