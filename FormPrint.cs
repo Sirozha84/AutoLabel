@@ -65,6 +65,9 @@ namespace AutoLabel
                         er.ShowDialog();
                         Close();
                     }
+                    //А еееесли в списке только один чувак, его сразу и выберем
+                    if (comboBoxUser.Items.Count == 1)
+                        comboBoxUser.SelectedIndex = 0;
                 }
                 else
                 {
