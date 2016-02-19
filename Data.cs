@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 
@@ -9,29 +10,33 @@ namespace AutoLabel
     class Data
     {
         /// <summary>
-        /// Программа запущена на машине, false - если десктопная версия
+        /// Количество ТПА
         /// </summary>
-        public static bool IsMachine = false;
+        public const int TPACount = 8;
         /// <summary>
         /// Максимальное количество этикеток за раз
         /// </summary>
-        public static int MaxLabels = 9;
+        public const int MaxLabels = 9;
         /// <summary>
         /// Максимальное количество преформ в малом коробе
         /// </summary>
-        static int PreformsInLittleBox = 1920;
+        const int PreformsInLittleBox = 1920;
         /// <summary>
         /// Сбрасывать ли счётчик при заступании новой
         /// </summary>
-        static bool ResetOnChangeShift = true;
+        const bool ResetOnChangeShift = true;
         /// <summary>
         /// Количество последних запоминаемых смен
         /// </summary>
-        static int ShiftMemory = 7;
+        const int ShiftMemory = 7;
         /// <summary>
         /// Названия смен
         /// </summary>
         public static string[] Shifts = { "Смена 1", "Смена 2", "Смена 3", "Смена 4" };
+        /// <summary>
+        /// Программа запущена на машине, false - если десктопная версия
+        /// </summary>
+        public static bool IsMachine = false;
         /// <summary>
         /// Проверка привязки к ТПА
         /// </summary>
@@ -56,8 +61,8 @@ namespace AutoLabel
         public static List<string> Colors1 = new List<string>();
         public static List<string> Materials = new List<string>();
         public static List<string> Limits = new List<string>();
-        public static List<string> AntiTypes = new List<string>();
-        public static List<string> AntiCounts = new List<string>();
+        public static List<string> Antistatics = new List<string>();
+        public static List<string> Colorants = new List<string>();
 
         public static PrinterSettings printersettings;// = new PrinterSettings();
 
@@ -95,8 +100,8 @@ namespace AutoLabel
             ListLoad(Colors1, "Colors1");
             ListLoad(Materials, "Materials");
             ListLoad(Limits, "Limits");
-            ListLoad(AntiTypes, "AntiTypes");
-            ListLoad(AntiCounts, "AntiCounts");
+            ListLoad(Antistatics, "Antistatics");
+            ListLoad(Colorants, "Colorants");
         }
 
         static void ListLoad(List<string> list, string filename)
@@ -120,14 +125,14 @@ namespace AutoLabel
             LoadShift();
             //Лейблы
             Labels.Clear();
-            Labels.Add(new Label(0, "Husky №1", 0));
-            Labels.Add(new Label(0, "Netstal №2", 0));
-            Labels.Add(new Label(0, "Netstal №3", 0));
-            Labels.Add(new Label(0, "Netstal №4", 0));
-            Labels.Add(new Label(0, "Netstal №5", 0));
-            Labels.Add(new Label(0, "Netstal №5", 0));
-            Labels.Add(new Label(0, "C1", 1));
-            Labels.Add(new Label(0, "C2", 1));
+            Labels.Add(new Label("Husky №1", 0));
+            Labels.Add(new Label("Netstal №2", 0));
+            Labels.Add(new Label("Netstal №3", 0));
+            Labels.Add(new Label("Netstal №4", 0));
+            Labels.Add(new Label("Netstal №5", 0));
+            Labels.Add(new Label("Netstal №6", 0));
+            Labels.Add(new Label("C1", 1));
+            Labels.Add(new Label("C2", 1));
         }
 
         /// <summary>
@@ -156,7 +161,7 @@ namespace AutoLabel
         /// <summary>
         /// Загрузка пользователей
         /// </summary>
-        public static void LoadUsers()
+        public static void UsersLoad()
         {
             Users.Clear();
             try
@@ -285,7 +290,7 @@ namespace AutoLabel
         /// <returns></returns>
         public static byte GetKey(int Minimum)
         {
-            LoadUsers();
+            UsersLoad();
             if (IsMachine)
             {
                 //Сначала проверим, есть ли в списке хоть один админ
@@ -391,29 +396,6 @@ namespace AutoLabel
         }
 
         /// <summary>
-        /// Рисуем красивую строчку с перечнем привязанных ТПА
-        /// </summary>
-        /// <param name="u">Пользователь</param>
-        /// <returns></returns>
-        public static string StringWidthTPA(User u)
-        {
-            string tpas = "";
-            int tc = 0;
-            foreach (bool b in u.TPAAccess) if (b) tc++; //Узнаём количество тпа
-            int tca = 0;
-            for (int i = 0; i < u.TPAAccess.Length; i++)
-            {
-                if (u.TPAAccess[i])
-                {
-                    tpas += (i + 1).ToString();
-                    tca++;
-                    if (tca < tc) tpas += ", ";
-                }
-            }
-            return tpas;
-        }
-
-        /// <summary>
         /// Пользователь админ?
         /// </summary>
         /// <param name="u">Пользователь</param>
@@ -447,8 +429,95 @@ namespace AutoLabel
                 ListViewItem it = new ListViewItem(u.Name);
                 it.SubItems.Add(UserIsAdmin(u));
                 it.SubItems.Add(UserWidthKey(u));
-                it.SubItems.Add(StringWidthTPA(u));
+                it.SubItems.Add(u.StringWidthTPA());
                 list.Items.Add(it);
+            }
+        }
+
+        /// <summary>
+        /// Предоставление текущей даты в человечьем виде
+        /// </summary>
+        /// <returns></returns>
+        public static string DateToString()
+        {
+            DateTime now = DateTime.Now;
+            string date = now.ToString("dd ");
+            switch (now.Month)
+            {
+                case 1: date += "янв"; break;
+                case 2: date += "фев"; break;
+                case 3: date += "мар"; break;
+                case 4: date += "апр"; break;
+                case 5: date += "май"; break;
+                case 6: date += "июн"; break;
+                case 7: date += "июл"; break;
+                case 8: date += "авг"; break;
+                case 9: date += "сен"; break;
+                case 10: date += "окт"; break;
+                case 11: date += "ноя"; break;
+                case 12: date += "дек"; break;
+            }
+            return date + now.ToString(" yy");
+        }
+
+        /// <summary>
+        /// Задание цвета для кнопки
+        /// </summary>
+        /// <param name="but">Кнопку</param>
+        /// <param name="lab">Лейбл</param>
+        public static void SetColor(Button but, int tpa)
+        {
+            but.Visible = Labels[tpa].PartNum != "";
+            switch (Labels[tpa].PColor)
+            {
+                case "Бесцветный":
+                    but.BackColor = Color.FromArgb(64, 64, 64);
+                    but.ForeColor = Color.FromArgb(192, 192, 192);
+                    break;
+                case "Бесцветный (М)":
+                    but.BackColor = Color.FromArgb(128, 128, 128);
+                    but.ForeColor = Color.FromArgb(192, 192, 192);
+                    break;
+                case "Белый":
+                    but.BackColor = Color.FromArgb(255, 255, 255);
+                    but.ForeColor = Color.FromArgb(192, 192, 192);
+                    break;
+                case "Оранжевый":
+                    but.BackColor = Color.FromArgb(255, 128, 0);
+                    but.ForeColor = Color.FromArgb(255, 178, 0);
+                    break;
+                case "Зелёный":
+                    but.BackColor = Color.FromArgb(0, 128, 0);
+                    but.ForeColor = Color.FromArgb(0, 255, 0);
+                    break;
+                case "Золотой":
+                    but.BackColor = Color.FromArgb(192, 128, 0);
+                    but.ForeColor = Color.FromArgb(255, 178, 0);
+                    break;
+                case "Синий":
+                    but.BackColor = Color.FromArgb(0, 0, 128);
+                    but.ForeColor = Color.FromArgb(0, 128, 255);
+                    break;
+                case "Бирюзовый":
+                    but.BackColor = Color.FromArgb(0, 128, 128);
+                    but.ForeColor = Color.FromArgb(0, 255, 255);
+                    break;
+                case "Красный":
+                    but.BackColor = Color.FromArgb(128, 0, 0);
+                    but.ForeColor = Color.FromArgb(255, 64, 64);
+                    break;
+                case "Коричневый":
+                    but.BackColor = Color.FromArgb(64, 32, 0);
+                    but.ForeColor = Color.FromArgb(128, 64, 0);
+                    break;
+                case "Фиолетовый":
+                    but.BackColor = Color.FromArgb(128, 0, 192);
+                    but.ForeColor = Color.FromArgb(192, 0, 255);
+                    break;
+                case "Чёрный":
+                    but.BackColor = Color.FromArgb(0, 0, 0);
+                    but.ForeColor = Color.FromArgb(64, 64, 64);
+                    break;
             }
         }
     }

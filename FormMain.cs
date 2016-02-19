@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AutoLabel
@@ -32,23 +26,21 @@ namespace AutoLabel
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void FormMain_Load(object sender, EventArgs e)
         {
             Data.Init();
             RefreshMain();
         }
 
-        private void button1_Click_1(object sender, EventArgs e) { Print(0); }
+        //Большие кнопки
+        private void button1_Click(object sender, EventArgs e) { Print(0); }
         private void button2_Click(object sender, EventArgs e) { Print(1); }
         private void button3_Click(object sender, EventArgs e) { Print(2); }
         private void button4_Click(object sender, EventArgs e) { Print(3); }
         private void button5_Click(object sender, EventArgs e) { Print(4); }
         private void button6_Click(object sender, EventArgs e) { Print(5); }
+        private void button7_Click(object sender, EventArgs e) { Print(6); }
+        private void button8_Click(object sender, EventArgs e) { Print(7); }
 
         void Print(int num)
         {
@@ -61,10 +53,14 @@ namespace AutoLabel
             RefreshMain();
         }
 
-        //Параметры
+        //Кнопка параметров
         private void buttonProperties_Click(object sender, EventArgs e)
         {
-            if (Data.GetKey(255) == 255) вводДанныхToolStripMenuItem_Click(null, null);
+            if (Data.GetKey(255) == 255)
+            {
+                FormProperties form = new FormProperties();
+                form.ShowDialog();
+            }
         }
 
         //Выбор новой смены
@@ -100,76 +96,24 @@ namespace AutoLabel
             label4.Text = Data.Labels[3].LabelUnderButton();
             label5.Text = Data.Labels[4].LabelUnderButton();
             label6.Text = Data.Labels[5].LabelUnderButton();
-            SetColor(button1, 0);
-            SetColor(button2, 1);
-            SetColor(button3, 2);
-            SetColor(button4, 3);
-            SetColor(button5, 4);
-            SetColor(button6, 5);
+            label7.Text = Data.Labels[6].LabelUnderButton();
+            label8.Text = Data.Labels[7].LabelUnderButton();
+            Data.SetColor(button1, 0);
+            Data.SetColor(button2, 1);
+            Data.SetColor(button3, 2);
+            Data.SetColor(button4, 3);
+            Data.SetColor(button5, 4);
+            Data.SetColor(button6, 5);
+            Data.SetColor(button7, 6);
+            Data.SetColor(button8, 7);
         }
 
-        /// <summary>
-        /// Задание цвета для кнопки
-        /// </summary>
-        /// <param name="but">Кнопку</param>
-        /// <param name="lab">Лейбл</param>
-        void SetColor(Button but, int tpa)
-        {
-            but.Visible = true;
-            switch (Data.Labels[tpa].PColor)
-            {
-                case "Бесцветный":
-                    but.BackColor = Color.FromArgb(64, 64, 64);
-                    but.ForeColor = Color.FromArgb(192, 192, 192);
-                    break;
-                case "Бесцветный (М)":
-                    but.BackColor = Color.FromArgb(128, 128, 128);
-                    but.ForeColor = Color.FromArgb(192, 192, 192);
-                    break;
-                case "Белый":
-                    but.BackColor = Color.FromArgb(255, 255, 255);
-                    but.ForeColor = Color.FromArgb(192, 192, 192);
-                    break;
-                case "Оранжевый":
-                    but.BackColor = Color.FromArgb(255, 128, 0);
-                    but.ForeColor = Color.FromArgb(255, 178, 0);
-                    break;
-                case "Зелёный":
-                    but.BackColor = Color.FromArgb(0, 128, 0);
-                    but.ForeColor = Color.FromArgb(0, 255, 0);
-                    break;
-                case "Синий":
-                    but.BackColor = Color.FromArgb(0, 0, 128);
-                    but.ForeColor = Color.FromArgb(0, 128, 255);
-                    break;
-                case "Бирюзовый":
-                    but.BackColor = Color.FromArgb(0,128,128);
-                    but.ForeColor = Color.FromArgb(0,255,255);
-                    break;
-                case "Красный":
-                    but.BackColor = Color.FromArgb(128, 0, 0);
-                    but.ForeColor = Color.FromArgb(255, 64, 64);
-                    break;
-                case "Коричневый":
-                    but.BackColor = Color.FromArgb(64, 32, 0);
-                    but.ForeColor = Color.FromArgb(128, 64, 0);
-                    break;
-                case "Чёрный":
-                    but.BackColor = Color.FromArgb(0,0,0);
-                    but.ForeColor = Color.FromArgb(64,64,64);
-                    break;
-                default:
-                    but.Visible = false;
-                    break;
-            }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timerTime_Tick(object sender, EventArgs e)
         {
             labelClock.Text = DateTime.Now.ToString("HH:mm");
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
+        private void timerRefresh_Tick(object sender, EventArgs e)
         {
             //Обновлялка каждые 10 секунд, на случай, если данные были изменены удалённо
             RefreshMain();
@@ -187,19 +131,19 @@ namespace AutoLabel
 
         private void вводДанныхToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormProperties formprop = new FormProperties();
-            timer2.Enabled = false; //Останавливаем автоматическое обновление
+            FormPropertiesPC formprop = new FormPropertiesPC();
+            timerRefresh.Enabled = false; //Останавливаем автоматическое обновление
             formprop.ShowDialog();
-            timer2.Enabled = true; //Запускаем автоматическое обновление
+            timerRefresh.Enabled = true; //Запускаем автоматическое обновление
             RefreshMain();
         }
 
         private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormUsersPC form = new FormUsersPC();
-            timer2.Enabled = false; //Останавливаем автоматическое обновление
+            timerRefresh.Enabled = false; //Останавливаем автоматическое обновление
             form.ShowDialog();
-            timer2.Enabled = true; //Запускаем автоматическое обновление
+            timerRefresh.Enabled = true; //Запускаем автоматическое обновление
         }
 
         private void отчётыToolStripMenuItem_Click(object sender, EventArgs e)
@@ -250,9 +194,9 @@ namespace AutoLabel
         private void правкаЖурналаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormLogEditor form = new FormLogEditor();
-            timer2.Enabled = false; //Останавливаем автоматическое обновление
+            timerRefresh.Enabled = false; //Останавливаем автоматическое обновление
             form.ShowDialog();
-            timer2.Enabled = true; //Запускаем автоматическое обновление
+            timerRefresh.Enabled = true; //Запускаем автоматическое обновление
         }
     }
 }

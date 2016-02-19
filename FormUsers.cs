@@ -8,7 +8,7 @@ namespace AutoLabel
         public FormUsers()
         {
             InitializeComponent();
-            Data.LoadUsers();
+            Data.UsersLoad();
             DrawList();
             buttonsave.Visible = false;
         }
@@ -16,7 +16,7 @@ namespace AutoLabel
         //Заполняем список пользователей
         void DrawList()
         {
-            checkBox7.Checked = Data.AccessControl;
+            checkBoxOn.Checked = Data.AccessControl;
             Data.UserListDraw(listView1);
             listView1_SelectedIndexChanged(null, null);
             buttonsave.Visible = true;
@@ -81,6 +81,8 @@ namespace AutoLabel
                 checkBox4.Checked = u.TPAAccess[3];
                 checkBox5.Checked = u.TPAAccess[4];
                 checkBox6.Checked = u.TPAAccess[5];
+                checkBox7.Checked = u.TPAAccess[6];
+                checkBox8.Checked = u.TPAAccess[7];
             }
             else
             {
@@ -90,6 +92,8 @@ namespace AutoLabel
                 checkBox4.Checked = false;
                 checkBox5.Checked = false;
                 checkBox6.Checked = false;
+                checkBox7.Checked = false;
+                checkBox8.Checked = false;
             }
             checkBox1.Visible = sel;
             checkBox2.Visible = sel;
@@ -97,6 +101,8 @@ namespace AutoLabel
             checkBox4.Visible = sel;
             checkBox5.Visible = sel;
             checkBox6.Visible = sel;
+            checkBox7.Visible = sel;
+            checkBox8.Visible = sel;
             buttonKey.Visible = sel;
             buttonKeyDel.Visible = sel;
             buttonDelete.Visible = sel;
@@ -108,7 +114,7 @@ namespace AutoLabel
             if (listView1.SelectedIndices.Count == 0) return;
             User u = Data.Users[listView1.SelectedIndices[0]];
             u.TPAAccess[num] = Access;
-            listView1.Items[listView1.SelectedIndices[0]].SubItems[3].Text = Data.StringWidthTPA(u);
+            listView1.Items[listView1.SelectedIndices[0]].SubItems[3].Text = u.StringWidthTPA();
             buttonsave.Visible = true;
         }
 
@@ -119,6 +125,8 @@ namespace AutoLabel
         private void checkBox4_CheckedChanged(object sender, EventArgs e) { ChangeTPA(3, checkBox4.Checked); }
         private void checkBox5_CheckedChanged(object sender, EventArgs e) { ChangeTPA(4, checkBox5.Checked); }
         private void checkBox6_CheckedChanged(object sender, EventArgs e) { ChangeTPA(5, checkBox6.Checked); }
+        private void checkBox7_CheckedChanged(object sender, EventArgs e) { ChangeTPA(6, checkBox7.Checked); }
+        private void checkBox8_CheckedChanged(object sender, EventArgs e) { ChangeTPA(7, checkBox8.Checked); }
 
         //Кнопка удаление ключа
         private void buttonKeyDel_Click(object sender, EventArgs e)
@@ -128,10 +136,11 @@ namespace AutoLabel
         }
 
         //Включение/выключение проверки привязок
-        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        private void checkBoxOn_CheckedChanged(object sender, EventArgs e)
         {
-            Data.AccessControl = checkBox7.Checked;
+            Data.AccessControl = checkBoxOn.Checked;
             buttonsave.Visible = true;
         }
+
     }
 }

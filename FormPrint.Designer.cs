@@ -50,7 +50,6 @@
             this.buttonCountInc = new System.Windows.Forms.Button();
             this.buttonCountDec = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.labelAccessDenied = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -237,9 +236,9 @@
             this.panel2.BackColor = System.Drawing.Color.SlateGray;
             this.panel2.Controls.Add(this.labelformname);
             this.panel2.Controls.Add(this.buttonquit);
-            this.panel2.Location = new System.Drawing.Point(2, 0);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(962, 100);
+            this.panel2.Size = new System.Drawing.Size(961, 100);
             this.panel2.TabIndex = 8;
             // 
             // tableLayoutPanel3
@@ -368,21 +367,6 @@
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label2.Visible = false;
             // 
-            // labelAccessDenied
-            // 
-            this.labelAccessDenied.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelAccessDenied.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelAccessDenied.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelAccessDenied.ForeColor = System.Drawing.Color.Tomato;
-            this.labelAccessDenied.Location = new System.Drawing.Point(12, 635);
-            this.labelAccessDenied.Name = "labelAccessDenied";
-            this.labelAccessDenied.Size = new System.Drawing.Size(934, 112);
-            this.labelAccessDenied.TabIndex = 10;
-            this.labelAccessDenied.Text = "Печать запрещена";
-            this.labelAccessDenied.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelAccessDenied.Visible = false;
-            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
@@ -394,7 +378,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(958, 775);
-            this.Controls.Add(this.labelAccessDenied);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.labelNum);
@@ -445,7 +428,6 @@
         private System.Windows.Forms.Button buttonCountInc;
         private System.Windows.Forms.Button buttonCountDec;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelAccessDenied;
         private System.Windows.Forms.Timer timer1;
     }
 }

@@ -429,13 +429,6 @@
             this.comboBoxTPA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxTPA.ForeColor = System.Drawing.SystemColors.WindowText;
             this.comboBoxTPA.FormattingEnabled = true;
-            this.comboBoxTPA.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
             this.comboBoxTPA.Location = new System.Drawing.Point(235, 3);
             this.comboBoxTPA.Name = "comboBoxTPA";
             this.comboBoxTPA.Size = new System.Drawing.Size(226, 21);
@@ -625,7 +618,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Печать этикетки с произвольными полями";
-            this.Load += new System.EventHandler(this.FormCustomLabel_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).EndInit();

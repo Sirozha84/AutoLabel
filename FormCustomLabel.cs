@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace AutoLabel
@@ -14,25 +8,24 @@ namespace AutoLabel
         public FormCustomLabel()
         {
             InitializeComponent();
-        }
-
-        private void FormCustomLabel_Load(object sender, EventArgs e)
-        {
+            Data.UsersLoad();
             //Заполнение комбобоксов списками
+            foreach (Label l in Data.Labels)
+                comboBoxTPA.Items.Add(l.TPAName);
             textBoxNumber.Text = "";
-            comboBoxWeight.DataSource = Data.Weights;
+            comboBoxWeight.DataSource = Data.Weights0;
             comboBoxWeight.SelectedItem = null;
             comboBoxType.DataSource = Data.Types;
             comboBoxType.SelectedItem = null;
             comboBoxMaterial.DataSource = Data.Materials;
             comboBoxMaterial.SelectedItem = null;
-            comboBoxColor.DataSource = Data.Colors;
+            comboBoxColor.DataSource = Data.Colors0;
             comboBoxColor.SelectedItem = null;
-            comboBoxCount.DataSource = Data.Quantitys;
+            comboBoxCount.DataSource = Data.Quantitys0;
             comboBoxCount.SelectedItem = null;
-            comboBoxAntiType.DataSource = Data.AntiTypes;
+            comboBoxAntiType.DataSource = Data.Antistatics;
             comboBoxAntiType.SelectedItem = "";
-            comboBoxAntiCount.DataSource = Data.AntiCounts;
+            comboBoxAntiCount.DataSource = Data.Colorants;
             comboBoxAntiCount.SelectedItem = null;
             comboBoxLimit.DataSource = Data.Limits;
             comboBoxLimit.SelectedItem = null;
@@ -57,6 +50,8 @@ namespace AutoLabel
             textBoxOther.Text = l.Other;
             if (Data.LittleBox(l.Count)) numericUpDownCount.Value = 1;
             else numericUpDownCount.Value = 0;
+            textBoxDate.Text = Data.DateToString();
+            textBoxTime.Text = DateTime.Now.ToString("hh:mm");
             comboBoxShift.SelectedItem = Data.Shift;
         }
 
@@ -91,7 +86,7 @@ namespace AutoLabel
             //Печать
             try
             {
-                Label l = new Label(Convert.ToInt32(comboBoxTPA.SelectedItem));
+                Label l = new Label(comboBoxTPA.SelectedItem.ToString(), 0);
                 if (comboBoxWeight.SelectedItem != null) l.Weight = comboBoxWeight.SelectedItem.ToString();
                 if (comboBoxType.SelectedItem != null) l.Type = comboBoxType.SelectedItem.ToString(); else l.Type = "";
                 if (comboBoxMaterial.SelectedItem != null) l.Material = comboBoxMaterial.SelectedItem.ToString(); else l.Material = "";

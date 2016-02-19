@@ -49,7 +49,9 @@
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBoxOn = new System.Windows.Forms.CheckBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,7 +93,7 @@
             this.panel2.Controls.Add(this.buttonquit);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1094, 100);
+            this.panel2.Size = new System.Drawing.Size(1128, 100);
             this.panel2.TabIndex = 10;
             // 
             // buttonsave
@@ -101,11 +103,11 @@
             this.buttonsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonsave.ForeColor = System.Drawing.Color.White;
-            this.buttonsave.Location = new System.Drawing.Point(828, 12);
+            this.buttonsave.Location = new System.Drawing.Point(862, 12);
             this.buttonsave.Name = "buttonsave";
             this.buttonsave.Size = new System.Drawing.Size(250, 76);
             this.buttonsave.TabIndex = 8;
-            this.buttonsave.Text = "Сохранить";
+            this.buttonsave.Text = "Записать";
             this.buttonsave.UseVisualStyleBackColor = false;
             this.buttonsave.Visible = false;
             this.buttonsave.Click += new System.EventHandler(this.buttonsave_Click);
@@ -117,7 +119,7 @@
             this.buttonNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNew.ForeColor = System.Drawing.Color.White;
-            this.buttonNew.Location = new System.Drawing.Point(895, 153);
+            this.buttonNew.Location = new System.Drawing.Point(929, 153);
             this.buttonNew.Name = "buttonNew";
             this.buttonNew.Size = new System.Drawing.Size(183, 69);
             this.buttonNew.TabIndex = 14;
@@ -132,7 +134,7 @@
             this.buttonNewAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNewAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNewAdmin.ForeColor = System.Drawing.Color.White;
-            this.buttonNewAdmin.Location = new System.Drawing.Point(895, 228);
+            this.buttonNewAdmin.Location = new System.Drawing.Point(929, 228);
             this.buttonNewAdmin.Name = "buttonNewAdmin";
             this.buttonNewAdmin.Size = new System.Drawing.Size(183, 69);
             this.buttonNewAdmin.TabIndex = 15;
@@ -147,7 +149,7 @@
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(895, 453);
+            this.buttonDelete.Location = new System.Drawing.Point(929, 453);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(183, 69);
             this.buttonDelete.TabIndex = 16;
@@ -163,7 +165,7 @@
             this.buttonKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonKey.ForeColor = System.Drawing.Color.White;
-            this.buttonKey.Location = new System.Drawing.Point(895, 303);
+            this.buttonKey.Location = new System.Drawing.Point(929, 303);
             this.buttonKey.Name = "buttonKey";
             this.buttonKey.Size = new System.Drawing.Size(183, 69);
             this.buttonKey.TabIndex = 17;
@@ -191,7 +193,7 @@
             this.listView1.Location = new System.Drawing.Point(12, 153);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(867, 709);
+            this.listView1.Size = new System.Drawing.Size(901, 747);
             this.listView1.TabIndex = 18;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -215,7 +217,7 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Привязка к ТПА";
-            this.columnHeader4.Width = 280;
+            this.columnHeader4.Width = 320;
             // 
             // buttonKeyDel
             // 
@@ -224,7 +226,7 @@
             this.buttonKeyDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKeyDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonKeyDel.ForeColor = System.Drawing.Color.White;
-            this.buttonKeyDel.Location = new System.Drawing.Point(895, 378);
+            this.buttonKeyDel.Location = new System.Drawing.Point(929, 378);
             this.buttonKeyDel.Name = "buttonKeyDel";
             this.buttonKeyDel.Size = new System.Drawing.Size(183, 69);
             this.buttonKeyDel.TabIndex = 19;
@@ -239,11 +241,11 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(895, 542);
+            this.checkBox1.Location = new System.Drawing.Point(929, 542);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(125, 41);
+            this.checkBox1.Size = new System.Drawing.Size(74, 41);
             this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "ТПА 1";
+            this.checkBox1.Text = "П1";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -253,11 +255,11 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(895, 589);
+            this.checkBox2.Location = new System.Drawing.Point(1022, 542);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(127, 41);
+            this.checkBox2.Size = new System.Drawing.Size(76, 41);
             this.checkBox2.TabIndex = 21;
-            this.checkBox2.Text = "ТПА 2";
+            this.checkBox2.Text = "П2";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
@@ -267,11 +269,11 @@
             this.checkBox3.AutoSize = true;
             this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBox3.ForeColor = System.Drawing.Color.White;
-            this.checkBox3.Location = new System.Drawing.Point(895, 636);
+            this.checkBox3.Location = new System.Drawing.Point(929, 589);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(127, 41);
+            this.checkBox3.Size = new System.Drawing.Size(76, 41);
             this.checkBox3.TabIndex = 22;
-            this.checkBox3.Text = "ТПА 3";
+            this.checkBox3.Text = "П3";
             this.checkBox3.UseVisualStyleBackColor = true;
             this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
@@ -281,11 +283,11 @@
             this.checkBox4.AutoSize = true;
             this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBox4.ForeColor = System.Drawing.Color.White;
-            this.checkBox4.Location = new System.Drawing.Point(895, 683);
+            this.checkBox4.Location = new System.Drawing.Point(1022, 589);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(127, 41);
+            this.checkBox4.Size = new System.Drawing.Size(76, 41);
             this.checkBox4.TabIndex = 23;
-            this.checkBox4.Text = "ТПА 4";
+            this.checkBox4.Text = "П4";
             this.checkBox4.UseVisualStyleBackColor = true;
             this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
@@ -295,11 +297,11 @@
             this.checkBox5.AutoSize = true;
             this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBox5.ForeColor = System.Drawing.Color.White;
-            this.checkBox5.Location = new System.Drawing.Point(895, 730);
+            this.checkBox5.Location = new System.Drawing.Point(929, 636);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(127, 41);
+            this.checkBox5.Size = new System.Drawing.Size(76, 41);
             this.checkBox5.TabIndex = 24;
-            this.checkBox5.Text = "ТПА 5";
+            this.checkBox5.Text = "П5";
             this.checkBox5.UseVisualStyleBackColor = true;
             this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
             // 
@@ -309,34 +311,66 @@
             this.checkBox6.AutoSize = true;
             this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBox6.ForeColor = System.Drawing.Color.White;
-            this.checkBox6.Location = new System.Drawing.Point(895, 777);
+            this.checkBox6.Location = new System.Drawing.Point(1022, 636);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(127, 41);
+            this.checkBox6.Size = new System.Drawing.Size(76, 41);
             this.checkBox6.TabIndex = 25;
-            this.checkBox6.Text = "ТПА 6";
+            this.checkBox6.Text = "П6";
             this.checkBox6.UseVisualStyleBackColor = true;
             this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
+            // checkBoxOn
+            // 
+            this.checkBoxOn.AutoSize = true;
+            this.checkBoxOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBoxOn.ForeColor = System.Drawing.Color.White;
+            this.checkBoxOn.Location = new System.Drawing.Point(12, 106);
+            this.checkBoxOn.Name = "checkBoxOn";
+            this.checkBoxOn.Size = new System.Drawing.Size(744, 41);
+            this.checkBoxOn.TabIndex = 26;
+            this.checkBoxOn.Text = "Контроль привязки пользователей к ТПА включен";
+            this.checkBoxOn.UseVisualStyleBackColor = true;
+            this.checkBoxOn.CheckedChanged += new System.EventHandler(this.checkBoxOn_CheckedChanged);
+            // 
             // checkBox7
             // 
+            this.checkBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox7.AutoSize = true;
             this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBox7.ForeColor = System.Drawing.Color.White;
-            this.checkBox7.Location = new System.Drawing.Point(12, 106);
+            this.checkBox7.Location = new System.Drawing.Point(929, 714);
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(744, 41);
-            this.checkBox7.TabIndex = 26;
-            this.checkBox7.Text = "Контроль привязки пользователей к ТПА включен";
+            this.checkBox7.Size = new System.Drawing.Size(73, 41);
+            this.checkBox7.TabIndex = 27;
+            this.checkBox7.Text = "К1";
             this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.Visible = false;
             this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
+            // 
+            // checkBox8
+            // 
+            this.checkBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox8.ForeColor = System.Drawing.Color.White;
+            this.checkBox8.Location = new System.Drawing.Point(1022, 714);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(75, 41);
+            this.checkBox8.TabIndex = 28;
+            this.checkBox8.Text = "К2";
+            this.checkBox8.UseVisualStyleBackColor = true;
+            this.checkBox8.Visible = false;
+            this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox8_CheckedChanged);
             // 
             // FormUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1092, 874);
+            this.ClientSize = new System.Drawing.Size(1126, 912);
+            this.Controls.Add(this.checkBox8);
             this.Controls.Add(this.checkBox7);
+            this.Controls.Add(this.checkBoxOn);
             this.Controls.Add(this.checkBox6);
             this.Controls.Add(this.checkBox5);
             this.Controls.Add(this.checkBox4);
@@ -386,6 +420,8 @@
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.CheckBox checkBox5;
         private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBoxOn;
         private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox8;
     }
 }

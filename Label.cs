@@ -9,7 +9,8 @@ namespace AutoLabel
 {
     class Label
     {
-        string TPA;      //Номер ТПА
+        public string TPAName;  //Имя ТПА
+        public int TPAType;     //Тип ТПА (0 - преформа, 1 - колпак)
         public int CurrentNum;  //Автомат номер короба
         public string PartNum;  //Вручную номер партии
         public string Type;     //Список тип горловиры
@@ -33,7 +34,7 @@ namespace AutoLabel
         static Font Biggg = new Font("Arial", 90, FontStyle.Bold, GraphicsUnit.Pixel);
 
         //Графика
-        static Image logo = Image.FromFile("Graphics\\Europlast logo.jpeg");
+        static Image logo = Image.FromFile("Graphics\\Logo.png");
         static Image rst = Image.FromFile("Graphics\\RST.png");
 
         //Текущие данные для печати
@@ -47,10 +48,12 @@ namespace AutoLabel
         /// <summary>
         /// Конструктор
         /// </summary>
-        /// <param name="i">Номер ТПА</param>
-        public Label(int i)
+        /// <param name="name">Название машины</param>
+        /// <param name="type">Тип ТПА (0-преформа, 1-колпак)</param>
+        public Label(string name, int type)
         {
-            TPA = (i + 1).ToString();
+            TPAName = name;
+            TPAType = type;
             Load();
         }
 
@@ -65,7 +68,7 @@ namespace AutoLabel
             Num = num;
             Packer = packer;
             LabelCount = count;
-            Print(num, packer, count, DateToString(), DateTime.Now.ToString("HH:mm"), Data.Shift);
+            Print(num, packer, count, Data.DateToString(), DateTime.Now.ToString("HH:mm"), Data.Shift);
         }
 
         /// <summary>
@@ -159,7 +162,7 @@ namespace AutoLabel
             g.DrawString(AntistaticType, Big, Brushes.Black, new Point(X + 420, Y + 217));
             //Дополнительные поля
             g.DrawString("Прочие дополнения: " + Other, Small, Brushes.Black, new Point(X + 10, Y + 280));
-            DrawStrings(g, X, Y, 220, 300, "Машина", "Machine", Data.TPAtoString(TPA));
+            DrawStrings(g, X, Y, 220, 300, "Машина", "Machine", TPAName);
             DrawStrings(g, X, Y, 220, 340, "Марка материала", "Material", Material);
             DrawStrings(g, X, Y, 220, 380, "Цвет преформы", "Preform colour", PColor);
             DrawStrings(g, X, Y, 220, 420, "Количество преформ в коробе", "Preform quantity per box", Count);
@@ -206,31 +209,7 @@ namespace AutoLabel
             g.DrawString(s3, Normal, Brushes.Black, new Point(X + x + 10, Y + y));
         }
 
-        /// <summary>
-        /// Предоставление текущей даты в человечьем виде
-        /// </summary>
-        /// <returns></returns>
-        static string DateToString()
-        {
-            DateTime now = DateTime.Now;
-            string date = now.ToString("dd ");
-            switch (now.Month)
-            {
-                case 1: date += "янв"; break;
-                case 2: date += "фев"; break;
-                case 3: date += "мар"; break;
-                case 4: date += "апр"; break;
-                case 5: date += "май"; break;
-                case 6: date += "июн"; break;
-                case 7: date += "июл"; break;
-                case 8: date += "авг"; break;
-                case 9: date += "сен"; break;
-                case 10: date += "окт"; break;
-                case 11: date += "ноя"; break;
-                case 12: date += "дек"; break;
-            }
-            return date + now.ToString(" yy");
-        }
+
 
         /// <summary>
         /// Сохранение на диск
@@ -239,7 +218,8 @@ namespace AutoLabel
         {
             try
             {
-                StreamWriter file = File.CreateText("TPA"+TPA+".txt");
+                Directory.CreateDirectory("TPA");
+                StreamWriter file = File.CreateText("TPA\\" + TPAName + ".txt");
                 file.WriteLine(CurrentNum);
                 file.WriteLine(PartNum);
                 file.WriteLine(Type);
@@ -268,7 +248,7 @@ namespace AutoLabel
         {
             try
             {
-                StreamReader file = File.OpenText("TPA" + TPA + ".txt");
+                StreamReader file = File.OpenText("TPA\\" + TPAName + ".txt");
                 CurrentNum = Convert.ToInt32(file.ReadLine());
                 PartNum = file.ReadLine();
                 Type = file.ReadLine();
@@ -294,7 +274,7 @@ namespace AutoLabel
             {
                 StreamWriter file = new StreamWriter("Logs\\" + Data.LogName[0]+".csv", true, Encoding.Default);
                 file.WriteLine(DateTime.Now.ToString("dd.MM; HH:mm") +
-                    "; ТПА" + TPA + "; " + PartNum + "; " + Type +"; " + Weight + "; " +
+                    "; " + TPAName + "; " + PartNum + "; " + Type +"; " + Weight + "; " +
                     PColor +"; " + CurrentNum + "; " + Packer);
                 file.Dispose();
             }

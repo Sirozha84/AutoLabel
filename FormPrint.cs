@@ -16,7 +16,7 @@ namespace AutoLabel
         public FormPrint()
         {
             InitializeComponent();
-            Data.LoadUsers();
+            Data.UsersLoad();
             //Режим для ПК
             if (!Data.IsMachine)
             {
@@ -59,12 +59,7 @@ namespace AutoLabel
                                 comboBoxUser.Items.Add(u.Name);
                     CustomNum = false;
                     //Ну а если список гостей пуст, значит запрещаем печать на этой ТПА
-                    if (comboBoxUser.Items.Count == 0)
-                    {
-                        FormError er = new FormError("Печать запрещена");
-                        er.ShowDialog();
-                        Close();
-                    }
+                    if (comboBoxUser.Items.Count == 0) AccessDenied();
                     //А еееесли в списке только один чувак, его сразу и выберем
                     if (comboBoxUser.Items.Count == 1)
                         comboBoxUser.SelectedIndex = 0;
@@ -161,18 +156,19 @@ namespace AutoLabel
             }
         }
 
+        //Запрет печати 
+        void AccessDenied()
+        {
+            FormError er = new FormError("Печать запрещена");
+            er.ShowDialog();
+            Close();
+        }
+
+        //Смена пользователя, проверка его доступа к ТПА
         private void comboBoxUser_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Data.AccessTest(comboBoxUser.SelectedItem.ToString(), NumMachine))
-            {
-                labelAccessDenied.Visible = false;
-                buttonPrint.Visible = true;
-            }
-            else
-            {
-                buttonPrint.Visible = false;
-                labelAccessDenied.Visible = true;
-            }
+            if (Data.IsMachine & !Data.AccessTest(comboBoxUser.SelectedItem.ToString(), NumMachine))
+                AccessDenied();
             TimerStart();
         }
 
@@ -225,7 +221,7 @@ namespace AutoLabel
 
         void TimerStart()
         {
-            timer = 20;
+            timer = 60;
             timer1.Enabled = true;
         }
     }

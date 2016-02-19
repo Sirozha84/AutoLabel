@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace AutoLabel
 {
-    public partial class FormProperties : Form
+    public partial class FormPropertiesPC : Form
     {
-        public FormProperties()
+        public FormPropertiesPC()
         {
             InitializeComponent();
             foreach (Label l in Data.Labels)
@@ -58,7 +58,6 @@ namespace AutoLabel
             comboBoxLimit.SelectedItem = null;
             textBoxNumber.Text = "";
             comboBoxAntistatic.SelectedItem = "";
-            buttonsave.Visible = false;
             if (l.Weight != "") comboBoxWeight.SelectedItem = l.Weight; else comboBoxWeight.SelectedItem = null;
             if (l.Material != "") comboBoxMaterial.SelectedItem = l.Material; else comboBoxMaterial.SelectedItem = null;
             if (l.PColor != "") comboBoxColor.SelectedItem = l.PColor; else comboBoxColor.SelectedItem = null;
@@ -69,32 +68,32 @@ namespace AutoLabel
             if (l.AntistaticCount != "") comboBoxColorants.SelectedItem = l.AntistaticCount; else comboBoxColorants.SelectedItem = null;
             if (l.Limit != "") comboBoxLimit.SelectedItem = l.Limit; else comboBoxLimit.SelectedItem = null;
             textBoxOther.Text = l.Other;
-            comboBoxWeight.Visible = true;
-            comboBoxType.Visible = (l.TPAType == 0);
-            comboBoxMaterial.Visible = (l.TPAType == 0);
-            comboBoxColor.Visible = true;
-            comboBoxCount.Visible = true;
-            textBoxNumber.Visible = true;
-            comboBoxLimit.Visible = (l.TPAType == 0);
-            comboBoxAntistatic.Visible = (l.TPAType == 0);
-            comboBoxColorants.Visible = (l.TPAType == 0);
-            textBoxOther.Visible = true;
-            label1.Visible = true;
-            label2.Visible = (l.TPAType == 0);
-            label3.Visible = true;
-            label4.Visible = true;
-            label6.Visible = (l.TPAType == 0);
-            label7.Visible = true;
-            label8.Visible = (l.TPAType == 0);
-            label9.Visible = (l.TPAType == 0);
-            label10.Visible = (l.TPAType == 0);
-            label11.Visible = true;
-            buttonsave.Visible = false;
-            buttonClear.Visible = true;
+            comboBoxWeight.Enabled = true;
+            comboBoxType.Enabled = (l.TPAType == 0);
+            comboBoxMaterial.Enabled = (l.TPAType == 0);
+            comboBoxColor.Enabled = true;
+            comboBoxCount.Enabled = true;
+            textBoxNumber.Enabled = true;
+            comboBoxLimit.Enabled = (l.TPAType == 0);
+            comboBoxAntistatic.Enabled = (l.TPAType == 0);
+            comboBoxColorants.Enabled = (l.TPAType == 0);
+            textBoxOther.Enabled = true;
+            label1.Enabled = true;
+            label2.Enabled = (l.TPAType == 0);
+            label3.Enabled = true;
+            label4.Enabled = true;
+            label6.Enabled = (l.TPAType == 0);
+            label7.Enabled = true;
+            label8.Enabled = (l.TPAType == 0);
+            label9.Enabled = (l.TPAType == 0);
+            label10.Enabled = (l.TPAType == 0);
+            label11.Enabled = true;
+            buttonSave.Enabled = false;
+            buttonClear.Enabled = true;
         }
 
         //Сохранение параметров
-        private void buttonsave_Click(object sender, EventArgs e)
+        private void buttonSave_Click(object sender, EventArgs e)
         {
             Label l = Data.Labels[comboBoxTPA.SelectedIndex];
             //Сброс номера
@@ -111,14 +110,14 @@ namespace AutoLabel
             if (comboBoxLimit.SelectedItem != null) l.Limit = comboBoxLimit.SelectedItem.ToString(); else l.Limit = "";
             l.Other = textBoxOther.Text;
             l.Save();
-            buttonsave.Visible = false;
+            buttonSave.Enabled = false;
         }
 
         //Делаем кнопку сохранения видимой
         void MakeSaveEnable()
         {
             if (comboBoxTPA.SelectedIndex >= 0)
-                buttonsave.Visible = true;
+                buttonSave.Enabled = true;
         }
 
         //При изменении любого поля делаем кнопку сохранения видимой
@@ -132,55 +131,6 @@ namespace AutoLabel
         private void comboBoxAntiCount_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxColor_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void textBoxOther_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
-
-        //Кнопка выбора принтера
-        private void buttonPrinterSelect_Click(object sender, EventArgs e)
-        {
-            Data.PrintSetup();
-        }
-
-        //Кнопка отчётов
-        private void buttonReport_Click(object sender, EventArgs e)
-        {
-            if (!Data.PrintSelected()) Data.PrintSetup();
-            if (Data.PrintSelected())
-            {
-                FormReports rep = new FormReports();
-                rep.ShowDialog();
-                rep.Dispose();
-            }
-        }
-
-        //Кнопка пользователей
-        private void buttonUsers_Click(object sender, EventArgs e)
-        {
-            FormUsers form = new FormUsers();
-            form.ShowDialog();
-        }
-
-        //Строка прочих дополнений
-        private void textBoxOther_Click(object sender, EventArgs e)
-        {
-            if (!Data.IsMachine) return;
-            FormKeyboardLetter key = new FormKeyboardLetter("Введите прочие дополнения");
-            if (key.ShowDialog() == DialogResult.OK)
-            {
-                textBoxOther.Text = key.Str;
-                MakeSaveEnable();
-            }
-        }
-
-        //Строчка номера партии
-        private void textBoxNumber_Click_1(object sender, EventArgs e)
-        {
-            if (!Data.IsMachine) return;
-            FormKeyboardNums key = new FormKeyboardNums("Введите номер партии");
-            if (key.ShowDialog() == DialogResult.OK)
-            {
-                textBoxNumber.Text = key.Str;
-                MakeSaveEnable();
-            }
-        }
 
         /// <summary>
         /// Очистка полей
@@ -201,10 +151,10 @@ namespace AutoLabel
             textBoxOther.Text = "";
         }
 
-        //Кнопка "о программе"
-        private void buttonAbout_Click(object sender, EventArgs e)
+        //Кнопка Закрытия
+        private void buttonClose_Click(object sender, EventArgs e)
         {
-            Program.About();
+            Close();
         }
     }
 }

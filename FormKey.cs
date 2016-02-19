@@ -7,7 +7,7 @@ namespace AutoLabel
     {
         public string Code;
         int s = 0;
-        int timer = 15;    //Таймер для автоматического закрытия
+        int timer = 60;    //Таймер для автоматического закрытия
 
         public FormKey()
         {
