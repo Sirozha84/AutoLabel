@@ -48,9 +48,12 @@ namespace AutoLabel
         public static List<Label> Labels = new List<Label>();
         //Списки выпадающих меню
         public static List<string> Types = new List<string>();
-        public static List<string> Weights = new List<string>();
-        public static List<string> Quantitys = new List<string>();
-        public static List<string> Colors = new List<string>();
+        public static List<string> Weights0 = new List<string>();
+        public static List<string> Weights1 = new List<string>();
+        public static List<string> Quantitys0 = new List<string>();
+        public static List<string> Quantitys1 = new List<string>();
+        public static List<string> Colors0 = new List<string>();
+        public static List<string> Colors1 = new List<string>();
         public static List<string> Materials = new List<string>();
         public static List<string> Limits = new List<string>();
         public static List<string> AntiTypes = new List<string>();
@@ -82,118 +85,30 @@ namespace AutoLabel
                 //Применяем настройки принтера по умолчанию
                 printersettings = null;
             }
-            //Заполняем выпадающие списки
-            Types.Add("PCO");
-            Types.Add("BPF");
-            Types.Add("PCO 1881");
-            Types.Add("PCO/BPF");
-            Types.Add("Bericap");
-            Types.Add("Semi PCO");
-            Types.Add("DIN");
-            Weights.Add("15,3");
-            Weights.Add("16,8");
-            Weights.Add("18,9");
-            Weights.Add("20,6");
-            Weights.Add("20,7");
-            Weights.Add("21");
-            Weights.Add("23");
-            Weights.Add("24,5");
-            Weights.Add("25,5");
-            Weights.Add("26");
-            Weights.Add("27");
-            Weights.Add("29");
-            Weights.Add("30");
-            Weights.Add("30,7");
-            Weights.Add("31,7");
-            Weights.Add("33,7");
-            Weights.Add("34,5");
-            Weights.Add("36");
-            Weights.Add("37,7");
-            Weights.Add("38");
-            Weights.Add("39,5");
-            Weights.Add("40");
-            Weights.Add("41");
-            Weights.Add("42");
-            Weights.Add("44");
-            Weights.Add("45,7");
-            Weights.Add("46");
-            Weights.Add("48");
-            Weights.Add("50,5");
-            Weights.Add("51");
-            Weights.Add("54,5");
-            Quantitys.Add("720");
-            Quantitys.Add("784");
-            Quantitys.Add("792");
-            Quantitys.Add("816");
-            Quantitys.Add("864");
-            Quantitys.Add("896");
-            Quantitys.Add("912");
-            Quantitys.Add("1008");
-            Quantitys.Add("1104");
-            Quantitys.Add("1200");
-            Quantitys.Add("1440");
-            Quantitys.Add("1920");
-            Quantitys.Add("5808");
-            Quantitys.Add("6096");
-            Quantitys.Add("6440");
-            Quantitys.Add("6672");
-            Quantitys.Add("6720");
-            Quantitys.Add("7104");
-            Quantitys.Add("7112");
-            Quantitys.Add("7200");
-            Quantitys.Add("7296");
-            Quantitys.Add("7440");
-            Quantitys.Add("7680");
-            Quantitys.Add("8400");
-            Quantitys.Add("9408");
-            Quantitys.Add("9264");
-            Quantitys.Add("10080");
-            Quantitys.Add("10896");
-            Quantitys.Add("12000");
-            Quantitys.Add("13104");
-            Quantitys.Add("16608");
-            Colors.Add("Бесцветный");
-            Colors.Add("Бесцветный (М)");
-            Colors.Add("Белый");
-            Colors.Add("Оранжевый");
-            Colors.Add("Зелёный");
-            Colors.Add("Синий");
-            Colors.Add("Бирюзовый");
-            Colors.Add("Красный");
-            Colors.Add("Коричневый");
-            Colors.Add("Чёрный");
-            Materials.Add("Полиэф");
-            Materials.Add("Роспэт");
-            Materials.Add("Texpet");
-            Materials.Add("Jade");
-            Materials.Add("WNKI");
-            Limits.Add("6 месяцев");
-            Limits.Add("24 месяца");
-            AntiTypes.Add("");
-            AntiTypes.Add("АД");
-            AntiTypes.Add("АД+");
-            AntiTypes.Add("АДТ");
-            AntiTypes.Add("АДТ+");
-            AntiCounts.Add("000");
-            AntiCounts.Add("001");
-            AntiCounts.Add("106");
-            AntiCounts.Add("107");
-            AntiCounts.Add("109");
-            AntiCounts.Add("111");
-            AntiCounts.Add("211");
-            AntiCounts.Add("214");
-            AntiCounts.Add("308");
-            AntiCounts.Add("312");
-            AntiCounts.Add("314");
-            AntiCounts.Add("315");
-            AntiCounts.Add("316");
-            AntiCounts.Add("318");
-            AntiCounts.Add("320");
-            AntiCounts.Add("323");
-            AntiCounts.Add("402");
-            AntiCounts.Add("403");
-            AntiCounts.Add("501");
-            AntiCounts.Add("502");
+            //Загружаем выпадающие списки
+            ListLoad(Types, "Types");
+            ListLoad(Weights0, "Weights0");
+            ListLoad(Weights1, "Weights1");
+            ListLoad(Quantitys0, "Quantitys0");
+            ListLoad(Quantitys1, "Quantitys1");
+            ListLoad(Colors0, "Colors0");
+            ListLoad(Colors1, "Colors1");
+            ListLoad(Materials, "Materials");
+            ListLoad(Limits, "Limits");
+            ListLoad(AntiTypes, "AntiTypes");
+            ListLoad(AntiCounts, "AntiCounts");
+        }
+
+        static void ListLoad(List<string> list, string filename)
+        {
+            //89-158  89-97
+            try
+            {
+                StreamReader file = File.OpenText("Lists\\" + filename + ".txt");
+                while (!file.EndOfStream)
+                    list.Add(file.ReadLine());
+            }
+            catch { }
         }
 
         /// <summary>
@@ -205,8 +120,14 @@ namespace AutoLabel
             LoadShift();
             //Лейблы
             Labels.Clear();
-            for (int i = 0; i < 6; i++)
-                Labels.Add(new Label(i)); //Конструктор сам, либо создаст пустой, либо загрузит с диска
+            Labels.Add(new Label(0, "Husky №1", 0));
+            Labels.Add(new Label(0, "Netstal №2", 0));
+            Labels.Add(new Label(0, "Netstal №3", 0));
+            Labels.Add(new Label(0, "Netstal №4", 0));
+            Labels.Add(new Label(0, "Netstal №5", 0));
+            Labels.Add(new Label(0, "Netstal №5", 0));
+            Labels.Add(new Label(0, "C1", 1));
+            Labels.Add(new Label(0, "C2", 1));
         }
 
         /// <summary>
@@ -528,25 +449,6 @@ namespace AutoLabel
                 it.SubItems.Add(UserWidthKey(u));
                 it.SubItems.Add(StringWidthTPA(u));
                 list.Items.Add(it);
-            }
-        }
-
-        /// <summary>
-        /// Строчка с названием машины
-        /// </summary>
-        /// <param name="num">Номер ТПА</param>
-        /// <returns></returns>
-        public static string TPAtoString(string num)
-        {
-            switch (num)
-            {
-                case "1": return "Husky №1";
-                case "2": return "Netstal №2";
-                case "3": return "Netstal №3";
-                case "4": return "Netstal №4";
-                case "5": return "Netstal №5";
-                case "6": return "Netstal №6";
-                default: return "Error";
             }
         }
     }
