@@ -43,8 +43,8 @@
             this.comboBoxLimit = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxOther = new System.Windows.Forms.TextBox();
-            this.comboBoxAntiCount = new System.Windows.Forms.ComboBox();
-            this.comboBoxAntiType = new System.Windows.Forms.ComboBox();
+            this.comboBoxColorant = new System.Windows.Forms.ComboBox();
+            this.comboBoxAntistatic = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -93,8 +93,8 @@
             this.tableLayoutPanel1.Controls.Add(this.comboBoxLimit, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.label11, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.textBoxOther, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxAntiCount, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxAntiType, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxColorant, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxAntistatic, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 7);
@@ -309,31 +309,31 @@
             this.textBoxOther.Size = new System.Drawing.Size(226, 20);
             this.textBoxOther.TabIndex = 10;
             // 
-            // comboBoxAntiCount
+            // comboBoxColorant
             // 
-            this.comboBoxAntiCount.BackColor = System.Drawing.SystemColors.Window;
-            this.comboBoxAntiCount.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboBoxAntiCount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAntiCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBoxAntiCount.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.comboBoxAntiCount.FormattingEnabled = true;
-            this.comboBoxAntiCount.Location = new System.Drawing.Point(235, 211);
-            this.comboBoxAntiCount.Name = "comboBoxAntiCount";
-            this.comboBoxAntiCount.Size = new System.Drawing.Size(226, 21);
-            this.comboBoxAntiCount.TabIndex = 8;
+            this.comboBoxColorant.BackColor = System.Drawing.SystemColors.Window;
+            this.comboBoxColorant.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comboBoxColorant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxColorant.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxColorant.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.comboBoxColorant.FormattingEnabled = true;
+            this.comboBoxColorant.Location = new System.Drawing.Point(235, 211);
+            this.comboBoxColorant.Name = "comboBoxColorant";
+            this.comboBoxColorant.Size = new System.Drawing.Size(226, 21);
+            this.comboBoxColorant.TabIndex = 8;
             // 
-            // comboBoxAntiType
+            // comboBoxAntistatic
             // 
-            this.comboBoxAntiType.BackColor = System.Drawing.SystemColors.Window;
-            this.comboBoxAntiType.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboBoxAntiType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAntiType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBoxAntiType.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.comboBoxAntiType.FormattingEnabled = true;
-            this.comboBoxAntiType.Location = new System.Drawing.Point(235, 185);
-            this.comboBoxAntiType.Name = "comboBoxAntiType";
-            this.comboBoxAntiType.Size = new System.Drawing.Size(226, 21);
-            this.comboBoxAntiType.TabIndex = 7;
+            this.comboBoxAntistatic.BackColor = System.Drawing.SystemColors.Window;
+            this.comboBoxAntistatic.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comboBoxAntistatic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAntistatic.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxAntistatic.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.comboBoxAntistatic.FormattingEnabled = true;
+            this.comboBoxAntistatic.Location = new System.Drawing.Point(235, 185);
+            this.comboBoxAntistatic.Name = "comboBoxAntistatic";
+            this.comboBoxAntistatic.Size = new System.Drawing.Size(226, 21);
+            this.comboBoxAntistatic.TabIndex = 7;
             // 
             // label10
             // 
@@ -572,7 +572,7 @@
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(82, 23);
             this.buttonCancel.TabIndex = 18;
-            this.buttonCancel.Text = "Отмена";
+            this.buttonCancel.Text = "Закрыть";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -631,8 +631,8 @@
         private System.Windows.Forms.ComboBox comboBoxLimit;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBoxOther;
-        private System.Windows.Forms.ComboBox comboBoxAntiCount;
-        private System.Windows.Forms.ComboBox comboBoxAntiType;
+        private System.Windows.Forms.ComboBox comboBoxColorant;
+        private System.Windows.Forms.ComboBox comboBoxAntistatic;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

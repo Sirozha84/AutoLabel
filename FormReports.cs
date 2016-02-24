@@ -72,6 +72,7 @@ namespace AutoLabel
             doc.PrintPage += Doc_PrintPage;
             line = 0;
             doc.Print();
+            Log.Write("Печать отчёта Журнал " + comboBoxShift.SelectedItem);
             Close();
         }
         private void Doc_PrintPage(object sender, PrintPageEventArgs e)
@@ -132,6 +133,7 @@ namespace AutoLabel
             doc.PrintPage += Doc_PrintPage1;
             line = 0;
             doc.Print();
+            Log.Write("Печать отчёта Общий " + comboBoxShift.SelectedItem);
             Close();
         }
         private void Doc_PrintPage1(object sender, PrintPageEventArgs e)
@@ -211,6 +213,7 @@ namespace AutoLabel
             doc.PrintPage += Doc_PrintPage2;
             line = 0;
             doc.Print();
+            Log.Write("Печать отчёта По партиям " + comboBoxShift.SelectedItem);
             Close();
         }
         private void Doc_PrintPage2(object sender, PrintPageEventArgs e)
@@ -274,6 +277,7 @@ namespace AutoLabel
             doc.PrintPage += Doc_PrintPage3;
             line = 0;
             doc.Print();
+            Log.Write("Печать отчёта По ТПА " + comboBoxShift.SelectedItem);
             Close();
         }
         private void Doc_PrintPage3(object sender, PrintPageEventArgs e)

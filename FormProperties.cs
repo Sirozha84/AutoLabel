@@ -21,6 +21,7 @@ namespace AutoLabel
         //Кнопка выхода
         private void buttonquitprogram_Click(object sender, EventArgs e)
         {
+            Log.Write("Выход из программы (через параметры)");
             Environment.Exit(0);
         }
 

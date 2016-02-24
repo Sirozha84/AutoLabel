@@ -7,17 +7,20 @@ namespace AutoLabel
     public partial class FormPrint : Form
     {
         public int NumMachine;  //Номер ТПА
+        Label lab;              //Ссылка на ТПА
         int box;                //Номер короба
         int count = 1;          //Количество коробов
         bool CustomNum = true;  //Можно ли менять номер вручную?
         bool CountSelect = false;   //Выбираем ли мы количество коробов?
         int timer;              //Таймер для автозакрывания окна
 
-        public FormPrint()
+        public FormPrint(int num)
         {
             InitializeComponent();
+            lab = Data.Labels[num];
+            NumMachine = num;
             Data.UsersLoad();
-            //Режим для ПК
+            //Режим для ПК -------------------------   потом удалить когда бдует своя форма для пк
             if (!Data.IsMachine)
             {
                 FormBorderStyle = FormBorderStyle.Sizable;
@@ -34,11 +37,11 @@ namespace AutoLabel
         private void FormPrint_Load(object sender, EventArgs e)
         {
 
-            labelNum.Text = "ТПА: " + (NumMachine + 1).ToString();
+            labelNum.Text = lab.TPAName;
             //Заполним комбобокс пользователями
             comboBoxUser.Items.Clear();
             foreach (User u in Data.Users) comboBoxUser.Items.Add(u.Name);
-            box = Data.Labels[NumMachine].CurrentNum;
+            box = lab.CurrentNum;
             if (Data.IsMachine)
             {
                 FormKey key = new FormKey();
@@ -91,7 +94,7 @@ namespace AutoLabel
                 }
             }
             //Далее надо выяснить мелкие это коробки или крупные, и в зависимости от этого вывести второй нумератор
-            if (Data.LittleBox(NumMachine))
+            if (Data.Labels[NumMachine].AllowSelectCount())
             {
                 label2.Visible = true;
                 textBoxCount.Visible = true;
@@ -108,7 +111,7 @@ namespace AutoLabel
         {
             int c = 0;
             if (CountSelect) c = count;
-            Data.Labels[NumMachine].Print(box, comboBoxUser.SelectedItem.ToString(), c);
+            lab.Print(box, comboBoxUser.SelectedItem.ToString(), c);
             Close();
         }
 
@@ -126,7 +129,7 @@ namespace AutoLabel
         //Кнопка последняя
         private void buttonMax_Click(object sender, EventArgs e)
         {
-            box = Data.Labels[NumMachine].CurrentNum;
+            box = lab.CurrentNum;
             DrawNum();
             TimerStart();
         }
@@ -136,7 +139,7 @@ namespace AutoLabel
         {
             //Номер короба
             textBoxNum.Text = box.ToString();
-            if (box < Data.Labels[NumMachine].CurrentNum)
+            if (box < lab.CurrentNum)
             {
                 textBoxNum.ForeColor = Color.Tomato;
                 buttonMax.Visible = true;
@@ -169,6 +172,7 @@ namespace AutoLabel
         {
             if (Data.IsMachine & !Data.AccessTest(comboBoxUser.SelectedItem.ToString(), NumMachine))
                 AccessDenied();
+            buttonPrint.Visible = true;
             TimerStart();
         }
 
@@ -181,14 +185,15 @@ namespace AutoLabel
             key.ShowDialog();
             if (key.DialogResult == DialogResult.OK)
             {
-                Data.Labels[NumMachine].CurrentNum = Convert.ToInt32(key.Str);
-                Data.Labels[NumMachine].Save();
-                box = Data.Labels[NumMachine].CurrentNum;
+                lab.CurrentNum = Convert.ToInt32(key.Str);
+                lab.Save();
+                box = lab.CurrentNum;
                 DrawNum();
             }
             TimerStart();
         }
 
+        //Кнопка "<"
         private void buttonCountDec_Click(object sender, EventArgs e)
         {
             if (count > 1)
@@ -199,6 +204,7 @@ namespace AutoLabel
             TimerStart();
         }
 
+        //Кнопка ">"
         private void buttonCountInc_Click(object sender, EventArgs e)
         {
             if (count < Data.MaxLabels)
@@ -209,6 +215,7 @@ namespace AutoLabel
             TimerStart();
         }
 
+        //Таймер для закрывания окна
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer--;

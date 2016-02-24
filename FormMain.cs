@@ -47,8 +47,7 @@ namespace AutoLabel
             if (Data.Labels[num].PartNum == null | 
                 Data.Labels[num].PartNum == "" |
                 Data.Labels[num].Count == "") return;
-            FormPrint formprint = new FormPrint();
-            formprint.NumMachine = num;
+            FormPrint formprint = new FormPrint(num);
             formprint.ShowDialog();
             RefreshMain();
         }

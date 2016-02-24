@@ -20,7 +20,7 @@ namespace AutoLabel
         /// <summary>
         /// Максимальное количество преформ в малом коробе
         /// </summary>
-        const int PreformsInLittleBox = 1920;
+        public const int PreformsInLittleBox = 1920;
         /// <summary>
         /// Сбрасывать ли счётчик при заступании новой
         /// </summary>
@@ -280,7 +280,7 @@ namespace AutoLabel
         {
             MessageBox.Show(message + "\nДля решение проблемы вызовите системного администратора",
                 "Случилось что-то плохое");
-            //Ох, надеюсь мне не придётся увидеть ни одной из этих надписей...
+            Log.Write("Ошибка: "+ message);
         }
 
         /// <summary>
@@ -330,27 +330,6 @@ namespace AutoLabel
             }
             //Если ключи не используются, выдаём полные права без вопросов
             return 255;
-        }
-
-        /// <summary>
-        /// Малая ли это коробка? (считаем по строчке)
-        /// </summary>
-        /// <param name="count">Строчка с количеством преформ</param>
-        /// <returns></returns>
-        public static bool LittleBox(string count)
-        {
-            try { return (Convert.ToInt32(count) <= PreformsInLittleBox); }
-            catch { return false; }
-        }
-
-        /// <summary>
-        /// Малая ли это коробка? (считаем по номеру ТПА)
-        /// </summary>
-        /// <param name="TPA">Номер ТПА</param>
-        /// <returns></returns>
-        public static bool LittleBox(int TPA)
-        {
-            return LittleBox(Labels[TPA].Count);
         }
 
         /// <summary>
@@ -517,6 +496,9 @@ namespace AutoLabel
                 case "Чёрный":
                     but.BackColor = Color.FromArgb(0, 0, 0);
                     but.ForeColor = Color.FromArgb(64, 64, 64);
+                    break;
+                default:
+                    but.Visible = false;
                     break;
             }
         }
