@@ -63,8 +63,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.comboBoxLimit, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.label11, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.textBoxOther, 1, 10);
@@ -101,7 +101,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(485, 287);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(360, 287);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
             // comboBoxLimit
@@ -110,9 +110,9 @@
             this.comboBoxLimit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLimit.Enabled = false;
             this.comboBoxLimit.FormattingEnabled = true;
-            this.comboBoxLimit.Location = new System.Drawing.Point(221, 237);
+            this.comboBoxLimit.Location = new System.Drawing.Point(183, 237);
             this.comboBoxLimit.Name = "comboBoxLimit";
-            this.comboBoxLimit.Size = new System.Drawing.Size(261, 21);
+            this.comboBoxLimit.Size = new System.Drawing.Size(174, 21);
             this.comboBoxLimit.TabIndex = 28;
             this.comboBoxLimit.SelectedIndexChanged += new System.EventHandler(this.comboBoxLimit_SelectedIndexChanged);
             // 
@@ -122,7 +122,7 @@
             this.label11.Enabled = false;
             this.label11.Location = new System.Drawing.Point(3, 260);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(212, 27);
+            this.label11.Size = new System.Drawing.Size(174, 27);
             this.label11.TabIndex = 27;
             this.label11.Text = "Прочие дополнения:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -131,9 +131,9 @@
             // 
             this.textBoxOther.Dock = System.Windows.Forms.DockStyle.Top;
             this.textBoxOther.Enabled = false;
-            this.textBoxOther.Location = new System.Drawing.Point(221, 263);
+            this.textBoxOther.Location = new System.Drawing.Point(183, 263);
             this.textBoxOther.Name = "textBoxOther";
-            this.textBoxOther.Size = new System.Drawing.Size(261, 20);
+            this.textBoxOther.Size = new System.Drawing.Size(174, 20);
             this.textBoxOther.TabIndex = 26;
             this.textBoxOther.TextChanged += new System.EventHandler(this.textBoxOther_TextChanged);
             // 
@@ -143,9 +143,9 @@
             this.comboBoxColorants.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxColorants.Enabled = false;
             this.comboBoxColorants.FormattingEnabled = true;
-            this.comboBoxColorants.Location = new System.Drawing.Point(221, 211);
+            this.comboBoxColorants.Location = new System.Drawing.Point(183, 211);
             this.comboBoxColorants.Name = "comboBoxColorants";
-            this.comboBoxColorants.Size = new System.Drawing.Size(261, 21);
+            this.comboBoxColorants.Size = new System.Drawing.Size(174, 21);
             this.comboBoxColorants.TabIndex = 25;
             this.comboBoxColorants.SelectedIndexChanged += new System.EventHandler(this.comboBoxAntiCount_SelectedIndexChanged);
             // 
@@ -155,9 +155,9 @@
             this.comboBoxAntistatic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAntistatic.Enabled = false;
             this.comboBoxAntistatic.FormattingEnabled = true;
-            this.comboBoxAntistatic.Location = new System.Drawing.Point(221, 185);
+            this.comboBoxAntistatic.Location = new System.Drawing.Point(183, 185);
             this.comboBoxAntistatic.Name = "comboBoxAntistatic";
-            this.comboBoxAntistatic.Size = new System.Drawing.Size(261, 21);
+            this.comboBoxAntistatic.Size = new System.Drawing.Size(174, 21);
             this.comboBoxAntistatic.TabIndex = 24;
             this.comboBoxAntistatic.SelectedIndexChanged += new System.EventHandler(this.comboBoxAntiType_SelectedIndexChanged);
             // 
@@ -167,7 +167,7 @@
             this.label10.Enabled = false;
             this.label10.Location = new System.Drawing.Point(3, 234);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(212, 26);
+            this.label10.Size = new System.Drawing.Size(174, 26);
             this.label10.TabIndex = 23;
             this.label10.Text = "Срок годности:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -178,7 +178,7 @@
             this.label9.Enabled = false;
             this.label9.Location = new System.Drawing.Point(3, 208);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(212, 26);
+            this.label9.Size = new System.Drawing.Size(174, 26);
             this.label9.TabIndex = 22;
             this.label9.Text = "Код красителя:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -189,7 +189,7 @@
             this.label8.Enabled = false;
             this.label8.Location = new System.Drawing.Point(3, 182);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(212, 26);
+            this.label8.Size = new System.Drawing.Size(174, 26);
             this.label8.TabIndex = 21;
             this.label8.Text = "Тип антистатика:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -200,9 +200,9 @@
             this.comboBoxColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxColor.Enabled = false;
             this.comboBoxColor.FormattingEnabled = true;
-            this.comboBoxColor.Location = new System.Drawing.Point(221, 107);
+            this.comboBoxColor.Location = new System.Drawing.Point(183, 107);
             this.comboBoxColor.Name = "comboBoxColor";
-            this.comboBoxColor.Size = new System.Drawing.Size(261, 21);
+            this.comboBoxColor.Size = new System.Drawing.Size(174, 21);
             this.comboBoxColor.TabIndex = 20;
             this.comboBoxColor.SelectedIndexChanged += new System.EventHandler(this.comboBoxColor_SelectedIndexChanged);
             // 
@@ -212,7 +212,7 @@
             this.label7.Enabled = false;
             this.label7.Location = new System.Drawing.Point(3, 104);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(212, 26);
+            this.label7.Size = new System.Drawing.Size(174, 26);
             this.label7.TabIndex = 19;
             this.label7.Text = "Цвет:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -223,9 +223,9 @@
             this.comboBoxMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMaterial.Enabled = false;
             this.comboBoxMaterial.FormattingEnabled = true;
-            this.comboBoxMaterial.Location = new System.Drawing.Point(221, 81);
+            this.comboBoxMaterial.Location = new System.Drawing.Point(183, 81);
             this.comboBoxMaterial.Name = "comboBoxMaterial";
-            this.comboBoxMaterial.Size = new System.Drawing.Size(261, 21);
+            this.comboBoxMaterial.Size = new System.Drawing.Size(174, 21);
             this.comboBoxMaterial.TabIndex = 18;
             // 
             // label6
@@ -234,7 +234,7 @@
             this.label6.Enabled = false;
             this.label6.Location = new System.Drawing.Point(3, 78);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(212, 26);
+            this.label6.Size = new System.Drawing.Size(174, 26);
             this.label6.TabIndex = 17;
             this.label6.Text = "Материал:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -244,9 +244,9 @@
             this.comboBoxTPA.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboBoxTPA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTPA.FormattingEnabled = true;
-            this.comboBoxTPA.Location = new System.Drawing.Point(221, 3);
+            this.comboBoxTPA.Location = new System.Drawing.Point(183, 3);
             this.comboBoxTPA.Name = "comboBoxTPA";
-            this.comboBoxTPA.Size = new System.Drawing.Size(261, 21);
+            this.comboBoxTPA.Size = new System.Drawing.Size(174, 21);
             this.comboBoxTPA.TabIndex = 14;
             this.comboBoxTPA.SelectedIndexChanged += new System.EventHandler(this.comboBoxTPA_SelectedIndexChanged);
             // 
@@ -255,7 +255,7 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(212, 26);
+            this.label5.Size = new System.Drawing.Size(174, 26);
             this.label5.TabIndex = 13;
             this.label5.Text = "ТПА:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -266,9 +266,9 @@
             this.comboBoxCount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCount.Enabled = false;
             this.comboBoxCount.FormattingEnabled = true;
-            this.comboBoxCount.Location = new System.Drawing.Point(221, 133);
+            this.comboBoxCount.Location = new System.Drawing.Point(183, 133);
             this.comboBoxCount.Name = "comboBoxCount";
-            this.comboBoxCount.Size = new System.Drawing.Size(261, 21);
+            this.comboBoxCount.Size = new System.Drawing.Size(174, 21);
             this.comboBoxCount.TabIndex = 12;
             this.comboBoxCount.SelectedIndexChanged += new System.EventHandler(this.comboBoxCount_SelectedIndexChanged);
             // 
@@ -278,9 +278,9 @@
             this.comboBoxWeight.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxWeight.Enabled = false;
             this.comboBoxWeight.FormattingEnabled = true;
-            this.comboBoxWeight.Location = new System.Drawing.Point(221, 29);
+            this.comboBoxWeight.Location = new System.Drawing.Point(183, 29);
             this.comboBoxWeight.Name = "comboBoxWeight";
-            this.comboBoxWeight.Size = new System.Drawing.Size(261, 21);
+            this.comboBoxWeight.Size = new System.Drawing.Size(174, 21);
             this.comboBoxWeight.TabIndex = 11;
             this.comboBoxWeight.SelectedIndexChanged += new System.EventHandler(this.comboBoxWeight_SelectedIndexChanged);
             // 
@@ -290,7 +290,7 @@
             this.label1.Enabled = false;
             this.label1.Location = new System.Drawing.Point(3, 156);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 26);
+            this.label1.Size = new System.Drawing.Size(174, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Номер партии:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -301,7 +301,7 @@
             this.label2.Enabled = false;
             this.label2.Location = new System.Drawing.Point(3, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(212, 26);
+            this.label2.Size = new System.Drawing.Size(174, 26);
             this.label2.TabIndex = 1;
             this.label2.Text = "Тип горловины:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -312,7 +312,7 @@
             this.label3.Enabled = false;
             this.label3.Location = new System.Drawing.Point(3, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(212, 26);
+            this.label3.Size = new System.Drawing.Size(174, 26);
             this.label3.TabIndex = 2;
             this.label3.Text = "Вес:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -323,7 +323,7 @@
             this.label4.Enabled = false;
             this.label4.Location = new System.Drawing.Point(3, 130);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(212, 26);
+            this.label4.Size = new System.Drawing.Size(174, 26);
             this.label4.TabIndex = 3;
             this.label4.Text = "Количество:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -334,9 +334,9 @@
             this.comboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxType.Enabled = false;
             this.comboBoxType.FormattingEnabled = true;
-            this.comboBoxType.Location = new System.Drawing.Point(221, 55);
+            this.comboBoxType.Location = new System.Drawing.Point(183, 55);
             this.comboBoxType.Name = "comboBoxType";
-            this.comboBoxType.Size = new System.Drawing.Size(261, 21);
+            this.comboBoxType.Size = new System.Drawing.Size(174, 21);
             this.comboBoxType.TabIndex = 10;
             this.comboBoxType.SelectedIndexChanged += new System.EventHandler(this.comboBoxType_SelectedIndexChanged);
             // 
@@ -344,9 +344,9 @@
             // 
             this.textBoxNumber.Dock = System.Windows.Forms.DockStyle.Top;
             this.textBoxNumber.Enabled = false;
-            this.textBoxNumber.Location = new System.Drawing.Point(221, 159);
+            this.textBoxNumber.Location = new System.Drawing.Point(183, 159);
             this.textBoxNumber.Name = "textBoxNumber";
-            this.textBoxNumber.Size = new System.Drawing.Size(261, 20);
+            this.textBoxNumber.Size = new System.Drawing.Size(174, 20);
             this.textBoxNumber.TabIndex = 16;
             this.textBoxNumber.TextChanged += new System.EventHandler(this.textBoxNumber_TextChanged);
             // 
@@ -365,7 +365,7 @@
             // 
             this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSave.Enabled = false;
-            this.buttonSave.Location = new System.Drawing.Point(341, 305);
+            this.buttonSave.Location = new System.Drawing.Point(216, 305);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 11;
@@ -377,7 +377,7 @@
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonClose.Location = new System.Drawing.Point(422, 305);
+            this.buttonClose.Location = new System.Drawing.Point(297, 305);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 23);
             this.buttonClose.TabIndex = 12;
@@ -391,7 +391,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonClose;
-            this.ClientSize = new System.Drawing.Size(509, 340);
+            this.ClientSize = new System.Drawing.Size(384, 340);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonClear);

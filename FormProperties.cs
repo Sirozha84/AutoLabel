@@ -10,6 +10,7 @@ namespace AutoLabel
             InitializeComponent();
             foreach (Label l in Data.Labels)
                 comboBoxTPA.Items.Add(l.TPAName);
+            Data.ListsLoad();
         }
 
         //Кнопка назад
@@ -36,19 +37,21 @@ namespace AutoLabel
                 comboBoxWeight.DataSource = Data.Weights0;
                 comboBoxColor.DataSource = Data.Colors0;
                 comboBoxCount.DataSource = Data.Quantitys0;
-                label11.Text = "Прочие дополнения:";
+                comboBoxType.DataSource = Data.Types0;
+                comboBoxMaterial.DataSource = Data.Materials0;
+                comboBoxAntistatic.DataSource = Data.Antistatics0;
+                comboBoxColorants.DataSource = Data.Colorants0;
             }
             else
             {
                 comboBoxWeight.DataSource = Data.Weights1;
                 comboBoxColor.DataSource = Data.Colors1;
                 comboBoxCount.DataSource = Data.Quantitys1;
-                label11.Text = "Код:";
+                comboBoxType.DataSource = Data.Types1;
+                comboBoxMaterial.DataSource = Data.Materials1;
+                comboBoxAntistatic.DataSource = Data.Antistatics1;
+                comboBoxColorants.DataSource = Data.Colorants1;
             }
-            comboBoxType.DataSource = Data.Types;
-            comboBoxMaterial.DataSource = Data.Materials;
-            comboBoxAntistatic.DataSource = Data.Antistatics;
-            comboBoxColorants.DataSource = Data.Colorants;
             comboBoxLimit.DataSource = Data.Limits;
             comboBoxWeight.SelectedItem = null;
             comboBoxType.SelectedItem = null;
@@ -66,28 +69,28 @@ namespace AutoLabel
             if (l.Count != "") comboBoxCount.SelectedItem = l.Count; else comboBoxCount.SelectedItem = null;
             if (l.Type != "") comboBoxType.SelectedItem = l.Type; else comboBoxType.SelectedItem = null;
             textBoxNumber.Text = l.PartNum;
-            if (l.AntistaticType != "") comboBoxAntistatic.SelectedItem = l.AntistaticType; else comboBoxAntistatic.SelectedItem = null;
-            if (l.AntistaticCount != "") comboBoxColorants.SelectedItem = l.AntistaticCount; else comboBoxColorants.SelectedItem = null;
+            if (l.Antistatic != "") comboBoxAntistatic.SelectedItem = l.Antistatic; else comboBoxAntistatic.SelectedItem = null;
+            if (l.Colorant != "") comboBoxColorants.SelectedItem = l.Colorant; else comboBoxColorants.SelectedItem = null;
             if (l.Limit != "") comboBoxLimit.SelectedItem = l.Limit; else comboBoxLimit.SelectedItem = null;
             textBoxOther.Text = l.Other;
             comboBoxWeight.Visible = true;
-            comboBoxType.Visible = (l.TPAType == 0);
-            comboBoxMaterial.Visible = (l.TPAType == 0);
+            comboBoxType.Visible = true;
+            comboBoxMaterial.Visible = true;
             comboBoxColor.Visible = true;
             comboBoxCount.Visible = true;
             textBoxNumber.Visible = true;
             comboBoxLimit.Visible = (l.TPAType == 0);
-            comboBoxAntistatic.Visible = (l.TPAType == 0);
-            comboBoxColorants.Visible = (l.TPAType == 0);
+            comboBoxAntistatic.Visible = true;
+            comboBoxColorants.Visible = true;
             textBoxOther.Visible = true;
             label1.Visible = true;
-            label2.Visible = (l.TPAType == 0);
+            label2.Visible = true;
             label3.Visible = true;
             label4.Visible = true;
-            label6.Visible = (l.TPAType == 0);
+            label6.Visible = true;
             label7.Visible = true;
-            label8.Visible = (l.TPAType == 0);
-            label9.Visible = (l.TPAType == 0);
+            label8.Visible = true;
+            label9.Visible = true;
             label10.Visible = (l.TPAType == 0);
             label11.Visible = true;
             buttonsave.Visible = false;
@@ -107,8 +110,8 @@ namespace AutoLabel
             if (comboBoxColor.SelectedItem != null) l.PColor = comboBoxColor.SelectedItem.ToString(); else l.PColor = "";
             if (comboBoxCount.SelectedItem != null) l.Count = comboBoxCount.SelectedItem.ToString(); else l.Count = "";
             l.PartNum = textBoxNumber.Text;
-            if (comboBoxAntistatic.SelectedItem != null) l.AntistaticType = comboBoxAntistatic.SelectedItem.ToString(); else l.AntistaticType = "";
-            if (comboBoxColorants.SelectedItem != null) l.AntistaticCount = comboBoxColorants.SelectedItem.ToString(); else l.AntistaticCount = "";
+            if (comboBoxAntistatic.SelectedItem != null) l.Antistatic = comboBoxAntistatic.SelectedItem.ToString(); else l.Antistatic = "";
+            if (comboBoxColorants.SelectedItem != null) l.Colorant = comboBoxColorants.SelectedItem.ToString(); else l.Colorant = "";
             if (comboBoxLimit.SelectedItem != null) l.Limit = comboBoxLimit.SelectedItem.ToString(); else l.Limit = "";
             l.Other = textBoxOther.Text;
             l.Save();

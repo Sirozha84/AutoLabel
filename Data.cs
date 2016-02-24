@@ -52,17 +52,21 @@ namespace AutoLabel
         public static List<User> Users = new List<User>();
         public static List<Label> Labels = new List<Label>();
         //Списки выпадающих меню
-        public static List<string> Types = new List<string>();
+        public static List<string> Types0 = new List<string>();
+        public static List<string> Types1 = new List<string>();
         public static List<string> Weights0 = new List<string>();
         public static List<string> Weights1 = new List<string>();
         public static List<string> Quantitys0 = new List<string>();
         public static List<string> Quantitys1 = new List<string>();
         public static List<string> Colors0 = new List<string>();
         public static List<string> Colors1 = new List<string>();
-        public static List<string> Materials = new List<string>();
+        public static List<string> Materials0 = new List<string>();
+        public static List<string> Materials1 = new List<string>();
         public static List<string> Limits = new List<string>();
-        public static List<string> Antistatics = new List<string>();
-        public static List<string> Colorants = new List<string>();
+        public static List<string> Antistatics0 = new List<string>();
+        public static List<string> Antistatics1 = new List<string>();
+        public static List<string> Colorants0 = new List<string>();
+        public static List<string> Colorants1 = new List<string>();
 
         public static PrinterSettings printersettings;// = new PrinterSettings();
 
@@ -90,18 +94,29 @@ namespace AutoLabel
                 //Применяем настройки принтера по умолчанию
                 printersettings = null;
             }
-            //Загружаем выпадающие списки
-            ListLoad(Types, "Types");
+            
+        }
+
+        /// <summary>
+        /// Загрузка выпадающих списков
+        /// </summary>
+        public static void ListsLoad()
+        {
+            ListLoad(Types0, "Types0");
+            ListLoad(Types1, "Types1");
             ListLoad(Weights0, "Weights0");
             ListLoad(Weights1, "Weights1");
             ListLoad(Quantitys0, "Quantitys0");
             ListLoad(Quantitys1, "Quantitys1");
             ListLoad(Colors0, "Colors0");
             ListLoad(Colors1, "Colors1");
-            ListLoad(Materials, "Materials");
+            ListLoad(Materials0, "Materials0");
+            ListLoad(Materials1, "Materials1");
             ListLoad(Limits, "Limits");
-            ListLoad(Antistatics, "Antistatics");
-            ListLoad(Colorants, "Colorants");
+            ListLoad(Antistatics0, "Antistatics0");
+            ListLoad(Antistatics1, "Antistatics1");
+            ListLoad(Colorants0, "Colorants0");
+            ListLoad(Colorants1, "Colorants1");
         }
 
         static void ListLoad(List<string> list, string filename)

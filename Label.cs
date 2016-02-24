@@ -18,8 +18,8 @@ namespace AutoLabel
         public string Count;    //Список количество
         public string Material; //Список материал
         public string PColor;   //Цвет
-        public string AntistaticType;   //Список тип антистатика
-        public string AntistaticCount;  //Список количество антистатика
+        public string Antistatic;   //Список тип антистатика
+        public string Colorant;  //Список количество антистатика
         public string Limit;    //Список срок хранения
         public string Other;    //Вручную Дополнительные параметры
 
@@ -180,8 +180,8 @@ namespace AutoLabel
             //Главные поля
             g.DrawString(Weight, Biggg, Brushes.Black, X, Y + 170);
             g.DrawString(Type, Big, Brushes.Black, X + 220, Y + 200);
-            g.DrawString(AntistaticCount, Big, Brushes.Black, X + 420, Y + 177);
-            g.DrawString(AntistaticType, Big, Brushes.Black, X + 420, Y + 217);
+            g.DrawString(Colorant, Big, Brushes.Black, X + 420, Y + 177);
+            g.DrawString(Antistatic, Big, Brushes.Black, X + 420, Y + 217);
             //Дополнительные поля
             g.DrawString("Прочие дополнения: " + Other, Small, Brushes.Black, X + 10, Y + 280);
             DrawStrings(g, X, Y, 220, 300, "Машина", "Machine", TPAName);
@@ -254,9 +254,12 @@ namespace AutoLabel
             g.DrawString("№ Линии", Small, Brushes.Black, new Rectangle(X + 412, Y + 215, 135, 20), InRect);
             g.DrawString(TPAName, MediumBold, Brushes.Black, new Rectangle(X + 412, Y + 235, 135, 30), InRect);
             g.DrawString("Код", Small, Brushes.Black, new Rectangle(X + 10, Y + 270, 275, 20), InRect);
-            g.DrawString(Other, MediumBold, Brushes.Black, new Rectangle(X + 10, Y + 300, 275, 30), InRect);
+            string dobavka = ""; if (Antistatic != "") dobavka += "." + Antistatic;
+            g.DrawString(Type + "." + Material + "." + Colorant + dobavka,
+                MediumBold, Brushes.Black, new Rectangle(X + 10, Y + 290, 275, 30), InRect);
+            g.DrawString(Other, Small, Brushes.Black, new Rectangle(X + 10, Y + 310, 275, 30), InRect);
             g.DrawString("Партия", Small, Brushes.Black, new Rectangle(X + 412, Y + 270, 135, 20), InRect);
-            g.DrawString(PartNum, MediumBold, Brushes.Black, new Rectangle(X + 412, Y + 300, 135, 30), InRect);
+            g.DrawString(PartNum, MediumBold, Brushes.Black, new Rectangle(X + 412, Y + 290, 135, 30), InRect);
             //Графика
             g.DrawImage(HDPE, X + 285, Y + 285, 40, 40);
             g.DrawImage(Eda, X + 325, Y + 285, 40, 40);
@@ -319,8 +322,8 @@ namespace AutoLabel
                 file.WriteLine(Count);
                 file.WriteLine(Material);
                 file.WriteLine(PColor);
-                file.WriteLine(AntistaticType);
-                file.WriteLine(AntistaticCount);
+                file.WriteLine(Antistatic);
+                file.WriteLine(Colorant);
                 file.WriteLine(Limit);
                 file.WriteLine(Other);
                 file.Dispose();
@@ -348,8 +351,8 @@ namespace AutoLabel
                 Count = file.ReadLine();
                 Material = file.ReadLine();
                 PColor = file.ReadLine();
-                AntistaticType = file.ReadLine();
-                AntistaticCount = file.ReadLine();
+                Antistatic = file.ReadLine();
+                Colorant = file.ReadLine();
                 Limit = file.ReadLine();
                 Other = file.ReadLine();
                 file.Dispose();
