@@ -32,7 +32,7 @@ namespace AutoLabel
         /// <summary>
         /// Файл принтера
         /// </summary>
-        static string FilePrinter = "Printer.txt";
+        static string FilePrinter;
 
         //Списки пользователей и лейблов
         public static List<User> Users = new List<User>();
@@ -67,6 +67,8 @@ namespace AutoLabel
                 Directory.CreateDirectory(folder);
                 FilePrinter = folder + "Printer.txt";
             }
+            else
+                FilePrinter = Program.Patch + "Printer.txt";
             //Принтер
             try
             {
@@ -110,7 +112,7 @@ namespace AutoLabel
             //89-158  89-97
             try
             {
-                StreamReader file = File.OpenText("Lists\\" + filename + ".txt");
+                StreamReader file = File.OpenText(Program.Patch + "Lists\\" + filename + ".txt");
                 while (!file.EndOfStream)
                     list.Add(file.ReadLine());
             }
@@ -144,7 +146,7 @@ namespace AutoLabel
             Users.Clear();
             try
             {
-                StreamReader file = File.OpenText("Users.txt");
+                StreamReader file = File.OpenText(Program.Patch + "Users.txt");
                 AccessControl = file.ReadLine() == "AccessControl ON";
                 while (!file.EndOfStream)
                 {
@@ -163,7 +165,7 @@ namespace AutoLabel
         {
             try
             {
-                StreamWriter file = File.CreateText("Users.txt");
+                StreamWriter file = File.CreateText(Program.Patch + "Users.txt");
                 file.Write("AccessControl ");
                 if (AccessControl) file.WriteLine("ON"); else file.WriteLine("OFF");
                 foreach (User u in Users)
@@ -181,7 +183,7 @@ namespace AutoLabel
             }
             catch
             {
-                Error("Не удалось сохранить список пользователей");
+                Log.Error("Не удалось сохранить список пользователей");
             }
         }
 
@@ -200,7 +202,7 @@ namespace AutoLabel
             }
             catch
             {
-                Error("Не удалось сохранить настройку принтера.");
+                Log.Error("Не удалось сохранить настройку принтера");
             }
         }
 
@@ -211,19 +213,6 @@ namespace AutoLabel
         public static bool PrintSelected()
         {
             return printersettings != null;
-        }
-
-
-
-        /// <summary>
-        /// Сообщение об ошибке :-(
-        /// </summary>
-        /// <param name="message"></param>
-        static void Error(string message)
-        {
-            MessageBox.Show(message + "\nДля решение проблемы вызовите системного администратора",
-                "Случилось что-то плохое");
-            Log.Write("Ошибка: "+ message);
         }
 
         /// <summary>
@@ -300,7 +289,7 @@ namespace AutoLabel
                 if (input.ShowDialog() == DialogResult.Cancel) return;
                 name = input.Str;
             }
-            Users.Add(new User(name, code, Rule, "000000"));
+            Users.Add(new User(name, code, Rule, "00000000"));
             Users.Sort((a,b) => a.Name.CompareTo(b.Name));
         }
 
@@ -354,32 +343,6 @@ namespace AutoLabel
                 it.SubItems.Add(u.StringWidthTPA());
                 list.Items.Add(it);
             }
-        }
-
-        /// <summary>
-        /// Предоставление текущей даты в человечьем виде
-        /// </summary>
-        /// <returns></returns>
-        public static string DateToString()
-        {
-            DateTime now = DateTime.Now;
-            string date = now.ToString("dd ");
-            switch (now.Month)
-            {
-                case 1: date += "янв"; break;
-                case 2: date += "фев"; break;
-                case 3: date += "мар"; break;
-                case 4: date += "апр"; break;
-                case 5: date += "май"; break;
-                case 6: date += "июн"; break;
-                case 7: date += "июл"; break;
-                case 8: date += "авг"; break;
-                case 9: date += "сен"; break;
-                case 10: date += "окт"; break;
-                case 11: date += "ноя"; break;
-                case 12: date += "дек"; break;
-            }
-            return date + now.ToString(" yy");
         }
 
         /// <summary>
