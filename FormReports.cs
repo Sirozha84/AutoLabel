@@ -33,7 +33,7 @@ namespace AutoLabel
         private void FormReports_Load(object sender, EventArgs e)
         {
             //Заполнение списка последних смен в комбо-бокс
-            foreach (string sh in Data.LogName)
+            foreach (string sh in Shift.LogName)
                 comboBoxShift.Items.Add(sh);
             comboBoxShift.SelectedIndex = 0;
         }

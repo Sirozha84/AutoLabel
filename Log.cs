@@ -22,5 +22,11 @@ namespace AutoLabel
             }
             catch { }
         }
+
+        public static void Error(string str)
+        {
+            System.Windows.Forms.MessageBox.Show(str, "Ошибка");
+            Write("Ошибка! " + str);
+        }
     }
 }

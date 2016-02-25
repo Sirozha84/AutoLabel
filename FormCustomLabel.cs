@@ -74,7 +74,7 @@ namespace AutoLabel
             else numericUpDownCount.Value = 0;
             textBoxDate.Text = Data.DateToString();
             textBoxTime.Text = DateTime.Now.ToString("HH:mm");
-            comboBoxShift.SelectedItem = Data.Shift;
+            comboBoxShift.SelectedItem = Shift.Current;
         }
 
         //Кнопка очистки

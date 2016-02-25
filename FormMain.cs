@@ -80,14 +80,14 @@ namespace AutoLabel
         {
             Data.Load();
             if (Data.IsMachine)
-                buttonShift.Text = Data.Shift;
+                buttonShift.Text = Shift.Current;
             else
             {
-                labelformname.Text = Data.Shift;
-                смена1ToolStripMenuItem.Checked = Data.Shift == Data.Shifts[0];
-                смена2ToolStripMenuItem.Checked = Data.Shift == Data.Shifts[1];
-                смена3ToolStripMenuItem.Checked = Data.Shift == Data.Shifts[2];
-                смена4ToolStripMenuItem.Checked = Data.Shift == Data.Shifts[3];
+                labelformname.Text = Shift.Current;
+                смена1ToolStripMenuItem.Checked = Shift.Current == Shift.Names[0];
+                смена2ToolStripMenuItem.Checked = Shift.Current == Shift.Names[1];
+                смена3ToolStripMenuItem.Checked = Shift.Current == Shift.Names[2];
+                смена4ToolStripMenuItem.Checked = Shift.Current == Shift.Names[3];
             }
             label1.Text = Data.Labels[0].LabelUnderButton();
             label2.Text = Data.Labels[1].LabelUnderButton();
@@ -166,28 +166,28 @@ namespace AutoLabel
         {
             if (MessageBox.Show("Подтверждаете заступление новой смены?", "Новая смена", MessageBoxButtons.YesNo)
                 == DialogResult.Yes)
-                Data.ShiftChange(shift);
+                Shift.Change(shift);
             RefreshMain();
         }
 
         private void смена1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!смена1ToolStripMenuItem.Checked) ChangeShift(Data.Shifts[0]);
+            if (!смена1ToolStripMenuItem.Checked) ChangeShift(Shift.Names[0]);
         }
 
         private void смена2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!смена2ToolStripMenuItem.Checked) ChangeShift(Data.Shifts[1]);
+            if (!смена2ToolStripMenuItem.Checked) ChangeShift(Shift.Names[1]);
         }
 
         private void смена3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!смена3ToolStripMenuItem.Checked) ChangeShift(Data.Shifts[2]);
+            if (!смена3ToolStripMenuItem.Checked) ChangeShift(Shift.Names[2]);
         }
 
         private void смена4ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!смена4ToolStripMenuItem.Checked) ChangeShift(Data.Shifts[3]);
+            if (!смена4ToolStripMenuItem.Checked) ChangeShift(Shift.Names[3]);
         }
 
         private void правкаЖурналаToolStripMenuItem_Click(object sender, EventArgs e)

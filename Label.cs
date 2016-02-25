@@ -73,7 +73,7 @@ namespace AutoLabel
         /// <param name="count">Количество этикеток (0 - если одна двойная)</param>
         public void Print(int num, string packer, int count)
         {
-            Print(num, packer, count, Data.DateToString(), DateTime.Now.ToString("HH:mm"), Data.Shift);
+            Print(num, packer, count, Data.DateToString(), DateTime.Now.ToString("HH:mm"), AutoLabel.Shift.Current);
         }
 
         /// <summary>
@@ -367,7 +367,8 @@ namespace AutoLabel
         {
             try
             {
-                StreamWriter file = new StreamWriter("Logs\\" + Data.LogName[0]+".csv", true, Encoding.Default);
+                StreamWriter file = new StreamWriter("Logs\\" + AutoLabel.Shift.LogName[0]+".csv",
+                    true, Encoding.Default);
                 file.WriteLine(DateTime.Now.ToString("dd.MM; HH:mm") +
                     "; " + TPAName + "; " + PartNum + "; " + Type +"; " + Weight + "; " +
                     PColor +"; " + CurrentNum + "; " + Packer);

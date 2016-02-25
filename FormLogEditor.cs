@@ -21,7 +21,7 @@ namespace AutoLabel
         private void FormLogEditor_Load(object sender, EventArgs e)
         {
             //Заполнение списка последних смен в комбо-бокс
-            foreach (string sh in Data.LogName)
+            foreach (string sh in Shift.LogName)
                 comboBox1.Items.Add(sh);
             comboBox1.SelectedIndex = 0;
         }

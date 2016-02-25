@@ -22,18 +22,6 @@ namespace AutoLabel
         /// </summary>
         public const int PreformsInLittleBox = 1920;
         /// <summary>
-        /// Сбрасывать ли счётчик при заступании новой
-        /// </summary>
-        const bool ResetOnChangeShift = true;
-        /// <summary>
-        /// Количество последних запоминаемых смен
-        /// </summary>
-        const int ShiftMemory = 7;
-        /// <summary>
-        /// Названия смен
-        /// </summary>
-        public static string[] Shifts = { "Смена 1", "Смена 2", "Смена 3", "Смена 4" };
-        /// <summary>
         /// Программа запущена на машине, false - если десктопная версия
         /// </summary>
         public static bool IsMachine = false;
@@ -46,8 +34,6 @@ namespace AutoLabel
         /// </summary>
         static string FilePrinter = "Printer.txt";
 
-        public static string Shift;
-        public static string[] LogName = new string[ShiftMemory];
         //Списки пользователей и лейблов
         public static List<User> Users = new List<User>();
         public static List<Label> Labels = new List<Label>();
@@ -137,7 +123,7 @@ namespace AutoLabel
         public static void Load()
         {
             //Смена
-            LoadShift();
+            Shift.Load();
             //Лейблы
             Labels.Clear();
             Labels.Add(new Label("Husky №1", 0));
@@ -148,29 +134,6 @@ namespace AutoLabel
             Labels.Add(new Label("Netstal №6", 0));
             Labels.Add(new Label("C1", 1));
             Labels.Add(new Label("C2", 1));
-        }
-
-        /// <summary>
-        /// Загрузка текущей смены
-        /// </summary>
-        static void LoadShift()
-        {
-            //Заполняем пустотой на случай если в файле нет информации
-            for (int i = 0; i < ShiftMemory; i++)
-                LogName[i] = "Пусто";
-            try
-            {
-                StreamReader file = File.OpenText("Shift.txt");
-                Shift = file.ReadLine();
-                for (int i = 0; i < ShiftMemory; i++)
-                    LogName[i] = file.ReadLine();
-                file.Dispose();
-            }
-            catch
-            {
-                Shift = Shifts[0];
-                ShiftChange(Shift); //Если файла небыло, сохраним его
-            }
         }
 
         /// <summary>
@@ -250,42 +213,7 @@ namespace AutoLabel
             return printersettings != null;
         }
 
-        /// <summary>
-        /// Выбор новой смены
-        /// </summary>
-        /// <param name="shift"></param>
-        public static void ShiftChange(string shift)
-        {
-            if (Shift == shift) return;
-            Shift = shift;
-            //Сдвигаем коллекцию последних смен
-            for (int i = ShiftMemory - 1; i > 0; i--)
-                LogName[i] = LogName[i - 1];
-            //Изменяем файл журнала
-            LogName[0] = (DateTime.Now.ToString("yyyy.MM.dd - ") + Shift);
-            //Сохраняем текущую смену в файл
-            try
-            {
-                StreamWriter file = File.CreateText("Shift.txt");
-                file.WriteLine(Shift);
-                for (int i = 0; i < ShiftMemory; i++)
-                    file.WriteLine(LogName[i]);
-                file.Dispose();
-            }
-            catch
-            {
-                Error("Не удалось сохранить настройку смены.");
-            }
-            //Label.NewLog();
-            Directory.CreateDirectory("Logs");
-            //Обнуляем счётчики коробов
-            if (ResetOnChangeShift)
-                foreach (Label l in Labels)
-                {
-                    l.CurrentNum = 1;
-                    l.Save();
-                }
-        }
+
 
         /// <summary>
         /// Сообщение об ошибке :-(

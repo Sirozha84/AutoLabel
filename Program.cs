@@ -5,7 +5,7 @@ namespace AutoLabel
 {
     static class Program
     {
-        public static string Version = "1.1.3 (24.02.2016)";
+        public static string Version = "1.1.4 (25.02.2016)";
 
         /// <summary>
         /// Главная точка входа для приложения.

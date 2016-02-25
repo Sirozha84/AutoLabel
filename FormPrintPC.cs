@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace AutoLabel
 {
-    public partial class FormPrint : Form
+    public partial class FormPrintPC : Form
     {
         public int NumMachine;  //Номер ТПА
         Label lab;              //Ссылка на ТПА
@@ -14,12 +14,19 @@ namespace AutoLabel
         bool CountSelect = false;   //Выбираем ли мы количество коробов?
         int timer;              //Таймер для автозакрывания окна
 
-        public FormPrint(int num)
+        public FormPrintPC(int num)
         {
             InitializeComponent();
             lab = Data.Labels[num];
             NumMachine = num;
             Data.UsersLoad();
+            //Режим для ПК -------------------------   потом удалить когда бдует своя форма для пк
+            if (!Data.IsMachine)
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                WindowState = FormWindowState.Normal;
+                StartPosition = FormStartPosition.CenterParent;
+            }
         }
 
         private void buttonquit_Click(object sender, EventArgs e)
