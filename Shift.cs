@@ -36,8 +36,6 @@ namespace AutoLabel
         public static void Load()
         {
             //Заполняем пустотой на случай если в файле нет информации
-            for (int i = 0; i < ShiftMemory; i++)
-                LogName[i] = "Пусто";
             try
             {
                 StreamReader file = File.OpenText(Program.Patch+"Shift.txt");
@@ -50,8 +48,11 @@ namespace AutoLabel
             catch
             {
                 Current = Names[0];
+                Date = "";
                 Change(Current); //Если файла небыло, сохраним его
             }
+            for (int i = 0; i < ShiftMemory; i++)
+                if (LogName[i] == null)LogName[i] = "Пусто";
         }
 
         /// <summary>

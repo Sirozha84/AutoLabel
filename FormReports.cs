@@ -46,7 +46,7 @@ namespace AutoLabel
             try
             {
                 log.Clear();
-                foreach (string str in File.ReadLines("Logs\\" +
+                foreach (string str in File.ReadLines(Program.Patch + "Logs\\" +
                     comboBoxShift.SelectedItem.ToString() + ".csv", Encoding.Default))
                 {
                     string[] Str = str.Split(';');
@@ -300,9 +300,10 @@ namespace AutoLabel
                 int y = 120;
                 foreach (string[] rec in log)
                 {
-                    if (rec[2] == "ТПА" + (tpa + 1).ToString())
+                    //if (rec[2] == "ТПА" + (tpa + 1).ToString())
+                    if (rec[2] == Data.Labels[tpa].TPAName)
                     {
-                        e.Graphics.DrawString((line+1).ToString(), Normal, Brushes.Black, new Point(tpa * 180 + 40, y + line * height));
+                        e.Graphics.DrawString((line + 1).ToString(), Normal, Brushes.Black, new Point(tpa * 180 + 40, y + line * height));
                         e.Graphics.DrawString(rec[1], Normal, Brushes.Black, new Point(tpa * 180 + 90, y + line * height));
                         e.Graphics.DrawString(rec[7], Normal, Brushes.Black, new Point(tpa * 180 + 140, y + line * height));
                         line++;

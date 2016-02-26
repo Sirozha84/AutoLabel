@@ -47,8 +47,16 @@ namespace AutoLabel
             if (Data.Labels[num].PartNum == null | 
                 Data.Labels[num].PartNum == "" |
                 Data.Labels[num].Count == "") return;
-            FormPrint formprint = new FormPrint(num);
-            formprint.ShowDialog();
+            if (Data.IsMachine)
+            {
+                FormPrint formprint = new FormPrint(num);
+                formprint.ShowDialog();
+            }
+            else
+            {
+                FormPrintPC formprint = new FormPrintPC(num);
+                formprint.ShowDialog();
+            }
             RefreshMain();
         }
 
@@ -112,9 +120,9 @@ namespace AutoLabel
             labelClock.Text = DateTime.Now.ToString("HH:mm");
         }
 
+        //Таймер для обновления внешнего вида (на случай если из вне поменяли параметры)
         private void timerRefresh_Tick(object sender, EventArgs e)
         {
-            //Обновлялка каждые 10 секунд, на случай, если данные были изменены удалённо
             RefreshMain();
         }
 

@@ -35,55 +35,52 @@ namespace AutoLabel
             comboBoxUser.Items.Clear();
             foreach (User u in Data.Users) comboBoxUser.Items.Add(u.Name);
             box = lab.CurrentNum;
-            if (Data.IsMachine)
-            {
                 FormKey key = new FormKey();
                 key.ShowDialog();
-                if (key.Code == "")
-                {
-                    //Маленько кривинько, но стираем сформированный список и заполняем его только гостями
-                    //Причём только теми, у кого есть доступ для этой ТПА
-                    comboBoxUser.Items.Clear();
-                    foreach (User u in Data.Users)
-                        if (u.Code == "")
-                            if (Data.AccessControl)
-                            {
-                                if (u.TPAAccess[NumMachine])
-                                    comboBoxUser.Items.Add(u.Name);
-                            }
-                            else
+            if (key.Code == "")
+            {
+                //Маленько кривинько, но стираем сформированный список и заполняем его только гостями
+                //Причём только теми, у кого есть доступ для этой ТПА
+                comboBoxUser.Items.Clear();
+                foreach (User u in Data.Users)
+                    if (u.Code == "")
+                        if (Data.AccessControl)
+                        {
+                            if (u.TPAAccess[NumMachine])
                                 comboBoxUser.Items.Add(u.Name);
-                    CustomNum = false;
-                    //Ну а если список гостей пуст, значит запрещаем печать на этой ТПА
-                    if (comboBoxUser.Items.Count == 0) AccessDenied();
-                    //А еееесли в списке только один чувак, его сразу и выберем
-                    if (comboBoxUser.Items.Count == 1)
-                        comboBoxUser.SelectedIndex = 0;
+                        }
+                        else
+                            comboBoxUser.Items.Add(u.Name);
+                CustomNum = false;
+                //Ну а если список гостей пуст, значит запрещаем печать на этой ТПА
+                if (comboBoxUser.Items.Count == 0) AccessDenied();
+                //А еееесли в списке только один чувак, его сразу и выберем
+                if (comboBoxUser.Items.Count == 1)
+                    comboBoxUser.SelectedIndex = 0;
+            }
+            else
+            {
+                //Далее план такой: ищем в базе ключ, если его нет - уходим
+                User user = Data.Users.Find(u => u.Code == key.Code);
+                if (user == null)
+                {
+                    if (key.Code != "")
+                    {
+                        FormError err = new FormError();
+                        err.ShowDialog();
+                    }
+                    Close();
                 }
                 else
                 {
-                    //Далее план такой: ищем в базе ключ, если его нет - уходим
-                    User user = Data.Users.Find(u => u.Code == key.Code);
-                    if (user == null)
+                    comboBoxUser.SelectedItem = user.Name;
+                    //Если это упаковщик - замораживаем комбобокс и возможность выбрать номер
+                    if (user.Rule == 1)
                     {
-                        if (key.Code != "")
-                        {
-                            FormError err = new FormError();
-                            err.ShowDialog();
-                        }
-                        Close();
+                        comboBoxUser.Enabled = false;
+                        CustomNum = false;
                     }
-                    else
-                    {
-                        comboBoxUser.SelectedItem = user.Name;
-                        //Если это упаковщик - замораживаем комбобокс и возможность выбрать номер
-                        if (user.Rule == 1)
-                        {
-                            comboBoxUser.Enabled = false;
-                            CustomNum = false;
-                        }
-                        buttonPrint.Visible = true;
-                    }
+                    buttonPrint.Visible = true;
                 }
             }
             //Далее надо выяснить мелкие это коробки или крупные, и в зависимости от этого вывести второй нумератор

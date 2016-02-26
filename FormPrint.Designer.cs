@@ -267,13 +267,6 @@
             this.comboBoxUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxUser.ForeColor = System.Drawing.Color.White;
             this.comboBoxUser.FormattingEnabled = true;
-            this.comboBoxUser.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
             this.comboBoxUser.Location = new System.Drawing.Point(416, 3);
             this.comboBoxUser.Name = "comboBoxUser";
             this.comboBoxUser.Size = new System.Drawing.Size(407, 63);

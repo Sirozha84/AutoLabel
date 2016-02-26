@@ -314,8 +314,8 @@ namespace AutoLabel
         {
             try
             {
-                Directory.CreateDirectory("TPA");
-                StreamWriter file = File.CreateText("TPA\\" + TPAName + ".txt");
+                Directory.CreateDirectory(Program.Patch + "TPA");
+                StreamWriter file = File.CreateText(Program.Patch + "TPA\\" + TPAName + ".txt");
                 file.WriteLine(CurrentNum);
                 file.WriteLine(PartNum);
                 file.WriteLine(Type);
@@ -344,7 +344,7 @@ namespace AutoLabel
         {
             try
             {
-                StreamReader file = File.OpenText("TPA\\" + TPAName + ".txt");
+                StreamReader file = File.OpenText(Program.Patch + "TPA\\" + TPAName + ".txt");
                 CurrentNum = Convert.ToInt32(file.ReadLine());
                 PartNum = file.ReadLine();
                 Type = file.ReadLine();
