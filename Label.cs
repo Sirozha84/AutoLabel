@@ -24,6 +24,7 @@ namespace AutoLabel
         public string Other;    //Вручную Дополнительные параметры
 
         //Карандаши и ручки :-)
+        static Pen ClipLine = new Pen(Color.Black, 0.5f);
         static Pen Slim = new Pen(Color.Black, 1);
         static Pen Bold = new Pen(Color.Black, 3);
         static Font Smalllll = new Font("Arial", 11, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -107,9 +108,7 @@ namespace AutoLabel
             }
             catch
             {
-                MessageBox.Show("Произошла ошибка при печати.\n" +
-                    "Проверьте включен ли принтер, есть ли в нём бумага и тонер.");
-                AutoLabel.Log.Write("Ошибка при печати");
+                AutoLabel.Log.Error("Произошла ошибка при печати");
             }
         }
 
@@ -133,6 +132,8 @@ namespace AutoLabel
                     DrawLabel(e.Graphics, 20, 16, true);
                     if (LabelCount > 0) DrawLabel(e.Graphics, 604, 16, true);
                 }
+                ClipLine.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+                e.Graphics.DrawLine(ClipLine, 574, 0, 574, 850);
             }
             else
             {

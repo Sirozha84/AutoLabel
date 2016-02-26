@@ -23,6 +23,8 @@ namespace AutoLabel
                 labelVersion.Text += "     Режим оператора";
                 buttonShift.Visible = false;
                 buttonProperties.Visible = false;
+                timerMessage.Enabled = false;
+                panel1.Visible = false;
             }
         }
 
@@ -204,6 +206,30 @@ namespace AutoLabel
             timerRefresh.Enabled = false; //Останавливаем автоматическое обновление
             form.ShowDialog();
             timerRefresh.Enabled = true; //Запускаем автоматическое обновление
+        }
+
+        bool load = true;
+
+        private void timerMessage_Tick(object sender, EventArgs e)
+        {
+            if (load)
+            {
+                try
+                {
+                    labelMessage.Text = System.IO.File.ReadAllText(Program.Patch + "Message.txt");
+                    load = false;
+                }
+                catch
+                {
+                    timerMessage.Enabled = false;
+                }
+            }
+            labelMessage.Location = new Point(labelMessage.Location.X - 2, labelMessage.Location.Y);
+            if (labelMessage.Location.X < -labelMessage.Size.Width)
+            {
+                labelMessage.Location = new Point(Size.Width, labelMessage.Location.Y);
+                load = true;
+            }
         }
     }
 }
