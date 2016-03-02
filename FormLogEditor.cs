@@ -85,7 +85,7 @@ namespace AutoLabel
                         file.WriteLine(rec[0] + "; " + rec[1] + "; " + rec[2] + "; " +
                                        rec[3] + "; " + rec[4] + "; " + rec[5] + "; " +
                                        rec[6] + "; " + rec[7] + "; " + rec[8]);
-                    file.Dispose();
+                    file.Close();
                 }
                 catch { }
             }

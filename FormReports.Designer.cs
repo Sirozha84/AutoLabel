@@ -38,6 +38,8 @@
             this.buttonReportByPart = new System.Windows.Forms.Button();
             this.buttonByTPA = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxShop = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,7 +108,7 @@
             this.comboBoxShift.FormattingEnabled = true;
             this.comboBoxShift.Location = new System.Drawing.Point(56, 157);
             this.comboBoxShift.Name = "comboBoxShift";
-            this.comboBoxShift.Size = new System.Drawing.Size(651, 45);
+            this.comboBoxShift.Size = new System.Drawing.Size(394, 45);
             this.comboBoxShift.TabIndex = 32;
             // 
             // label2
@@ -167,6 +169,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.SlateGray;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.comboBoxShop);
             this.panel1.Controls.Add(this.buttonByTPA);
             this.panel1.Controls.Add(this.buttonReportByPart);
             this.panel1.Controls.Add(this.buttonCancel);
@@ -176,6 +180,34 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(755, 560);
             this.panel1.TabIndex = 37;
+            // 
+            // comboBoxShop
+            // 
+            this.comboBoxShop.BackColor = System.Drawing.Color.Black;
+            this.comboBoxShop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxShop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxShop.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxShop.ForeColor = System.Drawing.Color.White;
+            this.comboBoxShop.FormattingEnabled = true;
+            this.comboBoxShop.Items.AddRange(new object[] {
+            "Преформа",
+            "Колпак"});
+            this.comboBoxShop.Location = new System.Drawing.Point(465, 155);
+            this.comboBoxShop.Name = "comboBoxShop";
+            this.comboBoxShop.Size = new System.Drawing.Size(240, 45);
+            this.comboBoxShop.TabIndex = 38;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.SlateGray;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(458, 99);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(221, 37);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "Выберите цех:";
             // 
             // FormReports
             // 
@@ -193,8 +225,8 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormReports";
-            this.Load += new System.EventHandler(this.FormReports_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +244,7 @@
         private System.Windows.Forms.Button buttonReportByPart;
         private System.Windows.Forms.Button buttonByTPA;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBoxShop;
     }
 }

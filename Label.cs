@@ -106,9 +106,9 @@ namespace AutoLabel
                 doc.PrinterSettings.DefaultPageSettings.Landscape = true;
                 doc.Print();
             }
-            catch
+            catch (ArgumentException e)
             {
-                AutoLabel.Log.Error("Произошла ошибка при печати");
+                AutoLabel.Log.Error(e.Message);
             }
         }
 
@@ -280,10 +280,10 @@ namespace AutoLabel
         /// </summary>
         void IncAndLog()
         {
-            if (Num == CurrentNum & CurrentNum > 0)
+            if (Num >= CurrentNum & CurrentNum > 0)
             {
                 Log();  //Лог пишу только когда печатается новая этикетка... может понадобится ещё что-то на счёт брака
-                CurrentNum++; //Увеличиваем номер, если печатался текущий
+                CurrentNum = Num + 1; //Увеличиваем номер, если печатался текущий
                 Save(); //Сохраняем, вдруг программа вылетет :)
             }
             Num++;
@@ -328,13 +328,11 @@ namespace AutoLabel
                 file.WriteLine(Colorant);
                 file.WriteLine(Limit);
                 file.WriteLine(Other);
-                file.Dispose();
+                file.Close();
             }
             catch
             {
-                MessageBox.Show("Не удалось сохранить параметр ТПА. Позовите админа! Пусть он в этом разберётся.",
-                    "Случилось что-то страшное");
-                AutoLabel.Log.Write("Ошибка: Не удалось сохранить параметр ТПА");
+                AutoLabel.Log.Error("Не удалось сохранить параметр ТПА");
             }
         }
 
@@ -357,7 +355,7 @@ namespace AutoLabel
                 Colorant = file.ReadLine();
                 Limit = file.ReadLine();
                 Other = file.ReadLine();
-                file.Dispose();
+                file.Close();
             }
             catch { } //нишмагла...
         }
@@ -373,10 +371,11 @@ namespace AutoLabel
                     true, Encoding.Default);
                 file.WriteLine(AutoLabel.Shift.Date + DateTime.Now.ToString("; HH:mm") +
                     "; " + TPAName + "; " + PartNum + "; " + Type +"; " + Weight + "; " +
-                    PColor +"; " + CurrentNum + "; " + Packer);
-                file.Dispose();
+                    PColor +"; " + Num + "; " + Packer);
+                file.Close();
             }
-            catch { }
+            catch
+            { AutoLabel.Log.Error("Не удалось произвести жапись в журнал"); }
             AutoLabel.Log.Write("Печать этикетки");
         }
 

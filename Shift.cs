@@ -43,7 +43,7 @@ namespace AutoLabel
                 Date = file.ReadLine();
                 for (int i = 0; i < ShiftMemory; i++)
                     LogName[i] = file.ReadLine();
-                file.Dispose();
+                file.Close();
             }
             catch
             {
@@ -78,7 +78,7 @@ namespace AutoLabel
                 file.WriteLine(Date);
                 for (int i = 0; i < ShiftMemory; i++)
                     file.WriteLine(LogName[i]);
-                file.Dispose();
+                file.Close();
             }
             catch
             {
@@ -91,6 +91,7 @@ namespace AutoLabel
                 l.CurrentNum = 1;
                 l.Save();
             }
+            Log.Write("Заступание новой смены");
         }
 
         /// <summary>

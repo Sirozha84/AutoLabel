@@ -77,6 +77,7 @@
             this.labelMessage = new System.Windows.Forms.Label();
             this.timerMessage = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.строкаСообщенийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -443,7 +444,7 @@
             // 
             this.отчётыToolStripMenuItem.Name = "отчётыToolStripMenuItem";
             this.отчётыToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.отчётыToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
+            this.отчётыToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.отчётыToolStripMenuItem.Text = "Отчёты";
             this.отчётыToolStripMenuItem.Click += new System.EventHandler(this.отчётыToolStripMenuItem_Click);
             // 
@@ -451,27 +452,27 @@
             // 
             this.правкаЖурналаToolStripMenuItem.Name = "правкаЖурналаToolStripMenuItem";
             this.правкаЖурналаToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.правкаЖурналаToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
-            this.правкаЖурналаToolStripMenuItem.Text = "Правка журнала";
+            this.правкаЖурналаToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.правкаЖурналаToolStripMenuItem.Text = "Журнал";
             this.правкаЖурналаToolStripMenuItem.Click += new System.EventHandler(this.правкаЖурналаToolStripMenuItem_Click);
             // 
             // этикеткаСПроизвольнымиПолямиToolStripMenuItem
             // 
             this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Name = "этикеткаСПроизвольнымиПолямиToolStripMenuItem";
             this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
-            this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Text = "Этикетка с произвольными полями";
+            this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Text = "Ручная этикетка";
             this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Click += new System.EventHandler(this.этикеткаСПроизвольнымиПолямиToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(310, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(202, 6);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -480,6 +481,7 @@
             this.параметрыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.вводДанныхToolStripMenuItem,
             this.пользователиToolStripMenuItem,
+            this.строкаСообщенийToolStripMenuItem,
             this.toolStripMenuItem2,
             this.принтерToolStripMenuItem});
             this.параметрыToolStripMenuItem.Name = "параметрыToolStripMenuItem";
@@ -601,6 +603,13 @@
             this.panel1.Size = new System.Drawing.Size(1095, 45);
             this.panel1.TabIndex = 10;
             // 
+            // строкаСообщенийToolStripMenuItem
+            // 
+            this.строкаСообщенийToolStripMenuItem.Name = "строкаСообщенийToolStripMenuItem";
+            this.строкаСообщенийToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.строкаСообщенийToolStripMenuItem.Text = "Строка сообщений";
+            this.строкаСообщенийToolStripMenuItem.Click += new System.EventHandler(this.строкаСообщенийToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -680,6 +689,7 @@
         private System.Windows.Forms.Label labelMessage;
         private System.Windows.Forms.Timer timerMessage;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem строкаСообщенийToolStripMenuItem;
     }
 }
 

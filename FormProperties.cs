@@ -151,7 +151,6 @@ namespace AutoLabel
             {
                 FormReports rep = new FormReports();
                 rep.ShowDialog();
-                rep.Dispose();
             }
         }
 

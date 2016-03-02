@@ -75,7 +75,7 @@ namespace AutoLabel
                 StreamReader file = File.OpenText(FilePrinter);
                 printersettings = new PrinterSettings();
                 printersettings.PrinterName = file.ReadLine();
-                file.Dispose();
+                file.Close();
             }
             catch
             {
@@ -153,7 +153,7 @@ namespace AutoLabel
                     file.ReadLine();
                     Users.Add(new User(file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine()));
                 }
-                file.Dispose();
+                file.Close();
             }
             catch { } //нишмагла...
         }
@@ -179,7 +179,7 @@ namespace AutoLabel
                         if (b) a += "1"; else a += "0";
                     file.WriteLine(a);
                 }
-                file.Dispose();
+                file.Close();
             }
             catch
             {
@@ -198,7 +198,7 @@ namespace AutoLabel
             {
                 StreamWriter file = File.CreateText(FilePrinter);
                 file.Write(printersettings.PrinterName);
-                file.Dispose();
+                file.Close();
             }
             catch
             {

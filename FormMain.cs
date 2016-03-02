@@ -231,5 +231,13 @@ namespace AutoLabel
                 load = true;
             }
         }
+
+        private void строкаСообщенийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string file = Program.Patch + "Message.txt";
+            if (!System.IO.File.Exists(file))
+                System.IO.File.Create(file);
+            System.Diagnostics.Process.Start(file);
+        }
     }
 }

@@ -53,7 +53,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(112, 6);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(600, 21);
+            this.comboBox1.Size = new System.Drawing.Size(620, 21);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -70,7 +70,7 @@
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(637, 526);
+            this.buttonCancel.Location = new System.Drawing.Point(657, 526);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 7;
@@ -80,7 +80,7 @@
             // buttonOK
             // 
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOK.Location = new System.Drawing.Point(556, 526);
+            this.buttonOK.Location = new System.Drawing.Point(576, 526);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 6;
@@ -108,7 +108,7 @@
             this.listView1.Location = new System.Drawing.Point(12, 33);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(700, 487);
+            this.listView1.Size = new System.Drawing.Size(720, 487);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -127,6 +127,7 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Машина";
+            this.columnHeader3.Width = 80;
             // 
             // columnHeader4
             // 
@@ -171,7 +172,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 561);
+            this.ClientSize = new System.Drawing.Size(744, 561);
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.buttonCancel);
@@ -180,7 +181,7 @@
             this.Controls.Add(this.comboBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(740, 200);
+            this.MinimumSize = new System.Drawing.Size(760, 200);
             this.Name = "FormLogEditor";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
