@@ -7,13 +7,13 @@ using System.IO;
 
 namespace AutoLabel
 {
-    public partial class FormLogEditor : Form
+    public partial class FormLog : Form
     {
         List<string[]> log = new List<string[]>();
         bool save = false;
         string FileName;
 
-        public FormLogEditor()
+        public FormLog()
         {
             InitializeComponent();
         }

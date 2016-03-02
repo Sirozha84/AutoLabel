@@ -444,7 +444,7 @@
             // 
             this.отчётыToolStripMenuItem.Name = "отчётыToolStripMenuItem";
             this.отчётыToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.отчётыToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.отчётыToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
             this.отчётыToolStripMenuItem.Text = "Отчёты";
             this.отчётыToolStripMenuItem.Click += new System.EventHandler(this.отчётыToolStripMenuItem_Click);
             // 
@@ -452,7 +452,7 @@
             // 
             this.правкаЖурналаToolStripMenuItem.Name = "правкаЖурналаToolStripMenuItem";
             this.правкаЖурналаToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.правкаЖурналаToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.правкаЖурналаToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
             this.правкаЖурналаToolStripMenuItem.Text = "Журнал";
             this.правкаЖурналаToolStripMenuItem.Click += new System.EventHandler(this.правкаЖурналаToolStripMenuItem_Click);
             // 
@@ -460,19 +460,19 @@
             // 
             this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Name = "этикеткаСПроизвольнымиПолямиToolStripMenuItem";
             this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Text = "Ручная этикетка";
+            this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
+            this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Text = "Этикетка с произвольными полями";
             this.этикеткаСПроизвольнымиПолямиToolStripMenuItem.Click += new System.EventHandler(this.этикеткаСПроизвольнымиПолямиToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(202, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(310, 6);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 

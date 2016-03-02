@@ -19,7 +19,7 @@ namespace AutoLabel
         public string Material; //Список материал
         public string PColor;   //Цвет
         public string Antistatic;   //Список тип антистатика
-        public string Colorant;  //Список количество антистатика
+        public string Colorant; //Список количество антистатика
         public string Limit;    //Список срок хранения
         public string Other;    //Вручную Дополнительные параметры
 
@@ -280,9 +280,10 @@ namespace AutoLabel
         /// </summary>
         void IncAndLog()
         {
+            Log(); //Теперь пишем журнал в любом случае
             if (Num >= CurrentNum & CurrentNum > 0)
             {
-                Log();  //Лог пишу только когда печатается новая этикетка... может понадобится ещё что-то на счёт брака
+                //Log(); - раньше писалась только новая этикетка
                 CurrentNum = Num + 1; //Увеличиваем номер, если печатался текущий
                 Save(); //Сохраняем, вдруг программа вылетет :)
             }
@@ -301,12 +302,10 @@ namespace AutoLabel
         /// <param name="s3">Значение</param>
         static void DrawStrings(Graphics g, int X, int Y, int x, int y, string s1, string s2, string s3)
         {
-            g.DrawString(s1, SmallBold, Brushes.Black, new Point(X + 10, Y + y));
-            g.DrawString(s2, Small, Brushes.Black, new Point(X + 10, Y + y + 14));
-            g.DrawString(s3, Normal, Brushes.Black, new Point(X + x + 10, Y + y));
+            g.DrawString(s1, SmallBold, Brushes.Black, X + 10, Y + y);
+            g.DrawString(s2, Small, Brushes.Black, X + 10, Y + y + 14);
+            g.DrawString(s3, Normal, Brushes.Black, X + x + 10, Y + y);
         }
-
-
 
         /// <summary>
         /// Сохранение на диск

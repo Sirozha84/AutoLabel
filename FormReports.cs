@@ -27,28 +27,28 @@ namespace AutoLabel
         //Кнопка отчёта "Журнал"
         private void buttonLog_Click(object sender, EventArgs e)
         {
-            Reports.Log(comboBoxShift.SelectedItem.ToString(), 0);
+            Reports.Log(comboBoxShift.SelectedItem.ToString(), comboBoxShop.SelectedIndex);
             Close();
         }
 
         //Кнопка отчёта "Обший"
         private void buttonMianRepotr_Click(object sender, EventArgs e)
         {
-            Reports.General(comboBoxShift.SelectedItem.ToString(), 0);
+            Reports.General(comboBoxShift.SelectedItem.ToString(), comboBoxShop.SelectedIndex);
             Close();
         }
 
         //Кнопка отчёта "По партиям"
         private void buttonReportByPart_Click(object sender, EventArgs e)
         {
-            Reports.ByPart(comboBoxShift.SelectedItem.ToString(), 0);
+            Reports.ByPart(comboBoxShift.SelectedItem.ToString(), comboBoxShop.SelectedIndex);
             Close();
         }
 
         //Кнопка отчёта "По ТПА"
         private void buttonByTPA_Click(object sender, EventArgs e)
         {
-            Reports.ByTPA(comboBoxShift.SelectedItem.ToString(), 0);
+            Reports.ByTPA(comboBoxShift.SelectedItem.ToString(), comboBoxShop.SelectedIndex);
             Close();
         }
     }

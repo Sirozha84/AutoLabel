@@ -1,6 +1,6 @@
 ﻿namespace AutoLabel
 {
-    partial class FormLogEditor
+    partial class FormLog
     {
         /// <summary>
         /// Required designer variable.
@@ -117,7 +117,6 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Дата";
-            this.columnHeader1.Width = 50;
             // 
             // columnHeader2
             // 
@@ -168,7 +167,7 @@
             this.buttonDel.UseVisualStyleBackColor = true;
             this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
-            // FormLogEditor
+            // FormLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -182,11 +181,11 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(760, 200);
-            this.Name = "FormLogEditor";
+            this.Name = "FormLog";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Правка журнала";
+            this.Text = "Журнал";
             this.Load += new System.EventHandler(this.FormLogEditor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

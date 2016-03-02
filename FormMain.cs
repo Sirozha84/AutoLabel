@@ -202,7 +202,7 @@ namespace AutoLabel
 
         private void правкаЖурналаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormLogEditor form = new FormLogEditor();
+            FormLog form = new FormLog();
             timerRefresh.Enabled = false; //Останавливаем автоматическое обновление
             form.ShowDialog();
             timerRefresh.Enabled = true; //Запускаем автоматическое обновление
