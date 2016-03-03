@@ -408,5 +408,21 @@ namespace AutoLabel
                     break;
             }
         }
+
+        /// <summary>
+        /// Открытие файла для редактирования в блокноте
+        /// </summary>
+        /// <param name="file"></param>
+        public static void OpenInNotepad(string file)
+        {
+            file = Program.Patch + file;
+            if (!File.Exists(file))
+            {
+                FileStream f = new FileStream(file, FileMode.Create);
+                f.Close();
+                //File.Create(file);
+            }
+            System.Diagnostics.Process.Start(file);
+        }
     }
 }

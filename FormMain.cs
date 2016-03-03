@@ -232,12 +232,84 @@ namespace AutoLabel
             }
         }
 
-        private void строкаСообщенийToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
-            string file = Program.Patch + "Message.txt";
-            if (!System.IO.File.Exists(file))
-                System.IO.File.Create(file);
-            System.Diagnostics.Process.Start(file);
+            Data.OpenInNotepad("Message.txt");
+        }
+
+        private void списокТиповПреформыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.OpenInNotepad("Lists\\Types0.txt");
+        }
+
+        private void списокВесовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.OpenInNotepad("Lists\\Weights0.txt");
+        }
+
+        private void количестваПреформToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.OpenInNotepad("Lists\\Quantitys0.txt");
+        }
+
+        private void материалыПреформыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.OpenInNotepad("Lists\\Materials0.txt");
+        }
+
+        private void цветаПреформыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.OpenInNotepad("Lists\\Colors0.txt");
+        }
+
+        private void кодыКрасителейПреформыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.OpenInNotepad("Lists\\Colorants0.txt");
+        }
+
+        private void типыАнтистатикаПреформыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.OpenInNotepad("Lists\\Antistatics0.txt");
+        }
+
+        private void срокиГодностиПреформыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.OpenInNotepad("Lists\\Limits.txt");
+        }
+
+        private void типыКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.OpenInNotepad("Lists\\Types1.txt");
+        }
+
+        private void весаКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.OpenInNotepad("Lists\\Weights1.txt");
+        }
+
+        private void количестваКолпачковToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.OpenInNotepad("Lists\\Quantitys1.txt");
+        }
+
+        private void материалыКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.OpenInNotepad("Lists\\Materials1.txt");
+        }
+
+        private void цветаКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.OpenInNotepad("Lists\\Colors1.txt");
+        }
+
+        private void кодыКрасителейКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.OpenInNotepad("Lists\\Colorants1.txt");
+        }
+
+        private void типыАнтистатикаКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.OpenInNotepad("Lists\\Antistatics1.txt");
         }
     }
 }
