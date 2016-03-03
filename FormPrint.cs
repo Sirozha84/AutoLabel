@@ -99,6 +99,8 @@ namespace AutoLabel
         //Кнопка печати
         private void buttonPrint_Click(object sender, EventArgs e)
         {
+            if (box != lab.CurrentNum)
+                if (!Data.Ask("Эта этикетка уже напечатана.\nУверены что хотите повторить?")) return;
             int c = 0;
             if (CountSelect) c = count;
             lab.Print(box, comboBoxUser.SelectedItem.ToString(), c);

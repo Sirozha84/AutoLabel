@@ -424,5 +424,16 @@ namespace AutoLabel
             }
             System.Diagnostics.Process.Start(file);
         }
+
+        /// <summary>
+        /// Задание вопроса
+        /// </summary>
+        /// <param name="question"></param>
+        /// <returns></returns>
+        public static bool Ask(string question)
+        {
+            FormAsk form = new FormAsk(question);
+            return (form.ShowDialog() == DialogResult.Yes);
+        }
     }
 }
