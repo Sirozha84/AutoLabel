@@ -22,6 +22,7 @@ namespace AutoLabel
         public string Colorant; //Список количество антистатика
         public string Limit;    //Список срок хранения
         public string Other;    //Вручную Дополнительные параметры
+        bool Custom;   //Маркер кастомной этикетки
 
         //Карандаши и ручки :-)
         static Pen ClipLine = new Pen(Color.Black, 0.5f);
@@ -64,6 +65,21 @@ namespace AutoLabel
             TPAName = name;
             TPAType = type;
             Load();
+            Custom = false;
+        }
+
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="name">Название машины</param>
+        /// <param name="type">Тип ТПА (0-преформа, 1-колпак)</param>
+        /// <param name="custom">Кастомная ли этикетка</param>
+        public Label(string name, int type, bool custom)
+        {
+            TPAName = name;
+            TPAType = type;
+            Load();
+            Custom = custom;
         }
 
         /// <summary>
@@ -281,10 +297,11 @@ namespace AutoLabel
         void IncAndLog()
         {
             Log(); //Теперь пишем журнал в любом случае
+            
             if (Num >= CurrentNum & CurrentNum > 0)
             {
-                //Log(); - раньше писалась только новая этикетка
-                CurrentNum = Num + 1; //Увеличиваем номер, если печатался текущий
+                if (!Custom)
+                    CurrentNum = Num + 1; //Увеличиваем номер, если печатался текущий
                 Save(); //Сохраняем, вдруг программа вылетет :)
             }
             Num++;
@@ -364,13 +381,15 @@ namespace AutoLabel
         /// </summary>
         void Log()
         {
+            string comment = "";
+            if (Custom) comment = " - этикетка с произвольными полями";
             try
             {
                 StreamWriter file = new StreamWriter(Program.Patch + "Logs\\" + AutoLabel.Shift.LogName[0] + ".csv",
                     true, Encoding.Default);
                 file.WriteLine(AutoLabel.Shift.Date + DateTime.Now.ToString("; HH:mm") +
                     "; " + TPAName + "; " + PartNum + "; " + Type +"; " + Weight + "; " +
-                    PColor +"; " + Num + "; " + Packer);
+                    PColor +"; " + Num + "; " + Packer + comment);
                 file.Close();
             }
             catch

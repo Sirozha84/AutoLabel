@@ -114,7 +114,7 @@ namespace AutoLabel
         {
             try
             {
-                Label l = new Label(comboBoxTPA.SelectedItem.ToString(), 0);
+                Label l = new Label(comboBoxTPA.SelectedItem.ToString(), 0, true);
 
                 //Временно сделаю так... надо подумать как сделать лучше
                 if (comboBoxTPA.SelectedIndex > 5) l.TPAType = 1;
