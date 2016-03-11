@@ -430,7 +430,7 @@
             // timerRefresh
             // 
             this.timerRefresh.Enabled = true;
-            this.timerRefresh.Interval = 10000;
+            this.timerRefresh.Interval = 3000;
             this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
             // 
             // menuStrip1

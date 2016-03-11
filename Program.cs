@@ -5,7 +5,7 @@ namespace AutoLabel
 {
     static class Program
     {
-        public static string Version = "1.1.9 (11.03.2016)";
+        public static string Version = "1.2.0 (11.03.2016)";
         public static string Patch = Environment.CurrentDirectory + "\\";
         /// <summary>
         /// Главная точка входа для приложения.
@@ -18,6 +18,7 @@ namespace AutoLabel
                 Log.Write("Запуск программы в режиме терминала");
             else
                 Log.Write("Запуск программы в режиме ПК");
+            Net.Init();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMain());

@@ -44,6 +44,7 @@ namespace AutoLabel
 
         void Print(int num)
         {
+            timerRefresh.Enabled = false;
             if (Data.Labels[num].PartNum == null | 
                 Data.Labels[num].PartNum == "" |
                 Data.Labels[num].Count == "") return;
@@ -57,6 +58,7 @@ namespace AutoLabel
                 FormPrintPC formprint = new FormPrintPC(num);
                 formprint.ShowDialog();
             }
+            timerRefresh.Enabled = true;
             RefreshMain();
         }
 
@@ -123,7 +125,9 @@ namespace AutoLabel
         //Таймер для обновления внешнего вида (на случай если из вне поменяли параметры)
         private void timerRefresh_Tick(object sender, EventArgs e)
         {
+            //(new System.Threading.Thread(Delegate() { RefreshMain(); })).Start();
             RefreshMain();
+            Net.LoadMessage();
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -207,20 +211,12 @@ namespace AutoLabel
         }
 
         bool load = true;
-
         private void timerMessage_Tick(object sender, EventArgs e)
         {
             if (load)
             {
-                try
-                {
-                    labelMessage.Text = System.IO.File.ReadAllText(Program.Patch + "Message.txt");
-                    load = false;
-                }
-                catch
-                {
-                    timerMessage.Enabled = false;
-                }
+                labelMessage.Text = Net.LoadMessage();
+                load = false;
             }
             labelMessage.Location = new Point(labelMessage.Location.X - 2, labelMessage.Location.Y);
             if (labelMessage.Location.X < -labelMessage.Size.Width)
@@ -312,10 +308,12 @@ namespace AutoLabel
 
         private void FormMain_Shown(object sender, EventArgs e)
         {
+#if (!DEBUG)
             if (!Data.IsMachine)
                 MessageBox.Show("ВНИМАНИЕ!!!\n\nПока существует проблема блокировки файлов, крайне не желателен запуск программы на ПК.\n" +
-        "Сделайте свои дела и закройте экземпляр как можно скорей, иначе возможны проблемы работы терминала.",
-        "AutoLabel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    "Сделайте свои дела и закройте экземпляр как можно скорей, иначе возможны проблемы работы терминала.",
+                    "AutoLabel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+#endif
         }
     }
 }
