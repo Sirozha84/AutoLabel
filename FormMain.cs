@@ -26,12 +26,10 @@ namespace AutoLabel
                 timerMessage.Enabled = false;
                 panel1.Visible = false;
             }
-        }
-
-        private void FormMain_Load(object sender, EventArgs e)
-        {
             Data.Init();
             RefreshMain();
+
+
         }
 
         //Большие кнопки
@@ -310,6 +308,14 @@ namespace AutoLabel
         private void типыАнтистатикаКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Data.OpenInNotepad("Lists\\Antistatics1.txt");
+        }
+
+        private void FormMain_Shown(object sender, EventArgs e)
+        {
+            if (!Data.IsMachine)
+                MessageBox.Show("ВНИМАНИЕ!!!\n\nПока существует проблема блокировки файлов, крайне не желателен запуск программы на ПК.\n" +
+        "Сделайте свои дела и закройте экземпляр как можно скорей, иначе возможны проблемы работы терминала.",
+        "AutoLabel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

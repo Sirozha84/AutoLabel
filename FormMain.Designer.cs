@@ -65,6 +65,25 @@
             this.параметрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вводДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.правкаКонстантToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокТиповПреформыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокВесовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.количестваПреформToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.материалыПреформыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.цветаПреформыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.кодыКрасителейПреформыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.типыАнтистатикаПреформыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.срокиГодностиПреформыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.типыКолпачкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.весаКолпачкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.количестваКолпачковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.материалыКолпачкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.цветаКолпачкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.кодыКрасителейКолпачкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.типыАнтистатикаКолпачкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.принтерToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сменаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,25 +96,6 @@
             this.labelMessage = new System.Windows.Forms.Label();
             this.timerMessage = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.правкаКонстантToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.списокТиповПреформыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.списокВесовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.количестваПреформToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.материалыПреформыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.цветаПреформыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.кодыКрасителейПреформыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.типыАнтистатикаПреформыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.срокиГодностиПреформыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
-            this.типыКолпачкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.весаКолпачкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.количестваКолпачковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.материалыКолпачкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.цветаКолпачкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.кодыКрасителейКолпачкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.типыАнтистатикаКолпачкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -522,6 +522,153 @@
             this.пользователиToolStripMenuItem.Text = "Пользователи";
             this.пользователиToolStripMenuItem.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
             // 
+            // правкаКонстантToolStripMenuItem
+            // 
+            this.правкаКонстантToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.списокТиповПреформыToolStripMenuItem,
+            this.списокВесовToolStripMenuItem,
+            this.количестваПреформToolStripMenuItem,
+            this.материалыПреформыToolStripMenuItem,
+            this.цветаПреформыToolStripMenuItem,
+            this.кодыКрасителейПреформыToolStripMenuItem,
+            this.типыАнтистатикаПреформыToolStripMenuItem,
+            this.срокиГодностиПреформыToolStripMenuItem,
+            this.toolStripMenuItem3,
+            this.типыКолпачкаToolStripMenuItem,
+            this.весаКолпачкаToolStripMenuItem,
+            this.количестваКолпачковToolStripMenuItem,
+            this.материалыКолпачкаToolStripMenuItem,
+            this.цветаКолпачкаToolStripMenuItem,
+            this.кодыКрасителейКолпачкаToolStripMenuItem,
+            this.типыАнтистатикаКолпачкаToolStripMenuItem,
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem5});
+            this.правкаКонстантToolStripMenuItem.Name = "правкаКонстантToolStripMenuItem";
+            this.правкаКонстантToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.правкаКонстантToolStripMenuItem.Text = "Правка констант";
+            // 
+            // списокТиповПреформыToolStripMenuItem
+            // 
+            this.списокТиповПреформыToolStripMenuItem.Name = "списокТиповПреформыToolStripMenuItem";
+            this.списокТиповПреформыToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.списокТиповПреформыToolStripMenuItem.Text = "Типы преформы";
+            this.списокТиповПреформыToolStripMenuItem.Click += new System.EventHandler(this.списокТиповПреформыToolStripMenuItem_Click);
+            // 
+            // списокВесовToolStripMenuItem
+            // 
+            this.списокВесовToolStripMenuItem.Name = "списокВесовToolStripMenuItem";
+            this.списокВесовToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.списокВесовToolStripMenuItem.Text = "Веса преформы";
+            this.списокВесовToolStripMenuItem.Click += new System.EventHandler(this.списокВесовToolStripMenuItem_Click);
+            // 
+            // количестваПреформToolStripMenuItem
+            // 
+            this.количестваПреформToolStripMenuItem.Name = "количестваПреформToolStripMenuItem";
+            this.количестваПреформToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.количестваПреформToolStripMenuItem.Text = "Количества преформ";
+            this.количестваПреформToolStripMenuItem.Click += new System.EventHandler(this.количестваПреформToolStripMenuItem_Click);
+            // 
+            // материалыПреформыToolStripMenuItem
+            // 
+            this.материалыПреформыToolStripMenuItem.Name = "материалыПреформыToolStripMenuItem";
+            this.материалыПреформыToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.материалыПреформыToolStripMenuItem.Text = "Материалы преформы";
+            this.материалыПреформыToolStripMenuItem.Click += new System.EventHandler(this.материалыПреформыToolStripMenuItem_Click);
+            // 
+            // цветаПреформыToolStripMenuItem
+            // 
+            this.цветаПреформыToolStripMenuItem.Name = "цветаПреформыToolStripMenuItem";
+            this.цветаПреформыToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.цветаПреформыToolStripMenuItem.Text = "Цвета преформы";
+            this.цветаПреформыToolStripMenuItem.Click += new System.EventHandler(this.цветаПреформыToolStripMenuItem_Click);
+            // 
+            // кодыКрасителейПреформыToolStripMenuItem
+            // 
+            this.кодыКрасителейПреформыToolStripMenuItem.Name = "кодыКрасителейПреформыToolStripMenuItem";
+            this.кодыКрасителейПреформыToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.кодыКрасителейПреформыToolStripMenuItem.Text = "Коды красителей преформы";
+            this.кодыКрасителейПреформыToolStripMenuItem.Click += new System.EventHandler(this.кодыКрасителейПреформыToolStripMenuItem_Click);
+            // 
+            // типыАнтистатикаПреформыToolStripMenuItem
+            // 
+            this.типыАнтистатикаПреформыToolStripMenuItem.Name = "типыАнтистатикаПреформыToolStripMenuItem";
+            this.типыАнтистатикаПреформыToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.типыАнтистатикаПреформыToolStripMenuItem.Text = "Типы антистатика преформы";
+            this.типыАнтистатикаПреформыToolStripMenuItem.Click += new System.EventHandler(this.типыАнтистатикаПреформыToolStripMenuItem_Click);
+            // 
+            // срокиГодностиПреформыToolStripMenuItem
+            // 
+            this.срокиГодностиПреформыToolStripMenuItem.Name = "срокиГодностиПреформыToolStripMenuItem";
+            this.срокиГодностиПреформыToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.срокиГодностиПреформыToolStripMenuItem.Text = "Сроки годности преформы";
+            this.срокиГодностиПреформыToolStripMenuItem.Click += new System.EventHandler(this.срокиГодностиПреформыToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(234, 6);
+            // 
+            // типыКолпачкаToolStripMenuItem
+            // 
+            this.типыКолпачкаToolStripMenuItem.Name = "типыКолпачкаToolStripMenuItem";
+            this.типыКолпачкаToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.типыКолпачкаToolStripMenuItem.Text = "Типы колпачка";
+            this.типыКолпачкаToolStripMenuItem.Click += new System.EventHandler(this.типыКолпачкаToolStripMenuItem_Click);
+            // 
+            // весаКолпачкаToolStripMenuItem
+            // 
+            this.весаКолпачкаToolStripMenuItem.Name = "весаКолпачкаToolStripMenuItem";
+            this.весаКолпачкаToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.весаКолпачкаToolStripMenuItem.Text = "Веса колпачка";
+            this.весаКолпачкаToolStripMenuItem.Click += new System.EventHandler(this.весаКолпачкаToolStripMenuItem_Click);
+            // 
+            // количестваКолпачковToolStripMenuItem
+            // 
+            this.количестваКолпачковToolStripMenuItem.Name = "количестваКолпачковToolStripMenuItem";
+            this.количестваКолпачковToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.количестваКолпачковToolStripMenuItem.Text = "Количества колпачка";
+            this.количестваКолпачковToolStripMenuItem.Click += new System.EventHandler(this.количестваКолпачковToolStripMenuItem_Click);
+            // 
+            // материалыКолпачкаToolStripMenuItem
+            // 
+            this.материалыКолпачкаToolStripMenuItem.Name = "материалыКолпачкаToolStripMenuItem";
+            this.материалыКолпачкаToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.материалыКолпачкаToolStripMenuItem.Text = "Материалы колпачка";
+            this.материалыКолпачкаToolStripMenuItem.Click += new System.EventHandler(this.материалыКолпачкаToolStripMenuItem_Click);
+            // 
+            // цветаКолпачкаToolStripMenuItem
+            // 
+            this.цветаКолпачкаToolStripMenuItem.Name = "цветаКолпачкаToolStripMenuItem";
+            this.цветаКолпачкаToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.цветаКолпачкаToolStripMenuItem.Text = "Цвета колпачка";
+            this.цветаКолпачкаToolStripMenuItem.Click += new System.EventHandler(this.цветаКолпачкаToolStripMenuItem_Click);
+            // 
+            // кодыКрасителейКолпачкаToolStripMenuItem
+            // 
+            this.кодыКрасителейКолпачкаToolStripMenuItem.Name = "кодыКрасителейКолпачкаToolStripMenuItem";
+            this.кодыКрасителейКолпачкаToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.кодыКрасителейКолпачкаToolStripMenuItem.Text = "Коды красителей колпачка";
+            this.кодыКрасителейКолпачкаToolStripMenuItem.Click += new System.EventHandler(this.кодыКрасителейКолпачкаToolStripMenuItem_Click);
+            // 
+            // типыАнтистатикаКолпачкаToolStripMenuItem
+            // 
+            this.типыАнтистатикаКолпачкаToolStripMenuItem.Name = "типыАнтистатикаКолпачкаToolStripMenuItem";
+            this.типыАнтистатикаКолпачкаToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.типыАнтистатикаКолпачкаToolStripMenuItem.Text = "Типы антистатика колпачка";
+            this.типыАнтистатикаКолпачкаToolStripMenuItem.Click += new System.EventHandler(this.типыАнтистатикаКолпачкаToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(234, 6);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(237, 22);
+            this.toolStripMenuItem5.Text = "Строка объявлений";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
@@ -621,153 +768,6 @@
             this.panel1.Size = new System.Drawing.Size(1095, 45);
             this.panel1.TabIndex = 10;
             // 
-            // правкаКонстантToolStripMenuItem
-            // 
-            this.правкаКонстантToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.списокТиповПреформыToolStripMenuItem,
-            this.списокВесовToolStripMenuItem,
-            this.количестваПреформToolStripMenuItem,
-            this.материалыПреформыToolStripMenuItem,
-            this.цветаПреформыToolStripMenuItem,
-            this.кодыКрасителейПреформыToolStripMenuItem,
-            this.типыАнтистатикаПреформыToolStripMenuItem,
-            this.срокиГодностиПреформыToolStripMenuItem,
-            this.toolStripMenuItem3,
-            this.типыКолпачкаToolStripMenuItem,
-            this.весаКолпачкаToolStripMenuItem,
-            this.количестваКолпачковToolStripMenuItem,
-            this.материалыКолпачкаToolStripMenuItem,
-            this.цветаКолпачкаToolStripMenuItem,
-            this.кодыКрасителейКолпачкаToolStripMenuItem,
-            this.типыАнтистатикаКолпачкаToolStripMenuItem,
-            this.toolStripMenuItem4,
-            this.toolStripMenuItem5});
-            this.правкаКонстантToolStripMenuItem.Name = "правкаКонстантToolStripMenuItem";
-            this.правкаКонстантToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
-            this.правкаКонстантToolStripMenuItem.Text = "Правка констант";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(234, 6);
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(237, 22);
-            this.toolStripMenuItem5.Text = "Строка объявлений";
-            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
-            // 
-            // списокТиповПреформыToolStripMenuItem
-            // 
-            this.списокТиповПреформыToolStripMenuItem.Name = "списокТиповПреформыToolStripMenuItem";
-            this.списокТиповПреформыToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.списокТиповПреформыToolStripMenuItem.Text = "Типы преформы";
-            this.списокТиповПреформыToolStripMenuItem.Click += new System.EventHandler(this.списокТиповПреформыToolStripMenuItem_Click);
-            // 
-            // списокВесовToolStripMenuItem
-            // 
-            this.списокВесовToolStripMenuItem.Name = "списокВесовToolStripMenuItem";
-            this.списокВесовToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.списокВесовToolStripMenuItem.Text = "Веса преформы";
-            this.списокВесовToolStripMenuItem.Click += new System.EventHandler(this.списокВесовToolStripMenuItem_Click);
-            // 
-            // количестваПреформToolStripMenuItem
-            // 
-            this.количестваПреформToolStripMenuItem.Name = "количестваПреформToolStripMenuItem";
-            this.количестваПреформToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.количестваПреформToolStripMenuItem.Text = "Количества преформ";
-            this.количестваПреформToolStripMenuItem.Click += new System.EventHandler(this.количестваПреформToolStripMenuItem_Click);
-            // 
-            // материалыПреформыToolStripMenuItem
-            // 
-            this.материалыПреформыToolStripMenuItem.Name = "материалыПреформыToolStripMenuItem";
-            this.материалыПреформыToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.материалыПреформыToolStripMenuItem.Text = "Материалы преформы";
-            this.материалыПреформыToolStripMenuItem.Click += new System.EventHandler(this.материалыПреформыToolStripMenuItem_Click);
-            // 
-            // цветаПреформыToolStripMenuItem
-            // 
-            this.цветаПреформыToolStripMenuItem.Name = "цветаПреформыToolStripMenuItem";
-            this.цветаПреформыToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.цветаПреформыToolStripMenuItem.Text = "Цвета преформы";
-            this.цветаПреформыToolStripMenuItem.Click += new System.EventHandler(this.цветаПреформыToolStripMenuItem_Click);
-            // 
-            // кодыКрасителейПреформыToolStripMenuItem
-            // 
-            this.кодыКрасителейПреформыToolStripMenuItem.Name = "кодыКрасителейПреформыToolStripMenuItem";
-            this.кодыКрасителейПреформыToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.кодыКрасителейПреформыToolStripMenuItem.Text = "Коды красителей преформы";
-            this.кодыКрасителейПреформыToolStripMenuItem.Click += new System.EventHandler(this.кодыКрасителейПреформыToolStripMenuItem_Click);
-            // 
-            // типыАнтистатикаПреформыToolStripMenuItem
-            // 
-            this.типыАнтистатикаПреформыToolStripMenuItem.Name = "типыАнтистатикаПреформыToolStripMenuItem";
-            this.типыАнтистатикаПреформыToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.типыАнтистатикаПреформыToolStripMenuItem.Text = "Типы антистатика преформы";
-            this.типыАнтистатикаПреформыToolStripMenuItem.Click += new System.EventHandler(this.типыАнтистатикаПреформыToolStripMenuItem_Click);
-            // 
-            // срокиГодностиПреформыToolStripMenuItem
-            // 
-            this.срокиГодностиПреформыToolStripMenuItem.Name = "срокиГодностиПреформыToolStripMenuItem";
-            this.срокиГодностиПреформыToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.срокиГодностиПреформыToolStripMenuItem.Text = "Сроки годности преформы";
-            this.срокиГодностиПреформыToolStripMenuItem.Click += new System.EventHandler(this.срокиГодностиПреформыToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(234, 6);
-            // 
-            // типыКолпачкаToolStripMenuItem
-            // 
-            this.типыКолпачкаToolStripMenuItem.Name = "типыКолпачкаToolStripMenuItem";
-            this.типыКолпачкаToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.типыКолпачкаToolStripMenuItem.Text = "Типы колпачка";
-            this.типыКолпачкаToolStripMenuItem.Click += new System.EventHandler(this.типыКолпачкаToolStripMenuItem_Click);
-            // 
-            // весаКолпачкаToolStripMenuItem
-            // 
-            this.весаКолпачкаToolStripMenuItem.Name = "весаКолпачкаToolStripMenuItem";
-            this.весаКолпачкаToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.весаКолпачкаToolStripMenuItem.Text = "Веса колпачка";
-            this.весаКолпачкаToolStripMenuItem.Click += new System.EventHandler(this.весаКолпачкаToolStripMenuItem_Click);
-            // 
-            // количестваКолпачковToolStripMenuItem
-            // 
-            this.количестваКолпачковToolStripMenuItem.Name = "количестваКолпачковToolStripMenuItem";
-            this.количестваКолпачковToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.количестваКолпачковToolStripMenuItem.Text = "Количества колпачка";
-            this.количестваКолпачковToolStripMenuItem.Click += new System.EventHandler(this.количестваКолпачковToolStripMenuItem_Click);
-            // 
-            // материалыКолпачкаToolStripMenuItem
-            // 
-            this.материалыКолпачкаToolStripMenuItem.Name = "материалыКолпачкаToolStripMenuItem";
-            this.материалыКолпачкаToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.материалыКолпачкаToolStripMenuItem.Text = "Материалы колпачка";
-            this.материалыКолпачкаToolStripMenuItem.Click += new System.EventHandler(this.материалыКолпачкаToolStripMenuItem_Click);
-            // 
-            // цветаКолпачкаToolStripMenuItem
-            // 
-            this.цветаКолпачкаToolStripMenuItem.Name = "цветаКолпачкаToolStripMenuItem";
-            this.цветаКолпачкаToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.цветаКолпачкаToolStripMenuItem.Text = "Цвета колпачка";
-            this.цветаКолпачкаToolStripMenuItem.Click += new System.EventHandler(this.цветаКолпачкаToolStripMenuItem_Click);
-            // 
-            // кодыКрасителейКолпачкаToolStripMenuItem
-            // 
-            this.кодыКрасителейКолпачкаToolStripMenuItem.Name = "кодыКрасителейКолпачкаToolStripMenuItem";
-            this.кодыКрасителейКолпачкаToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.кодыКрасителейКолпачкаToolStripMenuItem.Text = "Коды красителей колпачка";
-            this.кодыКрасителейКолпачкаToolStripMenuItem.Click += new System.EventHandler(this.кодыКрасителейКолпачкаToolStripMenuItem_Click);
-            // 
-            // типыАнтистатикаКолпачкаToolStripMenuItem
-            // 
-            this.типыАнтистатикаКолпачкаToolStripMenuItem.Name = "типыАнтистатикаКолпачкаToolStripMenuItem";
-            this.типыАнтистатикаКолпачкаToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.типыАнтистатикаКолпачкаToolStripMenuItem.Text = "Типы антистатика колпачка";
-            this.типыАнтистатикаКолпачкаToolStripMenuItem.Click += new System.EventHandler(this.типыАнтистатикаКолпачкаToolStripMenuItem_Click);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -787,7 +787,7 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AutoLabel";
-            this.Load += new System.EventHandler(this.FormMain_Load);
+            this.Shown += new System.EventHandler(this.FormMain_Shown);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel2.ResumeLayout(false);
