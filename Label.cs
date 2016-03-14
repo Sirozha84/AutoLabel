@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Text;
 using System.Drawing;
-using System.Windows.Forms;
 using System.Drawing.Printing;
 using System.IO;
 
@@ -325,55 +324,19 @@ namespace AutoLabel
         }
 
         /// <summary>
-        /// Сохранение на диск
+        /// Сохранение на сервер
         /// </summary>
         public void Save()
         {
-            try
-            {
-                Directory.CreateDirectory(Program.Patch + "TPA");
-                StreamWriter file = File.CreateText(Program.Patch + "TPA\\" + TPAName + ".txt");
-                file.WriteLine(CurrentNum);
-                file.WriteLine(PartNum);
-                file.WriteLine(Type);
-                file.WriteLine(Weight);
-                file.WriteLine(Count);
-                file.WriteLine(Material);
-                file.WriteLine(PColor);
-                file.WriteLine(Antistatic);
-                file.WriteLine(Colorant);
-                file.WriteLine(Limit);
-                file.WriteLine(Other);
-                file.Close();
-            }
-            catch
-            {
-                AutoLabel.Log.Error("Не удалось сохранить параметр ТПА");
-            }
+            Net.SaveTPA(this);
         }
 
         /// <summary>
-        /// Загрузка с диска
+        /// Загрузка с сервера
         /// </summary>
         public void Load()
         {
-            try
-            {
-                StreamReader file = File.OpenText(Program.Patch + "TPA\\" + TPAName + ".txt");
-                CurrentNum = Convert.ToInt32(file.ReadLine());
-                PartNum = file.ReadLine();
-                Type = file.ReadLine();
-                Weight = file.ReadLine();
-                Count = file.ReadLine();
-                Material = file.ReadLine();
-                PColor = file.ReadLine();
-                Antistatic = file.ReadLine();
-                Colorant = file.ReadLine();
-                Limit = file.ReadLine();
-                Other = file.ReadLine();
-                file.Close();
-            }
-            catch { } //нишмагла...
+            Net.LoadTPA(this);
         }
 
         /// <summary>
@@ -393,7 +356,7 @@ namespace AutoLabel
                 file.Close();
             }
             catch
-            { AutoLabel.Log.Error("Не удалось произвести жапись в журнал"); }
+            { AutoLabel.Log.Error("Не удалось произвести запись в журнал"); }
             AutoLabel.Log.Write("Печать этикетки");
         }
 

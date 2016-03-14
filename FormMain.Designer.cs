@@ -53,7 +53,6 @@
             this.labelClock = new System.Windows.Forms.Label();
             this.buttonShift = new System.Windows.Forms.Button();
             this.labelformname = new System.Windows.Forms.Label();
-            this.timerTime = new System.Windows.Forms.Timer(this.components);
             this.timerRefresh = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -96,6 +95,7 @@
             this.labelMessage = new System.Windows.Forms.Label();
             this.timerMessage = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelProblem = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -421,16 +421,10 @@
             this.labelformname.TabIndex = 7;
             this.labelformname.Text = "Выбор ТПА";
             // 
-            // timerTime
-            // 
-            this.timerTime.Enabled = true;
-            this.timerTime.Interval = 1000;
-            this.timerTime.Tick += new System.EventHandler(this.timerTime_Tick);
-            // 
             // timerRefresh
             // 
             this.timerRefresh.Enabled = true;
-            this.timerRefresh.Interval = 3000;
+            this.timerRefresh.Interval = 5000;
             this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
             // 
             // menuStrip1
@@ -768,6 +762,21 @@
             this.panel1.Size = new System.Drawing.Size(1095, 45);
             this.panel1.TabIndex = 10;
             // 
+            // labelProblem
+            // 
+            this.labelProblem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelProblem.BackColor = System.Drawing.Color.Transparent;
+            this.labelProblem.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelProblem.ForeColor = System.Drawing.Color.Tomato;
+            this.labelProblem.Location = new System.Drawing.Point(12, 169);
+            this.labelProblem.Name = "labelProblem";
+            this.labelProblem.Size = new System.Drawing.Size(1068, 473);
+            this.labelProblem.TabIndex = 10;
+            this.labelProblem.Text = "Отсутствует подключение к серверу";
+            this.labelProblem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -780,6 +789,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.labelProblem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -819,7 +829,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label labelClock;
-        private System.Windows.Forms.Timer timerTime;
         private System.Windows.Forms.Timer timerRefresh;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
@@ -866,6 +875,7 @@
         private System.Windows.Forms.ToolStripMenuItem цветаКолпачкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem кодыКрасителейКолпачкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem типыАнтистатикаКолпачкаToolStripMenuItem;
+        private System.Windows.Forms.Label labelProblem;
     }
 }
 

@@ -28,8 +28,6 @@ namespace AutoLabel
             }
             Data.Init();
             RefreshMain();
-
-
         }
 
         //Большие кнопки
@@ -44,7 +42,6 @@ namespace AutoLabel
 
         void Print(int num)
         {
-            timerRefresh.Enabled = false;
             if (Data.Labels[num].PartNum == null | 
                 Data.Labels[num].PartNum == "" |
                 Data.Labels[num].Count == "") return;
@@ -58,7 +55,6 @@ namespace AutoLabel
                 FormPrintPC formprint = new FormPrintPC(num);
                 formprint.ShowDialog();
             }
-            timerRefresh.Enabled = true;
             RefreshMain();
         }
 
@@ -88,46 +84,52 @@ namespace AutoLabel
         /// </summary>
         void RefreshMain()
         {
-            Data.Load();
-            if (Data.IsMachine)
-                buttonShift.Text = Shift.Current;
+            labelClock.Text = DateTime.Now.ToString("HH:mm");
+            if (Net.Test())
+            {
+                Data.Load();
+                tableLayoutPanel1.Visible = true;
+                labelProblem.Visible = false;
+                timerRefresh.Interval = 3000;
+                if (Data.IsMachine)
+                    buttonShift.Text = Shift.Current;
+                else
+                {
+                    labelformname.Text = Shift.Current;
+                    смена1ToolStripMenuItem.Checked = Shift.Current == Shift.Names[0];
+                    смена2ToolStripMenuItem.Checked = Shift.Current == Shift.Names[1];
+                    смена3ToolStripMenuItem.Checked = Shift.Current == Shift.Names[2];
+                    смена4ToolStripMenuItem.Checked = Shift.Current == Shift.Names[3];
+                }
+                label1.Text = Data.Labels[0].LabelUnderButton();
+                label2.Text = Data.Labels[1].LabelUnderButton();
+                label3.Text = Data.Labels[2].LabelUnderButton();
+                label4.Text = Data.Labels[3].LabelUnderButton();
+                label5.Text = Data.Labels[4].LabelUnderButton();
+                label6.Text = Data.Labels[5].LabelUnderButton();
+                label7.Text = Data.Labels[6].LabelUnderButton();
+                label8.Text = Data.Labels[7].LabelUnderButton();
+                Data.SetColor(button1, 0);
+                Data.SetColor(button2, 1);
+                Data.SetColor(button3, 2);
+                Data.SetColor(button4, 3);
+                Data.SetColor(button5, 4);
+                Data.SetColor(button6, 5);
+                Data.SetColor(button7, 6);
+                Data.SetColor(button8, 7);
+            }
             else
             {
-                labelformname.Text = Shift.Current;
-                смена1ToolStripMenuItem.Checked = Shift.Current == Shift.Names[0];
-                смена2ToolStripMenuItem.Checked = Shift.Current == Shift.Names[1];
-                смена3ToolStripMenuItem.Checked = Shift.Current == Shift.Names[2];
-                смена4ToolStripMenuItem.Checked = Shift.Current == Shift.Names[3];
+                tableLayoutPanel1.Visible = false;
+                labelProblem.Visible = true;
+                timerRefresh.Interval = 10000;
             }
-            label1.Text = Data.Labels[0].LabelUnderButton();
-            label2.Text = Data.Labels[1].LabelUnderButton();
-            label3.Text = Data.Labels[2].LabelUnderButton();
-            label4.Text = Data.Labels[3].LabelUnderButton();
-            label5.Text = Data.Labels[4].LabelUnderButton();
-            label6.Text = Data.Labels[5].LabelUnderButton();
-            label7.Text = Data.Labels[6].LabelUnderButton();
-            label8.Text = Data.Labels[7].LabelUnderButton();
-            Data.SetColor(button1, 0);
-            Data.SetColor(button2, 1);
-            Data.SetColor(button3, 2);
-            Data.SetColor(button4, 3);
-            Data.SetColor(button5, 4);
-            Data.SetColor(button6, 5);
-            Data.SetColor(button7, 6);
-            Data.SetColor(button8, 7);
-        }
-
-        private void timerTime_Tick(object sender, EventArgs e)
-        {
-            labelClock.Text = DateTime.Now.ToString("HH:mm");
         }
 
         //Таймер для обновления внешнего вида (на случай если из вне поменяли параметры)
         private void timerRefresh_Tick(object sender, EventArgs e)
         {
-            //(new System.Threading.Thread(Delegate() { RefreshMain(); })).Start();
             RefreshMain();
-            Net.LoadMessage();
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -143,18 +145,14 @@ namespace AutoLabel
         private void вводДанныхToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormPropertiesPC formprop = new FormPropertiesPC();
-            timerRefresh.Enabled = false; //Останавливаем автоматическое обновление
             formprop.ShowDialog();
-            timerRefresh.Enabled = true; //Запускаем автоматическое обновление
             RefreshMain();
         }
 
         private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormUsersPC form = new FormUsersPC();
-            timerRefresh.Enabled = false; //Останавливаем автоматическое обновление
             form.ShowDialog();
-            timerRefresh.Enabled = true; //Запускаем автоматическое обновление
         }
 
         private void отчётыToolStripMenuItem_Click(object sender, EventArgs e)
@@ -205,9 +203,7 @@ namespace AutoLabel
         private void правкаЖурналаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormLog form = new FormLog();
-            timerRefresh.Enabled = false; //Останавливаем автоматическое обновление
             form.ShowDialog();
-            timerRefresh.Enabled = true; //Запускаем автоматическое обновление
         }
 
         bool load = true;
