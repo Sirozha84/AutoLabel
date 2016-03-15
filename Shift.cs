@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Net.Sockets;
 
 namespace AutoLabel
 {
@@ -35,24 +36,25 @@ namespace AutoLabel
         /// </summary>
         public static void Load()
         {
-            //Заполняем пустотой на случай если в файле нет информации
             try
             {
-                StreamReader file = File.OpenText(Program.Patch+"Shift.txt");
-                Current = file.ReadLine();
-                Date = file.ReadLine();
-                for (int i = 0; i < ShiftMemory; i++)
-                    LogName[i] = file.ReadLine();
-                file.Close();
+                using (TcpClient client = new TcpClient())
+                {
+                    client.Connect(Net.HostName, 80);
+                    using (NetworkStream stream = client.GetStream())
+                    {
+                        BinaryWriter writer = new BinaryWriter(stream);
+                        BinaryReader reader = new BinaryReader(stream);
+                        writer.Write("ShiftRead");
+                        Current = reader.ReadString();
+                        Date = reader.ReadString();
+                        for (int i = 0; i < ShiftMemory; i++)
+                            LogName[i] = reader.ReadString();
+                    }
+                }
             }
-            catch
-            {
-                Current = Names[0];
-                Date = "";
-                Change(Current); //Если файла небыло, сохраним его
-            }
-            for (int i = 0; i < ShiftMemory; i++)
-                if (LogName[i] == null)LogName[i] = "Пусто";
+            catch { }
+            if (Current == "") Current = Names[0];
         }
 
         /// <summary>
@@ -73,25 +75,43 @@ namespace AutoLabel
             //Сохраняем текущую смену в файл
             try
             {
-                StreamWriter file = File.CreateText("Shift.txt");
-                file.WriteLine(Current);
-                file.WriteLine(Date);
-                for (int i = 0; i < ShiftMemory; i++)
-                    file.WriteLine(LogName[i]);
-                file.Close();
+                using (TcpClient client = new TcpClient())
+                {
+                    client.Connect(Net.HostName, 80);
+                    using (NetworkStream stream = client.GetStream())
+                    {
+                        BinaryWriter writer = new BinaryWriter(stream);
+                        BinaryReader reader = new BinaryReader(stream);
+                        writer.Write("ShiftWrite");
+                        writer.Write(Current);
+                        writer.Write(Date);
+                        for (int i = 0; i < ShiftMemory; i++)
+                            writer.Write(LogName[i]);
+                    }
+                }
             }
-            catch
-            {
-                Log.Error("Не удалось сохранить настройку смены.");
-            }
-            Directory.CreateDirectory("Logs");
-            //Обнуляем счётчики коробов
+            catch { }
+                        /*try
+                        {
+                            StreamWriter file = File.CreateText("Shift.txt");
+                            file.WriteLine(Current);
+                            file.WriteLine(Date);
+                            for (int i = 0; i < ShiftMemory; i++)
+                                file.WriteLine(LogName[i]);
+                            file.Close();
+                        }
+                        catch
+                        {
+                            Log.Error("Не удалось сохранить настройку смены.");
+                        }
+                        Directory.CreateDirectory("Logs");*/
+                        //Обнуляем счётчики коробов
             foreach (Label l in Data.Labels)
             {
                 l.CurrentNum = 1;
                 l.Save();
             }
-            Log.Write("Заступание новой смены");
+            Net.Log("Заступание новой смены");
         }
 
         /// <summary>

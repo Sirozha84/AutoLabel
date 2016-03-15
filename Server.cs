@@ -12,9 +12,12 @@ namespace AutoLabel_Server
         const string ProgramLabel = "AutoLabel Server   Версия 0.0.2 (11.03.2016)   SG Software (Сергей Гордеев)";
         const string MessageFile = "Message.txt";
         const string TPAFile = "TPA.txt";
+        const string ShiftFile = "Shift.txt";
+        const int ShiftStrings = 9;
 
         static string Message = "";
         static List<string[]> TPA = new List<string[]>();
+        static string[] Shift;
 
         static void Main(string[] args)
         {
@@ -22,6 +25,7 @@ namespace AutoLabel_Server
             //Загружаем данные
             LoadMessage();
             LoadTPA();
+            LoadShift();
             //Запускаем сервер
             TcpListener server = new TcpListener(IPAddress.Any, 80);
             server.Start();
@@ -74,7 +78,21 @@ namespace AutoLabel_Server
                         TPA[ind][0] = name;
                         for (int i = 1; i < 20; i++) TPA[ind][i] = reader.ReadString();
                         SaveTPA();
-                        Log("Параметры ТПА сохранёны");
+                        //Log("Параметры ТПА сохранёны");
+                    }
+                    if (query == "ShiftRead")
+                    {
+                        for (int i = 0; i < ShiftStrings; i++)
+                        {
+                            if (Shift[i] != null) writer.Write(Shift[i]);
+                            else writer.Write("");
+                        }
+                    }
+                    if (query == "ShiftWrite")
+                    {
+                        for (int i = 0; i < ShiftStrings; i++)
+                            Shift[i] = reader.ReadString();
+                        SaveShift();
                     }
                 }
             }
@@ -96,6 +114,9 @@ namespace AutoLabel_Server
                 file.WriteLine(str);
         }
 
+        /// <summary>
+        /// Загрузка строки сообщения из файла
+        /// </summary>
         static void LoadMessage()
         {
             try
@@ -105,6 +126,17 @@ namespace AutoLabel_Server
             catch { File.CreateText(MessageFile); }
         }
 
+        /// <summary>
+        /// Сохранение строки сообщения в файл
+        /// </summary>
+        static void SaveMessage()
+        {
+
+        }
+
+        /// <summary>
+        /// Загрузка параметров ТПА из файла
+        /// </summary>
         static void LoadTPA()
         {
             TPA.Clear();
@@ -125,6 +157,9 @@ namespace AutoLabel_Server
             catch { }
         }
 
+        /// <summary>
+        /// Сохранение параметров ТПА в файл
+        /// </summary>
         static void SaveTPA()
         {
             TPA.Sort((a, b) => a[0].CompareTo(b[0]));
@@ -134,6 +169,35 @@ namespace AutoLabel_Server
                     foreach (string[] str in TPA)
                         for (int i = 0; i < 20; i++)
                             file.WriteLine(str[i]);
+            }
+            catch { }
+        }
+
+        /// <summary>
+        /// Загрузка смен из файла
+        /// </summary>
+        static void LoadShift()
+        {
+            Shift = new string[ShiftStrings];
+            try
+            {
+                using (TextReader file = File.OpenText(ShiftFile))
+                    for (int i = 0; i < ShiftStrings; i++)
+                        Shift[i] = file.ReadLine();
+            }
+            catch { }
+        }
+
+        /// <summary>
+        /// Сохранение смен в файл
+        /// </summary>
+        static void SaveShift()
+        {
+            try
+            {
+                using (TextWriter file = File.CreateText(ShiftFile))
+                    for (int i = 0; i < ShiftStrings; i++)
+                        file.WriteLine(Shift[i]);
             }
             catch { }
         }

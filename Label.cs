@@ -36,7 +36,7 @@ namespace AutoLabel
         static Font MediumBold = new Font("Arial", 22, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font Normal = new Font("Arial", 30, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font Big = new Font("Arial", 37, FontStyle.Bold, GraphicsUnit.Pixel);
-        static Font Biggg = new Font("Arial", 90, FontStyle.Bold, GraphicsUnit.Pixel);
+        static Font Biggg = new Font("Arial", 70, FontStyle.Bold, GraphicsUnit.Pixel);
         static StringFormat InRect = new StringFormat();
 
         //Графика
@@ -195,7 +195,7 @@ namespace AutoLabel
             g.DrawString("Технические условия / Specification - ТУ - 2297 - 001 - 30463750 - 2012 с изм. №1",
                 Smalllll, Brushes.Black, X + 10, Y + 155);
             //Главные поля
-            g.DrawString(Weight, Biggg, Brushes.Black, X, Y + 170);
+            g.DrawString(Weight, Biggg, Brushes.Black, X, Y + 180);
             g.DrawString(Type, Big, Brushes.Black, X + 220, Y + 200);
             g.DrawString(Colorant, Big, Brushes.Black, X + 420, Y + 177);
             g.DrawString(Antistatic, Big, Brushes.Black, X + 420, Y + 217);

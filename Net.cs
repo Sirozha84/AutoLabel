@@ -10,7 +10,7 @@ namespace AutoLabel
 {
     class Net
     {
-        static string HostName = "localhost";
+        public static string HostName = "localhost";
         const string ParamFile = "Server.txt";
 
         /// <summary>
@@ -163,6 +163,14 @@ namespace AutoLabel
             {
                 AutoLabel.Log.Error("Не удалось подключиться к серверу. Параметры ТПА не сохранены.");
             }
+        }
+
+        /// <summary>
+        /// Загрузка данных смен с сервера
+        /// </summary>
+        public static void ShiftLoad()
+        {
+
         }
 
         /// <summary>
