@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
+using System.Net.Sockets;
 
 namespace AutoLabel
 {
@@ -146,16 +147,27 @@ namespace AutoLabel
             Users.Clear();
             try
             {
-                StreamReader file = File.OpenText(Program.Patch + "Users.txt");
-                AccessControl = file.ReadLine() == "AccessControl ON";
-                while (!file.EndOfStream)
+                using (TcpClient client = new TcpClient())
                 {
-                    file.ReadLine();
-                    Users.Add(new User(file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine()));
+                    client.Connect(Net.HostName, Net.Port);
+                    using (NetworkStream stream = client.GetStream())
+                    {
+                        BinaryWriter writer = new BinaryWriter(stream);
+                        BinaryReader reader = new BinaryReader(stream);
+                        writer.Write("UsersRead");
+                        int c = reader.ReadInt32()-1;
+                        AccessControl = reader.ReadString() == "AccessControl ON";
+                        while (c > 0)
+                        {
+                            reader.ReadString();
+                            Users.Add(new User(reader.ReadString(), reader.ReadString(),
+                                reader.ReadString(), reader.ReadString()));
+                            c-=5;
+                        }
+                    }
                 }
-                file.Close();
             }
-            catch { } //нишмагла...
+            catch { }
         }
 
         /// <summary>
@@ -165,26 +177,34 @@ namespace AutoLabel
         {
             try
             {
-                StreamWriter file = File.CreateText(Program.Patch + "Users.txt");
-                file.Write("AccessControl ");
-                if (AccessControl) file.WriteLine("ON"); else file.WriteLine("OFF");
-                foreach (User u in Users)
+                using (TcpClient client = new TcpClient())
                 {
-                    file.WriteLine("--------------------");
-                    file.WriteLine(u.Name);
-                    file.WriteLine(u.Code);
-                    file.WriteLine(u.Rule);
-                    string a = "";
-                    foreach (bool b in u.TPAAccess)
-                        if (b) a += "1"; else a += "0";
-                    file.WriteLine(a);
+                    client.Connect(Net.HostName, Net.Port);
+                    using (NetworkStream stream = client.GetStream())
+                    {
+                        BinaryWriter writer = new BinaryWriter(stream);
+                        BinaryReader reader = new BinaryReader(stream);
+                        writer.Write("UsersWrite");
+                        if (AccessControl)
+                            writer.Write("AccessControl ON");
+                        else
+                            writer.Write("AccessControl OFF");
+                        foreach (User u in Users)
+                        {
+                            writer.Write("--------------------");
+                            writer.Write(u.Name);
+                            writer.Write(u.Code);
+                            writer.Write(u.Rule.ToString());
+                            string a = "";
+                            foreach (bool b in u.TPAAccess)
+                                if (b) a += "1"; else a += "0";
+                            writer.Write(a);
+                        }
+                        writer.Write("End");
+                    }
                 }
-                file.Close();
             }
-            catch
-            {
-                Log.Error("Не удалось сохранить список пользователей");
-            }
+            catch { }
         }
 
         public static void PrintSetup()

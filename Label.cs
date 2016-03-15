@@ -3,6 +3,7 @@ using System.Text;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
+using System.Net.Sockets;
 
 namespace AutoLabel
 {
@@ -328,7 +329,37 @@ namespace AutoLabel
         /// </summary>
         public void Save()
         {
-            Net.SaveTPA(this);
+            try
+            {
+                using (TcpClient client = new TcpClient())
+                {
+                    client.Connect(Net.HostName, Net.Port);
+                    using (NetworkStream stream = client.GetStream())
+                    {
+                        BinaryWriter writer = new BinaryWriter(stream);
+                        BinaryReader reader = new BinaryReader(stream);
+                        writer.Write("TPAWrite");
+                        writer.Write(TPAName);
+                        writer.Write(CurrentNum.ToString());
+                        writer.Write(PartNum);
+                        writer.Write(Type);
+                        writer.Write(Weight);
+                        writer.Write(Count);
+                        writer.Write(Material);
+                        writer.Write(PColor);
+                        writer.Write(Antistatic);
+                        writer.Write(Colorant);
+                        writer.Write(Limit);
+                        writer.Write(Other);
+                        for (int i = 0; i < 8; i++)
+                            writer.Write("----------------------------------------");
+                    }
+                }
+            }
+            catch
+            {
+                AutoLabel.Log.Error("Не удалось подключиться к серверу. Параметры ТПА не сохранены.");
+            }
         }
 
         /// <summary>
@@ -336,7 +367,41 @@ namespace AutoLabel
         /// </summary>
         public void Load()
         {
-            Net.LoadTPA(this);
+            try
+            {
+                using (TcpClient client = new TcpClient())
+                {
+                    client.Connect(Net.HostName, Net.Port);
+                    using (NetworkStream stream = client.GetStream())
+                    {
+                        BinaryWriter writer = new BinaryWriter(stream);
+                        BinaryReader reader = new BinaryReader(stream);
+                        writer.Write("TPARead");
+                        writer.Write(TPAName);
+                        try { CurrentNum = Convert.ToInt32(reader.ReadString()); }
+                        catch { CurrentNum = 0; }
+                        PartNum = reader.ReadString();
+                        Type = reader.ReadString();
+                        Weight = reader.ReadString();
+                        Count = reader.ReadString();
+                        Material = reader.ReadString();
+                        PColor = reader.ReadString();
+                        Antistatic = reader.ReadString();
+                        Colorant = reader.ReadString();
+                        Limit = reader.ReadString();
+                        Other = reader.ReadString();
+                        reader.ReadString();
+                        reader.ReadString();
+                        reader.ReadString();
+                        reader.ReadString();
+                        reader.ReadString();
+                        reader.ReadString();
+                        reader.ReadString();
+                        reader.ReadString();
+                    }
+                }
+            }
+            catch { }
         }
 
         /// <summary>

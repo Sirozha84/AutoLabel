@@ -11,6 +11,7 @@ namespace AutoLabel
     class Net
     {
         public static string HostName = "localhost";
+        public const int Port = 80;
         const string ParamFile = "Server.txt";
 
         /// <summary>
@@ -37,7 +38,7 @@ namespace AutoLabel
             {
                 using (TcpClient client = new TcpClient())
                 {
-                    client.Connect(HostName, 80);
+                    client.Connect(HostName, Port);
                     using (NetworkStream stream = client.GetStream())
                     {
                         BinaryWriter writer = new BinaryWriter(stream);
@@ -63,7 +64,7 @@ namespace AutoLabel
             {
                 using (TcpClient client = new TcpClient())
                 {
-                    client.Connect(HostName, 80);
+                    client.Connect(HostName, Port);
                     using (NetworkStream stream = client.GetStream())
                     {
                         BinaryWriter writer = new BinaryWriter(stream);
@@ -77,103 +78,6 @@ namespace AutoLabel
         }
 
         /// <summary>
-        /// Загрузка параметров ТПА
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public static void LoadTPA(Label lab)
-        {
-            try
-            {
-                using (TcpClient client = new TcpClient())
-                {
-                    client.Connect(HostName, 80);
-                    using (NetworkStream stream = client.GetStream())
-                    {
-                        BinaryWriter writer = new BinaryWriter(stream);
-                        BinaryReader reader = new BinaryReader(stream);
-                        writer.Write("TPARead");
-                        writer.Write(lab.TPAName);
-                        try { lab.CurrentNum = Convert.ToInt32(reader.ReadString()); }
-                        catch { lab.CurrentNum = 0; }
-                        lab.PartNum = reader.ReadString();
-                        lab.Type = reader.ReadString();
-                        lab.Weight = reader.ReadString();
-                        lab.Count = reader.ReadString();
-                        lab.Material = reader.ReadString();
-                        lab.PColor = reader.ReadString();
-                        lab.Antistatic = reader.ReadString();
-                        lab.Colorant = reader.ReadString();
-                        lab.Limit = reader.ReadString();
-                        lab.Other = reader.ReadString();
-                        reader.ReadString();
-                        reader.ReadString();
-                        reader.ReadString();
-                        reader.ReadString();
-                        reader.ReadString();
-                        reader.ReadString();
-                        reader.ReadString();
-                        reader.ReadString();
-                    }
-                }
-            }
-            catch { }
-        }
-
-        /// <summary>
-        /// Запись на сервер данных о тпа
-        /// </summary>
-        /// <param name="str"></param>
-        public static void SaveTPA(Label lab)
-        {
-            try
-            {
-                using (TcpClient client = new TcpClient())
-                {
-                    client.Connect(HostName, 80);
-                    using (NetworkStream stream = client.GetStream())
-                    {
-                        BinaryWriter writer = new BinaryWriter(stream);
-                        BinaryReader reader = new BinaryReader(stream);
-                        writer.Write("TPAWrite");
-                        writer.Write(lab.TPAName);
-                        writer.Write(lab.CurrentNum.ToString());
-                        writer.Write(lab.PartNum);
-                        writer.Write(lab.Type);
-                        writer.Write(lab.Weight);
-                        writer.Write(lab.Count);
-                        writer.Write(lab.Material);
-                        writer.Write(lab.PColor);
-                        writer.Write(lab.Antistatic);
-                        writer.Write(lab.Colorant);
-                        writer.Write(lab.Limit);
-                        writer.Write(lab.Other);
-                        writer.Write("Дата и время изменения: " + DateTime.Now.ToString("yyyy.MM.dd HH:mm"));
-                        writer.Write("*");
-                        writer.Write("*");
-                        writer.Write("*");
-                        writer.Write("*");
-                        writer.Write("*");
-                        writer.Write("*");
-                        writer.Write("*");
-                    }
-                }
-            }
-            catch
-            {
-                AutoLabel.Log.Error("Не удалось подключиться к серверу. Параметры ТПА не сохранены.");
-            }
-        }
-
-        /// <summary>
-        /// Загрузка данных смен с сервера
-        /// </summary>
-        public static void ShiftLoad()
-        {
-
-        }
-
-        /// <summary>
         /// Запись строчки в журнал
         /// </summary>
         /// <param name="str"></param>
@@ -183,7 +87,7 @@ namespace AutoLabel
             {
                 using (TcpClient client = new TcpClient())
                 {
-                    client.Connect(HostName, 80);
+                    client.Connect(HostName, Port);
                     using (NetworkStream stream = client.GetStream())
                     {
                         BinaryWriter writer = new BinaryWriter(stream);

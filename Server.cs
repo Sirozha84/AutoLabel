@@ -13,11 +13,13 @@ namespace AutoLabel_Server
         const string MessageFile = "Message.txt";
         const string TPAFile = "TPA.txt";
         const string ShiftFile = "Shift.txt";
+        const string UsersFile = "Users.txt";
         const int ShiftStrings = 9;
 
         static string Message = "";
         static List<string[]> TPA = new List<string[]>();
         static string[] Shift;
+        static List<string> Users = new List<string>();
 
         static void Main(string[] args)
         {
@@ -26,6 +28,7 @@ namespace AutoLabel_Server
             LoadMessage();
             LoadTPA();
             LoadShift();
+            LoadUsers();
             //Запускаем сервер
             TcpListener server = new TcpListener(IPAddress.Any, 80);
             server.Start();
@@ -93,6 +96,22 @@ namespace AutoLabel_Server
                         for (int i = 0; i < ShiftStrings; i++)
                             Shift[i] = reader.ReadString();
                         SaveShift();
+                    }
+                    if (query == "UsersRead")
+                    {
+                        writer.Write(Users.Count);
+                        Users.ForEach(u => writer.Write(u));
+                    }
+                    if (query == "UsersWrite")
+                    {
+                        Users.Clear();
+                        string s;
+                        do
+                        {
+                            s = reader.ReadString();
+                            if (s != "End") Users.Add(s);
+                        } while (s != "End");
+                        SaveUsers();
                     }
                 }
             }
@@ -198,6 +217,39 @@ namespace AutoLabel_Server
                 using (TextWriter file = File.CreateText(ShiftFile))
                     for (int i = 0; i < ShiftStrings; i++)
                         file.WriteLine(Shift[i]);
+            }
+            catch { }
+        }
+
+        /// <summary>
+        /// Загрузка пользователей из файла
+        /// </summary>
+        static void LoadUsers()
+        {
+            try
+            {
+                using (TextReader file = File.OpenText(UsersFile))
+                {
+                    string s = "";
+                    while (s!=null)
+                    {
+                        s = file.ReadLine();
+                        if (s != null) Users.Add(s);
+                    }
+                }
+            }
+            catch { }
+        }
+
+        /// <summary>
+        /// Запись пользователей в файл
+        /// </summary>
+        static void SaveUsers()
+        {
+            try
+            {
+                using (TextWriter file = File.CreateText(UsersFile))
+                    Users.ForEach(u => file.WriteLine(u));
             }
             catch { }
         }
