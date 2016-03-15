@@ -113,9 +113,27 @@ namespace AutoLabel
             //89-158  89-97
             try
             {
-                StreamReader file = File.OpenText(Program.Patch + "Lists\\" + filename + ".txt");
-                while (!file.EndOfStream)
-                    list.Add(file.ReadLine());
+                using (TcpClient client = new TcpClient())
+                {
+                    client.Connect(Net.HostName, Net.Port);
+                    using (NetworkStream stream = client.GetStream())
+                    {
+                        BinaryWriter writer = new BinaryWriter(stream);
+                        BinaryReader reader = new BinaryReader(stream);
+                        writer.Write("ListRead");
+                        writer.Write(filename);
+                        string s;
+                        do
+                        {
+                            s = reader.ReadString();
+                            if (s != "End") list.Add(s);
+                        } while (s != "End");
+                        
+                    }
+                }
+                //StreamReader file = File.OpenText(Program.Patch + "Lists\\" + filename + ".txt");
+                //while (!file.EndOfStream)
+                //    list.Add(file.ReadLine());
             }
             catch { }
         }

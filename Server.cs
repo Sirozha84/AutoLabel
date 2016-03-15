@@ -20,6 +20,7 @@ namespace AutoLabel_Server
         static List<string[]> TPA = new List<string[]>();
         static string[] Shift;
         static List<string> Users = new List<string>();
+        static List<DropList> DropLists = new List<DropList>();
 
         static void Main(string[] args)
         {
@@ -143,6 +144,23 @@ namespace AutoLabel_Server
                                 if (s != "End") file.WriteLine(s);
                             } while (s != "End");
                         }
+                    }
+                    if (query == "ListRead")
+                    {
+                        string name = reader.ReadString();
+                        //Далее план такой: ищем в коллекции нужный список,
+                        //но если такого нет, читаем его из файла
+                        DropList List = DropLists.Find(o => o.Name == name);
+                        if (List == null) List = new DropList(name);
+                        DropLists.Add(List);
+                        List.List.ForEach(o => writer.Write(o));
+                        writer.Write("End");
+                    }
+                    if (query == "ListWrite")
+                    {
+                        string name = reader.ReadString();
+                        //Далее план такой: ищем в коллекции нужный список, меняем в нём данные
+                        //если такого списка нет - добавляем новый, а потом сохраняем его в файл
                     }
                 }
             }

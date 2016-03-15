@@ -1,10 +1,9 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Printing;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.IO;
+using System.Net.Sockets;
 
 namespace AutoLabel
 {
@@ -45,13 +44,28 @@ namespace AutoLabel
             try
             {
                 log.Clear();
-                foreach (string str in File.ReadLines(Program.Patch + "Logs\\" + LogFile + ".csv", Encoding.Default))
+                using (TcpClient client = new TcpClient())
                 {
-                    string[] Str = str.Split(';');
-                    for (int i = 0; i < Str.Count(); i++)
-                        if (Str[i][0] == ' ') Str[i] = Str[i].Trim(' ');
-                    if (ShopRight(Str[2]))
-                        log.Add(Str);
+                    client.Connect(Net.HostName, Net.Port);
+                    using (NetworkStream stream = client.GetStream())
+                    {
+                        BinaryWriter writer = new BinaryWriter(stream);
+                        BinaryReader reader = new BinaryReader(stream);
+                        writer.Write("LogRead");
+                        writer.Write(LogFile);
+                        string s;
+                        do
+                        {
+                            s = reader.ReadString();
+                            if (s != "End")
+                            {
+                                string[] Str = s.Split(';');
+                                for (int i = 0; i < Str.Length; i++)
+                                    if (Str[i][0] == ' ') Str[i] = Str[i].Trim(' ');
+                                log.Add(Str);
+                            }
+                        } while (s != "End");
+                    }
                 }
             }
             catch { }

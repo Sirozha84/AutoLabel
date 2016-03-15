@@ -96,6 +96,7 @@
             this.timerMessage = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelProblem = new System.Windows.Forms.Label();
+            this.константыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -433,6 +434,7 @@
             this.файлToolStripMenuItem,
             this.параметрыToolStripMenuItem,
             this.сменаToolStripMenuItem,
+            this.константыToolStripMenuItem,
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -777,6 +779,12 @@
             this.labelProblem.Text = "Отсутствует подключение к серверу";
             this.labelProblem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // константыToolStripMenuItem
+            // 
+            this.константыToolStripMenuItem.Name = "константыToolStripMenuItem";
+            this.константыToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.константыToolStripMenuItem.Text = "Константы";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -876,6 +884,7 @@
         private System.Windows.Forms.ToolStripMenuItem кодыКрасителейКолпачкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem типыАнтистатикаКолпачкаToolStripMenuItem;
         private System.Windows.Forms.Label labelProblem;
+        private System.Windows.Forms.ToolStripMenuItem константыToolStripMenuItem;
     }
 }
 
