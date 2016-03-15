@@ -113,6 +113,37 @@ namespace AutoLabel_Server
                         } while (s != "End");
                         SaveUsers();
                     }
+                    if (query == "LogRecord")
+                    {
+                        Directory.CreateDirectory("Logs");
+                        using (TextWriter file = File.AppendText("Logs\\" + reader.ReadString() + ".csv"))
+                            file.WriteLine(reader.ReadString());
+                    }
+                    if (query == "LogRead")
+                    {
+                        using (TextReader file = File.OpenText("Logs\\" + reader.ReadString()+".csv"))
+                        {
+                            string s;
+                            do
+                            {
+                                s = file.ReadLine();
+                                if (s != null) writer.Write(s);
+                            } while (s != null);
+                            writer.Write("End");
+                        }
+                    }
+                    if (query == "LogWrite")
+                    {
+                        using (TextWriter file = File.CreateText("Logs\\" + reader.ReadString() + ".csv"))
+                        {
+                            string s;
+                            do
+                            {
+                                s = reader.ReadString();
+                                if (s != "End") file.WriteLine(s);
+                            } while (s != "End");
+                        }
+                    }
                 }
             }
             catch (Exception e)

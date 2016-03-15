@@ -413,16 +413,21 @@ namespace AutoLabel
             if (Custom) comment = " - этикетка с произвольными полями";
             try
             {
-                StreamWriter file = new StreamWriter(Program.Patch + "Logs\\" + AutoLabel.Shift.LogName[0] + ".csv",
-                    true, Encoding.Default);
-                file.WriteLine(AutoLabel.Shift.Date + DateTime.Now.ToString("; HH:mm") +
-                    "; " + TPAName + "; " + PartNum + "; " + Type +"; " + Weight + "; " +
-                    PColor +"; " + Num + "; " + Packer + comment);
-                file.Close();
+                using (TcpClient client = new TcpClient())
+                {
+                    client.Connect(Net.HostName, Net.Port);
+                    using (NetworkStream stream = client.GetStream())
+                    {
+                        BinaryWriter writer = new BinaryWriter(stream);
+                        writer.Write("LogRecord");
+                        writer.Write(AutoLabel.Shift.LogName[0]);
+                        writer.Write(AutoLabel.Shift.Date + DateTime.Now.ToString("; HH:mm") +
+                        "; " + TPAName + "; " + PartNum + "; " + Type + "; " + Weight + "; " +
+                        PColor + "; " + Num + "; " + Packer + comment);
+                    }
+                }
             }
-            catch
-            { AutoLabel.Log.Error("Не удалось произвести запись в журнал"); }
-            AutoLabel.Log.Write("Печать этикетки");
+            catch { }
         }
 
         /// <summary>

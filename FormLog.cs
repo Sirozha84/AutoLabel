@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Net.Sockets;
 
 namespace AutoLabel
 {
@@ -28,7 +27,7 @@ namespace AutoLabel
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FileName = "Logs\\" + comboBox1.SelectedItem.ToString() + ".csv";
+            FileName = comboBox1.SelectedItem.ToString();
             LoadLog();
             DrawLog();
             save = false;
@@ -40,12 +39,28 @@ namespace AutoLabel
             try
             {
                 log.Clear();
-                foreach (string str in File.ReadLines(FileName, Encoding.Default))
+                using (TcpClient client = new TcpClient())
                 {
-                    string[] Str = str.Split(';');
-                    for (int i = 0; i < Str.Count(); i++)
-                        if (Str[i][0] == ' ') Str[i] = Str[i].Trim(' ');
-                    log.Add(Str);
+                    client.Connect(Net.HostName, Net.Port);
+                    using (NetworkStream stream = client.GetStream())
+                    {
+                        BinaryWriter writer = new BinaryWriter(stream);
+                        BinaryReader reader = new BinaryReader(stream);
+                        writer.Write("LogRead");
+                        writer.Write(FileName);
+                        string s;
+                        do
+                        {
+                            s = reader.ReadString();
+                            if (s != "End")
+                            {
+                                string[] Str = s.Split(';');
+                                for (int i = 0; i < Str.Length; i++)
+                                    if (Str[i][0] == ' ') Str[i] = Str[i].Trim(' ');
+                                log.Add(Str);
+                            }
+                        } while (s != "End");
+                    }
                 }
             }
             catch { }
@@ -79,13 +94,22 @@ namespace AutoLabel
             {
                 try
                 {
-                    File.Delete(FileName);
-                    StreamWriter file = new StreamWriter(FileName, true, Encoding.Default);
-                    foreach (string[] rec in log)
-                        file.WriteLine(rec[0] + "; " + rec[1] + "; " + rec[2] + "; " +
-                                       rec[3] + "; " + rec[4] + "; " + rec[5] + "; " +
-                                       rec[6] + "; " + rec[7] + "; " + rec[8]);
-                    file.Close();
+                    using (TcpClient client = new TcpClient())
+                    {
+                        client.Connect(Net.HostName, Net.Port);
+                        using (NetworkStream stream = client.GetStream())
+                        {
+                            BinaryWriter writer = new BinaryWriter(stream);
+                            BinaryReader reader = new BinaryReader(stream);
+                            writer.Write("LogWrite");
+                            writer.Write(FileName);
+                            foreach (string[] rec in log)
+                                writer.Write(rec[0] + "; " + rec[1] + "; " + rec[2] + "; " +
+                                rec[3] + "; " + rec[4] + "; " + rec[5] + "; " +
+                                rec[6] + "; " + rec[7] + "; " + rec[8]);
+                            writer.Write("End");
+                        }
+                    }
                 }
                 catch { }
             }
