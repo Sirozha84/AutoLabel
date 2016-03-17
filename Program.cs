@@ -5,7 +5,7 @@ namespace AutoLabel
 {
     static class Program
     {
-        public static string Version = "1.2.0 (11.03.2016)";
+        public static string Version = "1.2.0 (17.03.2016)";
         public static string Patch = Environment.CurrentDirectory + "\\";
         /// <summary>
         /// Главная точка входа для приложения.

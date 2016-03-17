@@ -9,7 +9,7 @@ namespace AutoLabel_Server
 {
     class S
     {
-        const string ProgramLabel = "AutoLabel Server   Версия 0.0.2 (11.03.2016)   SG Software (Сергей Гордеев)";
+        const string ProgramLabel = "AutoLabel Server   Версия 0.0.3 (17.03.2016)   SG Software (Сергей Гордеев)";
         const string MessageFile = "Message.txt";
         const string TPAFile = "TPA.txt";
         const string ShiftFile = "Shift.txt";
@@ -63,6 +63,15 @@ namespace AutoLabel_Server
                         Log(reader.ReadString());
                     if (query == "MessageRead")
                         writer.Write(Message);
+                    if (query == "MessageWrite")
+                    {
+                        Message = reader.ReadString();
+                        try
+                        {
+                            File.WriteAllText(MessageFile, Message);
+                        }
+                        catch { };
+                    }
                     if (query == "TPARead")
                     {
                         string name = reader.ReadString();

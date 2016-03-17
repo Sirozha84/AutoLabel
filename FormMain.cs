@@ -265,7 +265,7 @@ namespace AutoLabel
 
         private void списокСроковГодностиПреформыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditList("Список сроков годности преформы", "Colorants0");
+            EditList("Список сроков годности преформы", "Limits");
         }
 
         private void списокВесовКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -306,7 +306,13 @@ namespace AutoLabel
         private void справкаToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Ожидается в скором времени...\n" +
-                "А пока? что непонятно - можно спросить у автора :-)", "AutoLabel");
+                "А пока, что непонятно - можно спросить у автора :-)", "AutoLabel");
+        }
+
+        private void собщениеБегущейСтрокиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormMessageEdit form = new FormMessageEdit();
+            form.ShowDialog();
         }
     }
 }

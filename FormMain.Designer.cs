@@ -780,6 +780,7 @@
             this.собщениеБегущейСтрокиToolStripMenuItem.Name = "собщениеБегущейСтрокиToolStripMenuItem";
             this.собщениеБегущейСтрокиToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
             this.собщениеБегущейСтрокиToolStripMenuItem.Text = "Собщение бегущей строки";
+            this.собщениеБегущейСтрокиToolStripMenuItem.Click += new System.EventHandler(this.собщениеБегущейСтрокиToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem1
             // 
