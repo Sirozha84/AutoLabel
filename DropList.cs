@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.IO;
 
 namespace AutoLabel_Server
@@ -16,9 +12,9 @@ namespace AutoLabel_Server
             Name = name;
             try
             {
-                StreamReader file = File.OpenText("Lists\\" + Name + ".txt");
-                while (!file.EndOfStream)
-                    List.Add(file.ReadLine());
+                using (StreamReader file = File.OpenText("Lists\\" + Name + ".txt"))
+                    while (!file.EndOfStream)
+                        List.Add(file.ReadLine());
             }
             catch { }
         }

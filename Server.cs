@@ -148,19 +148,32 @@ namespace AutoLabel_Server
                     if (query == "ListRead")
                     {
                         string name = reader.ReadString();
-                        //Далее план такой: ищем в коллекции нужный список,
-                        //но если такого нет, читаем его из файла
+                        //Ищем нужный список
                         DropList List = DropLists.Find(o => o.Name == name);
+                        //Если его нет - создаём
                         if (List == null) List = new DropList(name);
                         DropLists.Add(List);
+                        //А дальше уже отдаём старый или новый
                         List.List.ForEach(o => writer.Write(o));
                         writer.Write("End");
                     }
                     if (query == "ListWrite")
                     {
                         string name = reader.ReadString();
-                        //Далее план такой: ищем в коллекции нужный список, меняем в нём данные
+                        //Ищем нужный список
+                        DropList List = DropLists.Find(o => o.Name == name);
+                        //Если его нет - создаём
+                        if (List == null) List = new DropList(name);
+                        DropLists.Add(List);
                         //если такого списка нет - добавляем новый, а потом сохраняем его в файл
+                        List.List.Clear();
+                        string s;
+                        do
+                        {
+                            s = reader.ReadString();
+                            if (s != "End") List.List.Add(s);
+                        } while (s != "End");
+                        List.Save();
                     }
                 }
             }

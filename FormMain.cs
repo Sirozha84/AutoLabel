@@ -222,94 +222,91 @@ namespace AutoLabel
             }
         }
 
-        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        void EditList(string name, string file)
         {
-            Data.OpenInNotepad("Message.txt");
+            FormListEdit form = new FormListEdit(name, file);
+            form.ShowDialog();
         }
 
-        private void списокТиповПреформыToolStripMenuItem_Click(object sender, EventArgs e)
+        private void списокВесовПреформыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Data.OpenInNotepad("Lists\\Types0.txt");
+            EditList("Список весов преформы", "Weights0");
         }
 
-        private void списокВесовToolStripMenuItem_Click(object sender, EventArgs e)
+        private void списокТиповГорловиныПреформыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Data.OpenInNotepad("Lists\\Weights0.txt");
+            EditList("Список типов горловины преформы", "Types0");
         }
 
-        private void количестваПреформToolStripMenuItem_Click(object sender, EventArgs e)
+        private void списокМатериаловПреформыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Data.OpenInNotepad("Lists\\Quantitys0.txt");
+            EditList("Список материалов преформы", "Materials0");
         }
 
-        private void материалыПреформыToolStripMenuItem_Click(object sender, EventArgs e)
+        private void списокЦветовПреформыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Data.OpenInNotepad("Lists\\Materials0.txt");
+            EditList("Список цветов преформы", "Colors0");
         }
 
-        private void цветаПреформыToolStripMenuItem_Click(object sender, EventArgs e)
+        private void списокКоличествПреформВКоробеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Data.OpenInNotepad("Lists\\Colors0.txt");
+            EditList("Список количеств преформ", "Quantitys0");
         }
 
-        private void кодыКрасителейПреформыToolStripMenuItem_Click(object sender, EventArgs e)
+        private void списокТиповАнтистатикаДляПреформыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Data.OpenInNotepad("Lists\\Colorants0.txt");
+            EditList("Список типов антистатика для преформы", "Antistatics0");
         }
 
-        private void типыАнтистатикаПреформыToolStripMenuItem_Click(object sender, EventArgs e)
+        private void списокКодовКрасителейToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Data.OpenInNotepad("Lists\\Antistatics0.txt");
+            EditList("Список кодов красителей преформы", "Colorants0");
         }
 
-        private void срокиГодностиПреформыToolStripMenuItem_Click(object sender, EventArgs e)
+        private void списокСроковГодностиПреформыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Data.OpenInNotepad("Lists\\Limits.txt");
+            EditList("Список сроков годности преформы", "Colorants0");
         }
 
-        private void типыКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
+        private void списокВесовКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Data.OpenInNotepad("Lists\\Types1.txt");
+            EditList("Список весов колпачка", "Weights1");
         }
 
-        private void весаКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
+        private void списокТиповКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Data.OpenInNotepad("Lists\\Weights1.txt");
+            EditList("Список типов колпачка", "Types1");
         }
 
-        private void количестваКолпачковToolStripMenuItem_Click(object sender, EventArgs e)
+        private void списокМатериаловКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Data.OpenInNotepad("Lists\\Quantitys1.txt");
+            EditList("Список материалов колпачка", "Materials1");
         }
 
-        private void материалыКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
+        private void списокЦветовКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Data.OpenInNotepad("Lists\\Materials1.txt");
+            EditList("Список цветов колпачка", "Colors1");
         }
 
-        private void цветаКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
+        private void списокКоличествКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Data.OpenInNotepad("Lists\\Colors1.txt");
+            EditList("Список количеств колпачка", "Quantitys1");
         }
 
-        private void кодыКрасителейКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
+        private void списокТиповАнтистатикаКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Data.OpenInNotepad("Lists\\Colorants1.txt");
+            EditList("Список типов антистатика колпачка", "Antistatics1");
         }
 
-        private void типыАнтистатикаКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
+        private void списокКодовКрасителейКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Data.OpenInNotepad("Lists\\Antistatics1.txt");
+            EditList("Список типов антистатика колпачка", "Colorants1");
         }
 
-        private void FormMain_Shown(object sender, EventArgs e)
+        private void справкаToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-#if (!DEBUG)
-            if (!Data.IsMachine)
-                MessageBox.Show("ВНИМАНИЕ!!!\n\nПока существует проблема блокировки файлов, крайне не желателен запуск программы на ПК.\n" +
-                    "Сделайте свои дела и закройте экземпляр как можно скорей, иначе возможны проблемы работы терминала.",
-                    "AutoLabel", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-#endif
+            MessageBox.Show("Ожидается в скором времени...\n" +
+                "А пока? что непонятно - можно спросить у автора :-)", "AutoLabel");
         }
     }
 }
