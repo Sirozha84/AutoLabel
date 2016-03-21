@@ -14,11 +14,14 @@ namespace AutoLabel
         static void Main(string[] param)
         {
             if (param.Length > 0) Data.IsMachine = true;
-            if (Data.IsMachine)
-                Net.Log("Запуск программы в режиме терминала");
-            else
-                Net.Log("Запуск программы в режиме ПК");
             Net.Init();
+            if (Net.Test())
+            {
+                if (Data.IsMachine)
+                    Net.Log("Запуск программы в режиме терминала");
+                else
+                    Net.Log("Запуск программы в режиме ПК");
+            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMain());

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Net;
 using System.Net.Sockets;
 using System.IO;
 
@@ -11,7 +7,7 @@ namespace AutoLabel
     class Net
     {
         public static string HostName = "localhost";
-        public const int Port = 80;
+        public const int Port = 90;
         const string ParamFile = "Server.txt";
 
         /// <summary>
@@ -21,14 +17,13 @@ namespace AutoLabel
         {
             try
             {
-                StreamReader file = File.OpenText(ParamFile);
-                file.Close();
+                using (StreamReader file = File.OpenText(ParamFile))
+                    HostName = file.ReadLine();
             }
             catch
             {
-                StreamWriter file = File.CreateText(ParamFile);
-                file.Write(HostName);
-                file.Close();
+                using (StreamWriter file = File.CreateText(ParamFile))
+                    file.WriteLine(HostName);
             }
         }
 

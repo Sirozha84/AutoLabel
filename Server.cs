@@ -7,9 +7,10 @@ using System.Collections.Generic;
 
 namespace AutoLabel_Server
 {
-    class S
+    class Server
     {
-        const string ProgramLabel = "AutoLabel Server   Версия 0.0.3 (17.03.2016)   SG Software (Сергей Гордеев)";
+        const string ProgramLabel = "AutoLabel Server   Версия 0.0.4 (21.03.2016)   SG Software (Сергей Гордеев)";
+        const int Port = 90;
         const string MessageFile = "Message.txt";
         const string TPAFile = "TPA.txt";
         const string ShiftFile = "Shift.txt";
@@ -31,14 +32,22 @@ namespace AutoLabel_Server
             LoadShift();
             LoadUsers();
             //Запускаем сервер
-            TcpListener server = new TcpListener(IPAddress.Any, 80);
-            server.Start();
-            Console.WriteLine(ProgramLabel);
-            Log("------------------------------------------------------------");
-            Log("Сервер запущен...");
-            while (true)
+            try
             {
-                ThreadPool.QueueUserWorkItem(call, server.AcceptTcpClient());
+                TcpListener server = new TcpListener(IPAddress.Any, Port);
+                server.Start();
+                Console.WriteLine(ProgramLabel);
+                Log("------------------------------------------------------------");
+                Log("Сервер запущен...");
+                while (true)
+                {
+                    ThreadPool.QueueUserWorkItem(call, server.AcceptTcpClient());
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.ReadKey();
             }
         }
 

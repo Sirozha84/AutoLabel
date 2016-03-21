@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace AutoLabel
 {
     public partial class FormMain : Form
     {
+        Thread loading;
+
         public FormMain()
         {
             InitializeComponent();
@@ -27,7 +30,7 @@ namespace AutoLabel
                 panel1.Visible = false;
             }
             Data.Init();
-            RefreshMain();
+            labelClock.Text = DateTime.Now.ToString("HH:mm");
         }
 
         //Большие кнопки
@@ -42,9 +45,19 @@ namespace AutoLabel
 
         void Print(int num)
         {
-            if (Data.Labels[num].PartNum == null | 
-                Data.Labels[num].PartNum == "" |
-                Data.Labels[num].Count == "") return;
+            timerRefresh.Enabled = false;
+            bool OK = false;
+            do
+            {
+                try
+                {
+                    if (Data.Labels[num].PartNum == null |
+                        Data.Labels[num].PartNum == "" |
+                        Data.Labels[num].Count == "") return;
+                    OK = true;
+                }
+                catch { }
+            } while (!OK);
             if (Data.IsMachine)
             {
                 FormPrint formprint = new FormPrint(num);
@@ -55,6 +68,7 @@ namespace AutoLabel
                 FormPrintPC formprint = new FormPrintPC(num);
                 formprint.ShowDialog();
             }
+            timerRefresh.Enabled = true;
             RefreshMain();
         }
 
@@ -84,23 +98,22 @@ namespace AutoLabel
         /// </summary>
         void RefreshMain()
         {
-            labelClock.Text = DateTime.Now.ToString("HH:mm");
-            if (Net.Test())
+            labelClock.Visible = true;
+            if (Data.IsMachine)
             {
-                Data.Load();
-                tableLayoutPanel1.Visible = true;
-                labelProblem.Visible = false;
-                timerRefresh.Interval = 3000;
-                if (Data.IsMachine)
-                    buttonShift.Text = Shift.Current;
-                else
-                {
-                    labelformname.Text = Shift.Current;
-                    смена1ToolStripMenuItem.Checked = Shift.Current == Shift.Names[0];
-                    смена2ToolStripMenuItem.Checked = Shift.Current == Shift.Names[1];
-                    смена3ToolStripMenuItem.Checked = Shift.Current == Shift.Names[2];
-                    смена4ToolStripMenuItem.Checked = Shift.Current == Shift.Names[3];
-                }
+                labelformname.Text = "Выбор ТПА";
+                buttonShift.Text = Shift.Current;
+            }
+            else
+            {
+                labelformname.Text = Shift.Current;
+                смена1ToolStripMenuItem.Checked = Shift.Current == Shift.Names[0];
+                смена2ToolStripMenuItem.Checked = Shift.Current == Shift.Names[1];
+                смена3ToolStripMenuItem.Checked = Shift.Current == Shift.Names[2];
+                смена4ToolStripMenuItem.Checked = Shift.Current == Shift.Names[3];
+            }
+            try
+            {
                 label1.Text = Data.Labels[0].LabelUnderButton();
                 label2.Text = Data.Labels[1].LabelUnderButton();
                 label3.Text = Data.Labels[2].LabelUnderButton();
@@ -117,19 +130,44 @@ namespace AutoLabel
                 Data.SetColor(button6, 5);
                 Data.SetColor(button7, 6);
                 Data.SetColor(button8, 7);
+                tableLayoutPanel1.Visible = true;
+                labelProblem.Visible = false;
             }
-            else
-            {
-                tableLayoutPanel1.Visible = false;
-                labelProblem.Visible = true;
-                timerRefresh.Interval = 10000;
-            }
+            catch { }
+        }
+
+        void DrawError()
+        {
+            tableLayoutPanel1.Visible = false;
+            labelProblem.Visible = true;
         }
 
         //Таймер для обновления внешнего вида (на случай если из вне поменяли параметры)
         private void timerRefresh_Tick(object sender, EventArgs e)
         {
-            RefreshMain();
+            new Thread(() =>
+            {
+                try
+                {
+                    if (Net.Test())
+                    {
+                        Data.Load();
+                        Invoke(new Action(() =>
+                        {
+                            RefreshMain();
+                        }));
+                    }
+                    else
+                    {
+                        Invoke(new Action(() =>
+                        {
+                            DrawError();
+                        }));
+                    }
+                }
+                catch { }
+            }).Start();
+            
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -144,21 +182,27 @@ namespace AutoLabel
 
         private void вводДанныхToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            timerRefresh.Enabled = false;
             FormPropertiesPC formprop = new FormPropertiesPC();
             formprop.ShowDialog();
+            timerRefresh.Enabled = true;
             RefreshMain();
         }
 
         private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            timerRefresh.Enabled = false;
             FormUsersPC form = new FormUsersPC();
             form.ShowDialog();
+            timerRefresh.Enabled = true;
         }
 
         private void отчётыToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            timerRefresh.Enabled = false;
             FormReports form = new FormReports();
             form.ShowDialog();
+            timerRefresh.Enabled = true;
         }
 
         private void принтерToolStripMenuItem_Click(object sender, EventArgs e)
@@ -168,15 +212,19 @@ namespace AutoLabel
 
         private void этикеткаСПроизвольнымиПолямиToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            timerRefresh.Enabled = false;
             FormCustomLabel form = new FormCustomLabel();
             form.ShowDialog();
+            timerRefresh.Enabled = true;
         }
 
         void ChangeShift(string shift)
         {
+            timerRefresh.Enabled = false;
             if (MessageBox.Show("Подтверждаете заступление новой смены?", "Новая смена", MessageBoxButtons.YesNo)
                 == DialogResult.Yes)
                 Shift.Change(shift);
+            timerRefresh.Enabled = true;
             RefreshMain();
         }
 
@@ -202,8 +250,10 @@ namespace AutoLabel
 
         private void правкаЖурналаToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            timerRefresh.Enabled = false;
             FormLog form = new FormLog();
             form.ShowDialog();
+            timerRefresh.Enabled = true;
         }
 
         bool load = true;
@@ -224,8 +274,10 @@ namespace AutoLabel
 
         void EditList(string name, string file)
         {
+            timerRefresh.Enabled = false;
             FormListEdit form = new FormListEdit(name, file);
             form.ShowDialog();
+            timerRefresh.Enabled = true;
         }
 
         private void списокВесовПреформыToolStripMenuItem_Click(object sender, EventArgs e)
@@ -311,8 +363,10 @@ namespace AutoLabel
 
         private void собщениеБегущейСтрокиToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            timerRefresh.Enabled = false;
             FormMessageEdit form = new FormMessageEdit();
             form.ShowDialog();
+            timerRefresh.Enabled = true;
         }
     }
 }

@@ -40,7 +40,7 @@ namespace AutoLabel
             {
                 using (TcpClient client = new TcpClient())
                 {
-                    client.Connect(Net.HostName, 80);
+                    client.Connect(Net.HostName, Net.Port);
                     using (NetworkStream stream = client.GetStream())
                     {
                         BinaryWriter writer = new BinaryWriter(stream);
@@ -77,7 +77,7 @@ namespace AutoLabel
             {
                 using (TcpClient client = new TcpClient())
                 {
-                    client.Connect(Net.HostName, 80);
+                    client.Connect(Net.HostName, Net.Port);
                     using (NetworkStream stream = client.GetStream())
                     {
                         BinaryWriter writer = new BinaryWriter(stream);
