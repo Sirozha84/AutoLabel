@@ -8,9 +8,13 @@ namespace AutoLabel
         public FormPropertiesPC()
         {
             InitializeComponent();
+            FormLoadSplash form = new FormLoadSplash("Загрузка...");
+            form.Show();
+            Application.DoEvents();
             foreach (Label l in Data.Labels)
                 comboBoxTPA.Items.Add(l.TPAName);
             Data.ListsLoad();
+            form.Close();
         }
 
         //Кнопка назад

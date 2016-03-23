@@ -34,6 +34,10 @@ namespace AutoLabel
         /// Файл принтера
         /// </summary>
         static string FilePrinter;
+        /// <summary>
+        /// Идёт ли сейчас процесс загрузки
+        /// </summary>
+        public static bool Loading = false;
 
         //Списки пользователей и лейблов
         public static List<User> Users = new List<User>();
@@ -91,6 +95,7 @@ namespace AutoLabel
         /// </summary>
         public static void ListsLoad()
         {
+            Loading = true;
             ListLoad(Types0, "Types0");
             ListLoad(Types1, "Types1");
             ListLoad(Weights0, "Weights0");
@@ -106,11 +111,13 @@ namespace AutoLabel
             ListLoad(Antistatics1, "Antistatics1");
             ListLoad(Colorants0, "Colorants0");
             ListLoad(Colorants1, "Colorants1");
+            Loading = false;
         }
 
         static void ListLoad(List<string> list, string filename)
         {
             //89-158  89-97
+            list.Clear();
             try
             {
                 using (TcpClient client = new TcpClient())
@@ -131,9 +138,6 @@ namespace AutoLabel
                         
                     }
                 }
-                //StreamReader file = File.OpenText(Program.Patch + "Lists\\" + filename + ".txt");
-                //while (!file.EndOfStream)
-                //    list.Add(file.ReadLine());
             }
             catch { }
         }
@@ -143,6 +147,7 @@ namespace AutoLabel
         /// </summary>
         public static void Load()
         {
+            Loading = true;
             //Смена
             Shift.Load();
             //Лейблы
@@ -155,6 +160,7 @@ namespace AutoLabel
             Labels.Add(new Label("Netstal №6", 0));
             Labels.Add(new Label("C1", 1));
             Labels.Add(new Label("C2", 1));
+            Loading = false;
         }
 
         /// <summary>

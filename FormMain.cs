@@ -7,8 +7,6 @@ namespace AutoLabel
 {
     public partial class FormMain : Form
     {
-        Thread loading;
-
         public FormMain()
         {
             InitializeComponent();
@@ -26,7 +24,6 @@ namespace AutoLabel
                 labelVersion.Text += "     Режим оператора";
                 buttonShift.Visible = false;
                 buttonProperties.Visible = false;
-                timerMessage.Enabled = false;
                 panel1.Visible = false;
             }
             Data.Init();
@@ -45,19 +42,10 @@ namespace AutoLabel
 
         void Print(int num)
         {
-            timerRefresh.Enabled = false;
-            bool OK = false;
-            do
-            {
-                try
-                {
-                    if (Data.Labels[num].PartNum == null |
-                        Data.Labels[num].PartNum == "" |
-                        Data.Labels[num].Count == "") return;
-                    OK = true;
-                }
-                catch { }
-            } while (!OK);
+            StopRefresh();
+            if (Data.Labels[num].PartNum == null |
+                Data.Labels[num].PartNum == "" |
+                Data.Labels[num].Count == "") return;
             if (Data.IsMachine)
             {
                 FormPrint formprint = new FormPrint(num);
@@ -68,29 +56,32 @@ namespace AutoLabel
                 FormPrintPC formprint = new FormPrintPC(num);
                 formprint.ShowDialog();
             }
-            timerRefresh.Enabled = true;
-            RefreshMain();
+            StartRefresh();
         }
 
         //Кнопка параметров
         private void buttonProperties_Click(object sender, EventArgs e)
         {
+            StopRefresh();
             if (Data.GetKey(255) == 255)
             {
                 FormProperties form = new FormProperties();
                 form.ShowDialog();
             }
+            StartRefresh();
         }
 
         //Выбор новой смены
         private void buttonShift_Click(object sender, EventArgs e)
         {
+            StopRefresh();
             if (Data.GetKey(255) == 255)
             {
                 FormShift shift = new FormShift();
                 shift.ShowDialog();
                 RefreshMain();
             }
+            StartRefresh();
         }
 
         /// <summary>
@@ -182,50 +173,50 @@ namespace AutoLabel
 
         private void вводДанныхToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            timerRefresh.Enabled = false;
+            StopRefresh();
             FormPropertiesPC formprop = new FormPropertiesPC();
             formprop.ShowDialog();
-            timerRefresh.Enabled = true;
-            RefreshMain();
+            StartRefresh();
         }
 
         private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            timerRefresh.Enabled = false;
+            StopRefresh();
             FormUsersPC form = new FormUsersPC();
             form.ShowDialog();
-            timerRefresh.Enabled = true;
+            StartRefresh();
         }
 
         private void отчётыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            timerRefresh.Enabled = false;
+            StopRefresh();
             FormReports form = new FormReports();
             form.ShowDialog();
-            timerRefresh.Enabled = true;
+            StartRefresh();
         }
 
         private void принтерToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            StopRefresh();
             Data.PrintSetup();
+            StartRefresh();
         }
 
         private void этикеткаСПроизвольнымиПолямиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            timerRefresh.Enabled = false;
+            StopRefresh();
             FormCustomLabel form = new FormCustomLabel();
             form.ShowDialog();
-            timerRefresh.Enabled = true;
+            StartRefresh();
         }
 
         void ChangeShift(string shift)
         {
-            timerRefresh.Enabled = false;
+            StopRefresh();
             if (MessageBox.Show("Подтверждаете заступление новой смены?", "Новая смена", MessageBoxButtons.YesNo)
                 == DialogResult.Yes)
                 Shift.Change(shift);
-            timerRefresh.Enabled = true;
-            RefreshMain();
+            StartRefresh();
         }
 
         private void смена1ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -250,16 +241,30 @@ namespace AutoLabel
 
         private void правкаЖурналаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            timerRefresh.Enabled = false;
+            StopRefresh();
             FormLog form = new FormLog();
             form.ShowDialog();
-            timerRefresh.Enabled = true;
+            StartRefresh();
         }
 
-        bool load = true;
+        //Таймер для обновления
+        int anim = 0;
         private void timerMessage_Tick(object sender, EventArgs e)
         {
-            if (load)
+            if (Data.Loading)
+            {
+                anim++;
+                if (anim > 10)
+                {
+                    anim = 0;
+                    labelStatus.Text += ".";
+                    if (labelStatus.Text.Length > 3)
+                        labelStatus.Text = "";
+                }
+            }
+            else
+                labelStatus.Text = "";
+            /*if (load)
             {
                 labelMessage.Text = Net.LoadMessage();
                 load = false;
@@ -269,15 +274,15 @@ namespace AutoLabel
             {
                 labelMessage.Location = new Point(Size.Width, labelMessage.Location.Y);
                 load = true;
-            }
+            }*/
         }
 
         void EditList(string name, string file)
         {
-            timerRefresh.Enabled = false;
+            StopRefresh();
             FormListEdit form = new FormListEdit(name, file);
             form.ShowDialog();
-            timerRefresh.Enabled = true;
+            StartRefresh();
         }
 
         private void списокВесовПреформыToolStripMenuItem_Click(object sender, EventArgs e)
@@ -363,10 +368,27 @@ namespace AutoLabel
 
         private void собщениеБегущейСтрокиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            timerRefresh.Enabled = false;
+            timerRefresh.Enabled = true;
             FormMessageEdit form = new FormMessageEdit();
             form.ShowDialog();
+        }
+
+        //Остановка обновления и вывод сплеша ожидания, если необходимо
+        private void StopRefresh()
+        {
+            timerRefresh.Enabled = false;
+            if (Data.Loading)
+            {
+                FormLoadSplash form = new FormLoadSplash();
+                form.ShowDialog();
+            }
+        }
+
+        //Возобновление обновления
+        void StartRefresh()
+        {
             timerRefresh.Enabled = true;
+            RefreshMain();
         }
     }
 }

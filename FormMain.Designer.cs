@@ -98,6 +98,8 @@
             this.timerMessage = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelProblem = new System.Windows.Forms.Label();
+            this.timerStatus = new System.Windows.Forms.Timer(this.components);
+            this.labelStatus = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -404,11 +406,11 @@
             this.labelClock.BackColor = System.Drawing.Color.SlateGray;
             this.labelClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelClock.ForeColor = System.Drawing.Color.White;
-            this.labelClock.Location = new System.Drawing.Point(387, 15);
+            this.labelClock.Location = new System.Drawing.Point(360, 15);
             this.labelClock.Name = "labelClock";
-            this.labelClock.Size = new System.Drawing.Size(168, 73);
+            this.labelClock.Size = new System.Drawing.Size(202, 73);
             this.labelClock.TabIndex = 9;
-            this.labelClock.Text = "        ";
+            this.labelClock.Text = "          ";
             this.labelClock.Visible = false;
             // 
             // buttonShift
@@ -799,12 +801,25 @@
             this.labelProblem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelProblem.Visible = false;
             // 
+            // labelStatus
+            // 
+            this.labelStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelStatus.ForeColor = System.Drawing.Color.Gray;
+            this.labelStatus.Location = new System.Drawing.Point(1058, 134);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(16, 13);
+            this.labelStatus.TabIndex = 12;
+            this.labelStatus.Text = "...";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1086, 700);
+            this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.labelMessage);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel2);
@@ -899,6 +914,8 @@
         private System.Windows.Forms.ToolStripMenuItem собщениеБегущейСтрокиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
+        private System.Windows.Forms.Timer timerStatus;
+        private System.Windows.Forms.Label labelStatus;
     }
 }
 

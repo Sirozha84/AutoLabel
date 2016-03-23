@@ -10,6 +10,9 @@ namespace AutoLabel
         public FormCustomLabel()
         {
             InitializeComponent();
+            FormLoadSplash form = new FormLoadSplash("Загрузка...");
+            form.Show();
+            Application.DoEvents();
             Data.UsersLoad();
             Data.ListsLoad();
             //Заполнение комбобоксов списками
@@ -22,6 +25,7 @@ namespace AutoLabel
             ListFill();
             comboBoxLimit.DataSource = Data.Limits;
             comboBoxLimit.SelectedItem = null;
+            form.Close();
         }
 
         void ListFill()
