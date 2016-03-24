@@ -113,12 +113,12 @@ namespace AutoLabel
             FillFromTPA();
         }
 
-        //КНопка печати
+        //Кнопка печати
         private void buttonPrint_Click(object sender, EventArgs e)
         {
             try
             {
-                Label l = new Label(comboBoxTPA.SelectedItem.ToString(), 0, true);
+                Label l = new Label(comboBoxTPA.SelectedItem.ToString(), 0);
 
                 //Временно сделаю так... надо подумать как сделать лучше
                 if (comboBoxTPA.SelectedIndex > 5) l.TPAType = 1;

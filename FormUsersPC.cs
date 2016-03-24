@@ -91,6 +91,7 @@ namespace AutoLabel
         private void buttonOK_Click(object sender, EventArgs e)
         {
             Data.SaveUsers();
+            Net.Log("Изменение списка пользователей на ПК");
             Close();
         }
 

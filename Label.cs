@@ -22,7 +22,6 @@ namespace AutoLabel
         public string Colorant; //Список количество антистатика
         public string Limit;    //Список срок хранения
         public string Other;    //Вручную Дополнительные параметры
-        bool Custom;   //Маркер кастомной этикетки
 
         //Карандаши и ручки :-)
         static Pen ClipLine = new Pen(Color.Black, 0.5f);
@@ -65,21 +64,6 @@ namespace AutoLabel
             TPAName = name;
             TPAType = type;
             Load();
-            Custom = false;
-        }
-
-        /// <summary>
-        /// Конструктор
-        /// </summary>
-        /// <param name="name">Название машины</param>
-        /// <param name="type">Тип ТПА (0-преформа, 1-колпак)</param>
-        /// <param name="custom">Кастомная ли этикетка</param>
-        public Label(string name, int type, bool custom)
-        {
-            TPAName = name;
-            TPAType = type;
-            Load();
-            Custom = custom;
         }
 
         /// <summary>
@@ -90,12 +74,13 @@ namespace AutoLabel
         /// <param name="count">Количество этикеток (0 - если одна двойная)</param>
         public void Print(int num, string packer, int count)
         {
-            //Print(num, packer, count, Data.DateToString(), DateTime.Now.ToString("HH:mm"), AutoLabel.Shift.Current);
             Print(num, packer, count, AutoLabel.Shift.Date, DateTime.Now.ToString("HH:mm"), AutoLabel.Shift.Current);
+            Save();
+            Net.Log("Печать этикетки");
         }
 
         /// <summary>
-        /// Печать этикетки с заданными датой и временем
+        /// Печать этикетки с заданными датой и временем (для кастомных)
         /// </summary>
         /// <param name="num">Номер ящика</param>
         /// <param name="packer">Фамилия упаковщика</param>
@@ -111,7 +96,6 @@ namespace AutoLabel
             Date = date;
             Time = time;
             Shift = shift;
-
             if (!Data.PrintSelected()) Data.PrintSetup();
             if (!Data.PrintSelected()) return;
             try
@@ -202,16 +186,16 @@ namespace AutoLabel
             g.DrawString(Antistatic, Big, Brushes.Black, X + 420, Y + 217);
             //Дополнительные поля
             g.DrawString("Прочие дополнения: " + Other, Small, Brushes.Black, X + 10, Y + 280);
-            DrawStrings(g, X, Y, 220, 300, "Машина", "Machine", TPAName);
-            DrawStrings(g, X, Y, 220, 340, "Марка материала", "Material", Material);
-            DrawStrings(g, X, Y, 220, 380, "Цвет преформы", "Preform colour", PColor);
-            DrawStrings(g, X, Y, 220, 420, "Количество преформ в коробе", "Preform quantity per box", Count);
-            DrawStrings(g, X, Y, 220, 460, "Дата изготовления", "Date of manufacturnig", Date);
-            DrawStrings(g, X, Y, 220, 500, "Время", "Time", Time);
-            DrawStrings(g, X, Y, 220, 540, "Номер партии", "Batch number", PartNum);
-            DrawStrings(g, X, Y, 220, 580, "Номер короба", "Box number", Num.ToString());
-            DrawStrings(g, X, Y, 220, 620, "Смена", "Shift", Shift);
-            DrawStrings(g, X, Y, 220, 660, "Укладчик", "Packer", Packer);
+            DrawStrings(g, X, Y, 300, "Машина", "Machine", TPAName, false);
+            DrawStrings(g, X, Y, 340, "Марка материала", "Material", Material, false);
+            DrawStrings(g, X, Y, 380, "Цвет преформы", "Preform colour", PColor, true);
+            DrawStrings(g, X, Y, 420, "Количество преформ в коробе", "Preform quantity per box", Count, false);
+            DrawStrings(g, X, Y, 460, "Дата изготовления", "Date of manufacturnig", Date, false);
+            DrawStrings(g, X, Y, 500, "Время", "Time", Time, false);
+            DrawStrings(g, X, Y, 540, "Номер партии", "Batch number", PartNum, false);
+            DrawStrings(g, X, Y, 580, "Номер короба", "Box number", Num.ToString(), true);
+            DrawStrings(g, X, Y, 620, "Смена", "Shift", Shift, false);
+            DrawStrings(g, X, Y, 660, "Укладчик", "Packer", Packer, false);
             //Нижний колонтитул
             g.DrawString("Сделано в России / Made in Russia",
                 SmallBold, Brushes.Black, X + 130, Y + Height - 55);
@@ -221,6 +205,18 @@ namespace AutoLabel
                 Smalllll, Brushes.Black, X + 10, Y + Height - 15);
             //Если надо, инкрементим номер и пишем журнал
             if (IncNum) IncAndLog();
+        }
+        static void DrawStrings(Graphics g, int X, int Y, int y, string s1, string s2, string s3, bool BigLabel)
+        {
+            g.DrawString(s1, SmallBold, Brushes.Black, X + 10, Y + y);
+            g.DrawString(s2, Small, Brushes.Black, X + 10, Y + y + 14);
+            if (BigLabel)
+            {
+                g.DrawString(s3, Big, Brushes.Black, X + 226, Y + y - 5);
+                g.DrawString(s3, Big, Brushes.Black, X + 228, Y + y - 5);
+            }
+            else
+                g.DrawString(s3, Normal, Brushes.Black, X + 230, Y + y);
         }
 
         /// <summary>
@@ -297,31 +293,10 @@ namespace AutoLabel
         void IncAndLog()
         {
             Log(); //Теперь пишем журнал в любом случае
-            
-            if (Num >= CurrentNum & CurrentNum > 0)
-            {
-                if (!Custom)
-                    CurrentNum = Num + 1; //Увеличиваем номер, если печатался текущий
-                Save(); //Сохраняем, вдруг программа вылетет :)
-            }
+            //Увеличиваем номер, если печатался текущий
+            if (Num >= CurrentNum & CurrentNum > 0) CurrentNum = Num + 1; 
             Num++;
             LabelCount--;
-        }
-
-        /// <summary>
-        /// Вывод поля
-        /// </summary>
-        /// <param name="g">Куда рисовать</param>
-        /// <param name="x">Координата</param>
-        /// <param name="y">Координата</param>
-        /// <param name="s1">Строка по-русски</param>
-        /// <param name="s2">Строка по-английски</param>
-        /// <param name="s3">Значение</param>
-        static void DrawStrings(Graphics g, int X, int Y, int x, int y, string s1, string s2, string s3)
-        {
-            g.DrawString(s1, SmallBold, Brushes.Black, X + 10, Y + y);
-            g.DrawString(s2, Small, Brushes.Black, X + 10, Y + y + 14);
-            g.DrawString(s3, Normal, Brushes.Black, X + x + 10, Y + y);
         }
 
         /// <summary>
@@ -410,7 +385,7 @@ namespace AutoLabel
         void Log()
         {
             string comment = "";
-            if (Custom) comment = " - этикетка с произвольными полями";
+            //if (Custom) comment = " - этикетка с произвольными полями";
             try
             {
                 using (TcpClient client = new TcpClient())

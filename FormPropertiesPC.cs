@@ -118,6 +118,7 @@ namespace AutoLabel
             l.Other = textBoxOther.Text;
             l.Save();
             buttonSave.Enabled = false;
+            Net.Log("Изменение параметров ТПА на ПК");
         }
 
         //Делаем кнопку сохранения видимой

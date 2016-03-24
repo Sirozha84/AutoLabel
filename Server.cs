@@ -4,13 +4,15 @@ using System.Net.Sockets;
 using System.IO;
 using System.Threading;
 using System.Collections.Generic;
+using System.Text;
 
 namespace AutoLabel_Server
 {
     class Server
     {
-        const string ProgramLabel = "AutoLabel Server   Версия 0.0.4 (21.03.2016)   SG Software (Сергей Гордеев)";
+        const string ProgramLabel = "AutoLabel Server   Версия 1.0.1 (24.03.2016)   SG Software (Сергей Гордеев)";
         const int Port = 90;
+        const string VersionForComp = "2.0.0";
         const string MessageFile = "Message.txt";
         const string TPAFile = "TPA.txt";
         const string ShiftFile = "Shift.txt";
@@ -68,6 +70,8 @@ namespace AutoLabel_Server
                     string query = reader.ReadString();
                     if (query == "Ping")
                         writer.Write("Pong");
+                    if (query == "Сompatibility")
+                        writer.Write(VersionForComp);
                     if (query == "Log")
                         Log(reader.ReadString());
                     if (query == "MessageRead")
@@ -135,12 +139,15 @@ namespace AutoLabel_Server
                     if (query == "LogRecord")
                     {
                         Directory.CreateDirectory("Logs");
-                        using (TextWriter file = File.AppendText("Logs\\" + reader.ReadString() + ".csv"))
+                        using (StreamWriter file = new StreamWriter("Logs\\" + reader.ReadString() + ".csv",
+                            true, Encoding.Default))
                             file.WriteLine(reader.ReadString());
                     }
                     if (query == "LogRead")
                     {
-                        using (TextReader file = File.OpenText("Logs\\" + reader.ReadString()+".csv"))
+                        using (StreamReader file = new StreamReader("Logs\\" + reader.ReadString() + ".csv",
+                            Encoding.Default))
+
                         {
                             string s;
                             do
@@ -153,12 +160,14 @@ namespace AutoLabel_Server
                     }
                     if (query == "LogWrite")
                     {
-                        using (TextWriter file = File.CreateText("Logs\\" + reader.ReadString() + ".csv"))
+                        using (StreamWriter file = new StreamWriter("Logs\\" + reader.ReadString() + ".csv",
+                            false, Encoding.Default))
                         {
                             string s;
                             do
                             {
                                 s = reader.ReadString();
+                                Console.WriteLine(s);
                                 if (s != "End") file.WriteLine(s);
                             } while (s != "End");
                         }

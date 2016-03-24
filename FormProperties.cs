@@ -120,6 +120,7 @@ namespace AutoLabel
             l.Other = textBoxOther.Text;
             l.Save();
             buttonsave.Visible = false;
+            Net.Log("Изменение параметров ТПА на терминале");
         }
 
         //Делаем кнопку сохранения видимой

@@ -383,6 +383,7 @@
             this.ShowInTaskbar = false;
             this.Text = "Печать этикетки";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormPrint_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

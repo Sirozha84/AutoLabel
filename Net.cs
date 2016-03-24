@@ -49,6 +49,34 @@ namespace AutoLabel
             }
         }
 
+        //Проверка на совместимость версий
+        public static void TestСompatibility()
+        {
+            try
+            {
+                using (TcpClient client = new TcpClient())
+                {
+                    client.Connect(HostName, Port);
+                    using (NetworkStream stream = client.GetStream())
+                    {
+                        BinaryWriter writer = new BinaryWriter(stream);
+                        BinaryReader reader = new BinaryReader(stream);
+                        writer.Write("Сompatibility");
+                        string v = reader.ReadString();
+                        if (v == Program.VersionForComp) return;
+                        Log("Несовместимая версия программы");
+                        System.Windows.Forms.MessageBox.Show("Версия программы: " +
+                            Program.VersionForComp + "\nТребуемая версия: " + v + 
+                            "\nРабота будет остановлена", "AutoLabel",
+                            System.Windows.Forms.MessageBoxButtons.OK,
+                            System.Windows.Forms.MessageBoxIcon.Error);
+                        Environment.Exit(0);
+                    }
+                }
+            }
+            catch { }
+        }
+
         /// <summary>
         /// Загрузка сообщения бегущей строки
         /// </summary>

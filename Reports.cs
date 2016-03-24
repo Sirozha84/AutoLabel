@@ -101,7 +101,7 @@ namespace AutoLabel
             doc.PrintPage += Doc_PrintPage;
             line = 0;
             doc.Print();
-            AutoLabel.Log.Write("Печать отчёта Журнал " + logfile + " (" + ShopName + ")");
+            Net.Log("Печать отчёта Журнал " + logfile + " (" + ShopName + ")");
         }
         static void Doc_PrintPage(object sender, PrintPageEventArgs e)
         {
@@ -179,7 +179,7 @@ namespace AutoLabel
             doc.PrintPage += Doc_PrintPage1;
             line = 0;
             doc.Print();
-            AutoLabel.Log.Write("Печать отчёта Общий " + LogFile + " (" + ShopName + ")");
+            Net.Log("Печать отчёта Общий " + LogFile + " (" + ShopName + ")");
         }
         static void Doc_PrintPage1(object sender, PrintPageEventArgs e)
         {
@@ -274,7 +274,7 @@ namespace AutoLabel
             doc.PrintPage += Doc_PrintPage2;
             line = 0;
             doc.Print();
-            AutoLabel.Log.Write("Печать отчёта По партиям " + LogFile + " (" + ShopName + ")");
+            Net.Log("Печать отчёта По партиям " + LogFile + " (" + ShopName + ")");
         }
         static void Doc_PrintPage2(object sender, PrintPageEventArgs e)
         {
@@ -349,7 +349,7 @@ namespace AutoLabel
             doc.PrintPage += Doc_PrintPage3;
             line = 0;
             doc.Print();
-            AutoLabel.Log.Write("Печать отчёта По ТПА " + LogFile + " (" + ShopName + ")");
+            Net.Log("Печать отчёта По ТПА " + LogFile + " (" + ShopName + ")");
         }
         static void Doc_PrintPage3(object sender, PrintPageEventArgs e)
         {

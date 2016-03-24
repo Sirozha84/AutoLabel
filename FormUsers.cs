@@ -54,6 +54,7 @@ namespace AutoLabel
         {
             Data.SaveUsers();
             buttonsave.Visible = false;
+            Net.Log("Изменение списка пользователей на терминале");
         }
 
         //Кнопка изменения ключа

@@ -26,6 +26,7 @@ namespace AutoLabel
                 buttonProperties.Visible = false;
                 panel1.Visible = false;
             }
+            MenuEnable(false);
             Data.Init();
         }
 
@@ -145,6 +146,7 @@ namespace AutoLabel
                         Data.Load();
                         Invoke(new Action(() =>
                         {
+                            MenuEnable(true);
                             RefreshMain();
                         }));
                     }
@@ -152,12 +154,32 @@ namespace AutoLabel
                     {
                         Invoke(new Action(() =>
                         {
+                            MenuEnable(false);
                             DrawError();
                         }));
                     }
                 }
                 catch { }
             }).Start();
+        }
+
+        void MenuEnable(bool enable)
+        {
+            if (Data.IsMachine)
+            {
+                buttonProperties.Visible = enable;
+                buttonShift.Visible = enable;
+                buttonQuit.Visible = !enable;
+            }
+            else
+            {
+                константыToolStripMenuItem.Enabled = enable;
+                сменаToolStripMenuItem.Enabled = enable;
+                параметрыToolStripMenuItem.Enabled = enable;
+                отчётыToolStripMenuItem.Enabled = enable;
+                правкаЖурналаToolStripMenuItem.Enabled = enable;
+                этикеткаСПроизвольнымиПолямиToolStripMenuItem.Enabled = enable;
+            }
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -381,7 +403,15 @@ namespace AutoLabel
 
         private void FormMain_Shown(object sender, EventArgs e)
         {
+            Net.TestСompatibility();
             timerRefresh_Tick(null, null);
+            timerRefresh.Enabled = true;
+
+        }
+
+        private void buttonQuit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -99,6 +99,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelProblem = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
+            this.buttonQuit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -375,6 +376,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.SlateGray;
+            this.panel2.Controls.Add(this.buttonQuit);
             this.panel2.Controls.Add(this.labelformname);
             this.panel2.Controls.Add(this.labelClock);
             this.panel2.Controls.Add(this.buttonShift);
@@ -429,7 +431,6 @@
             // 
             // timerRefresh
             // 
-            this.timerRefresh.Enabled = true;
             this.timerRefresh.Interval = 10000;
             this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
             // 
@@ -812,6 +813,22 @@
             this.labelStatus.TabIndex = 12;
             this.labelStatus.Text = "...";
             // 
+            // buttonQuit
+            // 
+            this.buttonQuit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonQuit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonQuit.ForeColor = System.Drawing.Color.White;
+            this.buttonQuit.Location = new System.Drawing.Point(1024, 12);
+            this.buttonQuit.Name = "buttonQuit";
+            this.buttonQuit.Size = new System.Drawing.Size(50, 50);
+            this.buttonQuit.TabIndex = 10;
+            this.buttonQuit.Text = "X";
+            this.buttonQuit.UseVisualStyleBackColor = false;
+            this.buttonQuit.Visible = false;
+            this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -915,6 +932,7 @@
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
         private System.Windows.Forms.Label labelStatus;
+        private System.Windows.Forms.Button buttonQuit;
     }
 }
 

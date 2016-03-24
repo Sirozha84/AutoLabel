@@ -64,20 +64,9 @@ namespace AutoLabel
         //Инициализация первоначальных данных
         public static void Init()
         {
-            //Режим ПК
-            if (!IsMachine)
-            {
-                string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
-                      "\\SG\\Autolabel\\";
-                Directory.CreateDirectory(folder);
-                FilePrinter = folder + "Printer.txt";
-            }
-            else
-                FilePrinter = Program.Patch + "Printer.txt";
-            //Принтер
             try
             {
-                StreamReader file = File.OpenText(FilePrinter);
+                StreamReader file = File.OpenText("Printer.txt");
                 printersettings = new PrinterSettings();
                 printersettings.PrinterName = file.ReadLine();
                 file.Close();
@@ -450,22 +439,6 @@ namespace AutoLabel
                     but.Visible = false;
                     break;
             }
-        }
-
-        /// <summary>
-        /// Открытие файла для редактирования в блокноте
-        /// </summary>
-        /// <param name="file"></param>
-        public static void OpenInNotepad(string file)
-        {
-            file = Program.Patch + file;
-            if (!File.Exists(file))
-            {
-                FileStream f = new FileStream(file, FileMode.Create);
-                f.Close();
-                //File.Create(file);
-            }
-            System.Diagnostics.Process.Start(file);
         }
 
         /// <summary>

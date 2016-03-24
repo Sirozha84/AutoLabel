@@ -91,21 +91,7 @@ namespace AutoLabel
                 }
             }
             catch { }
-                        /*try
-                        {
-                            StreamWriter file = File.CreateText("Shift.txt");
-                            file.WriteLine(Current);
-                            file.WriteLine(Date);
-                            for (int i = 0; i < ShiftMemory; i++)
-                                file.WriteLine(LogName[i]);
-                            file.Close();
-                        }
-                        catch
-                        {
-                            Log.Error("Не удалось сохранить настройку смены.");
-                        }
-                        Directory.CreateDirectory("Logs");*/
-                        //Обнуляем счётчики коробов
+            //Обнуляем счётчики коробов
             foreach (Label l in Data.Labels)
             {
                 l.CurrentNum = 1;

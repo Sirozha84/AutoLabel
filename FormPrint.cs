@@ -21,6 +21,10 @@ namespace AutoLabel
             NumMachine = num;
             Data.UsersLoad();
             labelNum.Text = lab.TPAName;
+        }
+
+        private void FormPrint_Load(object sender, EventArgs e)
+        {
             //Заполним комбобокс пользователями
             comboBoxUser.Items.Clear();
             foreach (User u in Data.Users) comboBoxUser.Items.Add(u.Name);
@@ -84,6 +88,7 @@ namespace AutoLabel
             }
             DrawNum();
             TimerStart();
+
         }
 
         //Кнопка закрытия
