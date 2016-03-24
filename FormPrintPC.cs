@@ -18,24 +18,26 @@ namespace AutoLabel
             lab = Data.Labels[num];
             NumMachine = num;
             Data.UsersLoad();
-        }
-
-        private void FormPrint_Load(object sender, EventArgs e)
-        {
-
             labelNum.Text = lab.TPAName;
             //Заполним комбобокс пользователями
             comboBoxUser.Items.Clear();
             foreach (User u in Data.Users) comboBoxUser.Items.Add(u.Name);
             box = lab.CurrentNum;
             //Далее надо выяснить мелкие это коробки или крупные, и в зависимости от этого вывести второй нумератор
-            if (Data.Labels[NumMachine].AllowSelectCount())
+            try
             {
-                label2.Enabled = true;
-                textBoxCount.Enabled = true;
-                buttonCountDec.Enabled = true;
-                buttonCountInc.Enabled = true;
-                CountSelect = true;
+                if (Data.Labels[NumMachine].AllowSelectCount())
+                {
+                    label2.Enabled = true;
+                    textBoxCount.Enabled = true;
+                    buttonCountDec.Enabled = true;
+                    buttonCountInc.Enabled = true;
+                    CountSelect = true;
+                }
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(er.Message);
             }
             DrawNum();
         }

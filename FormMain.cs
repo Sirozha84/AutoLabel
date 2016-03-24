@@ -27,7 +27,6 @@ namespace AutoLabel
                 panel1.Visible = false;
             }
             Data.Init();
-            labelClock.Text = DateTime.Now.ToString("HH:mm");
         }
 
         //Большие кнопки
@@ -89,6 +88,7 @@ namespace AutoLabel
         /// </summary>
         void RefreshMain()
         {
+            labelClock.Text = DateTime.Now.ToString("HH:mm");
             labelClock.Visible = true;
             if (Data.IsMachine)
             {
@@ -158,7 +158,6 @@ namespace AutoLabel
                 }
                 catch { }
             }).Start();
-            
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -219,26 +218,6 @@ namespace AutoLabel
             StartRefresh();
         }
 
-        private void смена1ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!смена1ToolStripMenuItem.Checked) ChangeShift(Shift.Names[0]);
-        }
-
-        private void смена2ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!смена2ToolStripMenuItem.Checked) ChangeShift(Shift.Names[1]);
-        }
-
-        private void смена3ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!смена3ToolStripMenuItem.Checked) ChangeShift(Shift.Names[2]);
-        }
-
-        private void смена4ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!смена4ToolStripMenuItem.Checked) ChangeShift(Shift.Names[3]);
-        }
-
         private void правкаЖурналаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StopRefresh();
@@ -264,17 +243,6 @@ namespace AutoLabel
             }
             else
                 labelStatus.Text = "";
-            /*if (load)
-            {
-                labelMessage.Text = Net.LoadMessage();
-                load = false;
-            }
-            labelMessage.Location = new Point(labelMessage.Location.X - 2, labelMessage.Location.Y);
-            if (labelMessage.Location.X < -labelMessage.Size.Width)
-            {
-                labelMessage.Location = new Point(Size.Width, labelMessage.Location.Y);
-                load = true;
-            }*/
         }
 
         void EditList(string name, string file)
@@ -283,6 +251,26 @@ namespace AutoLabel
             FormListEdit form = new FormListEdit(name, file);
             form.ShowDialog();
             StartRefresh();
+        }
+        #region Скучная фигня
+        private void смена1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!смена1ToolStripMenuItem.Checked) ChangeShift(Shift.Names[0]);
+        }
+
+        private void смена2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!смена2ToolStripMenuItem.Checked) ChangeShift(Shift.Names[1]);
+        }
+
+        private void смена3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!смена3ToolStripMenuItem.Checked) ChangeShift(Shift.Names[2]);
+        }
+
+        private void смена4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!смена4ToolStripMenuItem.Checked) ChangeShift(Shift.Names[3]);
         }
 
         private void списокВесовПреформыToolStripMenuItem_Click(object sender, EventArgs e)
@@ -359,7 +347,7 @@ namespace AutoLabel
         {
             EditList("Список типов антистатика колпачка", "Colorants1");
         }
-
+        #endregion
         private void справкаToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Ожидается в скором времени...\n" +
@@ -389,6 +377,11 @@ namespace AutoLabel
         {
             timerRefresh.Enabled = true;
             RefreshMain();
+        }
+
+        private void FormMain_Shown(object sender, EventArgs e)
+        {
+            timerRefresh_Tick(null, null);
         }
     }
 }

@@ -20,16 +20,6 @@ namespace AutoLabel
             lab = Data.Labels[num];
             NumMachine = num;
             Data.UsersLoad();
-        }
-
-        private void buttonquit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void FormPrint_Load(object sender, EventArgs e)
-        {
-
             labelNum.Text = lab.TPAName;
             //Заполним комбобокс пользователями
             comboBoxUser.Items.Clear();
@@ -94,6 +84,12 @@ namespace AutoLabel
             }
             DrawNum();
             TimerStart();
+        }
+
+        //Кнопка закрытия
+        private void buttonquit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         //Кнопка печати

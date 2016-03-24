@@ -116,7 +116,6 @@ namespace AutoLabel
 
         static void ListLoad(List<string> list, string filename)
         {
-            //89-158  89-97
             list.Clear();
             try
             {
@@ -135,7 +134,6 @@ namespace AutoLabel
                             s = reader.ReadString();
                             if (s != "End") list.Add(s);
                         } while (s != "End");
-                        
                     }
                 }
             }
@@ -147,6 +145,7 @@ namespace AutoLabel
         /// </summary>
         public static void Load()
         {
+            if (Loading) return;
             Loading = true;
             //Смена
             Shift.Load();

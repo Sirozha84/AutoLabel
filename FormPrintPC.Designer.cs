@@ -220,7 +220,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Печать этикетки";
-            this.Load += new System.EventHandler(this.FormPrint_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
