@@ -76,7 +76,7 @@ namespace AutoLabel
             textBoxBoxNum.Text = l.CurrentNum.ToString();
             if (l.AllowSelectCount()) numericUpDownCount.Value = 1;
             else numericUpDownCount.Value = 0;
-            textBoxDate.Text = Shift.DateToString();
+            textBoxDate.Text = Shift.Date;
             textBoxTime.Text = DateTime.Now.ToString("HH:mm");
             comboBoxShift.SelectedItem = Shift.Current;
         }

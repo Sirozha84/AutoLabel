@@ -33,7 +33,7 @@ namespace AutoLabel
         /// <summary>
         /// Файл принтера
         /// </summary>
-        static string FilePrinter;
+        const string FilePrinter = "Printer.txt";
         /// <summary>
         /// Идёт ли сейчас процесс загрузки
         /// </summary>
@@ -66,7 +66,7 @@ namespace AutoLabel
         {
             try
             {
-                StreamReader file = File.OpenText("Printer.txt");
+                StreamReader file = File.OpenText(FilePrinter);
                 printersettings = new PrinterSettings();
                 printersettings.PrinterName = file.ReadLine();
                 file.Close();

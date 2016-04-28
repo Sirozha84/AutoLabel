@@ -50,6 +50,7 @@
             this.labelVersion = new System.Windows.Forms.Label();
             this.buttonProperties = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonQuit = new System.Windows.Forms.Button();
             this.labelformname = new System.Windows.Forms.Label();
             this.labelClock = new System.Windows.Forms.Label();
             this.buttonShift = new System.Windows.Forms.Button();
@@ -99,7 +100,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelProblem = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
-            this.buttonQuit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -386,6 +386,22 @@
             this.panel2.Size = new System.Drawing.Size(1089, 100);
             this.panel2.TabIndex = 9;
             // 
+            // buttonQuit
+            // 
+            this.buttonQuit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonQuit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonQuit.ForeColor = System.Drawing.Color.White;
+            this.buttonQuit.Location = new System.Drawing.Point(1024, 12);
+            this.buttonQuit.Name = "buttonQuit";
+            this.buttonQuit.Size = new System.Drawing.Size(50, 50);
+            this.buttonQuit.TabIndex = 10;
+            this.buttonQuit.Text = "X";
+            this.buttonQuit.UseVisualStyleBackColor = false;
+            this.buttonQuit.Visible = false;
+            this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
+            // 
             // labelformname
             // 
             this.labelformname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -431,7 +447,7 @@
             // 
             // timerRefresh
             // 
-            this.timerRefresh.Interval = 10000;
+            this.timerRefresh.Interval = 2000;
             this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
             // 
             // menuStrip1
@@ -812,22 +828,6 @@
             this.labelStatus.Size = new System.Drawing.Size(16, 13);
             this.labelStatus.TabIndex = 12;
             this.labelStatus.Text = "...";
-            // 
-            // buttonQuit
-            // 
-            this.buttonQuit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonQuit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonQuit.ForeColor = System.Drawing.Color.White;
-            this.buttonQuit.Location = new System.Drawing.Point(1024, 12);
-            this.buttonQuit.Name = "buttonQuit";
-            this.buttonQuit.Size = new System.Drawing.Size(50, 50);
-            this.buttonQuit.TabIndex = 10;
-            this.buttonQuit.Text = "X";
-            this.buttonQuit.UseVisualStyleBackColor = false;
-            this.buttonQuit.Visible = false;
-            this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
             // 
             // FormMain
             // 

@@ -1,19 +1,33 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace AutoLabel
 {
     static class Program
     {
-        public const string Version = "2.0.0 Бета 2 (24.03.2016)";
+        public const string Version = "2.0.0 Бета 4 (28.04.2016)";
+        /// <summary>
+        /// Версия для проверки совместимости с сервером
+        /// </summary>
         public const string VersionForComp = "2.0.0";
-        //public static string Patch = Environment.CurrentDirectory + "\\";
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
         static void Main(string[] param)
         {
+            //Не позволяем запускать приложение повторно
+            //Возможно неуловимая ошибка из-за этого и появляется
+            int count = 0;
+            foreach (Process pr in Process.GetProcesses())
+                if (pr.ProcessName == "AutoLabel") count++;
+            if (count > 1)
+            {
+                MessageBox.Show("Приложение уже запущено");
+                return;
+            }
+            //Думаем в каком режиме запускаемся
             if (param.Length > 0) Data.IsMachine = true;
             Net.Init();
             if (Net.Test())
