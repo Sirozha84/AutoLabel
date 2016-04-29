@@ -132,6 +132,7 @@ namespace AutoLabel
         private void comboBoxCount_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void textBoxFirstBox_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
+        private void comboBoxMaterial_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxWeight_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void textBoxNumber_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxLimit_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
@@ -164,5 +165,6 @@ namespace AutoLabel
         {
             Close();
         }
+
     }
 }

@@ -41,6 +41,7 @@
             this.buttonCountDec = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.buttonCountMax = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelNum
@@ -192,6 +193,18 @@
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
+            // buttonCountMax
+            // 
+            this.buttonCountMax.Enabled = false;
+            this.buttonCountMax.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonCountMax.Location = new System.Drawing.Point(245, 101);
+            this.buttonCountMax.Name = "buttonCountMax";
+            this.buttonCountMax.Size = new System.Drawing.Size(20, 20);
+            this.buttonCountMax.TabIndex = 17;
+            this.buttonCountMax.Text = ">|";
+            this.buttonCountMax.UseVisualStyleBackColor = false;
+            this.buttonCountMax.Click += new System.EventHandler(this.buttonCountMax_Click);
+            // 
             // FormPrintPC
             // 
             this.AcceptButton = this.buttonPrint;
@@ -199,6 +212,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonClose;
             this.ClientSize = new System.Drawing.Size(339, 176);
+            this.Controls.Add(this.buttonCountMax);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.buttonCountInc);
@@ -239,5 +253,6 @@
         private System.Windows.Forms.Button buttonCountDec;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Button buttonCountMax;
     }
 }

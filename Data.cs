@@ -15,10 +15,6 @@ namespace AutoLabel
         /// </summary>
         public const int TPACount = 8;
         /// <summary>
-        /// Максимальное количество этикеток за раз
-        /// </summary>
-        public const int MaxLabels = 9;
-        /// <summary>
         /// Максимальное количество преформ в малом коробе
         /// </summary>
         public const int PreformsInLittleBox = 1920;
@@ -76,7 +72,17 @@ namespace AutoLabel
                 //Применяем настройки принтера по умолчанию
                 printersettings = null;
             }
-            
+
+        }
+
+        /// <summary>
+        /// Максимальное количество этикеток за раз
+        /// </summary>
+        public static int MaxLabels(int tpaNum)
+        {
+            if (tpaNum == 6) return 25; //Ограничение С1
+            if (tpaNum == 7) return 24; //Ограничение С2
+            return 9;
         }
 
         /// <summary>

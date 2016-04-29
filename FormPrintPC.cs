@@ -89,7 +89,8 @@ namespace AutoLabel
             {
                 textBoxCount.Text = count.ToString();
                 buttonCountDec.Enabled = count > 1;
-                buttonCountInc.Enabled = count < Data.MaxLabels;
+                buttonCountInc.Enabled = count < Data.MaxLabels(NumMachine);
+                buttonCountMax.Enabled = count < Data.MaxLabels(NumMachine);
             }
         }
 
@@ -122,11 +123,18 @@ namespace AutoLabel
         //Кнопка ">"
         private void buttonCountInc_Click(object sender, EventArgs e)
         {
-            if (count < Data.MaxLabels)
+            if (count < Data.MaxLabels(NumMachine))
             {
                 count++;
                 DrawNum();
             }
+        }
+
+        //Кнопка ">|"
+        private void buttonCountMax_Click(object sender, EventArgs e)
+        {
+            count = Data.MaxLabels(NumMachine);
+            DrawNum();
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -151,7 +159,7 @@ namespace AutoLabel
             try { count = Convert.ToInt32(textBoxCount.Text); }
             catch { count = 1; }
             if (count < 1) count = 1;
-            if (count > Data.MaxLabels) count = Data.MaxLabels;
+            if (count > Data.MaxLabels(NumMachine)) count = Data.MaxLabels(NumMachine);
             if (textBoxCount.Text != "")
                 DrawNum();
         }

@@ -18,7 +18,7 @@ namespace AutoLabel
             //Заполнение комбобоксов списками
             Data.Users.ForEach(u => comboBoxUser.Items.Add(u.Name));
             comboBoxUser.SelectedItem = null;
-            numericUpDownCount.Maximum = Data.MaxLabels;
+            numericUpDownCount.Maximum = Data.MaxLabels(comboBoxTPA.SelectedIndex);
             foreach (Label l in Data.Labels)
                 comboBoxTPA.Items.Add(l.TPAName);
             textBoxNumber.Text = "";
@@ -111,6 +111,7 @@ namespace AutoLabel
             comboBoxLimit.Enabled = (TPAType == 0);
             ListFill();
             FillFromTPA();
+            numericUpDownCount.Maximum = Data.MaxLabels(comboBoxTPA.SelectedIndex);
         }
 
         //Кнопка печати

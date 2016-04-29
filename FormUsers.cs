@@ -38,7 +38,7 @@ namespace AutoLabel
         //Кнопка нового пользователя
         private void buttonNew_Click(object sender, EventArgs e)
         {
-            Data.AddNewUser("0");
+            Data.AddNewUser("1");
             DrawList();
         }
 

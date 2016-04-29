@@ -51,6 +51,8 @@
             this.buttonCountDec = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.buttonCountMax = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -58,6 +60,7 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonquit
@@ -83,7 +86,7 @@
             this.labelNum.ForeColor = System.Drawing.Color.White;
             this.labelNum.Location = new System.Drawing.Point(12, 145);
             this.labelNum.Name = "labelNum";
-            this.labelNum.Size = new System.Drawing.Size(934, 112);
+            this.labelNum.Size = new System.Drawing.Size(960, 112);
             this.labelNum.TabIndex = 2;
             this.labelNum.Text = "ТПА: ";
             this.labelNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,7 +98,7 @@
             this.LabelPacker.ForeColor = System.Drawing.Color.White;
             this.LabelPacker.Location = new System.Drawing.Point(3, 0);
             this.LabelPacker.Name = "LabelPacker";
-            this.LabelPacker.Size = new System.Drawing.Size(407, 69);
+            this.LabelPacker.Size = new System.Drawing.Size(418, 69);
             this.LabelPacker.TabIndex = 3;
             this.LabelPacker.Text = "Упаковщик: ";
             this.LabelPacker.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -106,7 +109,7 @@
             this.panel1.Controls.Add(this.buttonMax);
             this.panel1.Controls.Add(this.buttonDec);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(175, 3);
+            this.panel1.Location = new System.Drawing.Point(188, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(582, 94);
             this.panel1.TabIndex = 4;
@@ -181,7 +184,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(934, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(960, 100);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // buttonPrint
@@ -190,7 +193,7 @@
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPrint.ForeColor = System.Drawing.Color.White;
-            this.buttonPrint.Location = new System.Drawing.Point(320, 3);
+            this.buttonPrint.Location = new System.Drawing.Point(333, 3);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(294, 137);
             this.buttonPrint.TabIndex = 6;
@@ -212,7 +215,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(934, 143);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(960, 143);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // labelformname
@@ -238,7 +241,7 @@
             this.panel2.Controls.Add(this.buttonquit);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(961, 100);
+            this.panel2.Size = new System.Drawing.Size(987, 100);
             this.panel2.TabIndex = 8;
             // 
             // tableLayoutPanel3
@@ -255,7 +258,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(934, 69);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(960, 69);
             this.tableLayoutPanel3.TabIndex = 9;
             // 
             // comboBoxUser
@@ -267,9 +270,9 @@
             this.comboBoxUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxUser.ForeColor = System.Drawing.Color.White;
             this.comboBoxUser.FormattingEnabled = true;
-            this.comboBoxUser.Location = new System.Drawing.Point(416, 3);
+            this.comboBoxUser.Location = new System.Drawing.Point(427, 3);
             this.comboBoxUser.Name = "comboBoxUser";
-            this.comboBoxUser.Size = new System.Drawing.Size(407, 63);
+            this.comboBoxUser.Size = new System.Drawing.Size(418, 63);
             this.comboBoxUser.TabIndex = 15;
             this.comboBoxUser.SelectedIndexChanged += new System.EventHandler(this.comboBoxUser_SelectedIndexChanged);
             // 
@@ -282,11 +285,12 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 589F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.panel3, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.panel4, 2, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(12, 480);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(934, 97);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(960, 97);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
             // panel3
@@ -295,7 +299,7 @@
             this.panel3.Controls.Add(this.buttonCountInc);
             this.panel3.Controls.Add(this.buttonCountDec);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(175, 3);
+            this.panel3.Location = new System.Drawing.Point(188, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(582, 91);
             this.panel3.TabIndex = 4;
@@ -321,7 +325,7 @@
             this.buttonCountInc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCountInc.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCountInc.ForeColor = System.Drawing.Color.White;
-            this.buttonCountInc.Location = new System.Drawing.Point(502, 11);
+            this.buttonCountInc.Location = new System.Drawing.Point(499, 11);
             this.buttonCountInc.Name = "buttonCountInc";
             this.buttonCountInc.Size = new System.Drawing.Size(80, 80);
             this.buttonCountInc.TabIndex = 6;
@@ -365,12 +369,35 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // buttonCountMax
+            // 
+            this.buttonCountMax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonCountMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCountMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCountMax.ForeColor = System.Drawing.Color.White;
+            this.buttonCountMax.Location = new System.Drawing.Point(3, 11);
+            this.buttonCountMax.Name = "buttonCountMax";
+            this.buttonCountMax.Size = new System.Drawing.Size(80, 80);
+            this.buttonCountMax.TabIndex = 7;
+            this.buttonCountMax.Text = ">|";
+            this.buttonCountMax.UseVisualStyleBackColor = false;
+            this.buttonCountMax.Visible = false;
+            this.buttonCountMax.Click += new System.EventHandler(this.buttonCountMax_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.buttonCountMax);
+            this.panel4.Location = new System.Drawing.Point(777, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(180, 91);
+            this.panel4.TabIndex = 5;
+            // 
             // FormPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(958, 775);
+            this.ClientSize = new System.Drawing.Size(984, 775);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.labelNum);
@@ -394,6 +421,7 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -422,5 +450,7 @@
         private System.Windows.Forms.Button buttonCountDec;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button buttonCountMax;
     }
 }

@@ -29,8 +29,8 @@ namespace AutoLabel
             comboBoxUser.Items.Clear();
             foreach (User u in Data.Users) comboBoxUser.Items.Add(u.Name);
             box = lab.CurrentNum;
-                FormKey key = new FormKey();
-                key.ShowDialog();
+            FormKey key = new FormKey();
+            key.ShowDialog();
             if (key.Code == "")
             {
                 //Маленько кривинько, но стираем сформированный список и заполняем его только гостями
@@ -148,7 +148,8 @@ namespace AutoLabel
             {
                 textBoxCount.Text = count.ToString();
                 buttonCountDec.Visible = count > 1;
-                buttonCountInc.Visible = count < Data.MaxLabels;
+                buttonCountInc.Visible = count < Data.MaxLabels(NumMachine);
+                buttonCountMax.Visible = count < Data.MaxLabels(NumMachine);
             }
         }
 
@@ -200,7 +201,7 @@ namespace AutoLabel
         //Кнопка ">"
         private void buttonCountInc_Click(object sender, EventArgs e)
         {
-            if (count < Data.MaxLabels)
+            if (count < Data.MaxLabels(NumMachine))
             {
                 count++;
                 DrawNum();
@@ -208,8 +209,16 @@ namespace AutoLabel
             TimerStart();
         }
 
-        //Таймер для закрывания окна
-        private void timer1_Tick(object sender, EventArgs e)
+        //Кнопка ">|"
+        private void buttonCountMax_Click(object sender, EventArgs e)
+        {
+            count = Data.MaxLabels(NumMachine);
+            DrawNum();
+            TimerStart();
+        }
+
+    //Таймер для закрывания окна
+    private void timer1_Tick(object sender, EventArgs e)
         {
             timer--;
             if (timer > 10)
