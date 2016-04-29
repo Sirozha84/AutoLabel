@@ -255,7 +255,7 @@ namespace AutoLabel
             e.Graphics.DrawLine(Slim, 380, 70, 380, bot);
             e.Graphics.DrawLine(Slim, 520, 70, 520, bot);
             e.Graphics.DrawLine(Slim, 650, 70, 650, bot);
-            e.HasMorePages = line < log.Count();
+            //e.HasMorePages = line < log.Count();
         }
 
         /// <summary>

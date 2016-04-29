@@ -405,9 +405,25 @@ namespace AutoLabel
                     but.BackColor = Color.FromArgb(255, 255, 255);
                     but.ForeColor = Color.FromArgb(192, 192, 192);
                     break;
+                case "Бирюзовый":
+                    but.BackColor = Color.FromArgb(0, 128, 128);
+                    but.ForeColor = Color.FromArgb(0, 255, 255);
+                    break;
+                case "Бордовый":
+                    but.BackColor = Color.FromArgb(128, 32, 32);
+                    but.ForeColor = Color.FromArgb(255, 64, 64);
+                    break;
+                case "Голубой":
+                    but.BackColor = Color.FromArgb(80, 158, 255);
+                    but.ForeColor = Color.FromArgb(150, 200, 255);
+                    break;
                 case "Оранжевый":
                     but.BackColor = Color.FromArgb(255, 128, 0);
                     but.ForeColor = Color.FromArgb(255, 178, 0);
+                    break;
+                case "Жёлтый":
+                    but.BackColor = Color.FromArgb(255, 255, 0);
+                    but.ForeColor = Color.FromArgb(128, 128, 0);
                     break;
                 case "Зелёный":
                     but.BackColor = Color.FromArgb(0, 128, 0);
@@ -417,13 +433,13 @@ namespace AutoLabel
                     but.BackColor = Color.FromArgb(192, 128, 0);
                     but.ForeColor = Color.FromArgb(255, 178, 0);
                     break;
+                case "Рубиновый":
+                    but.BackColor = Color.FromArgb(92, 0, 0);
+                    but.ForeColor = Color.FromArgb(255, 0, 0);
+                    break;
                 case "Синий":
                     but.BackColor = Color.FromArgb(0, 0, 128);
                     but.ForeColor = Color.FromArgb(0, 128, 255);
-                    break;
-                case "Бирюзовый":
-                    but.BackColor = Color.FromArgb(0, 128, 128);
-                    but.ForeColor = Color.FromArgb(0, 255, 255);
                     break;
                 case "Красный":
                     but.BackColor = Color.FromArgb(128, 0, 0);
@@ -442,7 +458,8 @@ namespace AutoLabel
                     but.ForeColor = Color.FromArgb(64, 64, 64);
                     break;
                 default:
-                    but.Visible = false;
+                    but.BackColor = Color.FromArgb(0, 0, 0);
+                    but.ForeColor = Color.FromArgb(255, 255, 255);
                     break;
             }
         }

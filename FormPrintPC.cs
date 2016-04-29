@@ -11,6 +11,7 @@ namespace AutoLabel
         int box;                //Номер короба
         int count = 1;          //Количество коробов
         bool CountSelect = false;   //Выбираем ли мы количество коробов?
+        string User = "";
 
         public FormPrintPC(int num)
         {
@@ -19,10 +20,19 @@ namespace AutoLabel
             NumMachine = num;
             Data.UsersLoad();
             labelNum.Text = lab.TPAName;
-            //Заполним комбобокс пользователями
-            comboBoxUser.Items.Clear();
-            foreach (User u in Data.Users) comboBoxUser.Items.Add(u.Name);
-            box = lab.CurrentNum;
+            if (num < 6)
+            {
+                //Заполним комбобокс пользователями
+                comboBoxUser.Items.Clear();
+                foreach (User u in Data.Users) comboBoxUser.Items.Add(u.Name);
+                box = lab.CurrentNum;
+            }
+            else
+            {
+                //Или же вообще делаем его не активным, если это колпак
+                comboBoxUser.Enabled = false;
+                buttonPrint.Enabled = true;
+            }
             //Далее надо выяснить мелкие это коробки или крупные, и в зависимости от этого вывести второй нумератор
             try
             {
@@ -47,7 +57,7 @@ namespace AutoLabel
         {
             int c = 0;
             if (CountSelect) c = count;
-            lab.Print(box, comboBoxUser.SelectedItem.ToString(), c);
+            lab.Print(box, User, c);
             Close();
         }
 
@@ -108,6 +118,7 @@ namespace AutoLabel
             if (Data.IsMachine & !Data.AccessTest(comboBoxUser.SelectedItem.ToString(), NumMachine))
                 AccessDenied();
             buttonPrint.Enabled = true;
+            User = comboBoxUser.SelectedItem.ToString();
         }
 
         //Кнопка "<"
@@ -137,6 +148,7 @@ namespace AutoLabel
             DrawNum();
         }
 
+        //Кнопка "Закрыть"
         private void buttonClose_Click(object sender, EventArgs e)
         {
             Close();
