@@ -474,5 +474,18 @@ namespace AutoLabel
             FormAsk form = new FormAsk(question);
             return (form.ShowDialog() == DialogResult.Yes);
         }
+
+        /// <summary>
+        /// Соответствие строк
+        /// </summary>
+        /// <param name="Text"></param>
+        /// <returns></returns>
+        public static string Conformity(string Text)
+        {
+            if (Text == "2,35±0,1") return "КВП-1-28.1881/2";
+            if (Text == "2,5±0,1") return "КВП-1-28.1881/1";
+            if (Text == "3,15±0,1") return "КВП-1-28";
+            return "";
+        }
     }
 }

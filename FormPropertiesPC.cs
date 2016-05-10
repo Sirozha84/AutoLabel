@@ -76,7 +76,7 @@ namespace AutoLabel
             if (l.Limit != "") comboBoxLimit.SelectedItem = l.Limit; else comboBoxLimit.SelectedItem = null;
             textBoxOther.Text = l.Other;
             comboBoxWeight.Enabled = true;
-            comboBoxType.Enabled = true;
+            comboBoxType.Enabled = (l.TPAType == 0);
             comboBoxMaterial.Enabled = true;
             comboBoxColor.Enabled = true;
             comboBoxCount.Enabled = true;
@@ -133,13 +133,17 @@ namespace AutoLabel
         private void textBoxFirstBox_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxMaterial_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
-        private void comboBoxWeight_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void textBoxNumber_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxLimit_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxAntiType_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxAntiCount_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxColor_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void textBoxOther_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
+        private void comboBoxWeight_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MakeSaveEnable();
+            comboBoxType.SelectedItem = Data.Conformity(comboBoxWeight.Text);
+        }
 
         /// <summary>
         /// Очистка полей

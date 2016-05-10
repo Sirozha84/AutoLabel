@@ -79,6 +79,7 @@ namespace AutoLabel
             textBoxOther.Text = l.Other;
             comboBoxWeight.Visible = true;
             comboBoxType.Visible = true;
+            comboBoxType.Enabled = (l.TPAType == 0);
             comboBoxMaterial.Visible = true;
             comboBoxColor.Visible = true;
             comboBoxCount.Visible = true;
@@ -135,13 +136,17 @@ namespace AutoLabel
         private void textBoxFirstBox_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxMaterial_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
-        private void comboBoxWeight_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void textBoxNumber_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxLimit_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxAntiType_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxAntiCount_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxColor_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void textBoxOther_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
+        private void comboBoxWeight_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MakeSaveEnable();
+            comboBoxType.SelectedItem = Data.Conformity(comboBoxWeight.Text);
+        }
 
         //Кнопка выбора принтера
         private void buttonPrinterSelect_Click(object sender, EventArgs e)
