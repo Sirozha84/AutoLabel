@@ -32,8 +32,9 @@ namespace AutoLabel
         static Font Smalll = new Font("Arial", 12, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font Small = new Font("Arial", 14, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font SmallBold = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
-        static Font Medium = new Font("Arial", 22, FontStyle.Regular, GraphicsUnit.Pixel);
-        static Font MediumBold = new Font("Arial", 22, FontStyle.Bold, GraphicsUnit.Pixel);
+        static Font F20Bold = new Font("Arial", 20, FontStyle.Bold, GraphicsUnit.Pixel);
+        static Font F22 = new Font("Arial", 22, FontStyle.Regular, GraphicsUnit.Pixel);
+        static Font F22Bold = new Font("Arial", 22, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font Normal = new Font("Arial", 30, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font Big = new Font("Arial", 37, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font Biggg = new Font("Arial", 70, FontStyle.Bold, GraphicsUnit.Pixel);
@@ -248,32 +249,32 @@ namespace AutoLabel
             g.DrawString("тел./факс: (391)218-02-01",
                 Smalll, Brushes.Black, new Rectangle(X, Y + 74, Width, 20), InRect);
             g.DrawString("КОЛПАЧОК ВИНТОВОЙ Ø 28",
-                Medium, Brushes.Black, new Rectangle(X, Y + 90, Width, 25), InRect);
+                F22, Brushes.Black, new Rectangle(X, Y + 90, Width, 25), InRect);
             g.DrawString("ГОСТ 32626-2014",
-                Medium, Brushes.Black, new Rectangle(X, Y + 120, Width, 25), InRect);
+                F22, Brushes.Black, new Rectangle(X, Y + 120, Width, 25), InRect);
             //Поля
             g.DrawString("Масса, гр.", Small, Brushes.Black, new Rectangle(X + 10, Y + 160, 140, 20), InRect);
-            g.DrawString(Weight, MediumBold, Brushes.Black, new Rectangle(X + 10, Y + 180, 140, 30), InRect);
+            g.DrawString(Weight, F22Bold, Brushes.Black, new Rectangle(X + 10, Y + 180, 140, 30), InRect);
             g.DrawString("Количество", Small, Brushes.Black, new Rectangle(X + 143, Y + 160, 140, 20), InRect);
-            g.DrawString(Count, MediumBold, Brushes.Black, new Rectangle(X + 143, Y + 180, 140, 30), InRect);
+            g.DrawString(Count, F22Bold, Brushes.Black, new Rectangle(X + 143, Y + 180, 140, 30), InRect);
             g.DrawString("Дата", Small, Brushes.Black, new Rectangle(X + 275, Y + 160, 137, 20), InRect);
-            g.DrawString(Date, MediumBold, Brushes.Black, new Rectangle(X + 275, Y + 180, 137, 30), InRect);
+            g.DrawString(Date, F22Bold, Brushes.Black, new Rectangle(X + 275, Y + 180, 137, 30), InRect);
             g.DrawString("Смена", Small, Brushes.Black, new Rectangle(X + 412, Y + 160, 135, 20), InRect);
-            g.DrawString(Shift, MediumBold, Brushes.Black, new Rectangle(X + 412, Y + 180, 135, 30), InRect);
+            g.DrawString(Shift, F22Bold, Brushes.Black, new Rectangle(X + 412, Y + 180, 135, 30), InRect);
             g.DrawString("Цвет", Small, Brushes.Black, new Rectangle(X + 10, Y + 215, 140, 20), InRect);
-            g.DrawString(PColor, MediumBold, Brushes.Black, new Rectangle(X + 10, Y + 235, 140, 30), InRect);
+            g.DrawString(PColor, F20Bold, Brushes.Black, new Rectangle(X + 0, Y + 235, 155, 30), InRect); //140
             g.DrawString("Короб №", Small, Brushes.Black, new Rectangle(X + 143, Y + 215, 140, 20), InRect);
-            g.DrawString(Num.ToString(), MediumBold, Brushes.Black, new Rectangle(X + 143, Y + 235, 140, 30), InRect);
+            g.DrawString(Num.ToString(), F22Bold, Brushes.Black, new Rectangle(X + 143, Y + 235, 140, 30), InRect);
             g.DrawString("Логотип", Small, Brushes.Black, new Rectangle(X + 275, Y + 215, 137, 20), InRect);
             g.DrawString("№ Линии", Small, Brushes.Black, new Rectangle(X + 412, Y + 215, 135, 20), InRect);
-            g.DrawString(TPAName, MediumBold, Brushes.Black, new Rectangle(X + 412, Y + 235, 135, 30), InRect);
+            g.DrawString(TPAName, F22Bold, Brushes.Black, new Rectangle(X + 412, Y + 235, 135, 30), InRect);
             g.DrawString("Код", Small, Brushes.Black, new Rectangle(X + 10, Y + 270, 275, 20), InRect);
             string dobavka = ""; if (Antistatic != "") dobavka += "." + Antistatic;
             g.DrawString(Type + "." + Material + "." + Colorant + dobavka,
-                MediumBold, Brushes.Black, new Rectangle(X + 10, Y + 290, 275, 30), InRect);
+                F22Bold, Brushes.Black, new Rectangle(X + 10, Y + 290, 275, 30), InRect);
             g.DrawString(Other, Small, Brushes.Black, new Rectangle(X + 10, Y + 310, 275, 30), InRect);
             g.DrawString("Партия", Small, Brushes.Black, new Rectangle(X + 412, Y + 270, 135, 20), InRect);
-            g.DrawString(PartNum, MediumBold, Brushes.Black, new Rectangle(X + 412, Y + 290, 135, 30), InRect);
+            g.DrawString(PartNum, F22Bold, Brushes.Black, new Rectangle(X + 412, Y + 290, 135, 30), InRect);
             //Графика
             g.DrawImage(HDPE, X + 285, Y + 285, 40, 40);
             g.DrawImage(Eda, X + 325, Y + 285, 40, 40);

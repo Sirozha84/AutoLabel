@@ -20,12 +20,12 @@ namespace AutoLabel
             NumMachine = num;
             Data.UsersLoad();
             labelNum.Text = lab.TPAName;
+            box = lab.CurrentNum;
             if (num < 6)
             {
                 //Заполним комбобокс пользователями
                 comboBoxUser.Items.Clear();
                 foreach (User u in Data.Users) comboBoxUser.Items.Add(u.Name);
-                box = lab.CurrentNum;
             }
             else
             {
