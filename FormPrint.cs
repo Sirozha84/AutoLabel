@@ -10,7 +10,7 @@ namespace AutoLabel
         Label lab;              //Ссылка на ТПА
         int box;                //Номер короба
         int count = 1;          //Количество коробов
-        bool CustomNum = true;  //Можно ли менять номер вручную?
+        bool ThisAdmin = true;  //Админ ли это?
         bool CountSelect = false;   //Выбираем ли мы количество коробов?
         int timer;              //Таймер для автозакрывания окна
 
@@ -45,7 +45,7 @@ namespace AutoLabel
                         }
                         else
                             comboBoxUser.Items.Add(u.Name);
-                CustomNum = false;
+                ThisAdmin = false;
                 //Ну а если список гостей пуст, значит запрещаем печать на этой ТПА
                 if (comboBoxUser.Items.Count == 0) AccessDenied();
                 //А еееесли в списке только один чувак, его сразу и выберем
@@ -72,7 +72,7 @@ namespace AutoLabel
                     if (user.Rule == 1)
                     {
                         comboBoxUser.Enabled = false;
-                        CustomNum = false;
+                        ThisAdmin = false;
                     }
                     buttonPrint.Visible = true;
                 }
@@ -88,7 +88,12 @@ namespace AutoLabel
             }
             DrawNum();
             TimerStart();
-
+            //Делаем кнопки <,> видимыми, если это админ
+            /*if (ThisAdmin)
+            {
+                buttonDec.Visible = true;
+                buttonMax.Visible = true;
+            }*/
         }
 
         //Кнопка закрытия
@@ -135,14 +140,14 @@ namespace AutoLabel
             if (box < lab.CurrentNum)
             {
                 textBoxNum.ForeColor = Color.Tomato;
-                buttonMax.Visible = true;
+                buttonMax.Visible = true & ThisAdmin;
             }
             else
             {
                 textBoxNum.ForeColor = Color.White;
                 buttonMax.Visible = false;
             }
-            buttonDec.Visible = box > 1;
+            buttonDec.Visible = box > 1 & ThisAdmin;
             //Количество коробов
             if (CountSelect)
             {
@@ -172,7 +177,7 @@ namespace AutoLabel
 
         private void textBoxNum_Click(object sender, EventArgs e)
         {
-            if (!CustomNum) return;
+            if (!ThisAdmin) return;
             //Нам разрешено поменять номер короба вручную
             timer1.Enabled = false;
             FormKeyboardNums key = new FormKeyboardNums("Введите номер короба");

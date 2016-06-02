@@ -50,9 +50,9 @@
             this.buttonCountInc = new System.Windows.Forms.Button();
             this.buttonCountDec = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.buttonCountMax = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonCountMax = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -141,6 +141,7 @@
             this.buttonMax.TabIndex = 6;
             this.buttonMax.Text = ">";
             this.buttonMax.UseVisualStyleBackColor = false;
+            this.buttonMax.Visible = false;
             this.buttonMax.Click += new System.EventHandler(this.buttonMax_Click);
             // 
             // buttonDec
@@ -155,6 +156,7 @@
             this.buttonDec.TabIndex = 5;
             this.buttonDec.Text = "<";
             this.buttonDec.UseVisualStyleBackColor = false;
+            this.buttonDec.Visible = false;
             this.buttonDec.Click += new System.EventHandler(this.buttonDec_Click);
             // 
             // label1
@@ -364,10 +366,13 @@
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label2.Visible = false;
             // 
-            // timer1
+            // panel4
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.panel4.Controls.Add(this.buttonCountMax);
+            this.panel4.Location = new System.Drawing.Point(777, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(180, 91);
+            this.panel4.TabIndex = 5;
             // 
             // buttonCountMax
             // 
@@ -384,13 +389,10 @@
             this.buttonCountMax.Visible = false;
             this.buttonCountMax.Click += new System.EventHandler(this.buttonCountMax_Click);
             // 
-            // panel4
+            // timer1
             // 
-            this.panel4.Controls.Add(this.buttonCountMax);
-            this.panel4.Location = new System.Drawing.Point(777, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(180, 91);
-            this.panel4.TabIndex = 5;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FormPrint
             // 

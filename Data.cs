@@ -391,69 +391,63 @@ namespace AutoLabel
         public static void SetColor(Button but, int tpa)
         {
             but.Visible = Labels[tpa].PartNum != "";
-            switch (Labels[tpa].PColor)
+            string FirstWord = Labels[tpa].PColor.Split(' ')[0].ToLower();
+            switch (FirstWord)
             {
-                case "Бесцветный":
+                case "бесцветный":
                     but.BackColor = Color.FromArgb(64, 64, 64);
                     but.ForeColor = Color.FromArgb(192, 192, 192);
                     break;
-                case "Бесцветный (М)":
-                    but.BackColor = Color.FromArgb(128, 128, 128);
-                    but.ForeColor = Color.FromArgb(192, 192, 192);
-                    break;
-                case "Белый":
+                case "белый":
                     but.BackColor = Color.FromArgb(255, 255, 255);
                     but.ForeColor = Color.FromArgb(192, 192, 192);
                     break;
-                case "Бирюзовый":
+                case "бирюзовый":
                     but.BackColor = Color.FromArgb(0, 128, 128);
                     but.ForeColor = Color.FromArgb(0, 255, 255);
                     break;
-                case "Бордовый":
+                case "бордовый":
                     but.BackColor = Color.FromArgb(128, 32, 32);
                     but.ForeColor = Color.FromArgb(255, 64, 64);
                     break;
-                case "Голубой":
+                case "голубой":
                     but.BackColor = Color.FromArgb(80, 158, 255);
                     but.ForeColor = Color.FromArgb(150, 200, 255);
                     break;
-                case "Оранжевый":
+                case "оранжевый":
                     but.BackColor = Color.FromArgb(255, 128, 0);
                     but.ForeColor = Color.FromArgb(255, 178, 0);
                     break;
-                case "Жёлтый":
+                case "жёлтый":
+                case "желтый":
+                case "золотой":
                     but.BackColor = Color.FromArgb(255, 255, 0);
                     but.ForeColor = Color.FromArgb(128, 128, 0);
                     break;
-                case "Зелёный":
+                case "зелёный":
+                case "зеленый":
                     but.BackColor = Color.FromArgb(0, 128, 0);
                     but.ForeColor = Color.FromArgb(0, 255, 0);
                     break;
-                case "Золотой":
-                    but.BackColor = Color.FromArgb(192, 128, 0);
-                    but.ForeColor = Color.FromArgb(255, 178, 0);
-                    break;
-                case "Рубиновый":
-                    but.BackColor = Color.FromArgb(92, 0, 0);
-                    but.ForeColor = Color.FromArgb(255, 0, 0);
-                    break;
-                case "Синий":
+                case "синий":
                     but.BackColor = Color.FromArgb(0, 0, 128);
                     but.ForeColor = Color.FromArgb(0, 128, 255);
                     break;
-                case "Красный":
+                case "рубиновый":
+                case "красный":
                     but.BackColor = Color.FromArgb(128, 0, 0);
                     but.ForeColor = Color.FromArgb(255, 64, 64);
                     break;
-                case "Коричневый":
+                case "коричневый":
                     but.BackColor = Color.FromArgb(64, 32, 0);
                     but.ForeColor = Color.FromArgb(128, 64, 0);
                     break;
-                case "Фиолетовый":
+                case "фиолетовый":
                     but.BackColor = Color.FromArgb(128, 0, 192);
                     but.ForeColor = Color.FromArgb(192, 0, 255);
                     break;
-                case "Чёрный":
+                case "чёрный":
+                case "черный":
                     but.BackColor = Color.FromArgb(0, 0, 0);
                     but.ForeColor = Color.FromArgb(64, 64, 64);
                     break;
