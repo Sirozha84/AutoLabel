@@ -77,6 +77,8 @@ namespace AutoLabel
             if (l.Colorant != "") comboBoxColorants.SelectedItem = l.Colorant; else comboBoxColorants.SelectedItem = null;
             if (l.Limit != "") comboBoxLimit.SelectedItem = l.Limit; else comboBoxLimit.SelectedItem = null;
             textBoxOther.Text = l.Other;
+            textBoxBox.Text = "1";
+            //Видимость полей
             comboBoxWeight.Visible = true;
             comboBoxType.Visible = true;
             comboBoxType.Enabled = (l.TPAType == 0);
@@ -88,6 +90,8 @@ namespace AutoLabel
             comboBoxAntistatic.Visible = true;
             comboBoxColorants.Visible = true;
             textBoxOther.Visible = true;
+            textBoxBox.Visible = true;
+            //Видимость подписей полей
             label1.Visible = true;
             label2.Visible = true;
             label3.Visible = true;
@@ -98,6 +102,7 @@ namespace AutoLabel
             label9.Visible = true;
             label10.Visible = (l.TPAType == 0);
             label11.Visible = true;
+            label12.Visible = true;
             buttonsave.Visible = false;
             buttonClear.Visible = true;
         }
@@ -106,8 +111,6 @@ namespace AutoLabel
         private void buttonsave_Click(object sender, EventArgs e)
         {
             Label l = Data.Labels[comboBoxTPA.SelectedIndex];
-            //Сброс номера
-            l.CurrentNum = 1;
             //Запоминание полей (10)
             if (comboBoxWeight.SelectedItem != null) l.Weight = comboBoxWeight.SelectedItem.ToString(); else l.Weight = "";
             if (comboBoxType.SelectedItem != null) l.Type = comboBoxType.SelectedItem.ToString(); else l.Type = "";
@@ -119,6 +122,9 @@ namespace AutoLabel
             if (comboBoxColorants.SelectedItem != null) l.Colorant = comboBoxColorants.SelectedItem.ToString(); else l.Colorant = "";
             if (comboBoxLimit.SelectedItem != null) l.Limit = comboBoxLimit.SelectedItem.ToString(); else l.Limit = "";
             l.Other = textBoxOther.Text;
+            try { l.CurrentNum = Convert.ToInt32(textBoxBox.Text); }
+            catch { l.CurrentNum = 1; }
+            //Сохранение
             l.Save();
             buttonsave.Visible = false;
             Net.Log("Изменение параметров ТПА на терминале");
@@ -136,12 +142,10 @@ namespace AutoLabel
         private void textBoxFirstBox_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxMaterial_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
-        private void textBoxNumber_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxLimit_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxAntiType_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxAntiCount_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxColor_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
-        private void textBoxOther_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxWeight_SelectedIndexChanged(object sender, EventArgs e)
         {
             MakeSaveEnable();
@@ -175,7 +179,6 @@ namespace AutoLabel
         //Строка прочих дополнений
         private void textBoxOther_Click(object sender, EventArgs e)
         {
-            if (!Data.IsMachine) return;
             FormKeyboardLetter key = new FormKeyboardLetter("Введите прочие дополнения");
             if (key.ShowDialog() == DialogResult.OK)
             {
@@ -187,7 +190,6 @@ namespace AutoLabel
         //Строчка номера партии
         private void textBoxNumber_Click_1(object sender, EventArgs e)
         {
-            if (!Data.IsMachine) return;
             FormKeyboardNums key = new FormKeyboardNums("Введите номер партии");
             if (key.ShowDialog() == DialogResult.OK)
             {
@@ -221,5 +223,14 @@ namespace AutoLabel
             Program.About();
         }
 
+        private void textBoxBox_Click(object sender, EventArgs e)
+        {
+            FormKeyboardNums key = new FormKeyboardNums("Введите номер короба");
+            if (key.ShowDialog() == DialogResult.OK)
+            {
+                textBoxBox.Text = key.Str;
+                MakeSaveEnable();
+            }
+        }
     }
 }

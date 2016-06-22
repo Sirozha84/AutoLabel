@@ -26,6 +26,7 @@ namespace AutoLabel
                 buttonProperties.Visible = false;
                 panel1.Visible = false;
             }
+            labelVersion.Text += "     Сервер: " + Net.HostName;
             MenuEnable(false);
             Data.Init();
         }
@@ -372,8 +373,7 @@ namespace AutoLabel
         #endregion
         private void справкаToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Ожидается в скором времени...\n" +
-                "А пока, что непонятно - можно спросить у автора :-)", "AutoLabel");
+            using (FormHelp help = new FormHelp()) { help.ShowDialog(); }
         }
 
         private void собщениеБегущейСтрокиToolStripMenuItem_Click(object sender, EventArgs e)

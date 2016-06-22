@@ -75,6 +75,8 @@ namespace AutoLabel
             if (l.Colorant != "") comboBoxColorants.SelectedItem = l.Colorant; else comboBoxColorants.SelectedItem = null;
             if (l.Limit != "") comboBoxLimit.SelectedItem = l.Limit; else comboBoxLimit.SelectedItem = null;
             textBoxOther.Text = l.Other;
+            textBoxBox.Text = "1";
+            //Видимость полей
             comboBoxWeight.Enabled = true;
             comboBoxType.Enabled = (l.TPAType == 0);
             comboBoxMaterial.Enabled = true;
@@ -85,6 +87,8 @@ namespace AutoLabel
             comboBoxAntistatic.Enabled = true;
             comboBoxColorants.Enabled = true;
             textBoxOther.Enabled = true;
+            textBoxBox.Enabled = true;
+            //Видимость подписей полей
             label1.Enabled = true;
             label2.Enabled = true;
             label3.Enabled = true;
@@ -95,6 +99,7 @@ namespace AutoLabel
             label9.Enabled = true;
             label10.Enabled = (l.TPAType == 0);
             label11.Enabled = true;
+            label12.Enabled = true;
             buttonSave.Enabled = false;
             buttonClear.Enabled = true;
         }
@@ -103,8 +108,6 @@ namespace AutoLabel
         private void buttonSave_Click(object sender, EventArgs e)
         {
             Label l = Data.Labels[comboBoxTPA.SelectedIndex];
-            //Сброс номера
-            l.CurrentNum = 1;
             //Запоминание полей (10)
             if (comboBoxWeight.SelectedItem != null) l.Weight = comboBoxWeight.SelectedItem.ToString(); else l.Weight = "";
             if (comboBoxType.SelectedItem != null) l.Type = comboBoxType.SelectedItem.ToString(); else l.Type = "";
@@ -116,6 +119,8 @@ namespace AutoLabel
             if (comboBoxColorants.SelectedItem != null) l.Colorant = comboBoxColorants.SelectedItem.ToString(); else l.Colorant = "";
             if (comboBoxLimit.SelectedItem != null) l.Limit = comboBoxLimit.SelectedItem.ToString(); else l.Limit = "";
             l.Other = textBoxOther.Text;
+            try { l.CurrentNum = Convert.ToInt32(textBoxBox.Text); }
+            catch { l.CurrentNum = 1; }
             l.Save();
             buttonSave.Enabled = false;
             Net.Log("Изменение параметров ТПА на ПК");
@@ -139,6 +144,8 @@ namespace AutoLabel
         private void comboBoxAntiCount_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxColor_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void textBoxOther_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
+        private void textBoxBox_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
+
         private void comboBoxWeight_SelectedIndexChanged(object sender, EventArgs e)
         {
             MakeSaveEnable();
@@ -169,6 +176,5 @@ namespace AutoLabel
         {
             Close();
         }
-
     }
 }
