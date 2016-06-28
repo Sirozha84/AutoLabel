@@ -44,6 +44,11 @@ namespace AutoLabel
                 comboBoxMaterial.DataSource = Data.Materials0;
                 comboBoxAntistatic.DataSource = Data.Antistatics0;
                 comboBoxColorants.DataSource = Data.Colorants0;
+                //Временно, пока не будет констант
+                comboBoxOther.Items.Clear();
+                comboBoxOther.Items.Add("Coca-cola");
+                comboBoxOther.Items.Add("АЯН");
+                comboBoxOther.Items.Add("BaikalSea Company");
             }
             else
             {
@@ -54,6 +59,8 @@ namespace AutoLabel
                 comboBoxMaterial.DataSource = Data.Materials1;
                 comboBoxAntistatic.DataSource = Data.Antistatics1;
                 comboBoxColorants.DataSource = Data.Colorants1;
+                //Временно, пока не будет констант
+                comboBoxOther.Items.Clear();
             }
             comboBoxLimit.DataSource = Data.Limits;
             comboBoxWeight.SelectedItem = null;
@@ -74,7 +81,7 @@ namespace AutoLabel
             if (l.Antistatic != "") comboBoxAntistatic.SelectedItem = l.Antistatic; else comboBoxAntistatic.SelectedItem = null;
             if (l.Colorant != "") comboBoxColorants.SelectedItem = l.Colorant; else comboBoxColorants.SelectedItem = null;
             if (l.Limit != "") comboBoxLimit.SelectedItem = l.Limit; else comboBoxLimit.SelectedItem = null;
-            textBoxOther.Text = l.Other;
+            comboBoxOther.Text = l.Other;
             textBoxBox.Text = "1";
             //Видимость полей
             comboBoxWeight.Enabled = true;
@@ -86,7 +93,7 @@ namespace AutoLabel
             comboBoxLimit.Enabled = (l.TPAType == 0);
             comboBoxAntistatic.Enabled = true;
             comboBoxColorants.Enabled = true;
-            textBoxOther.Enabled = true;
+            comboBoxOther.Enabled = true;
             textBoxBox.Enabled = true;
             //Видимость подписей полей
             label1.Enabled = true;
@@ -118,7 +125,7 @@ namespace AutoLabel
             if (comboBoxAntistatic.SelectedItem != null) l.Antistatic = comboBoxAntistatic.SelectedItem.ToString(); else l.Antistatic = "";
             if (comboBoxColorants.SelectedItem != null) l.Colorant = comboBoxColorants.SelectedItem.ToString(); else l.Colorant = "";
             if (comboBoxLimit.SelectedItem != null) l.Limit = comboBoxLimit.SelectedItem.ToString(); else l.Limit = "";
-            l.Other = textBoxOther.Text;
+            l.Other = comboBoxOther.Text;
             try { l.CurrentNum = Convert.ToInt32(textBoxBox.Text); }
             catch { l.CurrentNum = 1; }
             l.Save();
@@ -168,7 +175,7 @@ namespace AutoLabel
             comboBoxAntistatic.SelectedItem = "";
             comboBoxColorants.SelectedItem = null;
             comboBoxLimit.SelectedItem = null;
-            textBoxOther.Text = "";
+            comboBoxOther.Text = "";
         }
 
         //Кнопка Закрытия
