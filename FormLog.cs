@@ -110,6 +110,7 @@ namespace AutoLabel
                             writer.Write("End");
                         }
                     }
+                    Net.Log("Журнал изменён");
                 }
                 catch { }
             }

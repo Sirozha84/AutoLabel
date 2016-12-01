@@ -66,8 +66,8 @@ namespace AutoLabel
                         if (v == Program.VersionForComp) return;
                         Log("Несовместимая версия программы");
                         System.Windows.Forms.MessageBox.Show("Версия программы: " +
-                            Program.VersionForComp + "\nТребуемая версия: " + v + 
-                            "\nРабота будет остановлена", "AutoLabel",
+                            Program.Version + "\nТребуемая версия: " + v +
+                            " или выше\nРабота будет остановлена", "AutoLabel",
                             System.Windows.Forms.MessageBoxButtons.OK,
                             System.Windows.Forms.MessageBoxIcon.Error);
                         Environment.Exit(0);
@@ -114,7 +114,7 @@ namespace AutoLabel
                     using (NetworkStream stream = client.GetStream())
                     {
                         BinaryWriter writer = new BinaryWriter(stream);
-                        str = @"Клиент """ + Environment.MachineName + @""": " + str;
+                        str = "[" + Environment.MachineName + "] " + str;
                         writer.Write("Log");
                         writer.Write(str);
                     }

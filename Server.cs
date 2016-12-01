@@ -10,9 +10,9 @@ namespace AutoLabel_Server
 {
     class Server
     {
-        const string ProgramLabel = "AutoLabel Server   Версия 1.0.1 (24.03.2016)   SG Software (Сергей Гордеев)";
+        const string ProgramLabel = "AutoLabel Server   Версия 1.0.2 (24.03.2016)   SG Software (Сергей Гордеев)";
         const int Port = 90;
-        const string VersionForComp = "2.0.0";
+        const string VersionForComp = "2.3.0";
         const string MessageFile = "Message.txt";
         const string TPAFile = "TPA.txt";
         const string ShiftFile = "Shift.txt";
@@ -104,7 +104,6 @@ namespace AutoLabel_Server
                         TPA[ind][0] = name;
                         for (int i = 1; i < 20; i++) TPA[ind][i] = reader.ReadString();
                         SaveTPA();
-                        //Log("Параметры ТПА сохранёны");
                     }
                     if (query == "ShiftRead")
                     {
@@ -167,7 +166,6 @@ namespace AutoLabel_Server
                             do
                             {
                                 s = reader.ReadString();
-                                Console.WriteLine(s);
                                 if (s != "End") file.WriteLine(s);
                             } while (s != "End");
                         }
