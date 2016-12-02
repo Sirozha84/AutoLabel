@@ -413,5 +413,13 @@ namespace AutoLabel
         {
             Close();
         }
+
+        private void статистикаПоЭтикеткамToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StopRefresh();
+            FormStat form = new FormStat();
+            form.ShowDialog();
+            StartRefresh();
+        }
     }
 }

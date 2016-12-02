@@ -100,6 +100,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelProblem = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
+            this.сервисToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.статистикаПоЭтикеткамToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -457,6 +459,7 @@
             this.параметрыToolStripMenuItem,
             this.сменаToolStripMenuItem,
             this.константыToolStripMenuItem,
+            this.сервисToolStripMenuItem,
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -829,6 +832,21 @@
             this.labelStatus.TabIndex = 12;
             this.labelStatus.Text = "...";
             // 
+            // сервисToolStripMenuItem
+            // 
+            this.сервисToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.статистикаПоЭтикеткамToolStripMenuItem});
+            this.сервисToolStripMenuItem.Name = "сервисToolStripMenuItem";
+            this.сервисToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.сервисToolStripMenuItem.Text = "Сервис";
+            // 
+            // статистикаПоЭтикеткамToolStripMenuItem
+            // 
+            this.статистикаПоЭтикеткамToolStripMenuItem.Name = "статистикаПоЭтикеткамToolStripMenuItem";
+            this.статистикаПоЭтикеткамToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.статистикаПоЭтикеткамToolStripMenuItem.Text = "Статистика по этикеткам";
+            this.статистикаПоЭтикеткамToolStripMenuItem.Click += new System.EventHandler(this.статистикаПоЭтикеткамToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -933,6 +951,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
         private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.Button buttonQuit;
+        private System.Windows.Forms.ToolStripMenuItem сервисToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem статистикаПоЭтикеткамToolStripMenuItem;
     }
 }
 

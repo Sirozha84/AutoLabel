@@ -78,6 +78,22 @@ namespace AutoLabel
             Print(num, packer, count, AutoLabel.Shift.Date, DateTime.Now.ToString("HH:mm"), AutoLabel.Shift.Current);
             Save();
             Net.Log("Печать этикетки");
+            //Запись данных для статистики
+            try
+            {
+                using (TcpClient client = new TcpClient())
+                {
+                    client.Connect(Net.HostName, Net.Port);
+                    using (NetworkStream stream = client.GetStream())
+                    {
+                        BinaryWriter writer = new BinaryWriter(stream);
+                        BinaryReader reader = new BinaryReader(stream);
+                        writer.Write("StatWrite");
+                        writer.Write(Environment.MachineName);
+                    }
+                }
+            }
+            catch { }
         }
 
         /// <summary>

@@ -24,23 +24,27 @@ namespace AutoLabel_Server
         static string[] Shift;
         static List<string> Users = new List<string>();
         static List<DropList> DropLists = new List<DropList>();
-
+        static List<Stat> Stats = new List<Stat>();
+        static Timer timer = new Timer(SaveStat, null, 60000, 60000);
+        
         static void Main(string[] args)
         {
+            
             Console.Title = "AutoLabel Server";
             //Загружаем данные
             LoadMessage();
             LoadTPA();
             LoadShift();
             LoadUsers();
+            LoadStat();
             //Запускаем сервер
             try
             {
                 TcpListener server = new TcpListener(IPAddress.Any, Port);
                 server.Start();
                 Console.WriteLine(ProgramLabel);
-                Log("------------------------------------------------------------");
-                Log("Сервер запущен...");
+                Console.WriteLine("Требуемая версия клиента: " + VersionForComp + " и выше.\n");
+                Log("Сервер запущен..................................................................");
                 while (true)
                 {
                     ThreadPool.QueueUserWorkItem(call, server.AcceptTcpClient());
@@ -200,6 +204,24 @@ namespace AutoLabel_Server
                         } while (s != "End");
                         List.Save();
                     }
+                    if (query == "StatWrite")
+                    {
+                        AddStat(reader.ReadString());
+                    }
+                    if (query == "StatRead")
+                    {
+                        Stats.Sort(delegate (Stat s1, Stat s2) { return s2.Num.CompareTo(s1.Num); });
+                        int sum = 0;
+                        foreach (Stat s in Stats)
+                        {
+                            writer.Write(s.Name);
+                            writer.Write(s.Num);
+                            sum += s.Num;
+                        }
+                        writer.Write("Всего");
+                        writer.Write(sum);
+                        writer.Write("End");
+                    }
                 }
             }
             catch (Exception e)
@@ -339,6 +361,58 @@ namespace AutoLabel_Server
                     Users.ForEach(u => file.WriteLine(u));
             }
             catch { }
+        }
+
+        /// <summary>
+        /// Загрузка статистики
+        /// </summary>
+        static void LoadStat()
+        {
+            using (StreamReader file = File.OpenText("Statistics.txt"))
+            {
+                int c = 0;
+                try { c = Convert.ToInt32(file.ReadLine()); } catch { }
+
+                for (int i = 0; i < c; i++)
+                {
+                    try
+                    {
+                        Stat m = new Stat(file.ReadLine());
+                        m.Num = Convert.ToInt32(file.ReadLine());
+                        Stats.Add(m);
+                    }
+                    catch { }
+                }
+            }
+        }
+
+        static void SaveStat(Object o)
+        {
+            Stats.Sort(delegate (Stat s1, Stat s2) { return s2.Num.CompareTo(s1.Num); });
+            using (StreamWriter file = File.CreateText("Statistics.txt"))
+            {
+                file.WriteLine(Stats.Count);
+                foreach (Stat s in Stats)
+                {
+                    file.WriteLine(s.Name);
+                    file.WriteLine(s.Num);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Обновление статистики
+        /// </summary>
+        /// <param name="machine"></param>
+        static void AddStat(string machine)
+        {
+            Stat m = Stats.Find(o => o.Name == machine);
+            if (m == null)
+            {
+                m = new Stat(machine);
+                Stats.Add(m);
+            }
+            m.Num++;
         }
     }
 }
