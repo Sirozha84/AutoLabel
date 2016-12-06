@@ -220,6 +220,17 @@ namespace AutoLabel
                 F14Bold, Brushes.Black, X + 30, Y + Height - 35);
             g.DrawString("Перед выдувом бутылок рекомендуется выдержать преформы не менее 24 часов при t + 18°С",
                 F11, Brushes.Black, X + 10, Y + Height - 15);
+            //Штрихкод
+            string code = Barcode.Code(this);
+            if (code != "")
+            {
+                try
+                {
+                    Image barcode = Image.FromFile("Barcodes\\" + code + ".gif");
+                    g.DrawImage(barcode, X + 10, Y + 10, 170, 50);
+                }
+                catch { }
+            }
             //Если надо, инкрементим номер и пишем журнал
             if (IncNum) IncAndLog();
         }

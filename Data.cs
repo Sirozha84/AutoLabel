@@ -76,11 +76,11 @@ namespace AutoLabel
         }
 
         /// <summary>
-        /// Максимальное количество этикеток за раз
+        /// Ограничение максимального количество этикеток
         /// </summary>
         public static int MaxLabels(int tpaNum)
         {
-            if (tpaNum == 6) return 25; //Ограничение С1
+            if (tpaNum == 6) return 24; //Ограничение С1
             if (tpaNum == 7) return 24; //Ограничение С2
             return 9;
         }
