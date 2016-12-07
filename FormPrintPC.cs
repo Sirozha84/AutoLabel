@@ -22,16 +22,13 @@ namespace AutoLabel
             labelNum.Text = lab.TPAName;
             box = lab.CurrentNum;
             if (num < 6)
-            {
-                //Заполним комбобокс пользователями
-                comboBoxUser.Items.Clear();
-                foreach (User u in Data.Users) comboBoxUser.Items.Add(u.Name);
-            }
+                FillUsers();
             else
             {
                 //Или же вообще делаем его не активным, если это колпак
                 comboBoxUser.Enabled = false;
                 buttonPrint.Enabled = true;
+                checkBoxFixUsers.Enabled = false;
             }
             //Далее надо выяснить мелкие это коробки или крупные, и в зависимости от этого вывести второй нумератор
             try
@@ -174,6 +171,23 @@ namespace AutoLabel
             if (count > Data.MaxLabels(NumMachine)) count = Data.MaxLabels(NumMachine);
             if (textBoxCount.Text != "")
                 DrawNum();
+        }
+
+        private void checkBoxFixUsers_CheckedChanged(object sender, EventArgs e)
+        {
+            FillUsers();
+        }
+
+        //Заполнение списка пользователей
+        void FillUsers()
+        {
+            //Заполним комбобокс пользователями
+            comboBoxUser.Items.Clear();
+            foreach (User u in Data.Users)
+            {
+                if (!checkBoxFixUsers.Checked || u.TPAAccess[NumMachine])
+                    comboBoxUser.Items.Add(u.Name);
+            }
         }
     }
 }

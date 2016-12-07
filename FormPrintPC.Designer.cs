@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonCountMax = new System.Windows.Forms.Button();
+            this.checkBoxFixUsers = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // labelNum
@@ -67,7 +68,7 @@
             // 
             // textBoxNum
             // 
-            this.textBoxNum.Location = new System.Drawing.Point(163, 75);
+            this.textBoxNum.Location = new System.Drawing.Point(163, 99);
             this.textBoxNum.Name = "textBoxNum";
             this.textBoxNum.Size = new System.Drawing.Size(50, 20);
             this.textBoxNum.TabIndex = 7;
@@ -79,7 +80,7 @@
             // buttonMax
             // 
             this.buttonMax.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonMax.Location = new System.Drawing.Point(219, 75);
+            this.buttonMax.Location = new System.Drawing.Point(219, 99);
             this.buttonMax.Name = "buttonMax";
             this.buttonMax.Size = new System.Drawing.Size(20, 20);
             this.buttonMax.TabIndex = 6;
@@ -90,7 +91,7 @@
             // buttonDec
             // 
             this.buttonDec.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonDec.Location = new System.Drawing.Point(137, 75);
+            this.buttonDec.Location = new System.Drawing.Point(137, 99);
             this.buttonDec.Name = "buttonDec";
             this.buttonDec.Size = new System.Drawing.Size(20, 20);
             this.buttonDec.TabIndex = 5;
@@ -103,7 +104,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(90, 78);
+            this.label1.Location = new System.Drawing.Point(90, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 4;
@@ -114,7 +115,7 @@
             // 
             this.buttonPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonPrint.Enabled = false;
-            this.buttonPrint.Location = new System.Drawing.Point(171, 141);
+            this.buttonPrint.Location = new System.Drawing.Point(171, 169);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(75, 23);
             this.buttonPrint.TabIndex = 6;
@@ -135,7 +136,7 @@
             // textBoxCount
             // 
             this.textBoxCount.Enabled = false;
-            this.textBoxCount.Location = new System.Drawing.Point(163, 101);
+            this.textBoxCount.Location = new System.Drawing.Point(163, 125);
             this.textBoxCount.Name = "textBoxCount";
             this.textBoxCount.Size = new System.Drawing.Size(50, 20);
             this.textBoxCount.TabIndex = 7;
@@ -148,7 +149,7 @@
             // 
             this.buttonCountInc.Enabled = false;
             this.buttonCountInc.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonCountInc.Location = new System.Drawing.Point(219, 101);
+            this.buttonCountInc.Location = new System.Drawing.Point(219, 125);
             this.buttonCountInc.Name = "buttonCountInc";
             this.buttonCountInc.Size = new System.Drawing.Size(20, 20);
             this.buttonCountInc.TabIndex = 6;
@@ -160,7 +161,7 @@
             // 
             this.buttonCountDec.Enabled = false;
             this.buttonCountDec.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonCountDec.Location = new System.Drawing.Point(137, 101);
+            this.buttonCountDec.Location = new System.Drawing.Point(137, 125);
             this.buttonCountDec.Name = "buttonCountDec";
             this.buttonCountDec.Size = new System.Drawing.Size(20, 20);
             this.buttonCountDec.TabIndex = 5;
@@ -174,7 +175,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Enabled = false;
-            this.label2.Location = new System.Drawing.Point(17, 104);
+            this.label2.Location = new System.Drawing.Point(17, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 13);
             this.label2.TabIndex = 4;
@@ -185,7 +186,7 @@
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonClose.Location = new System.Drawing.Point(252, 141);
+            this.buttonClose.Location = new System.Drawing.Point(252, 169);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 23);
             this.buttonClose.TabIndex = 16;
@@ -197,7 +198,7 @@
             // 
             this.buttonCountMax.Enabled = false;
             this.buttonCountMax.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonCountMax.Location = new System.Drawing.Point(245, 101);
+            this.buttonCountMax.Location = new System.Drawing.Point(245, 125);
             this.buttonCountMax.Name = "buttonCountMax";
             this.buttonCountMax.Size = new System.Drawing.Size(20, 20);
             this.buttonCountMax.TabIndex = 17;
@@ -205,13 +206,27 @@
             this.buttonCountMax.UseVisualStyleBackColor = false;
             this.buttonCountMax.Click += new System.EventHandler(this.buttonCountMax_Click);
             // 
+            // checkBoxFixUsers
+            // 
+            this.checkBoxFixUsers.AutoSize = true;
+            this.checkBoxFixUsers.Checked = true;
+            this.checkBoxFixUsers.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxFixUsers.Location = new System.Drawing.Point(137, 76);
+            this.checkBoxFixUsers.Name = "checkBoxFixUsers";
+            this.checkBoxFixUsers.Size = new System.Drawing.Size(134, 17);
+            this.checkBoxFixUsers.TabIndex = 18;
+            this.checkBoxFixUsers.Text = "Только привязанные";
+            this.checkBoxFixUsers.UseVisualStyleBackColor = true;
+            this.checkBoxFixUsers.CheckedChanged += new System.EventHandler(this.checkBoxFixUsers_CheckedChanged);
+            // 
             // FormPrintPC
             // 
             this.AcceptButton = this.buttonPrint;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonClose;
-            this.ClientSize = new System.Drawing.Size(339, 176);
+            this.ClientSize = new System.Drawing.Size(339, 204);
+            this.Controls.Add(this.checkBoxFixUsers);
             this.Controls.Add(this.buttonCountMax);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonPrint);
@@ -254,5 +269,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button buttonCountMax;
+        private System.Windows.Forms.CheckBox checkBoxFixUsers;
     }
 }
