@@ -25,6 +25,7 @@ namespace AutoLabel
                 buttonShift.Visible = false;
                 buttonProperties.Visible = false;
                 panel1.Visible = false;
+                timerMessage.Enabled = false;
             }
             labelVersion.Text += "     Сервер: " + Net.HostName;
             MenuEnable(false);
@@ -145,6 +146,7 @@ namespace AutoLabel
                     if (Net.Test())
                     {
                         Data.Load();
+                        //labelMessage.Text = Net.LoadMessage(); //Обновление бегущей строки
                         Invoke(new Action(() =>
                         {
                             MenuEnable(true);
@@ -162,6 +164,7 @@ namespace AutoLabel
                 }
                 catch { }
             }).Start();
+            labelMessage.Text = Net.LoadMessage();
         }
 
         void MenuEnable(bool enable)
@@ -266,6 +269,9 @@ namespace AutoLabel
             }
             else
                 labelStatus.Text = "";
+            labelMessage.Left -= 2;
+            if (labelMessage.Left < -labelMessage.Width)
+                labelMessage.Left = this.Width;
         }
 
         void EditList(string name, string file)

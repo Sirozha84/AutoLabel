@@ -91,6 +91,8 @@
             this.списокКодовКрасителейКолпачкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.собщениеБегущейСтрокиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сервисToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.статистикаПоЭтикеткамToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
@@ -100,8 +102,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelProblem = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
-            this.сервисToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.статистикаПоЭтикеткамToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -745,6 +745,21 @@
             this.собщениеБегущейСтрокиToolStripMenuItem.Text = "Собщение бегущей строки";
             this.собщениеБегущейСтрокиToolStripMenuItem.Click += new System.EventHandler(this.собщениеБегущейСтрокиToolStripMenuItem_Click);
             // 
+            // сервисToolStripMenuItem
+            // 
+            this.сервисToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.статистикаПоЭтикеткамToolStripMenuItem});
+            this.сервисToolStripMenuItem.Name = "сервисToolStripMenuItem";
+            this.сервисToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.сервисToolStripMenuItem.Text = "Сервис";
+            // 
+            // статистикаПоЭтикеткамToolStripMenuItem
+            // 
+            this.статистикаПоЭтикеткамToolStripMenuItem.Name = "статистикаПоЭтикеткамToolStripMenuItem";
+            this.статистикаПоЭтикеткамToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.статистикаПоЭтикеткамToolStripMenuItem.Text = "Статистика по этикеткам";
+            this.статистикаПоЭтикеткамToolStripMenuItem.Click += new System.EventHandler(this.статистикаПоЭтикеткамToolStripMenuItem_Click);
+            // 
             // справкаToolStripMenuItem
             // 
             this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -784,9 +799,8 @@
             this.labelMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.labelMessage.Location = new System.Drawing.Point(1087, 666);
             this.labelMessage.Name = "labelMessage";
-            this.labelMessage.Size = new System.Drawing.Size(128, 25);
+            this.labelMessage.Size = new System.Drawing.Size(0, 25);
             this.labelMessage.TabIndex = 11;
-            this.labelMessage.Text = "Сообщение";
             // 
             // timerMessage
             // 
@@ -831,21 +845,6 @@
             this.labelStatus.Size = new System.Drawing.Size(16, 13);
             this.labelStatus.TabIndex = 12;
             this.labelStatus.Text = "...";
-            // 
-            // сервисToolStripMenuItem
-            // 
-            this.сервисToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.статистикаПоЭтикеткамToolStripMenuItem});
-            this.сервисToolStripMenuItem.Name = "сервисToolStripMenuItem";
-            this.сервисToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.сервисToolStripMenuItem.Text = "Сервис";
-            // 
-            // статистикаПоЭтикеткамToolStripMenuItem
-            // 
-            this.статистикаПоЭтикеткамToolStripMenuItem.Name = "статистикаПоЭтикеткамToolStripMenuItem";
-            this.статистикаПоЭтикеткамToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.статистикаПоЭтикеткамToolStripMenuItem.Text = "Статистика по этикеткам";
-            this.статистикаПоЭтикеткамToolStripMenuItem.Click += new System.EventHandler(this.статистикаПоЭтикеткамToolStripMenuItem_Click);
             // 
             // FormMain
             // 
