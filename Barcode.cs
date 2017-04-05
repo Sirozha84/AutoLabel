@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿//Жаль, такая красота теперь без дела лежит :-)
+//Тут кстати ещё и ошибки есть, если пойёт в продакшн, надо чтоб всё проверили
 namespace AutoLabel
 {
     static class Barcode

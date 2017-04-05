@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBoxOther = new System.Windows.Forms.ComboBox();
             this.textBoxBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBoxLimit = new System.Windows.Forms.ComboBox();
@@ -55,7 +56,6 @@
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.comboBoxOther = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,6 +109,17 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(360, 339);
             this.tableLayoutPanel1.TabIndex = 10;
+            // 
+            // comboBoxOther
+            // 
+            this.comboBoxOther.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comboBoxOther.Enabled = false;
+            this.comboBoxOther.FormattingEnabled = true;
+            this.comboBoxOther.Location = new System.Drawing.Point(183, 283);
+            this.comboBoxOther.Name = "comboBoxOther";
+            this.comboBoxOther.Size = new System.Drawing.Size(174, 21);
+            this.comboBoxOther.TabIndex = 31;
+            this.comboBoxOther.SelectedIndexChanged += new System.EventHandler(this.comboBoxOther_SelectedIndexChanged);
             // 
             // textBoxBox
             // 
@@ -402,16 +413,6 @@
             this.buttonClose.Text = "Закрыть";
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
-            // 
-            // comboBoxOther
-            // 
-            this.comboBoxOther.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboBoxOther.Enabled = false;
-            this.comboBoxOther.FormattingEnabled = true;
-            this.comboBoxOther.Location = new System.Drawing.Point(183, 283);
-            this.comboBoxOther.Name = "comboBoxOther";
-            this.comboBoxOther.Size = new System.Drawing.Size(174, 21);
-            this.comboBoxOther.TabIndex = 31;
             // 
             // FormPropertiesPC
             // 
