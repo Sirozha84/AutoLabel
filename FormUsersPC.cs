@@ -43,6 +43,7 @@ namespace AutoLabel
                 checkBox6.Checked = u.TPAAccess[5];
                 checkBox7.Checked = u.TPAAccess[6];
                 checkBox8.Checked = u.TPAAccess[7];
+                checkBox9.Checked = u.TPAAccess[8];
             }
             else
             {
@@ -55,6 +56,7 @@ namespace AutoLabel
                 checkBox6.Checked = false;
                 checkBox7.Checked = false;
                 checkBox8.Checked = false;
+                checkBox9.Checked = false;
             }
             labelName.Enabled = sel;
             checkBox1.Enabled = sel;
@@ -65,6 +67,7 @@ namespace AutoLabel
             checkBox6.Enabled = sel;
             checkBox7.Enabled = sel;
             checkBox8.Enabled = sel;
+            checkBox9.Enabled = sel;
             buttonSetKey.Enabled = sel;
             buttonKeyDel.Enabled = sel;
             buttonDel.Enabled = sel;
@@ -87,6 +90,7 @@ namespace AutoLabel
         private void checkBox6_CheckedChanged(object sender, EventArgs e) { ChangeTPA(5, checkBox6.Checked); }
         private void checkBox7_CheckedChanged(object sender, EventArgs e) { ChangeTPA(6, checkBox7.Checked); }
         private void checkBox8_CheckedChanged(object sender, EventArgs e) { ChangeTPA(7, checkBox8.Checked); }
+        private void checkBox9_CheckedChanged(object sender, EventArgs e) { ChangeTPA(8, checkBox9.Checked); }
 
         private void buttonOK_Click(object sender, EventArgs e)
         {

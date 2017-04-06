@@ -41,6 +41,7 @@ namespace AutoLabel
         private void button6_Click(object sender, EventArgs e) { Print(5); }
         private void button7_Click(object sender, EventArgs e) { Print(6); }
         private void button8_Click(object sender, EventArgs e) { Print(7); }
+        private void button9_Click(object sender, EventArgs e) { Print(8); }
 
         void Print(int num)
         {
@@ -375,6 +376,16 @@ namespace AutoLabel
         private void списокКодовКрасителейКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EditList("Список типов антистатика колпачка", "Colorants1");
+        }
+
+        private void списокЛоготиповРотопринтToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditList("Список логотипов ротопринт", "Weights2");
+        }
+
+        private void списокЦветовРотопринтToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditList("Список цветов ротопринт", "Colors2");
         }
         #endregion
         private void справкаToolStripMenuItem1_Click(object sender, EventArgs e)

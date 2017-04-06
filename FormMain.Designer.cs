@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
@@ -102,6 +104,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelProblem = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
+            this.списокЦветовРотопринтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
+            this.списокЛоготиповРотопринтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -118,6 +123,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.label9, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button9, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.label8, 4, 3);
             this.tableLayoutPanel1.Controls.Add(this.label7, 4, 5);
             this.tableLayoutPanel1.Controls.Add(this.button8, 4, 2);
@@ -143,9 +150,35 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(923, 473);
             this.tableLayoutPanel1.TabIndex = 1;
             this.tableLayoutPanel1.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(717, 127);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "label9";
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Black;
+            this.button9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Location = new System.Drawing.Point(717, 3);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(203, 121);
+            this.button9.TabIndex = 17;
+            this.button9.Text = "РП";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // label8
             // 
@@ -618,6 +651,9 @@
             this.списокТиповАнтистатикаКолпачкаToolStripMenuItem,
             this.списокКодовКрасителейКолпачкаToolStripMenuItem,
             this.toolStripMenuItem4,
+            this.списокЛоготиповРотопринтToolStripMenuItem,
+            this.списокЦветовРотопринтToolStripMenuItem,
+            this.toolStripMenuItem6,
             this.собщениеБегущейСтрокиToolStripMenuItem});
             this.константыToolStripMenuItem.Name = "константыToolStripMenuItem";
             this.константыToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
@@ -846,6 +882,25 @@
             this.labelStatus.TabIndex = 12;
             this.labelStatus.Text = "...";
             // 
+            // списокЦветовРотопринтToolStripMenuItem
+            // 
+            this.списокЦветовРотопринтToolStripMenuItem.Name = "списокЦветовРотопринтToolStripMenuItem";
+            this.списокЦветовРотопринтToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
+            this.списокЦветовРотопринтToolStripMenuItem.Text = "Список цветов ротопринт";
+            this.списокЦветовРотопринтToolStripMenuItem.Click += new System.EventHandler(this.списокЦветовРотопринтToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(302, 6);
+            // 
+            // списокЛоготиповРотопринтToolStripMenuItem
+            // 
+            this.списокЛоготиповРотопринтToolStripMenuItem.Name = "списокЛоготиповРотопринтToolStripMenuItem";
+            this.списокЛоготиповРотопринтToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
+            this.списокЛоготиповРотопринтToolStripMenuItem.Text = "Список логотипов ротопринт";
+            this.списокЛоготиповРотопринтToolStripMenuItem.Click += new System.EventHandler(this.списокЛоготиповРотопринтToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -952,6 +1007,11 @@
         private System.Windows.Forms.Button buttonQuit;
         private System.Windows.Forms.ToolStripMenuItem сервисToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem статистикаПоЭтикеткамToolStripMenuItem;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.ToolStripMenuItem списокЦветовРотопринтToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem списокЛоготиповРотопринтToolStripMenuItem;
     }
 }
 

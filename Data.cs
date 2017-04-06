@@ -13,7 +13,7 @@ namespace AutoLabel
         /// <summary>
         /// Количество ТПА
         /// </summary>
-        public const int TPACount = 8;
+        public const int TPACount = 9;
         /// <summary>
         /// Максимальное количество преформ в малом коробе
         /// </summary>
@@ -43,10 +43,12 @@ namespace AutoLabel
         public static List<string> Types1 = new List<string>();
         public static List<string> Weights0 = new List<string>();
         public static List<string> Weights1 = new List<string>();
+        public static List<string> Weights2 = new List<string>();
         public static List<string> Quantitys0 = new List<string>();
         public static List<string> Quantitys1 = new List<string>();
         public static List<string> Colors0 = new List<string>();
         public static List<string> Colors1 = new List<string>();
+        public static List<string> Colors2 = new List<string>();
         public static List<string> Materials0 = new List<string>();
         public static List<string> Materials1 = new List<string>();
         public static List<string> Limits = new List<string>();
@@ -95,10 +97,12 @@ namespace AutoLabel
             ListLoad(Types1, "Types1");
             ListLoad(Weights0, "Weights0");
             ListLoad(Weights1, "Weights1");
+            ListLoad(Weights2, "Weights2");
             ListLoad(Quantitys0, "Quantitys0");
             ListLoad(Quantitys1, "Quantitys1");
             ListLoad(Colors0, "Colors0");
             ListLoad(Colors1, "Colors1");
+            ListLoad(Colors2, "Colors2");
             ListLoad(Materials0, "Materials0");
             ListLoad(Materials1, "Materials1");
             ListLoad(Limits, "Limits");
@@ -154,6 +158,7 @@ namespace AutoLabel
             Labels.Add(new Label("Netstal №6", 0));
             Labels.Add(new Label("C1", 1));
             Labels.Add(new Label("C2", 1));
+            Labels.Add(new Label("Ротопринт", 2));
             Loading = false;
         }
 
@@ -327,7 +332,7 @@ namespace AutoLabel
                 if (input.ShowDialog() == DialogResult.Cancel) return;
                 name = input.Str;
             }
-            Users.Add(new User(name, code, Rule, "00000000"));
+            Users.Add(new User(name, code, Rule));
             Users.Sort((a,b) => a.Name.CompareTo(b.Name));
         }
 
@@ -470,7 +475,7 @@ namespace AutoLabel
         }
 
         /// <summary>
-        /// Соответствие строк
+        /// Соответствие строк (что бы автоматически подбирался код по весу)
         /// </summary>
         /// <param name="Text"></param>
         /// <returns></returns>
@@ -480,6 +485,17 @@ namespace AutoLabel
             if (Text == "2,5±0,1") return "КВП-1-28.1881/1";
             if (Text == "3,15±0,1") return "КВП-1-28";
             return "";
+        }
+
+        /// <summary>
+        /// Возвращает название поля вес/логотип в зависимости от типа этикетки
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static string WeightOrLogo(Label l)
+        {
+            if (l.TPAType == 2) return "Логотип:";
+            return "Вес:";
         }
     }
 }

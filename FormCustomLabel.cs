@@ -40,7 +40,7 @@ namespace AutoLabel
                 comboBoxAntistatic.DataSource = Data.Antistatics0;
                 comboBoxColorant.DataSource = Data.Colorants0;
             }
-            else
+            if (TPAType == 1)
             {
                 comboBoxType.DataSource = Data.Types1;
                 comboBoxWeight.DataSource = Data.Weights1;
@@ -49,6 +49,11 @@ namespace AutoLabel
                 comboBoxMaterial.DataSource = Data.Materials1;
                 comboBoxAntistatic.DataSource = Data.Antistatics1;
                 comboBoxColorant.DataSource = Data.Colorants1;
+            }
+            if (TPAType == 2)
+            {
+                comboBoxWeight.DataSource = Data.Weights2;
+                comboBoxColor.DataSource = Data.Colors2;
             }
             comboBoxColorant.SelectedItem = null;
             comboBoxAntistatic.SelectedItem = "";
@@ -105,10 +110,31 @@ namespace AutoLabel
         //Комбобокс выбора ТПА
         private void comboBoxTPA_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TPAType = 0;
-            if (comboBoxTPA.SelectedIndex > 5) TPAType = 1;
-            label10.Enabled = (TPAType == 0);
+            TPAType = Data.Labels[comboBoxTPA.SelectedIndex].TPAType;
+            label4.Text = Data.WeightOrLogo(Data.Labels[comboBoxTPA.SelectedIndex]);
+
+            //Видимость полей
+            comboBoxType.Enabled = (TPAType != 2);
+            comboBoxMaterial.Enabled = (TPAType != 2);
+            comboBoxCount.Enabled = (TPAType != 2);
+            textBoxNumber.Enabled = (TPAType != 2);
+            comboBoxAntistatic.Enabled = (TPAType != 2);
+            comboBoxColorant.Enabled = (TPAType != 2);
             comboBoxLimit.Enabled = (TPAType == 0);
+            textBoxOther.Enabled = (TPAType != 2);
+            textBoxTime.Enabled = (TPAType != 2);
+
+            //Видимость подписей полей
+            label3.Enabled = (TPAType != 2);
+            label6.Enabled = (TPAType != 2);
+            label12.Enabled = (TPAType != 2);
+            label2.Enabled = (TPAType != 2);
+            label8.Enabled = (TPAType != 2);
+            label9.Enabled = (TPAType != 2);
+            label10.Enabled = (TPAType == 0);
+            label11.Enabled = (TPAType != 2);
+            label14.Enabled = (TPAType != 2);
+
             ListFill();
             FillFromTPA();
             numericUpDownCount.Maximum = Data.MaxLabels(comboBoxTPA.SelectedIndex);

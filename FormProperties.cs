@@ -46,7 +46,7 @@ namespace AutoLabel
                 comboBoxAntistatic.DataSource = Data.Antistatics0;
                 comboBoxColorants.DataSource = Data.Colorants0;
             }
-            else
+            if (l.TPAType == 1)
             {
                 comboBoxWeight.DataSource = Data.Weights1;
                 comboBoxColor.DataSource = Data.Colors1;
@@ -55,6 +55,11 @@ namespace AutoLabel
                 comboBoxMaterial.DataSource = Data.Materials1;
                 comboBoxAntistatic.DataSource = Data.Antistatics1;
                 comboBoxColorants.DataSource = Data.Colorants1;
+            }
+            if (l.TPAType == 2)
+            {
+                comboBoxWeight.DataSource = Data.Weights2;
+                comboBoxColor.DataSource = Data.Colors2;
             }
             comboBoxLimit.DataSource = Data.Limits;
             comboBoxWeight.SelectedItem = null;
@@ -78,30 +83,33 @@ namespace AutoLabel
             if (l.Limit != "") comboBoxLimit.SelectedItem = l.Limit; else comboBoxLimit.SelectedItem = null;
             textBoxOther.Text = l.Other;
             textBoxBox.Text = "1";
+            label3.Text = Data.WeightOrLogo(l);
+
             //Видимость полей
             comboBoxWeight.Visible = true;
-            comboBoxType.Visible = true;
+            comboBoxType.Visible = (l.TPAType != 2);
             comboBoxType.Enabled = (l.TPAType == 0);
-            comboBoxMaterial.Visible = true;
+            comboBoxMaterial.Visible = (l.TPAType != 2);
             comboBoxColor.Visible = true;
-            comboBoxCount.Visible = true;
-            textBoxNumber.Visible = true;
+            comboBoxCount.Visible = (l.TPAType != 2);
+            textBoxNumber.Visible = (l.TPAType != 2);
+            comboBoxAntistatic.Visible = (l.TPAType != 2);
+            comboBoxColorants.Visible = (l.TPAType != 2);
             comboBoxLimit.Visible = (l.TPAType == 0);
-            comboBoxAntistatic.Visible = true;
-            comboBoxColorants.Visible = true;
-            textBoxOther.Visible = true;
+            textBoxOther.Visible = (l.TPAType != 2);
             textBoxBox.Visible = true;
+
             //Видимость подписей полей
-            label1.Visible = true;
-            label2.Visible = true;
             label3.Visible = true;
-            label4.Visible = true;
-            label6.Visible = true;
+            label2.Visible = (l.TPAType != 2);
+            label6.Visible = (l.TPAType != 2);
             label7.Visible = true;
-            label8.Visible = true;
-            label9.Visible = true;
+            label4.Visible = (l.TPAType != 2);
+            label1.Visible = (l.TPAType != 2);
+            label8.Visible = (l.TPAType != 2);
+            label9.Visible = (l.TPAType != 2);
             label10.Visible = (l.TPAType == 0);
-            label11.Visible = true;
+            label11.Visible = (l.TPAType != 2);
             label12.Visible = true;
             buttonsave.Visible = false;
             buttonClear.Visible = true;

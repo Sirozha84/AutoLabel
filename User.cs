@@ -9,6 +9,15 @@ namespace AutoLabel
         public byte Rule;
         public bool[] TPAAccess = new bool[Data.TPACount];
 
+        public User(string name, string code, string rule)
+        {
+            Name = name;
+            Code = code;
+            Rule = Convert.ToByte(rule);
+            for (int i = 0; i < Data.TPACount; i++)
+                TPAAccess[i] = false;
+        }
+
         /// <summary>
         /// Создание нового пользователя
         /// </summary>
@@ -40,10 +49,12 @@ namespace AutoLabel
             {
                 if (TPAAccess[i])
                 {
-                    if (i < 6)
+                    if (i <= 5)
                         tpas += (i + 1).ToString();
-                    else
+                    if (i >= 6 & i <= 7)
                         tpas += "К" + (i - 5).ToString();
+                    if (i >= 8)
+                        tpas += "РП";
                     tca++;
                     if (tca < tc) tpas += ", ";
                 }

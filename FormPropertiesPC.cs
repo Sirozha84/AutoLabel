@@ -50,7 +50,7 @@ namespace AutoLabel
                 comboBoxOther.Items.Add("АЯН");
                 comboBoxOther.Items.Add("BaikalSea Company");
             }
-            else
+            if (l.TPAType == 1)
             {
                 comboBoxWeight.DataSource = Data.Weights1;
                 comboBoxColor.DataSource = Data.Colors1;
@@ -61,6 +61,11 @@ namespace AutoLabel
                 comboBoxColorants.DataSource = Data.Colorants1;
                 //Временно, пока не будет констант
                 comboBoxOther.Items.Clear();
+            }
+            if (l.TPAType == 2)
+            {
+                comboBoxWeight.DataSource = Data.Weights2;
+                comboBoxColor.DataSource = Data.Colors2;
             }
             comboBoxLimit.DataSource = Data.Limits;
             comboBoxWeight.SelectedItem = null;
@@ -83,29 +88,32 @@ namespace AutoLabel
             if (l.Limit != "") comboBoxLimit.SelectedItem = l.Limit; else comboBoxLimit.SelectedItem = null;
             comboBoxOther.Text = l.Other;
             textBoxBox.Text = "1";
+            label3.Text = Data.WeightOrLogo(l);
+
             //Видимость полей
             comboBoxWeight.Enabled = true;
             comboBoxType.Enabled = (l.TPAType == 0);
-            comboBoxMaterial.Enabled = true;
+            comboBoxMaterial.Enabled = (l.TPAType != 2);
             comboBoxColor.Enabled = true;
-            comboBoxCount.Enabled = true;
-            textBoxNumber.Enabled = true;
+            comboBoxCount.Enabled = (l.TPAType != 2);
+            textBoxNumber.Enabled = (l.TPAType != 2);
+            comboBoxAntistatic.Enabled = (l.TPAType != 2);
+            comboBoxColorants.Enabled = (l.TPAType != 2);
             comboBoxLimit.Enabled = (l.TPAType == 0);
-            comboBoxAntistatic.Enabled = true;
-            comboBoxColorants.Enabled = true;
-            comboBoxOther.Enabled = true;
+            comboBoxOther.Enabled = (l.TPAType != 2);
             textBoxBox.Enabled = true;
+
             //Видимость подписей полей
-            label1.Enabled = true;
-            label2.Enabled = true;
             label3.Enabled = true;
-            label4.Enabled = true;
-            label6.Enabled = true;
+            label2.Enabled = (l.TPAType == 0);
+            label6.Enabled = (l.TPAType != 2);
             label7.Enabled = true;
-            label8.Enabled = true;
-            label9.Enabled = true;
+            label4.Enabled = (l.TPAType != 2);
+            label1.Enabled = (l.TPAType != 2);
+            label8.Enabled = (l.TPAType != 2);
+            label9.Enabled = (l.TPAType != 2);
             label10.Enabled = (l.TPAType == 0);
-            label11.Enabled = true;
+            label11.Enabled = (l.TPAType != 2);
             label12.Enabled = true;
             buttonSave.Enabled = false;
             buttonClear.Enabled = true;

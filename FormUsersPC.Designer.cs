@@ -50,6 +50,7 @@
             this.buttonKeyDel = new System.Windows.Forms.Button();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // listView1
@@ -67,7 +68,7 @@
             this.listView1.Location = new System.Drawing.Point(12, 41);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(372, 489);
+            this.listView1.Size = new System.Drawing.Size(436, 485);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -91,14 +92,14 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Привязка к ТПА";
-            this.columnHeader4.Width = 120;
+            this.columnHeader4.Width = 190;
             // 
             // checkBox1
             // 
             this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.AutoSize = true;
             this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(393, 228);
+            this.checkBox1.Location = new System.Drawing.Point(457, 228);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(89, 17);
             this.checkBox1.TabIndex = 3;
@@ -111,7 +112,7 @@
             this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox2.AutoSize = true;
             this.checkBox2.Enabled = false;
-            this.checkBox2.Location = new System.Drawing.Point(393, 251);
+            this.checkBox2.Location = new System.Drawing.Point(457, 251);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(89, 17);
             this.checkBox2.TabIndex = 4;
@@ -124,7 +125,7 @@
             this.checkBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox3.AutoSize = true;
             this.checkBox3.Enabled = false;
-            this.checkBox3.Location = new System.Drawing.Point(393, 274);
+            this.checkBox3.Location = new System.Drawing.Point(457, 274);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(89, 17);
             this.checkBox3.TabIndex = 5;
@@ -137,7 +138,7 @@
             this.checkBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox4.AutoSize = true;
             this.checkBox4.Enabled = false;
-            this.checkBox4.Location = new System.Drawing.Point(393, 297);
+            this.checkBox4.Location = new System.Drawing.Point(457, 297);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(89, 17);
             this.checkBox4.TabIndex = 6;
@@ -150,7 +151,7 @@
             this.checkBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox5.AutoSize = true;
             this.checkBox5.Enabled = false;
-            this.checkBox5.Location = new System.Drawing.Point(393, 320);
+            this.checkBox5.Location = new System.Drawing.Point(457, 320);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(89, 17);
             this.checkBox5.TabIndex = 7;
@@ -163,7 +164,7 @@
             this.checkBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox6.AutoSize = true;
             this.checkBox6.Enabled = false;
-            this.checkBox6.Location = new System.Drawing.Point(393, 343);
+            this.checkBox6.Location = new System.Drawing.Point(457, 343);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(89, 17);
             this.checkBox6.TabIndex = 8;
@@ -186,7 +187,7 @@
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(433, 542);
+            this.buttonCancel.Location = new System.Drawing.Point(497, 538);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 11;
@@ -196,7 +197,7 @@
             // buttonOK
             // 
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOK.Location = new System.Drawing.Point(352, 542);
+            this.buttonOK.Location = new System.Drawing.Point(416, 538);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(75, 23);
             this.buttonOK.TabIndex = 10;
@@ -209,7 +210,7 @@
             this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelName.AutoSize = true;
             this.labelName.Enabled = false;
-            this.labelName.Location = new System.Drawing.Point(390, 202);
+            this.labelName.Location = new System.Drawing.Point(454, 202);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(62, 13);
             this.labelName.TabIndex = 12;
@@ -218,7 +219,7 @@
             // buttonNewUser
             // 
             this.buttonNewUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNewUser.Location = new System.Drawing.Point(393, 41);
+            this.buttonNewUser.Location = new System.Drawing.Point(457, 41);
             this.buttonNewUser.Name = "buttonNewUser";
             this.buttonNewUser.Size = new System.Drawing.Size(115, 23);
             this.buttonNewUser.TabIndex = 13;
@@ -229,7 +230,7 @@
             // buttonNewAdmin
             // 
             this.buttonNewAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNewAdmin.Location = new System.Drawing.Point(393, 70);
+            this.buttonNewAdmin.Location = new System.Drawing.Point(457, 70);
             this.buttonNewAdmin.Name = "buttonNewAdmin";
             this.buttonNewAdmin.Size = new System.Drawing.Size(115, 23);
             this.buttonNewAdmin.TabIndex = 14;
@@ -241,7 +242,7 @@
             // 
             this.buttonSetKey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSetKey.Enabled = false;
-            this.buttonSetKey.Location = new System.Drawing.Point(393, 99);
+            this.buttonSetKey.Location = new System.Drawing.Point(457, 99);
             this.buttonSetKey.Name = "buttonSetKey";
             this.buttonSetKey.Size = new System.Drawing.Size(115, 23);
             this.buttonSetKey.TabIndex = 15;
@@ -253,7 +254,7 @@
             // 
             this.buttonDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDel.Enabled = false;
-            this.buttonDel.Location = new System.Drawing.Point(393, 157);
+            this.buttonDel.Location = new System.Drawing.Point(457, 157);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(115, 23);
             this.buttonDel.TabIndex = 16;
@@ -265,7 +266,7 @@
             // 
             this.buttonKeyDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonKeyDel.Enabled = false;
-            this.buttonKeyDel.Location = new System.Drawing.Point(393, 128);
+            this.buttonKeyDel.Location = new System.Drawing.Point(457, 128);
             this.buttonKeyDel.Name = "buttonKeyDel";
             this.buttonKeyDel.Size = new System.Drawing.Size(115, 23);
             this.buttonKeyDel.TabIndex = 17;
@@ -278,7 +279,7 @@
             this.checkBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox7.AutoSize = true;
             this.checkBox7.Enabled = false;
-            this.checkBox7.Location = new System.Drawing.Point(393, 376);
+            this.checkBox7.Location = new System.Drawing.Point(457, 376);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(72, 17);
             this.checkBox7.TabIndex = 18;
@@ -291,7 +292,7 @@
             this.checkBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox8.AutoSize = true;
             this.checkBox8.Enabled = false;
-            this.checkBox8.Location = new System.Drawing.Point(393, 399);
+            this.checkBox8.Location = new System.Drawing.Point(457, 399);
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(72, 17);
             this.checkBox8.TabIndex = 19;
@@ -299,11 +300,25 @@
             this.checkBox8.UseVisualStyleBackColor = true;
             this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox8_CheckedChanged);
             // 
+            // checkBox9
+            // 
+            this.checkBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox9.AutoSize = true;
+            this.checkBox9.Enabled = false;
+            this.checkBox9.Location = new System.Drawing.Point(457, 432);
+            this.checkBox9.Name = "checkBox9";
+            this.checkBox9.Size = new System.Drawing.Size(79, 17);
+            this.checkBox9.TabIndex = 20;
+            this.checkBox9.Text = "Ротопринт";
+            this.checkBox9.UseVisualStyleBackColor = true;
+            this.checkBox9.CheckedChanged += new System.EventHandler(this.checkBox9_CheckedChanged);
+            // 
             // FormUsersPC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 577);
+            this.ClientSize = new System.Drawing.Size(584, 573);
+            this.Controls.Add(this.checkBox9);
             this.Controls.Add(this.checkBox8);
             this.Controls.Add(this.checkBox7);
             this.Controls.Add(this.buttonKeyDel);
@@ -324,12 +339,12 @@
             this.Controls.Add(this.listView1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(536, 443);
+            this.MinimumSize = new System.Drawing.Size(600, 532);
             this.Name = "FormUsersPC";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Привязка пользователей к ТПА";
+            this.Text = "Пользователи";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,5 +373,6 @@
         private System.Windows.Forms.Button buttonKeyDel;
         private System.Windows.Forms.CheckBox checkBox7;
         private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox checkBox9;
     }
 }

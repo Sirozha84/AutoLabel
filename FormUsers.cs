@@ -84,6 +84,7 @@ namespace AutoLabel
                 checkBox6.Checked = u.TPAAccess[5];
                 checkBox7.Checked = u.TPAAccess[6];
                 checkBox8.Checked = u.TPAAccess[7];
+                checkBox9.Checked = u.TPAAccess[8];
             }
             else
             {
@@ -95,6 +96,7 @@ namespace AutoLabel
                 checkBox6.Checked = false;
                 checkBox7.Checked = false;
                 checkBox8.Checked = false;
+                checkBox9.Checked = false;
             }
             checkBox1.Visible = sel;
             checkBox2.Visible = sel;
@@ -104,6 +106,7 @@ namespace AutoLabel
             checkBox6.Visible = sel;
             checkBox7.Visible = sel;
             checkBox8.Visible = sel;
+            checkBox9.Visible = sel;
             buttonKey.Visible = sel;
             buttonKeyDel.Visible = sel;
             buttonDelete.Visible = sel;
@@ -128,6 +131,7 @@ namespace AutoLabel
         private void checkBox6_CheckedChanged(object sender, EventArgs e) { ChangeTPA(5, checkBox6.Checked); }
         private void checkBox7_CheckedChanged(object sender, EventArgs e) { ChangeTPA(6, checkBox7.Checked); }
         private void checkBox8_CheckedChanged(object sender, EventArgs e) { ChangeTPA(7, checkBox8.Checked); }
+        private void checkBox9_CheckedChanged(object sender, EventArgs e) { ChangeTPA(8, checkBox9.Checked); }
 
         //Кнопка удаление ключа
         private void buttonKeyDel_Click(object sender, EventArgs e)
@@ -142,6 +146,5 @@ namespace AutoLabel
             Data.AccessControl = checkBoxOn.Checked;
             buttonsave.Visible = true;
         }
-
     }
 }

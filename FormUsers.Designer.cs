@@ -52,6 +52,7 @@
             this.checkBoxOn = new System.Windows.Forms.CheckBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -338,7 +339,7 @@
             this.checkBox7.AutoSize = true;
             this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBox7.ForeColor = System.Drawing.Color.White;
-            this.checkBox7.Location = new System.Drawing.Point(929, 714);
+            this.checkBox7.Location = new System.Drawing.Point(929, 713);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(73, 41);
             this.checkBox7.TabIndex = 27;
@@ -353,7 +354,7 @@
             this.checkBox8.AutoSize = true;
             this.checkBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBox8.ForeColor = System.Drawing.Color.White;
-            this.checkBox8.Location = new System.Drawing.Point(1022, 714);
+            this.checkBox8.Location = new System.Drawing.Point(1022, 713);
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(75, 41);
             this.checkBox8.TabIndex = 28;
@@ -362,12 +363,28 @@
             this.checkBox8.Visible = false;
             this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox8_CheckedChanged);
             // 
+            // checkBox9
+            // 
+            this.checkBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox9.AutoSize = true;
+            this.checkBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox9.ForeColor = System.Drawing.Color.White;
+            this.checkBox9.Location = new System.Drawing.Point(929, 790);
+            this.checkBox9.Name = "checkBox9";
+            this.checkBox9.Size = new System.Drawing.Size(185, 41);
+            this.checkBox9.TabIndex = 29;
+            this.checkBox9.Text = "Ротопринт";
+            this.checkBox9.UseVisualStyleBackColor = true;
+            this.checkBox9.Visible = false;
+            this.checkBox9.CheckedChanged += new System.EventHandler(this.checkBox9_CheckedChanged);
+            // 
             // FormUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1126, 912);
+            this.Controls.Add(this.checkBox9);
             this.Controls.Add(this.checkBox8);
             this.Controls.Add(this.checkBox7);
             this.Controls.Add(this.checkBoxOn);
@@ -423,5 +440,6 @@
         private System.Windows.Forms.CheckBox checkBoxOn;
         private System.Windows.Forms.CheckBox checkBox7;
         private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox checkBox9;
     }
 }
