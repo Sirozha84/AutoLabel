@@ -84,6 +84,7 @@ namespace AutoLabel
         {
             if (tpaNum == 6) return 24; //Ограничение С1
             if (tpaNum == 7) return 24; //Ограничение С2
+            if (tpaNum == 8) return 24; //Ограничение Ротопринт
             return 9;
         }
 
@@ -496,6 +497,21 @@ namespace AutoLabel
         {
             if (l.TPAType == 2) return "Логотип:";
             return "Вес:";
+        }
+
+        /// <summary>
+        /// Возврат понятного имени по типу этикетки
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static string LabelName(int type)
+        {
+            switch (type)
+            {
+                case 0: return "Преформа";
+                case 1: return "Колпак";
+                default: return "Ротопринт";
+            }
         }
     }
 }

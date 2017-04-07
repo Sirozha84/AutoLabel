@@ -117,6 +117,7 @@ namespace AutoLabel
                 label6.Text = Data.Labels[5].LabelUnderButton();
                 label7.Text = Data.Labels[6].LabelUnderButton();
                 label8.Text = Data.Labels[7].LabelUnderButton();
+                label9.Text = Data.Labels[8].LabelUnderButton();
                 Data.SetColor(button1, 0);
                 Data.SetColor(button2, 1);
                 Data.SetColor(button3, 2);
@@ -125,6 +126,7 @@ namespace AutoLabel
                 Data.SetColor(button6, 5);
                 Data.SetColor(button7, 6);
                 Data.SetColor(button8, 7);
+                Data.SetColor(button9, 8);
                 tableLayoutPanel1.Visible = true;
                 labelProblem.Visible = false;
             }

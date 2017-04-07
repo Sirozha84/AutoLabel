@@ -48,7 +48,7 @@ namespace AutoLabel
                 comboBoxOther.Items.Clear();
                 comboBoxOther.Items.Add("Coca-cola");
                 comboBoxOther.Items.Add("АЯН");
-                comboBoxOther.Items.Add("BaikalSea Company");
+                comboBoxOther.Items.Add("ИЗРМВ");
             }
             if (l.TPAType == 1)
             {

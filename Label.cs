@@ -76,7 +76,7 @@ namespace AutoLabel
         {
             Print(num, packer, count, AutoLabel.Shift.Date, DateTime.Now.ToString("HH:mm"), AutoLabel.Shift.Current);
             Save();
-            Net.Log("Печать этикетки");
+            Net.Log("Печать этикетки \"" + Data.LabelName(TPAType) + "\"");
             //Запись данных для статистики
             try
             {
@@ -119,7 +119,7 @@ namespace AutoLabel
                 PrintDocument doc = new PrintDocument();
                 doc.PrintPage += new PrintPageEventHandler(PD_PrintPage);
                 doc.PrinterSettings = Data.printersettings;
-                doc.PrinterSettings.DefaultPageSettings.Landscape = true;
+                doc.PrinterSettings.DefaultPageSettings.Landscape = (TPAType != 2); //Горизонтальный, если не для ротопринта
                 doc.Print();
             }
             catch (ArgumentException e)
@@ -151,13 +151,25 @@ namespace AutoLabel
                 ClipLine.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
                 e.Graphics.DrawLine(ClipLine, 574, 0, 574, 850);
             }
-            else
+            if (TPAType == 1)
             {
                 //Этикетка для колпачка
-                DrawLabelC(e.Graphics, 20, 16, true);
-                if (LabelCount > 0) DrawLabelC(e.Graphics, 20, 396, true);
-                if (LabelCount > 0) DrawLabelC(e.Graphics, 570, 16, true);
-                if (LabelCount > 0) DrawLabelC(e.Graphics, 570, 396, true);
+                DrawLabelC(e.Graphics, 20, 16);
+                if (LabelCount > 0) DrawLabelC(e.Graphics, 20, 396);
+                if (LabelCount > 0) DrawLabelC(e.Graphics, 570, 16);
+                if (LabelCount > 0) DrawLabelC(e.Graphics, 570, 396);
+            }
+            if (TPAType == 2)
+            {
+                //Этикетка для ротопринта
+                DrawLabelR(e.Graphics, 20, 16, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 16, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 20, 291, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 291, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 20, 566, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 566, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 20, 841, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 841, true);
             }
             e.HasMorePages = LabelCount > 0;
         }
@@ -284,7 +296,7 @@ namespace AutoLabel
         /// <param name="X">Положение на листе по X</param>
         /// <param name="Y">Положение на листе по Y</param>
         /// <param name="IncNum">Увеличить ли номер после этой этикетки и записать в журнал</param>
-        void DrawLabelC(Graphics g, int X, int Y, bool IncNum)
+        void DrawLabelC(Graphics g, int X, int Y)
         {
             InRect.Alignment = StringAlignment.Center;
             int Width = 550;
@@ -341,8 +353,36 @@ namespace AutoLabel
                 F11Italic, Brushes.Black, X + 7, Y + Height - 35);
             g.DrawString("и относительной влажности воздуха 40% - 80%.",
                 F11Italic, Brushes.Black, X + 7, Y + Height - 20);
-            //Если надо, инкрементим номер и пишем журнал
-            if (IncNum) IncAndLog();
+            //Инкрементим номер и пишем журнал
+            IncAndLog();
+        }
+
+        /// <summary>
+        /// Формирование этикетки ротопринта
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="X">Положение на листе по X</param>
+        /// <param name="Y">Положение на листе по Y</param>
+        /// <param name="IncNum">Увеличить ли номер после этой этикетки и записать в журнал</param>
+        void DrawLabelR(Graphics g, int X, int Y, bool IncNum)
+        {
+            int Width = 380;
+            int Height = 275;
+            //Рамки
+            g.DrawRectangle(Slim, X, Y, Width, Height);
+
+            g.DrawString("Логотип:", F22, Brushes.Black, new Point(X + 20, Y + 20));
+            g.DrawString(Weight, F22Bold, Brushes.Black, new Point(X + 20, Y + 70));
+            g.DrawString("Цвет:", F22, Brushes.Black, new Point(X + 20, Y + 140));
+            g.DrawString(PColor, F22, Brushes.Black, new Point(X + 150, Y + 140));
+            g.DrawString("Дата:", F22, Brushes.Black, new Point(X + 20, Y + 170));
+            g.DrawString(Date, F22, Brushes.Black, new Point(X + 150, Y + 170));
+            g.DrawString("Смена:", F22, Brushes.Black, new Point(X + 20, Y + 200));
+            g.DrawString(Shift, F22, Brushes.Black, new Point(X + 150, Y + 200));
+            g.DrawString(Packer, F11, Brushes.Black, new Point(X + 10, Y + 260));
+            g.DrawString(Num.ToString(), F11, Brushes.Black, new Point(X + 350, Y + 260));
+            //Инкрементим номер и пишем журнал
+            IncAndLog();
         }
 
         /// <summary>
@@ -362,6 +402,13 @@ namespace AutoLabel
         /// </summary>
         public void Save()
         {
+            //Что бы кнопка появилась и печать работала
+            if (TPAType == 2)
+            {
+                PartNum = "Ротопринт";
+                Count = "Ротопринт";
+            }
+
             try
             {
                 using (TcpClient client = new TcpClient())
@@ -484,8 +531,8 @@ namespace AutoLabel
         /// <returns></returns>
         public bool AllowSelectCount()
         {
-            //Разшешаем если тип "колпак"
-            if (TPAType == 1) return true;
+            //Разшешаем если тип "колпак" или "ротопринт"
+            if (TPAType != 0) return true;
             //И разрешаем если количество меньше чем заданное
             try { return (Convert.ToInt32(Count) <= Data.PreformsInLittleBox); }
             catch { return false; }

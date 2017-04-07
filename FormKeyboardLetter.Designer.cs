@@ -104,7 +104,7 @@
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCancel.ForeColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(558, 561);
+            this.buttonCancel.Location = new System.Drawing.Point(558, 609);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(262, 74);
             this.buttonCancel.TabIndex = 27;
@@ -119,7 +119,7 @@
             this.buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonOK.ForeColor = System.Drawing.Color.White;
-            this.buttonOK.Location = new System.Drawing.Point(279, 561);
+            this.buttonOK.Location = new System.Drawing.Point(279, 609);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(262, 74);
             this.buttonOK.TabIndex = 26;
@@ -154,16 +154,6 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel1.Controls.Add(this.buttonSpace, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.buttonYa, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.buttonCh, 4, 6);
-            this.tableLayoutPanel1.Controls.Add(this.buttonS, 6, 6);
-            this.tableLayoutPanel1.Controls.Add(this.buttonM, 8, 6);
-            this.tableLayoutPanel1.Controls.Add(this.buttonI, 10, 6);
-            this.tableLayoutPanel1.Controls.Add(this.buttonT, 12, 6);
-            this.tableLayoutPanel1.Controls.Add(this.buttonMZ, 14, 6);
-            this.tableLayoutPanel1.Controls.Add(this.buttonAnd, 16, 6);
-            this.tableLayoutPanel1.Controls.Add(this.buttonYu, 18, 6);
             this.tableLayoutPanel1.Controls.Add(this.buttonEe, 20, 4);
             this.tableLayoutPanel1.Controls.Add(this.buttonZh, 18, 4);
             this.tableLayoutPanel1.Controls.Add(this.buttonD, 16, 4);
@@ -197,9 +187,18 @@
             this.tableLayoutPanel1.Controls.Add(this.button9, 16, 0);
             this.tableLayoutPanel1.Controls.Add(this.button2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonDelete, 22, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonZpt, 22, 6);
             this.tableLayoutPanel1.Controls.Add(this.buttonDot, 20, 6);
             this.tableLayoutPanel1.Controls.Add(this.buttonPercent, 18, 0);
+            this.tableLayoutPanel1.Controls.Add(this.buttonYa, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.buttonCh, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.buttonS, 4, 6);
+            this.tableLayoutPanel1.Controls.Add(this.buttonM, 6, 6);
+            this.tableLayoutPanel1.Controls.Add(this.buttonI, 8, 6);
+            this.tableLayoutPanel1.Controls.Add(this.buttonT, 10, 6);
+            this.tableLayoutPanel1.Controls.Add(this.buttonMZ, 12, 6);
+            this.tableLayoutPanel1.Controls.Add(this.buttonAnd, 14, 6);
+            this.tableLayoutPanel1.Controls.Add(this.buttonYu, 16, 6);
+            this.tableLayoutPanel1.Controls.Add(this.buttonZpt, 18, 6);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(59, 181);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -220,9 +219,9 @@
             this.buttonSpace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSpace.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSpace.ForeColor = System.Drawing.Color.White;
-            this.buttonSpace.Location = new System.Drawing.Point(3, 252);
+            this.buttonSpace.Location = new System.Drawing.Point(226, 517);
             this.buttonSpace.Name = "buttonSpace";
-            this.buttonSpace.Size = new System.Drawing.Size(66, 66);
+            this.buttonSpace.Size = new System.Drawing.Size(481, 66);
             this.buttonSpace.TabIndex = 0;
             this.buttonSpace.Text = " ";
             this.buttonSpace.UseVisualStyleBackColor = false;
@@ -234,7 +233,7 @@
             this.buttonYa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonYa.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonYa.ForeColor = System.Drawing.Color.White;
-            this.buttonYa.Location = new System.Drawing.Point(86, 252);
+            this.buttonYa.Location = new System.Drawing.Point(3, 252);
             this.buttonYa.Name = "buttonYa";
             this.buttonYa.Size = new System.Drawing.Size(66, 66);
             this.buttonYa.TabIndex = 1;
@@ -248,7 +247,7 @@
             this.buttonCh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCh.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCh.ForeColor = System.Drawing.Color.White;
-            this.buttonCh.Location = new System.Drawing.Point(169, 252);
+            this.buttonCh.Location = new System.Drawing.Point(86, 252);
             this.buttonCh.Name = "buttonCh";
             this.buttonCh.Size = new System.Drawing.Size(66, 66);
             this.buttonCh.TabIndex = 2;
@@ -262,7 +261,7 @@
             this.buttonS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonS.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonS.ForeColor = System.Drawing.Color.White;
-            this.buttonS.Location = new System.Drawing.Point(252, 252);
+            this.buttonS.Location = new System.Drawing.Point(169, 252);
             this.buttonS.Name = "buttonS";
             this.buttonS.Size = new System.Drawing.Size(66, 66);
             this.buttonS.TabIndex = 27;
@@ -276,7 +275,7 @@
             this.buttonM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonM.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonM.ForeColor = System.Drawing.Color.White;
-            this.buttonM.Location = new System.Drawing.Point(335, 252);
+            this.buttonM.Location = new System.Drawing.Point(252, 252);
             this.buttonM.Name = "buttonM";
             this.buttonM.Size = new System.Drawing.Size(66, 66);
             this.buttonM.TabIndex = 13;
@@ -290,7 +289,7 @@
             this.buttonI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonI.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonI.ForeColor = System.Drawing.Color.White;
-            this.buttonI.Location = new System.Drawing.Point(418, 252);
+            this.buttonI.Location = new System.Drawing.Point(335, 252);
             this.buttonI.Name = "buttonI";
             this.buttonI.Size = new System.Drawing.Size(66, 66);
             this.buttonI.TabIndex = 29;
@@ -304,7 +303,7 @@
             this.buttonT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonT.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonT.ForeColor = System.Drawing.Color.White;
-            this.buttonT.Location = new System.Drawing.Point(501, 252);
+            this.buttonT.Location = new System.Drawing.Point(418, 252);
             this.buttonT.Name = "buttonT";
             this.buttonT.Size = new System.Drawing.Size(66, 66);
             this.buttonT.TabIndex = 14;
@@ -318,7 +317,7 @@
             this.buttonMZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonMZ.ForeColor = System.Drawing.Color.White;
-            this.buttonMZ.Location = new System.Drawing.Point(584, 252);
+            this.buttonMZ.Location = new System.Drawing.Point(501, 252);
             this.buttonMZ.Name = "buttonMZ";
             this.buttonMZ.Size = new System.Drawing.Size(66, 66);
             this.buttonMZ.TabIndex = 30;
@@ -332,7 +331,7 @@
             this.buttonAnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAnd.ForeColor = System.Drawing.Color.White;
-            this.buttonAnd.Location = new System.Drawing.Point(667, 252);
+            this.buttonAnd.Location = new System.Drawing.Point(584, 252);
             this.buttonAnd.Name = "buttonAnd";
             this.buttonAnd.Size = new System.Drawing.Size(66, 66);
             this.buttonAnd.TabIndex = 10;
@@ -346,7 +345,7 @@
             this.buttonYu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonYu.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonYu.ForeColor = System.Drawing.Color.White;
-            this.buttonYu.Location = new System.Drawing.Point(750, 252);
+            this.buttonYu.Location = new System.Drawing.Point(667, 252);
             this.buttonYu.Name = "buttonYu";
             this.buttonYu.Size = new System.Drawing.Size(66, 66);
             this.buttonYu.TabIndex = 31;
@@ -822,7 +821,7 @@
             this.buttonZpt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonZpt.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonZpt.ForeColor = System.Drawing.Color.White;
-            this.buttonZpt.Location = new System.Drawing.Point(916, 252);
+            this.buttonZpt.Location = new System.Drawing.Point(750, 252);
             this.buttonZpt.Name = "buttonZpt";
             this.buttonZpt.Size = new System.Drawing.Size(66, 66);
             this.buttonZpt.TabIndex = 44;
@@ -875,12 +874,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.SlateGray;
+            this.panel1.Controls.Add(this.buttonSpace);
             this.panel1.Controls.Add(this.buttonCancel);
             this.panel1.Controls.Add(this.buttonOK);
             this.panel1.ForeColor = System.Drawing.Color.Red;
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1105, 667);
+            this.panel1.Size = new System.Drawing.Size(1105, 715);
             this.panel1.TabIndex = 29;
             // 
             // FormKeyboardLetter
@@ -890,7 +890,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(1109, 671);
+            this.ClientSize = new System.Drawing.Size(1109, 719);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.textBoxEdit);

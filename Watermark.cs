@@ -5,7 +5,7 @@
         public static string Image(string txt)
         {
             if (txt == "Coca-cola") return "CocaCola";
-            if (txt == "BaikalSea Company") return "BaikalSea";
+            if (txt == "ИЗРМВ") return "BaikalSea";
             return "";
         }
     }
