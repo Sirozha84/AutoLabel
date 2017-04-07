@@ -380,6 +380,7 @@ namespace AutoLabel
         /// <param name="list">Ссылка на ListView</param>
         public static void UserListDraw(ListView list)
         {
+            list.BeginUpdate();
             list.Items.Clear();
             foreach (User u in Users)
             {
@@ -389,6 +390,7 @@ namespace AutoLabel
                 it.SubItems.Add(u.StringWidthTPA());
                 list.Items.Add(it);
             }
+            list.EndUpdate();
         }
 
         /// <summary>

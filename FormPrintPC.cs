@@ -21,6 +21,7 @@ namespace AutoLabel
             Data.UsersLoad();
             labelNum.Text = lab.TPAName;
             box = lab.CurrentNum;
+            FillUsers();
             /*if (num < 6)
                 FillUsers();
             else

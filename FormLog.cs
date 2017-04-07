@@ -69,10 +69,12 @@ namespace AutoLabel
         //Рисование журнала
         void DrawLog()
         {
+            listView1.BeginUpdate();
             listView1.Items.Clear();
             foreach (string[] rec in log)
                 listView1.Items.Add(new ListViewItem(rec));
             buttonDel.Enabled = false;
+            listView1.EndUpdate();
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
