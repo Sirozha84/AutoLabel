@@ -42,7 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxLimit = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBoxOther = new System.Windows.Forms.TextBox();
             this.comboBoxColorant = new System.Windows.Forms.ComboBox();
             this.comboBoxAntistatic = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -67,6 +66,7 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
+            this.comboBoxOther = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +79,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxOther, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxShift, 1, 15);
             this.tableLayoutPanel1.Controls.Add(this.label17, 0, 15);
             this.tableLayoutPanel1.Controls.Add(this.label16, 0, 16);
@@ -92,7 +93,6 @@
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 11);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxLimit, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.label11, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxOther, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxColorant, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxAntistatic, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 9);
@@ -132,6 +132,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.249348F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.249348F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25293F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(360, 442);
             this.tableLayoutPanel1.TabIndex = 11;
@@ -297,17 +298,6 @@
             this.label11.TabIndex = 27;
             this.label11.Text = "Прочие дополнения:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBoxOther
-            // 
-            this.textBoxOther.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxOther.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxOther.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxOther.Location = new System.Drawing.Point(183, 263);
-            this.textBoxOther.Name = "textBoxOther";
-            this.textBoxOther.Size = new System.Drawing.Size(174, 20);
-            this.textBoxOther.TabIndex = 10;
             // 
             // comboBoxColorant
             // 
@@ -598,6 +588,18 @@
             this.label18.Text = "Для преформ: 0 - две одинаковые";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // comboBoxOther
+            // 
+            this.comboBoxOther.BackColor = System.Drawing.SystemColors.Window;
+            this.comboBoxOther.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comboBoxOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxOther.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.comboBoxOther.FormattingEnabled = true;
+            this.comboBoxOther.Location = new System.Drawing.Point(183, 263);
+            this.comboBoxOther.Name = "comboBoxOther";
+            this.comboBoxOther.Size = new System.Drawing.Size(174, 21);
+            this.comboBoxOther.TabIndex = 38;
+            // 
             // FormCustomLabel
             // 
             this.AcceptButton = this.buttonPrint;
@@ -631,7 +633,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ComboBox comboBoxLimit;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBoxOther;
         private System.Windows.Forms.ComboBox comboBoxColorant;
         private System.Windows.Forms.ComboBox comboBoxAntistatic;
         private System.Windows.Forms.Label label10;
@@ -667,5 +668,6 @@
         private System.Windows.Forms.ComboBox comboBoxShift;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBoxOther;
     }
 }

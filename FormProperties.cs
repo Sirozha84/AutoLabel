@@ -45,6 +45,7 @@ namespace AutoLabel
                 comboBoxMaterial.DataSource = Data.Materials0;
                 comboBoxAntistatic.DataSource = Data.Antistatics0;
                 comboBoxColorants.DataSource = Data.Colorants0;
+                comboBoxOther.DataSource = Data.Others;
             }
             if (l.TPAType == 1)
             {
@@ -81,7 +82,7 @@ namespace AutoLabel
             if (l.Antistatic != "") comboBoxAntistatic.SelectedItem = l.Antistatic; else comboBoxAntistatic.SelectedItem = null;
             if (l.Colorant != "") comboBoxColorants.SelectedItem = l.Colorant; else comboBoxColorants.SelectedItem = null;
             if (l.Limit != "") comboBoxLimit.SelectedItem = l.Limit; else comboBoxLimit.SelectedItem = null;
-            textBoxOther.Text = l.Other;
+            comboBoxOther.Text = l.Other;
             textBoxBox.Text = "1";
             label3.Text = Data.WeightOrLogo(l);
 
@@ -96,7 +97,7 @@ namespace AutoLabel
             comboBoxAntistatic.Visible = (l.TPAType != 2);
             comboBoxColorants.Visible = (l.TPAType != 2);
             comboBoxLimit.Visible = (l.TPAType == 0);
-            textBoxOther.Visible = (l.TPAType != 2);
+            comboBoxOther.Visible = (l.TPAType != 2);
             textBoxBox.Visible = true;
 
             //Видимость подписей полей
@@ -129,7 +130,7 @@ namespace AutoLabel
             if (comboBoxAntistatic.SelectedItem != null) l.Antistatic = comboBoxAntistatic.SelectedItem.ToString(); else l.Antistatic = "";
             if (comboBoxColorants.SelectedItem != null) l.Colorant = comboBoxColorants.SelectedItem.ToString(); else l.Colorant = "";
             if (comboBoxLimit.SelectedItem != null) l.Limit = comboBoxLimit.SelectedItem.ToString(); else l.Limit = "";
-            l.Other = textBoxOther.Text;
+            l.Other = comboBoxOther.Text;
             try { l.CurrentNum = Convert.ToInt32(textBoxBox.Text); }
             catch { l.CurrentNum = 1; }
             //Сохранение
@@ -185,12 +186,12 @@ namespace AutoLabel
         }
 
         //Строка прочих дополнений
-        private void textBoxOther_Click(object sender, EventArgs e)
+        private void comboBoxOther_Click(object sender, EventArgs e)
         {
             FormKeyboardLetter key = new FormKeyboardLetter("Введите прочие дополнения");
             if (key.ShowDialog() == DialogResult.OK)
             {
-                textBoxOther.Text = key.Str;
+                comboBoxOther.Text = key.Str;
                 MakeSaveEnable();
             }
         }
@@ -202,6 +203,17 @@ namespace AutoLabel
             if (key.ShowDialog() == DialogResult.OK)
             {
                 textBoxNumber.Text = key.Str;
+                MakeSaveEnable();
+            }
+        }
+
+        //Строчка номера короба
+        private void textBoxBox_Click(object sender, EventArgs e)
+        {
+            FormKeyboardNums key = new FormKeyboardNums("Введите номер короба");
+            if (key.ShowDialog() == DialogResult.OK)
+            {
+                textBoxBox.Text = key.Str;
                 MakeSaveEnable();
             }
         }
@@ -222,23 +234,13 @@ namespace AutoLabel
             comboBoxAntistatic.SelectedItem = "";
             comboBoxColorants.SelectedItem = null;
             comboBoxLimit.SelectedItem = null;
-            textBoxOther.Text = "";
+            comboBoxOther.Text = "";
         }
 
         //Кнопка "о программе"
         private void buttonAbout_Click(object sender, EventArgs e)
         {
             Program.About();
-        }
-
-        private void textBoxBox_Click(object sender, EventArgs e)
-        {
-            FormKeyboardNums key = new FormKeyboardNums("Введите номер короба");
-            if (key.ShowDialog() == DialogResult.OK)
-            {
-                textBoxBox.Text = key.Str;
-                MakeSaveEnable();
-            }
         }
     }
 }

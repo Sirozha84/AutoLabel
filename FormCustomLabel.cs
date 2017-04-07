@@ -39,6 +39,7 @@ namespace AutoLabel
                 comboBoxMaterial.DataSource = Data.Materials0;
                 comboBoxAntistatic.DataSource = Data.Antistatics0;
                 comboBoxColorant.DataSource = Data.Colorants0;
+                comboBoxOther.DataSource = Data.Others;
             }
             if (TPAType == 1)
             {
@@ -62,6 +63,7 @@ namespace AutoLabel
             comboBoxWeight.SelectedItem = null;
             comboBoxColor.SelectedItem = null;
             comboBoxCount.SelectedItem = null;
+            comboBoxOther.SelectedItem = null;
         }
 
         //Кнопка заполнения полей из ТПА
@@ -77,7 +79,7 @@ namespace AutoLabel
             if (l.Antistatic != "") comboBoxAntistatic.SelectedItem = l.Antistatic; else comboBoxAntistatic.SelectedItem = null;
             if (l.Colorant != "") comboBoxColorant.SelectedItem = l.Colorant; else comboBoxColorant.SelectedItem = null;
             if (l.Limit != "") comboBoxLimit.SelectedItem = l.Limit; else comboBoxLimit.SelectedItem = null;
-            textBoxOther.Text = l.Other;
+            comboBoxOther.Text = l.Other;
             textBoxBoxNum.Text = l.CurrentNum.ToString();
             if (l.AllowSelectCount()) numericUpDownCount.Value = 1;
             else numericUpDownCount.Value = 0;
@@ -89,7 +91,6 @@ namespace AutoLabel
         //Кнопка очистки
         private void button2_Click(object sender, EventArgs e)
         {
-            comboBoxTPA.SelectedItem = null;
             comboBoxWeight.SelectedItem = null;
             comboBoxType.SelectedItem = null;
             comboBoxMaterial.SelectedItem = null;
@@ -99,7 +100,7 @@ namespace AutoLabel
             comboBoxAntistatic.SelectedItem = "";
             comboBoxColorant.SelectedItem = null;
             comboBoxLimit.SelectedItem = null;
-            textBoxOther.Text = "";
+            comboBoxOther.Text = null;
             textBoxBoxNum.Text = "";
             comboBoxUser.SelectedItem = null;
             textBoxDate.Text = "";
@@ -121,7 +122,7 @@ namespace AutoLabel
             comboBoxAntistatic.Enabled = (TPAType != 2);
             comboBoxColorant.Enabled = (TPAType != 2);
             comboBoxLimit.Enabled = (TPAType == 0);
-            textBoxOther.Enabled = (TPAType != 2);
+            comboBoxOther.Enabled = (TPAType != 2);
             textBoxTime.Enabled = (TPAType != 2);
 
             //Видимость подписей полей
@@ -147,8 +148,9 @@ namespace AutoLabel
             {
                 Label l = new Label(comboBoxTPA.SelectedItem.ToString(), 0);
 
-                //Временно сделаю так... надо подумать как сделать лучше
-                if (comboBoxTPA.SelectedIndex > 5) l.TPAType = 1;
+                //Выбираем какую этикетку печатаем
+                if (comboBoxTPA.SelectedIndex >= 6 & comboBoxTPA.SelectedIndex <= 7) l.TPAType = 1;
+                if (comboBoxTPA.SelectedIndex >= 8) l.TPAType = 2;
 
                 if (comboBoxWeight.SelectedItem != null) l.Weight = comboBoxWeight.SelectedItem.ToString();
                 if (comboBoxType.SelectedItem != null) l.Type = comboBoxType.SelectedItem.ToString(); else l.Type = "";
@@ -159,7 +161,7 @@ namespace AutoLabel
                 if (comboBoxAntistatic.SelectedItem != null) l.Antistatic = comboBoxAntistatic.SelectedItem.ToString(); else l.Antistatic = "";
                 if (comboBoxColorant.SelectedItem != null) l.Colorant = comboBoxColorant.SelectedItem.ToString(); else l.Colorant = "";
                 if (comboBoxLimit.SelectedItem != null) l.Limit = comboBoxLimit.SelectedItem.ToString(); else l.Limit = "";
-                l.Other = textBoxOther.Text;
+                l.Other = comboBoxOther.Text;
                 l.Print(Convert.ToInt32(textBoxBoxNum.Text), comboBoxUser.SelectedItem.ToString(),
                     (int)numericUpDownCount.Value, textBoxDate.Text, textBoxTime.Text,
                     comboBoxShift.SelectedItem.ToString());

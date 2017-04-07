@@ -21,7 +21,7 @@ namespace AutoLabel
             Data.UsersLoad();
             labelNum.Text = lab.TPAName;
             box = lab.CurrentNum;
-            if (num < 6)
+            /*if (num < 6)
                 FillUsers();
             else
             {
@@ -29,7 +29,7 @@ namespace AutoLabel
                 comboBoxUser.Enabled = false;
                 buttonPrint.Enabled = true;
                 checkBoxFixUsers.Enabled = false;
-            }
+            }*/
             //Далее надо выяснить мелкие это коробки или крупные, и в зависимости от этого вывести второй нумератор
             try
             {

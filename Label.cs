@@ -164,12 +164,16 @@ namespace AutoLabel
                 //Этикетка для ротопринта
                 DrawLabelR(e.Graphics, 20, 16, true);
                 if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 16, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 20, 291, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 291, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 20, 566, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 566, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 20, 841, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 841, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 20, 200, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 200, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 20, 384, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 384, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 20, 568, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 568, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 20, 752, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 752, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 20, 936, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 936, true);
             }
             e.HasMorePages = LabelCount > 0;
         }
@@ -367,20 +371,28 @@ namespace AutoLabel
         void DrawLabelR(Graphics g, int X, int Y, bool IncNum)
         {
             int Width = 380;
-            int Height = 275;
+            int Height = 184;
             //Рамки
             g.DrawRectangle(Slim, X, Y, Width, Height);
 
-            g.DrawString("Логотип:", F22, Brushes.Black, new Point(X + 20, Y + 20));
-            g.DrawString(Weight, F22Bold, Brushes.Black, new Point(X + 20, Y + 70));
-            g.DrawString("Цвет:", F22, Brushes.Black, new Point(X + 20, Y + 140));
-            g.DrawString(PColor, F22, Brushes.Black, new Point(X + 150, Y + 140));
-            g.DrawString("Дата:", F22, Brushes.Black, new Point(X + 20, Y + 170));
-            g.DrawString(Date, F22, Brushes.Black, new Point(X + 150, Y + 170));
-            g.DrawString("Смена:", F22, Brushes.Black, new Point(X + 20, Y + 200));
-            g.DrawString(Shift, F22, Brushes.Black, new Point(X + 150, Y + 200));
-            g.DrawString(Packer, F11, Brushes.Black, new Point(X + 10, Y + 260));
-            g.DrawString(Num.ToString(), F11, Brushes.Black, new Point(X + 350, Y + 260));
+            g.DrawString("Логотип:", F22, Brushes.Black, new Point(X + 10, Y + 15));
+            g.DrawString(Weight, F22Bold, Brushes.Black, new Rectangle(X + 170, Y + 15, 195, 60));
+            g.DrawRectangle(Slim, X + 165, Y + 15, 200, 55);
+
+            g.DrawString("Код цвета:", F22, Brushes.Black, new Point(X + 10, Y + 75));
+            g.DrawString(PColor, F22, Brushes.Black, new Point(X + 200, Y + 75));
+
+            g.DrawString("Дата нанесения:", F22, Brushes.Black, new Point(X + 10, Y + 100));
+            g.DrawString(Date, F22, Brushes.Black, new Point(X + 200, Y + 100));
+
+            g.DrawString("Оператор:", F22, Brushes.Black, new Point(X + 10, Y + 125));
+            g.DrawString(Packer, F22, Brushes.Black, new Point(X + 200, Y + 125));
+
+            g.DrawString("Смена:", F22, Brushes.Black, new Point(X + 10, Y + 150));
+            g.DrawString(Shift[Shift.Length-1].ToString(), F22, Brushes.Black, new Point(X + 200, Y + 150));
+
+            g.DrawString(Num.ToString(), F14, Brushes.Black, new Point(X + 350, Y + 160));
+            
             //Инкрементим номер и пишем журнал
             IncAndLog();
         }

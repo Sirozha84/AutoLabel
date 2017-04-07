@@ -345,6 +345,11 @@ namespace AutoLabel
             EditList("Список сроков годности преформы", "Limits");
         }
 
+        private void списокПрочихДополненийПреформыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditList("Список прочих дополнений преформы", "Others");
+        }
+
         private void списокВесовКолпачкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EditList("Список весов колпачка", "Weights1");

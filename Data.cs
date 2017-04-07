@@ -56,6 +56,7 @@ namespace AutoLabel
         public static List<string> Antistatics1 = new List<string>();
         public static List<string> Colorants0 = new List<string>();
         public static List<string> Colorants1 = new List<string>();
+        public static List<string> Others = new List<string>();
 
         public static PrinterSettings printersettings;// = new PrinterSettings();
 
@@ -111,6 +112,7 @@ namespace AutoLabel
             ListLoad(Antistatics1, "Antistatics1");
             ListLoad(Colorants0, "Colorants0");
             ListLoad(Colorants1, "Colorants1");
+            ListLoad(Others, "Others");
             Loading = false;
         }
 

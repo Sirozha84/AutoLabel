@@ -44,11 +44,7 @@ namespace AutoLabel
                 comboBoxMaterial.DataSource = Data.Materials0;
                 comboBoxAntistatic.DataSource = Data.Antistatics0;
                 comboBoxColorants.DataSource = Data.Colorants0;
-                //Временно, пока не будет констант
-                comboBoxOther.Items.Clear();
-                comboBoxOther.Items.Add("Coca-cola");
-                comboBoxOther.Items.Add("АЯН");
-                comboBoxOther.Items.Add("ИЗРМВ");
+                comboBoxOther.DataSource = Data.Others;
             }
             if (l.TPAType == 1)
             {
@@ -59,8 +55,6 @@ namespace AutoLabel
                 comboBoxMaterial.DataSource = Data.Materials1;
                 comboBoxAntistatic.DataSource = Data.Antistatics1;
                 comboBoxColorants.DataSource = Data.Colorants1;
-                //Временно, пока не будет констант
-                comboBoxOther.Items.Clear();
             }
             if (l.TPAType == 2)
             {
