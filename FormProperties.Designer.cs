@@ -33,6 +33,7 @@
             this.buttonsave = new System.Windows.Forms.Button();
             this.labelformname = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBoxOther = new System.Windows.Forms.ComboBox();
             this.textBoxBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBoxLimit = new System.Windows.Forms.ComboBox();
@@ -63,7 +64,6 @@
             this.buttonAbout = new System.Windows.Forms.Button();
             this.buttonUsers = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
-            this.comboBoxOther = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -176,6 +176,21 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(867, 555);
             this.tableLayoutPanel1.TabIndex = 10;
+            // 
+            // comboBoxOther
+            // 
+            this.comboBoxOther.BackColor = System.Drawing.Color.Black;
+            this.comboBoxOther.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comboBoxOther.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxOther.ForeColor = System.Drawing.Color.White;
+            this.comboBoxOther.FormattingEnabled = true;
+            this.comboBoxOther.Location = new System.Drawing.Point(479, 463);
+            this.comboBoxOther.Name = "comboBoxOther";
+            this.comboBoxOther.Size = new System.Drawing.Size(385, 45);
+            this.comboBoxOther.TabIndex = 31;
+            this.comboBoxOther.Visible = false;
+            this.comboBoxOther.Click += new System.EventHandler(this.comboBoxOther_Click);
             // 
             // textBoxBox
             // 
@@ -385,7 +400,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(470, 46);
             this.label5.TabIndex = 13;
-            this.label5.Text = "ТПА:";
+            this.label5.Text = "Линия:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // comboBoxCount
@@ -600,21 +615,6 @@
             this.buttonClear.UseVisualStyleBackColor = false;
             this.buttonClear.Visible = false;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
-            // 
-            // comboBoxOther
-            // 
-            this.comboBoxOther.BackColor = System.Drawing.Color.Black;
-            this.comboBoxOther.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboBoxOther.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBoxOther.ForeColor = System.Drawing.Color.White;
-            this.comboBoxOther.FormattingEnabled = true;
-            this.comboBoxOther.Location = new System.Drawing.Point(479, 463);
-            this.comboBoxOther.Name = "comboBoxOther";
-            this.comboBoxOther.Size = new System.Drawing.Size(385, 45);
-            this.comboBoxOther.TabIndex = 31;
-            this.comboBoxOther.Visible = false;
-            this.comboBoxOther.Click += new System.EventHandler(this.comboBoxOther_Click);
             // 
             // FormProperties
             // 

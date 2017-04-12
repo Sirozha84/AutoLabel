@@ -96,7 +96,7 @@ namespace AutoLabel
             labelClock.Visible = true;
             if (Data.IsMachine)
             {
-                labelformname.Text = "Выбор ТПА";
+                labelformname.Text = "Выбор Линии";
                 buttonShift.Text = Shift.Current;
             }
             else
@@ -390,9 +390,14 @@ namespace AutoLabel
             EditList("Список логотипов ротопринт", "Weights2");
         }
 
+        private void списокЦветовЛоготипаРотопринтToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditList("Список цветов логотипа ротопринт", "Colors2");
+        }
+
         private void списокЦветовРотопринтToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditList("Список цветов ротопринт", "Colors2");
+            EditList("Список кодов цветов ротопринт", "Colorants2");
         }
         #endregion
         private void справкаToolStripMenuItem1_Click(object sender, EventArgs e)

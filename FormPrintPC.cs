@@ -22,15 +22,13 @@ namespace AutoLabel
             labelNum.Text = lab.TPAName;
             box = lab.CurrentNum;
             FillUsers();
-            /*if (num < 6)
-                FillUsers();
-            else
+            //Если это колпак, выбор пользователя убираем
+            if (num >= 6 & num<=7)
             {
-                //Или же вообще делаем его не активным, если это колпак
                 comboBoxUser.Enabled = false;
                 buttonPrint.Enabled = true;
                 checkBoxFixUsers.Enabled = false;
-            }*/
+            }
             //Далее надо выяснить мелкие это коробки или крупные, и в зависимости от этого вывести второй нумератор
             try
             {
@@ -189,6 +187,12 @@ namespace AutoLabel
                 if (!checkBoxFixUsers.Checked || u.TPAAccess[NumMachine])
                     comboBoxUser.Items.Add(u.Name);
             }
+            //Если в списке только один чувак, его сразу и выберем и делаем кнопку печати активной
+            if (comboBoxUser.Items.Count == 1)
+            {
+                comboBoxUser.SelectedIndex = 0;
+            }
+            buttonPrint.Enabled = (comboBoxUser.Items.Count == 1);
         }
     }
 }

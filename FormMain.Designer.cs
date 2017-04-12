@@ -83,6 +83,7 @@
             this.списокТиповАнтистатикаДляПреформыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокКодовКрасителейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокСроковГодностиПреформыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокПрочихДополненийПреформыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.списокВесовКолпачкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокТиповКолпачкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,7 +108,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelProblem = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
-            this.списокПрочихДополненийПреформыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокЦветовЛоготипаРотопринтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -654,6 +655,7 @@
             this.списокКодовКрасителейКолпачкаToolStripMenuItem,
             this.toolStripMenuItem4,
             this.списокЛоготиповРотопринтToolStripMenuItem,
+            this.списокЦветовЛоготипаРотопринтToolStripMenuItem,
             this.списокЦветовРотопринтToolStripMenuItem,
             this.toolStripMenuItem6,
             this.собщениеБегущейСтрокиToolStripMenuItem});
@@ -716,6 +718,13 @@
             this.списокСроковГодностиПреформыToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
             this.списокСроковГодностиПреформыToolStripMenuItem.Text = "Список сроков годности преформы";
             this.списокСроковГодностиПреформыToolStripMenuItem.Click += new System.EventHandler(this.списокСроковГодностиПреформыToolStripMenuItem_Click);
+            // 
+            // списокПрочихДополненийПреформыToolStripMenuItem
+            // 
+            this.списокПрочихДополненийПреформыToolStripMenuItem.Name = "списокПрочихДополненийПреформыToolStripMenuItem";
+            this.списокПрочихДополненийПреформыToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
+            this.списокПрочихДополненийПреформыToolStripMenuItem.Text = "Список прочих дополнений преформы";
+            this.списокПрочихДополненийПреформыToolStripMenuItem.Click += new System.EventHandler(this.списокПрочихДополненийПреформыToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -787,7 +796,7 @@
             // 
             this.списокЦветовРотопринтToolStripMenuItem.Name = "списокЦветовРотопринтToolStripMenuItem";
             this.списокЦветовРотопринтToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
-            this.списокЦветовРотопринтToolStripMenuItem.Text = "Список цветов ротопринт";
+            this.списокЦветовРотопринтToolStripMenuItem.Text = "Список кодов цветов ротопринт";
             this.списокЦветовРотопринтToolStripMenuItem.Click += new System.EventHandler(this.списокЦветовРотопринтToolStripMenuItem_Click);
             // 
             // toolStripMenuItem6
@@ -903,12 +912,12 @@
             this.labelStatus.TabIndex = 12;
             this.labelStatus.Text = "...";
             // 
-            // списокПрочихДополненийПреформыToolStripMenuItem
+            // списокЦветовЛоготипаРотопринтToolStripMenuItem
             // 
-            this.списокПрочихДополненийПреформыToolStripMenuItem.Name = "списокПрочихДополненийПреформыToolStripMenuItem";
-            this.списокПрочихДополненийПреформыToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
-            this.списокПрочихДополненийПреформыToolStripMenuItem.Text = "Список прочих дополнений преформы";
-            this.списокПрочихДополненийПреформыToolStripMenuItem.Click += new System.EventHandler(this.списокПрочихДополненийПреформыToolStripMenuItem_Click);
+            this.списокЦветовЛоготипаРотопринтToolStripMenuItem.Name = "списокЦветовЛоготипаРотопринтToolStripMenuItem";
+            this.списокЦветовЛоготипаРотопринтToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
+            this.списокЦветовЛоготипаРотопринтToolStripMenuItem.Text = "Список цветов логотипа ротопринт";
+            this.списокЦветовЛоготипаРотопринтToolStripMenuItem.Click += new System.EventHandler(this.списокЦветовЛоготипаРотопринтToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -1022,6 +1031,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem списокЛоготиповРотопринтToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокПрочихДополненийПреформыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem списокЦветовЛоготипаРотопринтToolStripMenuItem;
     }
 }
 

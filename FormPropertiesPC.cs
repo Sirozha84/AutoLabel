@@ -60,6 +60,7 @@ namespace AutoLabel
             {
                 comboBoxWeight.DataSource = Data.Weights2;
                 comboBoxColor.DataSource = Data.Colors2;
+                comboBoxColorants.DataSource = Data.Colorants2;
             }
             comboBoxLimit.DataSource = Data.Limits;
             comboBoxWeight.SelectedItem = null;
@@ -92,7 +93,7 @@ namespace AutoLabel
             comboBoxCount.Enabled = (l.TPAType != 2);
             textBoxNumber.Enabled = (l.TPAType != 2);
             comboBoxAntistatic.Enabled = (l.TPAType != 2);
-            comboBoxColorants.Enabled = (l.TPAType != 2);
+            comboBoxColorants.Enabled = true;
             comboBoxLimit.Enabled = (l.TPAType == 0);
             comboBoxOther.Enabled = (l.TPAType != 2);
             textBoxBox.Enabled = true;
@@ -105,7 +106,7 @@ namespace AutoLabel
             label4.Enabled = (l.TPAType != 2);
             label1.Enabled = (l.TPAType != 2);
             label8.Enabled = (l.TPAType != 2);
-            label9.Enabled = (l.TPAType != 2);
+            label9.Enabled = true;
             label10.Enabled = (l.TPAType == 0);
             label11.Enabled = (l.TPAType != 2);
             label12.Enabled = true;
