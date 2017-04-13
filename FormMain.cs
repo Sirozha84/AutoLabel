@@ -118,15 +118,15 @@ namespace AutoLabel
                 label7.Text = Data.Labels[6].LabelUnderButton();
                 label8.Text = Data.Labels[7].LabelUnderButton();
                 label9.Text = Data.Labels[8].LabelUnderButton();
-                Data.SetColor(button1, 0);
-                Data.SetColor(button2, 1);
-                Data.SetColor(button3, 2);
-                Data.SetColor(button4, 3);
-                Data.SetColor(button5, 4);
-                Data.SetColor(button6, 5);
-                Data.SetColor(button7, 6);
-                Data.SetColor(button8, 7);
-                Data.SetColor(button9, 8);
+                Conformity.SetColor(button1, 0);
+                Conformity.SetColor(button2, 1);
+                Conformity.SetColor(button3, 2);
+                Conformity.SetColor(button4, 3);
+                Conformity.SetColor(button5, 4);
+                Conformity.SetColor(button6, 5);
+                Conformity.SetColor(button7, 6);
+                Conformity.SetColor(button8, 7);
+                Conformity.SetColor(button9, 8);
                 tableLayoutPanel1.Visible = true;
                 labelProblem.Visible = false;
             }

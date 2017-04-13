@@ -152,14 +152,19 @@ namespace AutoLabel
         private void comboBoxLimit_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxAntiType_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxAntiCount_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
-        private void comboBoxColor_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxOther_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void textBoxBox_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
 
         private void comboBoxWeight_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboBoxType.SelectedItem = Conformity.WeightToType(comboBoxWeight.Text);
+            comboBoxColorants.SelectedItem = Conformity.NameAndColorToCode(comboBoxWeight.Text, comboBoxColor.Text);
             MakeSaveEnable();
-            comboBoxType.SelectedItem = Data.Conformity(comboBoxWeight.Text);
+        }
+        private void comboBoxColor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBoxColorants.SelectedItem = Conformity.NameAndColorToCode(comboBoxWeight.Text, comboBoxColor.Text);
+            MakeSaveEnable();
         }
 
         /// <summary>

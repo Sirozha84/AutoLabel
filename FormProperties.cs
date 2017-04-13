@@ -159,7 +159,7 @@ namespace AutoLabel
         private void comboBoxWeight_SelectedIndexChanged(object sender, EventArgs e)
         {
             MakeSaveEnable();
-            comboBoxType.SelectedItem = Data.Conformity(comboBoxWeight.Text);
+            comboBoxType.SelectedItem = Conformity.WeightToType(comboBoxWeight.Text);
         }
 
         //Кнопка выбора принтера

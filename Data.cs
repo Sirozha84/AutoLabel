@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
-using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 using System.Net.Sockets;
@@ -396,81 +394,6 @@ namespace AutoLabel
         }
 
         /// <summary>
-        /// Задание цвета для кнопки
-        /// </summary>
-        /// <param name="but">Кнопку</param>
-        /// <param name="lab">Лейбл</param>
-        public static void SetColor(Button but, int tpa)
-        {
-            but.Visible = Labels[tpa].PartNum != "";
-            string FirstWord = Labels[tpa].PColor.Split(' ')[0].ToLower();
-            switch (FirstWord)
-            {
-                case "бесцветный":
-                    but.BackColor = Color.FromArgb(64, 64, 64);
-                    but.ForeColor = Color.FromArgb(192, 192, 192);
-                    break;
-                case "белый":
-                    but.BackColor = Color.FromArgb(255, 255, 255);
-                    but.ForeColor = Color.FromArgb(192, 192, 192);
-                    break;
-                case "бирюзовый":
-                    but.BackColor = Color.FromArgb(0, 128, 128);
-                    but.ForeColor = Color.FromArgb(0, 255, 255);
-                    break;
-                case "бордовый":
-                    but.BackColor = Color.FromArgb(128, 32, 32);
-                    but.ForeColor = Color.FromArgb(255, 64, 64);
-                    break;
-                case "голубой":
-                    but.BackColor = Color.FromArgb(80, 158, 255);
-                    but.ForeColor = Color.FromArgb(150, 200, 255);
-                    break;
-                case "оранжевый":
-                    but.BackColor = Color.FromArgb(255, 128, 0);
-                    but.ForeColor = Color.FromArgb(255, 178, 0);
-                    break;
-                case "жёлтый":
-                case "желтый":
-                case "золотой":
-                    but.BackColor = Color.FromArgb(255, 255, 0);
-                    but.ForeColor = Color.FromArgb(128, 128, 0);
-                    break;
-                case "зелёный":
-                case "зеленый":
-                    but.BackColor = Color.FromArgb(0, 128, 0);
-                    but.ForeColor = Color.FromArgb(0, 255, 0);
-                    break;
-                case "синий":
-                    but.BackColor = Color.FromArgb(0, 0, 128);
-                    but.ForeColor = Color.FromArgb(0, 128, 255);
-                    break;
-                case "рубиновый":
-                case "красный":
-                    but.BackColor = Color.FromArgb(128, 0, 0);
-                    but.ForeColor = Color.FromArgb(255, 64, 64);
-                    break;
-                case "коричневый":
-                    but.BackColor = Color.FromArgb(64, 32, 0);
-                    but.ForeColor = Color.FromArgb(128, 64, 0);
-                    break;
-                case "фиолетовый":
-                    but.BackColor = Color.FromArgb(128, 0, 192);
-                    but.ForeColor = Color.FromArgb(192, 0, 255);
-                    break;
-                case "чёрный":
-                case "черный":
-                    but.BackColor = Color.FromArgb(0, 0, 0);
-                    but.ForeColor = Color.FromArgb(64, 64, 64);
-                    break;
-                default:
-                    but.BackColor = Color.FromArgb(0, 0, 0);
-                    but.ForeColor = Color.FromArgb(255, 255, 255);
-                    break;
-            }
-        }
-
-        /// <summary>
         /// Задание вопроса
         /// </summary>
         /// <param name="question"></param>
@@ -482,19 +405,6 @@ namespace AutoLabel
         }
 
         /// <summary>
-        /// Соответствие строк (что бы автоматически подбирался код по весу)
-        /// </summary>
-        /// <param name="Text"></param>
-        /// <returns></returns>
-        public static string Conformity(string Text)
-        {
-            if (Text == "2,35±0,1") return "КВП-1-28.1881/2";
-            if (Text == "2,5±0,1") return "КВП-1-28.1881/1";
-            if (Text == "3,15±0,1") return "КВП-1-28";
-            return "";
-        }
-
-        /// <summary>
         /// Возвращает название поля вес/логотип в зависимости от типа этикетки
         /// </summary>
         /// <param name="type"></param>
@@ -503,21 +413,6 @@ namespace AutoLabel
         {
             if (l.TPAType == 2) return "Логотип:";
             return "Вес:";
-        }
-
-        /// <summary>
-        /// Возврат понятного имени по типу этикетки
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        public static string LabelName(int type)
-        {
-            switch (type)
-            {
-                case 0: return "Преформа";
-                case 1: return "Колпак";
-                default: return "Ротопринт";
-            }
         }
     }
 }

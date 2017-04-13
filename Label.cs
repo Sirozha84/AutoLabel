@@ -76,7 +76,7 @@ namespace AutoLabel
         {
             Print(num, packer, count, AutoLabel.Shift.Date, DateTime.Now.ToString("HH:mm"), AutoLabel.Shift.Current);
             Save();
-            Net.Log("Печать этикетки \"" + Data.LabelName(TPAType) + "\"");
+            Net.Log("Печать этикетки \"" + Conformity.LabelName(TPAType) + "\"");
             //Запись данных для статистики
             try
             {
