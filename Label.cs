@@ -380,7 +380,7 @@ namespace AutoLabel
             g.DrawRectangle(Slim, X + 165, Y + 15, 200, 55);
 
             g.DrawString("Код цвета:", F22, Brushes.Black, new Point(X + 10, Y + 75));
-            g.DrawString(PColor, F22, Brushes.Black, new Point(X + 200, Y + 75));
+            g.DrawString(Colorant, F22, Brushes.Black, new Point(X + 200, Y + 75));
 
             g.DrawString("Дата нанесения:", F22, Brushes.Black, new Point(X + 10, Y + 100));
             g.DrawString(Date, F22, Brushes.Black, new Point(X + 200, Y + 100));

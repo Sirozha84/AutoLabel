@@ -185,21 +185,21 @@ namespace AutoLabel
             if (Name == "Sсhweppes" &                   Color == "Зелёный 31,32")   return "4";
             if (Name == "Sсhweppes" &                   Color == "Красный 49")      return "4";
             if (Name == "Sсhweppes" &                   Color == "Жёлтый 64")       return "3";
-            if (Name == "" & Color == "") return "";
-            if (Name == "" & Color == "") return "";
-            if (Name == "" & Color == "") return "";
-            if (Name == "" & Color == "") return "";
-            if (Name == "" & Color == "") return "";
-            if (Name == "" & Color == "") return "";
-            if (Name == "" & Color == "") return "";
-            if (Name == "" & Color == "") return "";
-            if (Name == "" & Color == "") return "";
-            if (Name == "" & Color == "") return "";
-            if (Name == "" & Color == "") return "";
-            if (Name == "" & Color == "") return "";
-            if (Name == "" & Color == "") return "";
-            if (Name == "" & Color == "") return "";
-            if (Name == "" & Color == "") return "";
+            if (Name == "«FANTA» промо 2 балла" &       Color == "Жёлтый 64")       return "4";
+            if (Name == "«FANTA» промо 3 балла" &       Color == "Жёлтый 64")       return "4";
+            if (Name == "«FANTA» промо 4 балла" &       Color == "Жёлтый 64")       return "4";
+            if (Name == "«FANTA» промо 2 балла" &       Color == "Оранжевый 61")    return "8";
+            if (Name == "«FANTA» промо 3 балла" &       Color == "Оранжевый 61")    return "8";
+            if (Name == "«FANTA» промо 4 балла" &       Color == "Оранжевый 61")    return "8";
+            if (Name == "«FANTA» промо 2 балла" &       Color == "Жёлтый 64")       return "4";
+            if (Name == "«FANTA» промо 3 балла" &       Color == "Жёлтый 64")       return "4";
+            if (Name == "«FANTA» промо 4 балла" &       Color == "Жёлтый 64")       return "4";
+            if (Name == "«Сoca-Cola Zero» промо 2 балла" & Color == "Чёрный 74")    return "4";
+            if (Name == "«Сoca-Cola Zero» промо 3 балла" & Color == "Чёрный 74")    return "4";
+            if (Name == "«Сoca-Cola Zero» промо 4 балла" & Color == "Чёрный 74")    return "4";
+            if (Name == "«Сoca-Cola» промо 2 балла" &   Color == "Красный 46,48") return "4";
+            if (Name == "«Сoca-Cola» промо 3 балла" &   Color == "Красный 46,48") return "4";
+            if (Name == "«Сoca-Cola» промо 4 балла" &   Color == "Красный 46,48") return "4";
             return "";
         }
     }

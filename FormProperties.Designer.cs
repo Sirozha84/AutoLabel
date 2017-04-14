@@ -526,7 +526,7 @@
             this.buttonquitprogram.Name = "buttonquitprogram";
             this.buttonquitprogram.Size = new System.Drawing.Size(127, 48);
             this.buttonquitprogram.TabIndex = 11;
-            this.buttonquitprogram.Text = "Выход";
+            this.buttonquitprogram.Text = "Выход из программы";
             this.buttonquitprogram.UseVisualStyleBackColor = false;
             this.buttonquitprogram.Click += new System.EventHandler(this.buttonquitprogram_Click);
             // 
