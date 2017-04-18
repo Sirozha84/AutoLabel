@@ -270,25 +270,27 @@ namespace AutoLabel
             //Значение поля
             if (BigLabel)
             {
-                bool Find = false;
                 if (g.MeasureString(s3, F37Bold).Width < 280)
                 {
                     g.DrawString(s3, F37Bold, Brushes.Black, X + 226, Y + y - 5);
                     g.DrawString(s3, F37Bold, Brushes.Black, X + 228, Y + y - 5);
-                    Find = true;
                 }
-                if (g.MeasureString(s3, F30Bold).Width < 280 & !Find)
+                else if (g.MeasureString(s3, F30Bold).Width < 280)
                 {
                     g.DrawString(s3, F30Bold, Brushes.Black, X + 230, Y + y - 5);
                     g.DrawString(s3, F30Bold, Brushes.Black, X + 232, Y + y - 5);
-                    Find = true;
                 }
-                if (g.MeasureString(s3, F22Bold).Width < 280 & !Find)
+                else if (g.MeasureString(s3, F22Bold).Width < 280)
                 {
                     g.DrawString(s3, F22Bold, Brushes.Black, X + 231, Y + y - 5);
                     g.DrawString(s3, F22Bold, Brushes.Black, X + 232, Y + y - 5);
                 }
-            }
+                else
+                {
+                    g.DrawString(s3, F22, Brushes.Black, X + 231, Y + y - 5);
+                    g.DrawString(s3, F22, Brushes.Black, X + 232, Y + y - 5);
+                }
+            }   
             else
                 g.DrawString(s3, F30Bold, Brushes.Black, X + 230, Y + y);
         }
