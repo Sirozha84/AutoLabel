@@ -162,18 +162,19 @@ namespace AutoLabel
             if (TPAType == 2)
             {
                 //Этикетка для ротопринта
-                DrawLabelR(e.Graphics, 20, 16, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 16, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 20, 200, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 200, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 20, 384, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 384, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 20, 568, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 568, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 20, 752, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 752, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 20, 936, true);
-                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, 936, true);
+                int y = 0;
+                DrawLabelR(e.Graphics, 6, y, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, y, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 6, y + 189, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, y + 189, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 6, y + 378, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, y + 378, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 6, y + 567, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, y + 567, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 6, y + 756, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, y + 756, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 6, y + 945, true);
+                if (LabelCount > 0) DrawLabelR(e.Graphics, 400, y + 945, true);
             }
             e.HasMorePages = LabelCount > 0;
         }
