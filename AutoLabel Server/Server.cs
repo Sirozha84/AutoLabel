@@ -368,22 +368,26 @@ namespace AutoLabel_Server
         /// </summary>
         static void LoadStat()
         {
-            using (StreamReader file = File.OpenText("Statistics.txt"))
+            try
             {
-                int c = 0;
-                try { c = Convert.ToInt32(file.ReadLine()); } catch { }
-
-                for (int i = 0; i < c; i++)
+                using (StreamReader file = File.OpenText("Statistics.txt"))
                 {
-                    try
+                    int c = 0;
+                    try { c = Convert.ToInt32(file.ReadLine()); } catch { }
+
+                    for (int i = 0; i < c; i++)
                     {
-                        Stat m = new Stat(file.ReadLine());
-                        m.Num = Convert.ToInt32(file.ReadLine());
-                        Stats.Add(m);
+                        try
+                        {
+                            Stat m = new Stat(file.ReadLine());
+                            m.Num = Convert.ToInt32(file.ReadLine());
+                            Stats.Add(m);
+                        }
+                        catch { }
                     }
-                    catch { }
                 }
             }
+            catch { }
         }
 
         static void SaveStat(Object o)

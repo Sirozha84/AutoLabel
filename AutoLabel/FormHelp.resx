@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Запуск клиента и сервера
+
+Параметры сервера хранятся в файле Server.txt, в котором указывается только строка с именем сервера или его IP-адресом. Для тестов, при запуске сервера и клиента на одной машине указывается localhost или 127.0.0.1.
+Соединение происходит по порту 90, который следует разрешить в фаерволе.
+
+Запуск в режиме терминала
+
+Для запуска программы в режиме терминала (полноэкранный с поддержкой сенсорного экрана и считывателя карт) в ярлыке необходимо прописать любой ключ, например: "autolabel.exe 1"
+
+Бесконтактные ключи RFID
+
+В программе используется считыватель бесконтактных карт RFID эмулирующий клавиатуру. По этому, для тестов можно использовать ввод с клавиатуры 8-и символов.</value>
+  </data>
+  <data name="richTextBox3.Text" xml:space="preserve">
+    <value>В режиме терминала при нажатии на поле "Прочие дополнения" предлагается ввести текст вручную. Для того чтобы выбрать одно из значений из списка необходимо нажать на кнопку выбора (в правой части с треугольником вниз) и отвести палец вверх или вниз.
+
+Для корректного отображения цвета в списке констант могут быть цвета: бесцветный, белый, бирюзовый, бордовый, голубой, оранжевый, жёлтый, желтый, золотой, зелёный, зеленый, синий, рубиновый, красный, коричневый, фиолетовый, чёрный и черный.
+
+Логотипы компаний поддерживаются следующие (строка указывается в прочих дополнениях): Coca-cola и ИЗРМВ.
+
+Для колпака код автоматически выбирается от выбранного веса: "2,35±0,1" -&gt; "КВП-1-28.1881/2", "2,5±0,1" -&gt; "КВП-1-28.1881/1", "3,15±0,1" -&gt;"КВП-1-28".</value>
+  </data>
+  <data name="richTextBox2.Text" xml:space="preserve">
+    <value>Версия 2.4.3 (27.04.2017)
+
+• Подгон этикеток ротопринта под шаблонно-нарезанную самоклеящуюся бумагу.
+
+Версия 2.4.2 (18.04.2017)
+
+• Вставлен 4-ый вариант строки для цвета (не влазила сильно длинная трока).
+
+Версия 2.4.1 (14.04.2017)
+
+• Привязка кода цвета логотипа к логотипу и цвету колпачка (ротопринт)
+• Улучшено поведение печати в режиме ПК (если привязанный упаковщик только один, то он сразу выбирается и доступна печать, и если убрать и снова поставить галочку "только привязанные" он снова становится выбранным). Так же убрана ошибка которая оставляет кнопку печати если убрать галочку "только привязанные" и не выбрать упаковщика
+
+Версия 2.4.0 (07.04.2017)
+
+• Новый  тип этиеток "Ротопринт"
+• Возможность выбора прочих дополнениях при печати этикеток с произвольными полями
+• Константы прочих  дополнений теперь можно редактировать пользователю
+
+Версия 2.3.1 (05.04.2017)
+
+• Водяной знак с логотипами компаний (Кока-кола и Байкал)
+• Исправлено не реагирование на изменение прочих дополнений в режиме ПК
+• Убраны штрихкоды
+
+Версия  2.3.0 (07.12.2016)
+
+• Штрихкод на некоторые заданные этикетки
+• Отбор только привязанных упаковщиков при печати этикеток в режиме ПК
+• Изменение ограничений максимального количества этикеток на линию колпака
+• Статистика по этикеткам
+• Исправлена бегущая строка, теперь она снова работает!
+• Обновлённая справка :-)
+
+Версия  2.2.2 (07.07.2016)
+
+• Правка этикетки для преформы
+
+Версия  2.2.1 (27.06.2016)
+
+• Выпадающий список прочих дополнений для преформы (пока только в режиме ПК и без возможности изменения)
+
+Версия  2.2.0 (22.06.2016)
+
+• Возможность изменять начальный номер короба
+• Справка
+
+Версия  2.1.0 (02.06.2016)
+
+• Учитывание названия цветов с длинным названием, а также упрощение их отображения на главном экране
+• Разрешение менять номер короба только администраторам
+
+Версия  2.0.1 (16.05.2016)
+
+• Исправление этикетки для пробки, не влезали длинные слова
+• Исправлена печать этикетки для пробки с компьютера, не брался актуальный номер
+
+Версия  2.0.0 Бета 5 (10.05.2016)
+
+• Соответствие поля типа к полю веса для параметров пробки
+• Исправлен отчёт "Общий"
+
+Версия  2.0.0 Бета 4 (29.04.2016)
+
+• Разный лимит этикеток на разных ТПА
+• Исправлено создание нового пользователя
+
+Версия  2.0.0 Бета 3 (28.04.2016)
+
+• Запрет запуска второго экземпляра программы
+
+Версия  2.0.0 Бета 2 (24.03.2016)
+
+• Исправлена масса ошибок, связанных с переходом на клиент-серверную версию
+
+Версия  2.0.0 Бета 1 (23.03.2016)
+
+• Переход программы на клиент-серверную версию, теперь возможна работа программы на нескольких машинах одновременно
+
+Версия  1.2.0 (17.03.2016)
+
+• Да кто его уже помнит что там было, главное что это был мой день рождения :-)
+
+Версия  1.0.0 (03.02.2016)
+
+• После 12-и бет вышла такая, какая вышла</value>
+  </data>
+</root>
