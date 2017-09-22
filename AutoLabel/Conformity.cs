@@ -1,5 +1,6 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace AutoLabel
 {
@@ -80,16 +81,43 @@ namespace AutoLabel
             }
         }
 
+
         /// <summary>
-        /// Тип горловины из веса (колпак)
+        /// Список типов горловин из веса и линии (колпак)
         /// </summary>
-        /// <param name="Text"></param>
+        /// <param name="Weight">Вес</param>
+        /// <param name="Line">Линия</param>
         /// <returns></returns>
-        public static string WeightToType(string Text)
+        public static List<string> WeightToType(string Weight, string Line)
         {
-            if (Text == "2,35±0,1") return "КВП-1-28.1881/2";
-            if (Text == "2,5±0,1")  return "КВП-1-28.1881/1";
-            if (Text == "3,15±0,1") return "КВП-1-28";
+            List<string> list = new List<string>();
+            if (Line == "C1")
+            {
+                if (Weight == "1,95±0,1") { list.Add("КВП-1-28/1881/1.(1.95)."); list.Add("КВП-1-28/1881/2.(1.95)."); }
+                if (Weight == "2,15±0,1") { list.Add("КВП-1-28/1881/1.(2.15)."); list.Add("КВП-1-28/1881/2.(2.15)."); }
+                if (Weight == "3,15±0,1") list.Add("КВП-1-28");
+            }
+            if (Line == "C2")
+            {
+                if (Weight == "2,35±0,1") list.Add("КВП-1-28/1881/2");
+                if (Weight == "2,5±0,1") list.Add("КВП-1-28/1881/1");
+            }
+            return list;
+        }
+
+        /// <summary>
+        /// Вес из веса и линии
+        /// </summary>
+        /// <param name="Weight"></param>
+        /// <param name="Line"></param>
+        /// <returns></returns>
+        public static string WeightToCount(string Weight, string Line)
+        {
+            if (Line == "C1")
+            {
+                if (Weight == "3,15±0,1") return "3800";
+                return "4750";
+            }
             return "";
         }
 
@@ -197,9 +225,9 @@ namespace AutoLabel
             if (Name == "«Сoca-Cola Zero» промо 2 балла" & Color == "Чёрный 74")    return "4";
             if (Name == "«Сoca-Cola Zero» промо 3 балла" & Color == "Чёрный 74")    return "4";
             if (Name == "«Сoca-Cola Zero» промо 4 балла" & Color == "Чёрный 74")    return "4";
-            if (Name == "«Сoca-Cola» промо 2 балла" &   Color == "Красный 46,48") return "4";
-            if (Name == "«Сoca-Cola» промо 3 балла" &   Color == "Красный 46,48") return "4";
-            if (Name == "«Сoca-Cola» промо 4 балла" &   Color == "Красный 46,48") return "4";
+            if (Name == "«Сoca-Cola» промо 2 балла" &   Color == "Красный 46,48")   return "4";
+            if (Name == "«Сoca-Cola» промо 3 балла" &   Color == "Красный 46,48")   return "4";
+            if (Name == "«Сoca-Cola» промо 4 балла" &   Color == "Красный 46,48")   return "4";
             return "";
         }
     }

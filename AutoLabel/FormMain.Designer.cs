@@ -94,6 +94,7 @@
             this.списокКодовКрасителейКолпачкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.списокЛоготиповРотопринтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокЦветовЛоготипаРотопринтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокЦветовРотопринтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.собщениеБегущейСтрокиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -108,7 +109,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelProblem = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
-            this.списокЦветовЛоготипаРотопринтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -660,8 +660,8 @@
             this.toolStripMenuItem6,
             this.собщениеБегущейСтрокиToolStripMenuItem});
             this.константыToolStripMenuItem.Name = "константыToolStripMenuItem";
-            this.константыToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.константыToolStripMenuItem.Text = "Константы";
+            this.константыToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.константыToolStripMenuItem.Text = "Справочники";
             // 
             // списокВесовПреформыToolStripMenuItem
             // 
@@ -733,16 +733,20 @@
             // 
             // списокВесовКолпачкаToolStripMenuItem
             // 
+            this.списокВесовКолпачкаToolStripMenuItem.Enabled = false;
             this.списокВесовКолпачкаToolStripMenuItem.Name = "списокВесовКолпачкаToolStripMenuItem";
             this.списокВесовКолпачкаToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
             this.списокВесовКолпачкаToolStripMenuItem.Text = "Список весов колпачка";
+            this.списокВесовКолпачкаToolStripMenuItem.Visible = false;
             this.списокВесовКолпачкаToolStripMenuItem.Click += new System.EventHandler(this.списокВесовКолпачкаToolStripMenuItem_Click);
             // 
             // списокТиповКолпачкаToolStripMenuItem
             // 
+            this.списокТиповКолпачкаToolStripMenuItem.Enabled = false;
             this.списокТиповКолпачкаToolStripMenuItem.Name = "списокТиповКолпачкаToolStripMenuItem";
             this.списокТиповКолпачкаToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
             this.списокТиповКолпачкаToolStripMenuItem.Text = "Список типов колпачка";
+            this.списокТиповКолпачкаToolStripMenuItem.Visible = false;
             this.списокТиповКолпачкаToolStripMenuItem.Click += new System.EventHandler(this.списокТиповКолпачкаToolStripMenuItem_Click);
             // 
             // списокМатериаловКолпачкаToolStripMenuItem
@@ -791,6 +795,13 @@
             this.списокЛоготиповРотопринтToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
             this.списокЛоготиповРотопринтToolStripMenuItem.Text = "Список логотипов ротопринт";
             this.списокЛоготиповРотопринтToolStripMenuItem.Click += new System.EventHandler(this.списокЛоготиповРотопринтToolStripMenuItem_Click);
+            // 
+            // списокЦветовЛоготипаРотопринтToolStripMenuItem
+            // 
+            this.списокЦветовЛоготипаРотопринтToolStripMenuItem.Name = "списокЦветовЛоготипаРотопринтToolStripMenuItem";
+            this.списокЦветовЛоготипаРотопринтToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
+            this.списокЦветовЛоготипаРотопринтToolStripMenuItem.Text = "Список цветов логотипа ротопринт";
+            this.списокЦветовЛоготипаРотопринтToolStripMenuItem.Click += new System.EventHandler(this.списокЦветовЛоготипаРотопринтToolStripMenuItem_Click);
             // 
             // списокЦветовРотопринтToolStripMenuItem
             // 
@@ -911,13 +922,6 @@
             this.labelStatus.Size = new System.Drawing.Size(16, 13);
             this.labelStatus.TabIndex = 12;
             this.labelStatus.Text = "...";
-            // 
-            // списокЦветовЛоготипаРотопринтToolStripMenuItem
-            // 
-            this.списокЦветовЛоготипаРотопринтToolStripMenuItem.Name = "списокЦветовЛоготипаРотопринтToolStripMenuItem";
-            this.списокЦветовЛоготипаРотопринтToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
-            this.списокЦветовЛоготипаРотопринтToolStripMenuItem.Text = "Список цветов логотипа ротопринт";
-            this.списокЦветовЛоготипаРотопринтToolStripMenuItem.Click += new System.EventHandler(this.списокЦветовЛоготипаРотопринтToolStripMenuItem_Click);
             // 
             // FormMain
             // 

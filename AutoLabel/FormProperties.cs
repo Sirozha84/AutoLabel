@@ -5,6 +5,8 @@ namespace AutoLabel
 {
     public partial class FormProperties : Form
     {
+        Label curLab;
+
         public FormProperties()
         {
             InitializeComponent();
@@ -34,9 +36,9 @@ namespace AutoLabel
         private void comboBoxTPA_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Заполнение полей из ТПА
-            Label l = Data.Labels[comboBoxTPA.SelectedIndex];
+            curLab = Data.Labels[comboBoxTPA.SelectedIndex];
             //Заполнение выпадаю0щих списков
-            if (l.TPAType == 0)
+            if (curLab.TPAType == 0)
             {
                 comboBoxWeight.DataSource = Data.Weights0;
                 comboBoxColor.DataSource = Data.Colors0;
@@ -47,17 +49,17 @@ namespace AutoLabel
                 comboBoxColorants.DataSource = Data.Colorants0;
                 comboBoxOther.DataSource = Data.Others;
             }
-            if (l.TPAType == 1)
+            if (curLab.TPAType == 1)
             {
-                comboBoxWeight.DataSource = Data.Weights1;
+                comboBoxWeight.DataSource = StaticDir.KolpakWeights(comboBoxTPA.Text);
                 comboBoxColor.DataSource = Data.Colors1;
                 comboBoxCount.DataSource = Data.Quantitys1;
-                comboBoxType.DataSource = Data.Types1;
+                //comboBoxType.DataSource = Data.Types1;
                 comboBoxMaterial.DataSource = Data.Materials1;
                 comboBoxAntistatic.DataSource = Data.Antistatics1;
                 comboBoxColorants.DataSource = Data.Colorants1;
             }
-            if (l.TPAType == 2)
+            if (curLab.TPAType == 2)
             {
                 comboBoxWeight.DataSource = Data.Weights2;
                 comboBoxColor.DataSource = Data.Colors2;
@@ -74,44 +76,44 @@ namespace AutoLabel
             textBoxNumber.Text = "";
             comboBoxAntistatic.SelectedItem = "";
             buttonsave.Visible = false;
-            if (l.Weight != "") comboBoxWeight.SelectedItem = l.Weight; else comboBoxWeight.SelectedItem = null;
-            if (l.Material != "") comboBoxMaterial.SelectedItem = l.Material; else comboBoxMaterial.SelectedItem = null;
-            if (l.PColor != "") comboBoxColor.SelectedItem = l.PColor; else comboBoxColor.SelectedItem = null;
-            if (l.Count != "") comboBoxCount.SelectedItem = l.Count; else comboBoxCount.SelectedItem = null;
-            if (l.Type != "") comboBoxType.SelectedItem = l.Type; else comboBoxType.SelectedItem = null;
-            textBoxNumber.Text = l.PartNum;
-            if (l.Antistatic != "") comboBoxAntistatic.SelectedItem = l.Antistatic; else comboBoxAntistatic.SelectedItem = null;
-            if (l.Colorant != "") comboBoxColorants.SelectedItem = l.Colorant; else comboBoxColorants.SelectedItem = null;
-            if (l.Limit != "") comboBoxLimit.SelectedItem = l.Limit; else comboBoxLimit.SelectedItem = null;
-            comboBoxOther.Text = l.Other;
+            if (curLab.Weight != "") comboBoxWeight.SelectedItem = curLab.Weight; else comboBoxWeight.SelectedItem = null;
+            if (curLab.Material != "") comboBoxMaterial.SelectedItem = curLab.Material; else comboBoxMaterial.SelectedItem = null;
+            if (curLab.PColor != "") comboBoxColor.SelectedItem = curLab.PColor; else comboBoxColor.SelectedItem = null;
+            if (curLab.Count != "") comboBoxCount.SelectedItem = curLab.Count; else comboBoxCount.SelectedItem = null;
+            if (curLab.Type != "") comboBoxType.SelectedItem = curLab.Type; else comboBoxType.SelectedItem = null;
+            textBoxNumber.Text = curLab.PartNum;
+            if (curLab.Antistatic != "") comboBoxAntistatic.SelectedItem = curLab.Antistatic; else comboBoxAntistatic.SelectedItem = null;
+            if (curLab.Colorant != "") comboBoxColorants.SelectedItem = curLab.Colorant; else comboBoxColorants.SelectedItem = null;
+            if (curLab.Limit != "") comboBoxLimit.SelectedItem = curLab.Limit; else comboBoxLimit.SelectedItem = null;
+            comboBoxOther.Text = curLab.Other;
             textBoxBox.Text = "1";
-            label3.Text = Data.WeightOrLogo(l);
+            label3.Text = Data.WeightOrLogo(curLab);
 
             //Видимость полей
             comboBoxWeight.Visible = true;
-            comboBoxType.Visible = (l.TPAType != 2);
-            comboBoxType.Enabled = (l.TPAType == 0);
-            comboBoxMaterial.Visible = (l.TPAType != 2);
+            comboBoxType.Visible = (curLab.TPAType != 2);
+            comboBoxWeight_SelectedIndexChanged(null, null); //Для веса для С1 и С2 особоые условия :-( сука
+            comboBoxMaterial.Visible = (curLab.TPAType != 2);
             comboBoxColor.Visible = true;
-            comboBoxCount.Visible = (l.TPAType != 2);
-            textBoxNumber.Visible = (l.TPAType != 2);
-            comboBoxAntistatic.Visible = (l.TPAType != 2);
+            comboBoxCount.Visible = (curLab.TPAType != 2);
+            textBoxNumber.Visible = (curLab.TPAType != 2);
+            comboBoxAntistatic.Visible = (curLab.TPAType != 2);
             comboBoxColorants.Visible = true;
-            comboBoxLimit.Visible = (l.TPAType == 0);
-            comboBoxOther.Visible = (l.TPAType != 2);
+            comboBoxLimit.Visible = (curLab.TPAType == 0);
+            comboBoxOther.Visible = (curLab.TPAType != 2);
             textBoxBox.Visible = true;
 
             //Видимость подписей полей
             label3.Visible = true;
-            label2.Visible = (l.TPAType != 2);
-            label6.Visible = (l.TPAType != 2);
+            label2.Visible = (curLab.TPAType != 2);
+            label6.Visible = (curLab.TPAType != 2);
             label7.Visible = true;
-            label4.Visible = (l.TPAType != 2);
-            label1.Visible = (l.TPAType != 2);
-            label8.Visible = (l.TPAType != 2);
+            label4.Visible = (curLab.TPAType != 2);
+            label1.Visible = (curLab.TPAType != 2);
+            label8.Visible = (curLab.TPAType != 2);
             label9.Visible = true;
-            label10.Visible = (l.TPAType == 0);
-            label11.Visible = (l.TPAType != 2);
+            label10.Visible = (curLab.TPAType == 0);
+            label11.Visible = (curLab.TPAType != 2);
             label12.Visible = true;
             buttonsave.Visible = false;
             buttonClear.Visible = true;
@@ -158,7 +160,12 @@ namespace AutoLabel
 
         private void comboBoxWeight_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBoxType.SelectedItem = Conformity.WeightToType(comboBoxWeight.Text);
+            if (curLab.TPAType == 1)
+            {
+                comboBoxType.DataSource = Conformity.WeightToType(comboBoxWeight.Text, comboBoxTPA.Text);
+                comboBoxType.Enabled = comboBoxType.Items.Count > 1;
+                comboBoxCount.SelectedItem = Conformity.WeightToCount(comboBoxWeight.Text, comboBoxTPA.Text);
+            }
             comboBoxColorants.SelectedItem = Conformity.NameAndColorToCode(comboBoxWeight.Text, comboBoxColor.Text);
             MakeSaveEnable();
         }

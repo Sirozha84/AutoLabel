@@ -191,6 +191,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports.cs" />
     <Compile Include="Shift.cs" />
+    <Compile Include="StaticDir.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Watermark.cs" />
     <EmbeddedResource Include="FormAsk.resx">
