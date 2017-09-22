@@ -31,6 +31,7 @@ namespace AutoLabel
         static Font F12 = new Font("Arial", 12, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F14 = new Font("Arial", 14, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F14Bold = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+        static Font F18Bold = new Font("Arial", 18, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font F20Bold = new Font("Arial", 20, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font F22 = new Font("Arial", 22, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F22Bold = new Font("Arial", 22, FontStyle.Bold, GraphicsUnit.Pixel);
@@ -346,8 +347,13 @@ namespace AutoLabel
             g.DrawString(TPAName, F22Bold, Brushes.Black, new Rectangle(X + 412, Y + 235, 135, 30), InRect);
             g.DrawString("Код", F14, Brushes.Black, new Rectangle(X + 10, Y + 270, 275, 20), InRect);
             string dobavka = ""; if (Antistatic != "") dobavka += "." + Antistatic;
-            g.DrawString(Type + "." + Material + "." + Colorant + dobavka,
-                F22Bold, Brushes.Black, new Rectangle(X + 10, Y + 290, 275, 30), InRect);
+            string code = Type + "." + Material + "." + Colorant + dobavka;
+            if (g.MeasureString(code, F22Bold).Width < 270)
+                g.DrawString(code, F22Bold, Brushes.Black, new Rectangle(X + 5, Y + 290, 275, 30), InRect);
+            else
+                g.DrawString(code, F18Bold, Brushes.Black, new Rectangle(X + 5, Y + 295, 275, 30), InRect);
+            //g.DrawRectangle(Slim, X + 5, Y + 290, 275, 30);
+            
             g.DrawString(Other, F14, Brushes.Black, new Rectangle(X + 10, Y + 310, 275, 30), InRect);
             g.DrawString("Партия", F14, Brushes.Black, new Rectangle(X + 412, Y + 270, 135, 20), InRect);
             g.DrawString(PartNum, F22Bold, Brushes.Black, new Rectangle(X + 412, Y + 290, 135, 30), InRect);
