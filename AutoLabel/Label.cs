@@ -213,14 +213,14 @@ namespace AutoLabel
             g.DrawImage(logo, X + 190, Y + 3, 327, 45); //654*90
             g.DrawImage(rst, X + 445, Y + 80, 70, 70); //83*83
             g.DrawString("КРАСНОЯРСКИЙ ЗАВОД", F14Bold, Brushes.Black, X + 330, Y + 50);
-            g.DrawString("Общество с ограниченной ответственностью \"Краснояркий завод полимерной упаковки",
-                F11Italic, Brushes.Black, X + 20, Y + 65);
-            g.DrawString("\"ЕВРОПЛАСТ\",", F11Italic, Brushes.Black, X + 220, Y + 80);
+            g.DrawString("Общество с ограниченной ответственностью «Краснояркий завод «ЕВРОПЛАСТ»",
+                F11Italic, Brushes.Black, X + 10, Y + 70); //20*65
+            //g.DrawString("\"ЕВРОПЛАСТ\",", F11Italic, Brushes.Black, X + 220, Y + 80);
             g.DrawString("662500, Красноярский край, г. Сосновоборск, ул. Заводская д. 1, а/я 104,",
-                F11Italic, Brushes.Black, X + 10, Y + 95);
+                F11Italic, Brushes.Black, X + 10, Y + 90); //95
             g.DrawString("тел (3912) 180201, e-mail: krasnoyarsk@europlast.ru",
-                F11Italic, Brushes.Black, X + 10, Y + 107);
-            g.DrawString("ISO 9001:2008", F14, Brushes.Black, X + 10, Y + 119);
+                F11Italic, Brushes.Black, X + 10, Y + 102); //107
+            g.DrawString("ISO 9001:2008", F14, Brushes.Black, X + 10, Y + 114); //119
             g.DrawString("Преформа для изготовления бутылок из полиэтилентерефталата",
                 F14, Brushes.Black, X + 10, Y + 135);
             g.DrawString("Технические условия / Specification - ТУ - 2297 - 001 - 30463750 - 2012 с изм. №1, изм. №2",
@@ -319,7 +319,7 @@ namespace AutoLabel
             g.DrawLine(Slim, X + 412, Y + 160, X + 412, Y + 340);
             //Шапка
             g.DrawImage(logo, X + 110, Y + 3, 327, 45); //654*90
-            g.DrawString(@"ООО «Красноярский завод полимерной упаковки «Европласт»,",
+            g.DrawString(@"ООО «Красноярский завод «Европласт»,",
                 F12, Brushes.Black, new Rectangle(X, Y + 50, Width, 20), InRect);
             g.DrawString("РФ 662500, Красноярский край, г. Сосновоборск, ул. Заводская, 1",
                 F12, Brushes.Black, new Rectangle(X, Y + 62, Width, 20), InRect);
