@@ -156,6 +156,7 @@ namespace AutoLabel
         private void comboBoxAntiType_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxAntiCount_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxOther_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
+        private void comboBoxOther_TextUpdate(object sender, EventArgs e) { MakeSaveEnable(); }
         private void textBoxBox_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
 
         /// <summary>
