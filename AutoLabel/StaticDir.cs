@@ -15,6 +15,7 @@ namespace AutoLabel
             if (Line == "C1")
             {
                 list.Add("1,95±0,1");
+                list.Add("2,05±0,1");
                 list.Add("2,15±0,1");
                 list.Add("3,15±0,1");
             }
