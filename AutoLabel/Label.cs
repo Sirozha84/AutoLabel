@@ -223,7 +223,9 @@ namespace AutoLabel
             g.DrawString("ISO 9001:2008", F14, Brushes.Black, X + 10, Y + 114); //119
             g.DrawString("Преформа для изготовления бутылок из полиэтилентерефталата",
                 F14, Brushes.Black, X + 10, Y + 135);
-            g.DrawString("Технические условия / Specification - ТУ - 2297 - 001 - 30463750 - 2012 с изм. №1, изм. №2",
+            /*g.DrawString("Технические условия / Specification - ТУ - 2297 - 001 - 30463750 - 2012 с изм. №1, изм. №2",
+                F11, Brushes.Black, X + 10, Y + 155);*/
+            g.DrawString("Технические условия / Specification - ТУ - 22.22.14 - 001 - 19334399 - 2018",
                 F11, Brushes.Black, X + 10, Y + 155);
             //Главные поля
             g.DrawString(Weight, F70Bold, Brushes.Black, X, Y + 180);
