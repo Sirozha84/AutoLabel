@@ -220,7 +220,7 @@ namespace AutoLabel
                 F11Italic, Brushes.Black, X + 10, Y + 90); //95
             g.DrawString("тел (3912) 180201, e-mail: krasnoyarsk@europlast.ru",
                 F11Italic, Brushes.Black, X + 10, Y + 102); //107
-            g.DrawString("ISO 9001:2008", F14, Brushes.Black, X + 10, Y + 114); //119
+            //g.DrawString("ISO 9001:2008", F14, Brushes.Black, X + 10, Y + 114); //119
             g.DrawString("Преформа для изготовления бутылок из полиэтилентерефталата",
                 F14, Brushes.Black, X + 10, Y + 135);
             /*g.DrawString("Технические условия / Specification - ТУ - 2297 - 001 - 30463750 - 2012 с изм. №1, изм. №2",
