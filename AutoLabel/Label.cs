@@ -26,6 +26,8 @@ namespace AutoLabel
         static Pen ClipLine = new Pen(Color.Black, 0.5f);
         static Pen Slim = new Pen(Color.Black, 1);
         static Pen Bold = new Pen(Color.Black, 3);
+        //static Brush back = new Brush(Color.Gray);        
+        static Font F09 = new Font("Arial", 9, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F11 = new Font("Arial", 11, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F11Italic = new Font("Arial", 11, FontStyle.Italic, GraphicsUnit.Pixel);
         static Font F12 = new Font("Arial", 12, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -216,7 +218,7 @@ namespace AutoLabel
             g.DrawString("Общество с ограниченной ответственностью «Краснояркий завод «ЕВРОПЛАСТ»",
                 F11Italic, Brushes.Black, X + 10, Y + 70); //20*65
             //g.DrawString("\"ЕВРОПЛАСТ\",", F11Italic, Brushes.Black, X + 220, Y + 80);
-            g.DrawString("662500, Красноярский край, г. Сосновоборск, ул. Заводская д. 1, а/я 104,",
+            g.DrawString("662500, Красноярский край, г. Сосновоборск, ул. Заводская д. 1, стр. 41,",
                 F11Italic, Brushes.Black, X + 10, Y + 90); //95
             g.DrawString("тел (3912) 180201, e-mail: krasnoyarsk@europlast.ru",
                 F11Italic, Brushes.Black, X + 10, Y + 102); //107
@@ -249,8 +251,8 @@ namespace AutoLabel
                 F14Bold, Brushes.Black, X + 130, Y + Height - 55);
             g.DrawString("Гарантированный срок хранения - " + Limit + " со дня изготовления",
                 F14Bold, Brushes.Black, X + 30, Y + Height - 35);
-            g.DrawString("Перед выдувом бутылок рекомендуется выдержать преформы не менее 24 часов при t + 18°С",
-                F11, Brushes.Black, X + 10, Y + Height - 15);
+            g.DrawString("Перед выдувом бутылок рекомендуется выдержать преформы не менее 24 часов при температуре (20 ± 5)°С",
+                F09, Brushes.Black, X + 30, Y + Height - 15);
             //Штрихкод, платить отказались, убираем... :-( может потом вернём
             /*string code = Barcode.Code(this);
             if (code != "")
@@ -312,6 +314,8 @@ namespace AutoLabel
             int Width = 550;
             int Height = 380;
             //Рамки
+            if (TPAName == "C2")
+                g.FillRectangle(Brushes.LightGray, X, Y, Width, Height); 
             g.DrawRectangle(Slim, X, Y, Width, Height);
             g.DrawRectangle(Slim, X + 10, Y + 160, Width - 20, 180);
             g.DrawLine(Slim, X + 10, Y + 215, X + Width - 10, Y + 215);
