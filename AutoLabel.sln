@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoLabel", "AutoLabel\Auto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoLabel Server", "AutoLabel Server\AutoLabel Server.csproj", "{63022E61-786B-4233-9CE6-9DE4988E4C40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autolabel Service", "Autolabel Service\Autolabel Service.csproj", "{F1441B94-59D8-4CBA-9477-B574D1EFD3AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +23,15 @@ Global
 		{63022E61-786B-4233-9CE6-9DE4988E4C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63022E61-786B-4233-9CE6-9DE4988E4C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63022E61-786B-4233-9CE6-9DE4988E4C40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1441B94-59D8-4CBA-9477-B574D1EFD3AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1441B94-59D8-4CBA-9477-B574D1EFD3AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1441B94-59D8-4CBA-9477-B574D1EFD3AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1441B94-59D8-4CBA-9477-B574D1EFD3AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F4C35EA9-9C82-425B-B53E-CE683C965B4C}
 	EndGlobalSection
 EndGlobal

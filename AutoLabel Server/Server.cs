@@ -8,7 +8,7 @@ using System.Text;
 
 namespace AutoLabel_Server
 {
-    class Server
+    public class Server
     {
         const string ProgramLabel = "AutoLabel Server   Версия 1.0.3 (07.12.2016)   SG Software (Сергей Гордеев)";
         const int Port = 90;
@@ -27,7 +27,7 @@ namespace AutoLabel_Server
         static List<Stat> Stats = new List<Stat>();
         static Timer timer = new Timer(SaveStat, null, 60000, 60000);
         
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             
             Console.Title = "AutoLabel Server";
