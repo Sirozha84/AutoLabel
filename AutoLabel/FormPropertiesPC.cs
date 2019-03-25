@@ -19,24 +19,12 @@ namespace AutoLabel
             form.Close();
         }
 
-        //Кнопка назад
-        private void buttonquit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        //Кнопка выхода
-        private void buttonquitprogram_Click(object sender, EventArgs e)
-        {
-            Environment.Exit(0);
-        }
-
         //Выбор ТПА из списка (сбрасываем несохранённые поля и заполняим их текущими)
         private void comboBoxTPA_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Заполнение полей из ТПА
             curLab = Data.Labels[comboBoxTPA.SelectedIndex];
-            //Заполнение выпадаю0щих списков
+            //Заполнение выпадающих списков
             if (curLab.TPAType == 0)
             {
                 comboBoxWeight.DataSource = Data.Weights0;
@@ -53,7 +41,7 @@ namespace AutoLabel
                 comboBoxWeight.DataSource = StaticDir.KolpakWeights(comboBoxTPA.Text);
                 comboBoxColor.DataSource = Data.Colors1;
                 comboBoxCount.DataSource = Data.Quantitys1;
-                //comboBoxType.DataSource = StaticDir.KolpakTypes();
+                //comboBoxType.DataSource = 
                 comboBoxMaterial.DataSource = Data.Materials1;
                 comboBoxAntistatic.DataSource = Data.Antistatics1;
                 comboBoxColorants.DataSource = Data.Colorants1;
@@ -64,6 +52,8 @@ namespace AutoLabel
                 comboBoxColor.DataSource = Data.Colors2;
                 comboBoxColorants.DataSource = Data.Colorants2;
             }
+
+            //Очистка полей
             comboBoxLimit.DataSource = Data.Limits;
             comboBoxWeight.SelectedItem = null;
             comboBoxType.SelectedItem = null;
@@ -74,18 +64,6 @@ namespace AutoLabel
             comboBoxLimit.SelectedItem = null;
             textBoxNumber.Text = "";
             comboBoxAntistatic.SelectedItem = "";
-            if (curLab.Weight != "") comboBoxWeight.SelectedItem = curLab.Weight; else comboBoxWeight.SelectedItem = null;
-            if (curLab.Material != "") comboBoxMaterial.SelectedItem = curLab.Material; else comboBoxMaterial.SelectedItem = null;
-            if (curLab.PColor != "") comboBoxColor.SelectedItem = curLab.PColor; else comboBoxColor.SelectedItem = null;
-            if (curLab.Count != "") comboBoxCount.SelectedItem = curLab.Count; else comboBoxCount.SelectedItem = null;
-            if (curLab.Type != "") comboBoxType.SelectedItem = curLab.Type; else comboBoxType.SelectedItem = null;
-            textBoxNumber.Text = curLab.PartNum;
-            if (curLab.Antistatic != "") comboBoxAntistatic.SelectedItem = curLab.Antistatic; else comboBoxAntistatic.SelectedItem = null;
-            if (curLab.Colorant != "") comboBoxColorants.SelectedItem = curLab.Colorant; else comboBoxColorants.SelectedItem = null;
-            if (curLab.Limit != "") comboBoxLimit.SelectedItem = curLab.Limit; else comboBoxLimit.SelectedItem = null;
-            comboBoxOther.Text = curLab.Other;
-            textBoxBox.Text = "1";
-            label3.Text = Data.WeightOrLogo(curLab);
 
             //Видимость полей
             comboBoxWeight.Enabled = true;
@@ -113,6 +91,22 @@ namespace AutoLabel
             label10.Enabled = (curLab.TPAType == 0);
             label11.Enabled = (curLab.TPAType != 2);
             label12.Enabled = true;
+
+            //Заполнение полей
+            if (curLab.Weight != "") comboBoxWeight.SelectedItem = curLab.Weight; else comboBoxWeight.SelectedItem = null;
+            if (curLab.Material != "") comboBoxMaterial.SelectedItem = curLab.Material; else comboBoxMaterial.SelectedItem = null;
+            if (curLab.PColor != "") comboBoxColor.SelectedItem = curLab.PColor; else comboBoxColor.SelectedItem = null;
+            if (curLab.Count != "") comboBoxCount.SelectedItem = curLab.Count; else comboBoxCount.SelectedItem = null;
+            if (curLab.Type != "") comboBoxType.SelectedItem = curLab.Type; else comboBoxType.SelectedItem = null;
+            textBoxNumber.Text = curLab.PartNum;
+            if (curLab.Antistatic != "") comboBoxAntistatic.SelectedItem = curLab.Antistatic; else comboBoxAntistatic.SelectedItem = null;
+            if (curLab.Colorant != "") comboBoxColorants.SelectedItem = curLab.Colorant; else comboBoxColorants.SelectedItem = null;
+            if (curLab.Limit != "") comboBoxLimit.SelectedItem = curLab.Limit; else comboBoxLimit.SelectedItem = null;
+            comboBoxOther.Text = curLab.Other;
+            textBoxBox.Text = "1";
+            label3.Text = Data.WeightOrLogo(curLab);
+
+            //Доступность кнопок
             buttonSave.Enabled = false;
             buttonClear.Enabled = true;
         }
