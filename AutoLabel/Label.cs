@@ -360,7 +360,7 @@ namespace AutoLabel
                 g.DrawString(code, F30Bold, Brushes.Black, new Rectangle(X + 5, Y + 290, 410, 30), InRect);
             else
                 g.DrawString(code, F26Bold, Brushes.Black, new Rectangle(X + 5, Y + 290, 410, 30), InRect);
-            g.DrawString(Other, F14, Brushes.Black, new Rectangle(X + 10, Y + 310, 275, 30), InRect);
+            g.DrawString(Other, F14, Brushes.Black, new Rectangle(X + 10, Y + 320, 400, 30), InRect);
             //Графика
             g.DrawImage(HDPE, X + 415, Y + 285, 40, 40);
             g.DrawImage(Eda, X + 455, Y + 285, 40, 40);
