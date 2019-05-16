@@ -31,15 +31,16 @@ namespace AutoLabel
         static Font F11 = new Font("Arial", 11, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F11Italic = new Font("Arial", 11, FontStyle.Italic, GraphicsUnit.Pixel);
         static Font F12 = new Font("Arial", 12, FontStyle.Regular, GraphicsUnit.Pixel);
+        static Font F13Bold = new Font("Arial", 13, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font F14 = new Font("Arial", 14, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F14Bold = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
-        static Font F18Bold = new Font("Arial", 18, FontStyle.Bold, GraphicsUnit.Pixel);
-        static Font F20Bold = new Font("Arial", 20, FontStyle.Bold, GraphicsUnit.Pixel);
+        //static Font F18Bold = new Font("Arial", 18, FontStyle.Bold, GraphicsUnit.Pixel);
+        //static Font F20Bold = new Font("Arial", 20, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font F22 = new Font("Arial", 22, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F22Bold = new Font("Arial", 22, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font F26Bold = new Font("Arial", 26, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font F30Bold = new Font("Arial", 30, FontStyle.Bold, GraphicsUnit.Pixel);
-        static Font F32Bold = new Font("Arial", 30, FontStyle.Bold, GraphicsUnit.Pixel);
+        //static Font F32Bold = new Font("Arial", 30, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font F37Bold = new Font("Arial", 37, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font F70Bold = new Font("Arial", 70, FontStyle.Bold, GraphicsUnit.Pixel);
         static StringFormat InRect = new StringFormat();
@@ -50,6 +51,7 @@ namespace AutoLabel
         static Image HDPE = Image.FromFile("Graphics\\HDPE.png");
         static Image Eda = Image.FromFile("Graphics\\Eda.png");
         static Image EAC = Image.FromFile("Graphics\\EAC.png");
+        static Image Pet = Image.FromFile("Graphics\\Pet.png");
 
         //Текущие данные для печати
         static int Num;
@@ -202,7 +204,6 @@ namespace AutoLabel
                 try
                 {
                     Image logo = Image.FromFile("Graphics\\Logos\\" + file + ".png");
-
                     g.DrawImage(logo, X, Y + 270, Width, 497);
                 }
                 catch { }
@@ -214,8 +215,11 @@ namespace AutoLabel
             g.DrawLine(Bold, X + 220, Y + 170, X + 220, Y + 270);
             g.DrawLine(Bold, X + 410, Y + 170, X + 410, Y + 270);
             //Шапка
-            g.DrawImage(logo, X + 190, Y + 3, 327, 45); //654*90
-            g.DrawImage(rst, X + 445, Y + 80, 70, 70); //83*83
+            g.DrawImage(logo, X + 190, Y + 3, 327, 45);
+            //g.DrawImage(rst, X + 445, Y + 80, 70, 70);
+            g.DrawImage(rst, X + 388, Y + 100, 45, 45);
+            g.DrawImage(Pet, X + 433, Y + 100, 45, 45);
+            g.DrawImage(Eda, X + 478, Y + 100, 45, 45);
             g.DrawString("КРАСНОЯРСКИЙ ЗАВОД", F14Bold, Brushes.Black, X + 330, Y + 50);
             g.DrawString("Общество с ограниченной ответственностью «Краснояркий завод «ЕВРОПЛАСТ»",
                 F11Italic, Brushes.Black, X + 10, Y + 70); //20*65
@@ -225,8 +229,8 @@ namespace AutoLabel
             g.DrawString("тел (3912) 180201, e-mail: krasnoyarsk@europlast.ru",
                 F11Italic, Brushes.Black, X + 10, Y + 102); //107
             //g.DrawString("ISO 9001:2008", F14, Brushes.Black, X + 10, Y + 114); //119
-            g.DrawString("Преформа для изготовления бутылок из полиэтилентерефталата",
-                F14, Brushes.Black, X + 10, Y + 135);
+            g.DrawString("ПРЕФОРМА БУТЫЛКИ ИЗ ПОЛИЭТИЛЕНТЕРЕФТАЛАТА",
+                F13Bold, Brushes.Black, X + 10, Y + 135);
             /*g.DrawString("Технические условия / Specification - ТУ - 2297 - 001 - 30463750 - 2012 с изм. №1, изм. №2",
                 F11, Brushes.Black, X + 10, Y + 155);*/
             g.DrawString("Технические условия / Specification - ТУ - 22.22.14 - 001 - 19334399 - 2018",

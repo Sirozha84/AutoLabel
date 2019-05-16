@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.10
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoLabel", "AutoLabel\AutoLabel.csproj", "{AAFBC076-0F30-490E-A590-B4D1CB7603BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoLabel Server", "AutoLabel Server\AutoLabel Server.csproj", "{63022E61-786B-4233-9CE6-9DE4988E4C40}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autolabel Service", "Autolabel Service\Autolabel Service.csproj", "{F1441B94-59D8-4CBA-9477-B574D1EFD3AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{63022E61-786B-4233-9CE6-9DE4988E4C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63022E61-786B-4233-9CE6-9DE4988E4C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63022E61-786B-4233-9CE6-9DE4988E4C40}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F1441B94-59D8-4CBA-9477-B574D1EFD3AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F1441B94-59D8-4CBA-9477-B574D1EFD3AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F1441B94-59D8-4CBA-9477-B574D1EFD3AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F1441B94-59D8-4CBA-9477-B574D1EFD3AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
