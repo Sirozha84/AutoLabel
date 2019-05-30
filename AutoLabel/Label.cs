@@ -31,7 +31,6 @@ namespace AutoLabel
         static Font F11 = new Font("Arial", 11, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F11Italic = new Font("Arial", 11, FontStyle.Italic, GraphicsUnit.Pixel);
         static Font F12 = new Font("Arial", 12, FontStyle.Regular, GraphicsUnit.Pixel);
-        static Font F13Bold = new Font("Arial", 13, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font F14 = new Font("Arial", 14, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F14Bold = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
         //static Font F18Bold = new Font("Arial", 18, FontStyle.Bold, GraphicsUnit.Pixel);
@@ -216,23 +215,20 @@ namespace AutoLabel
             g.DrawLine(Bold, X + 410, Y + 170, X + 410, Y + 270);
             //Шапка
             g.DrawImage(logo, X + 190, Y + 3, 327, 45);
-            //g.DrawImage(rst, X + 445, Y + 80, 70, 70);
             g.DrawImage(rst, X + 388, Y + 100, 45, 45);
             g.DrawImage(Pet, X + 433, Y + 100, 45, 45);
             g.DrawImage(Eda, X + 478, Y + 100, 45, 45);
             g.DrawString("КРАСНОЯРСКИЙ ЗАВОД", F14Bold, Brushes.Black, X + 330, Y + 50);
-            g.DrawString("Общество с ограниченной ответственностью «Краснояркий завод «ЕВРОПЛАСТ»",
+            g.DrawString("Общество с ограниченной ответственностью «Европласт - ЕнисейПром»",
                 F11Italic, Brushes.Black, X + 10, Y + 70); //20*65
-            //g.DrawString("\"ЕВРОПЛАСТ\",", F11Italic, Brushes.Black, X + 220, Y + 80);
             g.DrawString("662500, Красноярский край, г. Сосновоборск, ул. Заводская д. 1, стр. 41,",
                 F11Italic, Brushes.Black, X + 10, Y + 90); //95
             g.DrawString("тел (3912) 180201, e-mail: krasnoyarsk@europlast.ru",
                 F11Italic, Brushes.Black, X + 10, Y + 102); //107
-            //g.DrawString("ISO 9001:2008", F14, Brushes.Black, X + 10, Y + 114); //119
-            g.DrawString("ПРЕФОРМА БУТЫЛКИ ИЗ ПОЛИЭТИЛЕНТЕРЕФТАЛАТА",
-                F13Bold, Brushes.Black, X + 10, Y + 135);
-            /*g.DrawString("Технические условия / Specification - ТУ - 2297 - 001 - 30463750 - 2012 с изм. №1, изм. №2",
-                F11, Brushes.Black, X + 10, Y + 155);*/
+            g.DrawString("ПРЕФОРМА ДЛЯ ИЗГОТОВЛЕНИЯ БУТЫЛОК",
+                            F14Bold, Brushes.Black, X + 10, Y + 120);
+            g.DrawString("ИЗ ПОЛИЭТИЛЕНТЕРЕФТАЛАТА",
+                            F14Bold, Brushes.Black, X + 10, Y + 135);
             g.DrawString("Технические условия / Specification - ТУ - 22.22.14 - 001 - 19334399 - 2018",
                 F11, Brushes.Black, X + 10, Y + 155);
             //Главные поля
