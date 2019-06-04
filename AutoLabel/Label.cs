@@ -221,9 +221,9 @@ namespace AutoLabel
             g.DrawString("КРАСНОЯРСКИЙ ЗАВОД", F14Bold, Brushes.Black, X + 330, Y + 50);
             g.DrawString("Общество с ограниченной ответственностью «Европласт - ЕнисейПром»",
                 F11Italic, Brushes.Black, X + 10, Y + 70); //20*65
-            g.DrawString("662500, Красноярский край, г. Сосновоборск, ул. Заводская д. 1, стр. 41,",
+            g.DrawString("662500, Красноярский край, г. Сосновоборск, ул. Заводская, д. 1, стр. 41,",
                 F11Italic, Brushes.Black, X + 10, Y + 90); //95
-            g.DrawString("тел (3912) 180201, e-mail: krasnoyarsk@europlast.ru",
+            g.DrawString("тел (3912) 180201, e-mail: eniseyprom@europlast.biz",
                 F11Italic, Brushes.Black, X + 10, Y + 102); //107
             g.DrawString("ПРЕФОРМА ДЛЯ ИЗГОТОВЛЕНИЯ БУТЫЛОК",
                             F14Bold, Brushes.Black, X + 10, Y + 120);
@@ -327,9 +327,11 @@ namespace AutoLabel
             g.DrawLine(Slim, X + 412, Y + 160, X + 412, Y + 340);
             //Шапка
             g.DrawImage(logo, X + 110, Y + 3, 327, 45); //654*90
-            g.DrawString(@"ООО «Красноярский завод «Европласт»,",
+            //g.DrawString(@"ООО «Красноярский завод «Европласт»,",
+            //    F12, Brushes.Black, new Rectangle(X, Y + 50, Width, 20), InRect);
+            g.DrawString(@"ООО «Европласт - ЕнисейПром»,",
                 F12, Brushes.Black, new Rectangle(X, Y + 50, Width, 20), InRect);
-            g.DrawString("РФ 662500, Красноярский край, г. Сосновоборск, ул. Заводская, 1",
+            g.DrawString("РФ 662500, Красноярский край, г. Сосновоборск, ул. Заводская, д. 1, стр. 41",
                 F12, Brushes.Black, new Rectangle(X, Y + 62, Width, 20), InRect);
             g.DrawString("тел./факс: (391)218-02-01",
                 F12, Brushes.Black, new Rectangle(X, Y + 74, Width, 20), InRect);
