@@ -8,7 +8,7 @@ namespace AutoLabel
 {
     public class Label
     {
-        public string TPAName;  //Имя ТПА
+        public string TPAName;  //Имя ТПА ___
         public int TPAType;     //Тип ТПА (0 - преформа, 1 - колпак, 2 - ротопринт)
         public int CurrentNum;  //Автомат номер короба
         public string PartNum;  //Вручную номер партии
