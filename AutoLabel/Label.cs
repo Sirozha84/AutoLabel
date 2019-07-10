@@ -307,71 +307,85 @@ namespace AutoLabel
         /// Формирование этикетки колпачка
         /// </summary>
         /// <param name="g"></param>
-        /// <param name="X">Положение на листе по X</param>
-        /// <param name="Y">Положение на листе по Y</param>
+        /// <param name="x">Положение на листе по X</param>
+        /// <param name="y">Положение на листе по Y</param>
         /// <param name="IncNum">Увеличить ли номер после этой этикетки и записать в журнал</param>
-        void DrawLabelC(Graphics g, int X, int Y)
+        void DrawLabelC(Graphics g, int x, int y)
         {
             InRect.Alignment = StringAlignment.Center;
-            int Width = 550;
-            int Height = 380;
+            int width = 550;
+            int height = 380;
+            
             //Рамки
             if (TPAName == "C2")
-                g.FillRectangle(Brushes.LightGray, X, Y, Width, Height); 
-            g.DrawRectangle(Slim, X, Y, Width, Height);
-            g.DrawRectangle(Slim, X + 10, Y + 160, Width - 20, 180);
-            g.DrawLine(Slim, X + 10, Y + 215, X + Width - 10, Y + 215);
-            g.DrawLine(Slim, X + 10, Y + 270, X + Width - 10, Y + 270);
-            g.DrawLine(Slim, X + 143, Y + 270, X + 143, Y + 160);
-            g.DrawLine(Slim, X + 275, Y + 270, X + 275, Y + 160);
-            g.DrawLine(Slim, X + 412, Y + 160, X + 412, Y + 340);
+                g.FillRectangle(Brushes.LightGray, x, y, width, height); 
+            g.DrawRectangle(Slim, x, y, width, height);
+            g.DrawRectangle(Slim, x + 10, y + 160, width - 20, 180);
+            g.DrawLine(Slim, x + 10, y + 215, x + width - 10, y + 215);
+            g.DrawLine(Slim, x + 10, y + 270, x + width - 10, y + 270);
+            g.DrawLine(Slim, x + 143, y + 270, x + 143, y + 160);
+            g.DrawLine(Slim, x + 275, y + 270, x + 275, y + 160);
+            g.DrawLine(Slim, x + 412, y + 160, x + 412, y + 340);
+
             //Шапка
-            g.DrawImage(logo, X + 110, Y + 3, 327, 45); //654*90
-            //g.DrawString(@"ООО «Красноярский завод «Европласт»,",
-            //    F12, Brushes.Black, new Rectangle(X, Y + 50, Width, 20), InRect);
+            g.DrawImage(logo, x + 110, y + 3, 327, 45); //654*90
             g.DrawString(@"ООО «Европласт - ЕнисейПром»,",
-                F12, Brushes.Black, new Rectangle(X, Y + 50, Width, 20), InRect);
+                F12, Brushes.Black, new Rectangle(x, y + 50, width, 20), InRect);
             g.DrawString("РФ 662500, Красноярский край, г. Сосновоборск, ул. Заводская, д. 1, стр. 41",
-                F12, Brushes.Black, new Rectangle(X, Y + 62, Width, 20), InRect);
+                F12, Brushes.Black, new Rectangle(x, y + 62, width, 20), InRect);
             g.DrawString("тел./факс: (391)218-02-01",
-                F12, Brushes.Black, new Rectangle(X, Y + 74, Width, 20), InRect);
+                F12, Brushes.Black, new Rectangle(x, y + 74, width, 20), InRect);
             g.DrawString("КОЛПАЧОК ВИНТОВОЙ Ø 28",
-                F22, Brushes.Black, new Rectangle(X, Y + 90, Width, 25), InRect);
+                F22, Brushes.Black, new Rectangle(x, y + 90, width, 25), InRect);
             g.DrawString("ГОСТ 32626-2014",
-                F22, Brushes.Black, new Rectangle(X, Y + 120, Width, 25), InRect);
+                F22, Brushes.Black, new Rectangle(x, y + 120, width, 25), InRect);
+            
             //Поля
-            g.DrawString("Масса, гр.", F14, Brushes.Black, new Rectangle(X + 10, Y + 160, 140, 20), InRect);
-            g.DrawString(Weight, F26Bold, Brushes.Black, new Rectangle(X + 10, Y + 180, 140, 30), InRect);
-            g.DrawString("Количество", F14, Brushes.Black, new Rectangle(X + 143, Y + 160, 140, 20), InRect);
-            g.DrawString(Count, F26Bold, Brushes.Black, new Rectangle(X + 143, Y + 180, 140, 30), InRect);
-            g.DrawString("Дата", F14, Brushes.Black, new Rectangle(X + 275, Y + 160, 137, 20), InRect);
-            g.DrawString(Date, F26Bold, Brushes.Black, new Rectangle(X + 275, Y + 180, 137, 30), InRect);
-            g.DrawString("Смена", F14, Brushes.Black, new Rectangle(X + 412, Y + 160, 135, 20), InRect);
-            g.DrawString(Shift, F26Bold, Brushes.Black, new Rectangle(X + 412, Y + 180, 135, 30), InRect);
-            g.DrawString("Цвет", F14, Brushes.Black, new Rectangle(X + 10, Y + 215, 140, 20), InRect);
-            g.DrawString(PColor, F22Bold, Brushes.Black, new Rectangle(X + 0, Y + 235, 155, 30), InRect);
-            g.DrawString("Короб №", F14, Brushes.Black, new Rectangle(X + 143, Y + 215, 140, 20), InRect);
-            g.DrawString(Num.ToString(), F26Bold, Brushes.Black, new Rectangle(X + 143, Y + 235, 140, 30), InRect);
-            g.DrawString("№ Линии", F14, Brushes.Black, new Rectangle(X + 275, Y + 215, 137, 20), InRect);
-            g.DrawString(TPAName, F26Bold, Brushes.Black, new Rectangle(X + 275, Y + 235, 137, 30), InRect);
-            g.DrawString("Партия", F14, Brushes.Black, new Rectangle(X + 412, Y + 215, 135, 20), InRect);
-            g.DrawString(PartNum, F26Bold, Brushes.Black, new Rectangle(X + 412, Y + 235, 135, 30), InRect);
-            g.DrawString("Код", F14, Brushes.Black, new Rectangle(X + 10, Y + 272, 400, 20), InRect);
+            g.DrawString("Масса, гр.", F14, Brushes.Black, new Rectangle(x + 10, y + 160, 140, 20), InRect);
+            g.DrawString(Weight, F26Bold, Brushes.Black, new Rectangle(x + 10, y + 180, 140, 30), InRect);
+            g.DrawString("Количество, шт", F14, Brushes.Black, new Rectangle(x + 143, y + 160, 140, 20), InRect);
+            g.DrawString(Count, F26Bold, Brushes.Black, new Rectangle(x + 143, y + 180, 140, 30), InRect);
+            g.DrawString("Дата", F14, Brushes.Black, new Rectangle(x + 275, y + 160, 137, 20), InRect);
+            g.DrawString(Date, F26Bold, Brushes.Black, new Rectangle(x + 265, y + 180, 157, 30), InRect);
+            g.DrawString("Смена №", F14, Brushes.Black, new Rectangle(x + 412, y + 160, 135, 20), InRect);
+            g.DrawString(Shift, F26Bold, Brushes.Black, new Rectangle(x + 412, y + 180, 135, 30), InRect);
+            g.DrawString("Цвет", F14, Brushes.Black, new Rectangle(x + 10, y + 215, 140, 20), InRect);
+            g.DrawString(PColor, F22Bold, Brushes.Black, new Rectangle(x + 0, y + 235, 155, 30), InRect);
+            g.DrawString("Короб №", F14, Brushes.Black, new Rectangle(x + 143, y + 215, 140, 20), InRect);
+            g.DrawString(Num.ToString(), F26Bold, Brushes.Black, new Rectangle(x + 143, y + 235, 140, 30), InRect);
+            g.DrawString("№ Линии", F14, Brushes.Black, new Rectangle(x + 275, y + 215, 137, 20), InRect);
+            g.DrawString(TPAName, F26Bold, Brushes.Black, new Rectangle(x + 275, y + 235, 137, 30), InRect);
+            g.DrawString("Партия", F14, Brushes.Black, new Rectangle(x + 412, y + 215, 135, 20), InRect);
+            g.DrawString(PartNum, F26Bold, Brushes.Black, new Rectangle(x + 412, y + 235, 135, 30), InRect);
+            g.DrawString("Код", F14, Brushes.Black, new Rectangle(x + 10, y + 272, 400, 20), InRect);
+
             string code = Type + "." + Material + "." + Colorant + (Antistatic != "" ? "." + Antistatic : "");
+            string codeSub = code.Substring(14, 1);
+            code = code.Substring(0, 14) + "   " + code.Substring(15);
             if (g.MeasureString(code, F30Bold).Width < 410)
-                g.DrawString(code, F30Bold, Brushes.Black, new Rectangle(X + 5, Y + 290, 410, 30), InRect);
+            {
+                g.DrawString(code, F30Bold, Brushes.Black, new Rectangle(x + 5, y + 290, 410, 30), InRect);
+                g.DrawString(codeSub, F37Bold, Brushes.Black, x + 210 - g.MeasureString(code, F30Bold).Width / 2 + 220, y + 284);
+            }
             else
-                g.DrawString(code, F26Bold, Brushes.Black, new Rectangle(X + 5, Y + 290, 410, 30), InRect);
-            g.DrawString(Other, F14, Brushes.Black, new Rectangle(X + 10, Y + 320, 400, 30), InRect);
+            {
+                g.DrawString(code, F26Bold, Brushes.Black, new Rectangle(x + 5, y + 290, 410, 30), InRect);
+                g.DrawString(codeSub, F37Bold, Brushes.Black, x + 210 - g.MeasureString(code, F26Bold).Width / 2 + 190, y + 280);
+            }
+
+            g.DrawString(Other, F14, Brushes.Black, new Rectangle(x + 10, y + 320, 400, 30), InRect);
+            
             //Графика
-            g.DrawImage(HDPE, X + 415, Y + 285, 40, 40);
-            g.DrawImage(Eda, X + 455, Y + 285, 40, 40);
-            g.DrawImage(EAC, X + 495, Y + 285, 40, 40);
+            g.DrawImage(HDPE, x + 415, y + 285, 40, 40);
+            g.DrawImage(Eda, x + 455, y + 285, 40, 40);
+            g.DrawImage(EAC, x + 495, y + 285, 40, 40);
+            
             //Нижний колонтитул
             g.DrawString("Гарантированный срок годности - 12 месяцев со дня изготовления, при температуре от 5 до 25°С",
-                F11Italic, Brushes.Black, X + 7, Y + Height - 35);
+                F11Italic, Brushes.Black, x + 7, y + height - 35);
             g.DrawString("и относительной влажности воздуха 40% - 80%.",
-                F11Italic, Brushes.Black, X + 7, Y + Height - 20);
+                F11Italic, Brushes.Black, x + 7, y + height - 20);
+            
             //Инкрементим номер и пишем журнал
             IncAndLog();
         }
