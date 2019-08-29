@@ -12,7 +12,7 @@ namespace AutoLabel
         public static List<string> KolpakWeights(string Line)
         {
             List<string> list = new List<string>();
-            if (Line == "C1")
+            /*if (Line == "C1")
             {
                 list.Add("1,95±0,1");
                 list.Add("2,05±0,1");
@@ -23,7 +23,16 @@ namespace AutoLabel
             {
                 list.Add("2,35±0,1");
                 list.Add("2,5±0,1");
-            }
+            }*/
+
+            //Короче, попросили "разблокировать" выбор веса, если правильно понял
+            //Пусть в обоих выпадающих списках будет сразу всё...
+            list.Add("1,95±0,1");
+            list.Add("2,05±0,1");
+            list.Add("2,15±0,1");
+            list.Add("2,35±0,1");
+            list.Add("2,5±0,1");
+            list.Add("3,15±0,1");
             return list;
         }
     }

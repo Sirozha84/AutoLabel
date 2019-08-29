@@ -21,6 +21,7 @@ namespace AutoLabel
         public string Colorant; //Список количество антистатика
         public string Limit;    //Список срок хранения
         public string Other;    //Вручную Дополнительные параметры
+        bool isCustom;          //Кастомная этикетка
 
         //Карандаши и ручки :-)
         static Pen ClipLine = new Pen(Color.Black, 0.5f);
@@ -80,7 +81,7 @@ namespace AutoLabel
         /// <param name="count">Количество этикеток (0 - если одна двойная)</param>
         public void Print(int num, string packer, int count)
         {
-            Print(num, packer, count, AutoLabel.Shift.Date, DateTime.Now.ToString("HH:mm"), AutoLabel.Shift.Current);
+            Print(num, packer, count, AutoLabel.Shift.Date, DateTime.Now.ToString("HH:mm"), AutoLabel.Shift.Current, false);
             Save();
             Net.Log("Печать этикетки \"" + Conformity.LabelName(TPAType) + "\"");
             //Запись данных для статистики
@@ -110,7 +111,7 @@ namespace AutoLabel
         /// <param name="date">Дата</param>
         /// <param name="time">Время</param>
         /// <param name="shift">Смена</param>
-        public void Print(int num, string packer, int count, string date, string time, string shift)
+        public void Print(int num, string packer, int count, string date, string time, string shift, bool isCustom)
         {
             Num = num;
             Packer = packer;
@@ -118,6 +119,7 @@ namespace AutoLabel
             Date = date;
             Time = time;
             Shift = shift;
+            this.isCustom = isCustom;
             if (!Data.PrintSelected()) Data.PrintSetup();
             if (!Data.PrintSelected()) return;
             try
@@ -268,7 +270,7 @@ namespace AutoLabel
             }*/
 
             //Если надо, инкрементим номер и пишем журнал
-            if (IncNum) IncAndLog();
+            if (IncNum & !isCustom) IncAndLog();
         }
         static void DrawStrings(Graphics g, int X, int Y, int y, string s1, string s2, string s3, bool BigLabel)
         {
@@ -387,7 +389,7 @@ namespace AutoLabel
                 F11Italic, Brushes.Black, x + 7, y + height - 20);
             
             //Инкрементим номер и пишем журнал
-            IncAndLog();
+            if (!isCustom) IncAndLog();
         }
 
         /// <summary>
@@ -423,7 +425,7 @@ namespace AutoLabel
             g.DrawString(Num.ToString(), F14, Brushes.Black, new Point(X + 350, Y + 160));
             
             //Инкрементим номер и пишем журнал
-            IncAndLog();
+            if (!isCustom) IncAndLog();
         }
 
         /// <summary>
@@ -431,7 +433,7 @@ namespace AutoLabel
         /// </summary>
         void IncAndLog()
         {
-            Log(); //Теперь пишем журнал в любом случае
+            Log();
             //Увеличиваем номер, если печатался текущий
             if (Num >= CurrentNum & CurrentNum > 0) CurrentNum = Num + 1; 
             Num++;
@@ -531,7 +533,6 @@ namespace AutoLabel
         void Log()
         {
             string comment = "";
-            //if (Custom) comment = " - этикетка с произвольными полями";
             try
             {
                 using (TcpClient client = new TcpClient())

@@ -164,7 +164,7 @@ namespace AutoLabel
                 l.Other = comboBoxOther.Text;
                 l.Print(Convert.ToInt32(textBoxBoxNum.Text), comboBoxUser.SelectedItem.ToString(),
                     (int)numericUpDownCount.Value, textBoxDate.Text, textBoxTime.Text,
-                    comboBoxShift.SelectedItem.ToString());
+                    comboBoxShift.SelectedItem.ToString(), true);
             }
             catch
             {

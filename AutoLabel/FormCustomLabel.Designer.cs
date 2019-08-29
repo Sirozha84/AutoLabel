@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBoxOther = new System.Windows.Forms.ComboBox();
             this.comboBoxShift = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -66,7 +67,6 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
-            this.comboBoxOther = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCount)).BeginInit();
             this.SuspendLayout();
@@ -136,6 +136,18 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(360, 442);
             this.tableLayoutPanel1.TabIndex = 11;
+            // 
+            // comboBoxOther
+            // 
+            this.comboBoxOther.BackColor = System.Drawing.SystemColors.Window;
+            this.comboBoxOther.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comboBoxOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxOther.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.comboBoxOther.FormattingEnabled = true;
+            this.comboBoxOther.Location = new System.Drawing.Point(183, 263);
+            this.comboBoxOther.Name = "comboBoxOther";
+            this.comboBoxOther.Size = new System.Drawing.Size(174, 21);
+            this.comboBoxOther.TabIndex = 38;
             // 
             // comboBoxShift
             // 
@@ -587,18 +599,6 @@
             this.label18.TabIndex = 38;
             this.label18.Text = "Для преформ: 0 - две одинаковые";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // comboBoxOther
-            // 
-            this.comboBoxOther.BackColor = System.Drawing.SystemColors.Window;
-            this.comboBoxOther.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboBoxOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBoxOther.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.comboBoxOther.FormattingEnabled = true;
-            this.comboBoxOther.Location = new System.Drawing.Point(183, 263);
-            this.comboBoxOther.Name = "comboBoxOther";
-            this.comboBoxOther.Size = new System.Drawing.Size(174, 21);
-            this.comboBoxOther.TabIndex = 38;
             // 
             // FormCustomLabel
             // 
