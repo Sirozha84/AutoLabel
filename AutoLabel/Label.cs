@@ -270,7 +270,7 @@ namespace AutoLabel
             }*/
 
             //Если надо, инкрементим номер и пишем журнал
-            if (IncNum & !isCustom) IncAndLog();
+            if (IncNum) IncAndLog();
         }
         static void DrawStrings(Graphics g, int X, int Y, int y, string s1, string s2, string s3, bool BigLabel)
         {
@@ -389,7 +389,7 @@ namespace AutoLabel
                 F11Italic, Brushes.Black, x + 7, y + height - 20);
             
             //Инкрементим номер и пишем журнал
-            if (!isCustom) IncAndLog();
+            IncAndLog();
         }
 
         /// <summary>
@@ -425,7 +425,7 @@ namespace AutoLabel
             g.DrawString(Num.ToString(), F14, Brushes.Black, new Point(X + 350, Y + 160));
             
             //Инкрементим номер и пишем журнал
-            if (!isCustom) IncAndLog();
+            IncAndLog();
         }
 
         /// <summary>
@@ -433,7 +433,7 @@ namespace AutoLabel
         /// </summary>
         void IncAndLog()
         {
-            Log();
+            if (!isCustom) Log();
             //Увеличиваем номер, если печатался текущий
             if (Num >= CurrentNum & CurrentNum > 0) CurrentNum = Num + 1; 
             Num++;
