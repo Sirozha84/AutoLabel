@@ -44,7 +44,8 @@ namespace AutoLabel
             if (TPAType == 1)
             {
                 comboBoxType.DataSource = Data.Types1;
-                comboBoxWeight.DataSource = Data.Weights1;
+                //comboBoxWeight.DataSource = Data.Weights1;
+                comboBoxWeight.DataSource = StaticDir.KolpakWeights(comboBoxTPA.Text);
                 comboBoxColor.DataSource = Data.Colors1;
                 comboBoxCount.DataSource = Data.Quantitys1;
                 comboBoxMaterial.DataSource = Data.Materials1;
