@@ -320,7 +320,8 @@ namespace AutoLabel
             
             //Рамки
             if (TPAName == "C2")
-                g.FillRectangle(Brushes.LightGray, x, y, width, height); 
+                g.FillRectangle(Brushes.LightGray, x + 10, y + 270, 402, 70);
+                //g.FillRectangle(Brushes.LightGray, x, y, width, height); 
             g.DrawRectangle(Slim, x, y, width, height);
             g.DrawRectangle(Slim, x + 10, y + 160, width - 20, 180);
             g.DrawLine(Slim, x + 10, y + 215, x + width - 10, y + 215);
