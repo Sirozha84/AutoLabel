@@ -35,39 +35,42 @@ namespace AutoLabel
             {
                 User u = Data.Users[listView1.SelectedIndices[0]];
                 labelName.Text = u.Name;
-                checkBox1.Checked = u.TPAAccess[0];
-                checkBox2.Checked = u.TPAAccess[1];
-                checkBox3.Checked = u.TPAAccess[2];
-                checkBox4.Checked = u.TPAAccess[3];
-                checkBox5.Checked = u.TPAAccess[4];
-                checkBox6.Checked = u.TPAAccess[5];
-                checkBox7.Checked = u.TPAAccess[6];
-                checkBox8.Checked = u.TPAAccess[7];
-                checkBox9.Checked = u.TPAAccess[8];
+                checkP1.Checked = u.TPAAccess[0];
+                checkP2.Checked = u.TPAAccess[1];
+                checkP3.Checked = u.TPAAccess[2];
+                checkP4.Checked = u.TPAAccess[3];
+                checkP5.Checked = u.TPAAccess[4];
+                checkP6.Checked = u.TPAAccess[5];
+                checkP7.Checked = u.TPAAccess[6];
+                checkK1.Checked = u.TPAAccess[7];
+                checkK2.Checked = u.TPAAccess[8];
+                checkR1.Checked = u.TPAAccess[9];
             }
             else
             {
                 labelName.Text = "Не выбран";
-                checkBox1.Checked = false;
-                checkBox2.Checked = false;
-                checkBox3.Checked = false;
-                checkBox4.Checked = false;
-                checkBox5.Checked = false;
-                checkBox6.Checked = false;
-                checkBox7.Checked = false;
-                checkBox8.Checked = false;
-                checkBox9.Checked = false;
+                checkP1.Checked = false;
+                checkP2.Checked = false;
+                checkP3.Checked = false;
+                checkP4.Checked = false;
+                checkP5.Checked = false;
+                checkP6.Checked = false;
+                checkP7.Checked = false;
+                checkK1.Checked = false;
+                checkK2.Checked = false;
+                checkR1.Checked = false;
             }
             labelName.Enabled = sel;
-            checkBox1.Enabled = sel;
-            checkBox2.Enabled = sel;
-            checkBox3.Enabled = sel;
-            checkBox4.Enabled = sel;
-            checkBox5.Enabled = sel;
-            checkBox6.Enabled = sel;
-            checkBox7.Enabled = sel;
-            checkBox8.Enabled = sel;
-            checkBox9.Enabled = sel;
+            checkP1.Enabled = sel;
+            checkP2.Enabled = sel;
+            checkP3.Enabled = sel;
+            checkP4.Enabled = sel;
+            checkP5.Enabled = sel;
+            checkP6.Enabled = sel;
+            checkP7.Enabled = sel;
+            checkK1.Enabled = sel;
+            checkK2.Enabled = sel;
+            checkR1.Enabled = sel;
             buttonSetKey.Enabled = sel;
             buttonKeyDel.Enabled = sel;
             buttonDel.Enabled = sel;
@@ -82,15 +85,16 @@ namespace AutoLabel
             listView1.Items[listView1.SelectedIndices[0]].SubItems[3].Text = u.StringWidthTPA();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e) { ChangeTPA(0, checkBox1.Checked); }
-        private void checkBox2_CheckedChanged(object sender, EventArgs e) { ChangeTPA(1, checkBox2.Checked); }
-        private void checkBox3_CheckedChanged(object sender, EventArgs e) { ChangeTPA(2, checkBox3.Checked); }
-        private void checkBox4_CheckedChanged(object sender, EventArgs e) { ChangeTPA(3, checkBox4.Checked); }
-        private void checkBox5_CheckedChanged(object sender, EventArgs e) { ChangeTPA(4, checkBox5.Checked); }
-        private void checkBox6_CheckedChanged(object sender, EventArgs e) { ChangeTPA(5, checkBox6.Checked); }
-        private void checkBox7_CheckedChanged(object sender, EventArgs e) { ChangeTPA(6, checkBox7.Checked); }
-        private void checkBox8_CheckedChanged(object sender, EventArgs e) { ChangeTPA(7, checkBox8.Checked); }
-        private void checkBox9_CheckedChanged(object sender, EventArgs e) { ChangeTPA(8, checkBox9.Checked); }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e) { ChangeTPA(0, checkP1.Checked); }
+        private void checkBox2_CheckedChanged(object sender, EventArgs e) { ChangeTPA(1, checkP2.Checked); }
+        private void checkBox3_CheckedChanged(object sender, EventArgs e) { ChangeTPA(2, checkP3.Checked); }
+        private void checkBox4_CheckedChanged(object sender, EventArgs e) { ChangeTPA(3, checkP4.Checked); }
+        private void checkBox5_CheckedChanged(object sender, EventArgs e) { ChangeTPA(4, checkP5.Checked); }
+        private void checkBox6_CheckedChanged(object sender, EventArgs e) { ChangeTPA(5, checkP6.Checked); }
+        private void CheckP7_CheckedChanged(object sender, EventArgs e) { ChangeTPA(6, checkP7.Checked); }
+        private void checkBox7_CheckedChanged(object sender, EventArgs e) { ChangeTPA(7, checkK1.Checked); }
+        private void checkBox8_CheckedChanged(object sender, EventArgs e) { ChangeTPA(8, checkK2.Checked); }
+        private void checkBox9_CheckedChanged(object sender, EventArgs e) { ChangeTPA(9, checkR1.Checked); }
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
@@ -138,5 +142,7 @@ namespace AutoLabel
             Data.Users[listView1.SelectedIndices[0]].Code = "";
             DrawList();
         }
+
+
     }
 }

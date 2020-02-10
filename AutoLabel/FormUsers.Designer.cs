@@ -43,16 +43,17 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonKeyDel = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkP1 = new System.Windows.Forms.CheckBox();
+            this.checkP2 = new System.Windows.Forms.CheckBox();
+            this.checkP3 = new System.Windows.Forms.CheckBox();
+            this.checkP4 = new System.Windows.Forms.CheckBox();
+            this.checkP5 = new System.Windows.Forms.CheckBox();
+            this.checkP6 = new System.Windows.Forms.CheckBox();
             this.checkBoxOn = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.checkK1 = new System.Windows.Forms.CheckBox();
+            this.checkK2 = new System.Windows.Forms.CheckBox();
+            this.checkR1 = new System.Windows.Forms.CheckBox();
+            this.checkP7 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -236,89 +237,89 @@
             this.buttonKeyDel.Visible = false;
             this.buttonKeyDel.Click += new System.EventHandler(this.buttonKeyDel_Click);
             // 
-            // checkBox1
+            // checkP1
             // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(929, 542);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(74, 41);
-            this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "П1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkP1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkP1.AutoSize = true;
+            this.checkP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkP1.ForeColor = System.Drawing.Color.White;
+            this.checkP1.Location = new System.Drawing.Point(929, 542);
+            this.checkP1.Name = "checkP1";
+            this.checkP1.Size = new System.Drawing.Size(74, 41);
+            this.checkP1.TabIndex = 20;
+            this.checkP1.Text = "П1";
+            this.checkP1.UseVisualStyleBackColor = true;
+            this.checkP1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // checkBox2
+            // checkP2
             // 
-            this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(1022, 542);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(76, 41);
-            this.checkBox2.TabIndex = 21;
-            this.checkBox2.Text = "П2";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.checkP2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkP2.AutoSize = true;
+            this.checkP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkP2.ForeColor = System.Drawing.Color.White;
+            this.checkP2.Location = new System.Drawing.Point(1022, 542);
+            this.checkP2.Name = "checkP2";
+            this.checkP2.Size = new System.Drawing.Size(76, 41);
+            this.checkP2.TabIndex = 21;
+            this.checkP2.Text = "П2";
+            this.checkP2.UseVisualStyleBackColor = true;
+            this.checkP2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // checkBox3
+            // checkP3
             // 
-            this.checkBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox3.ForeColor = System.Drawing.Color.White;
-            this.checkBox3.Location = new System.Drawing.Point(929, 589);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(76, 41);
-            this.checkBox3.TabIndex = 22;
-            this.checkBox3.Text = "П3";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.checkP3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkP3.AutoSize = true;
+            this.checkP3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkP3.ForeColor = System.Drawing.Color.White;
+            this.checkP3.Location = new System.Drawing.Point(929, 589);
+            this.checkP3.Name = "checkP3";
+            this.checkP3.Size = new System.Drawing.Size(76, 41);
+            this.checkP3.TabIndex = 22;
+            this.checkP3.Text = "П3";
+            this.checkP3.UseVisualStyleBackColor = true;
+            this.checkP3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
-            // checkBox4
+            // checkP4
             // 
-            this.checkBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox4.ForeColor = System.Drawing.Color.White;
-            this.checkBox4.Location = new System.Drawing.Point(1022, 589);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(76, 41);
-            this.checkBox4.TabIndex = 23;
-            this.checkBox4.Text = "П4";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            this.checkP4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkP4.AutoSize = true;
+            this.checkP4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkP4.ForeColor = System.Drawing.Color.White;
+            this.checkP4.Location = new System.Drawing.Point(1022, 589);
+            this.checkP4.Name = "checkP4";
+            this.checkP4.Size = new System.Drawing.Size(76, 41);
+            this.checkP4.TabIndex = 23;
+            this.checkP4.Text = "П4";
+            this.checkP4.UseVisualStyleBackColor = true;
+            this.checkP4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
-            // checkBox5
+            // checkP5
             // 
-            this.checkBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox5.ForeColor = System.Drawing.Color.White;
-            this.checkBox5.Location = new System.Drawing.Point(929, 636);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(76, 41);
-            this.checkBox5.TabIndex = 24;
-            this.checkBox5.Text = "П5";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
+            this.checkP5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkP5.AutoSize = true;
+            this.checkP5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkP5.ForeColor = System.Drawing.Color.White;
+            this.checkP5.Location = new System.Drawing.Point(929, 636);
+            this.checkP5.Name = "checkP5";
+            this.checkP5.Size = new System.Drawing.Size(76, 41);
+            this.checkP5.TabIndex = 24;
+            this.checkP5.Text = "П5";
+            this.checkP5.UseVisualStyleBackColor = true;
+            this.checkP5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
             // 
-            // checkBox6
+            // checkP6
             // 
-            this.checkBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox6.ForeColor = System.Drawing.Color.White;
-            this.checkBox6.Location = new System.Drawing.Point(1022, 636);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(76, 41);
-            this.checkBox6.TabIndex = 25;
-            this.checkBox6.Text = "П6";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
+            this.checkP6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkP6.AutoSize = true;
+            this.checkP6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkP6.ForeColor = System.Drawing.Color.White;
+            this.checkP6.Location = new System.Drawing.Point(1022, 636);
+            this.checkP6.Name = "checkP6";
+            this.checkP6.Size = new System.Drawing.Size(76, 41);
+            this.checkP6.TabIndex = 25;
+            this.checkP6.Text = "П6";
+            this.checkP6.UseVisualStyleBackColor = true;
+            this.checkP6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
             // checkBoxOn
             // 
@@ -333,50 +334,64 @@
             this.checkBoxOn.UseVisualStyleBackColor = true;
             this.checkBoxOn.CheckedChanged += new System.EventHandler(this.checkBoxOn_CheckedChanged);
             // 
-            // checkBox7
+            // checkK1
             // 
-            this.checkBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox7.ForeColor = System.Drawing.Color.White;
-            this.checkBox7.Location = new System.Drawing.Point(929, 713);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(73, 41);
-            this.checkBox7.TabIndex = 27;
-            this.checkBox7.Text = "К1";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            this.checkBox7.Visible = false;
-            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
+            this.checkK1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkK1.AutoSize = true;
+            this.checkK1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkK1.ForeColor = System.Drawing.Color.White;
+            this.checkK1.Location = new System.Drawing.Point(929, 773);
+            this.checkK1.Name = "checkK1";
+            this.checkK1.Size = new System.Drawing.Size(73, 41);
+            this.checkK1.TabIndex = 27;
+            this.checkK1.Text = "К1";
+            this.checkK1.UseVisualStyleBackColor = true;
+            this.checkK1.Visible = false;
+            this.checkK1.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
             // 
-            // checkBox8
+            // checkK2
             // 
-            this.checkBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox8.ForeColor = System.Drawing.Color.White;
-            this.checkBox8.Location = new System.Drawing.Point(1022, 713);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(75, 41);
-            this.checkBox8.TabIndex = 28;
-            this.checkBox8.Text = "К2";
-            this.checkBox8.UseVisualStyleBackColor = true;
-            this.checkBox8.Visible = false;
-            this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox8_CheckedChanged);
+            this.checkK2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkK2.AutoSize = true;
+            this.checkK2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkK2.ForeColor = System.Drawing.Color.White;
+            this.checkK2.Location = new System.Drawing.Point(1022, 773);
+            this.checkK2.Name = "checkK2";
+            this.checkK2.Size = new System.Drawing.Size(75, 41);
+            this.checkK2.TabIndex = 28;
+            this.checkK2.Text = "К2";
+            this.checkK2.UseVisualStyleBackColor = true;
+            this.checkK2.Visible = false;
+            this.checkK2.CheckedChanged += new System.EventHandler(this.checkBox8_CheckedChanged);
             // 
-            // checkBox9
+            // checkR1
             // 
-            this.checkBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox9.ForeColor = System.Drawing.Color.White;
-            this.checkBox9.Location = new System.Drawing.Point(929, 790);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(185, 41);
-            this.checkBox9.TabIndex = 29;
-            this.checkBox9.Text = "Ротопринт";
-            this.checkBox9.UseVisualStyleBackColor = true;
-            this.checkBox9.Visible = false;
-            this.checkBox9.CheckedChanged += new System.EventHandler(this.checkBox9_CheckedChanged);
+            this.checkR1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkR1.AutoSize = true;
+            this.checkR1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkR1.ForeColor = System.Drawing.Color.White;
+            this.checkR1.Location = new System.Drawing.Point(929, 850);
+            this.checkR1.Name = "checkR1";
+            this.checkR1.Size = new System.Drawing.Size(185, 41);
+            this.checkR1.TabIndex = 29;
+            this.checkR1.Text = "Ротопринт";
+            this.checkR1.UseVisualStyleBackColor = true;
+            this.checkR1.Visible = false;
+            this.checkR1.CheckedChanged += new System.EventHandler(this.checkBox9_CheckedChanged);
+            // 
+            // checkP7
+            // 
+            this.checkP7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkP7.AutoSize = true;
+            this.checkP7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkP7.ForeColor = System.Drawing.Color.White;
+            this.checkP7.Location = new System.Drawing.Point(929, 683);
+            this.checkP7.Name = "checkP7";
+            this.checkP7.Size = new System.Drawing.Size(76, 41);
+            this.checkP7.TabIndex = 30;
+            this.checkP7.Text = "П7";
+            this.checkP7.UseVisualStyleBackColor = true;
+            this.checkP7.CheckedChanged += new System.EventHandler(this.CheckP7_CheckedChanged);
             // 
             // FormUsers
             // 
@@ -384,16 +399,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1126, 912);
-            this.Controls.Add(this.checkBox9);
-            this.Controls.Add(this.checkBox8);
-            this.Controls.Add(this.checkBox7);
+            this.Controls.Add(this.checkP7);
+            this.Controls.Add(this.checkR1);
+            this.Controls.Add(this.checkK2);
+            this.Controls.Add(this.checkK1);
             this.Controls.Add(this.checkBoxOn);
-            this.Controls.Add(this.checkBox6);
-            this.Controls.Add(this.checkBox5);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkP6);
+            this.Controls.Add(this.checkP5);
+            this.Controls.Add(this.checkP4);
+            this.Controls.Add(this.checkP3);
+            this.Controls.Add(this.checkP2);
+            this.Controls.Add(this.checkP1);
             this.Controls.Add(this.buttonKeyDel);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.buttonKey);
@@ -431,15 +447,16 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button buttonKeyDel;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkP1;
+        private System.Windows.Forms.CheckBox checkP2;
+        private System.Windows.Forms.CheckBox checkP3;
+        private System.Windows.Forms.CheckBox checkP4;
+        private System.Windows.Forms.CheckBox checkP5;
+        private System.Windows.Forms.CheckBox checkP6;
         private System.Windows.Forms.CheckBox checkBoxOn;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox9;
+        private System.Windows.Forms.CheckBox checkK1;
+        private System.Windows.Forms.CheckBox checkK2;
+        private System.Windows.Forms.CheckBox checkR1;
+        private System.Windows.Forms.CheckBox checkP7;
     }
 }

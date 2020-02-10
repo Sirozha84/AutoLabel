@@ -11,7 +11,7 @@ namespace AutoLabel
         /// <summary>
         /// Количество ТПА
         /// </summary>
-        public const int TPACount = 9;
+        public const int TPACount = 10;
         /// <summary>
         /// Максимальное количество преформ в малом коробе
         /// </summary>
@@ -82,9 +82,9 @@ namespace AutoLabel
         /// </summary>
         public static int MaxLabels(int tpaNum)
         {
-            if (tpaNum == 6) return 24; //Ограничение С1
-            if (tpaNum == 7) return 24; //Ограничение С2
-            if (tpaNum == 8) return 24; //Ограничение Ротопринт
+            if (tpaNum == 7) return 24; //Ограничение С1
+            if (tpaNum == 8) return 24; //Ограничение С2
+            if (tpaNum == 9) return 24; //Ограничение Ротопринт
             return 9;
         }
 
@@ -159,6 +159,7 @@ namespace AutoLabel
             Labels.Add(new Label("Netstal №4", 0));
             Labels.Add(new Label("Netstal №5", 0));
             Labels.Add(new Label("Netstal №6", 0));
+            Labels.Add(new Label("Netstal №7", 0));
             Labels.Add(new Label("C1", 1));
             Labels.Add(new Label("C2", 1));
             Labels.Add(new Label("Ротопринт", 2));

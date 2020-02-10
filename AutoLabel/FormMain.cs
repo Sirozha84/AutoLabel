@@ -39,9 +39,10 @@ namespace AutoLabel
         private void button4_Click(object sender, EventArgs e) { Print(3); }
         private void button5_Click(object sender, EventArgs e) { Print(4); }
         private void button6_Click(object sender, EventArgs e) { Print(5); }
-        private void button7_Click(object sender, EventArgs e) { Print(6); }
-        private void button8_Click(object sender, EventArgs e) { Print(7); }
-        private void button9_Click(object sender, EventArgs e) { Print(8); }
+        private void ButtonP7_Click(object sender, EventArgs e) { Print(6); }
+        private void button7_Click(object sender, EventArgs e) { Print(7); }
+        private void button8_Click(object sender, EventArgs e) { Print(8); }
+        private void button9_Click(object sender, EventArgs e) { Print(9); }
 
         void Print(int num)
         {
@@ -109,24 +110,26 @@ namespace AutoLabel
             }
             try
             {
-                label1.Text = Data.Labels[0].LabelUnderButton();
-                label2.Text = Data.Labels[1].LabelUnderButton();
-                label3.Text = Data.Labels[2].LabelUnderButton();
-                label4.Text = Data.Labels[3].LabelUnderButton();
-                label5.Text = Data.Labels[4].LabelUnderButton();
-                label6.Text = Data.Labels[5].LabelUnderButton();
-                label7.Text = Data.Labels[6].LabelUnderButton();
-                label8.Text = Data.Labels[7].LabelUnderButton();
-                label9.Text = Data.Labels[8].LabelUnderButton();
-                Conformity.SetColor(button1, 0);
-                Conformity.SetColor(button2, 1);
-                Conformity.SetColor(button3, 2);
-                Conformity.SetColor(button4, 3);
-                Conformity.SetColor(button5, 4);
-                Conformity.SetColor(button6, 5);
-                Conformity.SetColor(button7, 6);
-                Conformity.SetColor(button8, 7);
-                Conformity.SetColor(button9, 8);
+                labelP1.Text = Data.Labels[0].LabelUnderButton();
+                labelP2.Text = Data.Labels[1].LabelUnderButton();
+                labelP3.Text = Data.Labels[2].LabelUnderButton();
+                labelP4.Text = Data.Labels[3].LabelUnderButton();
+                labelP5.Text = Data.Labels[4].LabelUnderButton();
+                labelP6.Text = Data.Labels[5].LabelUnderButton();
+                labelP7.Text = Data.Labels[6].LabelUnderButton();
+                labelC1.Text = Data.Labels[7].LabelUnderButton();
+                labelC2.Text = Data.Labels[8].LabelUnderButton();
+                labelR1.Text = Data.Labels[9].LabelUnderButton();
+                Conformity.SetColor(buttonP1, 0);
+                Conformity.SetColor(buttonP2, 1);
+                Conformity.SetColor(buttonP3, 2);
+                Conformity.SetColor(buttonP4, 3);
+                Conformity.SetColor(buttonP5, 4);
+                Conformity.SetColor(buttonP6, 5);
+                Conformity.SetColor(buttonP7, 6);
+                Conformity.SetColor(buttonC1, 7);
+                Conformity.SetColor(buttonC2, 8);
+                Conformity.SetColor(buttonR1, 9);
                 tableLayoutPanel1.Visible = true;
                 labelProblem.Visible = false;
             }
@@ -284,6 +287,7 @@ namespace AutoLabel
             form.ShowDialog();
             StartRefresh();
         }
+
         #region Скучная фигня
         private void смена1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -400,6 +404,7 @@ namespace AutoLabel
             EditList("Список кодов цветов ротопринт", "Colorants2");
         }
         #endregion
+
         private void справкаToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             using (FormHelp help = new FormHelp()) { help.ShowDialog(); }
@@ -450,5 +455,7 @@ namespace AutoLabel
             form.ShowDialog();
             StartRefresh();
         }
+
+
     }
 }
