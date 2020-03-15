@@ -31,13 +31,13 @@ namespace AutoLabel
             if (Shop == 0)
             {
                 First = 0;
-                Last = 5;
+                Last = 6;
                 ShopName = "Преформа";
             }
             else
             {
-                First = 6;
-                Last = 7;
+                First = 7;
+                Last = 8;
                 ShopName = "Колпак";
             }
             //Собственно загружаем лог
@@ -358,71 +358,69 @@ namespace AutoLabel
             int strings = 1000 / height; //Количество строк на странице
             int page = line / strings + 1;
             int pages = log.Count / strings + 1;
+            int step = 115; //Расстояние между колонками
+            int maxlines = 32; //Максимальное количество строк
             //Заголовок
             e.Graphics.DrawString("Отчёт по ТПА     " + LogFile + " (" + ShopName + ")", Big, Brushes.Black, 40, 40);
             //Рамка
-            int width = (Last - First + 1) * 180;
+            int width = 9 * step;// (Last - First + 1) * step; 
             e.Graphics.DrawRectangle(Slim, 40, 75, width, 700);
             e.Graphics.DrawLine(Slim, 40, 115, width + 40, 115);
-            for (int i = 220; i < width; i += 180)
+            for (int i = 40; i < width; i += step)
                 e.Graphics.DrawLine(Slim, i, 75, i, 775);
             //Шапка таблицы
+            int column = 0;
             for (int tpa = First; tpa <= Last; tpa++)
             {
-                int x = (tpa - First) * 180;
+                int x = column * step;
                 e.Graphics.DrawString(Data.Labels[tpa].TPAName, Bold, Brushes.Black, x + 40, 80);
-                e.Graphics.DrawString("Номер", Bold, Brushes.Black, x + 40, 100);
-                e.Graphics.DrawString("Время", Bold, Brushes.Black, x + 90, 100);
-                e.Graphics.DrawString("Короб", Bold, Brushes.Black, x + 140, 100);
+                e.Graphics.DrawString("№", Bold, Brushes.Black, x + 40, 100);
+                e.Graphics.DrawString("Время", Bold, Brushes.Black, x + 58, 100);
+                e.Graphics.DrawString("Короб", Bold, Brushes.Black, x + 100, 100);
                 int y = 120;
-                line = 0;
+                line = -1; //Начинаем с отрицательного, потому что по логике сначала строка инкрементируется.. так вышло..
                 int n = 1;
                 string lasttime = "";
                 string lastbox = "";
                 List<string> Packers = new List<string>();
-                foreach (string[] rec in log)
+                for (int i = 0; i < log.Count; i++) 
                 {
                     //Подходит ли запись под эту ТПА
-                    if (rec[2] == Data.Labels[tpa].TPAName)
+                    if (log[i][2] == Data.Labels[tpa].TPAName)
                     {
                         //Если время не совпадает с предыдущим, рисуем строку
-                        if (rec[1] != lasttime)
+                        if (log[i][1] == lasttime)
                         {
-                            e.Graphics.DrawString((n).ToString(), Normal, Brushes.Black, x + 40, y + line * height);
-                            e.Graphics.DrawString(rec[1], Normal, Brushes.Black, x + 90, y + line * height);
-                            e.Graphics.DrawString(rec[7], Normal, Brushes.Black, x + 140, y + line * height);
-                            //Если до этого была строка не с одной записи, рисуем последний короб
-                            if (lastbox != "")
-                            {
-                                e.Graphics.DrawString("- " + lastbox, Normal, Brushes.Black, x + 155, y + (line - 1) * height);
-                                lastbox = "";
-                            }
-                            line++;
+                            lastbox = log[i][7];
+                            //Если следующая запись другая или её нет, то пишем последний
+                            if (i+1 <log.Count || log[i][1] != log[i + 1][1])
+                                e.Graphics.DrawString("- " + lastbox, Normal, Brushes.Black, x + 115, y + line * height);
                         }
                         else
                         {
-                            lastbox = rec[7];
+                            if (++line > maxlines) { line = 0; x = ++column * step; }
+                            e.Graphics.DrawString(n.ToString(), Normal, Brushes.Black, x + 40, y + line * height);
+                            e.Graphics.DrawString(log[i][1], Normal, Brushes.Black, x + 60, y + line * height);
+                            e.Graphics.DrawString(log[i][7], Normal, Brushes.Black, x + 100, y + line * height);
                         }
+
                         n++;
-                        lasttime = rec[1];
+                        lasttime = log[i][1];
                         //А теперь смотрим кто упаковищик и добавляем его в список если его там нет
-                        if (Packers.Find(s => s == rec[8]) == null)
-                            Packers.Add(rec[8]);
+                        if (Packers.Find(s => s == log[i][8]) == null)
+                            Packers.Add(log[i][8]);
                     }
+                    
                 }
-                //Если до этого была строка не с одной записи, рисуем последний короб
-                if (lastbox != "")
-                {
-                    e.Graphics.DrawString("- " + lastbox, Normal, Brushes.Black, x + 160, y + (line - 1) * height);
-                    lastbox = "";
-                }
+
                 //Под списком рисуем список упаковщиков
                 line++;
                 foreach (string s in Packers)
                 {
+                    if (++line > maxlines) { line = 0; x = ++column * step; }
                     e.Graphics.DrawString(s.ToString(), Normal, Brushes.Black, x + 40, y + line * height);
-                    line++;
                 }
+                column++;
             }
         }
     }
