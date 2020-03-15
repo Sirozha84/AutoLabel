@@ -150,8 +150,8 @@ namespace AutoLabel
                 Label l = new Label(comboBoxTPA.SelectedItem.ToString(), 0);
 
                 //Выбираем какую этикетку печатаем
-                if (comboBoxTPA.SelectedIndex >= 6 & comboBoxTPA.SelectedIndex <= 7) l.TPAType = 1;
-                if (comboBoxTPA.SelectedIndex >= 8) l.TPAType = 2;
+                if (comboBoxTPA.SelectedIndex >= 7 & comboBoxTPA.SelectedIndex <= 8) l.TPAType = 1;
+                if (comboBoxTPA.SelectedIndex >= 9) l.TPAType = 2;
 
                 if (comboBoxWeight.SelectedItem != null) l.Weight = comboBoxWeight.SelectedItem.ToString();
                 if (comboBoxType.SelectedItem != null) l.Type = comboBoxType.SelectedItem.ToString(); else l.Type = "";

@@ -23,7 +23,7 @@ namespace AutoLabel
             box = lab.CurrentNum;
             FillUsers();
             //Если это колпак, выбор пользователя убираем
-            if (num >= 6 & num<=7)
+            if (num >= 7 & num <= 8)
             {
                 comboBoxUser.Enabled = false;
                 buttonPrint.Enabled = true;
