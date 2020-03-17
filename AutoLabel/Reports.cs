@@ -393,7 +393,7 @@ namespace AutoLabel
                         {
                             lastbox = log[i][7];
                             //Если следующая запись другая или её нет, то пишем последний
-                            if (i+1 <log.Count || log[i][1] != log[i + 1][1])
+                            if (i < log.Count || log[i][1] != log[i + 1][1])
                                 e.Graphics.DrawString("- " + lastbox, Normal, Brushes.Black, x + 115, y + line * height);
                         }
                         else
