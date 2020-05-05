@@ -72,20 +72,6 @@ namespace AutoLabel
         }
 
         /// <summary>
-        /// Проверка подходит ли этот цех в текущих настройках
-        /// </summary>
-        /// <param name="shop"></param>
-        /// <returns></returns>
-        static bool ShopRight(string shop)
-        {
-            bool r = false;
-            for (int i = First; i <= Last; i++)
-                if (Data.Labels[i].TPAName == shop)
-                    r = true;
-            return r;
-        }
-
-        /// <summary>
         /// Отчёт: журнал
         /// </summary>
         /// <param name="logfile">Файл журнала</param>

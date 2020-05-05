@@ -46,6 +46,11 @@ namespace AutoLabel
 
         void Print(int num)
         {
+            //Тест..............
+            Data.Labels[num].PrintProductionTask();
+            return;
+
+
             StopRefresh();
             if (Data.Labels[num].PartNum == null |
                 Data.Labels[num].PartNum == "" |

@@ -27,20 +27,16 @@ namespace AutoLabel
         static Pen ClipLine = new Pen(Color.Black, 0.5f);
         static Pen Slim = new Pen(Color.Black, 1);
         static Pen Bold = new Pen(Color.Black, 3);
-        //static Brush back = new Brush(Color.Gray);        
         static Font F09 = new Font("Arial", 9, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F11 = new Font("Arial", 11, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F11Italic = new Font("Arial", 11, FontStyle.Italic, GraphicsUnit.Pixel);
         static Font F12 = new Font("Arial", 12, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F14 = new Font("Arial", 14, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F14Bold = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
-        //static Font F18Bold = new Font("Arial", 18, FontStyle.Bold, GraphicsUnit.Pixel);
-        //static Font F20Bold = new Font("Arial", 20, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font F22 = new Font("Arial", 22, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F22Bold = new Font("Arial", 22, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font F26Bold = new Font("Arial", 26, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font F30Bold = new Font("Arial", 30, FontStyle.Bold, GraphicsUnit.Pixel);
-        //static Font F32Bold = new Font("Arial", 30, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font F37Bold = new Font("Arial", 37, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font F70Bold = new Font("Arial", 70, FontStyle.Bold, GraphicsUnit.Pixel);
         static StringFormat InRect = new StringFormat();
@@ -257,18 +253,6 @@ namespace AutoLabel
                 F14Bold, Brushes.Black, X + 30, Y + Height - 35);
             g.DrawString("Перед выдувом бутылок рекомендуется выдержать преформы не менее 24 часов при температуре (20 ± 5)°С",
                 F09, Brushes.Black, X + 30, Y + Height - 15);
-            //Штрихкод, платить отказались, убираем... :-( может потом вернём
-            /*string code = Barcode.Code(this);
-            if (code != "")
-            {
-                try
-                {
-                    Image barcode = Image.FromFile("Barcodes\\" + code + ".gif");
-                    g.DrawImage(barcode, X + 10, Y + 10, 170, 50);
-                }
-                catch { }
-            }*/
-
             //Если надо, инкрементим номер и пишем журнал
             if (IncNum) IncAndLog();
         }
@@ -300,7 +284,7 @@ namespace AutoLabel
                     g.DrawString(s3, F22, Brushes.Black, X + 231, Y + y - 5);
                     g.DrawString(s3, F22, Brushes.Black, X + 232, Y + y - 5);
                 }
-            }   
+            }
             else
                 g.DrawString(s3, F30Bold, Brushes.Black, X + 230, Y + y);
         }
@@ -317,11 +301,11 @@ namespace AutoLabel
             InRect.Alignment = StringAlignment.Center;
             int width = 550;
             int height = 380;
-            
+
             //Рамки
             if (TPAName == "C2")
                 g.FillRectangle(Brushes.LightGray, x + 10, y + 270, 402, 70);
-                //g.FillRectangle(Brushes.LightGray, x, y, width, height); 
+            //g.FillRectangle(Brushes.LightGray, x, y, width, height); 
             g.DrawRectangle(Slim, x, y, width, height);
             g.DrawRectangle(Slim, x + 10, y + 160, width - 20, 180);
             g.DrawLine(Slim, x + 10, y + 215, x + width - 10, y + 215);
@@ -342,7 +326,7 @@ namespace AutoLabel
                 F22, Brushes.Black, new Rectangle(x, y + 90, width, 25), InRect);
             g.DrawString("ГОСТ 32626-2014",
                 F22, Brushes.Black, new Rectangle(x, y + 120, width, 25), InRect);
-            
+
             //Поля
             g.DrawString("Масса, гр.", F14, Brushes.Black, new Rectangle(x + 10, y + 160, 140, 20), InRect);
             g.DrawString(Weight, F26Bold, Brushes.Black, new Rectangle(x + 10, y + 180, 140, 30), InRect);
@@ -377,18 +361,18 @@ namespace AutoLabel
             }
 
             g.DrawString(Other, F14, Brushes.Black, new Rectangle(x + 10, y + 320, 400, 30), InRect);
-            
+
             //Графика
             g.DrawImage(HDPE, x + 415, y + 285, 40, 40);
             g.DrawImage(Eda, x + 455, y + 285, 40, 40);
             g.DrawImage(EAC, x + 495, y + 285, 40, 40);
-            
+
             //Нижний колонтитул
             g.DrawString("Гарантированный срок годности - 12 месяцев со дня изготовления, при температуре от 5 до 25°С",
                 F11Italic, Brushes.Black, x + 7, y + height - 35);
             g.DrawString("и относительной влажности воздуха 40% - 80%.",
                 F11Italic, Brushes.Black, x + 7, y + height - 20);
-            
+
             //Инкрементим номер и пишем журнал
             IncAndLog();
         }
@@ -421,10 +405,10 @@ namespace AutoLabel
             g.DrawString(Packer, F22, Brushes.Black, new Point(X + 200, Y + 125));
 
             g.DrawString("Смена:", F22, Brushes.Black, new Point(X + 10, Y + 150));
-            g.DrawString(Shift[Shift.Length-1].ToString(), F22, Brushes.Black, new Point(X + 200, Y + 150));
+            g.DrawString(Shift[Shift.Length - 1].ToString(), F22, Brushes.Black, new Point(X + 200, Y + 150));
 
             g.DrawString(Num.ToString(), F14, Brushes.Black, new Point(X + 350, Y + 160));
-            
+
             //Инкрементим номер и пишем журнал
             IncAndLog();
         }
@@ -436,10 +420,118 @@ namespace AutoLabel
         {
             if (!isCustom) Log();
             //Увеличиваем номер, если печатался текущий
-            if (Num >= CurrentNum & CurrentNum > 0) CurrentNum = Num + 1; 
+            if (Num >= CurrentNum & CurrentNum > 0) CurrentNum = Num + 1;
             Num++;
             LabelCount--;
         }
+
+        /// <summary>
+        /// Печать производственного задания
+        /// </summary>
+        public void PrintProductionTask()
+        {
+            try
+            {
+                PrintDocument doc = new PrintDocument();
+                doc.PrintPage += new PrintPageEventHandler(PD_PrintProductionTask);
+                doc.PrinterSettings = Data.printersettings;
+                //doc.PrinterSettings.DefaultPageSettings.Landscape = (TPAType != 2); //Горизонтальный, если не для ротопринта
+                doc.Print();
+            }
+            catch (ArgumentException e)
+            {
+                AutoLabel.Log.Error(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Формирование листа производственного задания
+        /// </summary>
+        private void PD_PrintProductionTask(object sender, PrintPageEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            int Left = 40;
+            int Top = 40;
+            int fk = 2; //Коррекция высоты шрифта
+            InRect.Alignment = StringAlignment.Center;
+            g.DrawRectangle(Bold, Left, Top, 750, 500);
+            g.DrawRectangle(Bold, Left, Top, 750, 125);
+            g.DrawRectangle(Slim, Left, Top, 750, 60);
+            g.DrawRectangle(Slim, Left, Top, 375, 60);
+
+            g.DrawRectangle(Slim, Left, Top + 25, 375, 35);
+            g.DrawString("Производственное задание", F22Bold, Brushes.Black, new Rectangle(Left, Top + 25 + 4, 375, 35), InRect);
+            g.DrawString(TPAName, F37Bold, Brushes.Black, new Rectangle(Left + 375, Top + 10, 375, 60), InRect);
+
+            g.DrawRectangle(Slim, Left + 150, Top + 85, 225, 20);
+            g.DrawString("Начало", F14, Brushes.Black, Left + 5, Top + 85);
+            g.DrawString("производства", F14, Brushes.Black, Left + 5, Top + 105);
+
+            g.DrawRectangle(Slim, Left + 525, Top + 85, 225, 20);
+            g.DrawString("Конец", F14, Brushes.Black, Left + 380, Top + 85);
+            g.DrawString("производства", F14, Brushes.Black, Left + 380, Top + 105);
+
+            g.DrawRectangle(Slim, Left, Top + 230, 150, 20);
+            g.DrawString("Сырьё", F14, Brushes.Black, new Rectangle(Left, Top + fk + 230, 150, 20), InRect);
+            g.DrawRectangle(Slim, Left, Top + 250, 150, 50);
+            g.DrawString(Material, F14, Brushes.Black, new Rectangle(Left, Top + fk + 250, 150, 50), InRect);
+
+            g.DrawRectangle(Slim, Left + 150, Top + 230, 150, 20);
+            g.DrawString("Цвет", F14, Brushes.Black, new Rectangle(Left + 150, Top + fk + 230, 150, 20), InRect);
+            g.DrawRectangle(Slim, Left + 150, Top + 250, 150, 50);
+            g.DrawString(PColor, F14, Brushes.Black, new Rectangle(Left + 150, Top + fk + 250, 150, 50), InRect);
+
+            g.DrawRectangle(Slim, Left + 300, Top + 230, 150, 20);
+            g.DrawString("Код цвета", F14, Brushes.Black, new Rectangle(Left + 300, Top + fk + 230, 150, 20), InRect);
+            g.DrawRectangle(Slim, Left + 300, Top + 250, 150, 50);
+            g.DrawString(Colorant, F14, Brushes.Black, new Rectangle(Left + 300, Top + fk + 250, 150, 50), InRect);
+
+            g.DrawRectangle(Slim, Left + 450, Top + 230, 150, 20);
+            g.DrawString("Кол-во в коробе", F14, Brushes.Black, new Rectangle(Left + 450, Top + fk + 230, 150, 20), InRect);
+            g.DrawRectangle(Slim, Left + 450, Top + 250, 150, 50);
+            g.DrawString(Count, F14, Brushes.Black, new Rectangle(Left + 450, Top + fk + 250, 150, 50), InRect);
+
+            g.DrawRectangle(Slim, Left + 600, Top + 230, 150, 20);
+            g.DrawString("Коробов", F14, Brushes.Black, new Rectangle(Left + 600, Top + fk + 230, 150, 20), InRect);
+            g.DrawRectangle(Slim, Left + 600, Top + 250, 150, 50);
+
+
+            g.DrawRectangle(Slim, Left, Top + 300, 375, 20);
+            g.DrawString("КРАСИТЕЛЬ", F14, Brushes.Black, new Rectangle(Left, Top + fk + 300, 375, 20), InRect);
+
+            g.DrawRectangle(Slim, Left + 375, Top + 300, 375, 20);
+            g.DrawString("ДОБАВКА", F14, Brushes.Black, new Rectangle(Left + 375, Top + fk + 300, 375, 20), InRect);
+
+            g.DrawRectangle(Slim, Left, Top + 320, 225, 20);
+            g.DrawString("Название", F14, Brushes.Black, new Rectangle(Left, Top + fk + 320, 225, 20), InRect);
+            g.DrawRectangle(Slim, Left, Top + 340, 225, 50);
+
+            g.DrawRectangle(Slim, Left + 225, Top + 320, 150, 20);
+            g.DrawString("% ввода", F14, Brushes.Black, new Rectangle(Left+225, Top + fk + 320, 150, 20), InRect);
+            g.DrawRectangle(Slim, Left+225, Top + 340, 150, 50);
+
+            g.DrawRectangle(Slim, Left + 375, Top + 320, 225, 20);
+            g.DrawString("Название", F14, Brushes.Black, new Rectangle(Left + 375, Top + fk + 320, 225, 20), InRect);
+            g.DrawRectangle(Slim, Left + 375, Top + 340, 225, 50);
+
+            g.DrawRectangle(Slim, Left + 600, Top + 320, 150, 20);
+            g.DrawString("% ввода", F14, Brushes.Black, new Rectangle(Left + 600, Top + fk + 320, 150, 20), InRect);
+            g.DrawRectangle(Slim, Left + 600, Top + 340, 150, 50);
+
+
+            g.DrawString("Запуск/переход произвёл_________________", F14, Brushes.Black, Left + 5, Top + 440);
+            g.DrawString("_подпись_________________________Ф.И.О.            Смена____",
+                F14, Brushes.Black, Left + 300, Top + 440);
+            
+            g.DrawString("Соответствие чек-листу__________________", F14, Brushes.Black, Left + 5, Top + 460);
+            g.DrawString("_подпись_________________________Ф.И.О.            Смена____",
+                F14, Brushes.Black, Left + 300, Top + 460);
+            
+            g.DrawString("Допущенно по качеству___________________", F14, Brushes.Black, Left + 5, Top + 480);
+            g.DrawString("_подпись_________________________Ф.И.О.            Смена____",
+                F14, Brushes.Black, Left + 300, Top + 480);
+        }
+
 
         /// <summary>
         /// Сохранение на сервер
