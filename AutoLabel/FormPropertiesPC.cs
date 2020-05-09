@@ -64,6 +64,10 @@ namespace AutoLabel
             comboBoxLimit.SelectedItem = null;
             textBoxNumber.Text = "";
             comboBoxAntistatic.SelectedItem = "";
+            textBoxKN.Text = "";
+            textBoxKP.Text = "";
+            textBoxDN.Text = "";
+            textBoxDP.Text = "";
 
             //Видимость полей
             comboBoxWeight.Enabled = true;
@@ -78,6 +82,10 @@ namespace AutoLabel
             comboBoxLimit.Enabled = (curLab.TPAType == 0);
             comboBoxOther.Enabled = (curLab.TPAType != 2);
             textBoxBox.Enabled = true;
+            textBoxKN.Enabled = (curLab.TPAType == 0);
+            textBoxKP.Enabled = (curLab.TPAType == 0);
+            textBoxDN.Enabled = (curLab.TPAType == 0);
+            textBoxDP.Enabled = (curLab.TPAType == 0);
 
             //Видимость подписей полей
             label3.Enabled = true;
@@ -91,6 +99,10 @@ namespace AutoLabel
             label10.Enabled = (curLab.TPAType == 0);
             label11.Enabled = (curLab.TPAType != 2);
             label12.Enabled = true;
+            labelKN.Enabled = (curLab.TPAType == 0);
+            labelKP.Enabled = (curLab.TPAType == 0);
+            labelDN.Enabled = (curLab.TPAType == 0);
+            labelDP.Enabled = (curLab.TPAType == 0);
 
             //Заполнение полей
             if (curLab.Weight != "") comboBoxWeight.SelectedItem = curLab.Weight; else comboBoxWeight.SelectedItem = null;
@@ -105,8 +117,9 @@ namespace AutoLabel
             comboBoxOther.Text = curLab.Other;
             textBoxBox.Text = "1";
             label3.Text = Data.WeightOrLogo(curLab);
-
+            textBoxKN.Text = comboBoxColorants.Text;
             //Доступность кнопок
+            buttonRepeat.Enabled = (curLab.TPAType == 0);
             buttonSave.Enabled = false;
             buttonClear.Enabled = true;
         }
@@ -131,6 +144,15 @@ namespace AutoLabel
             l.Save();
             buttonSave.Enabled = false;
             Net.Log("Изменение параметров ТПА на ПК");
+
+            //Печать производственного задания
+            if (curLab.TPAType == 0)
+                l.PrintProductionTask(textBoxKN.Text, textBoxKP.Text, textBoxDN.Text, textBoxDP.Text);
+        }
+        //Повторная печать производственного задания
+        private void buttonRepeat_Click(object sender, EventArgs e)
+        {
+            Data.Labels[comboBoxTPA.SelectedIndex].PrintProductionTask(textBoxKN.Text, textBoxKP.Text, textBoxDN.Text, textBoxDP.Text);
         }
 
         //Делаем кнопку сохранения видимой
