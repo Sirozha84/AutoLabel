@@ -448,7 +448,7 @@ namespace AutoLabel
                 PrintDocument doc = new PrintDocument();
                 doc.PrintPage += new PrintPageEventHandler(PD_PrintProductionTask);
                 doc.PrinterSettings = Data.printersettings;
-                //doc.PrinterSettings.DefaultPageSettings.Landscape = (TPAType != 2); //Горизонтальный, если не для ротопринта
+                doc.PrinterSettings.DefaultPageSettings.Landscape = false;
                 doc.Print();
             }
             catch (ArgumentException e)
