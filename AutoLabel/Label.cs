@@ -483,9 +483,11 @@ namespace AutoLabel
             g.DrawString(DateTime.Now.ToString("dd.MM.yyyy"), F14, Brushes.Black, Left + 150, TopK + 85);
 
             g.DrawRectangle(Slim, Left + 525, Top + 85, 225, 20);
-            g.DrawString("Конец", F14, Brushes.Black, Left + 380, Top + 85);
+            g.DrawString("Окончание", F14, Brushes.Black, Left + 380, Top + 85);
             g.DrawString("производства", F14, Brushes.Black, Left + 380, Top + 105);
 
+            g.DrawString(Weight + " " + Type, F70Bold, Brushes.Black, new Rectangle(Left, Top + 125 + 15, 750, 105 - 15), InRect);
+            
             g.DrawRectangle(Slim, Left, Top + 230, 150, 20);
             g.DrawString("Сырьё", F14, Brushes.Black, new Rectangle(Left, TopK + 230, 150, 20), InRect);
             g.DrawRectangle(Slim, Left, Top + 250, 150, 50);
