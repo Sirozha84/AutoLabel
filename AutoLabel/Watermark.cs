@@ -7,6 +7,7 @@
             if (txt == "АЯН") return "АЯН";
             if (txt == "ИЗРМВ") return "BaikalSea";
             if (txt == "Coca-cola") return "CocaCola";
+            if (txt == "Европласт - Обь") return "Обь";
             return "";
         }
     }

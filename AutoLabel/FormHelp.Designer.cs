@@ -35,7 +35,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.textHistory = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -103,7 +103,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.richTextBox2);
+            this.tabPage2.Controls.Add(this.textHistory);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -112,17 +112,17 @@
             this.tabPage2.Text = "Список изменений";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // richTextBox2
+            // textHistory
             // 
-            this.richTextBox2.BackColor = System.Drawing.Color.White;
-            this.richTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox2.Location = new System.Drawing.Point(3, 3);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(753, 532);
-            this.richTextBox2.TabIndex = 2;
-            this.richTextBox2.Text = resources.GetString("richTextBox2.Text");
+            this.textHistory.BackColor = System.Drawing.Color.White;
+            this.textHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textHistory.Location = new System.Drawing.Point(3, 3);
+            this.textHistory.Name = "textHistory";
+            this.textHistory.ReadOnly = true;
+            this.textHistory.Size = new System.Drawing.Size(753, 532);
+            this.textHistory.TabIndex = 2;
+            this.textHistory.Text = resources.GetString("textHistory.Text");
             // 
             // FormHelp
             // 
@@ -149,7 +149,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox textHistory;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.RichTextBox richTextBox3;
     }
