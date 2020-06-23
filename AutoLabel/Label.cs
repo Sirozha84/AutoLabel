@@ -43,7 +43,7 @@ namespace AutoLabel
 
         //Графика
         static Image logo = Image.FromFile("Graphics\\Logo.png");
-        static Image rst = Image.FromFile("Graphics\\RST.png");
+        //static Image rst = Image.FromFile("Graphics\\RST.png");
         static Image HDPE = Image.FromFile("Graphics\\HDPE.png");
         static Image Eda = Image.FromFile("Graphics\\Eda.png");
         static Image EAC = Image.FromFile("Graphics\\EAC.png");
@@ -228,7 +228,7 @@ namespace AutoLabel
             g.DrawLine(Bold, X + 410, Y + 170, X + 410, Y + 270);
             //Шапка
             g.DrawImage(logo, X + 190, Y + 3, 327, 45);
-            g.DrawImage(rst, X + 388, Y + 100, 45, 45);
+            //g.DrawImage(rst, X + 388, Y + 100, 45, 45);
             g.DrawImage(Pet, X + 433, Y + 100, 45, 45);
             g.DrawImage(Eda, X + 478, Y + 100, 45, 45);
             g.DrawString("КРАСНОЯРСКИЙ ЗАВОД", F14Bold, Brushes.Black, X + 330, Y + 50);
