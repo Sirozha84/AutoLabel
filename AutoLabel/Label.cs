@@ -463,10 +463,22 @@ namespace AutoLabel
         private void PD_PrintProductionTask(object sender, PrintPageEventArgs e)
         {
             Graphics g = e.Graphics;
-            int Left = 40;
-            int Top = 40;
-            int TopK = 42; //Скорректированная высота для надписей
-            int TopKb = 50; //Скорректированная высота для надписей
+            DrawProductionTask(g, 40, 40);
+            DrawProductionTask(g, 40, 620);
+
+            ClipLine.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            e.Graphics.DrawLine(ClipLine, 0, 580, 900, 580);
+        }
+        /// <summary>
+        /// Рисование производственного задания
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        void DrawProductionTask(Graphics g, int Left, int Top)
+        {
+            int TopK = Top + 2; //Скорректированная высота для надписей
+            int TopKb = Top + 10; //Скорректированная высота для надписей
             InRect.Alignment = StringAlignment.Center;
             g.DrawRectangle(Bold, Left, Top, 750, 500);
             g.DrawRectangle(Bold, Left, Top, 750, 125);
@@ -487,7 +499,7 @@ namespace AutoLabel
             g.DrawString("производства", F14, Brushes.Black, Left + 380, Top + 105);
 
             g.DrawString(Weight + " " + Type, F70Bold, Brushes.Black, new Rectangle(Left, Top + 125 + 15, 750, 105 - 15), InRect);
-            
+
             g.DrawRectangle(Slim, Left, Top + 230, 150, 20);
             g.DrawString("Сырьё", F14, Brushes.Black, new Rectangle(Left, TopK + 230, 150, 20), InRect);
             g.DrawRectangle(Slim, Left, Top + 250, 150, 50);
@@ -526,7 +538,7 @@ namespace AutoLabel
 
             g.DrawRectangle(Slim, Left + 225, Top + 320, 150, 20);
             g.DrawString("Процент ввода", F14, Brushes.Black, new Rectangle(Left + 225, TopK + 320, 150, 20), InRect);
-            g.DrawRectangle(Slim, Left+225, Top + 340, 150, 50);
+            g.DrawRectangle(Slim, Left + 225, Top + 340, 150, 50);
             g.DrawString(kP + "%", F22, Brushes.Black, new Rectangle(Left + 225, TopKb + 340, 150, 50), InRect);
 
             g.DrawRectangle(Slim, Left + 375, Top + 320, 225, 20);
@@ -539,18 +551,25 @@ namespace AutoLabel
             g.DrawRectangle(Slim, Left + 600, Top + 340, 150, 50);
             g.DrawString(dP + "%", F22, Brushes.Black, new Rectangle(Left + 600, TopKb + 340, 155, 50), InRect);
 
+            g.DrawRectangle(Slim, Left, Top + 390, 375, 40);
+            g.DrawString("Партия: " + PartNum, F22, Brushes.Black, new Rectangle(Left, TopKb + 390, 375, 40), InRect);
+            g.DrawRectangle(Slim, Left + 375, Top + 390, 375, 40);
+            g.DrawString(Antistatic, F22, Brushes.Black, new Rectangle(Left + 375, TopKb + 390, 375, 40), InRect);
+
+
             g.DrawString("Запуск/переход произвёл_________________", F14, Brushes.Black, Left + 5, Top + 440);
             g.DrawString("_подпись_________________________Ф.И.О.            Смена____",
                 F14, Brushes.Black, Left + 300, Top + 440);
-            
+
             g.DrawString("Соответствие чек-листу__________________", F14, Brushes.Black, Left + 5, Top + 460);
             g.DrawString("_подпись_________________________Ф.И.О.            Смена____",
                 F14, Brushes.Black, Left + 300, Top + 460);
-            
+
             g.DrawString("Допущенно по качеству___________________", F14, Brushes.Black, Left + 5, Top + 480);
             g.DrawString("_подпись_________________________Ф.И.О.            Смена____",
                 F14, Brushes.Black, Left + 300, Top + 480);
         }
+
         #endregion
 
         /// <summary>
