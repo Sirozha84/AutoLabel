@@ -5,9 +5,10 @@
         public static string Image(string txt)
         {
             if (txt == "АЯН") return "АЯН";
+            if (txt == "Данон") return "DAN";
+            if (txt == "Европласт - Обь") return "Обь";
             if (txt == "ИЗРМВ") return "BaikalSea";
             if (txt == "Coca-cola") return "CocaCola";
-            if (txt == "Европласт - Обь") return "Обь";
             return "";
         }
     }
