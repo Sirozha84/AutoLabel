@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxDP = new System.Windows.Forms.TextBox();
+            this.textBoxDN = new System.Windows.Forms.TextBox();
+            this.textBoxKP = new System.Windows.Forms.TextBox();
+            this.textBoxKN = new System.Windows.Forms.TextBox();
+            this.labelKN = new System.Windows.Forms.Label();
+            this.labelDN = new System.Windows.Forms.Label();
+            this.labelDP = new System.Windows.Forms.Label();
+            this.labelKP = new System.Windows.Forms.Label();
             this.comboBoxOther = new System.Windows.Forms.ComboBox();
             this.textBoxBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -57,14 +65,6 @@
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.labelKP = new System.Windows.Forms.Label();
-            this.labelDP = new System.Windows.Forms.Label();
-            this.labelDN = new System.Windows.Forms.Label();
-            this.labelKN = new System.Windows.Forms.Label();
-            this.textBoxKN = new System.Windows.Forms.TextBox();
-            this.textBoxKP = new System.Windows.Forms.TextBox();
-            this.textBoxDN = new System.Windows.Forms.TextBox();
-            this.textBoxDP = new System.Windows.Forms.TextBox();
             this.buttonRepeat = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
@@ -129,6 +129,94 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.33257F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(560, 339);
             this.tableLayoutPanel1.TabIndex = 10;
+            // 
+            // textBoxDP
+            // 
+            this.textBoxDP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBoxDP.Enabled = false;
+            this.textBoxDP.Location = new System.Drawing.Point(423, 87);
+            this.textBoxDP.Name = "textBoxDP";
+            this.textBoxDP.Size = new System.Drawing.Size(134, 20);
+            this.textBoxDP.TabIndex = 39;
+            this.toolTip1.SetToolTip(this.textBoxDP, "Данное поле не сохраняется, используется только для печати производственного зада" +
+        "ния");
+            // 
+            // textBoxDN
+            // 
+            this.textBoxDN.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBoxDN.Enabled = false;
+            this.textBoxDN.Location = new System.Drawing.Point(423, 59);
+            this.textBoxDN.Name = "textBoxDN";
+            this.textBoxDN.Size = new System.Drawing.Size(134, 20);
+            this.textBoxDN.TabIndex = 38;
+            this.toolTip1.SetToolTip(this.textBoxDN, "Данное поле не сохраняется, используется только для печати производственного зада" +
+        "ния");
+            // 
+            // textBoxKP
+            // 
+            this.textBoxKP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBoxKP.Enabled = false;
+            this.textBoxKP.Location = new System.Drawing.Point(423, 31);
+            this.textBoxKP.Name = "textBoxKP";
+            this.textBoxKP.Size = new System.Drawing.Size(134, 20);
+            this.textBoxKP.TabIndex = 37;
+            this.toolTip1.SetToolTip(this.textBoxKP, "Данное поле не сохраняется, используется только для печати производственного зада" +
+        "ния");
+            // 
+            // textBoxKN
+            // 
+            this.textBoxKN.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBoxKN.Enabled = false;
+            this.textBoxKN.Location = new System.Drawing.Point(423, 3);
+            this.textBoxKN.Name = "textBoxKN";
+            this.textBoxKN.Size = new System.Drawing.Size(134, 20);
+            this.textBoxKN.TabIndex = 36;
+            this.toolTip1.SetToolTip(this.textBoxKN, "Данное поле не сохраняется, используется только для печати производственного зада" +
+        "ния");
+            // 
+            // labelKN
+            // 
+            this.labelKN.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelKN.Enabled = false;
+            this.labelKN.Location = new System.Drawing.Point(283, 0);
+            this.labelKN.Name = "labelKN";
+            this.labelKN.Size = new System.Drawing.Size(134, 26);
+            this.labelKN.TabIndex = 35;
+            this.labelKN.Text = "Краситель:";
+            this.labelKN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelDN
+            // 
+            this.labelDN.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelDN.Enabled = false;
+            this.labelDN.Location = new System.Drawing.Point(283, 56);
+            this.labelDN.Name = "labelDN";
+            this.labelDN.Size = new System.Drawing.Size(134, 26);
+            this.labelDN.TabIndex = 34;
+            this.labelDN.Text = "Добавка:";
+            this.labelDN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelDP
+            // 
+            this.labelDP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelDP.Enabled = false;
+            this.labelDP.Location = new System.Drawing.Point(283, 84);
+            this.labelDP.Name = "labelDP";
+            this.labelDP.Size = new System.Drawing.Size(134, 26);
+            this.labelDP.TabIndex = 33;
+            this.labelDP.Text = "Процент ввода:";
+            this.labelDP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelKP
+            // 
+            this.labelKP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelKP.Enabled = false;
+            this.labelKP.Location = new System.Drawing.Point(283, 28);
+            this.labelKP.Name = "labelKP";
+            this.labelKP.Size = new System.Drawing.Size(134, 26);
+            this.labelKP.TabIndex = 32;
+            this.labelKP.Text = "Процент ввода:";
+            this.labelKP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // comboBoxOther
             // 
@@ -196,7 +284,7 @@
             this.comboBoxColorants.Name = "comboBoxColorants";
             this.comboBoxColorants.Size = new System.Drawing.Size(134, 21);
             this.comboBoxColorants.TabIndex = 25;
-            this.comboBoxColorants.SelectedIndexChanged += new System.EventHandler(this.comboBoxAntiCount_SelectedIndexChanged);
+            this.comboBoxColorants.SelectedIndexChanged += new System.EventHandler(this.comboBoxColorants_SelectedIndexChanged);
             // 
             // comboBoxAntistatic
             // 
@@ -434,94 +522,6 @@
             this.buttonClose.Text = "Закрыть";
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
-            // 
-            // labelKP
-            // 
-            this.labelKP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelKP.Enabled = false;
-            this.labelKP.Location = new System.Drawing.Point(283, 28);
-            this.labelKP.Name = "labelKP";
-            this.labelKP.Size = new System.Drawing.Size(134, 26);
-            this.labelKP.TabIndex = 32;
-            this.labelKP.Text = "Процент ввода:";
-            this.labelKP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // labelDP
-            // 
-            this.labelDP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelDP.Enabled = false;
-            this.labelDP.Location = new System.Drawing.Point(283, 84);
-            this.labelDP.Name = "labelDP";
-            this.labelDP.Size = new System.Drawing.Size(134, 26);
-            this.labelDP.TabIndex = 33;
-            this.labelDP.Text = "Процент ввода:";
-            this.labelDP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // labelDN
-            // 
-            this.labelDN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelDN.Enabled = false;
-            this.labelDN.Location = new System.Drawing.Point(283, 56);
-            this.labelDN.Name = "labelDN";
-            this.labelDN.Size = new System.Drawing.Size(134, 26);
-            this.labelDN.TabIndex = 34;
-            this.labelDN.Text = "Добавка:";
-            this.labelDN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // labelKN
-            // 
-            this.labelKN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelKN.Enabled = false;
-            this.labelKN.Location = new System.Drawing.Point(283, 0);
-            this.labelKN.Name = "labelKN";
-            this.labelKN.Size = new System.Drawing.Size(134, 26);
-            this.labelKN.TabIndex = 35;
-            this.labelKN.Text = "Краситель:";
-            this.labelKN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBoxKN
-            // 
-            this.textBoxKN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxKN.Enabled = false;
-            this.textBoxKN.Location = new System.Drawing.Point(423, 3);
-            this.textBoxKN.Name = "textBoxKN";
-            this.textBoxKN.Size = new System.Drawing.Size(134, 20);
-            this.textBoxKN.TabIndex = 36;
-            this.toolTip1.SetToolTip(this.textBoxKN, "Данное поле не сохраняется, используется только для печати производственного зада" +
-        "ния");
-            // 
-            // textBoxKP
-            // 
-            this.textBoxKP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxKP.Enabled = false;
-            this.textBoxKP.Location = new System.Drawing.Point(423, 31);
-            this.textBoxKP.Name = "textBoxKP";
-            this.textBoxKP.Size = new System.Drawing.Size(134, 20);
-            this.textBoxKP.TabIndex = 37;
-            this.toolTip1.SetToolTip(this.textBoxKP, "Данное поле не сохраняется, используется только для печати производственного зада" +
-        "ния");
-            // 
-            // textBoxDN
-            // 
-            this.textBoxDN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxDN.Enabled = false;
-            this.textBoxDN.Location = new System.Drawing.Point(423, 59);
-            this.textBoxDN.Name = "textBoxDN";
-            this.textBoxDN.Size = new System.Drawing.Size(134, 20);
-            this.textBoxDN.TabIndex = 38;
-            this.toolTip1.SetToolTip(this.textBoxDN, "Данное поле не сохраняется, используется только для печати производственного зада" +
-        "ния");
-            // 
-            // textBoxDP
-            // 
-            this.textBoxDP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBoxDP.Enabled = false;
-            this.textBoxDP.Location = new System.Drawing.Point(423, 87);
-            this.textBoxDP.Name = "textBoxDP";
-            this.textBoxDP.Size = new System.Drawing.Size(134, 20);
-            this.textBoxDP.TabIndex = 39;
-            this.toolTip1.SetToolTip(this.textBoxDP, "Данное поле не сохраняется, используется только для печати производственного зада" +
-        "ния");
             // 
             // buttonRepeat
             // 

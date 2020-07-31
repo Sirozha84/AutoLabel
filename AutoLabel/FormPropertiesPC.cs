@@ -170,7 +170,7 @@ namespace AutoLabel
         private void textBoxNumber_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxLimit_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxAntiType_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
-        private void comboBoxAntiCount_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
+        private void comboBoxColorants_SelectedIndexChanged(object sender, EventArgs e) { textBoxKN.Text = comboBoxColorants.Text; MakeSaveEnable(); }
         private void comboBoxOther_SelectedIndexChanged(object sender, EventArgs e) { MakeSaveEnable(); }
         private void comboBoxOther_TextUpdate(object sender, EventArgs e) { MakeSaveEnable(); }
         private void textBoxBox_TextChanged(object sender, EventArgs e) { MakeSaveEnable(); }
@@ -221,6 +221,5 @@ namespace AutoLabel
         {
             Close();
         }
-
     }
 }
