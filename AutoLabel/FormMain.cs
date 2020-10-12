@@ -11,7 +11,7 @@ namespace AutoLabel
         {
             InitializeComponent();
             //Режим для ПК
-            labelVersion.Text = "Версия: " + Program.Version;
+            labelVersion.Text = "Версия: " + Application.ProductVersion;
             if (Data.IsMachine)
             {
                 panel2.Location = new Point(0, 0);

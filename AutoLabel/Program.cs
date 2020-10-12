@@ -6,7 +6,7 @@ namespace AutoLabel
 {
     static class Program
     {
-        public const string Version = "3.6 (31.07.2020)";
+        //public const string Version = "3.6 (31.07.2020)";
         /// <summary>
         /// Версия для проверки совместимости с сервером
         /// </summary>
@@ -46,7 +46,7 @@ namespace AutoLabel
         public static void About()
         {
             MessageBox.Show("AutoLabel\n" +
-                            "Версия: " + Version + "\n" +
+                            "Версия: " + Application.ProductVersion + "\n" +
                             "Автор: Сергей Гордеев\n" +
                             "Телефон техподдержки: +7 (965) 917-31-43\n" +
                             "Сайт автора: http://www.sg-software.ru",

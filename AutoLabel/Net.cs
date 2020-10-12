@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Sockets;
 using System.IO;
+using System.Windows.Forms;
 
 namespace AutoLabel
 {
@@ -66,7 +67,7 @@ namespace AutoLabel
                         if (v == Program.VersionForComp) return;
                         Log("Несовместимая версия программы");
                         System.Windows.Forms.MessageBox.Show("Версия программы: " +
-                            Program.Version + "\nТребуемая версия: " + v +
+                            Application.ProductVersion + "\nТребуемая версия: " + v +
                             " или выше\nРабота будет остановлена", "AutoLabel",
                             System.Windows.Forms.MessageBoxButtons.OK,
                             System.Windows.Forms.MessageBoxIcon.Error);

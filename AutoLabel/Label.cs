@@ -242,7 +242,7 @@ namespace AutoLabel
                             F14Bold, Brushes.Black, X + 10, Y + 120);
             g.DrawString("ИЗ ПОЛИЭТИЛЕНТЕРЕФТАЛАТА",
                             F14Bold, Brushes.Black, X + 10, Y + 135);
-            g.DrawString("Технические условия / Specification - ТУ - 22.22.14 - 001 - 19334399 - 2018",
+            g.DrawString("Технические условия / Specification - ТУ - 22.22.14 - 001 - 19334399 - 2018 с изм. N1",
                 F11, Brushes.Black, X + 10, Y + 155);
             //Главные поля
             g.DrawString(Weight, F70Bold, Brushes.Black, X, Y + 180);
