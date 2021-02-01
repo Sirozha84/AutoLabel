@@ -5,6 +5,7 @@ using System.IO;
 using System.Threading;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace AutoLabel_Server
 {
@@ -21,6 +22,7 @@ namespace AutoLabel_Server
 
         static string Message = "";
         static List<string[]> TPA = new List<string[]>();
+        static List<Line> lines = new List<Line>();
         static string[] Shift;
         static List<string> Users = new List<string>();
         static List<DropList> DropLists = new List<DropList>();
@@ -70,8 +72,11 @@ namespace AutoLabel_Server
                 {
                     BinaryReader reader = new BinaryReader(stream);
                     BinaryWriter writer = new BinaryWriter(stream);
+                    
                     //Принимаем запрос клиента
                     string query = reader.ReadString();
+                    string[] q = query.Split('☺');
+                    
                     if (query == "Ping")
                         writer.Write("Pong");
                     if (query == "Сompatibility")
@@ -89,25 +94,15 @@ namespace AutoLabel_Server
                         }
                         catch { };
                     }
-                    if (query == "TPARead")
+                    if (q[0] == "LineRead")
                     {
-                        string name = reader.ReadString();
-                        int ind = TPA.FindIndex(tpa => tpa[0] == name);
-                        if (ind >= 0) for (int i = 1; i < 20; i++) writer.Write(TPA[ind][i]);
-                        else for (int i = 1; i < 20; i++) writer.Write("");
+                        Line line = lines.Find(o => o.name == q[1]);
+                        if (line != null) writer.Write(line.ToSend()); else writer.Write("NotFound");
                     }
-                    if (query == "TPAWrite")
+                    if (q[0] == "LineWrite")
                     {
-                        string name = reader.ReadString();
-                        int ind = TPA.FindIndex(tpa => tpa[0] == name);
-                        if (ind == -1)
-                        {
-                            TPA.Add(new string[20]);
-                            ind = TPA.Count - 1;
-                        }
-                        TPA[ind][0] = name;
-                        for (int i = 1; i < 20; i++) TPA[ind][i] = reader.ReadString();
-                        SaveTPA();
+                        Line line = lines.Find(o => o.name == q[1]);
+                        line.Input(query.Substring(10, query.Length - 10));
                     }
                     if (query == "ShiftRead")
                     {
@@ -268,6 +263,7 @@ namespace AutoLabel_Server
         static void LoadTPA()
         {
             TPA.Clear();
+            lines.Clear();
             try
             {
                 using (TextReader file = File.OpenText(TPAFile))
@@ -278,9 +274,15 @@ namespace AutoLabel_Server
                         string[] str = new string[20];
                         for (int i = 0; i < 20; i++) str[i] = file.ReadLine();
                         if (str[19] != null) TPA.Add(str);
+                        if (str[19] != null) lines.Add(new Line(str));
                         else end = true;
                     }
                 }
+                
+                /*var serializer = new XmlSerializer(typeof(Line));
+                using (var reader = new StreamReader("Data.xml"))
+                    lines = (List<Line>)serializer.Deserialize(reader);*/
+
             }
             catch { }
         }
@@ -288,7 +290,7 @@ namespace AutoLabel_Server
         /// <summary>
         /// Сохранение параметров ТПА в файл
         /// </summary>
-        static void SaveTPA()
+        static void SaveLines()
         {
             TPA.Sort((a, b) => a[0].CompareTo(b[0]));
             try
@@ -297,6 +299,11 @@ namespace AutoLabel_Server
                     foreach (string[] str in TPA)
                         for (int i = 0; i < 20; i++)
                             file.WriteLine(str[i]);
+
+                var serializer = new XmlSerializer(typeof(List<Line>));
+                using (var writer = new StreamWriter("Lines.xml"))
+                    serializer.Serialize(writer, lines);
+
             }
             catch { }
         }

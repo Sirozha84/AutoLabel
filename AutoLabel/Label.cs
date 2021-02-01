@@ -592,22 +592,20 @@ namespace AutoLabel
                     using (NetworkStream stream = client.GetStream())
                     {
                         BinaryWriter writer = new BinaryWriter(stream);
-                        BinaryReader reader = new BinaryReader(stream);
-                        writer.Write("TPAWrite");
-                        writer.Write(TPAName);
-                        writer.Write(CurrentNum.ToString());
-                        writer.Write(PartNum);
-                        writer.Write(Type);
-                        writer.Write(Weight);
-                        writer.Write(Count);
-                        writer.Write(Material);
-                        writer.Write(PColor);
-                        writer.Write(Antistatic);
-                        writer.Write(Colorant);
-                        writer.Write(Limit);
-                        writer.Write(Other);
-                        for (int i = 0; i < 8; i++)
-                            writer.Write("----------------------------------------");
+                        string s = "LineWrite☺";
+                        s += TPAName + "☺";
+                        s += CurrentNum.ToString() + "☺";
+                        s += PartNum + "☺";
+                        s += Type + "☺";
+                        s += Weight + "☺";
+                        s += Count + "☺";
+                        s += Material + "☺";
+                        s += PColor + "☺";
+                        s += Antistatic + "☺";
+                        s += Colorant + "☺";
+                        s += Limit + "☺";
+                        s += Other;
+                        writer.Write(s);
                     }
                 }
             }
@@ -631,28 +629,23 @@ namespace AutoLabel
                     {
                         BinaryWriter writer = new BinaryWriter(stream);
                         BinaryReader reader = new BinaryReader(stream);
-                        writer.Write("TPARead");
-                        writer.Write(TPAName);
-                        try { CurrentNum = Convert.ToInt32(reader.ReadString()); }
-                        catch { CurrentNum = 0; }
-                        PartNum = reader.ReadString();
-                        Type = reader.ReadString();
-                        Weight = reader.ReadString();
-                        Count = reader.ReadString();
-                        Material = reader.ReadString();
-                        PColor = reader.ReadString();
-                        Antistatic = reader.ReadString();
-                        Colorant = reader.ReadString();
-                        Limit = reader.ReadString();
-                        Other = reader.ReadString();
-                        reader.ReadString();
-                        reader.ReadString();
-                        reader.ReadString();
-                        reader.ReadString();
-                        reader.ReadString();
-                        reader.ReadString();
-                        reader.ReadString();
-                        reader.ReadString();
+                        writer.Write("LineRead☺" + TPAName);
+
+                        string[] s = reader.ReadString().Split('☺');
+                        if (s.Length == 12)
+                        {
+                            try { CurrentNum = Convert.ToInt32(s[1]); } catch { CurrentNum = 0; }
+                            PartNum = s[2];
+                            Type = s[3];
+                            Weight = s[4];
+                            Count = s[5];
+                            Material = s[6];
+                            PColor = s[7];
+                            Antistatic = s[8];
+                            Colorant = s[9];
+                            Limit = s[10];
+                            Other = s[11];
+                        }
                     }
                 }
             }
