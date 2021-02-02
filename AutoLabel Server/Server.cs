@@ -14,6 +14,7 @@ namespace AutoLabel_Server
         const string ProgramLabel = "AutoLabel Server   Версия 1.0.3 (07.12.2016)   SG Software (Сергей Гордеев)";
         const int Port = 90;
         const string VersionForComp = "2.3.0";
+        const string LinesFile = "Lines.xml";
         const string MessageFile = "Message.txt";
         const string TPAFile = "TPA.txt";
         const string ShiftFile = "Shift.txt";
@@ -21,7 +22,7 @@ namespace AutoLabel_Server
         const int ShiftStrings = 9;
 
         static string Message = "";
-        static List<string[]> TPA = new List<string[]>();
+        //static List<string[]> TPA = new List<string[]>();
         static List<Line> lines = new List<Line>();
         static string[] Shift;
         static List<string> Users = new List<string>();
@@ -35,7 +36,7 @@ namespace AutoLabel_Server
             Console.Title = "AutoLabel Server";
             //Загружаем данные
             LoadMessage();
-            LoadTPA();
+            LoadLines();
             LoadShift();
             LoadUsers();
             LoadStat();
@@ -103,6 +104,7 @@ namespace AutoLabel_Server
                     {
                         Line line = lines.Find(o => o.name == q[1]);
                         line.Input(query.Substring(10, query.Length - 10));
+                        SaveLines();
                     }
                     if (query == "ShiftRead")
                     {
@@ -145,7 +147,6 @@ namespace AutoLabel_Server
                     {
                         using (StreamReader file = new StreamReader("Logs\\" + reader.ReadString() + ".csv",
                             Encoding.Default))
-
                         {
                             string s;
                             do
@@ -250,22 +251,14 @@ namespace AutoLabel_Server
         }
 
         /// <summary>
-        /// Сохранение строки сообщения в файл
-        /// </summary>
-        static void SaveMessage()
-        {
-
-        }
-
-        /// <summary>
         /// Загрузка параметров ТПА из файла
         /// </summary>
-        static void LoadTPA()
+        static void LoadLines()
         {
-            TPA.Clear();
             lines.Clear();
             try
             {
+                if (File.Exists(TPAFile))
                 using (TextReader file = File.OpenText(TPAFile))
                 {
                     bool end = false;
@@ -273,15 +266,14 @@ namespace AutoLabel_Server
                     {
                         string[] str = new string[20];
                         for (int i = 0; i < 20; i++) str[i] = file.ReadLine();
-                        if (str[19] != null) TPA.Add(str);
                         if (str[19] != null) lines.Add(new Line(str));
                         else end = true;
                     }
                 }
                 
-                /*var serializer = new XmlSerializer(typeof(Line));
-                using (var reader = new StreamReader("Data.xml"))
-                    lines = (List<Line>)serializer.Deserialize(reader);*/
+                var serializer = new XmlSerializer(typeof(List<Line>));
+                using (var reader = new StreamReader(LinesFile))
+                    lines = (List<Line>)serializer.Deserialize(reader);
 
             }
             catch { }
@@ -292,18 +284,12 @@ namespace AutoLabel_Server
         /// </summary>
         static void SaveLines()
         {
-            TPA.Sort((a, b) => a[0].CompareTo(b[0]));
+            lines.Sort((o1, o2) => o1.name.CompareTo(o2.name));
             try
             {
-                using (TextWriter file = File.CreateText(TPAFile))
-                    foreach (string[] str in TPA)
-                        for (int i = 0; i < 20; i++)
-                            file.WriteLine(str[i]);
-
                 var serializer = new XmlSerializer(typeof(List<Line>));
-                using (var writer = new StreamWriter("Lines.xml"))
+                using (var writer = new StreamWriter(LinesFile))
                     serializer.Serialize(writer, lines);
-
             }
             catch { }
         }
