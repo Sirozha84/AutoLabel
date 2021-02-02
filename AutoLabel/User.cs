@@ -27,8 +27,8 @@ namespace AutoLabel
         /// <param name="tpaa">Привязка к ТПА</param>
         public User(string name, string code, string rule, string tpaa)
         {
-            //Костыль при переходе от 9-и машин к 10-и
-            if (tpaa.Length == 9) tpaa = tpaa.Substring(0, 6) + "0" + tpaa.Substring(6, 3);
+            //Добавляем "ноликов" на случай, если внезапно добавились линии
+            while (tpaa.Length < Data.lineCount) tpaa += "0";
 
             Name = name;
             Code = code;
@@ -52,12 +52,9 @@ namespace AutoLabel
             {
                 if (TPAAccess[i])
                 {
-                    if (i <= 6)
-                        tpas += (i + 1).ToString();
-                    if (i >= 7 & i <= 8)
-                        tpas += "К" + (i - 5).ToString();
-                    if (i >= 9)
-                        tpas += "РП";
+                    if (i <= 8) tpas += (i + 1).ToString();
+                    if (i >= 9 & i <= 10) tpas += "К" + (i - 8).ToString();
+                    if (i >= 11) tpas += "РП";
                     tca++;
                     if (tca < tc) tpas += ", ";
                 }

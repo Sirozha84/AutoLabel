@@ -83,9 +83,11 @@ namespace AutoLabel
                 checkP5.Checked = u.TPAAccess[4];
                 checkP6.Checked = u.TPAAccess[5];
                 checkP7.Checked = u.TPAAccess[6];
-                checkK1.Checked = u.TPAAccess[7];
-                checkK2.Checked = u.TPAAccess[8];
-                checkR1.Checked = u.TPAAccess[9];
+                checkP8.Checked = u.TPAAccess[7];
+                checkP9.Checked = u.TPAAccess[8];
+                checkK1.Checked = u.TPAAccess[9];
+                checkK2.Checked = u.TPAAccess[10];
+                checkR1.Checked = u.TPAAccess[11];
             }
             else
             {
@@ -96,6 +98,8 @@ namespace AutoLabel
                 checkP5.Checked = false;
                 checkP6.Checked = false;
                 checkP7.Checked = false;
+                checkP8.Checked = false;
+                checkP9.Checked = false;
                 checkK1.Checked = false;
                 checkK2.Checked = false;
                 checkR1.Checked = false;
@@ -107,6 +111,8 @@ namespace AutoLabel
             checkP5.Visible = sel;
             checkP6.Visible = sel;
             checkP7.Visible = sel;
+            checkP8.Visible = sel;
+            checkP9.Visible = sel;
             checkK1.Visible = sel;
             checkK2.Visible = sel;
             checkR1.Visible = sel;
@@ -126,16 +132,18 @@ namespace AutoLabel
         }
 
         //Изменение привязки
-        private void checkBox1_CheckedChanged(object sender, EventArgs e) { ChangeTPA(0, checkP1.Checked); }
-        private void checkBox2_CheckedChanged(object sender, EventArgs e) { ChangeTPA(1, checkP2.Checked); }
-        private void checkBox3_CheckedChanged(object sender, EventArgs e) { ChangeTPA(2, checkP3.Checked); }
-        private void checkBox4_CheckedChanged(object sender, EventArgs e) { ChangeTPA(3, checkP4.Checked); }
-        private void checkBox5_CheckedChanged(object sender, EventArgs e) { ChangeTPA(4, checkP5.Checked); }
-        private void checkBox6_CheckedChanged(object sender, EventArgs e) { ChangeTPA(5, checkP6.Checked); }
-        private void CheckP7_CheckedChanged(object sender, EventArgs e) { ChangeTPA(6, checkP7.Checked); }
-        private void checkBox7_CheckedChanged(object sender, EventArgs e) { ChangeTPA(7, checkK1.Checked); }
-        private void checkBox8_CheckedChanged(object sender, EventArgs e) { ChangeTPA(8, checkK2.Checked); }
-        private void checkBox9_CheckedChanged(object sender, EventArgs e) { ChangeTPA(9, checkR1.Checked); }
+        private void checkP1_change(object sender, EventArgs e) { ChangeTPA(0, checkP1.Checked); }
+        private void checkP2_change(object sender, EventArgs e) { ChangeTPA(1, checkP2.Checked); }
+        private void checkP3_change(object sender, EventArgs e) { ChangeTPA(2, checkP3.Checked); }
+        private void checkP4_change(object sender, EventArgs e) { ChangeTPA(3, checkP4.Checked); }
+        private void checkP5_change(object sender, EventArgs e) { ChangeTPA(4, checkP5.Checked); }
+        private void checkP6_change(object sender, EventArgs e) { ChangeTPA(5, checkP6.Checked); }
+        private void checkP7_change(object sender, EventArgs e) { ChangeTPA(6, checkP7.Checked); }
+        private void checkP8_change(object sender, EventArgs e) { ChangeTPA(7, checkP8.Checked); }
+        private void checkP9_change(object sender, EventArgs e) { ChangeTPA(8, checkP9.Checked); }
+        private void checkK1_change(object sender, EventArgs e) { ChangeTPA(9, checkK1.Checked); }
+        private void checkK2_change(object sender, EventArgs e) { ChangeTPA(10, checkK2.Checked); }
+        private void checkR1_change(object sender, EventArgs e) { ChangeTPA(11, checkR1.Checked); }
 
         //Кнопка удаление ключа
         private void buttonKeyDel_Click(object sender, EventArgs e)
@@ -150,7 +158,6 @@ namespace AutoLabel
             Data.accessControl = checkBoxOn.Checked;
             buttonsave.Visible = true;
         }
-
 
     }
 }

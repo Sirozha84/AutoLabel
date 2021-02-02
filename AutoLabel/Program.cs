@@ -46,7 +46,7 @@ namespace AutoLabel
         public static void About()
         {
             MessageBox.Show("AutoLabel\n" +
-                            "Версия: " + Application.ProductVersion + "\n" +
+                            "Версия: " + Version + "\n" +
                             "Автор: Сергей Гордеев\n" +
                             "Телефон техподдержки: +7 (965) 917-31-43\n" +
                             "Сайт автора: http://www.sg-software.ru",

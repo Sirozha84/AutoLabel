@@ -203,7 +203,7 @@
             this.buttonP9.TabIndex = 22;
             this.buttonP9.Text = "9";
             this.buttonP9.UseVisualStyleBackColor = false;
-            this.buttonP9.Click += new System.EventHandler(this.buttonP9);
+            this.buttonP9.Click += new System.EventHandler(this.PrintP9);
             // 
             // buttonP8
             // 
@@ -218,7 +218,7 @@
             this.buttonP8.TabIndex = 21;
             this.buttonP8.Text = "8";
             this.buttonP8.UseVisualStyleBackColor = false;
-            this.buttonP8.Click += new System.EventHandler(this.buttonP8);
+            this.buttonP8.Click += new System.EventHandler(this.PrintP8);
             // 
             // labelP7
             // 
@@ -243,7 +243,7 @@
             this.buttonP7.TabIndex = 19;
             this.buttonP7.Text = "7";
             this.buttonP7.UseVisualStyleBackColor = false;
-            this.buttonP7.Click += new System.EventHandler(this.ButtonP7_Click);
+            this.buttonP7.Click += new System.EventHandler(this.PrintP7);
             // 
             // labelR1
             // 

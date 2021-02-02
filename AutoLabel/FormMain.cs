@@ -120,9 +120,11 @@ namespace AutoLabel
                 labelP5.Text = Data.lines[4].LabelUnderButton();
                 labelP6.Text = Data.lines[5].LabelUnderButton();
                 labelP7.Text = Data.lines[6].LabelUnderButton();
-                labelC1.Text = Data.lines[7].LabelUnderButton();
-                labelC2.Text = Data.lines[8].LabelUnderButton();
-                labelR1.Text = Data.lines[9].LabelUnderButton();
+                labelP8.Text = Data.lines[7].LabelUnderButton();
+                labelP9.Text = Data.lines[8].LabelUnderButton();
+                labelC1.Text = Data.lines[9].LabelUnderButton();
+                labelC2.Text = Data.lines[10].LabelUnderButton();
+                labelR1.Text = Data.lines[11].LabelUnderButton();
                 Conformity.SetColor(buttonP1, 0);
                 Conformity.SetColor(buttonP2, 1);
                 Conformity.SetColor(buttonP3, 2);
@@ -130,9 +132,11 @@ namespace AutoLabel
                 Conformity.SetColor(buttonP5, 4);
                 Conformity.SetColor(buttonP6, 5);
                 Conformity.SetColor(buttonP7, 6);
-                Conformity.SetColor(buttonC1, 7);
-                Conformity.SetColor(buttonC2, 8);
-                Conformity.SetColor(buttonR1, 9);
+                Conformity.SetColor(buttonP8, 7);
+                Conformity.SetColor(buttonP9, 8);
+                Conformity.SetColor(buttonC1, 9);
+                Conformity.SetColor(buttonC2, 10);
+                Conformity.SetColor(buttonR1, 11);
                 tableLayoutPanel1.Visible = true;
                 labelProblem.Visible = false;
             }
