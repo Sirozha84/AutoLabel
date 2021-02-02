@@ -7,7 +7,7 @@ namespace AutoLabel
     public partial class FormPrintPC : Form
     {
         public int NumMachine;  //Номер ТПА
-        Label lab;              //Ссылка на ТПА
+        Line lab;              //Ссылка на ТПА
         int box;                //Номер короба
         int count = 1;          //Количество коробов
         bool CountSelect = false;   //Выбираем ли мы количество коробов?

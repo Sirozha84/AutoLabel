@@ -5,7 +5,7 @@ namespace AutoLabel
 {
     public partial class FormPropertiesPC : Form
     {
-        Label curLab;
+        Line curLab;
 
         public FormPropertiesPC()
         {
@@ -13,7 +13,7 @@ namespace AutoLabel
             FormLoadSplash form = new FormLoadSplash("Загрузка...");
             form.Show();
             Application.DoEvents();
-            foreach (Label l in Data.Labels)
+            foreach (Line l in Data.Labels)
                 comboBoxTPA.Items.Add(l.TPAName);
             Data.ListsLoad();
             form.Close();
@@ -127,7 +127,7 @@ namespace AutoLabel
         //Сохранение параметров
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            Label l = Data.Labels[comboBoxTPA.SelectedIndex];
+            Line l = Data.Labels[comboBoxTPA.SelectedIndex];
             //Запоминание полей (10)
             if (comboBoxWeight.SelectedItem != null) l.Weight = comboBoxWeight.SelectedItem.ToString(); else l.Weight = "";
             if (comboBoxType.SelectedItem != null) l.Type = comboBoxType.SelectedItem.ToString(); else l.Type = "";

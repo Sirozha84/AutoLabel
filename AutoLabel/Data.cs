@@ -35,7 +35,7 @@ namespace AutoLabel
 
         //Списки пользователей и лейблов
         public static List<User> Users = new List<User>();
-        public static List<Label> Labels = new List<Label>();
+        public static List<Line> Labels = new List<Line>();
         //Списки выпадающих меню
         public static List<string> Types0 = new List<string>();
         public static List<string> Types1 = new List<string>();
@@ -153,16 +153,16 @@ namespace AutoLabel
             Shift.Load();
             //Лейблы
             Labels.Clear();
-            Labels.Add(new Label("Husky №1", 0));
-            Labels.Add(new Label("Netstal №2", 0));
-            Labels.Add(new Label("Netstal №3", 0));
-            Labels.Add(new Label("Netstal №4", 0));
-            Labels.Add(new Label("Netstal №5", 0));
-            Labels.Add(new Label("Netstal №6", 0));
-            Labels.Add(new Label("Netstal №7", 0));
-            Labels.Add(new Label("C1", 1));
-            Labels.Add(new Label("C2", 1));
-            Labels.Add(new Label("Ротопринт", 2));
+            Labels.Add(new Line("Husky №1", 0));
+            Labels.Add(new Line("Netstal №2", 0));
+            Labels.Add(new Line("Netstal №3", 0));
+            Labels.Add(new Line("Netstal №4", 0));
+            Labels.Add(new Line("Netstal №5", 0));
+            Labels.Add(new Line("Netstal №6", 0));
+            Labels.Add(new Line("Netstal №7", 0));
+            Labels.Add(new Line("C1", 1));
+            Labels.Add(new Line("C2", 1));
+            Labels.Add(new Line("Ротопринт", 2));
             Loading = false;
         }
 
@@ -410,7 +410,7 @@ namespace AutoLabel
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static string WeightOrLogo(Label l)
+        public static string WeightOrLogo(Line l)
         {
             if (l.TPAType == 2) return "Логотип:";
             return "Вес:";

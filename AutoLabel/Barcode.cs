@@ -4,7 +4,7 @@ namespace AutoLabel
 {
     static class Barcode
     {
-        public static string Code(Label lb)
+        public static string Code(Line lb)
         {
             if (lb.Type == "BPF" &      lb.Weight == "23")                                  return "2001000054176";
 

@@ -19,7 +19,7 @@ namespace AutoLabel
             Data.Users.ForEach(u => comboBoxUser.Items.Add(u.Name));
             comboBoxUser.SelectedItem = null;
             numericUpDownCount.Maximum = Data.MaxLabels(comboBoxTPA.SelectedIndex);
-            foreach (Label l in Data.Labels)
+            foreach (Line l in Data.Labels)
                 comboBoxTPA.Items.Add(l.TPAName);
             textBoxNumber.Text = "";
             ListFill();
@@ -70,7 +70,7 @@ namespace AutoLabel
         //Кнопка заполнения полей из ТПА
         private void FillFromTPA()
         {
-            Label l = Data.Labels[comboBoxTPA.SelectedIndex];
+            Line l = Data.Labels[comboBoxTPA.SelectedIndex];
             if (l.Weight != "") comboBoxWeight.SelectedItem = l.Weight; else comboBoxWeight.SelectedItem = null;
             if (l.Material != "") comboBoxMaterial.SelectedItem = l.Material; else comboBoxMaterial.SelectedItem = null;
             if (l.PColor != "") comboBoxColor.SelectedItem = l.PColor; else comboBoxColor.SelectedItem = null;
@@ -147,7 +147,7 @@ namespace AutoLabel
         {
             try
             {
-                Label l = new Label(comboBoxTPA.SelectedItem.ToString(), 0);
+                Line l = new Line(comboBoxTPA.SelectedItem.ToString(), 0);
 
                 //Выбираем какую этикетку печатаем
                 if (comboBoxTPA.SelectedIndex >= 7 & comboBoxTPA.SelectedIndex <= 8) l.TPAType = 1;

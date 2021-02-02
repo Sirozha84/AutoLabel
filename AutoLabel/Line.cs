@@ -6,9 +6,9 @@ using System.Net.Sockets;
 
 namespace AutoLabel
 {
-    public class Label
+    public class Line
     {
-        public string TPAName;  //Имя ТПА ___
+        public string name;  //Имя ТПА ___
         public int TPAType;     //Тип ТПА (0 - преформа, 1 - колпак, 2 - ротопринт)
         public int CurrentNum;  //Автомат номер короба
         public string PartNum;  //Вручную номер партии
@@ -63,7 +63,7 @@ namespace AutoLabel
         /// </summary>
         /// <param name="name">Название машины</param>
         /// <param name="type">Тип ТПА (0-преформа, 1-колпак)</param>
-        public Label(string name, int type)
+        public Line(string name, int type)
         {
             TPAName = name;
             TPAType = type;
