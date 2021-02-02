@@ -28,11 +28,11 @@ namespace AutoLabel
                 return;
             }
             //Думаем в каком режиме запускаемся
-            if (param.Length > 0) Data.IsMachine = true;
+            if (param.Length > 0) Data.isTerminal = true;
             Net.Init();
             if (Net.Test())
             {
-                if (Data.IsMachine)
+                if (Data.isTerminal)
                     Net.Log("Запуск программы в режиме терминала");
                 else
                     Net.Log("Запуск программы в режиме ПК");

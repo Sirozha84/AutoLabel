@@ -8,20 +8,20 @@ namespace AutoLabel
 {
     public class Line
     {
-        public string name;  //Имя ТПА ___
-        public int TPAType;     //Тип ТПА (0 - преформа, 1 - колпак, 2 - ротопринт)
-        public int CurrentNum;  //Автомат номер короба
-        public string PartNum;  //Вручную номер партии
-        public string Type;     //Список тип горловиры
-        public string Weight;   //Список вес
-        public string Count;    //Список количество
-        public string Material; //Список материал
-        public string PColor;   //Цвет
-        public string Antistatic;   //Список тип антистатика
-        public string Colorant; //Список количество антистатика
-        public string Limit;    //Список срок хранения
-        public string Other;    //Вручную Дополнительные параметры
-        bool isCustom;          //Кастомная этикетка
+        public string name;         //Имя линии
+        public int lineType;        //Тип линии (0 - преформа, 1 - колпак, 2 - ротопринт)
+        public int boxNum;          //Номер короба (Автомат)
+        public string partNum;      //Номер партии (вручную)
+        public string type;         //Тип горловиры (список)
+        public string weight;       //Вес (список)
+        public string count;        //Количество (список)
+        public string material;     //Материал (список)
+        public string color;        //Цвет (список)
+        public string antistatic;   //Тип антистатика (список)
+        public string colorant;     //Количество антистатика (список)
+        public string life;         //Срок хранения (список)
+        public string addition;     //Прочие дополнения (вручную)
+        bool isCustom;              //Кастомная этикетка
 
         //Карандаши и ручки :-)
         static Pen ClipLine = new Pen(Color.Black, 0.5f);
@@ -65,8 +65,8 @@ namespace AutoLabel
         /// <param name="type">Тип ТПА (0-преформа, 1-колпак)</param>
         public Line(string name, int type)
         {
-            TPAName = name;
-            TPAType = type;
+            this.name = name;
+            lineType = type;
             Load();
         }
         
@@ -81,7 +81,7 @@ namespace AutoLabel
         {
             Print(num, packer, count, AutoLabel.Shift.Date, DateTime.Now.ToString("HH:mm"), AutoLabel.Shift.Current, false);
             Save();
-            Net.Log("Печать этикетки \"" + Conformity.LabelName(TPAType) + "\"");
+            Net.Log("Печать этикетки \"" + Conformity.LabelName(lineType) + "\"");
             //Запись данных для статистики
             try
             {
@@ -125,7 +125,7 @@ namespace AutoLabel
                 PrintDocument doc = new PrintDocument();
                 doc.PrintPage += new PrintPageEventHandler(PD_PrintPage);
                 doc.PrinterSettings = Data.printersettings;
-                doc.PrinterSettings.DefaultPageSettings.Landscape = (TPAType != 2); //Горизонтальный, если не для ротопринта
+                doc.PrinterSettings.DefaultPageSettings.Landscape = (lineType != 2); //Горизонтальный, если не для ротопринта
                 doc.Print();
             }
             catch (ArgumentException e)
@@ -141,7 +141,7 @@ namespace AutoLabel
         /// <param name="e"></param>
         void PD_PrintPage(object sender, PrintPageEventArgs e)
         {
-            if (TPAType == 0)
+            if (lineType == 0)
             {
                 //Этикетка для преформы
                 if (LabelCount == 0)
@@ -157,7 +157,7 @@ namespace AutoLabel
                 ClipLine.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
                 e.Graphics.DrawLine(ClipLine, 574, 0, 574, 850);
             }
-            if (TPAType == 1)
+            if (lineType == 1)
             {
                 //Этикетка для колпачка
                 DrawLabelC(e.Graphics, 20, 16);
@@ -165,7 +165,7 @@ namespace AutoLabel
                 if (LabelCount > 0) DrawLabelC(e.Graphics, 570, 16);
                 if (LabelCount > 0) DrawLabelC(e.Graphics, 570, 396);
             }
-            if (TPAType == 2)
+            if (lineType == 2)
             {
                 //Этикетка для ротопринта
                 int y = 0;
@@ -191,7 +191,7 @@ namespace AutoLabel
         {
             if (!isCustom) Log();
             //Увеличиваем номер, если печатался текущий
-            if (Num >= CurrentNum & CurrentNum > 0) CurrentNum = Num + 1;
+            if (Num >= boxNum & boxNum > 0) boxNum = Num + 1;
             Num++;
             LabelCount--;
         }
@@ -210,7 +210,7 @@ namespace AutoLabel
             int Width = 525;
             int Height = 767;
             //Ватермарка
-            string file = Watermark.Image(Other);
+            string file = Watermark.Image(addition);
             if (file != "")
             {
                 try
@@ -245,26 +245,26 @@ namespace AutoLabel
             g.DrawString("Технические условия / Specification - ТУ - 22.22.14 - 001 - 19334399 - 2018 с изм. N1",
                 F11, Brushes.Black, X + 10, Y + 155);
             //Главные поля
-            g.DrawString(Weight, F70Bold, Brushes.Black, X, Y + 180);
-            g.DrawString(Type, F37Bold, Brushes.Black, X + 220, Y + 200);
-            g.DrawString(Colorant, F37Bold, Brushes.Black, X + 420, Y + 177);
-            g.DrawString(Antistatic, F37Bold, Brushes.Black, X + 420, Y + 217);
+            g.DrawString(weight, F70Bold, Brushes.Black, X, Y + 180);
+            g.DrawString(type, F37Bold, Brushes.Black, X + 220, Y + 200);
+            g.DrawString(colorant, F37Bold, Brushes.Black, X + 420, Y + 177);
+            g.DrawString(antistatic, F37Bold, Brushes.Black, X + 420, Y + 217);
             //Дополнительные поля
-            g.DrawString("Прочие дополнения: " + Other, F14, Brushes.Black, X + 10, Y + 280);
-            DrawStrings(g, X, Y, 300, "Машина", "Machine", TPAName, false);
-            DrawStrings(g, X, Y, 340, "Марка материала", "Material", Material, false);
-            DrawStrings(g, X, Y, 380, "Цвет преформы", "Preform colour", PColor, true);
-            DrawStrings(g, X, Y, 420, "Количество преформ в коробе", "Preform quantity per box", Count, false);
+            g.DrawString("Прочие дополнения: " + addition, F14, Brushes.Black, X + 10, Y + 280);
+            DrawStrings(g, X, Y, 300, "Машина", "Machine", name, false);
+            DrawStrings(g, X, Y, 340, "Марка материала", "Material", material, false);
+            DrawStrings(g, X, Y, 380, "Цвет преформы", "Preform colour", color, true);
+            DrawStrings(g, X, Y, 420, "Количество преформ в коробе", "Preform quantity per box", count, false);
             DrawStrings(g, X, Y, 460, "Дата изготовления", "Date of manufacturnig", Date, false);
             DrawStrings(g, X, Y, 500, "Время", "Time", Time, false);
-            DrawStrings(g, X, Y, 540, "Номер партии", "Batch number", PartNum, false);
+            DrawStrings(g, X, Y, 540, "Номер партии", "Batch number", partNum, false);
             DrawStrings(g, X, Y, 580, "Номер короба", "Box number", Num.ToString(), true);
             DrawStrings(g, X, Y, 620, "Смена", "Shift", Shift, false);
             DrawStrings(g, X, Y, 660, "Укладчик", "Packer", Packer, false);
             //Нижний колонтитул
             g.DrawString("Сделано в России / Made in Russia",
                 F14Bold, Brushes.Black, X + 130, Y + Height - 55);
-            g.DrawString("Гарантированный срок хранения - " + Limit + " со дня изготовления",
+            g.DrawString("Гарантированный срок хранения - " + life + " со дня изготовления",
                 F14Bold, Brushes.Black, X + 30, Y + Height - 35);
             g.DrawString("Перед выдувом бутылок рекомендуется выдержать преформы не менее 24 часов при температуре (20 ± 5)°С",
                 F09, Brushes.Black, X + 30, Y + Height - 15);
@@ -320,7 +320,7 @@ namespace AutoLabel
             int height = 380;
 
             //Рамки
-            if (TPAName == "C2")
+            if (name == "C2")
                 g.FillRectangle(Brushes.LightGray, x + 10, y + 270, 402, 70);
             //g.FillRectangle(Brushes.LightGray, x, y, width, height); 
             g.DrawRectangle(Slim, x, y, width, height);
@@ -346,24 +346,24 @@ namespace AutoLabel
 
             //Поля
             g.DrawString("Масса, гр.", F14, Brushes.Black, new Rectangle(x + 10, y + 160, 140, 20), InRect);
-            g.DrawString(Weight, F26Bold, Brushes.Black, new Rectangle(x + 10, y + 180, 140, 30), InRect);
+            g.DrawString(weight, F26Bold, Brushes.Black, new Rectangle(x + 10, y + 180, 140, 30), InRect);
             g.DrawString("Количество, шт", F14, Brushes.Black, new Rectangle(x + 143, y + 160, 140, 20), InRect);
-            g.DrawString(Count, F26Bold, Brushes.Black, new Rectangle(x + 143, y + 180, 140, 30), InRect);
+            g.DrawString(count, F26Bold, Brushes.Black, new Rectangle(x + 143, y + 180, 140, 30), InRect);
             g.DrawString("Дата", F14, Brushes.Black, new Rectangle(x + 275, y + 160, 137, 20), InRect);
             g.DrawString(Date, F26Bold, Brushes.Black, new Rectangle(x + 265, y + 180, 157, 30), InRect);
             g.DrawString("Смена №", F14, Brushes.Black, new Rectangle(x + 412, y + 160, 135, 20), InRect);
             g.DrawString(Shift, F26Bold, Brushes.Black, new Rectangle(x + 412, y + 180, 135, 30), InRect);
             g.DrawString("Цвет", F14, Brushes.Black, new Rectangle(x + 10, y + 215, 140, 20), InRect);
-            g.DrawString(PColor, F22Bold, Brushes.Black, new Rectangle(x + 0, y + 235, 155, 30), InRect);
+            g.DrawString(color, F22Bold, Brushes.Black, new Rectangle(x + 0, y + 235, 155, 30), InRect);
             g.DrawString("Короб №", F14, Brushes.Black, new Rectangle(x + 143, y + 215, 140, 20), InRect);
             g.DrawString(Num.ToString(), F26Bold, Brushes.Black, new Rectangle(x + 143, y + 235, 140, 30), InRect);
             g.DrawString("№ Линии", F14, Brushes.Black, new Rectangle(x + 275, y + 215, 137, 20), InRect);
-            g.DrawString(TPAName, F26Bold, Brushes.Black, new Rectangle(x + 275, y + 235, 137, 30), InRect);
+            g.DrawString(name, F26Bold, Brushes.Black, new Rectangle(x + 275, y + 235, 137, 30), InRect);
             g.DrawString("Партия", F14, Brushes.Black, new Rectangle(x + 412, y + 215, 135, 20), InRect);
-            g.DrawString(PartNum, F26Bold, Brushes.Black, new Rectangle(x + 412, y + 235, 135, 30), InRect);
+            g.DrawString(partNum, F26Bold, Brushes.Black, new Rectangle(x + 412, y + 235, 135, 30), InRect);
             g.DrawString("Код", F14, Brushes.Black, new Rectangle(x + 10, y + 272, 400, 20), InRect);
 
-            string code = Type + "." + Material + "." + Colorant + (Antistatic != "" ? "." + Antistatic : "");
+            string code = type + "." + material + "." + colorant + (antistatic != "" ? "." + antistatic : "");
             string codeSub = code.Substring(14, 1);
             code = code.Substring(0, 14) + "   " + code.Substring(15);
             if (g.MeasureString(code, F30Bold).Width < 410)
@@ -377,7 +377,7 @@ namespace AutoLabel
                 g.DrawString(codeSub, F37Bold, Brushes.Black, x + 210 - g.MeasureString(code, F26Bold).Width / 2 + 190, y + 280);
             }
 
-            g.DrawString(Other, F14, Brushes.Black, new Rectangle(x + 10, y + 320, 400, 30), InRect);
+            g.DrawString(addition, F14, Brushes.Black, new Rectangle(x + 10, y + 320, 400, 30), InRect);
 
             //Графика
             g.DrawImage(HDPE, x + 415, y + 285, 40, 40);
@@ -411,11 +411,11 @@ namespace AutoLabel
             g.DrawRectangle(Slim, X, Y, Width, Height);
 
             g.DrawString("Логотип:", F22, Brushes.Black, new Point(X + 10, Y + 15));
-            g.DrawString(Weight, F22Bold, Brushes.Black, new Rectangle(X + 170, Y + 15, 195, 60));
+            g.DrawString(weight, F22Bold, Brushes.Black, new Rectangle(X + 170, Y + 15, 195, 60));
             g.DrawRectangle(Slim, X + 165, Y + 15, 200, 55);
 
             g.DrawString("Код цвета:", F22, Brushes.Black, new Point(X + 10, Y + 75));
-            g.DrawString(Colorant, F22, Brushes.Black, new Point(X + 200, Y + 75));
+            g.DrawString(colorant, F22, Brushes.Black, new Point(X + 200, Y + 75));
 
             g.DrawString("Дата нанесения:", F22, Brushes.Black, new Point(X + 10, Y + 100));
             g.DrawString(Date, F22, Brushes.Black, new Point(X + 200, Y + 100));
@@ -487,7 +487,7 @@ namespace AutoLabel
 
             g.DrawRectangle(Slim, Left, Top + 25, 375, 35);
             g.DrawString("Производственное задание", F22Bold, Brushes.Black, new Rectangle(Left, Top + 25 + 4, 375, 35), InRect);
-            g.DrawString(TPAName, F37Bold, Brushes.Black, new Rectangle(Left + 375, Top + 10, 375, 60), InRect);
+            g.DrawString(name, F37Bold, Brushes.Black, new Rectangle(Left + 375, Top + 10, 375, 60), InRect);
 
             g.DrawRectangle(Slim, Left + 150, Top + 85, 225, 20);
             g.DrawString("Начало", F14, Brushes.Black, Left + 5, Top + 85);
@@ -498,27 +498,27 @@ namespace AutoLabel
             g.DrawString("Окончание", F14, Brushes.Black, Left + 380, Top + 85);
             g.DrawString("производства", F14, Brushes.Black, Left + 380, Top + 105);
 
-            g.DrawString(Weight + " " + Type, F70Bold, Brushes.Black, new Rectangle(Left, Top + 125 + 15, 750, 105 - 15), InRect);
+            g.DrawString(weight + " " + type, F70Bold, Brushes.Black, new Rectangle(Left, Top + 125 + 15, 750, 105 - 15), InRect);
 
             g.DrawRectangle(Slim, Left, Top + 230, 150, 20);
             g.DrawString("Сырьё", F14, Brushes.Black, new Rectangle(Left, TopK + 230, 150, 20), InRect);
             g.DrawRectangle(Slim, Left, Top + 250, 150, 50);
-            g.DrawString(Material, F22, Brushes.Black, new Rectangle(Left, TopKb + 250, 150, 50), InRect);
+            g.DrawString(material, F22, Brushes.Black, new Rectangle(Left, TopKb + 250, 150, 50), InRect);
 
             g.DrawRectangle(Slim, Left + 150, Top + 230, 150, 20);
             g.DrawString("Цвет", F14, Brushes.Black, new Rectangle(Left + 150, TopK + 230, 150, 20), InRect);
             g.DrawRectangle(Slim, Left + 150, Top + 250, 150, 50);
-            g.DrawString(PColor, F22, Brushes.Black, new Rectangle(Left + 150, TopKb + 250, 150, 50), InRect);
+            g.DrawString(color, F22, Brushes.Black, new Rectangle(Left + 150, TopKb + 250, 150, 50), InRect);
 
             g.DrawRectangle(Slim, Left + 300, Top + 230, 150, 20);
             g.DrawString("Код цвета", F14, Brushes.Black, new Rectangle(Left + 300, TopK + 230, 150, 20), InRect);
             g.DrawRectangle(Slim, Left + 300, Top + 250, 150, 50);
-            g.DrawString(Colorant, F22, Brushes.Black, new Rectangle(Left + 300, TopKb + 250, 150, 50), InRect);
+            g.DrawString(colorant, F22, Brushes.Black, new Rectangle(Left + 300, TopKb + 250, 150, 50), InRect);
 
             g.DrawRectangle(Slim, Left + 450, Top + 230, 150, 20);
             g.DrawString("Кол-во в коробе", F14, Brushes.Black, new Rectangle(Left + 450, TopK + 230, 150, 20), InRect);
             g.DrawRectangle(Slim, Left + 450, Top + 250, 150, 50);
-            g.DrawString(Count, F22, Brushes.Black, new Rectangle(Left + 450, TopKb + 250, 150, 50), InRect);
+            g.DrawString(count, F22, Brushes.Black, new Rectangle(Left + 450, TopKb + 250, 150, 50), InRect);
 
             g.DrawRectangle(Slim, Left + 600, Top + 230, 150, 20);
             g.DrawString("Коробов", F14, Brushes.Black, new Rectangle(Left + 600, TopK + 230, 150, 20), InRect);
@@ -552,9 +552,9 @@ namespace AutoLabel
             g.DrawString(dP + "%", F22, Brushes.Black, new Rectangle(Left + 600, TopKb + 340, 155, 50), InRect);
 
             g.DrawRectangle(Slim, Left, Top + 390, 375, 40);
-            g.DrawString("Партия: " + PartNum, F22, Brushes.Black, new Rectangle(Left, TopKb + 390, 375, 40), InRect);
+            g.DrawString("Партия: " + partNum, F22, Brushes.Black, new Rectangle(Left, TopKb + 390, 375, 40), InRect);
             g.DrawRectangle(Slim, Left + 375, Top + 390, 375, 40);
-            g.DrawString(Antistatic, F22, Brushes.Black, new Rectangle(Left + 375, TopKb + 390, 375, 40), InRect);
+            g.DrawString(antistatic, F22, Brushes.Black, new Rectangle(Left + 375, TopKb + 390, 375, 40), InRect);
 
 
             g.DrawString("Запуск/переход произвёл_________________", F14, Brushes.Black, Left + 5, Top + 440);
@@ -578,10 +578,10 @@ namespace AutoLabel
         public void Save()
         {
             //Что бы кнопка появилась и печать работала
-            if (TPAType == 2)
+            if (lineType == 2)
             {
-                PartNum = "Ротопринт";
-                Count = "Ротопринт";
+                partNum = "Ротопринт";
+                count = "Ротопринт";
             }
 
             try
@@ -593,18 +593,18 @@ namespace AutoLabel
                     {
                         BinaryWriter writer = new BinaryWriter(stream);
                         string s = "LineWrite☺";
-                        s += TPAName + "☺";
-                        s += CurrentNum.ToString() + "☺";
-                        s += PartNum + "☺";
-                        s += Type + "☺";
-                        s += Weight + "☺";
-                        s += Count + "☺";
-                        s += Material + "☺";
-                        s += PColor + "☺";
-                        s += Antistatic + "☺";
-                        s += Colorant + "☺";
-                        s += Limit + "☺";
-                        s += Other;
+                        s += name + "☺";
+                        s += boxNum.ToString() + "☺";
+                        s += partNum + "☺";
+                        s += type + "☺";
+                        s += weight + "☺";
+                        s += count + "☺";
+                        s += material + "☺";
+                        s += color + "☺";
+                        s += antistatic + "☺";
+                        s += colorant + "☺";
+                        s += life + "☺";
+                        s += addition;
                         writer.Write(s);
                     }
                 }
@@ -629,22 +629,22 @@ namespace AutoLabel
                     {
                         BinaryWriter writer = new BinaryWriter(stream);
                         BinaryReader reader = new BinaryReader(stream);
-                        writer.Write("LineRead☺" + TPAName);
+                        writer.Write("LineRead☺" + name);
 
                         string[] s = reader.ReadString().Split('☺');
                         if (s.Length == 12)
                         {
-                            try { CurrentNum = Convert.ToInt32(s[1]); } catch { CurrentNum = 0; }
-                            PartNum = s[2];
-                            Type = s[3];
-                            Weight = s[4];
-                            Count = s[5];
-                            Material = s[6];
-                            PColor = s[7];
-                            Antistatic = s[8];
-                            Colorant = s[9];
-                            Limit = s[10];
-                            Other = s[11];
+                            try { boxNum = Convert.ToInt32(s[1]); } catch { boxNum = 0; }
+                            partNum = s[2];
+                            type = s[3];
+                            weight = s[4];
+                            count = s[5];
+                            material = s[6];
+                            color = s[7];
+                            antistatic = s[8];
+                            colorant = s[9];
+                            life = s[10];
+                            addition = s[11];
                         }
                     }
                 }
@@ -669,8 +669,8 @@ namespace AutoLabel
                         writer.Write("LogRecord");
                         writer.Write(AutoLabel.Shift.LogName[0]);
                         writer.Write(AutoLabel.Shift.Date + DateTime.Now.ToString("; HH:mm") +
-                        "; " + TPAName + "; " + PartNum + "; " + Type + "; " + Weight + "; " +
-                        PColor + "; " + Num + "; " + Packer + comment);
+                        "; " + name + "; " + partNum + "; " + type + "; " + weight + "; " +
+                        color + "; " + Num + "; " + Packer + comment);
                     }
                 }
             }
@@ -684,10 +684,10 @@ namespace AutoLabel
         public string LabelUnderButton()
         {
             string str = "";
-            if (PartNum != null & PartNum != "")
+            if (partNum != null & partNum != "")
             {
-                str = "Партия: " + PartNum;
-                if (CurrentNum > 0) str += "   Выпущено коробов: " + (CurrentNum - 1).ToString();
+                str = "Партия: " + partNum;
+                if (boxNum > 0) str += "   Выпущено коробов: " + (boxNum - 1).ToString();
             }
             return str;
         }
@@ -699,9 +699,9 @@ namespace AutoLabel
         public bool AllowSelectCount()
         {
             //Разшешаем если тип "колпак" или "ротопринт"
-            if (TPAType != 0) return true;
+            if (lineType != 0) return true;
             //И разрешаем если количество меньше чем заданное
-            try { return (Convert.ToInt32(Count) <= Data.PreformsInLittleBox); }
+            try { return (Convert.ToInt32(count) <= Data.prefInLittleBox); }
             catch { return false; }
         }
     }

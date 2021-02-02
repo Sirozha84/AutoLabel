@@ -92,9 +92,9 @@ namespace AutoLabel
             }
             catch { }
             //Обнуляем счётчики коробов
-            foreach (Line l in Data.Labels)
+            foreach (Line l in Data.lines)
             {
-                l.CurrentNum = 1;
+                l.boxNum = 1;
                 l.Save();
             }
             Net.Log("Заступание новой смены");

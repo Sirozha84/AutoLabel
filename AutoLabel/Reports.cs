@@ -194,7 +194,7 @@ namespace AutoLabel
                 foreach (string[] rec in log)
                 {
                     //Ищем только записи с нужным номером ТПА
-                    if (rec[2] == Data.Labels[tpa].TPAName)
+                    if (rec[2] == Data.lines[tpa].name)
                     {
                         //Ищем текущую запись в коллекции сигнатур
                         bool found = false;
@@ -359,7 +359,7 @@ namespace AutoLabel
             for (int tpa = First; tpa <= Last; tpa++)
             {
                 int x = column * step;
-                e.Graphics.DrawString(Data.Labels[tpa].TPAName, Bold, Brushes.Black, x + 40, 80);
+                e.Graphics.DrawString(Data.lines[tpa].name, Bold, Brushes.Black, x + 40, 80);
                 e.Graphics.DrawString("№", Bold, Brushes.Black, x + 40, 100);
                 e.Graphics.DrawString("Время", Bold, Brushes.Black, x + 58, 100);
                 e.Graphics.DrawString("Короб", Bold, Brushes.Black, x + 100, 100);
@@ -372,7 +372,7 @@ namespace AutoLabel
                 for (int i = 0; i < log.Count; i++) 
                 {
                     //Подходит ли запись под эту ТПА
-                    if (log[i][2] == Data.Labels[tpa].TPAName)
+                    if (log[i][2] == Data.lines[tpa].name)
                     {
                         //Если время не совпадает с предыдущим, рисуем строку
                         if (log[i][1] == lasttime)

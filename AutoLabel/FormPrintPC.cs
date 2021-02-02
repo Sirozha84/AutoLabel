@@ -16,11 +16,11 @@ namespace AutoLabel
         public FormPrintPC(int num)
         {
             InitializeComponent();
-            lab = Data.Labels[num];
+            lab = Data.lines[num];
             NumMachine = num;
             Data.UsersLoad();
-            labelNum.Text = lab.TPAName;
-            box = lab.CurrentNum;
+            labelNum.Text = lab.name;
+            box = lab.boxNum;
             FillUsers();
             //Если это колпак, выбор пользователя убираем
             if (num >= 7 & num <= 8)
@@ -32,7 +32,7 @@ namespace AutoLabel
             //Далее надо выяснить мелкие это коробки или крупные, и в зависимости от этого вывести второй нумератор
             try
             {
-                if (Data.Labels[NumMachine].AllowSelectCount())
+                if (Data.lines[NumMachine].AllowSelectCount())
                 {
                     label2.Enabled = true;
                     textBoxCount.Enabled = true;
@@ -70,7 +70,7 @@ namespace AutoLabel
         //Кнопка последняя
         private void buttonMax_Click(object sender, EventArgs e)
         {
-            box = lab.CurrentNum;
+            box = lab.boxNum;
             DrawNum();
         }
 
@@ -79,7 +79,7 @@ namespace AutoLabel
         {
             //Номер короба
             textBoxNum.Text = box.ToString();
-            if (box < lab.CurrentNum)
+            if (box < lab.boxNum)
             {
                 textBoxNum.ForeColor = Color.Red;
                 buttonMax.Enabled = true;
@@ -111,7 +111,7 @@ namespace AutoLabel
         //Смена пользователя
         private void comboBoxUser_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Data.IsMachine & !Data.AccessTest(comboBoxUser.SelectedItem.ToString(), NumMachine))
+            if (Data.isTerminal & !Data.AccessTest(comboBoxUser.SelectedItem.ToString(), NumMachine))
                 AccessDenied();
             buttonPrint.Enabled = true;
             User = comboBoxUser.SelectedItem.ToString();
@@ -154,7 +154,7 @@ namespace AutoLabel
         private void textBoxNum_TextChanged(object sender, EventArgs e)
         {
             try { box = Convert.ToInt32(textBoxNum.Text); }
-            catch { box = lab.CurrentNum; }
+            catch { box = lab.boxNum; }
             if (box < 1) box = 1;
             if (box > 999) box = 999;
             if (textBoxNum.Text != "")
@@ -182,7 +182,7 @@ namespace AutoLabel
         {
             //Заполним комбобокс пользователями
             comboBoxUser.Items.Clear();
-            foreach (User u in Data.Users)
+            foreach (User u in Data.users)
             {
                 if (!checkBoxFixUsers.Checked || u.TPAAccess[NumMachine])
                     comboBoxUser.Items.Add(u.Name);

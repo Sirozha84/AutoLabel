@@ -98,11 +98,16 @@ namespace AutoLabel_Server
                     if (q[0] == "LineRead")
                     {
                         Line line = lines.Find(o => o.name == q[1]);
-                        if (line != null) writer.Write(line.ToSend()); else writer.Write("NotFound");
+                        if (line != null) writer.Write(line.ToSend()); else writer.Write("☺☺☺☺☺☺☺☺☺☺☺");
                     }
                     if (q[0] == "LineWrite")
                     {
                         Line line = lines.Find(o => o.name == q[1]);
+                        if (line == null)
+                        {
+                            line = new Line();
+                            lines.Add(line);
+                        }
                         line.Input(query.Substring(10, query.Length - 10));
                         SaveLines();
                     }

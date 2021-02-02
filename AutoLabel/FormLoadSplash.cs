@@ -19,7 +19,7 @@ namespace AutoLabel
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (!Data.Loading) Close();
+            if (!Data.loading) Close();
         }
     }
 }

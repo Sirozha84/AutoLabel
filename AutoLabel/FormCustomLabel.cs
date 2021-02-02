@@ -16,11 +16,11 @@ namespace AutoLabel
             Data.UsersLoad();
             Data.ListsLoad();
             //Заполнение комбобоксов списками
-            Data.Users.ForEach(u => comboBoxUser.Items.Add(u.Name));
+            Data.users.ForEach(u => comboBoxUser.Items.Add(u.Name));
             comboBoxUser.SelectedItem = null;
             numericUpDownCount.Maximum = Data.MaxLabels(comboBoxTPA.SelectedIndex);
-            foreach (Line l in Data.Labels)
-                comboBoxTPA.Items.Add(l.TPAName);
+            foreach (Line l in Data.lines)
+                comboBoxTPA.Items.Add(l.name);
             textBoxNumber.Text = "";
             ListFill();
             comboBoxLimit.DataSource = Data.Limits;
@@ -70,18 +70,18 @@ namespace AutoLabel
         //Кнопка заполнения полей из ТПА
         private void FillFromTPA()
         {
-            Line l = Data.Labels[comboBoxTPA.SelectedIndex];
-            if (l.Weight != "") comboBoxWeight.SelectedItem = l.Weight; else comboBoxWeight.SelectedItem = null;
-            if (l.Material != "") comboBoxMaterial.SelectedItem = l.Material; else comboBoxMaterial.SelectedItem = null;
-            if (l.PColor != "") comboBoxColor.SelectedItem = l.PColor; else comboBoxColor.SelectedItem = null;
-            if (l.Count != "") comboBoxCount.SelectedItem = l.Count; else comboBoxCount.SelectedItem = null;
-            if (l.Type != "") comboBoxType.SelectedItem = l.Type; else comboBoxType.SelectedItem = null;
-            textBoxNumber.Text = l.PartNum;
-            if (l.Antistatic != "") comboBoxAntistatic.SelectedItem = l.Antistatic; else comboBoxAntistatic.SelectedItem = null;
-            if (l.Colorant != "") comboBoxColorant.SelectedItem = l.Colorant; else comboBoxColorant.SelectedItem = null;
-            if (l.Limit != "") comboBoxLimit.SelectedItem = l.Limit; else comboBoxLimit.SelectedItem = null;
-            comboBoxOther.Text = l.Other;
-            textBoxBoxNum.Text = l.CurrentNum.ToString();
+            Line l = Data.lines[comboBoxTPA.SelectedIndex];
+            if (l.weight != "") comboBoxWeight.SelectedItem = l.weight; else comboBoxWeight.SelectedItem = null;
+            if (l.material != "") comboBoxMaterial.SelectedItem = l.material; else comboBoxMaterial.SelectedItem = null;
+            if (l.color != "") comboBoxColor.SelectedItem = l.color; else comboBoxColor.SelectedItem = null;
+            if (l.count != "") comboBoxCount.SelectedItem = l.count; else comboBoxCount.SelectedItem = null;
+            if (l.type != "") comboBoxType.SelectedItem = l.type; else comboBoxType.SelectedItem = null;
+            textBoxNumber.Text = l.partNum;
+            if (l.antistatic != "") comboBoxAntistatic.SelectedItem = l.antistatic; else comboBoxAntistatic.SelectedItem = null;
+            if (l.colorant != "") comboBoxColorant.SelectedItem = l.colorant; else comboBoxColorant.SelectedItem = null;
+            if (l.life != "") comboBoxLimit.SelectedItem = l.life; else comboBoxLimit.SelectedItem = null;
+            comboBoxOther.Text = l.addition;
+            textBoxBoxNum.Text = l.boxNum.ToString();
             if (l.AllowSelectCount()) numericUpDownCount.Value = 1;
             else numericUpDownCount.Value = 0;
             textBoxDate.Text = Shift.Date;
@@ -112,8 +112,8 @@ namespace AutoLabel
         //Комбобокс выбора ТПА
         private void comboBoxTPA_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TPAType = Data.Labels[comboBoxTPA.SelectedIndex].TPAType;
-            label4.Text = Data.WeightOrLogo(Data.Labels[comboBoxTPA.SelectedIndex]);
+            TPAType = Data.lines[comboBoxTPA.SelectedIndex].lineType;
+            label4.Text = Data.WeightOrLogo(Data.lines[comboBoxTPA.SelectedIndex]);
 
             //Видимость полей
             comboBoxType.Enabled = (TPAType != 2);
@@ -150,19 +150,19 @@ namespace AutoLabel
                 Line l = new Line(comboBoxTPA.SelectedItem.ToString(), 0);
 
                 //Выбираем какую этикетку печатаем
-                if (comboBoxTPA.SelectedIndex >= 7 & comboBoxTPA.SelectedIndex <= 8) l.TPAType = 1;
-                if (comboBoxTPA.SelectedIndex >= 9) l.TPAType = 2;
+                if (comboBoxTPA.SelectedIndex >= 7 & comboBoxTPA.SelectedIndex <= 8) l.lineType = 1;
+                if (comboBoxTPA.SelectedIndex >= 9) l.lineType = 2;
 
-                if (comboBoxWeight.SelectedItem != null) l.Weight = comboBoxWeight.SelectedItem.ToString();
-                if (comboBoxType.SelectedItem != null) l.Type = comboBoxType.SelectedItem.ToString(); else l.Type = "";
-                if (comboBoxMaterial.SelectedItem != null) l.Material = comboBoxMaterial.SelectedItem.ToString(); else l.Material = "";
-                if (comboBoxColor.SelectedItem != null) l.PColor = comboBoxColor.SelectedItem.ToString(); else l.PColor = "";
-                if (comboBoxCount.SelectedItem != null) l.Count = comboBoxCount.SelectedItem.ToString(); else l.Count = "";
-                l.PartNum = textBoxNumber.Text;
-                if (comboBoxAntistatic.SelectedItem != null) l.Antistatic = comboBoxAntistatic.SelectedItem.ToString(); else l.Antistatic = "";
-                if (comboBoxColorant.SelectedItem != null) l.Colorant = comboBoxColorant.SelectedItem.ToString(); else l.Colorant = "";
-                if (comboBoxLimit.SelectedItem != null) l.Limit = comboBoxLimit.SelectedItem.ToString(); else l.Limit = "";
-                l.Other = comboBoxOther.Text;
+                if (comboBoxWeight.SelectedItem != null) l.weight = comboBoxWeight.SelectedItem.ToString();
+                if (comboBoxType.SelectedItem != null) l.type = comboBoxType.SelectedItem.ToString(); else l.type = "";
+                if (comboBoxMaterial.SelectedItem != null) l.material = comboBoxMaterial.SelectedItem.ToString(); else l.material = "";
+                if (comboBoxColor.SelectedItem != null) l.color = comboBoxColor.SelectedItem.ToString(); else l.color = "";
+                if (comboBoxCount.SelectedItem != null) l.count = comboBoxCount.SelectedItem.ToString(); else l.count = "";
+                l.partNum = textBoxNumber.Text;
+                if (comboBoxAntistatic.SelectedItem != null) l.antistatic = comboBoxAntistatic.SelectedItem.ToString(); else l.antistatic = "";
+                if (comboBoxColorant.SelectedItem != null) l.colorant = comboBoxColorant.SelectedItem.ToString(); else l.colorant = "";
+                if (comboBoxLimit.SelectedItem != null) l.life = comboBoxLimit.SelectedItem.ToString(); else l.life = "";
+                l.addition = comboBoxOther.Text;
                 l.Print(Convert.ToInt32(textBoxBoxNum.Text), comboBoxUser.SelectedItem.ToString(),
                     (int)numericUpDownCount.Value, textBoxDate.Text, textBoxTime.Text,
                     comboBoxShift.SelectedItem.ToString(), true);

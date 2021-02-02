@@ -12,7 +12,7 @@ namespace AutoLabel
             InitializeComponent();
             //Режим для ПК
             labelVersion.Text = "Версия " + Program.Version;
-            if (Data.IsMachine)
+            if (Data.isTerminal)
             {
                 panel2.Location = new Point(0, 0);
                 labelVersion.Location = new Point(12, 110);
@@ -33,24 +33,27 @@ namespace AutoLabel
         }
 
         //Большие кнопки
-        private void button1_Click(object sender, EventArgs e) { Print(0); }
-        private void button2_Click(object sender, EventArgs e) { Print(1); }
-        private void button3_Click(object sender, EventArgs e) { Print(2); }
-        private void button4_Click(object sender, EventArgs e) { Print(3); }
-        private void button5_Click(object sender, EventArgs e) { Print(4); }
-        private void button6_Click(object sender, EventArgs e) { Print(5); }
-        private void ButtonP7_Click(object sender, EventArgs e) { Print(6); }
-        private void button7_Click(object sender, EventArgs e) { Print(7); }
-        private void button8_Click(object sender, EventArgs e) { Print(8); }
-        private void button9_Click(object sender, EventArgs e) { Print(9); }
+        private void PrintP1(object sender, EventArgs e) { Print(0); }
+        private void PrintP2(object sender, EventArgs e) { Print(1); }
+        private void PrintP3(object sender, EventArgs e) { Print(2); }
+        private void PrintP4(object sender, EventArgs e) { Print(3); }
+        private void PrintP5(object sender, EventArgs e) { Print(4); }
+        private void PrintP6(object sender, EventArgs e) { Print(5); }
+        private void PrintP7(object sender, EventArgs e) { Print(6); }
+        private void PrintP8(object sender, EventArgs e) { Print(7); }
+        private void PrintP9(object sender, EventArgs e) { Print(8); }
+        private void PrintC1(object sender, EventArgs e) { Print(9); }
+        private void PrintC2(object sender, EventArgs e) { Print(10); }
+        private void PrintR1(object sender, EventArgs e) { Print(11); }
+        
 
         void Print(int num)
         {
             StopRefresh();
-            if (Data.Labels[num].PartNum == null |
-                Data.Labels[num].PartNum == "" |
-                Data.Labels[num].Count == "") return;
-            if (Data.IsMachine)
+            if (Data.lines[num].partNum == null |
+                Data.lines[num].partNum == "" |
+                Data.lines[num].count == "") return;
+            if (Data.isTerminal)
             {
                 FormPrint formprint = new FormPrint(num);
                 formprint.ShowDialog();
@@ -95,7 +98,7 @@ namespace AutoLabel
         {
             labelClock.Text = DateTime.Now.ToString("HH:mm");
             labelClock.Visible = true;
-            if (Data.IsMachine)
+            if (Data.isTerminal)
             {
                 labelformname.Text = "Выбор Линии";
                 buttonShift.Text = Shift.Current;
@@ -110,16 +113,16 @@ namespace AutoLabel
             }
             try
             {
-                labelP1.Text = Data.Labels[0].LabelUnderButton();
-                labelP2.Text = Data.Labels[1].LabelUnderButton();
-                labelP3.Text = Data.Labels[2].LabelUnderButton();
-                labelP4.Text = Data.Labels[3].LabelUnderButton();
-                labelP5.Text = Data.Labels[4].LabelUnderButton();
-                labelP6.Text = Data.Labels[5].LabelUnderButton();
-                labelP7.Text = Data.Labels[6].LabelUnderButton();
-                labelC1.Text = Data.Labels[7].LabelUnderButton();
-                labelC2.Text = Data.Labels[8].LabelUnderButton();
-                labelR1.Text = Data.Labels[9].LabelUnderButton();
+                labelP1.Text = Data.lines[0].LabelUnderButton();
+                labelP2.Text = Data.lines[1].LabelUnderButton();
+                labelP3.Text = Data.lines[2].LabelUnderButton();
+                labelP4.Text = Data.lines[3].LabelUnderButton();
+                labelP5.Text = Data.lines[4].LabelUnderButton();
+                labelP6.Text = Data.lines[5].LabelUnderButton();
+                labelP7.Text = Data.lines[6].LabelUnderButton();
+                labelC1.Text = Data.lines[7].LabelUnderButton();
+                labelC2.Text = Data.lines[8].LabelUnderButton();
+                labelR1.Text = Data.lines[9].LabelUnderButton();
                 Conformity.SetColor(buttonP1, 0);
                 Conformity.SetColor(buttonP2, 1);
                 Conformity.SetColor(buttonP3, 2);
@@ -175,7 +178,7 @@ namespace AutoLabel
 
         void MenuEnable(bool enable)
         {
-            if (Data.IsMachine)
+            if (Data.isTerminal)
             {
                 buttonProperties.Visible = enable;
                 buttonShift.Visible = enable;
@@ -262,7 +265,7 @@ namespace AutoLabel
         int anim = 0;
         private void timerMessage_Tick(object sender, EventArgs e)
         {
-            if (Data.Loading)
+            if (Data.loading)
             {
                 anim++;
                 if (anim > 10)
@@ -421,7 +424,7 @@ namespace AutoLabel
         private void StopRefresh()
         {
             timerRefresh.Enabled = false;
-            if (Data.Loading)
+            if (Data.loading)
             {
                 FormLoadSplash form = new FormLoadSplash();
                 form.ShowDialog();

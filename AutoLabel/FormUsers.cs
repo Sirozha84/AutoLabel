@@ -16,7 +16,7 @@ namespace AutoLabel
         //Заполняем список пользователей
         void DrawList()
         {
-            checkBoxOn.Checked = Data.AccessControl;
+            checkBoxOn.Checked = Data.accessControl;
             Data.UserListDraw(listView1);
             listView1_SelectedIndexChanged(null, null);
             buttonsave.Visible = true;
@@ -31,7 +31,7 @@ namespace AutoLabel
         //Кнопка удаления
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            Data.Users.RemoveAt(listView1.SelectedIndices[0]);
+            Data.users.RemoveAt(listView1.SelectedIndices[0]);
             DrawList();
         }
 
@@ -64,7 +64,7 @@ namespace AutoLabel
             key.ShowDialog();
             if (key.Code != "")
             {
-                Data.Users[listView1.SelectedIndices[0]].Code = key.Code;
+                Data.users[listView1.SelectedIndices[0]].Code = key.Code;
                 DrawList();
             }
         }
@@ -75,7 +75,7 @@ namespace AutoLabel
             bool sel = listView1.SelectedIndices.Count > 0;
             if (sel)
             {
-                User u = Data.Users[listView1.SelectedIndices[0]];
+                User u = Data.users[listView1.SelectedIndices[0]];
                 checkP1.Checked = u.TPAAccess[0];
                 checkP2.Checked = u.TPAAccess[1];
                 checkP3.Checked = u.TPAAccess[2];
@@ -119,7 +119,7 @@ namespace AutoLabel
         void ChangeTPA(byte num, bool Access)
         {
             if (listView1.SelectedIndices.Count == 0) return;
-            User u = Data.Users[listView1.SelectedIndices[0]];
+            User u = Data.users[listView1.SelectedIndices[0]];
             u.TPAAccess[num] = Access;
             listView1.Items[listView1.SelectedIndices[0]].SubItems[3].Text = u.StringWidthTPA();
             buttonsave.Visible = true;
@@ -140,14 +140,14 @@ namespace AutoLabel
         //Кнопка удаление ключа
         private void buttonKeyDel_Click(object sender, EventArgs e)
         {
-            Data.Users[listView1.SelectedIndices[0]].Code = "";
+            Data.users[listView1.SelectedIndices[0]].Code = "";
             DrawList();
         }
 
         //Включение/выключение проверки привязок
         private void checkBoxOn_CheckedChanged(object sender, EventArgs e)
         {
-            Data.AccessControl = checkBoxOn.Checked;
+            Data.accessControl = checkBoxOn.Checked;
             buttonsave.Visible = true;
         }
 

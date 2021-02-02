@@ -178,7 +178,7 @@
     <Compile Include="FormUsers.Designer.cs">
       <DependentUpon>FormUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Label.cs" />
+    <Compile Include="Line.cs" />
     <Compile Include="FormListEdit.cs">
       <SubType>Form</SubType>
     </Compile>

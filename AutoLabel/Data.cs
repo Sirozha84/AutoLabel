@@ -8,34 +8,16 @@ namespace AutoLabel
 {
     class Data
     {
-        /// <summary>
-        /// Количество ТПА
-        /// </summary>
-        public const int TPACount = 10;
-        /// <summary>
-        /// Максимальное количество преформ в малом коробе
-        /// </summary>
-        public const int PreformsInLittleBox = 1920;
-        /// <summary>
-        /// Программа запущена на машине, false - если десктопная версия
-        /// </summary>
-        public static bool IsMachine = false;
-        /// <summary>
-        /// Проверка привязки к ТПА
-        /// </summary>
-        public static bool AccessControl = true;
-        /// <summary>
-        /// Файл принтера
-        /// </summary>
-        const string FilePrinter = "Printer.txt";
-        /// <summary>
-        /// Идёт ли сейчас процесс загрузки
-        /// </summary>
-        public static bool Loading = false;
+        public const int lineCount = 12;            //Количество линий
+        public const int prefInLittleBox = 1920;    //Максимальное количество преформ в малом коробе
+        public static bool isTerminal = false;      //true - если терминал, false - если десктоп
+        public static bool accessControl = true;    //Проверка привязки к ТПА
+        const string printerFile = "Printer.txt";   //Файл с именем принтера
+        public static bool loading = false;         //Идёт ли сейчас процесс загрузки
 
         //Списки пользователей и лейблов
-        public static List<User> Users = new List<User>();
-        public static List<Line> Labels = new List<Line>();
+        public static List<User> users = new List<User>();
+        public static List<Line> lines = new List<Line>();
         //Списки выпадающих меню
         public static List<string> Types0 = new List<string>();
         public static List<string> Types1 = new List<string>();
@@ -64,7 +46,7 @@ namespace AutoLabel
         {
             try
             {
-                StreamReader file = File.OpenText(FilePrinter);
+                StreamReader file = File.OpenText(printerFile);
                 printersettings = new PrinterSettings();
                 printersettings.PrinterName = file.ReadLine();
                 file.Close();
@@ -93,7 +75,7 @@ namespace AutoLabel
         /// </summary>
         public static void ListsLoad()
         {
-            Loading = true;
+            loading = true;
             ListLoad(Types0, "Types0");
             ListLoad(Types1, "Types1");
             ListLoad(Weights0, "Weights0");
@@ -113,7 +95,7 @@ namespace AutoLabel
             ListLoad(Colorants1, "Colorants1");
             ListLoad(Colorants2, "Colorants2");
             ListLoad(Others, "Others");
-            Loading = false;
+            loading = false;
         }
 
         static void ListLoad(List<string> list, string filename)
@@ -147,23 +129,25 @@ namespace AutoLabel
         /// </summary>
         public static void Load()
         {
-            if (Loading) return;
-            Loading = true;
+            if (loading) return;
+            loading = true;
             //Смена
             Shift.Load();
-            //Лейблы
-            Labels.Clear();
-            Labels.Add(new Line("Husky №1", 0));
-            Labels.Add(new Line("Netstal №2", 0));
-            Labels.Add(new Line("Netstal №3", 0));
-            Labels.Add(new Line("Netstal №4", 0));
-            Labels.Add(new Line("Netstal №5", 0));
-            Labels.Add(new Line("Netstal №6", 0));
-            Labels.Add(new Line("Netstal №7", 0));
-            Labels.Add(new Line("C1", 1));
-            Labels.Add(new Line("C2", 1));
-            Labels.Add(new Line("Ротопринт", 2));
-            Loading = false;
+            //Линии
+            lines.Clear();
+            lines.Add(new Line("Husky №1", 0));
+            lines.Add(new Line("Netstal №2", 0));
+            lines.Add(new Line("Netstal №3", 0));
+            lines.Add(new Line("Netstal №4", 0));
+            lines.Add(new Line("Netstal №5", 0));
+            lines.Add(new Line("Netstal №6", 0));
+            lines.Add(new Line("Netstal №7", 0));
+            lines.Add(new Line("Netstal №8", 0));
+            lines.Add(new Line("Netstal №9", 0));
+            lines.Add(new Line("C1", 1));
+            lines.Add(new Line("C2", 1));
+            lines.Add(new Line("Ротопринт", 2));
+            loading = false;
         }
 
         /// <summary>
@@ -171,7 +155,7 @@ namespace AutoLabel
         /// </summary>
         public static void UsersLoad()
         {
-            Users.Clear();
+            users.Clear();
             try
             {
                 using (TcpClient client = new TcpClient())
@@ -183,11 +167,11 @@ namespace AutoLabel
                         BinaryReader reader = new BinaryReader(stream);
                         writer.Write("UsersRead");
                         int c = reader.ReadInt32()-1;
-                        AccessControl = reader.ReadString() == "AccessControl ON";
+                        accessControl = reader.ReadString() == "AccessControl ON";
                         while (c > 0)
                         {
                             reader.ReadString();
-                            Users.Add(new User(reader.ReadString(), reader.ReadString(),
+                            users.Add(new User(reader.ReadString(), reader.ReadString(),
                                 reader.ReadString(), reader.ReadString()));
                             c-=5;
                         }
@@ -212,11 +196,11 @@ namespace AutoLabel
                         BinaryWriter writer = new BinaryWriter(stream);
                         BinaryReader reader = new BinaryReader(stream);
                         writer.Write("UsersWrite");
-                        if (AccessControl)
+                        if (accessControl)
                             writer.Write("AccessControl ON");
                         else
                             writer.Write("AccessControl OFF");
-                        foreach (User u in Users)
+                        foreach (User u in users)
                         {
                             writer.Write("--------------------");
                             writer.Write(u.Name);
@@ -243,7 +227,7 @@ namespace AutoLabel
             //Сохраняем настройку принтера в файл
             try
             {
-                StreamWriter file = File.CreateText(FilePrinter);
+                StreamWriter file = File.CreateText(printerFile);
                 file.Write(printersettings.PrinterName);
                 file.Close();
             }
@@ -270,15 +254,15 @@ namespace AutoLabel
         public static byte GetKey(int Minimum)
         {
             UsersLoad();
-            if (IsMachine)
+            if (isTerminal)
             {
                 //Сначала проверим, есть ли в списке хоть один админ
-                if (Users.Find(u => (u.Rule == 255 & u.Code != "")) == null) return 255;
+                if (users.Find(u => (u.Rule == 255 & u.Code != "")) == null) return 255;
                 //Админы есть, значит просим прислонить ключ
                 FormKey key = new FormKey();
                 key.ShowDialog();
                 //Ищем ключ в базе
-                User user = Users.Find(u => u.Code == key.Code);
+                User user = users.Find(u => u.Code == key.Code);
                 if (user != null)
                 {
                     if (user.Rule >= Minimum)
@@ -319,7 +303,7 @@ namespace AutoLabel
         {
             string name = "";
             string code = "";
-            if (IsMachine)
+            if (isTerminal)
             {
                 FormKeyboardLetter keyboard = new FormKeyboardLetter("Введите имя пользователя");
                 if (keyboard.ShowDialog() == DialogResult.Cancel) return;
@@ -336,8 +320,8 @@ namespace AutoLabel
                 if (input.ShowDialog() == DialogResult.Cancel) return;
                 name = input.Str;
             }
-            Users.Add(new User(name, code, Rule));
-            Users.Sort((a,b) => a.Name.CompareTo(b.Name));
+            users.Add(new User(name, code, Rule));
+            users.Sort((a,b) => a.Name.CompareTo(b.Name));
         }
 
         /// <summary>
@@ -348,8 +332,8 @@ namespace AutoLabel
         /// <returns></returns>
         public static bool AccessTest(string name, int tpa)
         {
-            if (!AccessControl) return true;
-            User u = Users.Find(us => us.Name == name);
+            if (!accessControl) return true;
+            User u = users.Find(us => us.Name == name);
             return u.TPAAccess[tpa];
         }
 
@@ -383,7 +367,7 @@ namespace AutoLabel
         {
             list.BeginUpdate();
             list.Items.Clear();
-            foreach (User u in Users)
+            foreach (User u in users)
             {
                 ListViewItem it = new ListViewItem(u.Name);
                 it.SubItems.Add(UserIsAdmin(u));
@@ -412,7 +396,7 @@ namespace AutoLabel
         /// <returns></returns>
         public static string WeightOrLogo(Line l)
         {
-            if (l.TPAType == 2) return "Логотип:";
+            if (l.lineType == 2) return "Логотип:";
             return "Вес:";
         }
     }

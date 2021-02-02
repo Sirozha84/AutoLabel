@@ -18,13 +18,13 @@ namespace AutoLabel
             InitializeComponent();
             label1.Text = Lbl;
             Str = "";
-            if (Data.IsMachine) textBoxEdit.TabStop = false;
+            if (Data.isTerminal) textBoxEdit.TabStop = false;
         }
 
         public FormKeyboardLetter()
         {
             InitializeComponent();
-            if (Data.IsMachine) textBoxEdit.TabStop = false;
+            if (Data.isTerminal) textBoxEdit.TabStop = false;
         }
 
 
@@ -86,7 +86,7 @@ namespace AutoLabel
         private void buttonOK_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
-            if (!Data.IsMachine) Str = textBoxEdit.Text;
+            if (!Data.isTerminal) Str = textBoxEdit.Text;
             Close();
         }
 

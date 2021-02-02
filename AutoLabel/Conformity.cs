@@ -13,8 +13,8 @@ namespace AutoLabel
         /// <param name="lab">Лейбл</param>
         public static void SetColor(Button but, int tpa)
         {
-            but.Visible = Data.Labels[tpa].PartNum != "";
-            string FirstWord = Data.Labels[tpa].PColor.Split(' ')[0].ToLower();
+            but.Visible = Data.lines[tpa].partNum != "";
+            string FirstWord = Data.lines[tpa].color.Split(' ')[0].ToLower();
             switch (FirstWord)
             {
                 case "бесцветный":
