@@ -13,7 +13,7 @@ namespace AutoLabel_Server
     {
         const string ProgramLabel = "AutoLabel Server   Версия 1.0.3 (07.12.2016)   SG Software (Сергей Гордеев)";
         const int Port = 90;
-        const string VersionForComp = "2.3.0";
+        const string VersionForComp = "4.0";
         const string LinesFile = "Lines.xml";
         const string MessageFile = "Message.txt";
         const string TPAFile = "TPA.txt";

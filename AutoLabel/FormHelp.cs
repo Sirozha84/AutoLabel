@@ -47,6 +47,12 @@ namespace AutoLabel
 
 
             textHistory.SelectionFont = fontB;
+            textHistory.AppendText("Версия 4.0 (03.02.2021)\n\n");
+            textHistory.SelectionFont = fontR;
+            textHistory.AppendText("• Добавлены ещё две линии\n• Небольшие изменения в протоколе передачи\n"+
+                "• Изменение в способе хранения настроек линий\n\n");
+
+            textHistory.SelectionFont = fontB;
             textHistory.AppendText("Версия 3.7 (12.10.2020)\n\n");
             textHistory.SelectionFont = fontR;
             textHistory.AppendText("• Изменена надпись с техническими условиями на этикетке\n\n");
