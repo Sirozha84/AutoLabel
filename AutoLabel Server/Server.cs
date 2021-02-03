@@ -11,7 +11,7 @@ namespace AutoLabel_Server
 {
     public class Server
     {
-        const string ProgramLabel = "AutoLabel Server   Версия 1.0.3 (07.12.2016)   SG Software (Сергей Гордеев)";
+        const string ProgramLabel = "AutoLabel Server     Версия 1.1 (03.02.2021)     SG Software (Сергей Гордеев)";
         const int Port = 90;
         const string VersionForComp = "4.0";
         const string LinesFile = "Lines.xml";
