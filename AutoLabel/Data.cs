@@ -14,7 +14,15 @@ namespace AutoLabel
         public static bool accessControl = true;    //Проверка привязки к ТПА
         const string printerFile = "Printer.txt";   //Файл с именем принтера
         public static bool loading = false;         //Идёт ли сейчас процесс загрузки
-
+        
+        //Типы линий по номерам
+        public static int firstType0 = 0;
+        public static int lastType0 = 8;
+        public static int firstType1 = 9;
+        public static int lastType1 = 10;
+        public static int firstType2 = 11;
+        public static int lastType2 = 11;
+        
         //Списки пользователей и лейблов
         public static List<User> users = new List<User>();
         public static List<Line> lines = new List<Line>();
@@ -62,11 +70,10 @@ namespace AutoLabel
         /// <summary>
         /// Ограничение максимального количество этикеток
         /// </summary>
-        public static int MaxLabels(int tpaNum)
+        public static int MaxLabels(int line)
         {
-            if (tpaNum == 9) return 24; //Ограничение С1
-            if (tpaNum == 10) return 24; //Ограничение С2
-            if (tpaNum == 11) return 24; //Ограничение Ротопринт
+            if (line >= firstType1 & line <= lastType1) return 24;  //Ограничение по Колпаку
+            if (line >= firstType2 & line <= lastType2) return 24;  //Ограничение по Ротопринту
             return 9;
         }
 
