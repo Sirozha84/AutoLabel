@@ -64,9 +64,9 @@ namespace AutoLabel
         /// </summary>
         public static int MaxLabels(int tpaNum)
         {
-            if (tpaNum == 7) return 24; //Ограничение С1
-            if (tpaNum == 8) return 24; //Ограничение С2
-            if (tpaNum == 9) return 24; //Ограничение Ротопринт
+            if (tpaNum == 9) return 24; //Ограничение С1
+            if (tpaNum == 10) return 24; //Ограничение С2
+            if (tpaNum == 11) return 24; //Ограничение Ротопринт
             return 9;
         }
 

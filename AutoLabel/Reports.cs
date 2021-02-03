@@ -31,13 +31,13 @@ namespace AutoLabel
             if (Shop == 0)
             {
                 First = 0;
-                Last = 6;
+                Last = 8;
                 ShopName = "Преформа";
             }
             else
             {
-                First = 7;
-                Last = 8;
+                First = 9;
+                Last = 10;
                 ShopName = "Колпак";
             }
             //Собственно загружаем лог
@@ -344,12 +344,12 @@ namespace AutoLabel
             int strings = 1000 / height; //Количество строк на странице
             int page = line / strings + 1;
             int pages = log.Count / strings + 1;
-            int step = 115; //Расстояние между колонками
+            int step = 107; //Расстояние между колонками 115
             int maxlines = 32; //Максимальное количество строк
             //Заголовок
             e.Graphics.DrawString("Отчёт по ТПА     " + LogFile + " (" + ShopName + ")", Big, Brushes.Black, 40, 40);
             //Рамка
-            int width = 9 * step;// (Last - First + 1) * step; 
+            int width = 10 * step;// (Last - First + 1) * step; 
             e.Graphics.DrawRectangle(Slim, 40, 75, width, 700);
             e.Graphics.DrawLine(Slim, 40, 115, width + 40, 115);
             for (int i = 40; i < width; i += step)
