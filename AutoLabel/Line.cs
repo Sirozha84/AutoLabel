@@ -33,6 +33,7 @@ namespace AutoLabel
         static Font F12 = new Font("Arial", 12, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F14 = new Font("Arial", 14, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F14Bold = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+        static Font F18Bold = new Font("Arial", 18, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font F22 = new Font("Arial", 22, FontStyle.Regular, GraphicsUnit.Pixel);
         static Font F22Bold = new Font("Arial", 22, FontStyle.Bold, GraphicsUnit.Pixel);
         static Font F26Bold = new Font("Arial", 26, FontStyle.Bold, GraphicsUnit.Pixel);
@@ -247,7 +248,10 @@ namespace AutoLabel
             //Главные поля
             g.DrawString(weight, F70Bold, Brushes.Black, X, Y + 180);
             g.DrawString(type, F37Bold, Brushes.Black, X + 220, Y + 200);
-            g.DrawString(colorant, F37Bold, Brushes.Black, X + 420, Y + 177);
+            if (colorant.Length<6)
+                g.DrawString(colorant, F37Bold, Brushes.Black, X + 420, Y + 177);
+            else
+                g.DrawString(colorant, F18Bold, Brushes.Black, X + 420, Y + 177+5);
             g.DrawString(antistatic, F37Bold, Brushes.Black, X + 420, Y + 217);
             //Дополнительные поля
             g.DrawString("Прочие дополнения: " + addition, F14, Brushes.Black, X + 10, Y + 280);

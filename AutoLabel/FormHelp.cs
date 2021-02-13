@@ -44,7 +44,10 @@ namespace AutoLabel
             textTips.AppendText("В соответствии с весом колпака и линией его производства выбирается его тип, если он один, " +
                 "или выбор, если больше одного, а так же выбирается вес по умолчанию.\n\n");
 
-
+            textHistory.SelectionFont = fontB;
+            textHistory.AppendText("Версия 4.1 (13.02.2021)\n\n");
+            textHistory.SelectionFont = fontR;
+            textHistory.AppendText("• Динамический размер шрифта поля кода красителя в этикетке преформы\n\n");
 
             textHistory.SelectionFont = fontB;
             textHistory.AppendText("Версия 4.0 (03.02.2021)\n\n");

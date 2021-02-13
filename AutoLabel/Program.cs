@@ -6,7 +6,7 @@ namespace AutoLabel
 {
     static class Program
     {
-        public const string Version = "4.0 (03.02.2021)";
+        public const string Version = "4.1 (13.02.2021)";
         /// <summary>
         /// Версия для проверки совместимости с сервером
         /// </summary>
