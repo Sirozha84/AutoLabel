@@ -248,10 +248,11 @@ namespace AutoLabel
             //Главные поля
             g.DrawString(weight, F70Bold, Brushes.Black, X, Y + 180);
             g.DrawString(type, F37Bold, Brushes.Black, X + 220, Y + 200);
-            if (colorant.Length<6)
-                g.DrawString(colorant, F37Bold, Brushes.Black, X + 420, Y + 177);
-            else
-                g.DrawString(colorant, F18Bold, Brushes.Black, X + 420, Y + 177+5);
+            int l = colorant.Length;
+            if (l <= 5) g.DrawString(colorant, F37Bold, Brushes.Black, X + 420, Y + 177);
+            if (l >= 6 & l <= 7) g.DrawString(colorant, F22Bold, Brushes.Black, X + 420, Y + 177 + 5);
+            if (l >= 8) g.DrawString(colorant, F18Bold, Brushes.Black, X + 420, Y + 177 + 5);
+
             g.DrawString(antistatic, F37Bold, Brushes.Black, X + 420, Y + 217);
             //Дополнительные поля
             g.DrawString("Прочие дополнения: " + addition, F14, Brushes.Black, X + 10, Y + 280);
