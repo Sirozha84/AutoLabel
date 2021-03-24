@@ -43,6 +43,11 @@ namespace AutoLabel
                 "\"АЯН\", \"Данон\", \"Европласт - Обь\", \"ИЗРМВ\" и \"Coca-cola\".\n\n");
             textTips.AppendText("В соответствии с весом колпака и линией его производства выбирается его тип, если он один, " +
                 "или выбор, если больше одного, а так же выбирается вес по умолчанию.\n\n");
+            
+            textHistory.SelectionFont = fontB;
+            textHistory.AppendText("Версия 4.1.1 (24.03.2021)\n\n");
+            textHistory.SelectionFont = fontR;
+            textHistory.AppendText("• Исправлен тип выводимой этикетки при печати с произвольными полями\n\n");
 
             textHistory.SelectionFont = fontB;
             textHistory.AppendText("Версия 4.1 (13.02.2021)\n\n");
