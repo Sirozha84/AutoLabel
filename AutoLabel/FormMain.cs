@@ -27,9 +27,8 @@ namespace AutoLabel
                 panel1.Visible = false;
                 timerMessage.Enabled = false;
             }
-            labelVersion.Text += "     Сервер: " + Net.HostName;
+            labelVersion.Text += "     Сервер: " + Settings.server;
             MenuEnable(false);
-            Data.Init();
         }
 
         //Большие кнопки

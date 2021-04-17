@@ -7,26 +7,7 @@ namespace AutoLabel
 {
     class Net
     {
-        public static string HostName = "localhost";
         public const int Port = 90;
-        const string ParamFile = "Server.txt";
-
-        /// <summary>
-        /// Загрузка параметров сервера
-        /// </summary>
-        public static void Init()
-        {
-            try
-            {
-                using (StreamReader file = File.OpenText(ParamFile))
-                    HostName = file.ReadLine();
-            }
-            catch
-            {
-                using (StreamWriter file = File.CreateText(ParamFile))
-                    file.WriteLine(HostName);
-            }
-        }
 
         public static bool Test()
         {
@@ -34,7 +15,7 @@ namespace AutoLabel
             {
                 using (TcpClient client = new TcpClient())
                 {
-                    client.Connect(HostName, Port);
+                    client.Connect(Settings.server, Port);
                     using (NetworkStream stream = client.GetStream())
                     {
                         BinaryWriter writer = new BinaryWriter(stream);
@@ -57,7 +38,7 @@ namespace AutoLabel
             {
                 using (TcpClient client = new TcpClient())
                 {
-                    client.Connect(HostName, Port);
+                    client.Connect(Settings.server, Port);
                     using (NetworkStream stream = client.GetStream())
                     {
                         BinaryWriter writer = new BinaryWriter(stream);
@@ -88,7 +69,7 @@ namespace AutoLabel
             {
                 using (TcpClient client = new TcpClient())
                 {
-                    client.Connect(HostName, Port);
+                    client.Connect(Settings.server, Port);
                     using (NetworkStream stream = client.GetStream())
                     {
                         BinaryWriter writer = new BinaryWriter(stream);
@@ -111,7 +92,7 @@ namespace AutoLabel
             {
                 using (TcpClient client = new TcpClient())
                 {
-                    client.Connect(HostName, Port);
+                    client.Connect(Settings.server, Port);
                     using (NetworkStream stream = client.GetStream())
                     {
                         BinaryWriter writer = new BinaryWriter(stream);

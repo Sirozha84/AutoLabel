@@ -29,7 +29,13 @@ namespace AutoLabel
             }
             //Думаем в каком режиме запускаемся
             if (param.Length > 0) Data.isTerminal = true;
-            Net.Init();
+            Application.EnableVisualStyles();
+            Settings.Init();
+            if (Settings.server == "")
+            {
+                FormStartWizzard form = new FormStartWizzard();
+                if (form.ShowDialog() == DialogResult.Cancel) return;
+            }
             if (Net.Test())
             {
                 if (Data.isTerminal)
@@ -37,7 +43,6 @@ namespace AutoLabel
                 else
                     Net.Log("Запуск программы в режиме ПК");
             }
-            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMain());
             Net.Log("Завершение работы");

@@ -13,6 +13,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -87,6 +102,12 @@
     </Compile>
     <Compile Include="FormPropertiesPC.Designer.cs">
       <DependentUpon>FormPropertiesPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStartWizzard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStartWizzard.Designer.cs">
+      <DependentUpon>FormStartWizzard.cs</DependentUpon>
     </Compile>
     <Compile Include="FormStat.cs">
       <SubType>Form</SubType>
@@ -190,6 +211,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Shift.cs" />
     <Compile Include="StaticDir.cs" />
     <Compile Include="User.cs" />
@@ -211,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPropertiesPC.resx">
       <DependentUpon>FormPropertiesPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStartWizzard.resx">
+      <DependentUpon>FormStartWizzard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStat.resx">
       <DependentUpon>FormStat.cs</DependentUpon>
@@ -340,6 +365,13 @@
     <Content Include="Graphics\Pet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

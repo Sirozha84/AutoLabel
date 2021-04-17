@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
-using System.Drawing.Printing;
 using System.IO;
 using System.Net.Sockets;
+using System.Drawing.Printing;
 
 namespace AutoLabel
 {
@@ -12,7 +12,6 @@ namespace AutoLabel
         public const int prefInLittleBox = 1920;    //Максимальное количество преформ в малом коробе
         public static bool isTerminal = false;      //true - если терминал, false - если десктоп
         public static bool accessControl = true;    //Проверка привязки к ТПА
-        const string printerFile = "Printer.txt";   //Файл с именем принтера
         public static bool loading = false;         //Идёт ли сейчас процесс загрузки
         
         //Типы линий по номерам
@@ -47,25 +46,7 @@ namespace AutoLabel
         public static List<string> Colorants2 = new List<string>();
         public static List<string> Others = new List<string>();
 
-        public static PrinterSettings printersettings;// = new PrinterSettings();
-
-        //Инициализация первоначальных данных
-        public static void Init()
-        {
-            try
-            {
-                StreamReader file = File.OpenText(printerFile);
-                printersettings = new PrinterSettings();
-                printersettings.PrinterName = file.ReadLine();
-                file.Close();
-            }
-            catch
-            {
-                //Применяем настройки принтера по умолчанию
-                printersettings = null;
-            }
-
-        }
+        public static PrinterSettings printersettings;
 
         /// <summary>
         /// Ограничение максимального количество этикеток
@@ -112,7 +93,7 @@ namespace AutoLabel
             {
                 using (TcpClient client = new TcpClient())
                 {
-                    client.Connect(Net.HostName, Net.Port);
+                    client.Connect(Settings.server, Net.Port);
                     using (NetworkStream stream = client.GetStream())
                     {
                         BinaryWriter writer = new BinaryWriter(stream);
@@ -167,7 +148,7 @@ namespace AutoLabel
             {
                 using (TcpClient client = new TcpClient())
                 {
-                    client.Connect(Net.HostName, Net.Port);
+                    client.Connect(Settings.server, Net.Port);
                     using (NetworkStream stream = client.GetStream())
                     {
                         BinaryWriter writer = new BinaryWriter(stream);
@@ -197,7 +178,7 @@ namespace AutoLabel
             {
                 using (TcpClient client = new TcpClient())
                 {
-                    client.Connect(Net.HostName, Net.Port);
+                    client.Connect(Settings.server, Net.Port);
                     using (NetworkStream stream = client.GetStream())
                     {
                         BinaryWriter writer = new BinaryWriter(stream);
@@ -224,24 +205,14 @@ namespace AutoLabel
             }
             catch { }
         }
-
         public static void PrintSetup()
         {
             PrintDialog diag = new PrintDialog();
             if (diag.ShowDialog() == DialogResult.Cancel) return;
             printersettings = diag.PrinterSettings;
             printersettings.DefaultPageSettings.Landscape = true;   //Задаём альбомную ориентацию
-            //Сохраняем настройку принтера в файл
-            try
-            {
-                StreamWriter file = File.CreateText(printerFile);
-                file.Write(printersettings.PrinterName);
-                file.Close();
-            }
-            catch
-            {
-                Log.Error("Не удалось сохранить настройку принтера");
-            }
+            Settings.printer = printersettings.PrinterName;
+            Settings.Save();
         }
 
         /// <summary>
