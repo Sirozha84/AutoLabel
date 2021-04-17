@@ -27,10 +27,10 @@ namespace AutoLabel
                 MessageBox.Show("Приложение уже запущено");
                 return;
             }
-            //Думаем в каком режиме запускаемся
-            if (param.Length > 0) Data.isTerminal = true;
-            Application.EnableVisualStyles();
+
+            //Инициализируем настройки, если их нет - вызываем мастер настроек
             Settings.Init();
+            Application.EnableVisualStyles();
             if (Settings.server == "")
             {
                 FormStartWizzard form = new FormStartWizzard();
@@ -43,7 +43,11 @@ namespace AutoLabel
                 else
                     Net.Log("Запуск программы в режиме ПК");
             }
-            Application.SetCompatibleTextRenderingDefault(false);
+
+            //Выбираем режим работы приложения
+            if (param.Length > 0) Data.isTerminal = true;
+
+            //Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMain());
             Net.Log("Завершение работы");
         }

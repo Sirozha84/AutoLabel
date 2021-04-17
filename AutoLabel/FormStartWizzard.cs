@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace AutoLabel
 {
@@ -14,6 +9,12 @@ namespace AutoLabel
         public FormStartWizzard()
         {
             InitializeComponent();
+            textBoxServer.Text = "Localhost";
+            foreach (string printer in PrinterSettings.InstalledPrinters)
+            {
+                if (new PrinterSettings() { PrinterName = printer }.IsDefaultPrinter)
+                    textBoxPrinter.Text = printer;//.ToString();
+            }
         }
 
 

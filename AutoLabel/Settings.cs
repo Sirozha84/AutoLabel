@@ -15,12 +15,13 @@ namespace AutoLabel
         /// </summary>
         public static void Init()
         {
-            fileName = Environment.SpecialFolder.LocalApplicationData + "AutoLabel\\Settings.ini";
-            Directory.CreateDirectory(Environment.SpecialFolder.LocalApplicationData + "AutoLabel");
+            string filder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\AutoLabel";
+            fileName = filder + "\\Settings.ini";
             server = "";
             printer = null;
             try
             {
+                Directory.CreateDirectory(filder);
                 using (StreamReader file = File.OpenText(fileName))
                     while (!file.EndOfStream)
                     {
