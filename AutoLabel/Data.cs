@@ -117,25 +117,34 @@ namespace AutoLabel
         /// </summary>
         public static void Load()
         {
+            
             if (loading) return;
             loading = true;
             //Смена
             Shift.Load();
             //Линии
             lines.Clear();
-            lines.Add(new Line("Husky №1", 0));
-            lines.Add(new Line("Netstal №2", 0));
-            lines.Add(new Line("Netstal №3", 0));
-            lines.Add(new Line("Netstal №4", 0));
-            lines.Add(new Line("Netstal №5", 0));
-            lines.Add(new Line("Netstal №6", 0));
-            lines.Add(new Line("Netstal №7", 0));
-            lines.Add(new Line("Netstal №8", 0));
-            lines.Add(new Line("Netstal №9", 0));
-            lines.Add(new Line("C1", 1));
-            lines.Add(new Line("C2", 1));
-            lines.Add(new Line("Ротопринт", 2));
+            lines.Add(new Line("Husky №1", 0, enLine("p1")));
+            lines.Add(new Line("Netstal №2", 0, enLine("p2")));
+            lines.Add(new Line("Netstal №3", 0, enLine("p3")));
+            lines.Add(new Line("Netstal №4", 0, enLine("p4")));
+            lines.Add(new Line("Netstal №5", 0, enLine("p5")));
+            lines.Add(new Line("Netstal №6", 0, enLine("p6")));
+            lines.Add(new Line("Netstal №7", 0, enLine("p7")));
+            lines.Add(new Line("Netstal №8", 0, enLine("p8")));
+            lines.Add(new Line("Netstal №9", 0, enLine("p9")));
+            lines.Add(new Line("C1", 1, enLine("c1")));
+            lines.Add(new Line("C2", 1, enLine("c2")));
+            lines.Add(new Line("Ротопринт", 2, enLine("r1")));
             loading = false;
+        }
+
+        static bool enLine(string key)
+        {
+            if (!Data.isTerminal) return true;
+            foreach (string p in Program.enLines)
+                if (p.ToLower() == key) return true;
+            return false;
         }
 
         /// <summary>

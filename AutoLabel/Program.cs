@@ -11,6 +11,7 @@ namespace AutoLabel
         /// Версия для проверки совместимости с сервером
         /// </summary>
         public const string VersionForComp = "4.0";
+        public static string[] enLines;
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -36,6 +37,9 @@ namespace AutoLabel
                 FormStartWizzard form = new FormStartWizzard();
                 if (form.ShowDialog() == DialogResult.Cancel) return;
             }
+
+            //Выбираем режим работы приложения
+            if (param.Length > 0) Data.isTerminal = true;
             if (Net.Test())
             {
                 if (Data.isTerminal)
@@ -44,9 +48,7 @@ namespace AutoLabel
                     Net.Log("Запуск программы в режиме ПК");
             }
 
-            //Выбираем режим работы приложения
-            if (param.Length > 0) Data.isTerminal = true;
-
+            enLines = param;
             //Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMain());
             Net.Log("Завершение работы");

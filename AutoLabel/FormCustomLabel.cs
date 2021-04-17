@@ -147,7 +147,7 @@ namespace AutoLabel
         {
             try
             {
-                Line l = new Line(comboBoxTPA.SelectedItem.ToString(), 0);
+                Line l = new Line(comboBoxTPA.SelectedItem.ToString(), 0, true);
 
                 //Выбираем какую этикетку печатаем
                 if (comboBoxTPA.SelectedIndex >= Data.firstType1 & comboBoxTPA.SelectedIndex <= Data.lastType1) l.lineType = 1;

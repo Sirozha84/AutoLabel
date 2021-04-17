@@ -13,7 +13,7 @@ namespace AutoLabel
         /// <param name="lab">Лейбл</param>
         public static void SetColor(Button but, int tpa)
         {
-            but.Visible = Data.lines[tpa].partNum != "";
+            but.Visible = Data.lines[tpa].partNum != "" & Data.lines[tpa].enable;
             string FirstWord = Data.lines[tpa].color.Split(' ')[0].ToLower();
             switch (FirstWord)
             {

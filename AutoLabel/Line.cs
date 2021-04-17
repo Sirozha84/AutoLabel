@@ -21,6 +21,7 @@ namespace AutoLabel
         public string colorant;     //Количество антистатика (список)
         public string life;         //Срок хранения (список)
         public string addition;     //Прочие дополнения (вручную)
+        public bool enable;         //Доступность кнопки на этом клиенте
         bool isCustom;              //Кастомная этикетка
 
         //Карандаши и ручки :-)
@@ -64,10 +65,11 @@ namespace AutoLabel
         /// </summary>
         /// <param name="name">Название машины</param>
         /// <param name="type">Тип ТПА (0-преформа, 1-колпак)</param>
-        public Line(string name, int type)
+        public Line(string name, int type, bool enable)
         {
             this.name = name;
             lineType = type;
+            this.enable = enable;
             Load();
         }
         
