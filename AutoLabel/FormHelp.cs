@@ -12,6 +12,8 @@ namespace AutoLabel
             Font fontR = new Font(textHistory.Font.FontFamily, textHistory.Font.Size, FontStyle.Regular);
             Font fontB = new Font(textHistory.Font.FontFamily, textHistory.Font.Size, FontStyle.Bold);
 
+            //Справка
+
             textSetup.SelectionFont = fontB;
             textSetup.AppendText("Запуск клиента и сервера\n\n");
             textSetup.SelectionFont = fontR;
@@ -23,7 +25,11 @@ namespace AutoLabel
             textSetup.AppendText("Запуск в режиме терминала\n\n");
             textSetup.SelectionFont = fontR;
             textSetup.AppendText("Для запуска программы в режиме терминала (полноэкранный с поддержкой сенсорного экрана и считывателя карт) " +
-                "в ярлыке необходимо прописать любой ключ, например: \"autolabel.exe 1\"\n\n");
+                "в ярлыке необходимо добавить список доступных линий в виде ключей. Ключ представляет собой букву типа линии и номер, " +
+                "где P - преформа, С - колпак, R - ротопринт). Между ключами ставится пробел, примеры написания:\n" +
+                "autolabel.exe P1 P2 P3     - доступны линии преформы 1, 2, 3,\n" +
+                "autolabel.exe C1 C2 R1     - доступны линии колпака 1, 2 и первая линия ротопринта,\n" +
+                "autolabel.exe P5 P6 C2     - доступны линии преформы 5, 6 и первая линия колпака.\n\n");
 
             textSetup.SelectionFont = fontB;
             textSetup.AppendText("Бесконтактные ключи RFID\n\n");
@@ -31,7 +37,7 @@ namespace AutoLabel
             textSetup.AppendText("В программе используется считыватель бесконтактных карт RFID эмулирующий клавиатуру. " +
                 "По этому, для тестов можно использовать ввод с клавиатуры 8 - и символов.");
 
-
+            //Подсказки
 
             textTips.AppendText("В режиме терминала при нажатии на поле \"Прочие дополнения\" предлагается ввести текст вручную. " +
                 "Для того чтобы выбрать одно из значений из списка необходимо нажать на кнопку выбора (в правой части с треугольником вниз) " +
@@ -43,7 +49,16 @@ namespace AutoLabel
                 "\"АЯН\", \"Данон\", \"Европласт - Обь\", \"ИЗРМВ\" и \"Coca-cola\".\n\n");
             textTips.AppendText("В соответствии с весом колпака и линией его производства выбирается его тип, если он один, " +
                 "или выбор, если больше одного, а так же выбирается вес по умолчанию.\n\n");
-            
+
+            //Список изменений
+
+            textHistory.SelectionFont = fontB;
+            textHistory.AppendText("Версия 4.2 (17.04.2021)\n\n");
+            textHistory.SelectionFont = fontR;
+            textHistory.AppendText("• Возможность выбирать доступные линии для отдельного терминала\n"+
+                "• Локальное хранение параметров теперь позволяет запускать программу из сетевой папки\n"+
+                "• Добавлен мастер первоначальной настройки на случай, если программа запускается впервые на новом терминале\n\n");
+
             textHistory.SelectionFont = fontB;
             textHistory.AppendText("Версия 4.1.1 (24.03.2021)\n\n");
             textHistory.SelectionFont = fontR;
@@ -219,7 +234,7 @@ namespace AutoLabel
             textHistory.SelectionFont = fontB;
             textHistory.AppendText("Версия 2.4.2 (18.04.2017)\n\n");
             textHistory.SelectionFont = fontR;
-            textHistory.AppendText("• Вставлен 4 - ый вариант строки для цвета(не влазила сильно длинная трока).\n\n");
+            textHistory.AppendText("• Вставлен 4-ый вариант строки для цвета(не влазила сильно длинная трока).\n\n");
 
             textHistory.SelectionFont = fontB;
             textHistory.AppendText("Версия 2.4.1 (14.04.2017)\n\n");

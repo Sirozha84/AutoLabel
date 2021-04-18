@@ -691,7 +691,7 @@ namespace AutoLabel
         public string LabelUnderButton()
         {
             string str = "";
-            if (partNum != null & partNum != "")
+            if (partNum != null & partNum != "" & enable)
             {
                 str = "Партия: " + partNum;
                 if (boxNum > 0) str += "   Выпущено коробов: " + (boxNum - 1).ToString();
